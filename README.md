@@ -1,0 +1,2 @@
+# YAD
+Ye Another Distroless
