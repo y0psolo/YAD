@@ -115,5 +115,5 @@ load("//util:jre_ver.bzl", "jre_ver")
         visibility = ["//:__subpackages__"],
     )
     for version in JRE_VERSIONS
-    for arch in ["amd64"]
+    for arch in BASE_ARCHITECTURES
 ]
