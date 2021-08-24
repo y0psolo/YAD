@@ -40,4 +40,4 @@ jobs:
           password: ${{ secrets.QUAY_ROBOT_TOKEN }}
       # Runs a single command using the runners shell
       - name: bazel build
-        run: bazel build //image:publish
+        run: bazel run //image:publish
