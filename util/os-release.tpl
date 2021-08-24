@@ -1,0 +1,11 @@
+NAME="{NAME}"
+VERSION="{VERSION}"
+ID="{ID}"
+ID_LIKE="{ID_LIKE}"
+PRETTY_NAME="Distroless"
+VERSION_ID="{VERSION_ID}"
+HOME_URL="https://gitlab.tech.orange/distroless/base"
+SUPPORT_URL="https://gitlab.tech.orange/distroless/base/-/issues"
+BUG_REPORT_URL="https://gitlab.tech.orange/distroless/base/-/issues"
+VERSION_CODENAME={VERSION_CODENAME}
+UBUNTU_CODENAME={UBUNTU_CODENAME}

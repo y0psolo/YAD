@@ -1,2 +1,2 @@
 # YAD
-Ye Another Distroless
+Yet Another Distroless

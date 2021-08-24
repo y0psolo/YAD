@@ -1,0 +1,3 @@
+build --workspace_status_command hack/workspace_env.sh
+test --workspace_status_command hack/workspace_env.sh
+run --workspace_status_command hack/workspace_env.sh

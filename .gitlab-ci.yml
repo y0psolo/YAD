@@ -1,0 +1,142 @@
+variables:
+  BAZEL_DIGEST_VERSION: "ace9881e6e9c5d48b5fd637321361aeffe54000265894a65f7d818dc1065bd80" # Bazel 3.5.0
+  DOCKER_TRIVY_IMAGE: "aquasec/trivy:latest"
+  SNAPSHOT_ARTIFACTORY_REGISTRY: "dockerfactory-unstable.tech.orange"
+  RELEASE_ARTIFACTORY_REGISTRY: "dockerfactory.tech.orange"
+
+stages:
+    - update
+    - build
+    - security
+
+.init-functions: &init-functions |
+  function docker_auth {
+    TMP_CI_AUTH=$(echo -n "${CI_REGISTRY_USER}:${CI_REGISTRY_PASSWORD}" | base64 | tr -d '\n')
+    TMP_ART_AUTH=$(echo -n "${ARTIFACTORY_USER}:${ARTIFACTORY_TOKEN}" | base64 | tr -d '\n')
+
+    mkdir -p /root/.docker
+
+    echo "{
+      \"auths\": {
+        \"${CI_REGISTRY}\": {
+          \"auth\": \"$TMP_CI_AUTH\"
+        },
+        \"${SNAPSHOT_ARTIFACTORY_REGISTRY}\": {
+          \"auth\": \"$TMP_ART_AUTH\"
+        },
+        \"${RELEASE_ARTIFACTORY_REGISTRY}\": {
+          \"auth\": \"$TMP_ART_AUTH\"
+        },
+        \"HttpHeaders\": {
+          \"User-Agent\": \"Docker-Client/20.10.0 (linux)\"
+        }
+      }
+    }" > /root/.docker/config.json
+  }
+
+  function docker_trivy() {
+    export TRIVY_USERNAME=${CI_REGISTRY_USER}
+    export TRIVY_PASSWORD=${CI_REGISTRY_PASSWORD}
+  }
+
+update:
+  only:
+    - schedules
+  image:
+    name: gcr.io/cloud-marketplace-containers/google/bazel@sha256:$BAZEL_DIGEST_VERSION
+    entrypoint: [""]
+  stage: update
+  variables:
+    REGISTRY: ${CI_REGISTRY}
+  before_script:
+    - git config --global user.email "lionel.herbet@orange.com"
+    - git config --global user.name "gitlab_bot"
+    - git remote set-url origin https://${API_USER}:${API_TOKEN}@${CI_REPOSITORY_URL#*@}
+  script:
+    - git branch update-deps
+    - git fetch
+    - git branch --set-upstream-to=origin/update-deps update-deps
+    - git checkout update-deps
+    - git pull
+    - bazel run :update_deb_packages
+    - hack/create_mr.sh
+  artifacts:
+    paths:
+      - ubuntu_amd64.bzl
+
+build_branch:
+  only:
+    - branches
+  except:
+    - schedules
+    - master
+  image:
+    name: gcr.io/cloud-marketplace-containers/google/bazel@sha256:$BAZEL_DIGEST_VERSION
+    entrypoint: [""]
+  stage: build
+  variables:
+    REGISTRY: ${CI_REGISTRY}
+  before_script:
+    - *init-functions
+  script:
+    - docker_auth
+    - bazel --output_base output run //image:publish_branch
+  artifacts:
+    paths:
+      - ubuntu_amd64.bzl
+
+build:
+  only:
+    - master
+  except:
+    - schedules 
+  image:
+    name: gcr.io/cloud-marketplace-containers/google/bazel@sha256:$BAZEL_DIGEST_VERSION
+    entrypoint: [""]
+  stage: build
+  variables:
+    REGISTRY: ${CI_REGISTRY}
+  before_script:
+    - *init-functions
+  script:
+    - docker_auth
+    - bazel --output_base output run //image:publish
+  artifacts:
+    paths:
+      - ubuntu_amd64.bzl
+
+trivy:
+  only:
+    - master
+  except:
+    - schedules
+  image:
+    name: $DOCKER_TRIVY_IMAGE
+    entrypoint: [""]
+  stage: security
+  before_script:
+    - *init-functions
+    - mkdir -p ./trivy   
+  script:
+    - docker_auth
+    - docker_trivy
+    - trivy image --timeout 10m0s --severity "UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL" --format table --output ./trivy/${CI_PROJECT_NAME}-static.md --vuln-type os --exit-code 0 ${CI_REGISTRY}/${CI_PROJECT_NAMESPACE}/${CI_PROJECT_NAME}/static_amd64:latest
+    - trivy image --timeout 10m0s --severity "UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL" --format table --output ./trivy/${CI_PROJECT_NAME}-base.md --vuln-type os --exit-code 0 ${CI_REGISTRY}/${CI_PROJECT_NAMESPACE}/${CI_PROJECT_NAME}/base_amd64:latest
+    - trivy image --timeout 10m0s --severity "UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL" --format table --output ./trivy/${CI_PROJECT_NAME}-cc.md --vuln-type os --exit-code 0 ${CI_REGISTRY}/${CI_PROJECT_NAMESPACE}/${CI_PROJECT_NAME}/cc_amd64:latest
+    - trivy image --timeout 10m0s --severity "UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL" --format table --output ./trivy/${CI_PROJECT_NAME}-python.md --vuln-type os --exit-code 0 ${CI_REGISTRY}/${CI_PROJECT_NAMESPACE}/${CI_PROJECT_NAME}/python_amd64:latest
+    - trivy image --timeout 10m0s --severity "UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL" --format table --output ./trivy/${CI_PROJECT_NAME}-java_openjdk_11.md --vuln-type os --exit-code 0 ${CI_REGISTRY}/${CI_PROJECT_NAMESPACE}/${CI_PROJECT_NAME}/openjdk/java_fat_amd64:11
+    - trivy image --timeout 10m0s --severity "UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL" --format table --output ./trivy/${CI_PROJECT_NAME}-java_openjdk_8.md --vuln-type os --exit-code 0 ${CI_REGISTRY}/${CI_PROJECT_NAMESPACE}/${CI_PROJECT_NAME}/openjdk/java_fat_amd64:8
+    - trivy image --timeout 10m0s --severity "UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL" --format table --output ./trivy/${CI_PROJECT_NAME}-java_azul_11.md --vuln-type os --exit-code 0 ${CI_REGISTRY}/${CI_PROJECT_NAMESPACE}/${CI_PROJECT_NAME}/azul/java_fat_amd64:11
+    - trivy image --timeout 10m0s --severity "UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL" --format table --output ./trivy/${CI_PROJECT_NAME}-java_azul_8.md --vuln-type os --exit-code 0 ${CI_REGISTRY}/${CI_PROJECT_NAMESPACE}/${CI_PROJECT_NAME}/azul/java_fat_amd64:8
+  after_script:
+    - cat ./trivy/*.md
+  variables:
+    GIT_STRATEGY: none
+  artifacts:
+    when: always
+    paths:
+    - "trivy/*.md"
+  cache:
+    paths:
+      - .trivycache/
+  allow_failure: true
