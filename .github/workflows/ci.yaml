@@ -41,3 +41,5 @@ jobs:
       # Runs a single command using the runners shell
       - name: bazel build
         run: bazel run //image:publish
+      - name: merge architecture tags
+        run: hack/merge_tag.sh

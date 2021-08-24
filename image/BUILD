@@ -69,7 +69,7 @@ container_bundle(
 container_push(
     name = "publish",
     bundle = ":all",
-    format = "OCI",
+    format = "Docker",
     # Push images sequentially, to avoid a bug in rules_docker related to
     # pushing many images in parallel.
     # https://github.com/bazelbuild/rules_docker/issues/525

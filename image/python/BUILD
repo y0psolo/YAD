@@ -25,7 +25,7 @@ load("//util:constants.bzl", "BASE_ARCHITECTURES", "NONROOT")
 [
     container_image(
         name = arch + "_sh",
-        architecture = arch + "_sh",
+        architecture = arch,
         entrypoint = [
             "/usr/bin/python3",
         ],
