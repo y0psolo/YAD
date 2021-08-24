@@ -45,8 +45,26 @@ IMAGES.update(
         "{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/{STABLE_PROJECT_NAME}/" + jre + "/java_" + weight + ":" + arch + "_" + version + mode: "//image/java:" + arch + "_" + jre + "_" + weight + "_" + version + mode
         for arch in BASE_ARCHITECTURES
         for jre in [
-            "azul",
             "openjdk",
+        ]
+        for version in JRE_VERSIONS
+        for weight in [
+            "fat",
+            "slim",
+        ]
+        for mode in [
+            "_debug",
+            "_sh",
+            "",
+        ]
+    },
+)
+IMAGES.update(
+    {
+        "{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/{STABLE_PROJECT_NAME}/" + jre + "/java_" + weight + ":" + arch + "_" + version + mode: "//image/java:" + arch + "_" + jre + "_" + weight + "_" + version + mode
+        for arch in ["amd64"]
+        for jre in [
+            "azul",
         ]
         for version in JRE_VERSIONS
         for weight in [
