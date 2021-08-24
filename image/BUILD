@@ -8,7 +8,7 @@ IMAGES = {}
 
 IMAGES.update(
     {
-        "{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/{STABLE_PROJECT_NAME}/" + kind + ":" + arch : "//image/" + kind + ":" + arch
+        "{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/" + kind + ":" + arch : "//image/" + kind + ":" + arch
         for arch in BASE_ARCHITECTURES
         for kind in [
             "static",
@@ -21,7 +21,7 @@ IMAGES.update(
 
 IMAGES.update(
     {
-        "{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/{STABLE_PROJECT_NAME}/" + kind + ":" + arch + "_debug" : "//image/" + kind + ":" + arch + "_debug"
+        "{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/" + kind + ":" + arch + "_debug" : "//image/" + kind + ":" + arch + "_debug"
         for arch in BASE_ARCHITECTURES
         for kind in [
             "static",
@@ -34,7 +34,7 @@ IMAGES.update(
 
 IMAGES.update(
     {
-        "{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/{STABLE_PROJECT_NAME}/" + kind + ":" + arch + "_sh": "//image/" + kind + ":" + arch + "_sh"
+        "{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/" + kind + ":" + arch + "_sh": "//image/" + kind + ":" + arch + "_sh"
         for arch in BASE_ARCHITECTURES
         for kind in ["python"]
     },
@@ -42,7 +42,7 @@ IMAGES.update(
 
 IMAGES.update(
     {
-        "{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/{STABLE_PROJECT_NAME}/" + jre + "/java_" + weight + ":" + arch + "_" + version + mode: "//image/java:" + arch + "_" + jre + "_" + weight + "_" + version + mode
+        "{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/" + jre + "/java_" + weight + ":" + arch + "_" + version + mode: "//image/java:" + arch + "_" + jre + "_" + weight + "_" + version + mode
         for arch in BASE_ARCHITECTURES
         for jre in [
             "azul",
