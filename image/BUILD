@@ -42,7 +42,7 @@ IMAGES.update(
 
 IMAGES.update(
     {
-        "{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/" + jre + "/java_" + weight + ":" + arch + "_" + version + mode: "//image/java:" + arch + "_" + jre + "_" + weight + "_" + version + mode
+        "{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/" + jre + "_" + weight + ":" + arch + "_" + version + mode: "//image/java:" + arch + "_" + jre + "_" + weight + "_" + version + mode
         for arch in BASE_ARCHITECTURES
         for jre in [
             "azul",
