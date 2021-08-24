@@ -8,7 +8,7 @@ IMAGES = {}
 
 IMAGES.update(
     {
-        "{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/{STABLE_PROJECT_NAME}/" + kind + "_" + arch + ":latest": "//image/" + kind + ":" + arch
+        "{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/" + kind + ":" + arch : "//image/" + kind + ":" + arch
         for arch in BASE_ARCHITECTURES
         for kind in [
             "static",
@@ -21,7 +21,7 @@ IMAGES.update(
 
 IMAGES.update(
     {
-        "{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/{STABLE_PROJECT_NAME}/" + kind + "_" + arch + ":debug": "//image/" + kind + ":" + arch + "_debug"
+        "{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/" + kind + ":" + arch + "_debug" : "//image/" + kind + ":" + arch + "_debug"
         for arch in BASE_ARCHITECTURES
         for kind in [
             "static",
@@ -34,7 +34,7 @@ IMAGES.update(
 
 IMAGES.update(
     {
-        "{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/{STABLE_PROJECT_NAME}/" + kind + "_" + arch + ":sh": "//image/" + kind + ":" + arch + "_sh"
+        "{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/" + kind + ":" + arch + "_sh": "//image/" + kind + ":" + arch + "_sh"
         for arch in BASE_ARCHITECTURES
         for kind in ["python"]
     },
@@ -42,64 +42,7 @@ IMAGES.update(
 
 IMAGES.update(
     {
-        "{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/{STABLE_PROJECT_NAME}/" + jre + "/java_" + weight + "_" + arch + ":" + version + mode: "//image/java:" + arch + "_" + jre + "_" + weight + "_" + version + mode
-        for arch in BASE_ARCHITECTURES
-        for jre in [
-            "azul",
-            "openjdk",
-        ]
-        for version in JRE_VERSIONS
-        for weight in [
-            "fat",
-            "slim",
-        ]
-        for mode in [
-            "_debug",
-            "_sh",
-            "",
-        ]
-    },
-)
-
-IMAGES_BRANCH = {}
-
-IMAGES_BRANCH.update(
-    {
-        "{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/{STABLE_PROJECT_NAME}/" + kind + "_" + arch + ":latest_{BRANCH}": "//image/" + kind + ":" + arch
-        for arch in BASE_ARCHITECTURES
-        for kind in [
-            "static",
-            "base",
-            "cc",
-            "python",
-        ]
-    },
-)
-
-IMAGES_BRANCH.update(
-    {
-        "{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/{STABLE_PROJECT_NAME}/" + kind + "_" + arch + ":debug_{BRANCH}": "//image/" + kind + ":" + arch + "_debug"
-        for arch in BASE_ARCHITECTURES
-        for kind in [
-            "static",
-            "base",
-            "cc",
-            "python",
-        ]
-    },
-)
-
-IMAGES.update(
-    {
-        "{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/{STABLE_PROJECT_NAME}/" + kind + "_" + arch + ":sh_{BRANCH}": "//image/" + kind + ":" + arch + "_sh"
-        for arch in BASE_ARCHITECTURES
-        for kind in ["python"]
-    },
-)
-
-IMAGES_BRANCH.update(
-    {
-        "{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/{STABLE_PROJECT_NAME}/" + jre + "/java_" + weight + "_" + arch + ":" + version + mode + "_{BRANCH}": "//image/java:" + arch + "_" + jre + "_" + weight + "_" + version + mode
+        "{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/" + jre + "_" + weight + ":" + arch + "_" + version + mode: "//image/java:" + arch + "_" + jre + "_" + weight + "_" + version + mode
         for arch in BASE_ARCHITECTURES
         for jre in [
             "azul",
@@ -123,25 +66,10 @@ container_bundle(
     images = IMAGES,
 )
 
-container_bundle(
-    name = "all_branch",
-    images = IMAGES_BRANCH,
-)
-
 container_push(
     name = "publish",
     bundle = ":all",
-    format = "OCI",
-    # Push images sequentially, to avoid a bug in rules_docker related to
-    # pushing many images in parallel.
-    # https://github.com/bazelbuild/rules_docker/issues/525
-    sequential = True,
-)
-
-container_push(
-    name = "publish_branch",
-    bundle = ":all_branch",
-    format = "OCI",
+    format = "Docker",
     # Push images sequentially, to avoid a bug in rules_docker related to
     # pushing many images in parallel.
     # https://github.com/bazelbuild/rules_docker/issues/525

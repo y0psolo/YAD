@@ -1,0 +1,29 @@
+name: update-deps
+on:
+  schedule:
+    - cron:  '0 2 * * *'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+
+    steps:
+      - name: Setup repository
+        uses: actions/checkout@v2
+      - name: Setup Bazelisk
+        uses: bazelbuild/setup-bazelisk@v1
+      - name: Mount bazel cache
+        uses: actions/cache@v2
+        with:
+          path: "~/.cache/bazel"
+          key: bazel
+      - name: Run update script
+        run: bazel run :update_deb_packages
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          commit-message: "Bumping ubuntu packages to last version"
+          title: "Bumping ubuntu packages to last version"
+          body: "Automatic scheduled task. Check packages version and bump them"
+          branch: "update-deps"
