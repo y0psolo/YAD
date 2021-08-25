@@ -1,5 +1,6 @@
 name: update-deps
 on:
+  workflow_dispatch:
   schedule:
     - cron:  '0 2 * * *'
 jobs:
@@ -7,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       pull-requests: write
-
+      contents: write
     steps:
       - name: Setup repository
         uses: actions/checkout@v2
