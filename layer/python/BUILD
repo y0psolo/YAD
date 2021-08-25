@@ -1,5 +1,17 @@
+load("@bazel_tools//tools/build_defs/pkg:pkg.bzl", "pkg_tar")
 load("@io_bazel_rules_docker//container:container.bzl", "container_layer")
 load("//util:constants.bzl", "BASE_ARCHITECTURES", "PACKAGE")
+
+[
+    pkg_tar(
+        name = "ld_cache_" + arch,
+        srcs = [":" + arch + "/ld.so.cache"],
+        mode = "0644",
+        package_dir = "etc",
+        visibility = ["//visibility:public"],
+    )
+    for arch in BASE_ARCHITECTURES
+]
 
 [
     container_layer(
@@ -28,6 +40,7 @@ load("//util:constants.bzl", "BASE_ARCHITECTURES", "PACKAGE")
         tars = [
             "//util:libcbin_" + arch + "_bin.tar",
             "//util:libcbin_" + arch + "_conf.tar",
+            "ld_cache_" + arch,
         ],
         visibility = ["//:__subpackages__"],
     )
