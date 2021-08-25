@@ -114,4 +114,3 @@ http_archive(
     strip_prefix = "zulu11.50.19-ca-jdk11.0.12-linux_aarch64",
     urls = ["https://cdn.azul.com/zulu-embedded/bin/zulu11.50.19-ca-jdk11.0.12-linux_aarch64.tar.gz"],
 )
-
