@@ -77,6 +77,7 @@ http_file(
 
 http_file(
     name = "busybox_arm64",
+    downloaded_file_path = "busybox",
     executable = True,
     sha256 = "141adb1b625a6f44c4b114f76b4387b4ea4f7ab802b88eb40e0d2f6adcccb1c3",
     urls = ["https://busybox.net/downloads/binaries/1.31.0-defconfig-multiarch-musl/busybox-armv8l"],
