@@ -2,4 +2,4 @@ schemaVersion: "1.0.0"
 fileContentTests:
 - name: 'os-release contents'
   path: '/etc/os-release'
-  expectedContents: ['.*\nVERSION="Debian GNU/Linux 10 \(buster\)"\n']
+  expectedContents: ['.*\nVERSION="20\.04\.3 LTS, \(Focal Fossa\)"\n']

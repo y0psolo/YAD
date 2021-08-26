@@ -1,11 +1,16 @@
 #!/bin/sh
 
-docker run -u root --name pythonarm64 --entrypoint /bin/sh $1/python:arm64_sh /sbin/ldconfig
-docker cp pythonarm64:/etc/ld.so.cache ./arm64/ld.so.cache.arm64
-docker rm pythonarm64
-docker rmi  $1/python:arm64_sh
+SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 
-docker run -u root --name pythonamd64 --entrypoint /bin/sh $1/python:amd64_sh /sbin/ldconfig
-docker cp pythonamd64:/etc/ld.so.cache ./amd64/ld.so.cache.amd64
+bazel run //image/python:amd64_sh
+bazel run //image/python:arm64_sh
+
+docker run -u root --name pythonarm64 --entrypoint /bin/sh bazel/image/python:arm64_sh /sbin/ldconfig
+docker cp pythonarm64:/etc/ld.so.cache $SCRIPTPATH/arm64/ld.so.cache
+docker rm pythonarm64
+docker rmi  bazel/image/python:arm64_sh
+
+docker run -u root --name pythonamd64 --entrypoint /bin/sh bazel/image/python:amd64_sh /sbin/ldconfig
+docker cp pythonamd64:/etc/ld.so.cache $SCRIPTPATH/amd64/ld.so.cache
 docker rm pythonamd64
-docker rmi  $1/python:amd64_sh
+docker rmi  bazel/image/python:amd64_sh

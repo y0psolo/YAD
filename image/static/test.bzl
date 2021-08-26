@@ -11,9 +11,9 @@ def test_container(arch):
 
     # Check for common base files.
     container_test(
-        name = "nonroot_" + arch + "_test",
+        name = "common_" + arch + "_test",
         configs = ["test/base.yaml"],
-        image = ":nonroot_" + arch,
+        image = ":" + arch,
     )
 
     # Check that we can invoke openssl in the base image to check certificates.
@@ -24,9 +24,9 @@ def test_container(arch):
     # )
     # Check the /etc/os-release contents.
     container_test(
-        name = "release_" + arch + "_test",
+        name = "fs_" + arch + "_test",
         configs = ["test/os-release.yaml"],
-        image = ":nonroot_" + arch,
+        image = ":" + arch,
     )
     # Check busybox is working
     # container_test(
