@@ -33,8 +33,14 @@ jobs:
           registry: docker.io
           username: ${{ secrets.DOCKER_LOGIN }}
           password: ${{ secrets.DOCKER_PASSWORD }}
+      - name: Install Cosign
+        uses: sigstore/cosign-installer@main
+        with:
+          cosign-release: 'v1.1.0'
       # Runs a single command using the runners shell
       - name: bazel build
         run: bazel run //image:publish
       - name: merge architecture tags
-        run: hack/merge_tag.sh
+        run: hack/merge_tag.sh docker.io
+      - name: cosign image
+        run: hack/cosign.sh docker.io

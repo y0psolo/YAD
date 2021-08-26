@@ -21,6 +21,8 @@ jobs:
           key: bazel
       - name: Run update script
         run: bazel run :update_deb_packages
+      - name: Run ldcache update script
+        run : layer/python/ld_cache_gen.sh
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
