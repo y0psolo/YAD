@@ -44,9 +44,9 @@ merge_tag_arch() {
     buildah manifest add localhost/${REPO}/$1:$2 localhost/${REPO}/$1:arm64$_suffix
 }
 
-publish_image() {
-    buildah push -q --format docker localhost/${REPO}/$1:$2 docker://${REGISTRY}/${REPO}/$1:$2
-}
+# publish_image() {
+#     buildah push -q --format docker localhost/${REPO}/$1:$2 docker://${REGISTRY}/${REPO}/$1:$2
+# }
 
 delete_images_from_podman() {
     _suffix=""
