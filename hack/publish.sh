@@ -14,9 +14,9 @@ publish_image() {
     fi
     buildah pull -q docker-daemon:${REPO}/$1:amd64$_suffix
     buildah pull -q docker-daemon:${REPO}/$1:arm64$_suffix
-    buildah manifest create localhost/${REPO}/$1:$2 localhost/${REPO}/$1:amd64$_suffix
-    buildah manifest add localhost/${REPO}/$1:$2 localhost/${REPO}/$1:arm64$_suffix
-    buildah push -q --format docker localhost/${REPO}/$1:$2 docker://${REGISTRY}/${REPO}/$1:$2
+    buildah manifest create ${REPO}/$1:$2 localhost/${REPO}/$1:amd64$_suffix
+    buildah manifest add ${REPO}/$1:$2 localhost/${REPO}/$1:arm64$_suffix
+    buildah manifest push -q --format docker ${REPO}/$1:$2 docker://${REGISTRY}/${REPO}/$1:$2
     buildah manifest rm localhost/${REPO}/$1:$2
     buildah rmi localhost/${REPO}/$1:amd64$_suffix
     buildah rmi localhost/${REPO}/$1:arm64$_suffix
@@ -40,8 +40,8 @@ merge_tag_arch() {
     then
         _suffix="_$2"
     fi
-    buildah manifest create localhost/${REPO}/$1:$2 localhost/${REPO}/$1:amd64$_suffix
-    buildah manifest add localhost/${REPO}/$1:$2 localhost/${REPO}/$1:arm64$_suffix
+    buildah manifest create ${REPO}/$1:$2 localhost/${REPO}/$1:amd64$_suffix
+    buildah manifest add ${REPO}/$1:$2 localhost/${REPO}/$1:arm64$_suffix
 }
 
 # publish_image() {
