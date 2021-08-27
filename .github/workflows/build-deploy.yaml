@@ -25,11 +25,9 @@ jobs:
           username: ${{ secrets.DOCKER_LOGIN }}
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: bazel build
-        run: bazel run //image:publish
-      - name: merge architecture tags
-        run: hack/merge_tag.sh docker.io
-      - name: cosign image
-        run: hack/cosign.sh docker.io
+        run: bazel run //image:alll
+      - name: merge tags and publish
+        run: hack/publish.sh docker.io
   sign:
     environment: Release
     runs-on: ubuntu-latest

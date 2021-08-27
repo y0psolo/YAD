@@ -20,5 +20,5 @@ jobs:
           path: "~/.cache/bazel"
           key: bazel
       - name: bazel build
-        run: bazel build //image:publish
+        run: bazel build //image:all
 
