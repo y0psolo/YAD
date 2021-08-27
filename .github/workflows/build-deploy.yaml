@@ -49,5 +49,5 @@ jobs:
           cosign-release: 'v1.1.0'
       - name: cosign image
         env:
-          COSIGN_PASSWORD: ${{ COSIGN_PASSWORD }}
+          COSIGN_PASSWORD: ${{ secrets.COSIGN_PASSWORD }}
         run: hack/cosign.sh docker.io
