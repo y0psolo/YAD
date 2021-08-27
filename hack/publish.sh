@@ -1,9 +1,10 @@
 #!/bin/sh
 
-. ./common.sh
-
+SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 REPO="yadist"
 REGISTRY=$1
+
+. $SCRIPTPATH/common.sh
 
 pull_images_to_buildah() {
     _suffix=""

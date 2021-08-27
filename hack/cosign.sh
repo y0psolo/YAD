@@ -1,10 +1,10 @@
 #!/bin/sh
 
-. ./common.sh
-
-REPO="yadist"
 SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+REPO="yadist"
 REGISTRY=$1
+
+. $SCRIPTPATH/common.sh
 
 sign_image() {
     cosign sign -key $SCRIPTPATH/cosign.key $REGISTRY/${REPO}/$1:$2
