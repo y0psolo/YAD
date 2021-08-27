@@ -6,6 +6,22 @@ REGISTRY=$1
 
 . $SCRIPTPATH/common.sh
 
+publish_image() {
+    _suffix=""
+    if [ $2 != 'latest' ]
+    then
+        _suffix="_$2"
+    fi
+    buildah pull -q docker-daemon:${REPO}/$1:amd64$_suffix
+    buildah pull -q docker-daemon:${REPO}/$1:arm64$_suffix
+    buildah manifest create localhost/${REPO}/$1:$2 localhost/${REPO}/$1:amd64$_suffix
+    buildah manifest add localhost/${REPO}/$1:$2 localhost/${REPO}/$1:arm64$_suffix
+    buildah push -q --format docker localhost/${REPO}/$1:$2 docker://${REGISTRY}/${REPO}/$1:$2
+    buildah manifest rm localhost/${REPO}/$1:$2
+    buildah rmi localhost/${REPO}/$1:amd64$_suffix
+    buildah rmi localhost/${REPO}/$1:arm64$_suffix
+}
+
 pull_images_to_buildah() {
     _suffix=""
     if [ $2 != 'latest' ]
@@ -45,8 +61,5 @@ delete_images_from_podman() {
     done
 }
 
-loop_over_image_tag pull_images_to_buildah
 buildah info
-loop_over_image_tag merge_tag_arch
-# loop_over_image_tag publish_image
-# loop_over_image_tag delete_images_from_podman
+loop_over_image_tag publish_image
