@@ -14,7 +14,7 @@ pull_images_to_buildah() {
     fi
     for arch in amd64 arm64
     do
-        buildah pull docker-daemon:${REPO}/$1:${arch}$_suffix
+        buildah pull -q docker-daemon:${REPO}/$1:${arch}$_suffix
     done
 }
 
@@ -29,7 +29,7 @@ merge_tag_arch() {
 }
 
 publish_image() {
-    podman push --format docker ${REPO}/$1:$2 docker://${REGISTRY}/${REPO}/$1:$2
+    podman push -q --format docker ${REPO}/$1:$2 docker://${REGISTRY}/${REPO}/$1:$2
 }
 
 delete_images_from_podman() {
@@ -46,6 +46,7 @@ delete_images_from_podman() {
 }
 
 loop_over_image_tag pull_images_to_buildah
-loop_over_image_tag merge_tag_arch
-loop_over_image_tag publish_image
+podman images list
+#loop_over_image_tag merge_tag_arch
+#loop_over_image_tag publish_image
 # loop_over_image_tag delete_images_from_podman
