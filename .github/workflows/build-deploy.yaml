@@ -25,7 +25,7 @@ jobs:
           username: ${{ secrets.DOCKER_LOGIN }}
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: bazel build
-        run: bazel run //image:alll
+        run: bazel run //image:all
       - name: merge tags and publish
         run: hack/publish.sh docker.io
   sign:
