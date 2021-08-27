@@ -24,12 +24,11 @@ merge_tag_arch() {
     then
         _suffix="_$2"
     fi
-    podman manifest create ${REPO}/$1:$2 ${REPO}/$1:amd64$_suffix
-    podman manifest add ${REPO}/$1:$2 ${REPO}/$1:arm64$_suffix
+    docker manifest create ${REPO}/$1:$2 ${REPO}/$1:amd64$_suffix ${REPO}/$1:arm64$_suffix
 }
 
 publish_image() {
-    podman push -q --format docker ${REPO}/$1:$2 docker://${REGISTRY}/${REPO}/$1:$2
+    docker push -q ${REPO}/$1:$2 ${REGISTRY}/${REPO}/$1:$2
 }
 
 delete_images_from_podman() {
@@ -45,8 +44,9 @@ delete_images_from_podman() {
     done
 }
 
-loop_over_image_tag pull_images_to_podman
-podman images list
-#loop_over_image_tag merge_tag_arch
-#loop_over_image_tag publish_image
+# loop_over_image_tag pull_images_to_podman
+# podman images list
+docker images list
+loop_over_image_tag merge_tag_arch
+loop_over_image_tag publish_image
 # loop_over_image_tag delete_images_from_podman
