@@ -24,10 +24,10 @@ jobs:
           registry: docker.io
           username: ${{ secrets.DOCKER_LOGIN }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-      - name: bazel build
-        run: bazel run //image:all
-      - name: merge tags and publish
-        run: hack/publish.sh docker.io
+      - name: bazel publish
+        run: bazel run //image:publish
+      - name: merge tags
+        run: hack/merge_tag.sh docker.io
   sign:
     environment: Release
     runs-on: ubuntu-latest
