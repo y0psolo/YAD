@@ -6,7 +6,7 @@ REGISTRY=$1
 
 . $SCRIPTPATH/common.sh
 
-pull_images_to_buildah() {
+pull_images_to_podman() {
     _suffix=""
     if [ $2 != 'latest' ]
     then
@@ -14,7 +14,7 @@ pull_images_to_buildah() {
     fi
     for arch in amd64 arm64
     do
-        buildah pull -q docker-daemon:${REPO}/$1:${arch}$_suffix
+        podman pull -q docker-daemon:${REPO}/$1:${arch}$_suffix
     done
 }
 
@@ -45,7 +45,7 @@ delete_images_from_podman() {
     done
 }
 
-loop_over_image_tag pull_images_to_buildah
+loop_over_image_tag pull_images_to_podman
 podman images list
 #loop_over_image_tag merge_tag_arch
 #loop_over_image_tag publish_image
