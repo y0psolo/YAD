@@ -13,7 +13,7 @@ merge_tag_arch() {
         _suffix="_$2"
     fi
     docker manifest create ${REPO}/$1:$2 ${REPO}/$1:amd64$_suffix ${REPO}/$1:arm64$_suffix
-    docker push ${REPO}/$1:$2
+    docker manifest push ${REPO}/$1:$2
 }
 
 loop_over_image_tag merge_tag_arch
