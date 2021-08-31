@@ -140,6 +140,7 @@ pkg_tar(
             # which would probably need to be run inside the container
             "SSL_CERT_FILE": "/etc/ssl/certs/ca-certificates.crt",
         },
+        empty_dirs = ["/home"],
         tars = [
             ":passwd",
             ":group_tar",

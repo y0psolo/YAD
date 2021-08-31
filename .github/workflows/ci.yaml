@@ -21,4 +21,6 @@ jobs:
           key: bazel
       - name: bazel build
         run: bazel build //image:all
+      - name: bazel test
+        run: bazel run //test:*
 

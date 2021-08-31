@@ -39,8 +39,7 @@ load("//util:constants.bzl", "BASE_ARCHITECTURES", "JRE_VERSIONS", "NONROOT")
         name = arch + "_" + jre + "_" + weight + "_" + version + "_sh",
         architecture = arch,
         entrypoint = [
-            "/usr/bin/java",
-            "-jar",
+            "/bin/sh",
         ],
         layers = [
             "//layer/static:" + arch,

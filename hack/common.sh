@@ -11,7 +11,7 @@ loop_over_image_tag() {
 
     for repo in python
     do
-        for tag in latest debug sh
+        for tag in latest debug
         do
             $1 ${repo} ${tag}
         done

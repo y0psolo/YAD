@@ -1,0 +1,28 @@
+schemaVersion: "2.0.0"
+fileExistenceTests:
+  - name: certs
+    path: "/etc/ssl/certs/java/cacerts"
+    shouldExist: true
+  - name: jvm-directory
+    path: "/usr/lib/jvm"
+    shouldExist: true
+    permissions: 'drwxr-xr-x'
+  - name: java
+    path: "/usr/bin/java"
+    shouldExist: true
+    isExecutableBy: 'other'
+commandTests:
+  - name: java-symlink
+    command: "/usr/bin/java"
+    args: ["-version"]
+    expectedError: ['openjdk version "[0-9]+\.[0-9]+\.[0-9_]+"']
+metadataTest:
+  env:
+    - key: 'JAVA_VERSION'
+      value: '([0-9]+\.[0-9]+\.[0-9]+|[0-9]u[0-9]+)'
+      isRegex: true
+    - key: 'JAVA_HOME'
+      value: '/usr/lib/jvm/zre-[0-9]+-(amd|arm)64'
+      isRegex: true
+  entrypoint: ["/usr/bin/java", "-jar"]
+  workdir: "/home/nonroot"

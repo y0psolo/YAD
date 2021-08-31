@@ -34,14 +34,6 @@ IMAGES.update(
 
 IMAGES.update(
     {
-        "{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/" + kind + ":" + arch + "_sh": "//image/" + kind + ":" + arch + "_sh"
-        for arch in BASE_ARCHITECTURES
-        for kind in ["python"]
-    },
-)
-
-IMAGES.update(
-    {
         "{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/" + jre + "_" + weight + ":" + arch + "_" + version + mode: "//image/java:" + arch + "_" + jre + "_" + weight + "_" + version + mode
         for arch in BASE_ARCHITECTURES
         for jre in [

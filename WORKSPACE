@@ -1,3 +1,5 @@
+workspace(name = "yad")
+
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive", "http_file")
 
 # Docker rules
@@ -48,6 +50,10 @@ container_repositories()
 load("@io_bazel_rules_docker//repositories:deps.bzl", container_deps = "deps")
 
 container_deps()
+
+load("@io_bazel_rules_docker//java:image.bzl", _java_image_repos = "repositories")
+
+_java_image_repos()
 
 # Load the macro that allows you to customize the docker toolchain configuration.
 load(
