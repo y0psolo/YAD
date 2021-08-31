@@ -22,5 +22,5 @@ jobs:
       - name: bazel build
         run: bazel build //image:all
       - name: bazel test
-        run: bazel run //test:*
+        run: bazel test //test:*
 
