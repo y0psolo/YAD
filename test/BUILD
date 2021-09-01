@@ -145,7 +145,7 @@ container_test(
 [
     container_test(
         name = arch + "_python_test",
-        configs = ["base/base.yaml", "static/sh.yaml", "python/python.yaml"],
+        configs = ["base/base.yaml", "static/python.yaml", "python/python.yaml"],
         image = "//image/python:" + arch,
     )
     for arch in BASE_ARCHITECTURES

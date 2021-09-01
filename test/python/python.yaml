@@ -42,6 +42,12 @@ commandTests:
     args: ["-c", "print(u'h\\xe9llo.txt')"]
     expectedOutput: ['h\xe9llo']
 
+  # the print function should output UTF-8
+  - name: print_platform
+    command: "/usr/bin/python3"
+    args: ["-c", "import sys; print('platform: ', sys.platform )"]
+    expectedOutput: ['linux']
+
   # import every module installed with the Python package
   - name: import_everything
     exitCode: 0
@@ -65,6 +71,7 @@ commandTests:
           'encodings.mbcs',
           'encodings.oem',
           'multiprocessing.popen_spawn_win32',
+          'test.libregrtest.win_utils',
           # depends on things not installed by default on Debian
           'dbm.gnu',
           'lib2to3.pgen2.conv',
