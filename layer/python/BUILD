@@ -17,6 +17,7 @@ load("//util:constants.bzl", "BASE_ARCHITECTURES", "PACKAGE")
     container_layer(
         name = arch,
         debs = [
+            PACKAGE[arch]["dash"],
             PACKAGE[arch]["libbz2-1.0"],
             PACKAGE[arch]["libdb5.3"],
             PACKAGE[arch]["libffi7"],
@@ -32,6 +33,7 @@ load("//util:constants.bzl", "BASE_ARCHITECTURES", "PACKAGE")
             PACKAGE[arch]["python3-distutils"],
             PACKAGE[arch]["python3.8-minimal"],
             PACKAGE[arch]["readline-common"],
+            PACKAGE[arch]["libcrypt1"],
         ],
         symlinks = {
             "/usr/bin/python": "/usr/bin/python3.8",

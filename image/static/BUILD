@@ -1,6 +1,5 @@
 load("@io_bazel_rules_docker//container:container.bzl", "container_image")
 load("//util:constants.bzl", "BASE_ARCHITECTURES", "NONROOT")
-load(":test.bzl", "test_container")
 
 [
     container_image(
@@ -31,5 +30,3 @@ load(":test.bzl", "test_container")
     )
     for arch in BASE_ARCHITECTURES
 ]
-
-test_container(arch = "amd64")
