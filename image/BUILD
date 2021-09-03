@@ -8,7 +8,7 @@ IMAGES = {}
 
 IMAGES.update(
     {
-        "{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/" + kind + ":" + arch : "//image/" + kind + ":" + arch
+        "{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/" + kind + ":" + arch: "//image/" + kind + ":" + arch
         for arch in BASE_ARCHITECTURES
         for kind in [
             "static",
@@ -21,7 +21,7 @@ IMAGES.update(
 
 IMAGES.update(
     {
-        "{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/" + kind + ":" + arch + "_debug" : "//image/" + kind + ":" + arch + "_debug"
+        "{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/" + kind + ":" + arch + "_debug": "//image/" + kind + ":" + arch + "_debug"
         for arch in BASE_ARCHITECTURES
         for kind in [
             "static",
