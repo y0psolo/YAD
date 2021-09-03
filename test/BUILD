@@ -11,8 +11,9 @@ load("//util:constants.bzl", "BASE_ARCHITECTURES")
     )
     for arch in BASE_ARCHITECTURES
 ]
+
 [
-container_test(
+    container_test(
         name = arch + "_static_debug_test",
         configs = ["static/debug.yaml"],
         image = "//image/static:" + arch + "_debug",
@@ -24,15 +25,22 @@ container_test(
 [
     container_test(
         name = arch + "_base_test",
-        configs = ["base/base.yaml", "static/base.yaml"],
+        configs = [
+            "base/base.yaml",
+            "static/base.yaml",
+        ],
         image = "//image/base:" + arch,
     )
     for arch in BASE_ARCHITECTURES
 ]
+
 [
     container_test(
         name = arch + "_base_debug_test",
-        configs = ["base/base.yaml", "static/debug.yaml"],
+        configs = [
+            "base/base.yaml",
+            "static/debug.yaml",
+        ],
         image = "//image/base:" + arch + "_debug",
     )
     for arch in BASE_ARCHITECTURES
@@ -42,15 +50,22 @@ container_test(
 [
     container_test(
         name = arch + "_cc_test",
-        configs = ["base/base.yaml", "static/base.yaml"],
+        configs = [
+            "base/base.yaml",
+            "static/base.yaml",
+        ],
         image = "//image/cc:" + arch,
     )
     for arch in BASE_ARCHITECTURES
 ]
+
 [
     container_test(
         name = arch + "_cc_debug_test",
-        configs = ["base/base.yaml", "static/debug.yaml"],
+        configs = [
+            "base/base.yaml",
+            "static/debug.yaml",
+        ],
         image = "//image/cc:" + arch + "_debug",
     )
     for arch in BASE_ARCHITECTURES
@@ -65,10 +80,20 @@ container_test(
         main_class = "testdata.CheckCerts",
     )
     for arch in BASE_ARCHITECTURES
-    for jre in ["openjdk", "azul"]
-    for version in ["8", "11"]
-    for weight in ["slim", "fat"]
+    for jre in [
+        "openjdk",
+        "azul",
+    ]
+    for version in [
+        "8",
+        "11",
+    ]
+    for weight in [
+        "slim",
+        "fat",
+    ]
 ]
+
 [
     java_image(
         name = arch + "_" + jre + "_" + weight + "_" + version + "_checkencoding",
@@ -77,45 +102,96 @@ container_test(
         main_class = "testdata.CheckEncoding",
     )
     for arch in BASE_ARCHITECTURES
-    for jre in ["openjdk", "azul"]
-    for version in ["8", "11"]
-    for weight in ["slim", "fat"]
+    for jre in [
+        "openjdk",
+        "azul",
+    ]
+    for version in [
+        "8",
+        "11",
+    ]
+    for weight in [
+        "slim",
+        "fat",
+    ]
 ]
 
 # Run test on java image for static, base and java tests plan
 [
     container_test(
         name = arch + "_" + jre + "_" + weight + "_" + version + "_test",
-        configs = ["java/" + jre + ".yaml", "base/base.yaml", "static/base.yaml"],
+        configs = [
+            "java/" + jre + ".yaml",
+            "base/base.yaml",
+            "static/base.yaml",
+        ],
         image = "//image/java:" + arch + "_" + jre + "_" + weight + "_" + version,
     )
     for arch in BASE_ARCHITECTURES
-    for jre in ["openjdk", "azul"]
-    for version in ["8", "11"]
-    for weight in ["slim", "fat"]
+    for jre in [
+        "openjdk",
+        "azul",
+    ]
+    for version in [
+        "8",
+        "11",
+    ]
+    for weight in [
+        "slim",
+        "fat",
+    ]
 ]
+
 [
     container_test(
         name = arch + "_" + jre + "_" + weight + "_" + version + "_sh_test",
-        configs = ["java/" + jre + "_sh.yaml", "base/base.yaml", "static/sh.yaml"],
+        configs = [
+            "java/" + jre + "_sh.yaml",
+            "base/base.yaml",
+            "static/sh.yaml",
+        ],
         image = "//image/java:" + arch + "_" + jre + "_" + weight + "_" + version + "_sh",
     )
     for arch in BASE_ARCHITECTURES
-    for jre in ["openjdk", "azul"]
-    for version in ["8", "11"]
-    for weight in ["slim", "fat"]
+    for jre in [
+        "openjdk",
+        "azul",
+    ]
+    for version in [
+        "8",
+        "11",
+    ]
+    for weight in [
+        "slim",
+        "fat",
+    ]
 ]
+
 [
     container_test(
         name = arch + "_" + jre + "_" + weight + "_" + version + "_debug_test",
-        configs = ["java/" + jre + "_debug.yaml", "base/base.yaml", "static/debug.yaml"],
+        configs = [
+            "java/" + jre + "_debug.yaml",
+            "base/base.yaml",
+            "static/debug.yaml",
+        ],
         image = "//image/java:" + arch + "_" + jre + "_" + weight + "_" + version + "_debug",
     )
     for arch in BASE_ARCHITECTURES
-    for jre in ["openjdk", "azul"]
-    for version in ["8", "11"]
-    for weight in ["slim", "fat"]
+    for jre in [
+        "openjdk",
+        "azul",
+    ]
+    for version in [
+        "8",
+        "11",
+    ]
+    for weight in [
+        "slim",
+        "fat",
+    ]
 ]
+
 # Run test on java image for program test plan
 [
     container_test(
@@ -124,10 +200,20 @@ container_test(
         image = "//test:" + arch + "_" + jre + "_" + weight + "_" + version + "_checkcerts",
     )
     for arch in BASE_ARCHITECTURES
-    for jre in ["openjdk", "azul"]
-    for version in ["8", "11"]
-    for weight in ["slim", "fat"]
+    for jre in [
+        "openjdk",
+        "azul",
+    ]
+    for version in [
+        "8",
+        "11",
+    ]
+    for weight in [
+        "slim",
+        "fat",
+    ]
 ]
+
 [
     container_test(
         name = arch + "_" + jre + "_" + weight + "_" + version + "_checkencoding_test",
@@ -135,9 +221,18 @@ container_test(
         image = "//test:" + arch + "_" + jre + "_" + weight + "_" + version + "_checkencoding",
     )
     for arch in BASE_ARCHITECTURES
-    for jre in ["openjdk", "azul"]
-    for version in ["8", "11"]
-    for weight in ["slim", "fat"]
+    for jre in [
+        "openjdk",
+        "azul",
+    ]
+    for version in [
+        "8",
+        "11",
+    ]
+    for weight in [
+        "slim",
+        "fat",
+    ]
 ]
 
 # Run test on python image
@@ -145,15 +240,24 @@ container_test(
 [
     container_test(
         name = arch + "_python_test",
-        configs = ["base/base.yaml", "static/python.yaml", "python/python.yaml"],
+        configs = [
+            "base/base.yaml",
+            "python/python.yaml",
+            "static/python.yaml",
+        ],
         image = "//image/python:" + arch,
     )
     for arch in BASE_ARCHITECTURES
 ]
+
 [
     container_test(
         name = arch + "_python_debug_test",
-        configs = ["base/base.yaml", "static/debug.yaml", "python/python.yaml"],
+        configs = [
+            "base/base.yaml",
+            "python/python.yaml",
+            "static/debug.yaml",
+        ],
         image = "//image/python:" + arch + "_debug",
     )
     for arch in BASE_ARCHITECTURES

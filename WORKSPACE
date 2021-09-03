@@ -92,7 +92,7 @@ http_file(
 # Get Java Azul package
 http_archive(
     name = "jre-8-azul-amd64",
-    build_file = "BUILD.azul",
+    build_file = "BUILD.azul_8_amd64",
     sha256 = "9a0d0eb753c3592faca48d5e9b84bcf5b92301fd09081b191623cb8e478349d7",
     strip_prefix = "zulu8.56.0.21-ca-jre8.0.302-linux_x64",
     urls = ["https://cdn.azul.com/zulu/bin/zulu8.56.0.21-ca-jre8.0.302-linux_x64.tar.gz"],
@@ -100,7 +100,7 @@ http_archive(
 
 http_archive(
     name = "jre-11-azul-amd64",
-    build_file = "BUILD.azul",
+    build_file = "BUILD.azul_11_amd64",
     sha256 = "c4a41ea4b963796d5a105d6ef015003e3a0aaea830733c4755b22a507f17e741",
     strip_prefix = "zulu11.50.19-ca-jre11.0.12-linux_x64",
     urls = ["https://cdn.azul.com/zulu/bin/zulu11.50.19-ca-jre11.0.12-linux_x64.tar.gz"],
@@ -108,7 +108,7 @@ http_archive(
 
 http_archive(
     name = "jre-8-azul-arm64",
-    build_file = "BUILD.azul",
+    build_file = "BUILD.azul_8_arm64",
     sha256 = "cc917670e2622dbbc243b6f96c9c199de4ed9e5d541acc68abcb9b378013a38c",
     strip_prefix = "zulu8.56.0.23-ca-jdk8.0.302-linux_aarch64/jre",
     urls = ["https://cdn.azul.com/zulu-embedded/bin/zulu8.56.0.23-ca-jdk8.0.302-linux_aarch64.tar.gz"],
@@ -116,7 +116,7 @@ http_archive(
 
 http_archive(
     name = "jre-11-azul-arm64",
-    build_file = "BUILD.azul",
+    build_file = "BUILD.azul_11_arm64",
     sha256 = "61254688067454d3ccf0ef25993b5dcab7b56c8129e53b73566c28a8dd4d48fb",
     strip_prefix = "zulu11.50.19-ca-jdk11.0.12-linux_aarch64",
     urls = ["https://cdn.azul.com/zulu-embedded/bin/zulu11.50.19-ca-jdk11.0.12-linux_aarch64.tar.gz"],

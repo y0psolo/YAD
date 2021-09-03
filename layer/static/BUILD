@@ -133,6 +133,7 @@ pkg_tar(
             PACKAGE[arch]["netbase"],
             PACKAGE[arch]["tzdata"],
         ],
+        empty_dirs = ["/home"],
         env = {
             "PATH": "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
             # allows openssl to find the certificates by default
@@ -140,7 +141,6 @@ pkg_tar(
             # which would probably need to be run inside the container
             "SSL_CERT_FILE": "/etc/ssl/certs/ca-certificates.crt",
         },
-        empty_dirs = ["/home"],
         tars = [
             ":passwd",
             ":group_tar",
