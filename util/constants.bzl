@@ -18,6 +18,11 @@ PACKAGE_VERSIONS = {
 BASE_ARCHITECTURES = ["amd64", "arm64"]
 
 JRE_VERSIONS = ["8", "11"]
+NODEJS_VERSIONS = ["14", "16"]
+NODEJS_VERSIONS_MAPPINGS = {
+    "14": "14.17.6",
+    "16": "16.8.0",
+}
 
 # ID mapping
 NOBODY = 65534

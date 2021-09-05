@@ -1,6 +1,7 @@
 load("@io_bazel_rules_docker//contrib:test.bzl", "container_test")
+load("@io_bazel_rules_docker//container:container.bzl", "container_image")
 load("@io_bazel_rules_docker//java:image.bzl", "java_image")
-load("//util:constants.bzl", "BASE_ARCHITECTURES")
+load("//util:constants.bzl", "BASE_ARCHITECTURES", "JRE_VERSIONS", "NODEJS_VERSIONS")
 
 # Run test on static iamges for static test plan
 [
@@ -84,10 +85,7 @@ load("//util:constants.bzl", "BASE_ARCHITECTURES")
         "openjdk",
         "azul",
     ]
-    for version in [
-        "8",
-        "11",
-    ]
+    for version in JRE_VERSIONS
     for weight in [
         "slim",
         "fat",
@@ -106,10 +104,7 @@ load("//util:constants.bzl", "BASE_ARCHITECTURES")
         "openjdk",
         "azul",
     ]
-    for version in [
-        "8",
-        "11",
-    ]
+    for version in JRE_VERSIONS
     for weight in [
         "slim",
         "fat",
@@ -132,10 +127,7 @@ load("//util:constants.bzl", "BASE_ARCHITECTURES")
         "openjdk",
         "azul",
     ]
-    for version in [
-        "8",
-        "11",
-    ]
+    for version in JRE_VERSIONS
     for weight in [
         "slim",
         "fat",
@@ -157,10 +149,7 @@ load("//util:constants.bzl", "BASE_ARCHITECTURES")
         "openjdk",
         "azul",
     ]
-    for version in [
-        "8",
-        "11",
-    ]
+    for version in JRE_VERSIONS
     for weight in [
         "slim",
         "fat",
@@ -182,10 +171,7 @@ load("//util:constants.bzl", "BASE_ARCHITECTURES")
         "openjdk",
         "azul",
     ]
-    for version in [
-        "8",
-        "11",
-    ]
+    for version in JRE_VERSIONS
     for weight in [
         "slim",
         "fat",
@@ -204,10 +190,7 @@ load("//util:constants.bzl", "BASE_ARCHITECTURES")
         "openjdk",
         "azul",
     ]
-    for version in [
-        "8",
-        "11",
-    ]
+    for version in JRE_VERSIONS
     for weight in [
         "slim",
         "fat",
@@ -225,10 +208,7 @@ load("//util:constants.bzl", "BASE_ARCHITECTURES")
         "openjdk",
         "azul",
     ]
-    for version in [
-        "8",
-        "11",
-    ]
+    for version in JRE_VERSIONS
     for weight in [
         "slim",
         "fat",
@@ -243,7 +223,7 @@ load("//util:constants.bzl", "BASE_ARCHITECTURES")
         configs = [
             "base/base.yaml",
             "python/python.yaml",
-            "static/python.yaml",
+            "static/sh.yaml",
         ],
         image = "//image/python:" + arch,
     )
@@ -261,4 +241,67 @@ load("//util:constants.bzl", "BASE_ARCHITECTURES")
         image = "//image/python:" + arch + "_debug",
     )
     for arch in BASE_ARCHITECTURES
+]
+
+# Run test on nodejs image for static, base and nodejs tests plan
+[
+    container_test(
+        name = arch + "_nodejs_" + version + "_test",
+        configs = [
+            "base/base.yaml",
+            "static/base.yaml",
+        ],
+        image = "//image/nodejs:" + arch + "_" + version,
+    )
+    for arch in BASE_ARCHITECTURES
+    for version in NODEJS_VERSIONS
+]
+
+[
+    container_test(
+        name = arch + "_nodejs_" + version + "_sh_test",
+        configs = [
+            "base/base.yaml",
+            "static/sh.yaml",
+        ],
+        image = "//image/nodejs:" + arch + "_" + version + "_sh",
+    )
+    for arch in BASE_ARCHITECTURES
+    for version in NODEJS_VERSIONS
+]
+
+[
+    container_test(
+        name = arch + "_nodejs_" + version + "_debug_test",
+        configs = [
+            "base/base.yaml",
+            "static/debug.yaml",
+        ],
+        image = "//image/nodejs:" + arch + "_" + version + "_debug",
+    )
+    for arch in BASE_ARCHITECTURES
+    for version in NODEJS_VERSIONS
+]
+
+[
+    container_image(
+        name = arch + "_nodejs_" + version + "_welcome",
+        base = "//image/nodejs:" + arch + "_" + version,
+        files = ["nodejs/welcome.ts","nodejs/cat.ts", "nodejs/text",],
+        directory = "/home/nonroot",
+    )
+    for arch in BASE_ARCHITECTURES
+    for version in NODEJS_VERSIONS
+]
+
+[
+    container_test(
+        name = arch + "_nodejs_" + version + "_welcome_test",
+        configs = [
+            "nodejs/welcome.yaml",
+        ],
+        image = ":" + arch + "_nodejs_" + version + "_welcome",
+    )
+    for arch in BASE_ARCHITECTURES
+    for version in NODEJS_VERSIONS
 ]
