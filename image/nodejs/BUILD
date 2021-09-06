@@ -1,44 +1,33 @@
 load("@io_bazel_rules_docker//container:container.bzl", "container_image")
-load("//util:constants.bzl", "BASE_ARCHITECTURES", "JRE_VERSIONS", "NONROOT")
+load("//util:constants.bzl", "BASE_ARCHITECTURES", "NODEJS_VERSIONS", "NONROOT")
 
-# Iteration over all java versions
+# Iteration over all nodejs versions
 [
     container_image(
-        name = arch + "_" + jre + "_" + weight + "_" + version,
+        name = arch + "_" + version,
         architecture = arch,
         entrypoint = [
             "/usr/bin/tini",
             "--",
-            "/usr/bin/java",
-            "-jar",
+            "/usr/bin/node",
         ],
         layers = [
             "//layer/static:" + arch,
             "//layer/base:" + arch,
             "//layer/cc:" + arch,
-            "//layer/common:" + arch,
-            "//layer/java:" + arch + "_" + weight,
-            "//layer/java:" + arch + "_" + jre + "_" + version,
+            "//layer/nodejs:" + arch + "_" + version,
         ],
         user = "%d" % NONROOT,
         visibility = ["//:__subpackages__"],
         workdir = "/home/nonroot",
     )
-    for version in JRE_VERSIONS
+    for version in NODEJS_VERSIONS
     for arch in BASE_ARCHITECTURES
-    for jre in [
-        "openjdk",
-        "azul",
-    ]
-    for weight in [
-        "fat",
-        "slim",
-    ]
 ]
 
 [
     container_image(
-        name = arch + "_" + jre + "_" + weight + "_" + version + "_sh",
+        name = arch + "_" + version + "_sh",
         architecture = arch,
         entrypoint = [
             "/bin/sh",
@@ -47,30 +36,20 @@ load("//util:constants.bzl", "BASE_ARCHITECTURES", "JRE_VERSIONS", "NONROOT")
             "//layer/static:" + arch,
             "//layer/base:" + arch,
             "//layer/cc:" + arch,
-            "//layer/common:" + arch,
-            "//layer/java:" + arch + "_" + weight,
-            "//layer/java:" + arch + "_" + jre + "_" + version,
             "//layer/common:" + arch + "_sh",
+            "//layer/nodejs:" + arch + "_" + version,
         ],
         user = "%d" % NONROOT,
         visibility = ["//:__subpackages__"],
         workdir = "/home/nonroot",
     )
-    for version in JRE_VERSIONS
+    for version in NODEJS_VERSIONS
     for arch in BASE_ARCHITECTURES
-    for jre in [
-        "openjdk",
-        "azul",
-    ]
-    for weight in [
-        "fat",
-        "slim",
-    ]
 ]
 
 [
     container_image(
-        name = arch + "_" + jre + "_" + weight + "_" + version + "_debug",
+        name = arch + "_" + version + "_debug",
         architecture = arch,
         entrypoint = ["/bin/sh"],
         layers = [
@@ -78,22 +57,12 @@ load("//util:constants.bzl", "BASE_ARCHITECTURES", "JRE_VERSIONS", "NONROOT")
             "//layer/static:" + arch + "_debug",
             "//layer/base:" + arch,
             "//layer/cc:" + arch,
-            "//layer/common:" + arch,
-            "//layer/java:" + arch + "_" + weight,
-            "//layer/java:" + arch + "_" + jre + "_" + version,
+            "//layer/nodejs:" + arch + "_" + version,
         ],
         user = "%d" % NONROOT,
         visibility = ["//:__subpackages__"],
         workdir = "/home/nonroot",
     )
-    for version in JRE_VERSIONS
+    for version in NODEJS_VERSIONS
     for arch in BASE_ARCHITECTURES
-    for jre in [
-        "openjdk",
-        "azul",
-    ]
-    for weight in [
-        "fat",
-        "slim",
-    ]
 ]

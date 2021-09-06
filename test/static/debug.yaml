@@ -63,7 +63,6 @@ metadataTest:
       value: '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
     - key: 'SSL_CERT_FILE'
       value: '/etc/ssl/certs/ca-certificates.crt'
-  entrypoint: ["/bin/sh"]
   workdir: '/home/nonroot'
 fileContentTests:
 - name: 'known users'

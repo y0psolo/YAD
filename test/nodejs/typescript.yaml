@@ -1,0 +1,12 @@
+schemaVersion: "2.0.0"
+commandTests:
+  - name: nodejs_welcome
+    command: "/usr/bin/tini"
+    args: ["--", "/usr/bin/node", "welcome.ts"]
+    expectedOutput: ['Welcome to Nodejs!']
+    exitCode: 0
+  - name: nodejs_cat
+    command: "/usr/bin/tini"
+    args: ["--", "/usr/bin/node", "cat.ts", "text"]
+    expectedOutput: ['Hello World!']
+    exitCode: 0

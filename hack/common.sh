@@ -24,4 +24,12 @@ loop_over_image_tag() {
             $1 ${repo} ${tag}
         done
     done
+
+    for repo in nodejs
+    do 
+        for tag in 14 14_sh 14_debug 16 16_sh 16_debug
+        do
+            $1 ${repo} ${tag}
+        done
+    done
 }

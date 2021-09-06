@@ -1,6 +1,6 @@
 load("@io_bazel_rules_docker//container:container.bzl", "container_bundle")
 load("@io_bazel_rules_docker//contrib:push-all.bzl", "container_push")
-load("//util:constants.bzl", "BASE_ARCHITECTURES", "JRE_VERSIONS")
+load("//util:constants.bzl", "BASE_ARCHITECTURES", "JRE_VERSIONS", "NODEJS_VERSIONS")
 
 package(default_visibility = ["//visibility:public"])
 
@@ -45,6 +45,31 @@ IMAGES.update(
             "fat",
             "slim",
         ]
+        for mode in [
+            "_debug",
+            "_sh",
+            "",
+        ]
+    },
+)
+
+IMAGES.update(
+    {
+        "{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/nodejs:" + arch + "_" + version + mode: "//image/nodejs:" + arch + "_" + version + mode
+        for arch in BASE_ARCHITECTURES
+        for version in NODEJS_VERSIONS
+        for mode in [
+            "_debug",
+            "_sh",
+            "",
+        ]
+    },
+)
+
+IMAGES.update(
+    {
+        "{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/deno:" + mode: "//image/deno:" + arch + mode
+        for arch in ["amd64"]
         for mode in [
             "_debug",
             "_sh",

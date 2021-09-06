@@ -1,58 +1,60 @@
 schemaVersion: "2.0.0"
 commandTests:
   - name: version
-    command: "/usr/bin/python3"
-    args: ["--version"]
+    command: "/usr/bin/tini"
+    args: ["--", "/usr/bin/python3", "--version"]
     expectedOutput: ['Python 3\.[0-9]+\.[0-9]+']
   - name: symlink
-    command: "/usr/bin/python"
-    args: ["--version"]
+    command: "/usr/bin/tini"
+    args: ["--", "/usr/bin/python", "--version"]
     expectedOutput: ['Python 3\.[0-9]+\.[0-9]+']
   - name: hello
-    command: "/usr/bin/python3"
-    args: ["-c", "print('Hello World')"]
+    command: "/usr/bin/tini"
+    args: ["--", "/usr/bin/python3", "-c", "print('Hello World')"]
     expectedOutput: ['Hello World']
   # parts of the standard library assume /bin/sh exists via os.system and subprocess.Popen
   - name: use_shell
-    command: "/usr/bin/python3"
-    args: ["-c", "import subprocess, sys; subprocess.check_call(sys.executable + ' -h', shell=True)"]
+    command: "/usr/bin/tini"
+    args: ["--", "/usr/bin/python3", "-c", "import subprocess, sys; subprocess.check_call(sys.executable + ' -h', shell=True)"]
   # libraries like gunicorn and monotonic call glibc functions using ctypes
   - name: use_ctypes_glibc
-    command: "/usr/bin/python3"
-    args: ["-c", "import ctypes.util; ctypes.CDLL(ctypes.util.find_library('rt')).timer_create"]
+    command: "/usr/bin/tini"
+    args: ["--", "/usr/bin/python3", "-c", "import ctypes.util; ctypes.CDLL(ctypes.util.find_library('rt')).timer_create"]
     exitCode: 0
 
   # debian's default python3 includes a partial version of distutils causing virtualenv to fail
   # ensure we have the full version so virtualenvs work with distroless
   - name: distutils_works
-    command: "/usr/bin/python3"
-    args: ["-c", "import distutils.dist"]
+    command: "/usr/bin/tini"
+    args: ["--", "/usr/bin/python3", "-c", "import distutils.dist"]
     exitCode: 0
 
   # file names are UTF-8: default for modern Linux systems
   # The \xe9 backslash must be double-escaped to avoid YAML string parsing weirdness
   - name: filesystem_utf8
-    command: "/usr/bin/python3"
-    args: ["-c", "open(u'h\\xe9llo', 'w'); import sys; print(sys.getfilesystemencoding())"]
+    command: "/usr/bin/tini"
+    args: ["--", "/usr/bin/python3", "-c", "open(u'h\\xe9llo', 'w'); import sys; print(sys.getfilesystemencoding())"]
     expectedOutput: ['utf-8']
 
   # the print function should output UTF-8
   - name: print_utf8
-    command: "/usr/bin/python3"
-    args: ["-c", "print(u'h\\xe9llo.txt')"]
+    command: "/usr/bin/tini"
+    args: ["--", "/usr/bin/python3", "-c", "print(u'h\\xe9llo.txt')"]
     expectedOutput: ['h\xe9llo']
 
   # the print function should output UTF-8
   - name: print_platform
-    command: "/usr/bin/python3"
-    args: ["-c", "import sys; print('platform: ', sys.platform )"]
+    command: "/usr/bin/tini"
+    args: ["--", "/usr/bin/python3", "-c", "import sys; print('platform: ', sys.platform )"]
     expectedOutput: ['linux']
 
   # import every module installed with the Python package
   - name: import_everything
     exitCode: 0
-    command: "/usr/bin/python3"
+    command: "/usr/bin/tini"
     args:
+      - "--"
+      - "/usr/bin/python3"
       - "-c"
       # multi-line YAML string with Python script that imports all modules that are installed.
       # This ensures we have the right native library dependencies.

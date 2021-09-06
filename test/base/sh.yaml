@@ -4,6 +4,16 @@ fileExistenceTests:
   path: '/usr/bin/openssl'
   shouldExist: true
   isExecutableBy: 'other'
+  permissions: '-rwxr-xr-x'
+  uid: 0
+  gid: 0
+- name: tini
+  path: '/usr/bin/tini'
+  shouldExist: true
+  isExecutableBy: 'other'
+  permissions: '-rwxr-xr-x'
+  uid: 0
+  gid: 0
 commandTests:
 # Check that libssl finds the certificates
 - name: openssl verify google
