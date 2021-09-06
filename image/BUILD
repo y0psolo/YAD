@@ -66,6 +66,18 @@ IMAGES.update(
     },
 )
 
+IMAGES.update(
+    {
+        "{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/deno:" + arch + mode: "//image/deno:" + arch + mode
+        for arch in BASE_ARCHITECTURES
+        for mode in [
+            "_debug",
+            "_sh",
+            "",
+        ]
+    },
+)
+
 container_bundle(
     name = "all",
     images = IMAGES,
