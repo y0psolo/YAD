@@ -68,8 +68,8 @@ IMAGES.update(
 
 IMAGES.update(
     {
-        "{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/deno:" + arch + mode: "//image/deno:" + arch + mode
-        for arch in BASE_ARCHITECTURES
+        "{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/deno:" + mode: "//image/deno:" + arch + mode
+        for arch in "amd64"
         for mode in [
             "_debug",
             "_sh",

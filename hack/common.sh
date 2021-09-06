@@ -32,12 +32,4 @@ loop_over_image_tag() {
             $1 ${repo} ${tag}
         done
     done
-
-    for repo in deno
-    do 
-        for tag in latest sh debug
-        do
-            $1 ${repo} ${tag}
-        done
-    done
 }
