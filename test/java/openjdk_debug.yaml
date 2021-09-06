@@ -13,8 +13,8 @@ fileExistenceTests:
     isExecutableBy: 'other'
 commandTests:
   - name: java-symlink
-    command: "/usr/bin/java"
-    args: ["-version"]
+    command: "/usr/bin/tini"
+    args: ["--", "/usr/bin/java", "-version"]
     expectedError: ['openjdk version "[0-9]+\.[0-9]+\.[0-9_]+"']
 metadataTest:
   env:

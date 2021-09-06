@@ -154,3 +154,29 @@ http_archive(
     strip_prefix = "node-v16.8.0-linux-arm64/",
     urls = ["https://nodejs.org/dist/v16.8.0/node-v16.8.0-linux-arm64.tar.gz"],
 )
+
+# Get Deno archive
+http_archive(
+    name = "deno-amd64",
+    build_file = "BUILD.deno",
+    sha256 = "3587cfe0b1d3774a2f026bf27e3033b3da61ab994e0cbe3e959bd21664d0562b",
+    type = "zip",
+    urls = ["https://github.com/denoland/deno/releases/download/v1.13.2/deno-x86_64-unknown-linux-gnu.zip"],
+)
+
+# Tini executable
+http_file(
+    name = "tini_amd64",
+    downloaded_file_path = "tini",
+    executable = True,
+    sha256 = "93dcc18adc78c65a028a84799ecf8ad40c936fdfc5f2a57b1acda5a8117fa82c",
+    urls = ["https://github.com/krallin/tini/releases/download/v0.19.0/tini-amd64"],
+)
+
+http_file(
+    name = "tini_arm64",
+    downloaded_file_path = "tini",
+    executable = True,
+    sha256 = "07952557df20bfd2a95f9bef198b445e006171969499a1d361bd9e6f8e5e0e81",
+    urls = ["https://github.com/krallin/tini/releases/download/v0.19.0/tini-arm64"],
+)

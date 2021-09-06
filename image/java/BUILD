@@ -7,6 +7,8 @@ load("//util:constants.bzl", "BASE_ARCHITECTURES", "JRE_VERSIONS", "NONROOT")
         name = arch + "_" + jre + "_" + weight + "_" + version,
         architecture = arch,
         entrypoint = [
+            "/usr/bin/tini",
+            "--",
             "/usr/bin/java",
             "-jar",
         ],

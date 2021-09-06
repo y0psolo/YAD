@@ -7,6 +7,8 @@ load("//util:constants.bzl", "BASE_ARCHITECTURES", "NODEJS_VERSIONS", "NONROOT")
         name = arch + "_" + version,
         architecture = arch,
         entrypoint = [
+            "/usr/bin/tini",
+            "--",
             "/usr/bin/node",
         ],
         layers = [

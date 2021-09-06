@@ -2,8 +2,11 @@ schemaVersion: "2.0.0"
 commandTests:
   - name: connect_to_https_google_com
     # This is a bit ugly because structure tests can't test the default entrypoint yet.
-    command: "/usr/bin/java"
-    args: ["-cp",
-           "/app/yad/test/*",
-           "testdata.CheckCerts"]
+    command: "/usr/bin/tini"
+    args:
+      - "--"
+      - "/usr/bin/java"
+      - "-cp"
+      - "/app/yad/test/*"
+      - "testdata.CheckCerts"
     expectedOutput: ['Successfully connected: 200']

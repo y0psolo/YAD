@@ -2,12 +2,16 @@ schemaVersion: "2.0.0"
 commandTests:
   - name: check_encoding
     # This is a bit ugly because structure tests can't test the default entrypoint yet.
-    command: "/usr/bin/java"
-    args: ["-cp",
-           "/app/yad/test/*",
-           "testdata.CheckEncoding"]
-    expectedOutput: ['LANG=C.UTF-8',
-                     'Locale.getDefault\(\)=en',
-                     'Charset.defaultCharset\(\)=UTF-8',
-                     'file.encoding=UTF-8',
-                     'sun.jnu.encoding=UTF-8']
+    command: "/usr/bin/tini"
+    args:
+      - "--"
+      - "/usr/bin/java"
+      - "-cp"
+      - "/app/yad/test/*"
+      - "testdata.CheckEncoding"
+    expectedOutput: 
+      - 'LANG=C.UTF-8'
+      - 'Locale.getDefault\(\)=en'
+      - 'Charset.defaultCharset\(\)=UTF-8'
+      - 'file.encoding=UTF-8'
+      - 'sun.jnu.encoding=UTF-8'

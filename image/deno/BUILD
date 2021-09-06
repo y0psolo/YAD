@@ -1,6 +1,7 @@
 load("@io_bazel_rules_docker//container:container.bzl", "container_image")
 load("//util:constants.bzl", "BASE_ARCHITECTURES", "NONROOT")
 
+# TODO: Add arm64 binaries for linux. Need an offical compiled target
 [
     container_image(
         name = arch,
@@ -8,20 +9,40 @@ load("//util:constants.bzl", "BASE_ARCHITECTURES", "NONROOT")
         entrypoint = [
             "/usr/bin/tini",
             "--",
-            "/usr/bin/python3",
+            "/usr/bin/deno",
         ],
         layers = [
             "//layer/static:" + arch,
             "//layer/base:" + arch,
             "//layer/cc:" + arch,
-            "//layer/common:" + arch,
-            "//layer/python:" + arch,
+            "//layer/deno:" + arch,
         ],
         user = "%d" % NONROOT,
         visibility = ["//:__subpackages__"],
         workdir = "/home/nonroot",
     )
-    for arch in BASE_ARCHITECTURES
+    for arch in ["amd64"]
+]
+
+[
+    container_image(
+        name = arch + "_sh",
+        architecture = arch,
+        entrypoint = [
+            "/bin/sh",
+        ],
+        layers = [
+            "//layer/static:" + arch,
+            "//layer/base:" + arch,
+            "//layer/cc:" + arch,
+            "//layer/common:" + arch + "_sh",
+            "//layer/deno:" + arch,
+        ],
+        user = "%d" % NONROOT,
+        visibility = ["//:__subpackages__"],
+        workdir = "/home/nonroot",
+    )
+    for arch in ["amd64"]
 ]
 
 [
@@ -31,15 +52,14 @@ load("//util:constants.bzl", "BASE_ARCHITECTURES", "NONROOT")
         entrypoint = ["/bin/sh"],
         layers = [
             "//layer/static:" + arch,
+            "//layer/static:" + arch + "_debug",
             "//layer/base:" + arch,
             "//layer/cc:" + arch,
-            "//layer/common:" + arch,
-            "//layer/python:" + arch,
-            "//layer/static:" + arch + "_debug",
+            "//layer/deno:" + arch,
         ],
         user = "%d" % NONROOT,
         visibility = ["//:__subpackages__"],
         workdir = "/home/nonroot",
     )
-    for arch in BASE_ARCHITECTURES
+    for arch in ["amd64"]
 ]
