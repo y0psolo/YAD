@@ -21,5 +21,5 @@ echo $JRE11_URL
 
 bazel run //tools/update_workspace:update_workspace -- -workspace $SCRIPTPATH/../WORKSPACE -rule jre-8-azul-amd64 -url $JRE8_URL
 bazel run //tools/update_workspace:update_workspace -- -workspace $SCRIPTPATH/../WORKSPACE -rule jre-11-azul-amd64 -url $JRE11_URL
-sed -i -r "s/(\"8\": \")[0-9.]+(\",)/\1$JRE8_VERSION\2/g" $SCRIPTPATH/../azul.bzl
-sed -i -r "s/(\"11\": \")[0-9.]+(\",)/\1$JRE11_VERSION\2/g" $SCRIPTPATH/../azul.bzl
+sed -i -r "s/(\"8\": \")[0-9.]+(\",)/\1$JRE8_VERSION\2/g" $SCRIPTPATH/../util/constants.bzl
+sed -i -r "s/(\"11\": \")[0-9.]+(\",)/\1$JRE11_VERSION\2/g" $SCRIPTPATH/../util/constants.bzl
