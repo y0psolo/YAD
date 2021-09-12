@@ -1,7 +1,6 @@
 load("@bazel_tools//tools/build_defs/pkg:pkg.bzl", "pkg_tar")
 load("@io_bazel_rules_docker//container:container.bzl", "container_layer")
-load("//:azul.bzl", "AZUL_VERSIONS_MAPPING")
-load("//util:constants.bzl", "BASE_ARCHITECTURES", "JRE_VERSIONS", "PACKAGE", "PACKAGE_VERSIONS")
+load("//util:constants.bzl", "BASE_ARCHITECTURES", "JRE_VERSIONS", "PACKAGE", "PACKAGE_VERSIONS", "AZUL_VERSIONS_MAPPING")
 load("//util:jre_ver.bzl", "jre_ver")
 
 # Fat layer to all Java image

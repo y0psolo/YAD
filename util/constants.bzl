@@ -29,3 +29,8 @@ NOBODY = 65534
 NONROOT = 65532
 
 DENO_VERSION = "1.13.2"
+
+AZUL_VERSIONS_MAPPING = {
+    "11": "11.0.12",
+    "8": "8.0.302",
+}
