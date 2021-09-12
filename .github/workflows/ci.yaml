@@ -18,7 +18,9 @@ jobs:
         uses: actions/cache@v2
         with:
           path: "~/.cache/bazel"
-          key: bazel
+          key: ${{ runner.os }}-bazel-${{ hashFiles('**/BUILD', '**/*.bzl', 'WORKSPACE') }}
+          restore-keys: |
+            ${{ runner.os }}-bazel-
       - name: bazel build
         run: bazel build //image:all
   test:
@@ -40,7 +42,10 @@ jobs:
         uses: actions/cache@v2
         with:
           path: "~/.cache/bazel"
-          key: bazel
+          key: ${{ runner.os }}-bazel-test-${{ hashFiles('**/BUILD', '**/*.bzl', 'WORKSPACE') }}
+          restore-keys: |
+            ${{ runner.os }}-bazel-test-
+            ${{ runner.os }}-bazel-
       - name: bazel test
         run: bazel test //test:*
       - uses: actions/upload-artifact@v2

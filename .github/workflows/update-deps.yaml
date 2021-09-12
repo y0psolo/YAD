@@ -18,7 +18,9 @@ jobs:
         uses: actions/cache@v2
         with:
           path: "~/.cache/bazel"
-          key: bazel
+          key: ${{ runner.os }}-bazel-${{ hashFiles('**/BUILD', '**/*.bzl', 'WORKSPACE') }}
+          restore-keys: |
+            ${{ runner.os }}-bazel-
       - name: Run update script
         run: bazel run :update_deb_packages
       - name: Run ldcache update script
