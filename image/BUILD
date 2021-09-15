@@ -47,7 +47,6 @@ IMAGES.update(
         ]
         for mode in [
             "_debug",
-            "_sh",
             "",
         ]
     },
@@ -60,7 +59,6 @@ IMAGES.update(
         for version in NODEJS_VERSIONS
         for mode in [
             "_debug",
-            "_sh",
             "",
         ]
     },
@@ -72,7 +70,6 @@ IMAGES.update(
         for arch in ["amd64"]
         for mode in [
             "_debug",
-            "_sh",
             "",
         ]
     },

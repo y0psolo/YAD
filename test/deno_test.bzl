@@ -18,18 +18,6 @@ def deno_test():
 
     [
         container_test(
-            name = arch + "_deno_sh_test",
-            configs = [
-                "base/base.yaml",
-                "static/sh.yaml",
-            ],
-            image = "//image/deno:" + arch + "_sh",
-        )
-        for arch in ["amd64"]
-    ]
-
-    [
-        container_test(
             name = arch + "_deno_debug_test",
             configs = [
                 "base/base.yaml",
