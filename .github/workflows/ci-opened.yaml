@@ -1,8 +1,8 @@
-name: Build
+name: First Build
 
 on:
   pull_request:
-    types: [synchronize]
+    types: [opened, reopened]
   workflow_dispatch:
 
 jobs:
@@ -19,7 +19,8 @@ jobs:
         with:
           path: "~/.cache/bazel"
           key: ${{ runner.os }}-bazel-${{ hashFiles('**/BUILD', '**/*.bzl', 'WORKSPACE') }}
-          restore-keys: |
-            ${{ runner.os }}-bazel-
+      - name: bazel clean
+        run: bazel clean
       - name: bazel build
         run: bazel build //image:all
+

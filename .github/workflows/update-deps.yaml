@@ -32,7 +32,15 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
-          commit-message: "Bumping ubuntu packages to last version"
-          title: "Bumping ubuntu packages to last version"
+          commit-message: "Bumping packages to last version"
+          title: "Bumping packages to last version"
           body: "Automatic scheduled task. Check packages version and bump them"
           branch: "update-deps"
+          author: y0psolo <lionel.herbet@gmail.com>
+          delete-branch: true
+          draft: true
+          labels: |
+            update
+            automated
+          assignees: y0psolo
+          reviewers: y0psolo
