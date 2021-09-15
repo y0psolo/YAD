@@ -27,28 +27,6 @@ load("//util:constants.bzl", "BASE_ARCHITECTURES", "NODEJS_VERSIONS", "NONROOT")
 
 [
     container_image(
-        name = arch + "_" + version + "_sh",
-        architecture = arch,
-        entrypoint = [
-            "/bin/sh",
-        ],
-        layers = [
-            "//layer/static:" + arch,
-            "//layer/base:" + arch,
-            "//layer/cc:" + arch,
-            "//layer/common:" + arch + "_sh",
-            "//layer/nodejs:" + arch + "_" + version,
-        ],
-        user = "%d" % NONROOT,
-        visibility = ["//:__subpackages__"],
-        workdir = "/home/nonroot",
-    )
-    for version in NODEJS_VERSIONS
-    for arch in BASE_ARCHITECTURES
-]
-
-[
-    container_image(
         name = arch + "_" + version + "_debug",
         architecture = arch,
         entrypoint = ["/bin/sh"],

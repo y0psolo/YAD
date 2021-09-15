@@ -20,15 +20,3 @@ load("//util:constants.bzl", "BASE_ARCHITECTURES", "PACKAGE")
     )
     for arch in BASE_ARCHITECTURES
 ]
-
-# Layer for sh POSIX compliant shell
-[
-    container_layer(
-        name = arch + "_sh",
-        debs = [
-            PACKAGE[arch]["dash"],
-        ],
-        visibility = ["//:__subpackages__"],
-    )
-    for arch in BASE_ARCHITECTURES
-]

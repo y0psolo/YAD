@@ -68,28 +68,6 @@ def java_test():
 
     [
         container_test(
-            name = arch + "_" + jre + "_" + weight + "_" + version + "_sh_test",
-            configs = [
-                "java/" + jre + "_sh.yaml",
-                "base/base.yaml",
-                "static/sh.yaml",
-            ],
-            image = "//image/java:" + arch + "_" + jre + "_" + weight + "_" + version + "_sh",
-        )
-        for arch in BASE_ARCHITECTURES
-        for jre in [
-            "openjdk",
-            "azul",
-        ]
-        for version in JRE_VERSIONS
-        for weight in [
-            "slim",
-            "fat",
-        ]
-    ]
-
-    [
-        container_test(
             name = arch + "_" + jre + "_" + weight + "_" + version + "_debug_test",
             configs = [
                 "java/" + jre + "_debug.yaml",

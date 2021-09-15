@@ -19,19 +19,6 @@ def nodejs_test():
 
     [
         container_test(
-            name = arch + "_nodejs_" + version + "_sh_test",
-            configs = [
-                "base/base.yaml",
-                "static/sh.yaml",
-            ],
-            image = "//image/nodejs:" + arch + "_" + version + "_sh",
-        )
-        for arch in BASE_ARCHITECTURES
-        for version in NODEJS_VERSIONS
-    ]
-
-    [
-        container_test(
             name = arch + "_nodejs_" + version + "_debug_test",
             configs = [
                 "base/base.yaml",

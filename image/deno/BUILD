@@ -26,27 +26,6 @@ load("//util:constants.bzl", "BASE_ARCHITECTURES", "NONROOT")
 
 [
     container_image(
-        name = arch + "_sh",
-        architecture = arch,
-        entrypoint = [
-            "/bin/sh",
-        ],
-        layers = [
-            "//layer/static:" + arch,
-            "//layer/base:" + arch,
-            "//layer/cc:" + arch,
-            "//layer/common:" + arch + "_sh",
-            "//layer/deno:" + arch,
-        ],
-        user = "%d" % NONROOT,
-        visibility = ["//:__subpackages__"],
-        workdir = "/home/nonroot",
-    )
-    for arch in ["amd64"]
-]
-
-[
-    container_image(
         name = arch + "_debug",
         architecture = arch,
         entrypoint = ["/bin/sh"],
