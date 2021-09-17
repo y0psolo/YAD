@@ -18,7 +18,7 @@ load("//util:constants.bzl", "BASE_ARCHITECTURES", "NODEJS_VERSIONS", "NONROOT")
             "//layer/nodejs:" + arch + "_" + version,
         ],
         user = "%d" % NONROOT,
-        visibility = ["//:__subpackages__"],
+        visibility = ["//visibility:public"],
         workdir = "/home/nonroot",
     )
     for version in NODEJS_VERSIONS
@@ -38,7 +38,7 @@ load("//util:constants.bzl", "BASE_ARCHITECTURES", "NODEJS_VERSIONS", "NONROOT")
             "//layer/nodejs:" + arch + "_" + version,
         ],
         user = "%d" % NONROOT,
-        visibility = ["//:__subpackages__"],
+        visibility = ["//visibility:public"],
         workdir = "/home/nonroot",
     )
     for version in NODEJS_VERSIONS

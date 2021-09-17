@@ -9,7 +9,7 @@ load("//util:constants.bzl", "BASE_ARCHITECTURES", "PACKAGE")
             PACKAGE[arch]["libgomp1"],
             PACKAGE[arch]["libstdc++6"],
         ],
-        visibility = ["//:__subpackages__"],
+        visibility = ["//visibility:public"],
     )
     for arch in BASE_ARCHITECTURES
 ]

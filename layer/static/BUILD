@@ -45,7 +45,7 @@ passwd_tar(
         ":nonroot_user",
     ],
     passwd_file_pkg_dir = "etc",
-    visibility = ["//visibility:public"],
+    visibility = ["//:__subpackages__"],
 )
 
 # Create /etc/group with the root, tty, and staff groups
@@ -95,7 +95,7 @@ pkg_tar(
     srcs = [":group"],
     mode = "0644",
     package_dir = "etc",
-    visibility = ["//visibility:public"],
+    visibility = ["//:__subpackages__"],
 )
 
 # Os release file
@@ -153,7 +153,7 @@ pkg_tar(
             ":os_release_tar",
             "//util:cacerts_" + arch + ".tar",
         ],
-        visibility = ["//:__subpackages__"],
+        visibility = ["//visibility:public"],
     )
     for arch in BASE_ARCHITECTURES
 ]
@@ -547,7 +547,7 @@ pkg_tar(
         tars = [
             ":" + arch + "busybox_tar",
         ],
-        visibility = ["//:__subpackages__"],
+        visibility = ["//visibility:public"],
     )
     for arch in BASE_ARCHITECTURES
 ]

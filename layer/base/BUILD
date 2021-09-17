@@ -23,7 +23,7 @@ load("//util:constants.bzl", "BASE_ARCHITECTURES", "PACKAGE")
         tars = [
             ":" + arch + "_tini_tar",
         ],
-        visibility = ["//:__subpackages__"],
+        visibility = ["//visibility:public"],
     )
     for arch in BASE_ARCHITECTURES
 ]

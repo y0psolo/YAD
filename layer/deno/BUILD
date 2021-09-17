@@ -30,7 +30,7 @@ load("//util:constants.bzl", "BASE_ARCHITECTURES", "DENO_VERSION")
         tars = [
             ":" + arch + "_tar",
         ],
-        visibility = ["//:__subpackages__"],
+        visibility = ["//visibility:public"],
     )
     for arch in ["amd64"]
 ]

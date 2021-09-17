@@ -18,7 +18,7 @@ load("//util:constants.bzl", "BASE_ARCHITECTURES", "NONROOT")
             "//layer/python:" + arch,
         ],
         user = "%d" % NONROOT,
-        visibility = ["//:__subpackages__"],
+        visibility = ["//visibility:public"],
         workdir = "/home/nonroot",
     )
     for arch in BASE_ARCHITECTURES
@@ -38,7 +38,7 @@ load("//util:constants.bzl", "BASE_ARCHITECTURES", "NONROOT")
             "//layer/static:" + arch + "_debug",
         ],
         user = "%d" % NONROOT,
-        visibility = ["//:__subpackages__"],
+        visibility = ["//visibility:public"],
         workdir = "/home/nonroot",
     )
     for arch in BASE_ARCHITECTURES

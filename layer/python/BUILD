@@ -8,7 +8,7 @@ load("//util:constants.bzl", "BASE_ARCHITECTURES", "PACKAGE")
         srcs = [":" + arch + "/ld.so.cache"],
         mode = "0644",
         package_dir = "etc",
-        visibility = ["//visibility:public"],
+        visibility = ["//:__subpackages__"],
     )
     for arch in BASE_ARCHITECTURES
 ]
@@ -44,7 +44,7 @@ load("//util:constants.bzl", "BASE_ARCHITECTURES", "PACKAGE")
             "//util:libcbin_" + arch + "_conf.tar",
             "ld_cache_" + arch,
         ],
-        visibility = ["//:__subpackages__"],
+        visibility = ["//visibility:public"],
     )
     for arch in BASE_ARCHITECTURES
 ]
