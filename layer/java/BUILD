@@ -111,7 +111,7 @@ load("//util:jre_ver.bzl", "jre_ver")
             ":" + arch + "_azul_" + version + "_lib_tar",
             ":" + arch + "_azul_" + version + "_bin_tar",
         ],
-        visibility = ["//:__subpackages__"],
+        visibility = ["//visibility:public"],
     )
     for version in JRE_VERSIONS
     for arch in BASE_ARCHITECTURES

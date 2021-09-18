@@ -11,7 +11,7 @@ load("//util:constants.bzl", "BASE_ARCHITECTURES", "NONROOT")
             "//layer/cc:" + arch,
         ],
         user = "%d" % NONROOT,
-        visibility = ["//:__subpackages__"],
+        visibility = ["//visibility:public"],
         workdir = "/home/nonroot",
     )
     for arch in BASE_ARCHITECTURES
@@ -29,7 +29,7 @@ load("//util:constants.bzl", "BASE_ARCHITECTURES", "NONROOT")
             "//layer/cc:" + arch,
         ],
         user = "%d" % NONROOT,
-        visibility = ["//:__subpackages__"],
+        visibility = ["//visibility:public"],
         workdir = "/home/nonroot",
     )
     for arch in BASE_ARCHITECTURES

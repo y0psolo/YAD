@@ -16,7 +16,7 @@ load("//util:constants.bzl", "BASE_ARCHITECTURES", "PACKAGE")
         tars = [
             "//util:libcbin_" + arch + "_locale.tar",
         ],
-        visibility = ["//:__subpackages__"],
+        visibility = ["//visibility:public"],
     )
     for arch in BASE_ARCHITECTURES
 ]

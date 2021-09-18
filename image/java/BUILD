@@ -21,7 +21,7 @@ load("//util:constants.bzl", "BASE_ARCHITECTURES", "JRE_VERSIONS", "NONROOT")
             "//layer/java:" + arch + "_" + jre + "_" + version,
         ],
         user = "%d" % NONROOT,
-        visibility = ["//:__subpackages__"],
+        visibility = ["//visibility:public"],
         workdir = "/home/nonroot",
     )
     for version in JRE_VERSIONS
@@ -51,7 +51,7 @@ load("//util:constants.bzl", "BASE_ARCHITECTURES", "JRE_VERSIONS", "NONROOT")
             "//layer/java:" + arch + "_" + jre + "_" + version,
         ],
         user = "%d" % NONROOT,
-        visibility = ["//:__subpackages__"],
+        visibility = ["//visibility:public"],
         workdir = "/home/nonroot",
     )
     for version in JRE_VERSIONS

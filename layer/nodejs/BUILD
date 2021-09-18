@@ -34,7 +34,7 @@ load("//util:constants.bzl", "BASE_ARCHITECTURES", "NODEJS_VERSIONS", "NODEJS_VE
         tars = [
             ":" + arch + "_" + version + "_tar",
         ],
-        visibility = ["//:__subpackages__"],
+        visibility = ["//visibility:public"],
     )
     for version in NODEJS_VERSIONS
     for arch in BASE_ARCHITECTURES
