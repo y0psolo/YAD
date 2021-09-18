@@ -34,8 +34,6 @@ jobs:
             ${{ runner.os }}-bazel-
       - name: bazel build
         run: bazel build //image:all
-      - name: bazel test
-        run: bazel test //test:*
       - uses: actions/upload-artifact@v2
         if: ${{ failure() }}
         with:
