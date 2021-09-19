@@ -3,10 +3,10 @@ load("@io_bazel_rules_docker//container:container.bzl", "container_layer")
 load("//util:constants.bzl", "BASE_ARCHITECTURES", "JRE_VERSIONS", "PACKAGE", "PACKAGE_VERSIONS", "AZUL_VERSIONS_MAPPING")
 load("//util:jre_ver.bzl", "jre_ver")
 
-# Fat layer to all Java image
+# Common layer to all Java image
 [
     container_layer(
-        name = arch + "_fat",
+        name = arch,
         debs = [
             PACKAGE[arch]["libjpeg-turbo8"],
             PACKAGE[arch]["libpng16-16"],
@@ -14,24 +14,6 @@ load("//util:jre_ver.bzl", "jre_ver")
             PACKAGE[arch]["libfreetype6"],
             PACKAGE[arch]["fonts-dejavu-core"],
             PACKAGE[arch]["fontconfig-config"],
-            PACKAGE[arch]["libfontconfig1"],
-        ],
-        tars = [
-            "//util:cacerts_java_" + arch + ".tar",
-        ],
-        visibility = ["//:__subpackages__"],
-    )
-    for arch in BASE_ARCHITECTURES
-]
-
-# Slim layer to all Java image
-[
-    container_layer(
-        name = arch + "_slim",
-        debs = [
-            PACKAGE[arch]["libpng16-16"],
-            PACKAGE[arch]["liblcms2-2"],
-            PACKAGE[arch]["fonts-dejavu-core"],
             PACKAGE[arch]["libfontconfig1"],
         ],
         tars = [

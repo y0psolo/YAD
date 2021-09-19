@@ -4,7 +4,7 @@ load("//util:constants.bzl", "BASE_ARCHITECTURES", "JRE_VERSIONS", "NONROOT")
 # Iteration over all java versions
 [
     container_image(
-        name = arch + "_" + jre + "_" + weight + "_" + version,
+        name = arch + "_" + jre + "_" + version,
         architecture = arch,
         entrypoint = [
             "/usr/bin/tini",
@@ -17,7 +17,7 @@ load("//util:constants.bzl", "BASE_ARCHITECTURES", "JRE_VERSIONS", "NONROOT")
             "//layer/base:" + arch,
             "//layer/cc:" + arch,
             "//layer/common:" + arch,
-            "//layer/java:" + arch + "_" + weight,
+            "//layer/java:" + arch,
             "//layer/java:" + arch + "_" + jre + "_" + version,
         ],
         user = "%d" % NONROOT,
@@ -30,15 +30,11 @@ load("//util:constants.bzl", "BASE_ARCHITECTURES", "JRE_VERSIONS", "NONROOT")
         "openjdk",
         "azul",
     ]
-    for weight in [
-        "fat",
-        "slim",
-    ]
 ]
 
 [
     container_image(
-        name = arch + "_" + jre + "_" + weight + "_" + version + "_debug",
+        name = arch + "_" + jre + "_" + version + "_debug",
         architecture = arch,
         entrypoint = ["/bin/sh"],
         layers = [
@@ -47,7 +43,7 @@ load("//util:constants.bzl", "BASE_ARCHITECTURES", "JRE_VERSIONS", "NONROOT")
             "//layer/base:" + arch,
             "//layer/cc:" + arch,
             "//layer/common:" + arch,
-            "//layer/java:" + arch + "_" + weight,
+            "//layer/java:" + arch,
             "//layer/java:" + arch + "_" + jre + "_" + version,
         ],
         user = "%d" % NONROOT,
@@ -59,9 +55,5 @@ load("//util:constants.bzl", "BASE_ARCHITECTURES", "JRE_VERSIONS", "NONROOT")
     for jre in [
         "openjdk",
         "azul",
-    ]
-    for weight in [
-        "fat",
-        "slim",
     ]
 ]
