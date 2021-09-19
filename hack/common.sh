@@ -1,7 +1,7 @@
 #!/bin/sh
 
 loop_over_image_tag() {
-    for repo in static base cc pyhon
+    for repo in static base cc python
     do
         for tag in latest debug
         do
