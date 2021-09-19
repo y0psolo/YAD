@@ -17,7 +17,7 @@ func convert(e build.Expr) []build.Expr {
 	return []build.Expr{e}
 }
 
-func updateWorkspaceRule(url_val string, rule *build.Rule) {
+func updateWorkspaceRule(url_val string, prefix_val string, rule *build.Rule) {
 	url := &build.StringExpr{Value: url_val}
 
 	rule.SetAttr("urls", &build.ListExpr{List: convert(url)})
@@ -35,16 +35,22 @@ func updateWorkspaceRule(url_val string, rule *build.Rule) {
 	}
 	h.Sum(nil)
 	rule.SetAttr("sha256", &build.StringExpr{Value: hex.EncodeToString(h.Sum(nil))})
+
+	if prefix_val != "" {
+		rule.SetAttr("strip_prefix", &build.StringExpr{Value: prefix_val})
+	}
 }
 
 func main() {
 	var rule string
 	var url_value string
 	var workspace string
+	var prefix string
 
 	flag.StringVar(&rule, "rule", "", "Name of the rule to update")
 	flag.StringVar(&url_value, "url", "", "Url to be replaced")
 	flag.StringVar(&workspace, "workspace", "", "WORKSPACE to be updated")
+	flag.StringVar(&prefix, "prefix", "", "Strip prefix to be replaced")
 	flag.Parse()
 
 	workspacefile, err := os.Open(workspace)
@@ -64,7 +70,7 @@ func main() {
 
 	for _, r := range f.Rules("") {
 		if r.Name() == rule {
-			updateWorkspaceRule(url_value, r)
+			updateWorkspaceRule(url_value, prefix, r)
 		}
 	}
 
