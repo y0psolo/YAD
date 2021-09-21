@@ -11,8 +11,8 @@ scan_image() {
     then
         _suffix="_$2"
     fi
-    trivy image -o $SCRIPTPATH/../security/sarif/$1_$2.sarif --format template --template "@contrib/sarif.tpl" ${REPO}/$1:$2
-    trivy image -o $SCRIPTPATH/../security/html/$1_$2.html --format template --template "@contrib/html.tpl" ${REPO}/$1:$2
+    docker run --rm -v /tmp/.cache/:/root/.cache/ -v $SCRIPTPATH/../security/sarif:/mnt/out/ aquasec/trivy --format template --template "@/contrib/sarif.tpl" -o /mnt/out/$1_$2.sarif ${REPO}/$1:$2
+    docker run --rm -v /tmp/.cache/:/root/.cache/ -v $SCRIPTPATH/../security/html:/mnt/out/ aquasec/trivy --format template --template "@/contrib/html.tpl" -o /mnt/out/$1_$2.html ${REPO}/$1:$2
 }
 
 mkdir -p $SCRIPTPATH/../security/sarif
