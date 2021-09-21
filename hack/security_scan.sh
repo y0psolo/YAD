@@ -11,8 +11,8 @@ scan_image() {
     then
         _suffix="_$2"
     fi
-    trivy image ${REPO}/$1:$2 -o $SCRIPTPATH/../security/sarif/$1_$2.sarif --format template --template "@contrib/sarif.tpl"
-    trivy image ${REPO}/$1:$2 -o $SCRIPTPATH/../security/html/$1_$2.html --format template --template "@contrib/html.tpl"
+    trivy image -o $SCRIPTPATH/../security/sarif/$1_$2.sarif --format template --template "@contrib/sarif.tpl" ${REPO}/$1:$2
+    trivy image -o $SCRIPTPATH/../security/html/$1_$2.html --format template --template "@contrib/html.tpl" ${REPO}/$1:$2
 }
 
 mkdir -p $SCRIPTPATH/../security/sarif
