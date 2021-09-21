@@ -19,10 +19,7 @@ BASE_ARCHITECTURES = ["amd64", "arm64"]
 
 JRE_VERSIONS = ["8", "11"]
 NODEJS_VERSIONS = ["14", "16"]
-NODEJS_VERSIONS_MAPPINGS = {
-    "14": "14.17.6",
-    "16": "16.8.0",
-}
+NODEJS_VERSIONS_MAPPINGS = { "14": "14.17.6", "16": "16.8.0", }
 
 # ID mapping
 NOBODY = 65534
@@ -30,7 +27,4 @@ NONROOT = 65532
 
 DENO_VERSION = "1.14.0"
 
-AZUL_VERSIONS_MAPPING = {
-    "11": "11.0.12",
-    "8": "8.0.302",
-}
+AZUL_VERSIONS_MAPPING = { "11": "11.0.12", "8": "8.0.302", }
