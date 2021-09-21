@@ -12,10 +12,14 @@ jobs:
     steps:
       - name: Setup repository
         uses: actions/checkout@v2
-      - name: install trivy
-        run: curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sh -s -- -b /usr/local/bin v0.19.2
       - name: Run trivy scan
         run : hack/security_scan.sh
+      - name: Upload Trivy scan results to GitHub Security tab
+        uses: github/codeql-action/upload-sarif@v1
+        with:
+          sarif_file: 'security/sarif'
+      - name: Delete sarif folder
+        run: rm -f security/sarif/*.sarif
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
@@ -31,7 +35,3 @@ jobs:
             automated
           assignees: y0psolo
           reviewers: y0psolo
-      - name: Upload Trivy scan results to GitHub Security tab
-        uses: github/codeql-action/upload-sarif@v1
-        with:
-          sarif_file: 'security/sarif'
