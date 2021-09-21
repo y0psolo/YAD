@@ -1,0 +1,96 @@
+= Yet Another Distroless
+
+Yet Another Distroless (or YAD) is based on the existing Distroless distribution  maintained by the GoogleContainerTools team (https://github.com/GoogleContainerTools/distroless).
+
+YAD differs from the distroless distribution on the following :
+
+- The package manager used is rules_deb_packages (https://github.com/petermylemans/rules_deb_packages)
+- The linux distribution tracked is the Ubuntu one. For now we only track the Ubuntu 20.04 (Focal Fossa). Other Ubuntu release later may be added.
+
+== Why Distroless ?
+
+Distroless are container restricting to what the application only need to run. It improves the maintenance of the dependencies and the overall security by removing all the software not needed
+
+== How do use the images ?
+
+The images are published on docker registry : https://hub.docker.com/u/yadist
+
+You can use these images like any other Docker images.
+
+The images are build for amd64 and arm64 architectures
+
+=== Entrypoints
+
+Most of the distroless image does not contain a shell. That means the Dockerfile `ENTRYPOINT` command, when defined, must be specified in `vector` form, to avoid the container runtime prefixing with a shell.
+
+This works:
+
+[source,dockerfile]
+----
+ENTRYPOINT ["myapp"]
+----
+
+But this does not work:
+
+[source,dockerfile]
+----
+ENTRYPOINT "myapp"
+----
+
+For the same reasons, if the entrypoint is left to the default empty vector, the CMD command should be specified in `vector` form.
+
+### Images List
+
+.Image List
+[cols=".^10%,15%,15%,60%",width="100%",options="header"]
+|===
+
+| Image 
+2+^| Tags 
+| Usage
+
+| link:image/static/README.md[static]
+| image:https://img.shields.io/docker/image-size/yadist/static/latest?label=latest&logo=docker[link="https://hub.docker.com/r/yadist/static/"]
+| image:https://img.shields.io/docker/image-size/yadist/static/debug?label=debug&logo=docker[link="https://hub.docker.com/r/yadist/static/"]
+| For running staticaly linked application
+
+| link:image/base/README.md[base]
+| image:https://img.shields.io/docker/image-size/yadist/base/latest?label=latest&logo=docker[link="https://hub.docker.com/r/yadist/base/"]
+| image:https://img.shields.io/docker/image-size/yadist/base/debug?label=debug&logo=docker[link="https://hub.docker.com/r/yadist/base/"]
+| For running libc and openssl dynamically linked application
+
+| link:image/cc/README.md[cc]
+| image:https://img.shields.io/docker/image-size/yadist/cc/latest?label=latest&logo=docker[link="https://hub.docker.com/r/yadist/cc/"]
+| image:https://img.shields.io/docker/image-size/yadist/cc/debug?label=debug&logo=docker[link="https://hub.docker.com/r/yadist/cc/"]
+| For running libc, libgcc and openssl linked application
+
+| link:image/java/README.adoc[adoptium]
+| image:https://img.shields.io/docker/image-size/yadist/adoptium/8?label=8&logo=docker[link="https://hub.docker.com/r/yadist/adoptium/"] image:https://img.shields.io/docker/image-size/yadist/adoptium/11?label=11&logo=docker[link="https://hub.docker.com/r/yadist/adoptium/"]
+| image:https://img.shields.io/docker/image-size/yadist/adoptium/8_debug?label=8_debug&logo=docker[link="https://hub.docker.com/r/yadist/adoptium/"] image:https://img.shields.io/docker/image-size/yadist/adoptium/11_debug?label=11_debug&logo=docker[link="https://hub.docker.com/r/yadist/adoptium/"]
+|  For running java application with https://adoptium.net/[adoptium] jre
+
+| link:image/java/README.adoc[azul]
+| image:https://img.shields.io/docker/image-size/yadist/azul/8?label=8&logo=docker[link="https://hub.docker.com/r/yadist/azul/"] image:https://img.shields.io/docker/image-size/yadist/azul/11?label=11&logo=docker[link="https://hub.docker.com/r/yadist/azul/"]
+| image:https://img.shields.io/docker/image-size/yadist/azul/8_debug?label=8_debug&logo=docker[link="https://hub.docker.com/r/yadist/azul/"] image:https://img.shields.io/docker/image-size/yadist/azul/11_debug?label=11_debug&logo=docker[link="https://hub.docker.com/r/yadist/azul/"]
+|  For running java application with https://azul.com/[azul] jre
+
+| link:image/python/README.md[python]
+| image:https://img.shields.io/docker/image-size/yadist/python/latest?label=latest&logo=docker[link="https://hub.docker.com/r/yadist/python/"]
+| image:https://img.shields.io/docker/image-size/yadist/python/debug?label=debug&logo=docker[link="https://hub.docker.com/r/yadist/python/"]
+| For running python application(python 3.x)
+
+| link:image/nodejs/README.md[nodejs]
+| image:https://img.shields.io/docker/image-size/yadist/nodejs/14?label=14&logo=docker[link="https://hub.docker.com/r/yadist/nodejs/"] image:https://img.shields.io/docker/image-size/yadist/nodejs/16?label=16&logo=docker[link="https://hub.docker.com/r/yadist/nodejs/"]
+| image:https://img.shields.io/docker/image-size/yadist/nodejs/14_debug?label=14_debug&logo=docker[link="https://hub.docker.com/r/yadist/nodejs/"] image:https://img.shields.io/docker/image-size/yadist/nodejs/16_debug?label=16_debug&logo=docker[link="https://hub.docker.com/r/yadist/nodejs/"]
+| For running javascript application
+
+| link:image/deno/README.md[deno] | image:https://img.shields.io/docker/image-size/yadist/deno/latest?label=latest&logo=docker[link="https://hub.docker.com/r/yadist/deno/"] | image:https://img.shields.io/docker/image-size/yadist/deno/debug?label=debug&logo=docker[link="https://hub.docker.com/r/yadist/deno/"] | For running typescript application 
+|===
+
+
+=== Security
+
+The dependencies are updated daily and new images are released as soon as the dependencies are updated. We rely on CVE security release handled bu Ubuntu (https://ubuntu.com/security/cve) for Ubuntu packages.
+
+For Azul JRE we rely on Azul security release (https://docs.azul.com/core/cve) 
+
