@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style>
+      * {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      h1 {
+        text-align: center;
+      }
+      .group-header th {
+        font-size: 200%;
+      }
+      .sub-header th {
+        font-size: 150%;
+      }
+      table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        white-space: nowrap;
+        padding: .3em;
+      }
+      table {
+        margin: 0 auto;
+      }
+      .severity {
+        text-align: center;
+        font-weight: bold;
+        color: #fafafa;
+      }
+      .severity-LOW .severity { background-color: #5fbb31; }
+      .severity-MEDIUM .severity { background-color: #e9c600; }
+      .severity-HIGH .severity { background-color: #ff8800; }
+      .severity-CRITICAL .severity { background-color: #e40000; }
+      .severity-UNKNOWN .severity { background-color: #747474; }
+      .severity-LOW { background-color: #5fbb3160; }
+      .severity-MEDIUM { background-color: #e9c60060; }
+      .severity-HIGH { background-color: #ff880060; }
+      .severity-CRITICAL { background-color: #e4000060; }
+      .severity-UNKNOWN { background-color: #74747460; }
+      table tr td:first-of-type {
+        font-weight: bold;
+      }
+      .links a,
+      .links[data-more-links=on] a {
+        display: block;
+      }
+      .links[data-more-links=off] a:nth-of-type(1n+5) {
+        display: none;
+      }
+      a.toggle-more-links { cursor: pointer; }
+    </style>
+    <title>yadist/base:latest (ubuntu 20.04) - Trivy Report - 2021-09-21T22:16:43.660962218Z</title>
+    <script>
+      window.onload = function() {
+        document.querySelectorAll('td.links').forEach(function(linkCell) {
+          var links = [].concat.apply([], linkCell.querySelectorAll('a'));
+          [].sort.apply(links, function(a, b) {
+            return a.href > b.href ? 1 : -1;
+          });
+          links.forEach(function(link, idx) {
+            if (links.length > 3 && 3 === idx) {
+              var toggleLink = document.createElement('a');
+              toggleLink.innerText = "Toggle more links";
+              toggleLink.href = "#toggleMore";
+              toggleLink.setAttribute("class", "toggle-more-links");
+              linkCell.appendChild(toggleLink);
+            }
+            linkCell.appendChild(link);
+          });
+        });
+        document.querySelectorAll('a.toggle-more-links').forEach(function(toggleLink) {
+          toggleLink.onclick = function() {
+            var expanded = toggleLink.parentElement.getAttribute("data-more-links");
+            toggleLink.parentElement.setAttribute("data-more-links", "on" === expanded ? "off" : "on");
+            return false;
+          };
+        });
+      };
+    </script>
+  </head>
+  <body>
+    <h1>yadist/base:latest (ubuntu 20.04) - Trivy Report - 2021-09-21T22:16:43.660977818Z</h1>
+    <table>
+      <tr class="group-header"><th colspan="6">ubuntu</th></tr>
+      <tr class="sub-header">
+        <th>Package</th>
+        <th>Vulnerability ID</th>
+        <th>Severity</th>
+        <th>Installed Version</th>
+        <th>Fixed Version</th>
+        <th>Links</th>
+      </tr>
+      <tr class="severity-LOW">
+        <td class="pkg-name">libc6</td>
+        <td>CVE-2016-10228</td>
+        <td class="severity">LOW</td>
+        <td class="pkg-version">2.31-0ubuntu9.2</td>
+        <td></td>
+        <td class="links" data-more-links="off">
+          <a href="http://openwall.com/lists/oss-security/2017/03/01/10">http://openwall.com/lists/oss-security/2017/03/01/10</a>
+          <a href="http://www.securityfocus.com/bid/96525">http://www.securityfocus.com/bid/96525</a>
+          <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-10228">https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-10228</a>
+          <a href="https://linux.oracle.com/cve/CVE-2016-10228.html">https://linux.oracle.com/cve/CVE-2016-10228.html</a>
+          <a href="https://linux.oracle.com/errata/ELSA-2021-9344.html">https://linux.oracle.com/errata/ELSA-2021-9344.html</a>
+          <a href="https://lists.apache.org/thread.html/rf9fa47ab66495c78bb4120b0754dd9531ca2ff0430f6685ac9b07772@%3Cdev.mina.apache.org%3E">https://lists.apache.org/thread.html/rf9fa47ab66495c78bb4120b0754dd9531ca2ff0430f6685ac9b07772@%3Cdev.mina.apache.org%3E</a>
+          <a href="https://security.gentoo.org/glsa/202101-20">https://security.gentoo.org/glsa/202101-20</a>
+          <a href="https://sourceware.org/bugzilla/show_bug.cgi?id=19519">https://sourceware.org/bugzilla/show_bug.cgi?id=19519</a>
+          <a href="https://sourceware.org/bugzilla/show_bug.cgi?id=19519#c21">https://sourceware.org/bugzilla/show_bug.cgi?id=19519#c21</a>
+          <a href="https://sourceware.org/bugzilla/show_bug.cgi?id=26224">https://sourceware.org/bugzilla/show_bug.cgi?id=26224</a>
+        </td>
+      </tr>
+      <tr class="severity-LOW">
+        <td class="pkg-name">libc6</td>
+        <td>CVE-2019-25013</td>
+        <td class="severity">LOW</td>
+        <td class="pkg-version">2.31-0ubuntu9.2</td>
+        <td></td>
+        <td class="links" data-more-links="off">
+          <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-25013">https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-25013</a>
+          <a href="https://linux.oracle.com/cve/CVE-2019-25013.html">https://linux.oracle.com/cve/CVE-2019-25013.html</a>
+          <a href="https://linux.oracle.com/errata/ELSA-2021-9344.html">https://linux.oracle.com/errata/ELSA-2021-9344.html</a>
+          <a href="https://lists.apache.org/thread.html/r32d767ac804e9b8aad4355bb85960a6a1385eab7afff549a5e98660f@%3Cjira.kafka.apache.org%3E">https://lists.apache.org/thread.html/r32d767ac804e9b8aad4355bb85960a6a1385eab7afff549a5e98660f@%3Cjira.kafka.apache.org%3E</a>
+          <a href="https://lists.apache.org/thread.html/r448bb851cc8e6e3f93f3c28c70032b37062625d81214744474ac49e7@%3Cdev.kafka.apache.org%3E">https://lists.apache.org/thread.html/r448bb851cc8e6e3f93f3c28c70032b37062625d81214744474ac49e7@%3Cdev.kafka.apache.org%3E</a>
+          <a href="https://lists.apache.org/thread.html/r4806a391091e082bdea17266452ca656ebc176e51bb3932733b3a0a2@%3Cjira.kafka.apache.org%3E">https://lists.apache.org/thread.html/r4806a391091e082bdea17266452ca656ebc176e51bb3932733b3a0a2@%3Cjira.kafka.apache.org%3E</a>
+          <a href="https://lists.apache.org/thread.html/r499e4f96d0b5109ef083f2feccd33c51650c1b7d7068aa3bd47efca9@%3Cjira.kafka.apache.org%3E">https://lists.apache.org/thread.html/r499e4f96d0b5109ef083f2feccd33c51650c1b7d7068aa3bd47efca9@%3Cjira.kafka.apache.org%3E</a>
+          <a href="https://lists.apache.org/thread.html/r5af4430421bb6f9973294691a7904bbd260937e9eef96b20556f43ff@%3Cjira.kafka.apache.org%3E">https://lists.apache.org/thread.html/r5af4430421bb6f9973294691a7904bbd260937e9eef96b20556f43ff@%3Cjira.kafka.apache.org%3E</a>
+          <a href="https://lists.apache.org/thread.html/r750eee18542bc02bd8350861c424ee60a9b9b225568fa09436a37ece@%3Cissues.zookeeper.apache.org%3E">https://lists.apache.org/thread.html/r750eee18542bc02bd8350861c424ee60a9b9b225568fa09436a37ece@%3Cissues.zookeeper.apache.org%3E</a>
+          <a href="https://lists.apache.org/thread.html/r7a2e94adfe0a2f0a1d42e4927e8c32ecac97d37db9cb68095fe9ddbc@%3Cdev.zookeeper.apache.org%3E">https://lists.apache.org/thread.html/r7a2e94adfe0a2f0a1d42e4927e8c32ecac97d37db9cb68095fe9ddbc@%3Cdev.zookeeper.apache.org%3E</a>
+          <a href="https://lists.apache.org/thread.html/rd2354f9ccce41e494fbadcbc5ad87218de6ec0fff8a7b54c8462226c@%3Cissues.zookeeper.apache.org%3E">https://lists.apache.org/thread.html/rd2354f9ccce41e494fbadcbc5ad87218de6ec0fff8a7b54c8462226c@%3Cissues.zookeeper.apache.org%3E</a>
+          <a href="https://lists.apache.org/thread.html/rf9fa47ab66495c78bb4120b0754dd9531ca2ff0430f6685ac9b07772@%3Cdev.mina.apache.org%3E">https://lists.apache.org/thread.html/rf9fa47ab66495c78bb4120b0754dd9531ca2ff0430f6685ac9b07772@%3Cdev.mina.apache.org%3E</a>
+          <a href="https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/4Y6TX47P47KABSFOL26FLDNVCWXDKDEZ/">https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/4Y6TX47P47KABSFOL26FLDNVCWXDKDEZ/</a>
+          <a href="https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/TVCUNLQ3HXGS4VPUQKWTJGRAW2KTFGXS/">https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/TVCUNLQ3HXGS4VPUQKWTJGRAW2KTFGXS/</a>
+          <a href="https://security.netapp.com/advisory/ntap-20210205-0004/">https://security.netapp.com/advisory/ntap-20210205-0004/</a>
+          <a href="https://sourceware.org/bugzilla/show_bug.cgi?id=24973">https://sourceware.org/bugzilla/show_bug.cgi?id=24973</a>
+          <a href="https://sourceware.org/git/?p=glibc.git;a=commit;h=ee7a3144c9922808181009b7b3e50e852fb4999b">https://sourceware.org/git/?p=glibc.git;a=commit;h=ee7a3144c9922808181009b7b3e50e852fb4999b</a>
+        </td>
+      </tr>
+      <tr class="severity-LOW">
+        <td class="pkg-name">libc6</td>
+        <td>CVE-2020-27618</td>
+        <td class="severity">LOW</td>
+        <td class="pkg-version">2.31-0ubuntu9.2</td>
+        <td></td>
+        <td class="links" data-more-links="off">
+          <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-27618">https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-27618</a>
+          <a href="https://linux.oracle.com/cve/CVE-2020-27618.html">https://linux.oracle.com/cve/CVE-2020-27618.html</a>
+          <a href="https://linux.oracle.com/errata/ELSA-2021-9344.html">https://linux.oracle.com/errata/ELSA-2021-9344.html</a>
+          <a href="https://security.netapp.com/advisory/ntap-20210401-0006/">https://security.netapp.com/advisory/ntap-20210401-0006/</a>
+          <a href="https://sourceware.org/bugzilla/show_bug.cgi?id=19519#c21">https://sourceware.org/bugzilla/show_bug.cgi?id=19519#c21</a>
+          <a href="https://sourceware.org/bugzilla/show_bug.cgi?id=26224">https://sourceware.org/bugzilla/show_bug.cgi?id=26224</a>
+        </td>
+      </tr>
+      <tr class="severity-LOW">
+        <td class="pkg-name">libc6</td>
+        <td>CVE-2020-29562</td>
+        <td class="severity">LOW</td>
+        <td class="pkg-version">2.31-0ubuntu9.2</td>
+        <td></td>
+        <td class="links" data-more-links="off">
+          <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-29562">https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-29562</a>
+          <a href="https://lists.apache.org/thread.html/rf9fa47ab66495c78bb4120b0754dd9531ca2ff0430f6685ac9b07772@%3Cdev.mina.apache.org%3E">https://lists.apache.org/thread.html/rf9fa47ab66495c78bb4120b0754dd9531ca2ff0430f6685ac9b07772@%3Cdev.mina.apache.org%3E</a>
+          <a href="https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/TVCUNLQ3HXGS4VPUQKWTJGRAW2KTFGXS/">https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/TVCUNLQ3HXGS4VPUQKWTJGRAW2KTFGXS/</a>
+          <a href="https://security.gentoo.org/glsa/202101-20">https://security.gentoo.org/glsa/202101-20</a>
+          <a href="https://security.netapp.com/advisory/ntap-20210122-0004/">https://security.netapp.com/advisory/ntap-20210122-0004/</a>
+          <a href="https://sourceware.org/bugzilla/show_bug.cgi?id=26923">https://sourceware.org/bugzilla/show_bug.cgi?id=26923</a>
+          <a href="https://sourceware.org/pipermail/libc-alpha/2020-November/119822.html">https://sourceware.org/pipermail/libc-alpha/2020-November/119822.html</a>
+        </td>
+      </tr>
+      <tr class="severity-LOW">
+        <td class="pkg-name">libc6</td>
+        <td>CVE-2020-6096</td>
+        <td class="severity">LOW</td>
+        <td class="pkg-version">2.31-0ubuntu9.2</td>
+        <td></td>
+        <td class="links" data-more-links="off">
+          <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-6096">https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-6096</a>
+          <a href="https://lists.apache.org/thread.html/rf9fa47ab66495c78bb4120b0754dd9531ca2ff0430f6685ac9b07772@%3Cdev.mina.apache.org%3E">https://lists.apache.org/thread.html/rf9fa47ab66495c78bb4120b0754dd9531ca2ff0430f6685ac9b07772@%3Cdev.mina.apache.org%3E</a>
+          <a href="https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/SPYXTDOOB4PQGTYAMZAZNJIB3FF6YQXI/">https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/SPYXTDOOB4PQGTYAMZAZNJIB3FF6YQXI/</a>
+          <a href="https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/URXOIA2LDUKHQXK4BE55BQBRI6ZZG3Y6/">https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/URXOIA2LDUKHQXK4BE55BQBRI6ZZG3Y6/</a>
+          <a href="https://security.gentoo.org/glsa/202101-20">https://security.gentoo.org/glsa/202101-20</a>
+          <a href="https://sourceware.org/bugzilla/attachment.cgi?id=12334">https://sourceware.org/bugzilla/attachment.cgi?id=12334</a>
+          <a href="https://sourceware.org/bugzilla/show_bug.cgi?id=25620">https://sourceware.org/bugzilla/show_bug.cgi?id=25620</a>
+          <a href="https://talosintelligence.com/vulnerability_reports/TALOS-2020-1019">https://talosintelligence.com/vulnerability_reports/TALOS-2020-1019</a>
+          <a href="https://ubuntu.com/security/notices/USN-4954-1">https://ubuntu.com/security/notices/USN-4954-1</a>
+          <a href="https://www.talosintelligence.com/vulnerability_reports/TALOS-2020-1019">https://www.talosintelligence.com/vulnerability_reports/TALOS-2020-1019</a>
+        </td>
+      </tr>
+      <tr class="severity-LOW">
+        <td class="pkg-name">libc6</td>
+        <td>CVE-2021-27645</td>
+        <td class="severity">LOW</td>
+        <td class="pkg-version">2.31-0ubuntu9.2</td>
+        <td></td>
+        <td class="links" data-more-links="off">
+          <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27645">https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27645</a>
+          <a href="https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/7LZNT6KTMCCWPWXEOGSHD3YLYZKUGMH5/">https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/7LZNT6KTMCCWPWXEOGSHD3YLYZKUGMH5/</a>
+          <a href="https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/I7TS26LIZSOBLGJEZMJX4PXT5BQDE2WS/">https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/I7TS26LIZSOBLGJEZMJX4PXT5BQDE2WS/</a>
+          <a href="https://sourceware.org/bugzilla/show_bug.cgi?id=27462">https://sourceware.org/bugzilla/show_bug.cgi?id=27462</a>
+        </td>
+      </tr>
+      <tr class="severity-LOW">
+        <td class="pkg-name">libc6</td>
+        <td>CVE-2021-3326</td>
+        <td class="severity">LOW</td>
+        <td class="pkg-version">2.31-0ubuntu9.2</td>
+        <td></td>
+        <td class="links" data-more-links="off">
+          <a href="http://www.openwall.com/lists/oss-security/2021/01/28/2">http://www.openwall.com/lists/oss-security/2021/01/28/2</a>
+          <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3326">https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3326</a>
+          <a href="https://linux.oracle.com/cve/CVE-2021-3326.html">https://linux.oracle.com/cve/CVE-2021-3326.html</a>
+          <a href="https://linux.oracle.com/errata/ELSA-2021-9344.html">https://linux.oracle.com/errata/ELSA-2021-9344.html</a>
+          <a href="https://security.netapp.com/advisory/ntap-20210304-0007/">https://security.netapp.com/advisory/ntap-20210304-0007/</a>
+          <a href="https://sourceware.org/bugzilla/show_bug.cgi?id=27256">https://sourceware.org/bugzilla/show_bug.cgi?id=27256</a>
+          <a href="https://sourceware.org/git/?p=glibc.git;a=commit;h=7d88c6142c6efc160c0ee5e4f85cde382c072888">https://sourceware.org/git/?p=glibc.git;a=commit;h=7d88c6142c6efc160c0ee5e4f85cde382c072888</a>
+          <a href="https://sourceware.org/pipermail/libc-alpha/2021-January/122058.html">https://sourceware.org/pipermail/libc-alpha/2021-January/122058.html</a>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

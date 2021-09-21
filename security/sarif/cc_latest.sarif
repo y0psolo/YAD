@@ -1,0 +1,318 @@
+{
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "Trivy",
+          "informationUri": "https://github.com/aquasecurity/trivy",
+          "fullName": "Trivy Vulnerability Scanner",
+          "version": "0.15.0",
+          "rules": [
+            {
+              "id": "yadist/cc:latest (ubuntu 20.04): libc6-2.31-0ubuntu9.2 CVE-2016-10228",
+              "name": "OS Package Vulnerability (Ubuntu)",
+              "shortDescription": {
+                "text": "CVE-2016-10228 Package: libc6"
+              },
+              "fullDescription": {
+                "text": "glibc: iconv program can hang when invoked with the -c option."
+              },
+              "defaultConfiguration": {
+                "level": "note"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2016-10228",
+              "help": {
+                "text": "Vulnerability CVE-2016-10228\nSeverity: LOW\nPackage: libc6\nInstalled Version: 2.31-0ubuntu9.2\nFixed Version: \nLink: [CVE-2016-10228](https://avd.aquasec.com/nvd/cve-2016-10228)",
+                "markdown": "**Vulnerability CVE-2016-10228**\n| Severity | Package | Installed Version | Fixed Version | Link |\n| --- | --- | --- | --- | --- |\n|LOW|libc6|2.31-0ubuntu9.2||[CVE-2016-10228](https://avd.aquasec.com/nvd/cve-2016-10228)|\n"
+              },
+              "properties": {
+                "tags": [
+                  "vulnerability",
+                  "LOW",
+                  "libc6"
+                ],
+                "precision": "very-high"
+              }
+            },
+            {
+              "id": "yadist/cc:latest (ubuntu 20.04): libc6-2.31-0ubuntu9.2 CVE-2019-25013",
+              "name": "OS Package Vulnerability (Ubuntu)",
+              "shortDescription": {
+                "text": "CVE-2019-25013 Package: libc6"
+              },
+              "fullDescription": {
+                "text": "glibc: buffer over-read in iconv when processing invalid multi-byte input sequences in the EUC-KR encoding."
+              },
+              "defaultConfiguration": {
+                "level": "note"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2019-25013",
+              "help": {
+                "text": "Vulnerability CVE-2019-25013\nSeverity: LOW\nPackage: libc6\nInstalled Version: 2.31-0ubuntu9.2\nFixed Version: \nLink: [CVE-2019-25013](https://avd.aquasec.com/nvd/cve-2019-25013)",
+                "markdown": "**Vulnerability CVE-2019-25013**\n| Severity | Package | Installed Version | Fixed Version | Link |\n| --- | --- | --- | --- | --- |\n|LOW|libc6|2.31-0ubuntu9.2||[CVE-2019-25013](https://avd.aquasec.com/nvd/cve-2019-25013)|\n"
+              },
+              "properties": {
+                "tags": [
+                  "vulnerability",
+                  "LOW",
+                  "libc6"
+                ],
+                "precision": "very-high"
+              }
+            },
+            {
+              "id": "yadist/cc:latest (ubuntu 20.04): libc6-2.31-0ubuntu9.2 CVE-2020-27618",
+              "name": "OS Package Vulnerability (Ubuntu)",
+              "shortDescription": {
+                "text": "CVE-2020-27618 Package: libc6"
+              },
+              "fullDescription": {
+                "text": "glibc: iconv when processing invalid multi-byte input sequences fails to advance the input state, which could result in an infinite loop."
+              },
+              "defaultConfiguration": {
+                "level": "note"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2020-27618",
+              "help": {
+                "text": "Vulnerability CVE-2020-27618\nSeverity: LOW\nPackage: libc6\nInstalled Version: 2.31-0ubuntu9.2\nFixed Version: \nLink: [CVE-2020-27618](https://avd.aquasec.com/nvd/cve-2020-27618)",
+                "markdown": "**Vulnerability CVE-2020-27618**\n| Severity | Package | Installed Version | Fixed Version | Link |\n| --- | --- | --- | --- | --- |\n|LOW|libc6|2.31-0ubuntu9.2||[CVE-2020-27618](https://avd.aquasec.com/nvd/cve-2020-27618)|\n"
+              },
+              "properties": {
+                "tags": [
+                  "vulnerability",
+                  "LOW",
+                  "libc6"
+                ],
+                "precision": "very-high"
+              }
+            },
+            {
+              "id": "yadist/cc:latest (ubuntu 20.04): libc6-2.31-0ubuntu9.2 CVE-2020-29562",
+              "name": "OS Package Vulnerability (Ubuntu)",
+              "shortDescription": {
+                "text": "CVE-2020-29562 Package: libc6"
+              },
+              "fullDescription": {
+                "text": "glibc: assertion failure in iconv when converting invalid UCS4."
+              },
+              "defaultConfiguration": {
+                "level": "note"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2020-29562",
+              "help": {
+                "text": "Vulnerability CVE-2020-29562\nSeverity: LOW\nPackage: libc6\nInstalled Version: 2.31-0ubuntu9.2\nFixed Version: \nLink: [CVE-2020-29562](https://avd.aquasec.com/nvd/cve-2020-29562)",
+                "markdown": "**Vulnerability CVE-2020-29562**\n| Severity | Package | Installed Version | Fixed Version | Link |\n| --- | --- | --- | --- | --- |\n|LOW|libc6|2.31-0ubuntu9.2||[CVE-2020-29562](https://avd.aquasec.com/nvd/cve-2020-29562)|\n"
+              },
+              "properties": {
+                "tags": [
+                  "vulnerability",
+                  "LOW",
+                  "libc6"
+                ],
+                "precision": "very-high"
+              }
+            },
+            {
+              "id": "yadist/cc:latest (ubuntu 20.04): libc6-2.31-0ubuntu9.2 CVE-2020-6096",
+              "name": "OS Package Vulnerability (Ubuntu)",
+              "shortDescription": {
+                "text": "CVE-2020-6096 Package: libc6"
+              },
+              "fullDescription": {
+                "text": "glibc: signed comparison vulnerability in the ARMv7 memcpy function."
+              },
+              "defaultConfiguration": {
+                "level": "note"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2020-6096",
+              "help": {
+                "text": "Vulnerability CVE-2020-6096\nSeverity: LOW\nPackage: libc6\nInstalled Version: 2.31-0ubuntu9.2\nFixed Version: \nLink: [CVE-2020-6096](https://avd.aquasec.com/nvd/cve-2020-6096)",
+                "markdown": "**Vulnerability CVE-2020-6096**\n| Severity | Package | Installed Version | Fixed Version | Link |\n| --- | --- | --- | --- | --- |\n|LOW|libc6|2.31-0ubuntu9.2||[CVE-2020-6096](https://avd.aquasec.com/nvd/cve-2020-6096)|\n"
+              },
+              "properties": {
+                "tags": [
+                  "vulnerability",
+                  "LOW",
+                  "libc6"
+                ],
+                "precision": "very-high"
+              }
+            },
+            {
+              "id": "yadist/cc:latest (ubuntu 20.04): libc6-2.31-0ubuntu9.2 CVE-2021-27645",
+              "name": "OS Package Vulnerability (Ubuntu)",
+              "shortDescription": {
+                "text": "CVE-2021-27645 Package: libc6"
+              },
+              "fullDescription": {
+                "text": "glibc: Use-after-free in addgetnetgrentX function in netgroupcache.c."
+              },
+              "defaultConfiguration": {
+                "level": "note"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2021-27645",
+              "help": {
+                "text": "Vulnerability CVE-2021-27645\nSeverity: LOW\nPackage: libc6\nInstalled Version: 2.31-0ubuntu9.2\nFixed Version: \nLink: [CVE-2021-27645](https://avd.aquasec.com/nvd/cve-2021-27645)",
+                "markdown": "**Vulnerability CVE-2021-27645**\n| Severity | Package | Installed Version | Fixed Version | Link |\n| --- | --- | --- | --- | --- |\n|LOW|libc6|2.31-0ubuntu9.2||[CVE-2021-27645](https://avd.aquasec.com/nvd/cve-2021-27645)|\n"
+              },
+              "properties": {
+                "tags": [
+                  "vulnerability",
+                  "LOW",
+                  "libc6"
+                ],
+                "precision": "very-high"
+              }
+            },
+            {
+              "id": "yadist/cc:latest (ubuntu 20.04): libc6-2.31-0ubuntu9.2 CVE-2021-3326",
+              "name": "OS Package Vulnerability (Ubuntu)",
+              "shortDescription": {
+                "text": "CVE-2021-3326 Package: libc6"
+              },
+              "fullDescription": {
+                "text": "glibc: Assertion failure in ISO-2022-JP-3 gconv module related to combining characters."
+              },
+              "defaultConfiguration": {
+                "level": "note"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2021-3326",
+              "help": {
+                "text": "Vulnerability CVE-2021-3326\nSeverity: LOW\nPackage: libc6\nInstalled Version: 2.31-0ubuntu9.2\nFixed Version: \nLink: [CVE-2021-3326](https://avd.aquasec.com/nvd/cve-2021-3326)",
+                "markdown": "**Vulnerability CVE-2021-3326**\n| Severity | Package | Installed Version | Fixed Version | Link |\n| --- | --- | --- | --- | --- |\n|LOW|libc6|2.31-0ubuntu9.2||[CVE-2021-3326](https://avd.aquasec.com/nvd/cve-2021-3326)|\n"
+              },
+              "properties": {
+                "tags": [
+                  "vulnerability",
+                  "LOW",
+                  "libc6"
+                ],
+                "precision": "very-high"
+              }
+            }]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "yadist/cc:latest (ubuntu 20.04): libc6-2.31-0ubuntu9.2 CVE-2016-10228",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "The iconv program in the GNU C Library (aka glibc or libc6) 2.31 and earlier, when invoked with multiple suffixes in the destination encoding (TRANSLATE or IGNORE) along with the -c option, enters an infinite loop when processing invalid multi-byte input sequences, leading to a denial of service."
+          },
+          "locations": [{
+            "physicalLocation": {
+              "artifactLocation": {
+                "uri": "yadist/cc:latest",
+                "uriBaseId": "ROOTPATH"
+              }
+            }
+          }]
+        },
+        {
+          "ruleId": "yadist/cc:latest (ubuntu 20.04): libc6-2.31-0ubuntu9.2 CVE-2019-25013",
+          "ruleIndex": 1,
+          "level": "note",
+          "message": {
+            "text": "The iconv feature in the GNU C Library (aka glibc or libc6) through 2.32, when processing invalid multi-byte input sequences in the EUC-KR encoding, may have a buffer over-read."
+          },
+          "locations": [{
+            "physicalLocation": {
+              "artifactLocation": {
+                "uri": "yadist/cc:latest",
+                "uriBaseId": "ROOTPATH"
+              }
+            }
+          }]
+        },
+        {
+          "ruleId": "yadist/cc:latest (ubuntu 20.04): libc6-2.31-0ubuntu9.2 CVE-2020-27618",
+          "ruleIndex": 2,
+          "level": "note",
+          "message": {
+            "text": "The iconv function in the GNU C Library (aka glibc or libc6) 2.32 and earlier, when processing invalid multi-byte input sequences in IBM1364, IBM1371, IBM1388, IBM1390, and IBM1399 encodings, fails to advance the input state, which could lead to an infinite loop in applications, resulting in a denial of service, a different vulnerability from CVE-2016-10228."
+          },
+          "locations": [{
+            "physicalLocation": {
+              "artifactLocation": {
+                "uri": "yadist/cc:latest",
+                "uriBaseId": "ROOTPATH"
+              }
+            }
+          }]
+        },
+        {
+          "ruleId": "yadist/cc:latest (ubuntu 20.04): libc6-2.31-0ubuntu9.2 CVE-2020-29562",
+          "ruleIndex": 3,
+          "level": "note",
+          "message": {
+            "text": "The iconv function in the GNU C Library (aka glibc or libc6) 2.30 to 2.32, when converting UCS4 text containing an irreversible character, fails an assertion in the code path and aborts the program, potentially resulting in a denial of service."
+          },
+          "locations": [{
+            "physicalLocation": {
+              "artifactLocation": {
+                "uri": "yadist/cc:latest",
+                "uriBaseId": "ROOTPATH"
+              }
+            }
+          }]
+        },
+        {
+          "ruleId": "yadist/cc:latest (ubuntu 20.04): libc6-2.31-0ubuntu9.2 CVE-2020-6096",
+          "ruleIndex": 4,
+          "level": "note",
+          "message": {
+            "text": "An exploitable signed comparison vulnerability exists in the ARMv7 memcpy() implementation of GNU glibc 2.30.9000. Calling memcpy() (on ARMv7 targets that utilize the GNU glibc implementation) with a negative value for the &#39;num&#39; parameter results in a signed comparison vulnerability. If an attacker underflows the &#39;num&#39; parameter to memcpy(), this vulnerability could lead to undefined behavior such as writing to out-of-bounds memory and potentially remote code execution. Furthermore, this memcpy() implementation allows for program execution to continue in scenarios where a segmentation fault or crash should have occurred. The dangers occur in that subsequent execution and iterations of this code will be executed with this corrupted data."
+          },
+          "locations": [{
+            "physicalLocation": {
+              "artifactLocation": {
+                "uri": "yadist/cc:latest",
+                "uriBaseId": "ROOTPATH"
+              }
+            }
+          }]
+        },
+        {
+          "ruleId": "yadist/cc:latest (ubuntu 20.04): libc6-2.31-0ubuntu9.2 CVE-2021-27645",
+          "ruleIndex": 5,
+          "level": "note",
+          "message": {
+            "text": "The nameserver caching daemon (nscd) in the GNU C Library (aka glibc or libc6) 2.29 through 2.33, when processing a request for netgroup lookup, may crash due to a double-free, potentially resulting in degraded service or Denial of Service on the local system. This is related to netgroupcache.c."
+          },
+          "locations": [{
+            "physicalLocation": {
+              "artifactLocation": {
+                "uri": "yadist/cc:latest",
+                "uriBaseId": "ROOTPATH"
+              }
+            }
+          }]
+        },
+        {
+          "ruleId": "yadist/cc:latest (ubuntu 20.04): libc6-2.31-0ubuntu9.2 CVE-2021-3326",
+          "ruleIndex": 6,
+          "level": "note",
+          "message": {
+            "text": "The iconv function in the GNU C Library (aka glibc or libc6) 2.32 and earlier, when processing invalid input sequences in the ISO-2022-JP-3 encoding, fails an assertion in the code path and aborts the program, potentially resulting in a denial of service."
+          },
+          "locations": [{
+            "physicalLocation": {
+              "artifactLocation": {
+                "uri": "yadist/cc:latest",
+                "uriBaseId": "ROOTPATH"
+              }
+            }
+          }]
+        }],
+      "columnKind": "utf16CodeUnits",
+      "originalUriBaseIds": {
+        "ROOTPATH": {
+          "uri": "/"
+        }
+      }
+    }
+  ]
+}
