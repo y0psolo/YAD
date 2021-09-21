@@ -103,12 +103,12 @@ This image is designed for running java application.
 | 8, 8_debug, 11, 11_debug
 
 | openjdk-8-jre
-| Adoptium pacckage
+| Adoptium package
 | adoptium 8
 | 8, 8_debug
 
 | openjdk-11-jre
-| Adoptium pacckage
+| Adoptium package
 | adoptium 11
 | 11, 11_debug
 
