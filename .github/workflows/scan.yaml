@@ -1,0 +1,37 @@
+name: update-security
+on:
+  workflow_dispatch:
+  schedule:
+    - cron:  '0 3 * * *'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      contents: write
+    steps:
+      - name: Setup repository
+        uses: actions/checkout@v2
+      - name: install trivy
+        run: curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sh -s -- -b /usr/local/bin v0.19.2
+      - name: Run trivy scan
+        run : update/security_scan.sh
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          commit-message: "Update : security scans"
+          title: "Updating security scans"
+          body: "Automatic scheduled task. Launch Security scans and upload them"
+          branch: "update-security"
+          author: y0psolo <lionel.herbet@gmail.com>
+          delete-branch: true
+          draft: true
+          labels: |
+            security
+            automated
+          assignees: y0psolo
+          reviewers: y0psolo
+      - name: Upload Trivy scan results to GitHub Security tab
+        uses: github/codeql-action/upload-sarif@v1
+        with:
+          sarif_file: 'security/sarif'
