@@ -1,7 +1,6 @@
 load("@bazel_tools//tools/build_defs/pkg:pkg.bzl", "pkg_tar")
 load("@io_bazel_rules_docker//container:container.bzl", "container_layer")
-load("//util:constants.bzl", "BASE_ARCHITECTURES", "JRE_VERSIONS", "PACKAGE", "PACKAGE_VERSIONS", "AZUL_VERSIONS_MAPPING")
-load("//util:jre_ver.bzl", "jre_ver")
+load("//util:constants.bzl", "BASE_ARCHITECTURES", "JRE_VERSIONS", "PACKAGE", "PACKAGE_VERSIONS", "AZUL_VERSIONS_MAPPING", "ADOPTIUM_VERSIONS_MAPPING")
 
 # Common layer to all Java image
 [
@@ -24,19 +23,40 @@ load("//util:jre_ver.bzl", "jre_ver")
     for arch in BASE_ARCHITECTURES
 ]
 
-# Layers with JRE for OpenJDK image
+# Tar needed for Adoptium
 [
-    container_layer(
-        name = arch + "_openjdk_" + version,
-        debs = [
-            PACKAGE[arch]["openjdk-" + version + "-jre-headless"],
+    pkg_tar(
+        name = arch + "_adoptium_" + version + "_lib_tar",
+        srcs = [
+            "@jre-" + version + "-adoptium-" + arch + "//:lib_dir",
         ],
-        env = {
-            "JAVA_HOME": "/usr/lib/jvm/java-" + version + "-openjdk-" + arch,
-            "JAVA_VERSION": jre_ver(PACKAGE_VERSIONS[arch]["openjdk-" + version + "-jre-headless"]),
+        mode = "0644",
+        owner = "0.0",
+        package_dir = "/usr/lib/jvm/jre-" + version + "-" + arch,
+        # bug with pkg_tar : resource name is included in the filegroup
+        remap_paths = {
+            "../jre-" + version + "-adoptium-" + arch + "/": "./",
         },
-        symlinks = {"/usr/bin/java": "/usr/lib/jvm/java-" + version + "-openjdk-" + arch + "/bin/java"},
-        visibility = ["//:__subpackages__"],
+        strip_prefix = ".",
+    )
+    for version in JRE_VERSIONS
+    for arch in BASE_ARCHITECTURES
+]
+
+[
+    pkg_tar(
+        name = arch + "_adoptium_" + version + "_bin_tar",
+        srcs = [
+            "@jre-" + version + "-adoptium-" + arch + "//:bin_dir",
+        ],
+        mode = "0755",
+        owner = "0.0",
+        package_dir = "/usr/lib/jvm/jre-" + version + "-" + arch,
+        # bug with pkg_tar : resource name is included in the filegroup
+        remap_paths = {
+            "../jre-" + version + "-adoptium-" + arch + "/": "./",
+        },
+        strip_prefix = ".",
     )
     for version in JRE_VERSIONS
     for arch in BASE_ARCHITECTURES
@@ -81,6 +101,26 @@ load("//util:jre_ver.bzl", "jre_ver")
     for arch in BASE_ARCHITECTURES
 ]
 
+# Adoptium layers
+[
+    container_layer(
+        name = arch + "_adoptium_" + version,
+        env = {
+            "JAVA_HOME": "/usr/lib/jvm/jre-" + version + "-" + arch,
+            "JAVA_VERSION": ADOPTIUM_VERSIONS_MAPPING[version],
+        },
+        symlinks = {"/usr/bin/java": "/usr/lib/jvm/jre-" + version + "-" + arch + "/bin/java"},
+        tars = [
+            ":" + arch + "_adoptium_" + version + "_lib_tar",
+            ":" + arch + "_adoptium_" + version + "_bin_tar",
+        ],
+        visibility = ["//visibility:public"],
+    )
+    for version in JRE_VERSIONS
+    for arch in BASE_ARCHITECTURES
+]
+
+# Azul layers
 [
     container_layer(
         name = arch + "_azul_" + version,

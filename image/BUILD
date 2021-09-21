@@ -38,7 +38,7 @@ IMAGES.update(
         for arch in BASE_ARCHITECTURES
         for jre in [
             "azul",
-            "openjdk",
+            "adoptium",
         ]
         for version in JRE_VERSIONS
         for mode in [

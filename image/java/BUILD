@@ -27,7 +27,7 @@ load("//util:constants.bzl", "BASE_ARCHITECTURES", "JRE_VERSIONS", "NONROOT")
     for version in JRE_VERSIONS
     for arch in BASE_ARCHITECTURES
     for jre in [
-        "openjdk",
+        "adoptium",
         "azul",
     ]
 ]
@@ -53,7 +53,7 @@ load("//util:constants.bzl", "BASE_ARCHITECTURES", "JRE_VERSIONS", "NONROOT")
     for version in JRE_VERSIONS
     for arch in BASE_ARCHITECTURES
     for jre in [
-        "openjdk",
+        "adoptium",
         "azul",
     ]
 ]

@@ -22,7 +22,7 @@ metadataTest:
       value: '([0-9]+\.[0-9]+\.[0-9]+|[0-9]u[0-9]+)'
       isRegex: true
     - key: 'JAVA_HOME'
-      value: '/usr/lib/jvm/java-[0-9]+-openjdk-(amd|arm)64'
+      value: '/usr/lib/jvm/jre-[0-9]+-(amd|arm)64'
       isRegex: true
   entrypoint: ["/bin/sh"]
   workdir: "/home/nonroot"

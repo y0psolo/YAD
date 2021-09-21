@@ -27,6 +27,8 @@ jobs:
         run : update/ld_cache_gen.sh
       - name: Run azul update script
         run : update/update_azul.sh
+      - name: Run adoptium update script
+        run : update/update_adoptium.sh
       - name: Run nodejs update script
         run : update/update_nodejs.sh
       - name: Run deno update script

@@ -9,7 +9,7 @@ loop_over_image_tag() {
         done
     done
 
-    for repo in openjdk azul
+    for repo in adoptium azul
     do 
         for tag in 8 8_debug 11 11_debug
         do

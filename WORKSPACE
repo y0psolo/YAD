@@ -158,6 +158,39 @@ http_archive(
     urls = ["https://cdn.azul.com/zulu-embedded/bin/zulu11.50.19-ca-jdk11.0.12-linux_aarch64.tar.gz"],
 )
 
+# Get Adoptium package
+http_archive(
+    name = "jre-8-adoptium-amd64",
+    build_file = "BUILD.adoptium_8_amd64",
+    sha256 = "a74e63657ad04151a8f95202071d2895f1cc9295c910ad3c361ff1cc27395107",
+    strip_prefix = "jdk8u302-b08-jre/",
+    urls = ["https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u302-b08/OpenJDK8U-jre_x64_linux_hotspot_8u302b08.tar.gz"],
+)
+
+http_archive(
+    name = "jre-11-adoptium-amd64",
+    build_file = "BUILD.adoptium_11",
+    sha256 = "e813e270b7ea0a13f9c400ce5abd4cb811aacbd536b8909e6c7f0e346f78348c",
+    strip_prefix = "jdk-11.0.12+7-jre/",
+    urls = ["https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.12+7/OpenJDK11U-jre_x64_linux_hotspot_11.0.12_7.tar.gz"],
+)
+
+http_archive(
+    name = "jre-8-adoptium-arm64",
+    build_file = "BUILD.adoptium_8_arm64",
+    sha256 = "9951a36430c14548f78569135956e929db2554bfc706bb3fe0bf9a14acd28055",
+    strip_prefix = "jdk8u302-b08-jre/",
+    urls = ["https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u302-b08/OpenJDK8U-jre_aarch64_linux_hotspot_8u302b08.tar.gz"],
+)
+
+http_archive(
+    name = "jre-11-adoptium-arm64",
+    build_file = "BUILD.adoptium_11",
+    sha256 = "eebf9b6b515fd139d45410ea4a0e7c18f015acba41e677cd7a57d1fe7a553681",
+    strip_prefix = "jdk-11.0.12+7-jre/",
+    urls = ["https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.12+7/OpenJDK11U-jre_aarch64_linux_hotspot_11.0.12_7.tar.gz"],
+)
+
 # Get Nodejs archive
 http_archive(
     name = "nodejs-14-amd64",
