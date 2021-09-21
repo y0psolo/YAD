@@ -4,29 +4,34 @@ set -o errexit
 
 SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 
-JRE8=$(curl -s https://cdn.azul.com/zulu/bin/index.yml | grep 1.8.0 | tail -n1)
-JRE8_VERSION=$(echo $JRE8 | awk -F':' '{print $1}')
-JRE8_VERSION="${JRE8_VERSION:2:3}.${JRE8_VERSION:6:3}"
-JRE8_URL=$(echo $JRE8 | awk -F':' '{print $2 ":" $3}')
-JRE8_FILENAME="${JRE8_URL##*/}"
-JRE8_PREFIX="${JRE8_FILENAME%.*.*}"
+update_azul() {
+    PAYLOAD=$(curl -X 'GET' 'https://api.azul.com/zulu/download/community/v1.0/bundles/?java_version='$1'.0&os=linux&arch='$3'&hw_bitness=64&ext=tar.gz&bundle_type='$2'&javafx=false&release_status=ga&latest=true&support_term=lts' -H 'accept: application/json')
+    URL=$(echo $PAYLOAD | jq -r .[0].url)
+    FILENAME=$(echo $PAYLOAD | jq -r .[0].name)
+    VERSION="$1.0.$(echo $PAYLOAD | jq -r .[0].java_version[2])"
+    PREFIX="${FILENAME%.*.*}/$4"
+    if [ $3 = "x86" ]
+    then
+        ARCH="amd64"
+    elif [ $3 = "arm" ]
+    then
+        ARCH="arm64"
+    fi
 
 
-echo $JRE8_VERSION
-echo $JRE8_URL
-echo $JRE8_PREFIX
+    bazel run //tools/update_workspace:update_workspace -- -workspace $SCRIPTPATH/../WORKSPACE -rule jre-$1-azul-$ARCH -url $URL -prefix $PREFIX
+    sed -i -r "s/(AZUL_VERSIONS_MAPPING.+\"$1\": \")[0-9.]+(\",.+)/\1$VERSION\2/g" $SCRIPTPATH/../util/constants.bzl
+}
 
-JRE11=$(curl -s https://cdn.azul.com/zulu/bin/index.yml | grep 11.0. | tail -n1)
-JRE11_VERSION=$(echo $JRE11 | awk -F':' '{print $1}')
-JRE11_URL=$(echo $JRE11 | awk -F':' '{print $2 ":" $3}')
-JRE11_FILENAME="${JRE11_URL##*/}"
-JRE11_PREFIX="${JRE11_FILENAME%.*.*}"
 
-echo $JRE11_VERSION
-echo $JRE11_URL
-echo $JRE11_PREFIX
+# JAVA VERSION 8 on amd64
+update_azul 8 jre x86
 
-bazel run //tools/update_workspace:update_workspace -- -workspace $SCRIPTPATH/../WORKSPACE -rule jre-8-azul-amd64 -url $JRE8_URL -prefix $JRE8_PREFIX
-bazel run //tools/update_workspace:update_workspace -- -workspace $SCRIPTPATH/../WORKSPACE -rule jre-11-azul-amd64 -url $JRE11_URL -prefix $JRE11_PREFIX
-sed -i -r "s/(\"8\": \")[0-9.]+(\",)/\1$JRE8_VERSION\2/g" $SCRIPTPATH/../util/constants.bzl
-sed -i -r "s/(\"11\": \")[0-9.]+(\",)/\1$JRE11_VERSION\2/g" $SCRIPTPATH/../util/constants.bzl
+# JAVA VERSION 11 on amd64
+update_azul 11 jre x86
+
+# JAVA VERSION 8 on arm64
+update_azul 8 jdk arm jre/
+
+# JAVA VERSION 11 on arm64
+update_azul 11 jdk arm
