@@ -15,7 +15,7 @@ jobs:
       - name: install trivy
         run: curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sh -s -- -b /usr/local/bin v0.19.2
       - name: Run trivy scan
-        run : update/security_scan.sh
+        run : hack/security_scan.sh
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
