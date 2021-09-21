@@ -5,7 +5,7 @@ This image is designed for running java application.
 == Package and application list
 
 .Package List
-[cols="15%,50%,10%,25%",width="100%",options="header"]
+[cols="15%,45%,10%,30%",width="100%",options="header"]
 |===
 | Name
 | type
