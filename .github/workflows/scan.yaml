@@ -3,12 +3,14 @@ on:
   workflow_dispatch:
   schedule:
     - cron:  '0 3 * * *'
+    
 jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
       pull-requests: write
       contents: write
+      security-events: write
     steps:
       - name: Setup repository
         uses: actions/checkout@v2
