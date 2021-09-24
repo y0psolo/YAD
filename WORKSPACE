@@ -203,9 +203,9 @@ http_archive(
 http_archive(
     name = "nodejs-16-amd64",
     build_file = "BUILD.nodejs",
-    sha256 = "1d48c69e4141792f314d29f081501dc22218cfc22f9992c098f7e3f5e0531139",
-    strip_prefix = "node-v16.9.1-linux-x64/",
-    urls = ["https://nodejs.org/dist/v16.9.1/node-v16.9.1-linux-x64.tar.gz"],
+    sha256 = "bca7f42ea3e61938cc28868614bb37908111b9ff190fe8022fa9954651b5665d",
+    strip_prefix = "node-v16.10.0-linux-x64/",
+    urls = ["https://nodejs.org/dist/v16.10.0/node-v16.10.0-linux-x64.tar.gz"],
 )
 
 http_archive(
@@ -219,9 +219,9 @@ http_archive(
 http_archive(
     name = "nodejs-16-arm64",
     build_file = "BUILD.nodejs",
-    sha256 = "efad8bf7b7f68addbd47a8268871a10011ff77c31ef33f9d2dadc2ba7939b723",
-    strip_prefix = "node-v16.9.1-linux-arm64/",
-    urls = ["https://nodejs.org/dist/v16.9.1/node-v16.9.1-linux-arm64.tar.gz"],
+    sha256 = "2675ca64c50badd609907b2149f7c021cce52248e08f984a4102d4f390794f57",
+    strip_prefix = "node-v16.10.0-linux-arm64/",
+    urls = ["https://nodejs.org/dist/v16.10.0/node-v16.10.0-linux-arm64.tar.gz"],
 )
 
 # Get Deno archive
