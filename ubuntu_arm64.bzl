@@ -8,7 +8,7 @@ def ubuntu_arm64():
         arch = "arm64",
         packages = {
             "base-files": "pool/main/b/base-files/base-files_11ubuntu5.4_arm64.deb",
-            "ca-certificates": "pool/main/c/ca-certificates/ca-certificates_20210119~20.04.1_all.deb",
+            "ca-certificates": "pool/main/c/ca-certificates/ca-certificates_20210119~20.04.2_all.deb",
             "dash": "pool/main/d/dash/dash_0.5.10.2-6_arm64.deb",
             "fontconfig-config": "pool/main/f/fontconfig/fontconfig-config_2.13.1-2ubuntu3_all.deb",
             "fonts-dejavu-core": "pool/main/f/fonts-dejavu/fonts-dejavu-core_2.37-1_all.deb",
@@ -50,7 +50,7 @@ def ubuntu_arm64():
         },
         packages_sha256 = {
             "base-files": "74d8c19196fc93e0d9d93882880b5e196d2d16b6f59545eb87c6e0892373c02f",
-            "ca-certificates": "01a21a13ec9543652a62abb4fe476b681dac06fbe23533a9940722b1878b3c88",
+            "ca-certificates": "8179442c9c582fd71fd3817a579bf5fe9503412c1e879d3ba4f0ed9a761e54f4",
             "dash": "407e6a95be9128c34946392fb57155ac6d6421032d53358de816a756197b7b43",
             "fontconfig-config": "80b090925c52aff3f4681b361c9823b041c42c57cca58b5baf2541bafc25fed9",
             "fonts-dejavu-core": "f2b3f7f51e23e0493e8e642c82003fe75cf42bc95fda545cc96b725a69adb515",
