@@ -108,6 +108,17 @@ docker_toolchain_configure(
     client_config = "/root/.docker",
 )
 
+# Load update tools rule
+http_archive(
+    name = "rules-update",
+    sha256 = "943aaf6677ca0ea937093a4fbaf1b12af173b6c06c57b07f5b9c030ea9732fc0",
+    urls = ["https://github.com/y0psolo/rules_update/releases/download/v0.1.0/rules_update.tar.gz"],
+)
+
+# Load update tools
+load("@rules-update//:repositories.bzl", "update_dependencies")
+update_dependencies()
+
 # Get Busybox
 http_file(
     name = "busybox_amd64",
