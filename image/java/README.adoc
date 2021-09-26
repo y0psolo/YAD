@@ -141,13 +141,3 @@ The default Entrypoint for the debug tag is :
 ```dockerfile
 ENTRYPOINT ["/bin/sh"]
 ```
-## Version
-
-.Java Versions
-[cols="^1,^1,^1,^1,^1",width="50%"]
-|===
-.2+^.^| Type 2+^| 8 2+^| 11
-^| amd64 ^| arm64 ^| amd64 ^| arm64
-| Adoptium | https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u302-b08/OpenJDK8U-jre_x64_linux_hotspot_8u302b08.tar.gz[8.0.302] | https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u302-b08/OpenJDK8U-jre_aarch64_linux_hotspot_8u302b08.tar.gz[8.0.302] | https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.12+7/OpenJDK11U-jre_x64_linux_hotspot_11.0.12_7.tar.gz[11.0.12] | https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.12+7/OpenJDK11U-jre_aarch64_linux_hotspot_11.0.12_7.tar.gz[11.0.12]
-| Azul | https://cdn.azul.com/zulu/bin/zulu8.56.0.21-ca-jre8.0.302-linux_x64.tar.gz[8.0.302] | https://cdn.azul.com/zulu-embedded/bin/zulu8.56.0.23-ca-jdk8.0.302-linux_aarch64.tar.gz[8.0.302] | https://cdn.azul.com/zulu/bin/zulu11.50.19-ca-jre11.0.12-linux_x64.tar.gz[11.0.12] | https://cdn.azul.com/zulu-embedded/bin/zulu11.50.19-ca-jdk11.0.12-linux_aarch64.tar.gz[11.0.12]
-|===
