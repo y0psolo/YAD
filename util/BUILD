@@ -5,7 +5,7 @@ load(":libc_extract.bzl", "libc_extract")
 
 package(default_visibility = ["//:__subpackages__"])
 
-exports_files(["os-release.tpl"])
+exports_files(["os-release.tpl", "constants.bzl"])
 
 [
     libc_extract(

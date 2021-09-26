@@ -21,18 +21,16 @@ jobs:
           key: ${{ runner.os }}-bazel-${{ hashFiles('**/BUILD', '**/*.bzl', 'WORKSPACE') }}
           restore-keys: |
             ${{ runner.os }}-bazel-
-      - name: Run update script
-        run: bazel run :update_deb_packages
-      - name: Run ldcache update script
-        run : update/ld_cache_gen.sh
-      - name: Run azul update script
-        run : update/update_azul.sh
-      - name: Run adoptium update script
-        run : update/update_adoptium.sh
-      - name: Run nodejs update script
-        run : update/update_nodejs.sh
-      - name: Run deno update script
-        run : update/update_deno.sh
+      - name: Run update scripts
+        run: |
+          bazel run :update_deb_packages
+          update/ld_cache_gen.sh
+          update/update_azul.sh
+          update/update_adoptium.sh
+          update/update_nodejs.sh
+          update/update_deno.sh
+          bazel run :update_http
+          bazel run :update_versions
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:

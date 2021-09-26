@@ -1,5 +1,5 @@
-load("@com_github_bazelbuild_buildtools//buildifier:def.bzl", "buildifier")
 load("@rules_deb_packages//:update_deb_packages.bzl", "update_deb_packages")
+load("@rules-update//:update.bzl", "update_http", "update_version")
  
 package(default_visibility = ["//:__subpackages__"])
 
@@ -12,4 +12,16 @@ update_deb_packages(
     pgp_keys = [
         "@ubuntu_key//file",
     ],
+)
+
+update_http(
+    name = "update_http",
+    yaml_files = ["rules.yaml"],
+    bazel_file = "//:WORKSPACE",
+)
+
+update_version(
+    name = "update_versions",
+    yaml_files = ["versions.yaml"],
+    bazel_file = "//util:constants.bzl",
 )
