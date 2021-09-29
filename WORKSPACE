@@ -117,6 +117,7 @@ http_archive(
 
 # Load update tools
 load("@rules-update//:repositories.bzl", "update_dependencies")
+
 update_dependencies()
 
 # Get Busybox
@@ -206,9 +207,9 @@ http_archive(
 http_archive(
     name = "nodejs-14-amd64",
     build_file = "BUILD.nodejs",
-    sha256 = "19e376214450e93e58687198070b4ab46e42357032ec65f23a7e35b0e86ad6e2",
-    strip_prefix = "node-v14.17.6-linux-x64/",
-    urls = ["https://nodejs.org/dist/v14.17.6/node-v14.17.6-linux-x64.tar.gz"],
+    sha256 = "f411b8aee36d6dc6a5435906f42bd4ea59d6f678894cf562beaf115b58a318ee",
+    strip_prefix = "node-v14.18.0-linux-x64/",
+    urls = ["https://nodejs.org/dist/v14.18.0/node-v14.18.0-linux-x64.tar.gz"],
 )
 
 http_archive(
@@ -222,9 +223,9 @@ http_archive(
 http_archive(
     name = "nodejs-14-arm64",
     build_file = "BUILD.nodejs",
-    sha256 = "3355eae15582be48f6be0910e279abbf2324f4538d3ccb2da7e66edab6e6b0fe",
-    strip_prefix = "node-v14.17.6-linux-arm64/",
-    urls = ["https://nodejs.org/dist/v14.17.6/node-v14.17.6-linux-arm64.tar.gz"],
+    sha256 = "6261a87bf25d08e7b39017a1486b04c65be3ea0ea8442c090e1e4ec4d4cc6ebd",
+    strip_prefix = "node-v14.18.0-linux-arm64/",
+    urls = ["https://nodejs.org/dist/v14.18.0/node-v14.18.0-linux-arm64.tar.gz"],
 )
 
 http_archive(
@@ -239,9 +240,9 @@ http_archive(
 http_archive(
     name = "deno-amd64",
     build_file = "BUILD.deno",
-    sha256 = "a1f7645686face273e4f64c027bd5272ceb1c374278bda9a8734a4fe2c8e840c",
+    sha256 = "e39bef020ce000f99990517c4dee61c0a361dbf4e132d0521b3a1ca4f53924ad",
     type = "zip",
-    urls = ["https://github.com/denoland/deno/releases/download/v1.14.1/deno-x86_64-unknown-linux-gnu.zip"],
+    urls = ["https://github.com/denoland/deno/releases/download/v1.14.2/deno-x86_64-unknown-linux-gnu.zip"],
 )
 
 # Tini executable
