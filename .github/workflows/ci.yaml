@@ -10,6 +10,10 @@ jobs:
     environment: Release
     runs-on: ubuntu-latest
     steps:
+      - name: Free space
+        run : |
+          sudo rm -rf /usr/local/lib/android
+          sudo rm -rf /usr/share/dotnet
       - name: Setup repository
         uses: actions/checkout@v2
       - name: Setup Bazelisk
@@ -34,6 +38,8 @@ jobs:
             ${{ runner.os }}-bazel-
       - name: bazel build
         run: bazel build //image:all
+      - name: bazel test
+        run: bazel test //test:*
       - uses: actions/upload-artifact@v2
         if: ${{ failure() }}
         with:
