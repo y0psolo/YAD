@@ -128,7 +128,7 @@ This image is designed for running java application.
 | 8_debug, 11_debug
 |===
 
-## Default Entrypoint
+== Default Entrypoint
 
 The default Entrypoint for the latest tag is :
 
@@ -141,3 +141,25 @@ The default Entrypoint for the debug tag is :
 ```dockerfile
 ENTRYPOINT ["/bin/sh"]
 ```
+
+== Security
+
+Security scan of the image updated daily.
+
+.Security Scan List
+[cols="2,^1,^1,^1,^1",width="50%"]
+|===
+| Adoptium
+| link:../../security/table/adoptium_8[8]
+| link:../../security/table/adoptium_8_debug[8_debug]
+| link:../../security/table/adoptium_11[11]
+| link:../../security/table/adoptium_11_debug[11_debug]
+
+| Azul
+| link:../../security/table/azul_8[8]
+| link:../../security/table/azul__8_debug[8_debug]
+| link:../../security/table/azul__11[11]
+| link:../../security/table/azul_11_debug[11_debug]
+|===
+
+Security scan for Adoptium and Azul tar.gz archive installation is not supported by Trivy. To list CVE on Azul disctirbution see https://docs.azul.com/core/cve.

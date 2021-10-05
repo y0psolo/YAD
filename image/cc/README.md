@@ -29,3 +29,7 @@ The default Entrypoint for the debug tag is :
 ENTRYPOINT ["/bin/sh"]
 ```
 
+## Security
+
+Security scan of the image updated daily : [latest](../../security/table/cc_latest) [debug](../../security/table/cc_latest)
+

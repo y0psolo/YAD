@@ -34,3 +34,9 @@ The default Entrypoint for the debug tag is :
 ENTRYPOINT ["/bin/sh"]
 ```
 
+## Security
+
+Security scan of the image updated daily : [latest](../../security/table/deno_latest) [debug](../../security/table/deno_latest)
+
+Security scan for Deno application is not supported by Trivy. See https://github.com/denoland/deno/security/advisories for the full CVE list.
+
