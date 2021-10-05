@@ -80,5 +80,4 @@ container_push(
     # pushing many images in parallel.
     # https://github.com/bazelbuild/rules_docker/issues/525
     sequential = True,
-    skip_unchanged_digest = True,
 )
