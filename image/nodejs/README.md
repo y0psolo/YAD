@@ -35,3 +35,9 @@ The default Entrypoint for the debug tag is :
 ENTRYPOINT ["/bin/sh"]
 ```
 
+## Security
+
+Security scan of the image updated daily : [14](../../security/table/nodejs_14) [14_debug](../../security/table/nodejs_14_debug) [16](../../security/table/nodejs_16) [16_debug](../../security/table/nodejs_16_debug)
+
+Security scan for Nodejs tar.gz archive installation is not supported by Trivy. See https://github.com/nodejs/node/blob/master/SECURITY.md for more information on security issue related to Nodejs.
+
