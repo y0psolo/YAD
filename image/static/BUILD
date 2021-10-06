@@ -21,7 +21,7 @@ load("//util:constants.bzl", "BASE_ARCHITECTURES", "NONROOT")
         architecture = arch,
         entrypoint = ["/bin/sh"],
         layers = [
-            "//layer/static:amd64",
+            "//layer/static:" + arch,
             "//layer/static:" + arch + "_debug",
         ],
         user = "%d" % NONROOT,
