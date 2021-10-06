@@ -10,6 +10,37 @@ jobs:
     environment: Release
     runs-on: ubuntu-latest
     steps:
+      - name: Free space
+        run : |
+          sudo rm -rf /usr/local/lib/android
+          sudo rm -rf /usr/share/dotnet
+      - name: Setup repository
+        uses: actions/checkout@v2
+      - name: Setup Bazelisk
+        uses: bazelbuild/setup-bazelisk@v1
+      - name: Get current date
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+      - name: Mount bazel cache
+        uses: actions/cache@v2
+        with:
+          path: "~/.cache/bazel"
+          key: ${{ runner.os }}-bazel-ci-${{ hashFiles('**/BUILD', '**/*.bzl', 'WORKSPACE') }}
+          restore-keys: |
+            ${{ runner.os }}-bazel-clean-${{ steps.date.outputs.date }}
+            ${{ runner.os }}-bazel-ci-
+            ${{ runner.os }}-bazel-
+      - name: bazel build
+        run: bazel build //image:all
+  test:
+    needs: build
+    environment: Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Free space
+        run : |
+          sudo rm -rf /usr/local/lib/android
+          sudo rm -rf /usr/share/dotnet
       - name: Setup repository
         uses: actions/checkout@v2
       - name: Setup Bazelisk
@@ -32,8 +63,8 @@ jobs:
             ${{ runner.os }}-bazel-clean-${{ steps.date.outputs.date }}
             ${{ runner.os }}-bazel-ci-
             ${{ runner.os }}-bazel-
-      - name: bazel build
-        run: bazel build //image:all
+      - name: bazel test
+        run: bazel test //test:*
       - uses: actions/upload-artifact@v2
         if: ${{ failure() }}
         with:

@@ -9,6 +9,10 @@ jobs:
     environment: Release
     runs-on: ubuntu-latest
     steps:
+      - name: Free space
+        run : |
+          sudo rm -rf /usr/local/lib/android
+          sudo rm -rf /usr/share/dotnet
       - name: Setup repository
         uses: actions/checkout@v2
       - name: Setup Bazelisk
@@ -30,6 +34,8 @@ jobs:
           registry: docker.io
           username: ${{ secrets.DOCKER_LOGIN }}
           password: ${{ secrets.DOCKER_PASSWORD }}
+      - name: bazel test
+        run: bazel test //test:*
       - name: bazel publish
         run: bazel run //image:publish
       - name: merge tags
