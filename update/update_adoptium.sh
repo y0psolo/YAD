@@ -42,8 +42,8 @@ URL_17_AMD64=https://github.com/adoptium/temurin17-binaries/releases/download/$V
 URL_17_ARM64=https://github.com/adoptium/temurin17-binaries/releases/download/$VERSION/OpenJDK17-jdk_aarch64_linux_hotspot_${VERSION1}_$VERSION2.tar.gz
 
 # Update config file for WORKSPACE rule
-write_rule adoptium_17_amd64 jre-17-adoptium-amd64 $URL_11_AMD64 $VERSION/
-write_rule adoptium_17_arm64 jre-17-adoptium-arm64 $URL_11_ARM64 $VERSION/
+write_rule adoptium_17_amd64 jre-17-adoptium-amd64 $URL_17_AMD64 $VERSION/
+write_rule adoptium_17_arm64 jre-17-adoptium-arm64 $URL_17_ARM64 $VERSION/
 
 # Update config file for util/constants.bzl
 write_version adoptium_17 ADOPTIUM_VERSIONS_MAPPING $VERSION1 17
