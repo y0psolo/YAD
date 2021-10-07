@@ -155,6 +155,14 @@ http_archive(
 )
 
 http_archive(
+    name = "jre-17-azul-amd64",
+    build_file = "BUILD.azul_17_amd64",
+    sha256 = "d33e55f2874eb30d5953b416e0b9b45b54b0ccaa2fed806dd8bc085f3d1a10e5",
+    strip_prefix = "zulu17.28.13-ca-jre17.0.0-linux_x64/",
+    urls = ["https://cdn.azul.com/zulu/bin/zulu17.28.13-ca-jre17.0.0-linux_x64.tar.gz"],
+)
+
+http_archive(
     name = "jre-8-azul-arm64",
     build_file = "BUILD.azul_8_arm64",
     sha256 = "cc917670e2622dbbc243b6f96c9c199de4ed9e5d541acc68abcb9b378013a38c",
@@ -168,6 +176,14 @@ http_archive(
     sha256 = "61254688067454d3ccf0ef25993b5dcab7b56c8129e53b73566c28a8dd4d48fb",
     strip_prefix = "zulu11.50.19-ca-jdk11.0.12-linux_aarch64/",
     urls = ["https://cdn.azul.com/zulu-embedded/bin/zulu11.50.19-ca-jdk11.0.12-linux_aarch64.tar.gz"],
+)
+
+http_archive(
+    name = "jre-17-azul-arm64",
+    build_file = "BUILD.azul_17_arm64",
+    sha256 = "432415e6223a22277764bc5917755ff5412920f62156aa9285372e88fee98324",
+    strip_prefix = "zulu17.28.13-ca-jre17.0.0-linux_aarch64/",
+    urls = ["https://cdn.azul.com/zulu/bin/zulu17.28.13-ca-jre17.0.0-linux_aarch64.tar.gz"],
 )
 
 # Get Adoptium package
@@ -188,6 +204,14 @@ http_archive(
 )
 
 http_archive(
+    name = "jre-17-adoptium-amd64",
+    build_file = "BUILD.adoptium_17_amd64",
+    sha256 = "6f1335d9a7855159f982dac557420397be9aa85f3f7bc84e111d25871c02c0c7",
+    strip_prefix = "jdk-17+35/",
+    urls = ["https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17+35/OpenJDK17-jdk_x64_linux_hotspot_17_35.tar.gz"],
+)
+
+http_archive(
     name = "jre-8-adoptium-arm64",
     build_file = "BUILD.adoptium_8_arm64",
     sha256 = "9951a36430c14548f78569135956e929db2554bfc706bb3fe0bf9a14acd28055",
@@ -201,6 +225,14 @@ http_archive(
     sha256 = "eebf9b6b515fd139d45410ea4a0e7c18f015acba41e677cd7a57d1fe7a553681",
     strip_prefix = "jdk-11.0.12+7-jre/",
     urls = ["https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.12+7/OpenJDK11U-jre_aarch64_linux_hotspot_11.0.12_7.tar.gz"],
+)
+
+http_archive(
+    name = "jre-17-adoptium-arm64",
+    build_file = "BUILD.adoptium_17_arm64",
+    sha256 = "e08e6d8c84da28a2c49ccd511f8835c329fbdd8e4faff662c58fa24cca74021d",
+    strip_prefix = "jdk-17+35/",
+    urls = ["https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17+35/OpenJDK17-jdk_aarch64_linux_hotspot_17_35.tar.gz"],
 )
 
 # Get Nodejs archive

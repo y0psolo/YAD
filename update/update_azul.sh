@@ -38,3 +38,9 @@ update_azul 11 jre x86
 
 # JAVA VERSION 11 on arm64
 update_azul 11 jdk arm
+
+# JAVA VERSION 17 on amd64
+update_azul 17 jre x86
+
+# JAVA VERSION 17 on arm64
+update_azul 17 jre arm
