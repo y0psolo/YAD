@@ -15,11 +15,11 @@ commandTests:
   - name: java-symlink
     command: "/usr/bin/tini"
     args: ["--", "/usr/bin/java", "-version"]
-    expectedError: ['openjdk version "[0-9]+\.[0-9]+\.[0-9_]+"']
+    expectedError: ['openjdk version "[0-9]+\.?[0-9]*\.?[0-9_]*"']
 metadataTest:
   env:
     - key: 'JAVA_VERSION'
-      value: '([0-9]+\.[0-9]+\.[0-9]+|[0-9]u[0-9]+)'
+      value: '([0-9]+\.[0-9]+\.[0-9]+|[0-9]u[0-9]+|[0-9]+)'
       isRegex: true
     - key: 'JAVA_HOME'
       value: '/usr/lib/jvm/zre-[0-9]+-(amd|arm)64'
