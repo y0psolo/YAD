@@ -239,42 +239,42 @@ http_archive(
 http_archive(
     name = "nodejs-14-amd64",
     build_file = "BUILD.nodejs",
-    sha256 = "f411b8aee36d6dc6a5435906f42bd4ea59d6f678894cf562beaf115b58a318ee",
-    strip_prefix = "node-v14.18.0-linux-x64/",
-    urls = ["https://nodejs.org/dist/v14.18.0/node-v14.18.0-linux-x64.tar.gz"],
+    sha256 = "088498c67bab31871a1cab40dbc9b7b82c1abf53a2cf740e061bd6033a74839d",
+    strip_prefix = "node-v14.18.1-linux-x64/",
+    urls = ["https://nodejs.org/dist/v14.18.1/node-v14.18.1-linux-x64.tar.gz"],
 )
 
 http_archive(
     name = "nodejs-16-amd64",
     build_file = "BUILD.nodejs",
-    sha256 = "bfc84faaa07864398edbe8bfb9d7d0e64fa20649b8c498cd299e0ff44657d9a3",
-    strip_prefix = "node-v16.11.0-linux-x64/",
-    urls = ["https://nodejs.org/dist/v16.11.0/node-v16.11.0-linux-x64.tar.gz"],
+    sha256 = "48fba5e9d60e12e777994dafba7b04449c3d0cd004340970fd674220e572a39e",
+    strip_prefix = "node-v16.11.1-linux-x64/",
+    urls = ["https://nodejs.org/dist/v16.11.1/node-v16.11.1-linux-x64.tar.gz"],
 )
 
 http_archive(
     name = "nodejs-14-arm64",
     build_file = "BUILD.nodejs",
-    sha256 = "6261a87bf25d08e7b39017a1486b04c65be3ea0ea8442c090e1e4ec4d4cc6ebd",
-    strip_prefix = "node-v14.18.0-linux-arm64/",
-    urls = ["https://nodejs.org/dist/v14.18.0/node-v14.18.0-linux-arm64.tar.gz"],
+    sha256 = "3fcd1c6c008c2dfddea60ede3c735696982fb038288e45c2d35ef6b2098c8220",
+    strip_prefix = "node-v14.18.1-linux-arm64/",
+    urls = ["https://nodejs.org/dist/v14.18.1/node-v14.18.1-linux-arm64.tar.gz"],
 )
 
 http_archive(
     name = "nodejs-16-arm64",
     build_file = "BUILD.nodejs",
-    sha256 = "c923289edd9b251dd37bd6bb53c4fbf0476ae91d55b8703aeb95b0da39642c45",
-    strip_prefix = "node-v16.11.0-linux-arm64/",
-    urls = ["https://nodejs.org/dist/v16.11.0/node-v16.11.0-linux-arm64.tar.gz"],
+    sha256 = "d51b372477287ee41e5bf2d90972868ed28b5c5465bc2df14e86c398926916c1",
+    strip_prefix = "node-v16.11.1-linux-arm64/",
+    urls = ["https://nodejs.org/dist/v16.11.1/node-v16.11.1-linux-arm64.tar.gz"],
 )
 
 # Get Deno archive
 http_archive(
     name = "deno-amd64",
     build_file = "BUILD.deno",
-    sha256 = "416415b4751443d33ab085b9d98e361920da430068bf72c84844923909cb2441",
+    sha256 = "4e401609df1700d01c5c6ba9c79fd372c6affcb712c11b9575f9f916f7c6d70b",
     type = "zip",
-    urls = ["https://github.com/denoland/deno/releases/download/v1.14.3/deno-x86_64-unknown-linux-gnu.zip"],
+    urls = ["https://github.com/denoland/deno/releases/download/v1.15.1/deno-x86_64-unknown-linux-gnu.zip"],
 )
 
 # Tini executable
