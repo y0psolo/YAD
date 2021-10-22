@@ -141,17 +141,17 @@ http_file(
 http_archive(
     name = "jre-8-azul-amd64",
     build_file = "BUILD.azul_8_amd64",
-    sha256 = "9a0d0eb753c3592faca48d5e9b84bcf5b92301fd09081b191623cb8e478349d7",
-    strip_prefix = "zulu8.56.0.21-ca-jre8.0.302-linux_x64/",
-    urls = ["https://cdn.azul.com/zulu/bin/zulu8.56.0.21-ca-jre8.0.302-linux_x64.tar.gz"],
+    sha256 = "e1e893f7b2b2c3574761ee1541aa170809865855c2a0879c97cce0a449297c6f",
+    strip_prefix = "zulu8.58.0.13-ca-jre8.0.312-linux_x64/",
+    urls = ["https://cdn.azul.com/zulu/bin/zulu8.58.0.13-ca-jre8.0.312-linux_x64.tar.gz"],
 )
 
 http_archive(
     name = "jre-11-azul-amd64",
     build_file = "BUILD.azul_11_amd64",
-    sha256 = "c4a41ea4b963796d5a105d6ef015003e3a0aaea830733c4755b22a507f17e741",
-    strip_prefix = "zulu11.50.19-ca-jre11.0.12-linux_x64/",
-    urls = ["https://cdn.azul.com/zulu/bin/zulu11.50.19-ca-jre11.0.12-linux_x64.tar.gz"],
+    sha256 = "cf2190407bd07f763479fc3d9e250a10238df1d02d8de389ce3a65921d1298fa",
+    strip_prefix = "zulu11.52.13-ca-jre11.0.13-linux_x64/",
+    urls = ["https://cdn.azul.com/zulu/bin/zulu11.52.13-ca-jre11.0.13-linux_x64.tar.gz"],
 )
 
 http_archive(
@@ -165,17 +165,17 @@ http_archive(
 http_archive(
     name = "jre-8-azul-arm64",
     build_file = "BUILD.azul_8_arm64",
-    sha256 = "cc917670e2622dbbc243b6f96c9c199de4ed9e5d541acc68abcb9b378013a38c",
-    strip_prefix = "zulu8.56.0.23-ca-jdk8.0.302-linux_aarch64/jre/",
-    urls = ["https://cdn.azul.com/zulu-embedded/bin/zulu8.56.0.23-ca-jdk8.0.302-linux_aarch64.tar.gz"],
+    sha256 = "a3e9f7cfe55eb9ed9dfd87e38d61240c8bbf8543125ff9ae905ffb73bc625e06",
+    strip_prefix = "zulu8.58.0.13-ca-jdk8.0.312-linux_aarch64/jre/",
+    urls = ["https://cdn.azul.com/zulu-embedded/bin/zulu8.58.0.13-ca-jdk8.0.312-linux_aarch64.tar.gz"],
 )
 
 http_archive(
     name = "jre-11-azul-arm64",
     build_file = "BUILD.azul_11_arm64",
-    sha256 = "61254688067454d3ccf0ef25993b5dcab7b56c8129e53b73566c28a8dd4d48fb",
-    strip_prefix = "zulu11.50.19-ca-jdk11.0.12-linux_aarch64/",
-    urls = ["https://cdn.azul.com/zulu-embedded/bin/zulu11.50.19-ca-jdk11.0.12-linux_aarch64.tar.gz"],
+    sha256 = "6be187379c26506a4b804b4f734c17e554aebe4204bde58a10b429054cc9cf9f",
+    strip_prefix = "zulu11.52.13-ca-jdk11.0.13-linux_aarch64/",
+    urls = ["https://cdn.azul.com/zulu-embedded/bin/zulu11.52.13-ca-jdk11.0.13-linux_aarch64.tar.gz"],
 )
 
 http_archive(
@@ -190,17 +190,17 @@ http_archive(
 http_archive(
     name = "jre-8-adoptium-amd64",
     build_file = "BUILD.adoptium_8_amd64",
-    sha256 = "a74e63657ad04151a8f95202071d2895f1cc9295c910ad3c361ff1cc27395107",
-    strip_prefix = "jdk8u302-b08-jre/",
-    urls = ["https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u302-b08/OpenJDK8U-jre_x64_linux_hotspot_8u302b08.tar.gz"],
+    sha256 = "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5",
+    strip_prefix = "jdk8u312-b07-jre/",
+    urls = ["https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u312-b07/OpenJDK8U-jre_x64_linux_hotspot_8u312b07.tar.gz"],
 )
 
 http_archive(
     name = "jre-11-adoptium-amd64",
     build_file = "BUILD.adoptium_11",
-    sha256 = "e813e270b7ea0a13f9c400ce5abd4cb811aacbd536b8909e6c7f0e346f78348c",
-    strip_prefix = "jdk-11.0.12+7-jre/",
-    urls = ["https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.12+7/OpenJDK11U-jre_x64_linux_hotspot_11.0.12_7.tar.gz"],
+    sha256 = "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5",
+    strip_prefix = "jdk-11.0.13+8-jre/",
+    urls = ["https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.13+8/OpenJDK11U-jre_x64_linux_hotspot_11.0.13_8.tar.gz"],
 )
 
 http_archive(
@@ -214,17 +214,17 @@ http_archive(
 http_archive(
     name = "jre-8-adoptium-arm64",
     build_file = "BUILD.adoptium_8_arm64",
-    sha256 = "9951a36430c14548f78569135956e929db2554bfc706bb3fe0bf9a14acd28055",
-    strip_prefix = "jdk8u302-b08-jre/",
-    urls = ["https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u302-b08/OpenJDK8U-jre_aarch64_linux_hotspot_8u302b08.tar.gz"],
+    sha256 = "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5",
+    strip_prefix = "jdk8u312-b07-jre/",
+    urls = ["https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u312-b07/OpenJDK8U-jre_aarch64_linux_hotspot_8u312b07.tar.gz"],
 )
 
 http_archive(
     name = "jre-11-adoptium-arm64",
     build_file = "BUILD.adoptium_11",
-    sha256 = "eebf9b6b515fd139d45410ea4a0e7c18f015acba41e677cd7a57d1fe7a553681",
-    strip_prefix = "jdk-11.0.12+7-jre/",
-    urls = ["https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.12+7/OpenJDK11U-jre_aarch64_linux_hotspot_11.0.12_7.tar.gz"],
+    sha256 = "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5",
+    strip_prefix = "jdk-11.0.13+8-jre/",
+    urls = ["https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.13+8/OpenJDK11U-jre_aarch64_linux_hotspot_11.0.13_8.tar.gz"],
 )
 
 http_archive(
@@ -247,9 +247,9 @@ http_archive(
 http_archive(
     name = "nodejs-16-amd64",
     build_file = "BUILD.nodejs",
-    sha256 = "48fba5e9d60e12e777994dafba7b04449c3d0cd004340970fd674220e572a39e",
-    strip_prefix = "node-v16.11.1-linux-x64/",
-    urls = ["https://nodejs.org/dist/v16.11.1/node-v16.11.1-linux-x64.tar.gz"],
+    sha256 = "1f41d5b68ca39eb2e76dad4e5beb8de8b0a1498773e3e53b80c03e42202969fb",
+    strip_prefix = "node-v16.12.0-linux-x64/",
+    urls = ["https://nodejs.org/dist/v16.12.0/node-v16.12.0-linux-x64.tar.gz"],
 )
 
 http_archive(
@@ -263,18 +263,18 @@ http_archive(
 http_archive(
     name = "nodejs-16-arm64",
     build_file = "BUILD.nodejs",
-    sha256 = "d51b372477287ee41e5bf2d90972868ed28b5c5465bc2df14e86c398926916c1",
-    strip_prefix = "node-v16.11.1-linux-arm64/",
-    urls = ["https://nodejs.org/dist/v16.11.1/node-v16.11.1-linux-arm64.tar.gz"],
+    sha256 = "2abb224a6d9880d459ed64a02876b5843ca891978b072e7516431b15142a472c",
+    strip_prefix = "node-v16.12.0-linux-arm64/",
+    urls = ["https://nodejs.org/dist/v16.12.0/node-v16.12.0-linux-arm64.tar.gz"],
 )
 
 # Get Deno archive
 http_archive(
     name = "deno-amd64",
     build_file = "BUILD.deno",
-    sha256 = "4e401609df1700d01c5c6ba9c79fd372c6affcb712c11b9575f9f916f7c6d70b",
+    sha256 = "dd64ab38c5d0a70f83ad63c0297c8cdbb4ac667d43eb6e48731dce5bd4635bfd",
     type = "zip",
-    urls = ["https://github.com/denoland/deno/releases/download/v1.15.1/deno-x86_64-unknown-linux-gnu.zip"],
+    urls = ["https://github.com/denoland/deno/releases/download/v1.15.2/deno-x86_64-unknown-linux-gnu.zip"],
 )
 
 # Tini executable
