@@ -107,7 +107,7 @@ load("//util:constants.bzl", "BASE_ARCHITECTURES", "JRE_VERSIONS", "PACKAGE", "P
         name = arch + "_adoptium_" + version,
         env = {
             "JAVA_HOME": "/usr/lib/jvm/jre-" + version + "-" + arch,
-            "JAVA_VERSION": ADOPTIUM_VERSIONS_MAPPING[version],
+            "JAVA_VERSION": ADOPTIUM_VERSIONS_MAPPING[arch][version],
         },
         symlinks = {"/usr/bin/java": "/usr/lib/jvm/jre-" + version + "-" + arch + "/bin/java"},
         tars = [
@@ -126,7 +126,7 @@ load("//util:constants.bzl", "BASE_ARCHITECTURES", "JRE_VERSIONS", "PACKAGE", "P
         name = arch + "_azul_" + version,
         env = {
             "JAVA_HOME": "/usr/lib/jvm/zre-" + version + "-" + arch,
-            "JAVA_VERSION": AZUL_VERSIONS_MAPPING[version],
+            "JAVA_VERSION": AZUL_VERSIONS_MAPPING[arch][version],
         },
         symlinks = {"/usr/bin/java": "/usr/lib/jvm/zre-" + version + "-" + arch + "/bin/java"},
         tars = [

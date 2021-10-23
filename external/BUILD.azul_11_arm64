@@ -235,7 +235,6 @@ filegroup(
         "lib/libextnet.so",
         "lib/libfontmanager.so",
         "lib/libfreetype.so",
-        "lib/libharfbuzz.so",
         "lib/libinstrument.so",
         "lib/libj2gss.so",
         "lib/libj2pcsc.so",

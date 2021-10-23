@@ -23,7 +23,7 @@ update_azul() {
     # Update WORKSPACE rule
     write_rule azul_$1_$ARCH jre-$1-azul-$ARCH $URL $PREFIX
     # Update util/constants.bzl file
-    write_version azul_$1_$ARCH AZUL_VERSIONS_MAPPING $VERSION $1
+    write_version azul_$1_$ARCH AZUL_VERSIONS_MAPPING $VERSION "[\"$ARCH\", $1]"
 }
 
 

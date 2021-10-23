@@ -111,8 +111,8 @@ docker_toolchain_configure(
 # Load update tools rule
 http_archive(
     name = "rules-update",
-    sha256 = "943aaf6677ca0ea937093a4fbaf1b12af173b6c06c57b07f5b9c030ea9732fc0",
-    urls = ["https://github.com/y0psolo/rules_update/releases/download/v0.1.0/rules_update.tar.gz"],
+    sha256 = "4ba0974884271a20447ddf15e247175c3c98621a5d57eeaa152150bbf8ca86d9",
+    urls = ["https://github.com/y0psolo/rules_update/releases/download/v0.2.0/rules_update.tar.gz"],
 )
 
 # Load update tools
@@ -190,17 +190,17 @@ http_archive(
 http_archive(
     name = "jre-8-adoptium-amd64",
     build_file = "BUILD.adoptium_8_amd64",
-    sha256 = "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5",
-    strip_prefix = "jdk8u312-b07-jre/",
-    urls = ["https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u312-b07/OpenJDK8U-jre_x64_linux_hotspot_8u312b07.tar.gz"],
+    sha256 = "699981083983b60a7eeb511ad640fae3ae4b879de5a3980fe837e8ade9c34a08",
+    strip_prefix = "jdk8u312-b07/jre/",
+    urls = ["https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u312-b07/OpenJDK8U-jdk_x64_linux_hotspot_8u312b07.tar.gz"],
 )
 
 http_archive(
     name = "jre-11-adoptium-amd64",
     build_file = "BUILD.adoptium_11",
-    sha256 = "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5",
-    strip_prefix = "jdk-11.0.13+8-jre/",
-    urls = ["https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.13+8/OpenJDK11U-jre_x64_linux_hotspot_11.0.13_8.tar.gz"],
+    sha256 = "3b1c0c34be4c894e64135a454f2d5aaa4bd10aea04ec2fa0c0efe6bb26528e30",
+    strip_prefix = "jdk-11.0.13+8/",
+    urls = ["https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.13%2B8/OpenJDK11U-jdk_x64_linux_hotspot_11.0.13_8.tar.gz"],
 )
 
 http_archive(
@@ -208,23 +208,23 @@ http_archive(
     build_file = "BUILD.adoptium_17_amd64",
     sha256 = "6f1335d9a7855159f982dac557420397be9aa85f3f7bc84e111d25871c02c0c7",
     strip_prefix = "jdk-17+35/",
-    urls = ["https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17+35/OpenJDK17-jdk_x64_linux_hotspot_17_35.tar.gz"],
+    urls = ["https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17%2B35/OpenJDK17-jdk_x64_linux_hotspot_17_35.tar.gz"],
 )
 
 http_archive(
     name = "jre-8-adoptium-arm64",
     build_file = "BUILD.adoptium_8_arm64",
-    sha256 = "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5",
-    strip_prefix = "jdk8u312-b07-jre/",
-    urls = ["https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u312-b07/OpenJDK8U-jre_aarch64_linux_hotspot_8u312b07.tar.gz"],
+    sha256 = "f287cdc2a688c2df247ea0d8bfe2863645b73848e4e5c35b02a8a3d2d6b69551",
+    strip_prefix = "jdk8u302-b08/jre/",
+    urls = ["https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u302-b08/OpenJDK8U-jdk_aarch64_linux_hotspot_8u302b08.tar.gz"],
 )
 
 http_archive(
     name = "jre-11-adoptium-arm64",
     build_file = "BUILD.adoptium_11",
-    sha256 = "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5",
-    strip_prefix = "jdk-11.0.13+8-jre/",
-    urls = ["https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.13+8/OpenJDK11U-jre_aarch64_linux_hotspot_11.0.13_8.tar.gz"],
+    sha256 = "a77013bff10a5e9c59159231dd5c4bd071fc4c24beed42bd49b82803ba9506ef",
+    strip_prefix = "jdk-11.0.13+8/",
+    urls = ["https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.13%2B8/OpenJDK11U-jdk_aarch64_linux_hotspot_11.0.13_8.tar.gz"],
 )
 
 http_archive(
@@ -232,7 +232,7 @@ http_archive(
     build_file = "BUILD.adoptium_17_arm64",
     sha256 = "e08e6d8c84da28a2c49ccd511f8835c329fbdd8e4faff662c58fa24cca74021d",
     strip_prefix = "jdk-17+35/",
-    urls = ["https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17+35/OpenJDK17-jdk_aarch64_linux_hotspot_17_35.tar.gz"],
+    urls = ["https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17%2B35/OpenJDK17-jdk_aarch64_linux_hotspot_17_35.tar.gz"],
 )
 
 # Get Nodejs archive
