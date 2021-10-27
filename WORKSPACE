@@ -157,9 +157,9 @@ http_archive(
 http_archive(
     name = "jre-17-azul-amd64",
     build_file = "BUILD.azul_17_amd64",
-    sha256 = "d33e55f2874eb30d5953b416e0b9b45b54b0ccaa2fed806dd8bc085f3d1a10e5",
-    strip_prefix = "zulu17.28.13-ca-jre17.0.0-linux_x64/",
-    urls = ["https://cdn.azul.com/zulu/bin/zulu17.28.13-ca-jre17.0.0-linux_x64.tar.gz"],
+    sha256 = "1fc247d0482ff5b0a9735bcc4cf617297ae4d606f84fdbcd09774dcf2bbb2fd7",
+    strip_prefix = "zulu17.30.15-ca-jre17.0.1-linux_x64/",
+    urls = ["https://cdn.azul.com/zulu/bin/zulu17.30.15-ca-jre17.0.1-linux_x64.tar.gz"],
 )
 
 http_archive(
@@ -181,9 +181,9 @@ http_archive(
 http_archive(
     name = "jre-17-azul-arm64",
     build_file = "BUILD.azul_17_arm64",
-    sha256 = "432415e6223a22277764bc5917755ff5412920f62156aa9285372e88fee98324",
-    strip_prefix = "zulu17.28.13-ca-jre17.0.0-linux_aarch64/",
-    urls = ["https://cdn.azul.com/zulu/bin/zulu17.28.13-ca-jre17.0.0-linux_aarch64.tar.gz"],
+    sha256 = "162a67e76b44c7d8ecfe0150cfc3e8732dd9c6b9b2770dd233feb5b7daf05d8a",
+    strip_prefix = "zulu17.30.15-ca-jre17.0.1-linux_aarch64/",
+    urls = ["https://cdn.azul.com/zulu/bin/zulu17.30.15-ca-jre17.0.1-linux_aarch64.tar.gz"],
 )
 
 # Get Adoptium package
@@ -214,9 +214,9 @@ http_archive(
 http_archive(
     name = "jre-8-adoptium-arm64",
     build_file = "BUILD.adoptium_8_arm64",
-    sha256 = "f287cdc2a688c2df247ea0d8bfe2863645b73848e4e5c35b02a8a3d2d6b69551",
-    strip_prefix = "jdk8u302-b08/jre/",
-    urls = ["https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u302-b08/OpenJDK8U-jdk_aarch64_linux_hotspot_8u302b08.tar.gz"],
+    sha256 = "87ff502eba3008cac71edeb9595398a73dc14883fe3072d152e731bf0877897e",
+    strip_prefix = "jdk8u312-b07/jre/",
+    urls = ["https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u312-b07/OpenJDK8U-jdk_aarch64_linux_hotspot_8u312b07.tar.gz"],
 )
 
 http_archive(
@@ -247,9 +247,9 @@ http_archive(
 http_archive(
     name = "nodejs-16-amd64",
     build_file = "BUILD.nodejs",
-    sha256 = "1f41d5b68ca39eb2e76dad4e5beb8de8b0a1498773e3e53b80c03e42202969fb",
-    strip_prefix = "node-v16.12.0-linux-x64/",
-    urls = ["https://nodejs.org/dist/v16.12.0/node-v16.12.0-linux-x64.tar.gz"],
+    sha256 = "589b7e7eb22f8358797a2c14a0bd865459d0b44458b8f05d2721294dacc7f734",
+    strip_prefix = "node-v16.13.0-linux-x64/",
+    urls = ["https://nodejs.org/dist/v16.13.0/node-v16.13.0-linux-x64.tar.gz"],
 )
 
 http_archive(
@@ -263,18 +263,18 @@ http_archive(
 http_archive(
     name = "nodejs-16-arm64",
     build_file = "BUILD.nodejs",
-    sha256 = "2abb224a6d9880d459ed64a02876b5843ca891978b072e7516431b15142a472c",
-    strip_prefix = "node-v16.12.0-linux-arm64/",
-    urls = ["https://nodejs.org/dist/v16.12.0/node-v16.12.0-linux-arm64.tar.gz"],
+    sha256 = "46e3857f5552abd36d9548380d795b043a3ceec2504e69fe1a754fa76012daaf",
+    strip_prefix = "node-v16.13.0-linux-arm64/",
+    urls = ["https://nodejs.org/dist/v16.13.0/node-v16.13.0-linux-arm64.tar.gz"],
 )
 
 # Get Deno archive
 http_archive(
     name = "deno-amd64",
     build_file = "BUILD.deno",
-    sha256 = "dd64ab38c5d0a70f83ad63c0297c8cdbb4ac667d43eb6e48731dce5bd4635bfd",
+    sha256 = "f728d29af38b7fe22aab5b46b629c90a02f407888241e46ef1741141ec10ffe1",
     type = "zip",
-    urls = ["https://github.com/denoland/deno/releases/download/v1.15.2/deno-x86_64-unknown-linux-gnu.zip"],
+    urls = ["https://github.com/denoland/deno/releases/download/v1.15.3/deno-x86_64-unknown-linux-gnu.zip"],
 )
 
 # Tini executable
