@@ -206,9 +206,9 @@ http_archive(
 http_archive(
     name = "jre-17-adoptium-amd64",
     build_file = "BUILD.adoptium_17_amd64",
-    sha256 = "6f1335d9a7855159f982dac557420397be9aa85f3f7bc84e111d25871c02c0c7",
-    strip_prefix = "jdk-17+35/",
-    urls = ["https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17%2B35/OpenJDK17-jdk_x64_linux_hotspot_17_35.tar.gz"],
+    sha256 = "6ea18c276dcbb8522feeebcfc3a4b5cb7c7e7368ba8590d3326c6c3efc5448b6",
+    strip_prefix = "jdk-17.0.1+12/",
+    urls = ["https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.1%2B12/OpenJDK17U-jdk_x64_linux_hotspot_17.0.1_12.tar.gz"],
 )
 
 http_archive(
@@ -230,9 +230,9 @@ http_archive(
 http_archive(
     name = "jre-17-adoptium-arm64",
     build_file = "BUILD.adoptium_17_arm64",
-    sha256 = "e08e6d8c84da28a2c49ccd511f8835c329fbdd8e4faff662c58fa24cca74021d",
-    strip_prefix = "jdk-17+35/",
-    urls = ["https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17%2B35/OpenJDK17-jdk_aarch64_linux_hotspot_17_35.tar.gz"],
+    sha256 = "f23d482b2b4ada08166201d1a0e299e3e371fdca5cd7288dcbd81ae82f3a75e3",
+    strip_prefix = "jdk-17.0.1+12/",
+    urls = ["https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.1%2B12/OpenJDK17U-jdk_aarch64_linux_hotspot_17.0.1_12.tar.gz"],
 )
 
 # Get Nodejs archive
