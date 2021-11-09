@@ -14,9 +14,10 @@ This image is designed for running javascript application.
 | libssl          | Ubuntu package                                               |   base    | latest, debug |
 | openssl         | Ubuntu package                                               |   base    | latest, debug |
 | tini            | application                                                  |   base    | latest, debug |
-| libgcc1         | Ubuntu package                                               |    cc     | latest, debug |
-| libgomp1        | Ubuntu package                                               |    cc     | latest, debug |
-| linstdc++6      | Ubuntu package                                               |    cc     | latest, debug |
+| libgcc1         | Ubuntu package                                               |   cc   | latest, debug |
+| libgcc-s1       | Ubuntu package                                               |   cc   | latest, debug |
+| libgomp1        | Ubuntu package                                               |   cc   | latest, debug |
+| libstdc++6      | Ubuntu package                                               |   cc   | latest, debug |
 | nodejs 14       | Nodejs application                                           | nodejs 14 | latest, debug |
 | nodejs 16       | Nodejs application                                           | nodejs 16 | latest, debug |
 | busybox         | Application                                                  |   debug   |     debug     |

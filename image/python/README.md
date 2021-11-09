@@ -15,8 +15,9 @@ This image is designed for running python application.
 | openssl              | Ubuntu package                                               |  base  | latest, debug |
 | tini                 | application                                                  |  base  | latest, debug |
 | libgcc1              | Ubuntu package                                               |   cc   | latest, debug |
+| libgcc-s1            | Ubuntu package                                               |   cc   | latest, debug |
 | libgomp1             | Ubuntu package                                               |   cc   | latest, debug |
-| linstdc++6           | Ubuntu package                                               |   cc   | latest, debug |
+| libstdc++6           | Ubuntu package                                               |   cc   | latest, debug |
 | dash                 | Ubuntu package                                               | python | latest, debug |
 | libbz2-1.0           | Ubuntu package                                               | python | latest, debug |
 | libdb5.3             | Ubuntu package                                               | python | latest, debug |

@@ -15,8 +15,9 @@ This image is designed for running application depending on libc, libssl, libstd
 | openssl         | Ubuntu package                                               |  base  | latest, debug |
 | tini            | application                                                  |  base  | latest, debug |
 | libgcc1         | Ubuntu package                                               |   cc   | latest, debug |
+| libgcc-s1       | Ubuntu package                                               |   cc   | latest, debug |
 | libgomp1        | Ubuntu package                                               |   cc   | latest, debug |
-| linstdc++6      | Ubuntu package                                               |   cc   | latest, debug |
+| libstdc++6      | Ubuntu package                                               |   cc   | latest, debug |
 | busybox         | Application                                                  | debug  |     debug     |
 
 ## Default Entrypoint

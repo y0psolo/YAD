@@ -6,6 +6,7 @@ load("//util:constants.bzl", "BASE_ARCHITECTURES", "PACKAGE")
         name = arch,
         debs = [
             PACKAGE[arch]["libgcc1"],
+            PACKAGE[arch]["libgcc-s1"],
             PACKAGE[arch]["libgomp1"],
             PACKAGE[arch]["libstdc++6"],
         ],
