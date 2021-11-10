@@ -31,7 +31,11 @@ jobs:
             ${{ runner.os }}-bazel-ci-
             ${{ runner.os }}-bazel-
       - name: bazel build
-        run: bazel build //image:all
+        run: |
+          bazel build --config x86_64 -c opt //image:bundle
+          bazel build --config x86_64 -c dbg //image:bundle
+          bazel build --config arm64 -c opt //image:bundle
+          bazel build --config arm64 -c dbg //image:bundle
   test:
     needs: build
     environment: Release
@@ -64,7 +68,11 @@ jobs:
             ${{ runner.os }}-bazel-ci-
             ${{ runner.os }}-bazel-
       - name: bazel test
-        run: bazel test //test:*
+        run: |
+          bazel test --config x86_64 -c opt //test:images //test:images_amd64_only
+          bazel test --config x86_64 -c dbg //test:images //test:images_amd64_only
+          bazel test --config arm64 -c opt //test:images
+          bazel test --config arm64 -c dbg //test:images
       - uses: actions/upload-artifact@v2
         if: ${{ failure() }}
         with:

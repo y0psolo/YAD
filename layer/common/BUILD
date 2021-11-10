@@ -1,22 +1,19 @@
 load("@io_bazel_rules_docker//container:container.bzl", "container_layer")
-load("//util:constants.bzl", "BASE_ARCHITECTURES", "PACKAGE")
+load("//platforms:cpu.bzl", "ubuntu_debs")
 
 # Layer common to java and python image
-[
-    container_layer(
-        name = arch,
-        debs = [
-            PACKAGE[arch]["libexpat1"],
-            PACKAGE[arch]["libuuid1"],
-            PACKAGE[arch]["zlib1g"],
-        ],
-        env = {
-            "LANG": "C.UTF-8",
-        },
-        tars = [
-            "//util:libcbin_" + arch + "_locale.tar",
-        ],
-        visibility = ["//visibility:public"],
-    )
-    for arch in BASE_ARCHITECTURES
-]
+container_layer(
+    name = "common",
+    debs = ubuntu_debs([
+        "libexpat1",
+        "libuuid1",
+        "zlib1g",
+    ]),
+    env = {
+        "LANG": "C.UTF-8",
+    },
+    tars = [
+        "//util:libcbin_locale.tar",
+    ],
+    visibility = ["//visibility:public"],
+)

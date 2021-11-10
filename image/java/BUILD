@@ -1,11 +1,14 @@
 load("@io_bazel_rules_docker//container:container.bzl", "container_image")
-load("//util:constants.bzl", "BASE_ARCHITECTURES", "JRE_VERSIONS", "NONROOT")
+load("//util:constants.bzl", "JRE_VERSIONS", "NONROOT")
 
 # Iteration over all java versions
 [
     container_image(
-        name = arch + "_" + jre + "_" + version,
-        architecture = arch,
+        name = jre + "_" + version,
+        architecture = select({
+            "//platforms:k8_cpu": "amd64",
+            "//platforms:aarch64_cpu": "arm64",
+        }),
         entrypoint = [
             "/usr/bin/tini",
             "--",
@@ -13,45 +16,21 @@ load("//util:constants.bzl", "BASE_ARCHITECTURES", "JRE_VERSIONS", "NONROOT")
             "-jar",
         ],
         layers = [
-            "//layer/static:" + arch,
-            "//layer/base:" + arch,
-            "//layer/cc:" + arch,
-            "//layer/common:" + arch,
-            "//layer/java:" + arch,
-            "//layer/java:" + arch + "_" + jre + "_" + version,
-        ],
+            "//layer/static:static",
+            "//layer/base:base",
+            "//layer/cc:cc",
+            "//layer/common:common",
+            "//layer/java:common",
+            "//layer/java:" + jre + "_" + version,
+        ] + select({
+            "//platforms:debug": ["//layer/static:debug"],
+            "//conditions:default": [],
+        }),
         user = "%d" % NONROOT,
         visibility = ["//visibility:public"],
         workdir = "/home/nonroot",
     )
     for version in JRE_VERSIONS
-    for arch in BASE_ARCHITECTURES
-    for jre in [
-        "adoptium",
-        "azul",
-    ]
-]
-
-[
-    container_image(
-        name = arch + "_" + jre + "_" + version + "_debug",
-        architecture = arch,
-        entrypoint = ["/bin/sh"],
-        layers = [
-            "//layer/static:" + arch,
-            "//layer/static:" + arch + "_debug",
-            "//layer/base:" + arch,
-            "//layer/cc:" + arch,
-            "//layer/common:" + arch,
-            "//layer/java:" + arch,
-            "//layer/java:" + arch + "_" + jre + "_" + version,
-        ],
-        user = "%d" % NONROOT,
-        visibility = ["//visibility:public"],
-        workdir = "/home/nonroot",
-    )
-    for version in JRE_VERSIONS
-    for arch in BASE_ARCHITECTURES
     for jre in [
         "adoptium",
         "azul",

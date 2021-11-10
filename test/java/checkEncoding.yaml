@@ -7,7 +7,7 @@ commandTests:
       - "--"
       - "/usr/bin/java"
       - "-cp"
-      - "/app/yad/test/*"
+      - "/app/yad/test/java/*"
       - "testdata.CheckEncoding"
     expectedOutput: 
       - 'LANG=C.UTF-8'
