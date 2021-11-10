@@ -272,9 +272,9 @@ http_archive(
 http_archive(
     name = "deno-amd64",
     build_file = "BUILD.deno",
-    sha256 = "f728d29af38b7fe22aab5b46b629c90a02f407888241e46ef1741141ec10ffe1",
+    sha256 = "d80a7dffcbef61b710e816ef568ee790c5ad6c743f0a99ddba4bd1069e574c54",
     type = "zip",
-    urls = ["https://github.com/denoland/deno/releases/download/v1.15.3/deno-x86_64-unknown-linux-gnu.zip"],
+    urls = ["https://github.com/denoland/deno/releases/download/v1.16.0/deno-x86_64-unknown-linux-gnu.zip"],
 )
 
 # Tini executable

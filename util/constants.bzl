@@ -25,7 +25,7 @@ NODEJS_VERSIONS_MAPPINGS = {"14": "14.18.1", "16": "16.13.0"}
 NOBODY = 65534
 NONROOT = 65532
 
-DENO_VERSION = "1.15.3"
+DENO_VERSION = "1.16.0"
 
 AZUL_VERSIONS_MAPPING = {"amd64": {"11": "11.0.13", "8": "8.0.312", "17": "17.0.1"}, "arm64": {"11": "11.0.13", "8": "8.0.312", "17": "17.0.1"}}
 
