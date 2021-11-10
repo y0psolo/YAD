@@ -77,4 +77,4 @@ jobs:
         if: ${{ failure() }}
         with:
           name: testLogs
-          path: /home/runner/.cache/bazel/_bazel_runner/**/execroot/yad/bazel-out/k8-fastbuild/testlogs/test/**/test.log
+          path: /home/runner/.cache/bazel/_bazel_runner/**/execroot/yad/bazel-out/**/testlogs/test/**/test.log
