@@ -1,3 +1,11 @@
 build --workspace_status_command hack/workspace_env.sh
 test --workspace_status_command hack/workspace_env.sh
 run --workspace_status_command hack/workspace_env.sh
+
+build:x86_64 --host_crosstool_top=@bazel_tools//tools/cpp:toolchain
+build:x86_64 --crosstool_top=//toolchain:ubuntu_toolchain
+build:x86_64 --cpu=k8
+
+build:arm64 --host_crosstool_top=@bazel_tools//tools/cpp:toolchain
+build:arm64 --crosstool_top=//toolchain:ubuntu_toolchain
+build:arm64 --cpu=aarch64

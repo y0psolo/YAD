@@ -1,16 +1,13 @@
 load("@io_bazel_rules_docker//container:container.bzl", "container_layer")
-load("//util:constants.bzl", "BASE_ARCHITECTURES", "PACKAGE")
+load("//platforms:cpu.bzl", "ubuntu_debs")
 
-[
-    container_layer(
-        name = arch,
-        debs = [
-            PACKAGE[arch]["libgcc1"],
-            PACKAGE[arch]["libgcc-s1"],
-            PACKAGE[arch]["libgomp1"],
-            PACKAGE[arch]["libstdc++6"],
-        ],
-        visibility = ["//visibility:public"],
-    )
-    for arch in BASE_ARCHITECTURES
-]
+container_layer(
+    name = "cc",
+    debs = ubuntu_debs([
+        "libgcc1",
+        "libgcc-s1",
+        "libgomp1",
+        "libstdc++6",
+    ]),
+    visibility = ["//visibility:public"],
+)

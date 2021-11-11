@@ -24,5 +24,4 @@ metadataTest:
     - key: 'JAVA_HOME'
       value: '/usr/lib/jvm/jre-[0-9]+-(amd|arm)64'
       isRegex: true
-  entrypoint: ["/bin/sh"]
   workdir: "/home/nonroot"

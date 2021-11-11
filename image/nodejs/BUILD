@@ -1,46 +1,31 @@
 load("@io_bazel_rules_docker//container:container.bzl", "container_image")
-load("//util:constants.bzl", "BASE_ARCHITECTURES", "NODEJS_VERSIONS", "NONROOT")
+load("//util:constants.bzl", "NODEJS_VERSIONS", "NONROOT")
 
 # Iteration over all nodejs versions
 [
     container_image(
-        name = arch + "_" + version,
-        architecture = arch,
+        name = version,
+        architecture = select({
+            "//platforms:k8_cpu": "amd64",
+            "//platforms:aarch64_cpu": "arm64",
+        }),
         entrypoint = [
             "/usr/bin/tini",
             "--",
             "/usr/bin/node",
         ],
         layers = [
-            "//layer/static:" + arch,
-            "//layer/base:" + arch,
-            "//layer/cc:" + arch,
-            "//layer/nodejs:" + arch + "_" + version,
-        ],
+            "//layer/static:static",
+            "//layer/base:base",
+            "//layer/cc:cc",
+            "//layer/nodejs:" + version,
+        ] + select({
+            "//platforms:debug": ["//layer/static:debug"],
+            "//conditions:default": [],
+        }),
         user = "%d" % NONROOT,
         visibility = ["//visibility:public"],
         workdir = "/home/nonroot",
     )
     for version in NODEJS_VERSIONS
-    for arch in BASE_ARCHITECTURES
-]
-
-[
-    container_image(
-        name = arch + "_" + version + "_debug",
-        architecture = arch,
-        entrypoint = ["/bin/sh"],
-        layers = [
-            "//layer/static:" + arch,
-            "//layer/static:" + arch + "_debug",
-            "//layer/base:" + arch,
-            "//layer/cc:" + arch,
-            "//layer/nodejs:" + arch + "_" + version,
-        ],
-        user = "%d" % NONROOT,
-        visibility = ["//visibility:public"],
-        workdir = "/home/nonroot",
-    )
-    for version in NODEJS_VERSIONS
-    for arch in BASE_ARCHITECTURES
 ]

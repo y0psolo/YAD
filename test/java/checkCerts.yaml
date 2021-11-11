@@ -7,6 +7,6 @@ commandTests:
       - "--"
       - "/usr/bin/java"
       - "-cp"
-      - "/app/yad/test/*"
+      - "/app/yad/test/java/*"
       - "testdata.CheckCerts"
     expectedOutput: ['Successfully connected: 200']
