@@ -3,6 +3,9 @@ name: Deploy
 on:
   push:
     branches: [ main]
+    paths-ignore:
+      - 'security/**'
+      - 'update/**'
   workflow_dispatch:
 jobs:
   deploy:

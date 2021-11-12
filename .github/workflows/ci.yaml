@@ -3,6 +3,9 @@ name: Build
 on:
   pull_request:
     types: [synchronize, opened, reopened]
+    paths-ignore:
+      - 'security/**'
+      - 'update/**'
   workflow_dispatch:
 
 jobs:
