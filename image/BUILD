@@ -22,9 +22,9 @@ IMAGES_ARM64 = {
     "{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/python:arm64": "//image/python:python",
 #    "{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/deno:arm64": "//image/deno:deno",
 }
-IMAGES_AMD64.update({"{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/azul:arm64_" + version : "//image/java:azul_" + version for version in JRE_VERSIONS},)
-IMAGES_AMD64.update({"{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/adoptium:arm64_" + version : "//image/java:adoptium_" + version for version in JRE_VERSIONS},)
-IMAGES_AMD64.update({"{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/nodejs:arm64_" + version : "//image/nodejs:" + version for version in NODEJS_VERSIONS},)
+IMAGES_ARM64.update({"{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/azul:arm64_" + version : "//image/java:azul_" + version for version in JRE_VERSIONS},)
+IMAGES_ARM64.update({"{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/adoptium:arm64_" + version : "//image/java:adoptium_" + version for version in JRE_VERSIONS},)
+IMAGES_ARM64.update({"{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/nodejs:arm64_" + version : "//image/nodejs:" + version for version in NODEJS_VERSIONS},)
 
 IMAGES_AMD64_DEBUG = {
     "{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/static:amd64_debug": "//image/static:static",
@@ -33,9 +33,9 @@ IMAGES_AMD64_DEBUG = {
     "{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/python:amd64_debug": "//image/python:python",
     "{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/deno:amd64_debug": "//image/deno:deno",
 }
-IMAGES_AMD64.update({"{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/azul:amd64_" + version + "_debug": "//image/java:azul_" + version for version in JRE_VERSIONS},)
-IMAGES_AMD64.update({"{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/adoptium:amd64_" + version + "_debug": "//image/java:adoptium_" + version for version in JRE_VERSIONS},)
-IMAGES_AMD64.update({"{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/nodejs:amd64_" + version + "_debug": "//image/nodejs:" + version for version in NODEJS_VERSIONS},)
+IMAGES_AMD64_DEBUG.update({"{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/azul:amd64_" + version + "_debug": "//image/java:azul_" + version for version in JRE_VERSIONS},)
+IMAGES_AMD64_DEBUG.update({"{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/adoptium:amd64_" + version + "_debug": "//image/java:adoptium_" + version for version in JRE_VERSIONS},)
+IMAGES_AMD64_DEBUG.update({"{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/nodejs:amd64_" + version + "_debug": "//image/nodejs:" + version for version in NODEJS_VERSIONS},)
 
 IMAGES_ARM64_DEBUG = {
     "{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/static:arm64_debug": "//image/static:static",
