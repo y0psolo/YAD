@@ -11,7 +11,7 @@ loop_over_image_tag() {
 
     for repo in adoptium azul
     do 
-        for tag in 8 8_debug 11 11_debug 17 17_debug
+        for tag in 8 8_debug 11 11_debug 17 17_debug py8 py8_debug py11 py11_debug py17 py17_debug
         do
             $1 ${repo} ${tag}
         done
