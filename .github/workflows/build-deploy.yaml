@@ -73,7 +73,7 @@ jobs:
       - name: Install Cosign
         uses: sigstore/cosign-installer@main
         with:
-          cosign-release: 'v1.1.0'
+          cosign-release: 'v1.4.0'
       - name: cosign image
         env:
           COSIGN_PASSWORD: ${{ secrets.COSIGN_PASSWORD }}
