@@ -91,7 +91,7 @@ container_push(
     name = "push",
     bundle = ":bundle",
     format = "Docker",
-    skip_unchanged_digest = "true",
+    skip_unchanged_digest = true,
     # Push images sequentially, to avoid a bug in rules_docker related to
     # pushing many images in parallel.
     # https://github.com/bazelbuild/rules_docker/issues/525
