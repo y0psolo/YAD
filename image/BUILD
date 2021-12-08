@@ -13,8 +13,8 @@ IMAGES_AMD64 = {
 }
 IMAGES_AMD64.update({"{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/azul:amd64_" + version : "//image/java:azul_" + version for version in JRE_VERSIONS},)
 IMAGES_AMD64.update({"{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/adoptium:amd64_" + version : "//image/java:adoptium_" + version for version in JRE_VERSIONS},)
-IMAGES_AMD64.update({"{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/azulpy:amd64" + version : "//image/javapy:azul_" + version for version in JRE_VERSIONS},)
-IMAGES_AMD64.update({"{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/adoptiumpy:amd64" + version : "//image/javapy:adoptium_" + version for version in JRE_VERSIONS},)
+IMAGES_AMD64.update({"{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/azulpy:amd64_" + version : "//image/javapy:azul_" + version for version in JRE_VERSIONS},)
+IMAGES_AMD64.update({"{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/adoptiumpy:amd64_" + version : "//image/javapy:adoptium_" + version for version in JRE_VERSIONS},)
 IMAGES_AMD64.update({"{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/nodejs:amd64_" + version : "//image/nodejs:" + version for version in NODEJS_VERSIONS},)
 
 IMAGES_ARM64 = {
@@ -26,8 +26,8 @@ IMAGES_ARM64 = {
 }
 IMAGES_ARM64.update({"{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/azul:arm64_" + version : "//image/java:azul_" + version for version in JRE_VERSIONS},)
 IMAGES_ARM64.update({"{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/adoptium:arm64_" + version : "//image/java:adoptium_" + version for version in JRE_VERSIONS},)
-IMAGES_ARM64.update({"{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/azulpy:arm64" + version : "//image/javapy:azul_" + version for version in JRE_VERSIONS},)
-IMAGES_ARM64.update({"{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/adoptiumpy:arm64" + version : "//image/javapy:adoptium_" + version for version in JRE_VERSIONS},)
+IMAGES_ARM64.update({"{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/azulpy:arm64_" + version : "//image/javapy:azul_" + version for version in JRE_VERSIONS},)
+IMAGES_ARM64.update({"{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/adoptiumpy:arm64_" + version : "//image/javapy:adoptium_" + version for version in JRE_VERSIONS},)
 IMAGES_ARM64.update({"{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/nodejs:arm64_" + version : "//image/nodejs:" + version for version in NODEJS_VERSIONS},)
 
 IMAGES_AMD64_DEBUG = {
@@ -39,8 +39,8 @@ IMAGES_AMD64_DEBUG = {
 }
 IMAGES_AMD64_DEBUG.update({"{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/azul:amd64_" + version + "_debug": "//image/java:azul_" + version for version in JRE_VERSIONS},)
 IMAGES_AMD64_DEBUG.update({"{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/adoptium:amd64_" + version + "_debug": "//image/java:adoptium_" + version for version in JRE_VERSIONS},)
-IMAGES_AMD64_DEBUG.update({"{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/azulpy:amd64" + version + "_debug": "//image/javapy:azul_" + version for version in JRE_VERSIONS},)
-IMAGES_AMD64_DEBUG.update({"{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/adoptiumpy:amd64" + version + "_debug": "//image/javapy:adoptium_" + version for version in JRE_VERSIONS},)
+IMAGES_AMD64_DEBUG.update({"{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/azulpy:amd64_" + version + "_debug": "//image/javapy:azul_" + version for version in JRE_VERSIONS},)
+IMAGES_AMD64_DEBUG.update({"{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/adoptiumpy:amd64_" + version + "_debug": "//image/javapy:adoptium_" + version for version in JRE_VERSIONS},)
 IMAGES_AMD64_DEBUG.update({"{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/nodejs:amd64_" + version + "_debug": "//image/nodejs:" + version for version in NODEJS_VERSIONS},)
 
 IMAGES_ARM64_DEBUG = {
@@ -52,8 +52,8 @@ IMAGES_ARM64_DEBUG = {
 }
 IMAGES_ARM64_DEBUG.update({"{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/azul:arm64_" + version + "_debug": "//image/java:azul_" + version for version in JRE_VERSIONS},)
 IMAGES_ARM64_DEBUG.update({"{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/adoptium:arm64_" + version + "_debug": "//image/java:adoptium_" + version for version in JRE_VERSIONS},)
-IMAGES_ARM64_DEBUG.update({"{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/azulpy:arm64" + version + "_debug": "//image/javapy:azul_" + version for version in JRE_VERSIONS},)
-IMAGES_ARM64_DEBUG.update({"{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/adoptiumpy:arm64" + version + "_debug": "//image/javapy:adoptium_" + version for version in JRE_VERSIONS},)
+IMAGES_ARM64_DEBUG.update({"{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/azulpy:arm64_" + version + "_debug": "//image/javapy:azul_" + version for version in JRE_VERSIONS},)
+IMAGES_ARM64_DEBUG.update({"{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/adoptiumpy:arm64_" + version + "_debug": "//image/javapy:adoptium_" + version for version in JRE_VERSIONS},)
 IMAGES_ARM64_DEBUG.update({"{REGISTRY}/{STABLE_PROJECT_NAMESPACE}/nodejs:arm64_" + version + "_debug": "//image/nodejs:" + version for version in NODEJS_VERSIONS},)
 
 container_bundle(
