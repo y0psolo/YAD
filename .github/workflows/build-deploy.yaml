@@ -51,10 +51,10 @@ jobs:
           bazel test --config arm64 -c dbg //test:images
       - name: bazel publish
         run: |
-          bazel run --config x86_64 -c opt //image:push
-          bazel run --config x86_64 -c dbg //image:push
-          bazel run --config arm64 -c opt //image:push
-          bazel run --config arm64 -c dbg //image:push
+          bazel run --stamp --config x86_64 -c opt //image:push
+          bazel run --stamp --config x86_64 -c dbg //image:push
+          bazel run --stamp --config arm64 -c opt //image:push
+          bazel run --stamp --config arm64 -c dbg //image:push
       - name: merge tags
         run: hack/merge_tag.sh docker.io
   sign:
