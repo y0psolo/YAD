@@ -70,8 +70,8 @@ For the same reasons, if the entrypoint is left to the default empty vector, the
 |  For running java application with https://adoptium.net/[adoptium] jre
 
 | link:image/javapy/README.md[adoptiumpy]
-| image:https://img.shields.io/docker/image-size/yadist/adoptium/py8?label=8&logo=docker[link="https://hub.docker.com/r/yadist/adoptium/"] image:https://img.shields.io/docker/image-size/yadist/adoptium/py11?label=11&logo=docker[link="https://hub.docker.com/r/yadist/adoptium/"] image:https://img.shields.io/docker/image-size/yadist/adoptium/py17?label=17&logo=docker[link="https://hub.docker.com/r/yadist/adoptium/"]
-| image:https://img.shields.io/docker/image-size/yadist/adoptium/py8_debug?label=8_debug&logo=docker[link="https://hub.docker.com/r/yadist/adoptium/"] image:https://img.shields.io/docker/image-size/yadist/adoptium/py11_debug?label=11_debug&logo=docker[link="https://hub.docker.com/r/yadist/adoptium/"] image:https://img.shields.io/docker/image-size/yadist/adoptium/py17_debug?label=17_debug&logo=docker[link="https://hub.docker.com/r/yadist/adoptium/"]
+| image:https://img.shields.io/docker/image-size/yadist/adoptiumpy/8?label=8&logo=docker[link="https://hub.docker.com/r/yadist/adoptium/"] image:https://img.shields.io/docker/image-size/yadist/adoptiumpy/11?label=11&logo=docker[link="https://hub.docker.com/r/yadist/adoptium/"] image:https://img.shields.io/docker/image-size/yadist/adoptiumpy/17?label=17&logo=docker[link="https://hub.docker.com/r/yadist/adoptium/"]
+| image:https://img.shields.io/docker/image-size/yadist/adoptiumpy/8_debug?label=8_debug&logo=docker[link="https://hub.docker.com/r/yadist/adoptium/"] image:https://img.shields.io/docker/image-size/yadist/adoptiumpy/11_debug?label=11_debug&logo=docker[link="https://hub.docker.com/r/yadist/adoptium/"] image:https://img.shields.io/docker/image-size/yadist/adoptiumpy/17_debug?label=17_debug&logo=docker[link="https://hub.docker.com/r/yadist/adoptium/"]
 |  For running java application with https://adoptium.net/[adoptium] jre and python dependencies
 
 | link:image/java/README.md[azul]
@@ -80,8 +80,8 @@ For the same reasons, if the entrypoint is left to the default empty vector, the
 |  For running java application with https://azul.com/[azul] jre
 
 | link:image/javapy/README.md[azulpy]
-| image:https://img.shields.io/docker/image-size/yadist/azul/py8?label=8&logo=docker[link="https://hub.docker.com/r/yadist/azul/"] image:https://img.shields.io/docker/image-size/yadist/azul/py11?label=11&logo=docker[link="https://hub.docker.com/r/yadist/azul/"] image:https://img.shields.io/docker/image-size/yadist/azul/py17?label=17&logo=docker[link="https://hub.docker.com/r/yadist/azul/"]
-| image:https://img.shields.io/docker/image-size/yadist/azul/py8_debug?label=8_debug&logo=docker[link="https://hub.docker.com/r/yadist/azul/"] image:https://img.shields.io/docker/image-size/yadist/azul/py11_debug?label=11_debug&logo=docker[link="https://hub.docker.com/r/yadist/azul/"] image:https://img.shields.io/docker/image-size/yadist/azul/py17_debug?label=17_debug&logo=docker[link="https://hub.docker.com/r/yadist/azul/"]
+| image:https://img.shields.io/docker/image-size/yadist/azulpy/8?label=8&logo=docker[link="https://hub.docker.com/r/yadist/azul/"] image:https://img.shields.io/docker/image-size/yadist/azulpy/11?label=11&logo=docker[link="https://hub.docker.com/r/yadist/azul/"] image:https://img.shields.io/docker/image-size/yadist/azulpy/17?label=17&logo=docker[link="https://hub.docker.com/r/yadist/azul/"]
+| image:https://img.shields.io/docker/image-size/yadist/azulpy/8_debug?label=8_debug&logo=docker[link="https://hub.docker.com/r/yadist/azul/"] image:https://img.shields.io/docker/image-size/yadist/azulpy/11_debug?label=11_debug&logo=docker[link="https://hub.docker.com/r/yadist/azul/"] image:https://img.shields.io/docker/image-size/yadist/azulpy/17_debug?label=17_debug&logo=docker[link="https://hub.docker.com/r/yadist/azul/"]
 |  For running java application with https://azul.com/[azul] jre and python dependencies
 
 | link:image/python/README.md[python]

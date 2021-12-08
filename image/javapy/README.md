@@ -65,7 +65,7 @@ Security scan of the image updated daily.
 
 | Name     | Java 8   | Java 11  |  Java 17   |
 | -------- | :------: | :------: | :--------: |
-| Adoptium | [8](../../security/table/adoptium_py8) / [8_debug](../../security/table/adoptium_py8_debug) | [11](../../security/table/adoptium_py11) / [11_debug](../../security/table/adoptium_py11_debug) | [17](../../security/table/adoptium_py17) / [17_debug](../../security/table/adoptium_py17_debug)
-| Azul     | [8](../../security/table/azul_py8) / [8_debug](../../security/table/azul_py8_debug) | [11](../../security/table/azul_py11) / [11_debug](../../security/table/azul_py11_debug) | [17](../../security/table/azul_py17) / [17_debug](../../security/table/azul_py17_debug)
+| Adoptium | [8](../../security/table/adoptiumpy_8) / [8_debug](../../security/table/adoptiumpy__debug) | [11](../../security/table/adoptiumpy_11) / [11_debug](../../security/table/adoptiumpy_11_debug) | [17](../../security/table/adoptiumpy_17) / [17_debug](../../security/table/adoptiumpy_17_debug)
+| Azul     | [8](../../security/table/azulpy_8) / [8_debug](../../security/table/azulpy_8_debug) | [11](../../security/table/azulpy_11) / [11_debug](../../security/table/azulpy_11_debug) | [17](../../security/table/azulpy_17) / [17_debug](../../security/table/azulpy_17_debug)
 
 Security scan for Adoptium and Azul tar.gz archive installation is not supported by Trivy. To list CVE on Azul disctirbution see https://docs.azul.com/core/cve.
