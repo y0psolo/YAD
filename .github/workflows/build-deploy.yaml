@@ -29,14 +29,14 @@ jobs:
       - name: Get current date
         id: date
         run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
-      - name: Mount bazel cache
-        uses: actions/cache@v2
-        with:
-          path: "~/.cache/bazel"
-          key: ${{ runner.os }}-bazel-${{ hashFiles('**/BUILD', '**/*.bzl', 'WORKSPACE') }}
-          restore-keys: |
-            ${{ runner.os }}-bazel-ci-
-            ${{ runner.os }}-bazel-
+      # - name: Mount bazel cache
+      #   uses: actions/cache@v2
+      #   with:
+      #     path: "~/.cache/bazel"
+      #     key: ${{ runner.os }}-bazel-${{ hashFiles('**/BUILD', '**/*.bzl', 'WORKSPACE') }}
+      #     restore-keys: |
+      #       ${{ runner.os }}-bazel-ci-
+      #       ${{ runner.os }}-bazel-
       - name: Docker Login
         uses: docker/login-action@v1
         with:
