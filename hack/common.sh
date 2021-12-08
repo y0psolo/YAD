@@ -9,7 +9,7 @@ loop_over_image_tag() {
         done
     done
 
-    for repo in adoptium azul adoptiumpy azuloy
+    for repo in adoptium azul adoptiumpy azulpy
     do 
         for tag in 8 8_debug 11 11_debug 17 17_debug
         do
