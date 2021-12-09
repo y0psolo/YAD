@@ -46,6 +46,10 @@
 |                      |                  |          |                         |               | not handle separately                 |
 |                      |                  |          |                         |               | allocated thread attributes           |
 |                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2021-33574 |
++----------------------+------------------+          +-------------------------+---------------+---------------------------------------+
+| libjpeg-turbo8       | CVE-2020-17541   |          | 2.0.3-0ubuntu1.20.04.1  |               | libjpeg-turbo: Stack-based buffer     |
+|                      |                  |          |                         |               | overflow in the "transform" component |
+|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2020-17541 |
 +----------------------+------------------+----------+-------------------------+---------------+---------------------------------------+
 | libpython3.8-minimal | CVE-2021-3737    | MEDIUM   | 3.8.10-0ubuntu1~20.04.1 |               | python: urllib: HTTP client           |
 |                      |                  |          |                         |               | possible infinite loop on             |

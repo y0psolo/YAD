@@ -57,17 +57,6 @@
 |                      |                  |          |                         |               | and urllib.parse.parse_qs             |
 |                      |                  |          |                         |               | by using a semicolon...               |
 |                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2021-23336 |
-+----------------------+------------------+----------+                         +---------------+---------------------------------------+
-| libpython3.8-stdlib  | CVE-2021-3737    | MEDIUM   |                         |               | python: urllib: HTTP client           |
-|                      |                  |          |                         |               | possible infinite loop on             |
-|                      |                  |          |                         |               | a 100 Continue response...            |
-|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2021-3737  |
-+                      +------------------+----------+                         +---------------+---------------------------------------+
-|                      | CVE-2021-23336   | LOW      |                         |               | python: Web cache poisoning           |
-|                      |                  |          |                         |               | via urllib.parse.parse_qsl            |
-|                      |                  |          |                         |               | and urllib.parse.parse_qs             |
-|                      |                  |          |                         |               | by using a semicolon...               |
-|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2021-23336 |
 +----------------------+------------------+----------+-------------------------+---------------+---------------------------------------+
 | libsqlite3-0         | CVE-2020-9794    | MEDIUM   | 3.31.1-4ubuntu0.2       |               | An out-of-bounds read was             |
 |                      |                  |          |                         |               | addressed with improved bounds        |
@@ -83,15 +72,4 @@
 |                      |                  |          |                         |               | with improved checks.                 |
 |                      |                  |          |                         |               | This issue is fixed in...             |
 |                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2020-9991  |
-+----------------------+------------------+----------+-------------------------+---------------+---------------------------------------+
-| python3.8-minimal    | CVE-2021-3737    | MEDIUM   | 3.8.10-0ubuntu1~20.04.1 |               | python: urllib: HTTP client           |
-|                      |                  |          |                         |               | possible infinite loop on             |
-|                      |                  |          |                         |               | a 100 Continue response...            |
-|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2021-3737  |
-+                      +------------------+----------+                         +---------------+---------------------------------------+
-|                      | CVE-2021-23336   | LOW      |                         |               | python: Web cache poisoning           |
-|                      |                  |          |                         |               | via urllib.parse.parse_qsl            |
-|                      |                  |          |                         |               | and urllib.parse.parse_qs             |
-|                      |                  |          |                         |               | by using a semicolon...               |
-|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2021-23336 |
 +----------------------+------------------+----------+-------------------------+---------------+---------------------------------------+
