@@ -26,6 +26,8 @@ load("//util:constants.bzl", "NODEJS_VERSIONS", "NONROOT")
         user = "%d" % NONROOT,
         visibility = ["//visibility:public"],
         workdir = "/home/nonroot",
+        compression = "gzip",
+        compression_options = ["",],
     )
     for version in NODEJS_VERSIONS
 ]

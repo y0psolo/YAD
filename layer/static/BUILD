@@ -4,7 +4,10 @@ load("@io_bazel_rules_docker//contrib:group.bzl", "group_entry", "group_file")
 load("@io_bazel_rules_docker//contrib:passwd.bzl", "passwd_entry", "passwd_tar")
 load("//util:constants.bzl", "NOBODY", "NONROOT")
 load("//util:osrelease.bzl", "gen_osrelease")
-load("//platforms:cpu.bzl", "ubuntu_debs")
+load("@ubuntu_focal_amd64//debs:deb_packages.bzl", "ubuntu_focal_amd64")
+load("@ubuntu_focal_arm64//debs:deb_packages.bzl", "ubuntu_focal_arm64")
+load("@ubuntu_bionic_amd64//debs:deb_packages.bzl", "ubuntu_bionic_amd64")
+load("@ubuntu_bionic_arm64//debs:deb_packages.bzl", "ubuntu_bionic_arm64")
 
 # load_settings()
 
@@ -106,15 +109,21 @@ gen_osrelease(
     name = "ubuntu_osrelease",
     distribution = "Ubuntu",
     distribution_like = "debian",
-    release = "Focal Fossa",
-    version = "20.04.3 LTS",
+    release = select({
+        "//platforms:focal": "Focal Fossa",
+        "//platforms:bionic": "Bionic Beaver",
+    }),
+    version = select({
+        "//platforms:focal": "20.04.3 LTS",
+        "//platforms:bionic": "18.04.6 LTS",
+    }),
 )
 
 pkg_tar(
     name = "os_release_tar",
     srcs = [":ubuntu_osrelease"],
     mode = "0644",
-    package_dir = "/etc",
+    package_dir = "/usr/lib",
 )
 
 # Busybox
@@ -136,11 +145,28 @@ pkg_tar(
 
 container_layer(
     name = "static",
-    debs = ubuntu_debs([
-        "base-files",
-        "netbase",
-        "tzdata"
-    ]),
+    debs = select({
+        "//platforms:k8_cpu_focal": [
+            ubuntu_focal_amd64["base-files"],
+            ubuntu_focal_amd64["netbase"],
+            ubuntu_focal_amd64["tzdata"],
+        ],
+        "//platforms:aarch64_cpu_focal": [
+            ubuntu_focal_arm64["base-files"],
+            ubuntu_focal_arm64["netbase"],
+            ubuntu_focal_arm64["tzdata"],
+        ],
+        "//platforms:k8_cpu_bionic": [
+            ubuntu_bionic_amd64["base-files"],
+            ubuntu_bionic_amd64["netbase"],
+            ubuntu_bionic_amd64["tzdata"],
+        ],
+        "//platforms:aarch64_cpu_bionic": [
+            ubuntu_bionic_arm64["base-files"],
+            ubuntu_bionic_arm64["netbase"],
+            ubuntu_bionic_arm64["tzdata"],
+        ],
+    }),
     empty_dirs = ["/home"],
     env = {
         "PATH": "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",

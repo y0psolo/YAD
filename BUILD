@@ -6,8 +6,10 @@ package(default_visibility = ["//:__subpackages__"])
 update_deb_packages(
     name = "update_deb_packages",
     bzl_files = [
-        "ubuntu_amd64.bzl",
-        "ubuntu_arm64.bzl",
+        "ubuntu_focal_amd64.bzl",
+        "ubuntu_focal_arm64.bzl",
+        "ubuntu_bionic_amd64.bzl",
+        "ubuntu_bionic_arm64.bzl",
     ],
     pgp_keys = [
         "@ubuntu_key//file",

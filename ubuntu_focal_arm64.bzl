@@ -1,10 +1,10 @@
-"""This module defines Ubuntu Bionic dependencies."""
+"""This module defines Ubuntu Focal dependencies."""
 
 load("@rules_deb_packages//:deb_packages.bzl", "deb_packages")
 
-def ubuntu_arm64():
+def ubuntu_focal_arm64():
     deb_packages(
-        name = "ubuntu_arm64",
+        name = "ubuntu_focal_arm64",
         arch = "arm64",
         packages = {
             "base-files": "pool/main/b/base-files/base-files_11ubuntu5.4_arm64.deb",
@@ -40,8 +40,6 @@ def ubuntu_arm64():
             "libuuid1": "pool/main/u/util-linux/libuuid1_2.34-0.1ubuntu9.1_arm64.deb",
             "mime-support": "pool/main/m/mime-support/mime-support_3.64ubuntu1_all.deb",
             "netbase": "pool/main/n/netbase/netbase_6.1_all.deb",
-            "openjdk-11-jre-headless": "pool/main/o/openjdk-lts/openjdk-11-jre-headless_11.0.11+9-0ubuntu2~20.04_arm64.deb",
-            "openjdk-8-jre-headless": "pool/universe/o/openjdk-8/openjdk-8-jre-headless_8u292-b10-0ubuntu1~20.04_arm64.deb",
             "openssl": "pool/main/o/openssl/openssl_1.1.1f-1ubuntu2.10_arm64.deb",
             "python3-distutils": "pool/main/p/python3-stdlib-extensions/python3-distutils_3.8.10-0ubuntu1~20.04_all.deb",
             "python3.8-minimal": "pool/main/p/python3.8/python3.8-minimal_3.8.10-0ubuntu1~20.04.1_arm64.deb",
@@ -83,8 +81,6 @@ def ubuntu_arm64():
             "libuuid1": "e1989a341e3db85b02644cf74563ecee7280d91372738e85a844cc3453b1b6f8",
             "mime-support": "b4f73c76fa2abc24562466ec814eb9b6cfe5e030628187bb71b3da1422bda901",
             "netbase": "acd59678ca4791458468369724b72ccf981603308cb2959668c8487a954f9af4",
-            "openjdk-11-jre-headless": "4765c0a125a9ba775477a798f7ffb8fc60bdaf0696c4c4d098c367bc5b2df738",
-            "openjdk-8-jre-headless": "0af57beb5e531b6b4e352e8937b6e8a1be894bf2f229a2ee933c05601314325a",
             "openssl": "58d6260f54f456d14e34e277b76c7c24700aec0a715e9be16ee8e745550a65c3",
             "python3-distutils": "08a0058ef8615e43ef1122907dbbc6aadbd132b2385e212f814f4ec9116efcfb",
             "python3.8-minimal": "aa8fd72b930cf8cdf55b5a60d62ac0356bcf136542a3d2b626f7497e85841274",

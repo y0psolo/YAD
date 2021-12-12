@@ -29,6 +29,8 @@ load("//util:constants.bzl", "JRE_VERSIONS", "NONROOT")
         user = "%d" % NONROOT,
         visibility = ["//visibility:public"],
         workdir = "/home/nonroot",
+        compression = "gzip",
+        compression_options = ["",],
     )
     for version in JRE_VERSIONS
     for jre in [

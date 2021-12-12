@@ -67,13 +67,21 @@ http_file(
     urls = ["https://keyserver.ubuntu.com/pks/lookup?op=hget&search=12120bd49c566eaf49d31f267ec0b900"],
 )
 
-load(":ubuntu_amd64.bzl", "ubuntu_amd64")
+load(":ubuntu_focal_amd64.bzl", "ubuntu_focal_amd64")
 
-ubuntu_amd64()
+ubuntu_focal_amd64()
 
-load(":ubuntu_arm64.bzl", "ubuntu_arm64")
+load(":ubuntu_focal_arm64.bzl", "ubuntu_focal_arm64")
 
-ubuntu_arm64()
+ubuntu_focal_arm64()
+
+load(":ubuntu_bionic_amd64.bzl", "ubuntu_bionic_amd64")
+
+ubuntu_bionic_amd64()
+
+load(":ubuntu_bionic_arm64.bzl", "ubuntu_bionic_arm64")
+
+ubuntu_bionic_arm64()
 
 # Load Docker rules
 load(
