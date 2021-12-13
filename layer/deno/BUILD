@@ -1,7 +1,6 @@
 load("@bazel_tools//tools/build_defs/pkg:pkg.bzl", "pkg_tar")
 load("@io_bazel_rules_docker//container:container.bzl", "container_layer")
 load("//util:constants.bzl", "DENO_VERSION")
-load("//platforms:cpu.bzl", "ubuntu_debs")
 
 # TODO: Add arm64 binaries for linux. Need an offical compiled target
 pkg_tar(

@@ -72,4 +72,4 @@ fileContentTests:
   expectedContents: ['^root:x:0:\nnobody:x:65534:\ntty:x:5:\nstaff:x:50:\nnonroot:x:65532:\n$']
 - name: 'os-release pretty name'
   path: '/etc/os-release'
-  expectedContents: ['PRETTY_NAME="Distroless"','ID="ubuntu"','VERSION_ID="20.04"','VERSION="20\.04\.3 LTS, \(Focal Fossa\)"','NAME="Ubuntu"']
+  expectedContents: ['PRETTY_NAME="Distroless"','ID="ubuntu"','VERSION_ID="[0-9][0-9]\.04"','VERSION="[0-9][0-9]\.04\.[0-9] LTS, ','NAME="Ubuntu"']

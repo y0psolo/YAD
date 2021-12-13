@@ -25,4 +25,6 @@ container_image(
     user = "%d" % NONROOT,
     visibility = ["//visibility:public"],
     workdir = "/home/nonroot",
+    compression = "gzip",
+    compression_options = ["",],
 )
