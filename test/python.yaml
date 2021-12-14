@@ -64,6 +64,7 @@ commandTests:
           # Windows-specific modules
           'asyncio.windows_events',
           'asyncio.windows_utils',
+          'asyncio.test_utils',
           'ctypes.wintypes',
           'distutils._msvccompiler',
           'distutils.command.bdist_msi',
