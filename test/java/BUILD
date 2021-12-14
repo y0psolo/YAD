@@ -5,73 +5,60 @@ load("//util:constants.bzl", "JRE_VERSIONS")
 
 [
     java_image(
-            name = jre + "_" + version + "_checkcerts",
-            srcs = ["CheckCerts.java"],
-            base = "//image/java:" + jre + "_" + version,
-            main_class = "testdata.CheckCerts",
-        )
-        for jre in [
-            "adoptium",
-            "azul",
-        ]
+        name = version + "_checkcerts",
+        srcs = ["CheckCerts.java"],
+        base = "//image/java:" + version,
+        main_class = "testdata.CheckCerts",
+    )
     for version in JRE_VERSIONS
 ]
 
 [
     java_image(
-        name = jre  + "_" + version + "_checkencoding",
+        name = version + "_checkencoding",
         srcs = ["CheckEncoding.java"],
-        base = "//image/java:" + jre + "_" + version,
+        base = "//image/java:" + version,
         main_class = "testdata.CheckEncoding",
     )
-    for jre in [
-        "adoptium",
-        "azul",
-    ]
     for version in JRE_VERSIONS
 ]
 
 [
     container_test(
-        name = jre  + "_" + version + "_test",
+        name = version + "_test",
         configs = ["//test:base.yaml"] + select({
-            "//platforms:debug": ["//test:debug.yaml", jre + "_debug.yaml"],
-            "//conditions:default": ["//test:core.yaml", jre + ".yaml"],
+            "//platforms:debug_azul": ["//test:debug.yaml", "azul_debug.yaml"],
+            "//platforms:debug_adoptium": ["//test:debug.yaml", "adoptium_debug.yaml"],
+            "//platforms:opt_azul": ["//test:core.yaml", "azul.yaml"],
+            "//platforms:opt_adoptium": ["//test:core.yaml", "adoptium.yaml"],
         }),
-        image = "//image/java:" + jre + "_" + version,
+        image = "//image/java:" + version,
         tags = ["java", "amd64", "arm64"],
     )
-    for jre in [
-        "adoptium",
-        "azul",
-    ]
     for version in JRE_VERSIONS
 ]
 
 [
     container_test(
-        name = jre + "_" + version + "_checkcerts_test",
+        name = version + "_checkcerts_test",
         configs = ["checkCerts.yaml"],
-        image = ":" + jre + "_" + version + "_checkcerts",
+        image = ":" + version + "_checkcerts",
         tags = ["java", "amd64", "arm64"],
     )
-    for jre in [
-        "adoptium",
-        "azul",
-    ]
     for version in JRE_VERSIONS
 ]
 
 [
     container_test(
-        name = jre + "_" + version + "_checkencoding_test",
+        name = version + "_checkencoding_test",
         configs = ["checkEncoding.yaml"],
-        image = ":" + jre + "_" + version + "_checkencoding",
+        image = ":" + version + "_checkencoding",
         tags = ["java", "amd64", "arm64"],
     )
-    for jre in [
-        "adoptium",
-        "azul",
-    ]
     for version in JRE_VERSIONS
 ]
+
+test_suite(
+    name = "java",
+    tags = ["java",],
+)

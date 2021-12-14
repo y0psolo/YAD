@@ -25,3 +25,8 @@ container_test(
     visibility = ["//:__subpackages__"],
     tags = ["deno", "amd64"],
 )
+
+test_suite(
+    name = "deno",
+    tags = ["deno",],
+)

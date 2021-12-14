@@ -101,7 +101,7 @@ jobs:
           bazel build --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} --java=${{ matrix.java }} //image/javapy:17
       - name: bazel test
         run: |
-           bazel test --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} //test:java
+           bazel test --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} //test/java:java
       - uses: actions/upload-artifact@v2
         if: ${{ failure() }}
         with:
@@ -147,7 +147,7 @@ jobs:
           bazel build --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} --java=${{ matrix.java }} //image/nodejs:16
       - name: bazel test
         run: |
-           bazel test --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} //test:nodejs
+           bazel test --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} //test/nodejs:nodejs
       - uses: actions/upload-artifact@v2
         if: ${{ failure() }}
         with:
@@ -192,7 +192,7 @@ jobs:
           bazel build --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} --java=${{ matrix.java }} //image/deno:deno
       - name: bazel test
         run: |
-           bazel test --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} //test:deno
+           bazel test --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} //test/deno:deno
       - uses: actions/upload-artifact@v2
         if: ${{ failure() }}
         with:

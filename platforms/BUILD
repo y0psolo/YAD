@@ -90,6 +90,27 @@ selects.config_setting_group(
     match_all = [":aarch64_cpu", ":adoptium"],
 )
 
+# Compile Mode & Java combination
+selects.config_setting_group(
+    name = "opt_azul",
+    match_all = [":opt_or_fastbuild", ":azul"],
+)
+
+selects.config_setting_group(
+    name = "debug_azul",
+    match_all = [":debug", ":azul"],
+)
+
+selects.config_setting_group(
+    name = "opt_adoptium",
+    match_all = [":opt_or_fastbuild", ":adoptium"],
+)
+
+selects.config_setting_group(
+    name = "debug_adoptium",
+    match_all = [":debug", ":adoptium"],
+)
+
 # CPU & distro combination
 selects.config_setting_group(
     name = "k8_cpu_jammy",

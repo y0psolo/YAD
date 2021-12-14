@@ -47,18 +47,3 @@ test_suite(
     name = "basic",
     tags = ["basic",],
 )
-
-test_suite(
-    name = "java",
-    tags = ["java",],
-)
-
-test_suite(
-    name = "nodejs",
-    tags = ["node",],
-)
-
-test_suite(
-    name = "deno",
-    tags = ["deno", "-arm64"],
-)

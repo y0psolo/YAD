@@ -36,3 +36,8 @@ load("//util:constants.bzl", "NODEJS_VERSIONS")
     )
     for version in NODEJS_VERSIONS
 ]
+
+test_suite(
+    name = "nodejs",
+    tags = ["node",],
+)
