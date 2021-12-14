@@ -39,6 +39,7 @@ load("//util:constants.bzl", "JRE_VERSIONS")
             "//conditions:default": ["//test:core.yaml", jre + ".yaml"],
         }),
         image = "//image/java:" + jre + "_" + version,
+        tags = ["java", "amd64", "arm64"],
     )
     for jre in [
         "adoptium",
@@ -52,6 +53,7 @@ load("//util:constants.bzl", "JRE_VERSIONS")
         name = jre + "_" + version + "_checkcerts_test",
         configs = ["checkCerts.yaml"],
         image = ":" + jre + "_" + version + "_checkcerts",
+        tags = ["java", "amd64", "arm64"],
     )
     for jre in [
         "adoptium",
@@ -65,6 +67,7 @@ load("//util:constants.bzl", "JRE_VERSIONS")
         name = jre + "_" + version + "_checkencoding_test",
         configs = ["checkEncoding.yaml"],
         image = ":" + jre + "_" + version + "_checkencoding",
+        tags = ["java", "amd64", "arm64"],
     )
     for jre in [
         "adoptium",

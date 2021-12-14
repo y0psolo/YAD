@@ -54,24 +54,30 @@ container_layer(
     visibility = ["//:__subpackages__"],
 )
 
-# Tar needed for Adoptium
+# Tar needed for Java
 [
     pkg_tar(
-        name = "adoptium_" + version + "_lib_tar",
+        name = version + "_lib_tar",
         srcs = select ({
-            "//platforms:k8_cpu": ["@jre-" + version + "-adoptium-amd64//:lib_dir"],
-            "//platforms:aarch64_cpu": ["@jre-" + version + "-adoptium-arm64//:lib_dir"],
+            "//platforms:k8_cpu_adoptium": ["@jre-" + version + "-adoptium-amd64//:lib_dir"],
+            "//platforms:aarch64_cpu_adoptium": ["@jre-" + version + "-adoptium-arm64//:lib_dir"],
+            "//platforms:k8_cpu_azul": ["@jre-" + version + "-azul-amd64//:lib_dir"],
+            "//platforms:aarch64_cpu_azul": ["@jre-" + version + "-azul-arm64//:lib_dir"],
         }),
         mode = "0644",
         owner = "0.0",
         package_dir = select ({
-            "//platforms:k8_cpu": "/usr/lib/jvm/jre-" + version + "-amd64",
-            "//platforms:aarch64_cpu": "/usr/lib/jvm/jre-" + version + "-arm64",
+            "//platforms:k8_cpu_adoptium": "/usr/lib/jvm/jre-" + version + "-amd64",
+            "//platforms:aarch64_cpu_adoptium": "/usr/lib/jvm/jre-" + version + "-arm64",
+            "//platforms:k8_cpu_azul": "/usr/lib/jvm/zre-" + version + "-amd64",
+            "//platforms:aarch64_cpu_azul": "/usr/lib/jvm/zre-" + version + "-arm64",
         }),
         # bug with pkg_tar : resource name is included in the filegroup
         remap_paths = select ({
-            "//platforms:k8_cpu": {"../jre-" + version + "-adoptium-amd64/": "./"},
-            "//platforms:aarch64_cpu": {"../jre-" + version + "-adoptium-arm64/": "./"},
+            "//platforms:k8_cpu_adoptium": {"../jre-" + version + "-adoptium-amd64/": "./"},
+            "//platforms:aarch64_cpu_adoptium": {"../jre-" + version + "-adoptium-arm64/": "./"},
+             "//platforms:k8_cpu_azul": {"../jre-" + version + "-azul-amd64/": "./"},
+            "//platforms:aarch64_cpu_azul": {"../jre-" + version + "-azul-arm64/": "./"},
         }),
         strip_prefix = ".",
     )
@@ -80,122 +86,64 @@ container_layer(
 
 [
     pkg_tar(
-        name = "adoptium_" + version + "_bin_tar",
+        name = version + "_bin_tar",
         srcs = select ({
-            "//platforms:k8_cpu": ["@jre-" + version + "-adoptium-amd64//:bin_dir"],
-            "//platforms:aarch64_cpu": ["@jre-" + version + "-adoptium-arm64//:bin_dir"],
+            "//platforms:k8_cpu_adoptium": ["@jre-" + version + "-adoptium-amd64//:bin_dir"],
+            "//platforms:aarch64_cpu_adoptium": ["@jre-" + version + "-adoptium-arm64//:bin_dir"],
+            "//platforms:k8_cpu_azul": ["@jre-" + version + "-azul-amd64//:bin_dir"],
+            "//platforms:aarch64_cpu_azul": ["@jre-" + version + "-azul-arm64//:bin_dir"],
         }),
         mode = "0755",
         owner = "0.0",
         package_dir = select ({
-            "//platforms:k8_cpu": "/usr/lib/jvm/jre-" + version + "-amd64",
-            "//platforms:aarch64_cpu": "/usr/lib/jvm/jre-" + version + "-arm64",
+            "//platforms:k8_cpu_adoptium": "/usr/lib/jvm/jre-" + version + "-amd64",
+            "//platforms:aarch64_cpu_adoptium": "/usr/lib/jvm/jre-" + version + "-arm64",
+            "//platforms:k8_cpu_azul": "/usr/lib/jvm/zre-" + version + "-amd64",
+            "//platforms:aarch64_cpu_azul": "/usr/lib/jvm/zre-" + version + "-arm64",
         }),
         # bug with pkg_tar : resource name is included in the filegroup
         remap_paths = select ({
-            "//platforms:k8_cpu": {"../jre-" + version + "-adoptium-amd64/": "./"},
-            "//platforms:aarch64_cpu": {"../jre-" + version + "-adoptium-arm64/": "./"},
+            "//platforms:k8_cpu_adoptium": {"../jre-" + version + "-adoptium-amd64/": "./"},
+            "//platforms:aarch64_cpu_adoptium": {"../jre-" + version + "-adoptium-arm64/": "./"},
+            "//platforms:k8_cpu_azul": {"../jre-" + version + "-azul-amd64/": "./"},
+            "//platforms:aarch64_cpu_azul": {"../jre-" + version + "-azul-arm64/": "./"},
         }),
         strip_prefix = ".",
     )
     for version in JRE_VERSIONS
 ]
 
-# Tar needed for Azul
-[
-    pkg_tar(
-        name = "azul_" + version + "_lib_tar",
-        srcs = select ({
-            "//platforms:k8_cpu": ["@jre-" + version + "-azul-amd64//:lib_dir"],
-            "//platforms:aarch64_cpu": ["@jre-" + version + "-azul-arm64//:lib_dir"],
-        }),
-        mode = "0644",
-        owner = "0.0",
-        package_dir = select ({
-            "//platforms:k8_cpu": "/usr/lib/jvm/zre-" + version + "-amd64",
-            "//platforms:aarch64_cpu": "/usr/lib/jvm/zre-" + version + "-arm64",
-        }),
-        # bug with pkg_tar : resource name is included in the filegroup
-        remap_paths = select ({
-            "//platforms:k8_cpu": {"../jre-" + version + "-azul-amd64/": "./"},
-            "//platforms:aarch64_cpu": {"../jre-" + version + "-azul-arm64/": "./"},
-        }),
-        strip_prefix = ".",
-    )
-    for version in JRE_VERSIONS
-]
-
-[
-    pkg_tar(
-        name = "azul_" + version + "_bin_tar",
-        srcs = select ({
-            "//platforms:k8_cpu": ["@jre-" + version + "-azul-amd64//:bin_dir"],
-            "//platforms:aarch64_cpu": ["@jre-" + version + "-azul-arm64//:bin_dir"],
-        }),
-        mode = "0755",
-        owner = "0.0",
-        package_dir = select ({
-            "//platforms:k8_cpu": "/usr/lib/jvm/zre-" + version + "-amd64",
-            "//platforms:aarch64_cpu": "/usr/lib/jvm/zre-" + version + "-arm64",
-        }),
-        # bug with pkg_tar : resource name is included in the filegroup
-        remap_paths = select ({
-            "//platforms:k8_cpu": {"../jre-" + version + "-azul-amd64/": "./"},
-            "//platforms:aarch64_cpu": {"../jre-" + version + "-azul-arm64/": "./"},
-        }),
-        strip_prefix = ".",
-    )
-    for version in JRE_VERSIONS
-]
-
-# Adoptium layers
+# Java layer
 [
     container_layer(
-        name = "adoptium_" + version,
+        name = version,
         env = select ({
-            "//platforms:k8_cpu": {
+            "//platforms:k8_cpu_adoptium": {
                 "JAVA_HOME": "/usr/lib/jvm/jre-" + version + "-amd64",
                 "JAVA_VERSION": ADOPTIUM_VERSIONS_MAPPING["amd64"][version],
             },
-            "//platforms:aarch64_cpu": {
+            "//platforms:aarch64_cpu_adoptium": {
                 "JAVA_HOME": "/usr/lib/jvm/jre-" + version + "-arm64",
                 "JAVA_VERSION": ADOPTIUM_VERSIONS_MAPPING["arm64"][version],
             },
-        }),
-        symlinks = select ({
-            "//platforms:k8_cpu": {"/usr/bin/java": "/usr/lib/jvm/jre-" + version + "-amd64/bin/java"},
-            "//platforms:aarch64_cpu": {"/usr/bin/java": "/usr/lib/jvm/jre-" + version + "-arm64/bin/java"},
-        }),
-        tars = [
-            ":adoptium_" + version + "_lib_tar",
-            ":adoptium_" + version + "_bin_tar",
-        ],
-        visibility = ["//visibility:public"],
-    )
-    for version in JRE_VERSIONS
-]
-
-# Azul layers
-[
-    container_layer(
-        name = "azul_" + version,
-        env = select ({
-            "//platforms:k8_cpu": {
+            "//platforms:k8_cpu_azul": {
                 "JAVA_HOME": "/usr/lib/jvm/zre-" + version + "-amd64",
                 "JAVA_VERSION": AZUL_VERSIONS_MAPPING["amd64"][version],
             },
-            "//platforms:aarch64_cpu": {
+            "//platforms:aarch64_cpu_azul": {
                 "JAVA_HOME": "/usr/lib/jvm/zre-" + version + "-arm64",
                 "JAVA_VERSION": AZUL_VERSIONS_MAPPING["arm64"][version],
             },
         }),
         symlinks = select ({
-            "//platforms:k8_cpu": {"/usr/bin/java": "/usr/lib/jvm/zre-" + version + "-amd64/bin/java"},
-            "//platforms:aarch64_cpu": {"/usr/bin/java": "/usr/lib/jvm/zre-" + version + "-arm64/bin/java"},
+            "//platforms:k8_cpu_adoptium": {"/usr/bin/java": "/usr/lib/jvm/jre-" + version + "-amd64/bin/java"},
+            "//platforms:aarch64_cpu_adoptium": {"/usr/bin/java": "/usr/lib/jvm/jre-" + version + "-arm64/bin/java"},
+            "//platforms:k8_cpu_azul": {"/usr/bin/java": "/usr/lib/jvm/zre-" + version + "-amd64/bin/java"},
+            "//platforms:aarch64_cpu_azul": {"/usr/bin/java": "/usr/lib/jvm/zre-" + version + "-arm64/bin/java"},
         }),
         tars = [
-            ":azul_" + version + "_lib_tar",
-            ":azul_" + version + "_bin_tar",
+            version + "_lib_tar",
+            version + "_bin_tar",
         ],
         visibility = ["//visibility:public"],
     )

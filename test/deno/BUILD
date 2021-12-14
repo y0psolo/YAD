@@ -23,4 +23,5 @@ container_test(
     configs = ["typescript.yaml"],
     image = ":deno_test_image",
     visibility = ["//:__subpackages__"],
+    tags = ["deno", "amd64"],
 )

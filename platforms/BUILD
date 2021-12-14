@@ -3,6 +3,7 @@ load("@bazel_skylib//rules:common_settings.bzl", "string_flag")
 
 package(default_visibility = ["//:__subpackages__"])
 
+# Distro flag definition and settings
 string_flag(
     name = "distro",
     values = ["18.04", "20.04", "22.04"],
@@ -24,6 +25,24 @@ config_setting(
     flag_values  = {":distro" : "22.04"},
 )
 
+# Java flag definition and settings
+string_flag(
+    name = "java",
+    values = ["azul", "adoptium"],
+    build_setting_default = "azul",
+)
+
+config_setting(
+    name = "azul",
+    flag_values  = {":java" : "azul"},
+)
+
+config_setting(
+    name = "adoptium",
+    flag_values  = {":java" : "adoptium"},
+)
+
+# CPU related config
 config_setting(
     name = "aarch64_cpu",
     values = {"cpu": "aarch64"},
@@ -34,6 +53,7 @@ config_setting(
     values = {"cpu": "k8"},
 )
 
+# Compile related config
 config_setting(
     name = "debug",
     values = {"compilation_mode": "dbg"},
@@ -49,13 +69,33 @@ config_setting(
     values = {"compilation_mode": "fastbuild"},
 )
 
+# CPU & Java combination
+selects.config_setting_group(
+    name = "k8_cpu_azul",
+    match_all = [":k8_cpu", ":azul"],
+)
+
+selects.config_setting_group(
+    name = "aarch64_cpu_azul",
+    match_all = [":aarch64_cpu", ":azul"],
+)
+
+selects.config_setting_group(
+    name = "k8_cpu_adoptium",
+    match_all = [":k8_cpu", ":adoptium"],
+)
+
+selects.config_setting_group(
+    name = "aarch64_cpu_adoptium",
+    match_all = [":aarch64_cpu", ":adoptium"],
+)
+
 # CPU & distro combination
 selects.config_setting_group(
     name = "k8_cpu_jammy",
     match_all = [":k8_cpu", ":jammy"],
 )
 
-# CPU & distro combination
 selects.config_setting_group(
     name = "aarch64_cpu_jammy",
     match_all = [":aarch64_cpu", ":jammy"],
@@ -76,7 +116,6 @@ selects.config_setting_group(
     match_all = [":k8_cpu", ":bionic"],
 )
 
-# CPU & distro combination
 selects.config_setting_group(
     name = "aarch64_cpu_bionic",
     match_all = [":aarch64_cpu", ":bionic"],
@@ -106,4 +145,65 @@ selects.config_setting_group(
 selects.config_setting_group(
     name = "arm64",
     match_all = [":aarch64_cpu", ":opt_or_fastbuild"],
+)
+
+# CPU distro and compile mode combination
+selects.config_setting_group(
+    name = "k8_cpu_jammy_opt",
+    match_all = [":k8_cpu", ":jammy", ":opt_or_fastbuild"],
+)
+
+selects.config_setting_group(
+    name = "aarch64_cpu_jammy_opt",
+    match_all = [":aarch64_cpu", ":jammy", ":opt_or_fastbuild"],
+)
+
+selects.config_setting_group(
+    name = "k8_cpu_focal_opt",
+    match_all = [":k8_cpu", ":focal", ":opt_or_fastbuild"],
+)
+
+selects.config_setting_group(
+    name = "aarch64_cpu_focal_opt",
+    match_all = [":aarch64_cpu", ":focal", ":opt_or_fastbuild"],
+)
+
+selects.config_setting_group(
+    name = "k8_cpu_bionic_opt",
+    match_all = [":k8_cpu", ":bionic", ":opt_or_fastbuild"],
+)
+
+selects.config_setting_group(
+    name = "aarch64_cpu_bionic_opt",
+    match_all = [":aarch64_cpu", ":bionic", ":opt_or_fastbuild"],
+)
+
+selects.config_setting_group(
+    name = "k8_cpu_jammy_dbg",
+    match_all = [":k8_cpu", ":jammy", ":debug"],
+)
+
+selects.config_setting_group(
+    name = "aarch64_cpu_jammy_dbg",
+    match_all = [":aarch64_cpu", ":jammy", ":debug"],
+)
+
+selects.config_setting_group(
+    name = "k8_cpu_focal_dbg",
+    match_all = [":k8_cpu", ":focal", ":debug"],
+)
+
+selects.config_setting_group(
+    name = "aarch64_cpu_focal_dbg",
+    match_all = [":aarch64_cpu", ":focal", ":debug"],
+)
+
+selects.config_setting_group(
+    name = "k8_cpu_bionic_dbg",
+    match_all = [":k8_cpu", ":bionic", ":debug"],
+)
+
+selects.config_setting_group(
+    name = "aarch64_cpu_bionic_dbg",
+    match_all = [":aarch64_cpu", ":bionic", ":debug"],
 )
