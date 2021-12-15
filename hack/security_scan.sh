@@ -35,4 +35,4 @@ do
     scan_image nodejs ${version}_$1
 done
 
-scan_image deno ${DENO_VERSION}_$1
+scan_image deno $1

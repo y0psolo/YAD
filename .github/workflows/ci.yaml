@@ -88,9 +88,10 @@ jobs:
         uses: actions/cache@v2
         with:
           path: "~/.cache/bazel"
-          key: ${{ runner.os }}-bazel-base-${{ matrix.arch }}-${{ matrix.copt }}-${{ matrix.ubuntu }}-${{ hashFiles('**/BUILD', '**/*.bzl', 'WORKSPACE') }}
+          key: ${{ runner.os }}-bazel-java-${{ matrix.arch }}-${{ matrix.copt }}-${{ matrix.ubuntu }}-${{ hashFiles('**/BUILD', '**/*.bzl', 'WORKSPACE') }}
           restore-keys: |
             ${{ runner.os }}-bazel-clean-${{ steps.date.outputs.date }}
+            ${{ runner.os }}-bazel-base-${{ matrix.arch }}-${{ matrix.copt }}-${{ matrix.ubuntu }}-${{ hashFiles('**/BUILD', '**/*.bzl', 'WORKSPACE') }}
       - name: bazel build
         run: |
           bazel build --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} --java=${{ matrix.java }} //image:push_java_8

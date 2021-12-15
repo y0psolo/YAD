@@ -13,9 +13,8 @@ NODEJS_VERSIONS=$(grep 'NODEJS_VERSIONS =' util/constants.bzl | grep -o -E "[0-9
 
 for version in ${NODEJS_VERSIONS}
 do
+    simple_tag_multi_arch nodejs ${version}_$1 ${version}_$1
+    simple_tag_multi_arch nodejs ${version}_$1_debug ${version}_$1_debug
     if [ $1 = "20.04" ]; then
-        image_tag nodejs ${version}_$1 ${version}
-    else
-        image_tag nodejs ${version}_$1
-    fi
+        simple_tag_multi_arch nodejs ${version}_$1 ${version}
 done

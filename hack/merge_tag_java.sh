@@ -16,10 +16,10 @@ for repo in adoptium azul adoptiumpy azulpy
 do
     for version in ${JAVA_VERSIONS}
     do
+        simple_tag_multi_arch ${repo} ${version}_$1 ${version}_$1
+        simple_tag_multi_arch ${repo} ${version}_$1_debug ${version}_$1_debug
         if [ $1 = "20.04" ]; then
-            image_tag ${repo} ${version}_$1 ${version}
-        else
-            image_tag ${repo} ${version}_$1
+            simple_tag_multi_arch ${repo} ${version}_$1 ${version}
         fi
     done
 done

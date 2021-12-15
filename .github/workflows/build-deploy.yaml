@@ -81,7 +81,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: "~/.cache/bazel"
-          key: ${{ runner.os }}-bazel-base-${{ matrix.arch }}-${{ matrix.copt }}-${{ matrix.ubuntu }}-${{ hashFiles('**/BUILD', '**/*.bzl', 'WORKSPACE') }}
+          key: ${{ runner.os }}-bazel-java-${{ matrix.arch }}-${{ matrix.copt }}-${{ matrix.ubuntu }}-${{ hashFiles('**/BUILD', '**/*.bzl', 'WORKSPACE') }}
       - name: bazel test
         run: |
            bazel test --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} //test/java:java

@@ -4,21 +4,20 @@ This image is designed for running application depending on libc, libssl, libstd
 
 ## Package and application list
 
-| Name            | type                                                         | Layer  |      Tag      |
-| --------------- | :----------------------------------------------------------- | :----: | :-----------: |
-| base-files      | Ubuntu package                                               | static | latest, debug |
-| net-base        | Ubuntu package                                               | static | latest, debug |
-| tzdata          | Ubuntu package                                               | static | latest, debug |
-| ca-certificates | Only /usr/share/ca-certificates directory and /usr/share/doc/ca-certificates/copyright contained in the ubuntu packages | static | latest, debug |
-| libc6           | Ubuntu package                                               |  base  | latest, debug |
-| libssl          | Ubuntu package                                               |  base  | latest, debug |
-| openssl         | Ubuntu package                                               |  base  | latest, debug |
-| tini            | application                                                  |  base  | latest, debug |
-| libgcc1         | Ubuntu package                                               |   cc   | latest, debug |
-| libgcc-s1       | Ubuntu package                                               |   cc   | latest, debug |
-| libgomp1        | Ubuntu package                                               |   cc   | latest, debug |
-| libstdc++6      | Ubuntu package                                               |   cc   | latest, debug |
-| busybox         | Application                                                  | debug  |     debug     |
+| Name            | type                                                         | Layer  |
+| --------------- | :----------------------------------------------------------- | :----: |
+| base-files      | Ubuntu package                                               | static |
+| net-base        | Ubuntu package                                               | static |
+| tzdata          | Ubuntu package                                               | static |
+| ca-certificates | Only /usr/share/ca-certificates directory and /usr/share/doc/ca-certificates/copyright contained in the ubuntu packages | static |
+| libc6           | Ubuntu package                                               |  base  |
+| libssl          | Ubuntu package                                               |  base  |
+| openssl         | Ubuntu package                                               |  base  |
+| tini            | application                                                  |  base  |
+| libgcc1         | Ubuntu package                                               |   cc   |
+| libgcc-s1       | Ubuntu package                                               |   cc   |
+| libgomp1        | Ubuntu package                                               |   cc   |
+| libstdc++6      | Ubuntu package                                               |   cc   |
 
 ## Default Entrypoint
 
@@ -32,5 +31,5 @@ ENTRYPOINT ["/bin/sh"]
 
 ## Security
 
-Security scan of the image updated daily : [latest](../../security/table/cc_latest) [debug](../../security/table/cc_latest)
+Security scan of the image updated daily : [bionic](../../security/table/cc_18.04) [focal](../../security/table/cc_20.04)
 
