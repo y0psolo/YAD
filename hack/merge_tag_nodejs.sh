@@ -11,7 +11,11 @@ NODEJS_VERSIONS=$(grep 'NODEJS_VERSIONS =' util/constants.bzl | grep -o -E "[0-9
 
 . $SCRIPTPATH/common.sh
 
-for version in NODEJS_VERSIONS
+for version in ${NODEJS_VERSIONS}
 do
-    loop_over_base_node_tag merge_tag_arch $1 version $2
+    if [ $1 = "20.04" ]; then
+        image_tag nodejs ${version}_$1 ${version}
+    else
+        image_tag nodejs ${version}_$1
+    fi
 done

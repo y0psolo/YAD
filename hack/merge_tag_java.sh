@@ -7,13 +7,19 @@
 
 SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 
-DENO_VERSION=$(grep 'DENO_VERSION =' util/constants.bzl | grep -o -m 1 -E "[0-9]+\.[0-9]+\.[0-9]+")
-NODEJS_VERSIONS=$(grep 'NODEJS_VERSIONS =' util/constants.bzl | grep -o -E "[0-9]+")
 JAVA_VERSIONS=$(grep 'JRE_VERSIONS =' util/constants.bzl | grep -o -E "[0-9]+")
 
 . $SCRIPTPATH/common.sh
 
-for version in JAVA_VERSIONS
+
+for repo in adoptium azul adoptiumpy azulpy
 do
-    loop_over_base_java_tag merge_tag_arch $1 version $2
+    for version in ${JAVA_VERSIONS}
+    do
+        if [ $1 = "20.04" ]; then
+            image_tag ${repo} ${version}_$1 ${version}
+        else
+            image_tag ${repo} ${version}_$1
+        fi
+    done
 done

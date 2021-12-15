@@ -6,7 +6,7 @@ package(default_visibility = ["//visibility:public"])
 
 [
     container_push(
-        name = name,
+        name = "push_" + name,
         image = "//image/" + name + ":" + name,
         format = "Docker",
         registry = "docker.io",
@@ -19,7 +19,7 @@ package(default_visibility = ["//visibility:public"])
 
 [
     container_push(
-        name = "java_" + version,
+        name = "push_java_" + version,
         image = "//image/java:" + version,
         format = "Docker",
         registry = "docker.io",
@@ -35,7 +35,7 @@ package(default_visibility = ["//visibility:public"])
 
 [
     container_push(
-        name = "javapy_" + version,
+        name = "push_javapy_" + version,
         image = "//image/javapy:" + version,
         format = "Docker",
         registry = "docker.io",
@@ -51,7 +51,7 @@ package(default_visibility = ["//visibility:public"])
 
 [
     container_push(
-        name = "nodejs_" + version,
+        name = "push_nodejs_" + version,
         image = "//image/nodejs:" + version,
         format = "Docker",
         registry = "docker.io",

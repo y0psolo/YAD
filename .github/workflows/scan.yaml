@@ -7,6 +7,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        ubuntu: [18.04, 20.04]
     permissions:
       pull-requests: write
       contents: write
@@ -15,7 +18,7 @@ jobs:
       - name: Setup repository
         uses: actions/checkout@v2
       - name: Run trivy scan
-        run : hack/security_scan.sh
+        run : hack/security_scan.sh ${{ matrix.ubuntu }}
       - name: Upload Trivy scan results to GitHub Security tab
         uses: github/codeql-action/upload-sarif@v1
         with:

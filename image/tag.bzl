@@ -28,7 +28,7 @@ def arch_tag():
 
 def dist_tag():
     return select({
-        "//platforms:jammy": "22.04",
-        "//platforms:focal": "20.04",
-        "//platforms:bionic": "18.04",
+        "//platforms:jammy": "jammy",
+        "//platforms:focal": "focal",
+        "//platforms:bionic": "bionic",
     })

@@ -44,10 +44,10 @@ jobs:
             ${{ runner.os }}-bazel-clean-${{ steps.date.outputs.date }}
       - name: bazel build
         run: |
-          bazel build --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} //image/static:static
-          bazel build --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} //image/base:base
-          bazel build --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} //image/cc:cc
-          bazel build --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} //image/python:python
+          bazel build --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} //image:push_static
+          bazel build --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} //image:push_base
+          bazel build --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} //image:push_cc
+          bazel build --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} //image:push_python
       - name: bazel test
         run: |
            bazel test --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} //test:basic
@@ -93,12 +93,12 @@ jobs:
             ${{ runner.os }}-bazel-clean-${{ steps.date.outputs.date }}
       - name: bazel build
         run: |
-          bazel build --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} --java=${{ matrix.java }} //image/java:8
-          bazel build --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} --java=${{ matrix.java }} //image/java:11
-          bazel build --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} --java=${{ matrix.java }} //image/java:17
-          bazel build --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} --java=${{ matrix.java }} //image/javapy:8
-          bazel build --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} --java=${{ matrix.java }} //image/javapy:11
-          bazel build --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} --java=${{ matrix.java }} //image/javapy:17
+          bazel build --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} --java=${{ matrix.java }} //image:push_java_8
+          bazel build --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} --java=${{ matrix.java }} //image:push_java_11
+          bazel build --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} --java=${{ matrix.java }} //image:push_java_17
+          bazel build --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} --java=${{ matrix.java }} //image:push_javapy_8
+          bazel build --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} --java=${{ matrix.java }} //image:push_javapy_11
+          bazel build --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} --java=${{ matrix.java }} //image:push_javapy_17
       - name: bazel test
         run: |
            bazel test --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} //test/java:java
@@ -143,8 +143,8 @@ jobs:
             ${{ runner.os }}-bazel-clean-${{ steps.date.outputs.date }}
       - name: bazel build
         run: |
-          bazel build --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} --java=${{ matrix.java }} //image/nodejs:14
-          bazel build --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} --java=${{ matrix.java }} //image/nodejs:16
+          bazel build --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} --java=${{ matrix.java }} //image:push_nodejs_14
+          bazel build --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} --java=${{ matrix.java }} //image:push_nodejs_16
       - name: bazel test
         run: |
            bazel test --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} //test/nodejs:nodejs
@@ -189,7 +189,7 @@ jobs:
             ${{ runner.os }}-bazel-clean-${{ steps.date.outputs.date }}
       - name: bazel build
         run: |
-          bazel build --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} --java=${{ matrix.java }} //image/deno:deno
+          bazel build --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} --java=${{ matrix.java }} //image:push_deno
       - name: bazel test
         run: |
            bazel test --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} //test/deno:deno
