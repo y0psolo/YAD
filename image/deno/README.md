@@ -37,7 +37,7 @@ ENTRYPOINT ["/bin/sh"]
 
 ## Security
 
-Security scan of the image updated daily : [bionic](../../security/table/deno_18.04) [focal](../../security/table/deno_20.04)
+Security scan of the image updated daily : [bionic](../../security/table/deno_bionic) [focal](../../security/table/deno_focal)
 
 Security scan for Deno application is not supported by Trivy. See https://github.com/denoland/deno/security/advisories for the full CVE list.
 

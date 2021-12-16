@@ -27,4 +27,4 @@ ENTRYPOINT ["/bin/sh"]
 
 ## Security
 
-Security scan of the image updated daily : [bionic](../../security/table/base_18.04) [focal](../../security/table/base_20.04)
+Security scan of the image updated daily : [bionic](../../security/table/base_bionic) [focal](../../security/table/base_focal)

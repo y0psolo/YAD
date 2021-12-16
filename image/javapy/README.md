@@ -65,7 +65,7 @@ Security scan of the image updated daily.
 
 | Name     | Java 8   | Java 11  |  Java 17   |
 | -------- | :------: | :------: | :--------: |
-| Adoptium | [bionic](../../security/table/adoptiumpy_8_18.04) / [focal](../../security/table/adoptiumpy_8_20.04) | [bionic](../../security/table/adoptiumpy_11_18.04) / [focal](../../security/table/adoptiumpy_11_20.04) | [bionic](../../security/table/adoptiumpy_17_18.04) / [focal](../../security/table/adoptiumpy_17_20.04)
-| Azul     | [bionic](../../security/table/azulpy_8_18.04) / [focal](../../security/table/azulpy_8_20.04) | [bionic](../../security/table/azulpy_11_18.04) / [focal](../../security/table/azulpy_11_20.04) | [bionic](../../security/table/azulpy_17_18.04) / [focal](../../security/table/azulpy_17_20.04)
+| Adoptium | [bionic](../../security/table/adoptiumpy_8_bionic) / [focal](../../security/table/adoptiumpy_8_focal) | [bionic](../../security/table/adoptiumpy_11_bionic) / [focal](../../security/table/adoptiumpy_11_focal) | [bionic](../../security/table/adoptiumpy_17_bionic) / [focal](../../security/table/adoptiumpy_17_focal)
+| Azul     | [bionic](../../security/table/azulpy_8_bionic) / [focal](../../security/table/azulpy_8_focal) | [bionic](../../security/table/azulpy_11_bionic) / [focal](../../security/table/azulpy_11_focal) | [bionic](../../security/table/azulpy_17_bionic) / [focal](../../security/table/azulpy_17_focal)
 
 Security scan for Adoptium and Azul tar.gz archive installation is not supported by Trivy. To list CVE on Azul disctirbution see https://docs.azul.com/core/cve.

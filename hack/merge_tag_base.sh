@@ -11,7 +11,7 @@ for repo in static base cc python
 do
     simple_tag_multi_arch ${repo} $1 $1
     simple_tag_multi_arch ${repo} $1_debug $1_debug
-    if [ $1 = "20.04" ]; then
+    if [ $1 = "focal" ]; then
         simple_tag_multi_arch ${repo} $1 latest
     fi
 done

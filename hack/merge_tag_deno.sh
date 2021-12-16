@@ -11,6 +11,6 @@ DENO_VERSION=$(grep 'DENO_VERSION =' util/constants.bzl | grep -o -m 1 -E "[0-9]
 simple_tag_amd64 deno ${DENO_VERSION}_$1 ${DENO_VERSION}_$1
 simple_tag_amd64 deno ${DENO_VERSION}_$1 $1
 simple_tag_amd64 deno ${DENO_VERSION}_$1_debug ${DENO_VERSION}_$1_debug
-if [ $1 = "20.04" ]; then
+if [ $1 = "focal" ]; then
     simple_tag_amd64 deno ${DENO_VERSION}_$1 ${DENO_VERSION}
 fi

@@ -54,5 +54,5 @@ ENTRYPOINT ["/bin/sh"]
 
 ## Security
 
-Security scan of the image updated daily : [bionic](../../security/table/python_18.04) [focal](../../security/table/python_20.04)
+Security scan of the image updated daily : [bionic](../../security/table/python_bionic) [focal](../../security/table/python_focal)
 

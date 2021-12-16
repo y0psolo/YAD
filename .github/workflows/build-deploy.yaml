@@ -192,7 +192,7 @@ jobs:
     needs: deploy_base
     strategy:
       matrix:
-        ubuntu: [18.04, 20.04]
+        ubuntu: [bionic, focal]
     steps:
       - name: Setup repository
         uses: actions/checkout@v2
@@ -210,7 +210,7 @@ jobs:
     needs: deploy_java
     strategy:
       matrix:
-        ubuntu: [18.04, 20.04]
+        ubuntu: [bionic, focal]
     steps:
       - name: Setup repository
         uses: actions/checkout@v2
@@ -228,7 +228,7 @@ jobs:
     needs: deploy_nodejs
     strategy:
       matrix:
-        ubuntu: [18.04, 20.04]
+        ubuntu: [bionic, focal]
     steps:
       - name: Setup repository
         uses: actions/checkout@v2
@@ -246,7 +246,7 @@ jobs:
     needs: deploy_deno
     strategy:
       matrix:
-        ubuntu: [18.04, 20.04]
+        ubuntu: [bionic, focal]
     steps:
       - name: Setup repository
         uses: actions/checkout@v2
