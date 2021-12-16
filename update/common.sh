@@ -6,8 +6,9 @@
 ##   $2 : name of the rule to be updated
 ##   $3 : url to be updated
 ##   $4 : strip_prefix to be updated
+##   $5 : yaml file without suffix
 write_rule() {
-cat << EOF >> rules.yaml
+cat << EOF >> $5.yaml
 $1:
   name: $2
   url: $3

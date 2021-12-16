@@ -29,7 +29,9 @@ jobs:
           update/update_adoptium.sh
           update/update_nodejs.sh
           update/update_deno.sh
-          bazel run :update_http
+          bazel run :update_deno
+          bazel run :update_java
+          bazel run :update_nodejs
           bazel run :update_versions
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
