@@ -7,15 +7,22 @@ on:
       - 'security/**'
       - 'update/**'
   workflow_dispatch:
+
 jobs:
-  deploy:
+  deploy_base:
     environment: Release
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        ubuntu: [18.04, 20.04]
+        arch: [x86_64, arm64]
+        copt: [opt, dbg]
     steps:
       - name: Free space
         run : |
-          sudo rm -rf /usr/local/lib/android
           sudo rm -rf /usr/share/dotnet
+          sudo rm -rf /opt/ghc
+          sudo rm -rf "$AGENT_TOOLSDIRECTORY"
       - name: Setup repository
         uses: actions/checkout@v2
       - name: Setup Bazelisk
@@ -26,17 +33,11 @@ jobs:
         with:
           image: tonistiigi/binfmt:latest
           platforms: all
-      - name: Get current date
-        id: date
-        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
       - name: Mount bazel cache
         uses: actions/cache@v2
         with:
           path: "~/.cache/bazel"
-          key: ${{ runner.os }}-bazel-${{ hashFiles('**/BUILD', '**/*.bzl', 'WORKSPACE') }}
-          restore-keys: |
-            ${{ runner.os }}-bazel-ci-
-            ${{ runner.os }}-bazel-
+          key: ${{ runner.os }}-bazel-base-${{ matrix.arch }}-${{ matrix.copt }}-${{ matrix.ubuntu }}-${{ hashFiles('**/BUILD', '**/*.bzl', 'WORKSPACE') }}
       - name: Docker Login
         uses: docker/login-action@v1
         with:
@@ -45,36 +46,194 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: bazel test
         run: |
-          bazel test --config x86_64 -c opt //test:images //test:images_amd64_only
-          bazel test --config x86_64 -c dbg //test:images //test:images_amd64_only
-          bazel test --config arm64 -c opt //test:images
-          bazel test --config arm64 -c dbg //test:images
+          bazel test --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} //test:basic
       - name: bazel publish
         run: |
-          bazel run --stamp --config x86_64 -c opt //image:push
-          bazel run --stamp --config x86_64 -c dbg //image:push
-          bazel run --stamp --config arm64 -c opt //image:push
-          bazel run --stamp --config arm64 -c dbg //image:push
-      - name: merge tags
-        run: hack/merge_tag.sh docker.io
-  sign:
+          bazel run --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} //image:push_static
+          bazel run --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} //image:push_base
+          bazel run --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} //image:push_cc
+          bazel run --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} //image:push_python
+  deploy_java:
     environment: Release
     runs-on: ubuntu-latest
-    needs: deploy
+    needs: deploy_base
+    strategy:
+      matrix:
+        ubuntu: [18.04, 20.04]
+        arch: [x86_64, arm64]
+        copt: [opt, dbg]
+        java: [adoptium, azul]
     steps:
+      - name: Free space
+        run : |
+          sudo rm -rf /usr/share/dotnet
+          sudo rm -rf /opt/ghc
+          sudo rm -rf "$AGENT_TOOLSDIRECTORY"
       - name: Setup repository
         uses: actions/checkout@v2
-      - name: Docker Login
-        uses: docker/login-action@v1
+      - name: Setup Bazelisk
+        uses: bazelbuild/setup-bazelisk@v1
+      - name: Set up QEMU
+        id: qemu
+        uses: docker/setup-qemu-action@v1
         with:
-          registry: docker.io
-          username: ${{ secrets.DOCKER_LOGIN }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
-      - name: Install Cosign
-        uses: sigstore/cosign-installer@main
+          image: tonistiigi/binfmt:latest
+          platforms: all
+      - name: Mount bazel cache
+        uses: actions/cache@v2
         with:
-          cosign-release: 'v1.4.0'
-      - name: cosign image
-        env:
-          COSIGN_PASSWORD: ${{ secrets.COSIGN_PASSWORD }}
-        run: hack/cosign.sh docker.io
+          path: "~/.cache/bazel"
+          key: ${{ runner.os }}-bazel-java-${{ matrix.arch }}-${{ matrix.copt }}-${{ matrix.ubuntu }}-${{ matrix.java }}-${{ hashFiles('**/BUILD', '**/*.bzl', 'WORKSPACE') }}
+      - name: bazel test
+        run: |
+           bazel test --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} //test/java:java
+      - name: bazel deploy
+        run: |
+          bazel run --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} --java=${{ matrix.java }} //image:push_java_8
+          bazel run --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} --java=${{ matrix.java }} //image:push_java_11
+          bazel run --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} --java=${{ matrix.java }} //image:push_java_17
+          bazel run --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} --java=${{ matrix.java }} //image:push_javapy_8
+          bazel run --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} --java=${{ matrix.java }} //image:push_javapy_11
+          bazel run --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} --java=${{ matrix.java }} //image:push_javapy_17
+  deploy_nodejs:
+    environment: Release
+    runs-on: ubuntu-latest
+    needs: deploy_base
+    strategy:
+      matrix:
+        ubuntu: [18.04, 20.04]
+        arch: [x86_64, arm64]
+        copt: [opt, dbg]
+    steps:
+      - name: Free space
+        run : |
+          sudo rm -rf /usr/share/dotnet
+          sudo rm -rf /opt/ghc
+          sudo rm -rf "$AGENT_TOOLSDIRECTORY"
+      - name: Setup repository
+        uses: actions/checkout@v2
+      - name: Setup Bazelisk
+        uses: bazelbuild/setup-bazelisk@v1
+      - name: Set up QEMU
+        id: qemu
+        uses: docker/setup-qemu-action@v1
+        with:
+          image: tonistiigi/binfmt:latest
+          platforms: all
+      - name: Mount bazel cache
+        uses: actions/cache@v2
+        with:
+          path: "~/.cache/bazel"
+          key: ${{ runner.os }}-bazel-base-${{ matrix.arch }}-${{ matrix.copt }}-${{ matrix.ubuntu }}-${{ hashFiles('**/BUILD', '**/*.bzl', 'WORKSPACE') }}
+      - name: bazel test
+        run: |
+           bazel test --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} //test/nodejs:nodejs
+      - name: bazel deploy
+        run: |
+          bazel run --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} --java=${{ matrix.java }} //image:push_nodejs_14
+          bazel run --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} --java=${{ matrix.java }} //image:push_nodejs_16
+  deploy_deno:
+    environment: Release
+    runs-on: ubuntu-latest
+    needs: deploy_base
+    strategy:
+      matrix:
+        ubuntu: [18.04, 20.04]
+        arch: [x86_64]
+        copt: [opt, dbg]
+    steps:
+      - name: Free space
+        run : |
+          sudo rm -rf /usr/share/dotnet
+          sudo rm -rf /opt/ghc
+          sudo rm -rf "$AGENT_TOOLSDIRECTORY"
+      - name: Setup repository
+        uses: actions/checkout@v2
+      - name: Setup Bazelisk
+        uses: bazelbuild/setup-bazelisk@v1
+      - name: Set up QEMU
+        id: qemu
+        uses: docker/setup-qemu-action@v1
+        with:
+          image: tonistiigi/binfmt:latest
+          platforms: all
+      - name: Mount bazel cache
+        uses: actions/cache@v2
+        with:
+          path: "~/.cache/bazel"
+          key: ${{ runner.os }}-bazel-base-${{ matrix.arch }}-${{ matrix.copt }}-${{ matrix.ubuntu }}-${{ hashFiles('**/BUILD', '**/*.bzl', 'WORKSPACE') }}
+      - name: bazel test
+        run: |
+           bazel test --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} //test/deno:deno
+      - name: bazel deploy
+        run: |
+          bazel run --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} --java=${{ matrix.java }} //image:push_deno
+  base_tags:
+    environment: Release
+    runs-on: ubuntu-latest
+    needs: deploy_base
+    strategy:
+      matrix:
+        ubuntu: [18.04, 20.04]
+    steps:
+      - name: Setup repository
+        uses: actions/checkout@v2  
+      - name: merge tags
+        run: hack/merge_tag_base.sh ${{ matrix.ubuntu }}
+  java_tags:
+    environment: Release
+    runs-on: ubuntu-latest
+    needs: deploy_java
+    strategy:
+      matrix:
+        ubuntu: [18.04, 20.04]
+    steps:
+      - name: Setup repository
+        uses: actions/checkout@v2  
+      - name: merge tags
+        run: hack/merge_tag_java.sh ${{ matrix.ubuntu }}
+  nodejs_tags:
+    environment: Release
+    runs-on: ubuntu-latest
+    needs: deploy_nodejs
+    strategy:
+      matrix:
+        ubuntu: [18.04, 20.04]
+    steps:
+      - name: Setup repository
+        uses: actions/checkout@v2  
+      - name: merge tags
+        run: hack/merge_tag_nodejs.sh ${{ matrix.ubuntu }}
+  deno_tags:
+    environment: Release
+    runs-on: ubuntu-latest
+    needs: deploy_deno
+    strategy:
+      matrix:
+        ubuntu: [18.04, 20.04]
+    steps:
+      - name: Setup repository
+        uses: actions/checkout@v2  
+      - name: merge tags
+        run: hack/merge_tag_deno.sh ${{ matrix.ubuntu }}
+  # sign:
+  #   environment: Release
+  #   runs-on: ubuntu-latest
+  #   needs: deploy
+  #   steps:
+  #     - name: Setup repository
+  #       uses: actions/checkout@v2
+  #     - name: Docker Login
+  #       uses: docker/login-action@v1
+  #       with:
+  #         registry: docker.io
+  #         username: ${{ secrets.DOCKER_LOGIN }}
+  #         password: ${{ secrets.DOCKER_PASSWORD }}
+  #     - name: Install Cosign
+  #       uses: sigstore/cosign-installer@main
+  #       with:
+  #         cosign-release: 'v1.4.0'
+  #     - name: cosign image
+  #       env:
+  #         COSIGN_PASSWORD: ${{ secrets.COSIGN_PASSWORD }}
+  #       run: hack/cosign.sh docker.io

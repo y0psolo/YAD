@@ -1,27 +1,23 @@
 #!/bin/sh
 
-loop_over_image_tag() {
-    for repo in static base cc python
-    do
-        for tag in latest debug
-        do
-            $1 ${repo} ${tag}
-        done
-    done
+REPO="yadist"
 
-    for repo in adoptium azul adoptiumpy azulpy
-    do 
-        for tag in 8 8_debug 11 11_debug 17 17_debug
-        do
-            $1 ${repo} ${tag}
-        done
-    done
+# Function call
+#   simple_tag_amd64
+#       <repository>
+#       <origin tag>
+#       <target tag>
+simple_tag_amd64() {
+    docker manifest create ${REPO}/$1:$3 ${REPO}/$1:amd64_$2
+    docker manifest push ${REPO}/$1:$3
+}
 
-    for repo in nodejs
-    do 
-        for tag in 14 14_debug 16 16_debug
-        do
-            $1 ${repo} ${tag}
-        done
-    done
+# Function call
+#   simple_tag_amd64
+#       <repository>
+#       <origin tag>
+#       <target tag>
+simple_tag_multi_arch() {
+    docker manifest create ${REPO}/$1:$3 ${REPO}/$1:amd64_$2 ${REPO}/$1:arm64_$2
+    docker manifest push ${REPO}/$1:$3
 }

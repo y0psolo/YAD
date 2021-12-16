@@ -1,14 +1,17 @@
 load("@bazel_tools//tools/build_defs/pkg:pkg.bzl", "pkg_tar")
 load("@io_bazel_rules_docker//container:container.bzl", "container_layer")
-load("//platforms:cpu.bzl", "ubuntu_debs")
-
-
+load("@ubuntu_focal_amd64//debs:deb_packages.bzl", "ubuntu_focal_amd64")
+load("@ubuntu_focal_arm64//debs:deb_packages.bzl", "ubuntu_focal_arm64")
+load("@ubuntu_bionic_amd64//debs:deb_packages.bzl", "ubuntu_bionic_amd64")
+load("@ubuntu_bionic_arm64//debs:deb_packages.bzl", "ubuntu_bionic_arm64")
 
 pkg_tar(
     name = "ld_cache",
     srcs = select ({
-        "//platforms:k8_cpu": [":amd64/ld.so.cache"],
-        "//platforms:aarch64_cpu": [":arm64/ld.so.cache"],
+        "//platforms:k8_cpu_focal": [":amd64/20.04/ld.so.cache"],
+        "//platforms:aarch64_cpu_focal": [":arm64/20.04/ld.so.cache"],
+        "//platforms:k8_cpu_bionic": [":amd64/18.04/ld.so.cache"],
+        "//platforms:aarch64_cpu_bionic": [":arm64/18.04/ld.so.cache"],
     }),
     mode = "0644",
     package_dir = "etc",
@@ -17,29 +20,92 @@ pkg_tar(
 
 container_layer(
     name = "python",
-    debs = ubuntu_debs([
-        "dash",
-        "libbz2-1.0",
-        "libdb5.3",
-        "libffi7",
-        "liblzma5",
-        "libmpdec2",
-        "libncursesw6",
-        "libpython3.8-minimal",
-        "libpython3.8-stdlib",
-        "libreadline8",
-        "libsqlite3-0",
-        "libtinfo6",
-        "mime-support",
-        "python3-distutils",
-        "python3.8-minimal",
-        "readline-common",
-        "libcrypt1",
-    ]),
-    symlinks = {
-        "/usr/bin/python": "/usr/bin/python3.8",
-        "/usr/bin/python3": "/usr/bin/python3.8",
-    },
+    debs = select({
+        "//platforms:k8_cpu_focal": [
+            ubuntu_focal_amd64["dash"],
+            ubuntu_focal_amd64["libbz2-1.0"],
+            ubuntu_focal_amd64["libdb5.3"],
+            ubuntu_focal_amd64["libffi7"],
+            ubuntu_focal_amd64["liblzma5"],
+            ubuntu_focal_amd64["libmpdec2"],
+            ubuntu_focal_amd64["libncursesw6"],
+            ubuntu_focal_amd64["libpython3.8-minimal"],
+            ubuntu_focal_amd64["libpython3.8-stdlib"],
+            ubuntu_focal_amd64["libreadline8"],
+            ubuntu_focal_amd64["libsqlite3-0"],
+            ubuntu_focal_amd64["libtinfo6"],
+            ubuntu_focal_amd64["mime-support"],
+            ubuntu_focal_amd64["python3-distutils"],
+            ubuntu_focal_amd64["python3.8-minimal"],
+            ubuntu_focal_amd64["readline-common"],
+            ubuntu_focal_amd64["libcrypt1"],
+        ],
+        "//platforms:aarch64_cpu_focal": [
+            ubuntu_focal_arm64["dash"],
+            ubuntu_focal_arm64["libbz2-1.0"],
+            ubuntu_focal_arm64["libdb5.3"],
+            ubuntu_focal_arm64["libffi7"],
+            ubuntu_focal_arm64["liblzma5"],
+            ubuntu_focal_arm64["libmpdec2"],
+            ubuntu_focal_arm64["libncursesw6"],
+            ubuntu_focal_arm64["libpython3.8-minimal"],
+            ubuntu_focal_arm64["libpython3.8-stdlib"],
+            ubuntu_focal_arm64["libreadline8"],
+            ubuntu_focal_arm64["libsqlite3-0"],
+            ubuntu_focal_arm64["libtinfo6"],
+            ubuntu_focal_arm64["mime-support"],
+            ubuntu_focal_arm64["python3-distutils"],
+            ubuntu_focal_arm64["python3.8-minimal"],
+            ubuntu_focal_arm64["readline-common"],
+            ubuntu_focal_arm64["libcrypt1"],
+        ],
+        "//platforms:k8_cpu_bionic": [
+            ubuntu_bionic_amd64["dash"],
+            ubuntu_bionic_amd64["libbz2-1.0"],
+            ubuntu_bionic_amd64["libdb5.3"],
+            ubuntu_bionic_amd64["libffi6"],
+            ubuntu_bionic_amd64["liblzma5"],
+            ubuntu_bionic_amd64["libmpdec2"],
+            ubuntu_bionic_amd64["libncursesw5"],
+            ubuntu_bionic_amd64["libpython3.6-minimal"],
+            ubuntu_bionic_amd64["libpython3.6-stdlib"],
+            ubuntu_bionic_amd64["libreadline7"],
+            ubuntu_bionic_amd64["libsqlite3-0"],
+            ubuntu_bionic_amd64["libtinfo5"],
+            ubuntu_bionic_amd64["mime-support"],
+            ubuntu_bionic_amd64["python3-distutils"],
+            ubuntu_bionic_amd64["python3.6-minimal"],
+            ubuntu_bionic_amd64["readline-common"],
+        ],
+        "//platforms:aarch64_cpu_bionic": [
+            ubuntu_bionic_arm64["dash"],
+            ubuntu_bionic_arm64["libbz2-1.0"],
+            ubuntu_bionic_arm64["libdb5.3"],
+            ubuntu_bionic_arm64["libffi6"],
+            ubuntu_bionic_arm64["liblzma5"],
+            ubuntu_bionic_arm64["libmpdec2"],
+            ubuntu_bionic_arm64["libncursesw5"],
+            ubuntu_bionic_arm64["libpython3.6-minimal"],
+            ubuntu_bionic_arm64["libpython3.6-stdlib"],
+            ubuntu_bionic_arm64["libreadline7"],
+            ubuntu_bionic_arm64["libsqlite3-0"],
+            ubuntu_bionic_arm64["libtinfo5"],
+            ubuntu_bionic_arm64["mime-support"],
+            ubuntu_bionic_arm64["python3-distutils"],
+            ubuntu_bionic_arm64["python3.6-minimal"],
+            ubuntu_bionic_arm64["readline-common"],
+        ],
+    }),
+    symlinks = select({
+        "//platforms:focal" : {
+            "/usr/bin/python": "/usr/bin/python3.8",
+            "/usr/bin/python3": "/usr/bin/python3.8",
+        },
+        "//platforms:bionic" : {
+            "/usr/bin/python": "/usr/bin/python3.6",
+            "/usr/bin/python3": "/usr/bin/python3.6",
+        },
+    }),
     tars = [
         "//util:libcbin_bin.tar",
         "//util:libcbin_conf.tar",

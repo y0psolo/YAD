@@ -4,17 +4,16 @@ This image is designed for running application depending only on libc and libssl
 
 ## Package and application list
 
-| Name            | type                                                         | Layer  |      Tag      |
-| --------------- | :----------------------------------------------------------- | :----: | :-----------: |
-| base-files      | Ubuntu package                                               | static | latest, debug |
-| net-base        | Ubuntu package                                               | static | latest, debug |
-| tzdata          | Ubuntu package                                               | static | latest, debug |
-| ca-certificates | Only /usr/share/ca-certificates directory and /usr/share/doc/ca-certificates/copyright contained in the ubuntu packages | static | latest, debug |
-| libc6           | Ubuntu package                                               |  base  | latest, debug |
-| libssl          | Ubuntu package                                               |  base  | latest, debug |
-| openssl         | Ubuntu package                                               |  base  | latest, debug |
-| tini            | application                                                  |  base  | latest, debug |
-| busybox         | Application                                                  | debug  |     debug     |
+| Name            | type                                                         | Layer  |
+| --------------- | :----------------------------------------------------------- | :----: |
+| base-files      | Ubuntu package                                               | static |
+| net-base        | Ubuntu package                                               | static |
+| tzdata          | Ubuntu package                                               | static |
+| ca-certificates | Only /usr/share/ca-certificates directory and /usr/share/doc/ca-certificates/copyright contained in the ubuntu packages | static |
+| libc6           | Ubuntu package                                               |  base  |
+| libssl          | Ubuntu package                                               |  base  |
+| openssl         | Ubuntu package                                               |  base  |
+| tini            | application                                                  |  base  |
 
 ## Default Entrypoint
 
@@ -28,4 +27,4 @@ ENTRYPOINT ["/bin/sh"]
 
 ## Security
 
-Security scan of the image updated daily : [latest](../../security/table/base_latest) [debug](../../security/table/base_debug)
+Security scan of the image updated daily : [bionic](../../security/table/base_18.04) [focal](../../security/table/base_20.04)

@@ -39,64 +39,84 @@ ENTRYPOINT "myapp"
 
 For the same reasons, if the entrypoint is left to the default empty vector, the CMD command should be specified in `vector` form.
 
-### Images List
+=== Images List
 
 .Image List
 [cols=".^10%,15%,15%,60%",width="100%",options="header"]
 |===
 
 | Image 
-2+^| Tags 
+^| Ubuntu Bionic
+^| Ubuntu Focal  
 | Usage
 
 | link:image/static/README.md[static]
-| image:https://img.shields.io/docker/image-size/yadist/static/latest?label=latest&logo=docker[link="https://hub.docker.com/r/yadist/static/"]
-| image:https://img.shields.io/docker/image-size/yadist/static/debug?label=debug&logo=docker[link="https://hub.docker.com/r/yadist/static/"]
+| image:https://img.shields.io/docker/image-size/yadist/static/18.04?label=18.04&logo=docker[link="https://hub.docker.com/r/yadist/static/"]
+| image:https://img.shields.io/docker/image-size/yadist/static/20.04?label=20.04&logo=docker[link="https://hub.docker.com/r/yadist/static/"]
 | For running staticaly linked application
 
 | link:image/base/README.md[base]
-| image:https://img.shields.io/docker/image-size/yadist/base/latest?label=latest&logo=docker[link="https://hub.docker.com/r/yadist/base/"]
-| image:https://img.shields.io/docker/image-size/yadist/base/debug?label=debug&logo=docker[link="https://hub.docker.com/r/yadist/base/"]
+| image:https://img.shields.io/docker/image-size/yadist/base/18.04?label=18.04&logo=docker[link="https://hub.docker.com/r/yadist/base/"]
+| image:https://img.shields.io/docker/image-size/yadist/base/20.04?label=20.04&logo=docker[link="https://hub.docker.com/r/yadist/base/"]
 | For running libc and openssl dynamically linked application
 
 | link:image/cc/README.md[cc]
-| image:https://img.shields.io/docker/image-size/yadist/cc/latest?label=latest&logo=docker[link="https://hub.docker.com/r/yadist/cc/"]
-| image:https://img.shields.io/docker/image-size/yadist/cc/debug?label=debug&logo=docker[link="https://hub.docker.com/r/yadist/cc/"]
+| image:https://img.shields.io/docker/image-size/yadist/cc/18.04?label=18.04&logo=docker[link="https://hub.docker.com/r/yadist/cc/"]
+| image:https://img.shields.io/docker/image-size/yadist/cc/20.04?label=20.04&logo=docker[link="https://hub.docker.com/r/yadist/cc/"]
 | For running libc, libgcc and openssl linked application
 
 | link:image/java/README.md[adoptium]
-| image:https://img.shields.io/docker/image-size/yadist/adoptium/8?label=8&logo=docker[link="https://hub.docker.com/r/yadist/adoptium/"] image:https://img.shields.io/docker/image-size/yadist/adoptium/11?label=11&logo=docker[link="https://hub.docker.com/r/yadist/adoptium/"] image:https://img.shields.io/docker/image-size/yadist/adoptium/17?label=17&logo=docker[link="https://hub.docker.com/r/yadist/adoptium/"]
-| image:https://img.shields.io/docker/image-size/yadist/adoptium/8_debug?label=8_debug&logo=docker[link="https://hub.docker.com/r/yadist/adoptium/"] image:https://img.shields.io/docker/image-size/yadist/adoptium/11_debug?label=11_debug&logo=docker[link="https://hub.docker.com/r/yadist/adoptium/"] image:https://img.shields.io/docker/image-size/yadist/adoptium/17_debug?label=17_debug&logo=docker[link="https://hub.docker.com/r/yadist/adoptium/"]
+| image:https://img.shields.io/docker/image-size/yadist/adoptium/8_18.04?label=8_18.04&logo=docker[link="https://hub.docker.com/r/yadist/adoptium/"]
+image:https://img.shields.io/docker/image-size/yadist/adoptium/11_18.04?label=11_18.04&logo=docker[link="https://hub.docker.com/r/yadist/adoptium/"]
+image:https://img.shields.io/docker/image-size/yadist/adoptium/17_18.04?label=17_18.04&logo=docker[link="https://hub.docker.com/r/yadist/adoptium/"]
+| image:https://img.shields.io/docker/image-size/yadist/adoptium/8_20.04?label=8_20.04&logo=docker[link="https://hub.docker.com/r/yadist/adoptium/"]
+image:https://img.shields.io/docker/image-size/yadist/adoptium/11_20.04?label=11_20.04&logo=docker[link="https://hub.docker.com/r/yadist/adoptium/"]
+image:https://img.shields.io/docker/image-size/yadist/adoptium/17_20.04?label=17_20.04logo=docker[link="https://hub.docker.com/r/yadist/adoptium/"]
 |  For running java application with https://adoptium.net/[adoptium] jre
 
 | link:image/javapy/README.md[adoptiumpy]
-| image:https://img.shields.io/docker/image-size/yadist/adoptiumpy/8?label=8&logo=docker[link="https://hub.docker.com/r/yadist/adoptium/"] image:https://img.shields.io/docker/image-size/yadist/adoptiumpy/11?label=11&logo=docker[link="https://hub.docker.com/r/yadist/adoptium/"] image:https://img.shields.io/docker/image-size/yadist/adoptiumpy/17?label=17&logo=docker[link="https://hub.docker.com/r/yadist/adoptium/"]
-| image:https://img.shields.io/docker/image-size/yadist/adoptiumpy/8_debug?label=8_debug&logo=docker[link="https://hub.docker.com/r/yadist/adoptium/"] image:https://img.shields.io/docker/image-size/yadist/adoptiumpy/11_debug?label=11_debug&logo=docker[link="https://hub.docker.com/r/yadist/adoptium/"] image:https://img.shields.io/docker/image-size/yadist/adoptiumpy/17_debug?label=17_debug&logo=docker[link="https://hub.docker.com/r/yadist/adoptium/"]
+| image:https://img.shields.io/docker/image-size/yadist/adoptiumpy/8_18.04?label=8_18.04&logo=docker[link="https://hub.docker.com/r/yadist/adoptiumpy/"]
+image:https://img.shields.io/docker/image-size/yadist/adoptiumpy/11_18.04?label=11_18.04&logo=docker[link="https://hub.docker.com/r/yadist/adoptiumpy/"]
+image:https://img.shields.io/docker/image-size/yadist/adoptiumpy/17_18.04?label=17_18.04&logo=docker[link="https://hub.docker.com/r/yadist/adoptiumpy/"]
+| image:https://img.shields.io/docker/image-size/yadist/adoptiumpy/8_20.04?label=8_20.04&logo=docker[link="https://hub.docker.com/r/yadist/adoptiumpy/"]
+image:https://img.shields.io/docker/image-size/yadist/adoptiumpy/11_20.04?label=11_20.04&logo=docker[link="https://hub.docker.com/r/yadist/adoptiumpy/"]
+image:https://img.shields.io/docker/image-size/yadist/adoptiumpy/17_20.04?label=17_20.04logo=docker[link="https://hub.docker.com/r/yadist/adoptiumpy/"]
 |  For running java application with https://adoptium.net/[adoptium] jre and python dependencies
 
 | link:image/java/README.md[azul]
-| image:https://img.shields.io/docker/image-size/yadist/azul/8?label=8&logo=docker[link="https://hub.docker.com/r/yadist/azul/"] image:https://img.shields.io/docker/image-size/yadist/azul/11?label=11&logo=docker[link="https://hub.docker.com/r/yadist/azul/"] image:https://img.shields.io/docker/image-size/yadist/azul/17?label=17&logo=docker[link="https://hub.docker.com/r/yadist/azul/"]
-| image:https://img.shields.io/docker/image-size/yadist/azul/8_debug?label=8_debug&logo=docker[link="https://hub.docker.com/r/yadist/azul/"] image:https://img.shields.io/docker/image-size/yadist/azul/11_debug?label=11_debug&logo=docker[link="https://hub.docker.com/r/yadist/azul/"] image:https://img.shields.io/docker/image-size/yadist/azul/17_debug?label=17_debug&logo=docker[link="https://hub.docker.com/r/yadist/azul/"]
+| image:https://img.shields.io/docker/image-size/yadist/azul/8_18.04?label=8_18.04&logo=docker[link="https://hub.docker.com/r/yadist/azul/"]
+image:https://img.shields.io/docker/image-size/yadist/azul/11_18.04?label=11_18.04&logo=docker[link="https://hub.docker.com/r/yadist/azul/"]
+image:https://img.shields.io/docker/image-size/yadist/azul/17_18.04?label=17_18.04&logo=docker[link="https://hub.docker.com/r/yadist/azul/"]
+| image:https://img.shields.io/docker/image-size/yadist/azul/8_20.04?label=8_20.04&logo=docker[link="https://hub.docker.com/r/yadist/azul/"]
+image:https://img.shields.io/docker/image-size/yadist/azul/11_20.04?label=11_20.04&logo=docker[link="https://hub.docker.com/r/yadist/azul/"]
+image:https://img.shields.io/docker/image-size/yadist/azul/17_20.04?label=17_20.04logo=docker[link="https://hub.docker.com/r/yadist/azul/"]
 |  For running java application with https://azul.com/[azul] jre
 
 | link:image/javapy/README.md[azulpy]
-| image:https://img.shields.io/docker/image-size/yadist/azulpy/8?label=8&logo=docker[link="https://hub.docker.com/r/yadist/azul/"] image:https://img.shields.io/docker/image-size/yadist/azulpy/11?label=11&logo=docker[link="https://hub.docker.com/r/yadist/azul/"] image:https://img.shields.io/docker/image-size/yadist/azulpy/17?label=17&logo=docker[link="https://hub.docker.com/r/yadist/azul/"]
-| image:https://img.shields.io/docker/image-size/yadist/azulpy/8_debug?label=8_debug&logo=docker[link="https://hub.docker.com/r/yadist/azul/"] image:https://img.shields.io/docker/image-size/yadist/azulpy/11_debug?label=11_debug&logo=docker[link="https://hub.docker.com/r/yadist/azul/"] image:https://img.shields.io/docker/image-size/yadist/azulpy/17_debug?label=17_debug&logo=docker[link="https://hub.docker.com/r/yadist/azul/"]
+| image:https://img.shields.io/docker/image-size/yadist/azulpy/8_18.04?label=8_18.04&logo=docker[link="https://hub.docker.com/r/yadist/azulpy/"]
+image:https://img.shields.io/docker/image-size/yadist/azulpy/11_18.04?label=11_18.04&logo=docker[link="https://hub.docker.com/r/yadist/azulpy/"]
+image:https://img.shields.io/docker/image-size/yadist/azulpy/17_18.04?label=17_18.04&logo=docker[link="https://hub.docker.com/r/yadist/azulpy/"]
+| image:https://img.shields.io/docker/image-size/yadist/azulpy/8_20.04?label=8_20.04&logo=docker[link="https://hub.docker.com/r/yadist/azulpy/"]
+image:https://img.shields.io/docker/image-size/yadist/azulpy/11_20.04?label=11_20.04&logo=docker[link="https://hub.docker.com/r/yadist/azulpy/"]
+image:https://img.shields.io/docker/image-size/yadist/azulpy/17_20.04?label=17_20.04logo=docker[link="https://hub.docker.com/r/yadist/azulpy/"]
 |  For running java application with https://azul.com/[azul] jre and python dependencies
 
 | link:image/python/README.md[python]
-| image:https://img.shields.io/docker/image-size/yadist/python/latest?label=latest&logo=docker[link="https://hub.docker.com/r/yadist/python/"]
-| image:https://img.shields.io/docker/image-size/yadist/python/debug?label=debug&logo=docker[link="https://hub.docker.com/r/yadist/python/"]
+| image:https://img.shields.io/docker/image-size/yadist/python/18.04?label=18.04&logo=docker[link="https://hub.docker.com/r/yadist/python/"]
+| image:https://img.shields.io/docker/image-size/yadist/python/20.04?label=20.04&logo=docker[link="https://hub.docker.com/r/yadist/python/"]
 | For running python application(python 3.x)
 
 | link:image/nodejs/README.md[nodejs]
-| image:https://img.shields.io/docker/image-size/yadist/nodejs/14?label=14&logo=docker[link="https://hub.docker.com/r/yadist/nodejs/"] image:https://img.shields.io/docker/image-size/yadist/nodejs/16?label=16&logo=docker[link="https://hub.docker.com/r/yadist/nodejs/"]
-| image:https://img.shields.io/docker/image-size/yadist/nodejs/14_debug?label=14_debug&logo=docker[link="https://hub.docker.com/r/yadist/nodejs/"] image:https://img.shields.io/docker/image-size/yadist/nodejs/16_debug?label=16_debug&logo=docker[link="https://hub.docker.com/r/yadist/nodejs/"]
+| image:https://img.shields.io/docker/image-size/yadist/nodejs/14_18.04?label=14_18.04&logo=docker[link="https://hub.docker.com/r/yadist/nodejs/"]
+image:https://img.shields.io/docker/image-size/yadist/nodejs/16_18.04?label=16_18.04&logo=docker[link="https://hub.docker.com/r/yadist/nodejs/"]
+| image:https://img.shields.io/docker/image-size/yadist/nodejs/14_20.04?label=14_20.04&logo=docker[link="https://hub.docker.com/r/yadist/nodejs/"]
+image:https://img.shields.io/docker/image-size/yadist/nodejs/16_20.04?label=16_20.04&logo=docker[link="https://hub.docker.com/r/yadist/nodejs/"]
 | For running javascript application
 
-| link:image/deno/README.md[deno] | image:https://img.shields.io/docker/image-size/yadist/deno/latest?label=latest&logo=docker[link="https://hub.docker.com/r/yadist/deno/"] | image:https://img.shields.io/docker/image-size/yadist/deno/debug?label=debug&logo=docker[link="https://hub.docker.com/r/yadist/deno/"] | For running typescript application 
+| link:image/deno/README.md[deno] | image:https://img.shields.io/docker/image-size/yadist/deno/18.04?label=18.04&logo=docker[link="https://hub.docker.com/r/yadist/deno/"] | image:https://img.shields.io/docker/image-size/yadist/deno/20.04?label=20.04&logo=docker[link="https://hub.docker.com/r/yadist/deno/"] | For running typescript application 
 |===
 
+The images are also created with a busybox with a "_debug" suffix for the tag.
 
 === Security
 

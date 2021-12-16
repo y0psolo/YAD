@@ -4,7 +4,7 @@ load("//util:constants.bzl", "JRE_VERSIONS", "NONROOT")
 # Iteration over all java versions
 [
     container_image(
-        name = jre + "_" + version,
+        name = version,
         architecture = select({
             "//platforms:k8_cpu": "amd64",
             "//platforms:aarch64_cpu": "arm64",
@@ -21,7 +21,7 @@ load("//util:constants.bzl", "JRE_VERSIONS", "NONROOT")
             "//layer/cc:cc",
             "//layer/common:common",
             "//layer/java:common",
-            "//layer/java:" + jre + "_" + version,
+            "//layer/java:" + version,
             "//layer/python:python",
         ] + select({
             "//platforms:debug": ["//layer/static:debug"],
@@ -30,10 +30,8 @@ load("//util:constants.bzl", "JRE_VERSIONS", "NONROOT")
         user = "%d" % NONROOT,
         visibility = ["//visibility:public"],
         workdir = "/home/nonroot",
+        compression = "gzip",
+        compression_options = ["",],
     )
     for version in JRE_VERSIONS
-    for jre in [
-        "adoptium",
-        "azul",
-    ]
 ]

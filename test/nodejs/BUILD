@@ -21,6 +21,7 @@ load("//util:constants.bzl", "NODEJS_VERSIONS")
         }),
         image = "//image/nodejs:" + version,
         visibility = ["//:__subpackages__"],
+        tags = ["node", "amd64", "arm64"],
     )
     for version in NODEJS_VERSIONS
 ]
@@ -31,6 +32,12 @@ load("//util:constants.bzl", "NODEJS_VERSIONS")
         configs = ["typescript.yaml"],
         image = ":" + version + "_test_image",
         visibility = ["//:__subpackages__"],
+        tags = ["node", "amd64", "arm64"],
     )
     for version in NODEJS_VERSIONS
 ]
+
+test_suite(
+    name = "nodejs",
+    tags = ["node",],
+)
