@@ -33,16 +33,11 @@ jobs:
         with:
           image: tonistiigi/binfmt:latest
           platforms: all
-      - name: Get current date
-        id: date
-        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
       - name: Mount bazel cache
         uses: actions/cache@v2
         with:
           path: "~/.cache/bazel"
           key: ${{ runner.os }}-bazel-base-${{ matrix.arch }}-${{ matrix.copt }}-${{ matrix.ubuntu }}-${{ hashFiles('**/BUILD', '**/*.bzl', 'WORKSPACE') }}
-          restore-keys: |
-            ${{ runner.os }}-bazel-clean-${{ steps.date.outputs.date }}
       - name: bazel build
         run: |
           bazel build --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} //image:push_static
@@ -77,22 +72,12 @@ jobs:
         uses: actions/checkout@v2
       - name: Setup Bazelisk
         uses: bazelbuild/setup-bazelisk@v1
-      - name: Set up QEMU
-        id: qemu
-        uses: docker/setup-qemu-action@v1
-        with:
-          image: tonistiigi/binfmt:latest
-          platforms: all
-      - name: Get current date
-        id: date
-        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
       - name: Mount bazel cache
         uses: actions/cache@v2
         with:
           path: "~/.cache/bazel"
           key: ${{ runner.os }}-bazel-java-${{ matrix.arch }}-${{ matrix.copt }}-${{ matrix.ubuntu }}-${{ matrix.java }}-${{ hashFiles('**/BUILD', '**/*.bzl', 'WORKSPACE') }}
           restore-keys: |
-            ${{ runner.os }}-bazel-clean-${{ steps.date.outputs.date }}
             ${{ runner.os }}-bazel-base-${{ matrix.arch }}-${{ matrix.copt }}-${{ matrix.ubuntu }}-${{ hashFiles('**/BUILD', '**/*.bzl', 'WORKSPACE') }}
       - name: bazel build
         run: |
@@ -102,6 +87,37 @@ jobs:
           bazel build --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} --java=${{ matrix.java }} //image:push_javapy_8
           bazel build --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} --java=${{ matrix.java }} //image:push_javapy_11
           bazel build --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} --java=${{ matrix.java }} //image:push_javapy_17
+  test_java:
+    environment: Release
+    runs-on: ubuntu-latest
+    needs: build_java
+    strategy:
+      matrix:
+        ubuntu: [18.04, 20.04]
+        arch: [x86_64, arm64]
+        copt: [opt, dbg]
+        java: [adoptium, azul]
+    steps:
+      - name: Free space
+        run : |
+          sudo rm -rf /usr/share/dotnet
+          sudo rm -rf /opt/ghc
+          sudo rm -rf "$AGENT_TOOLSDIRECTORY"
+      - name: Setup repository
+        uses: actions/checkout@v2
+      - name: Setup Bazelisk
+        uses: bazelbuild/setup-bazelisk@v1
+      - name: Set up QEMU
+        id: qemu
+        uses: docker/setup-qemu-action@v1
+        with:
+          image: tonistiigi/binfmt:latest
+          platforms: all
+      - name: Mount bazel cache
+        uses: actions/cache@v2
+        with:
+          path: "~/.cache/bazel"
+          key: ${{ runner.os }}-bazel-java-${{ matrix.arch }}-${{ matrix.copt }}-${{ matrix.ubuntu }}-${{ matrix.java }}-${{ hashFiles('**/BUILD', '**/*.bzl', 'WORKSPACE') }}
       - name: bazel test
         run: |
            bazel test --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} //test/java:java
@@ -135,16 +151,11 @@ jobs:
         with:
           image: tonistiigi/binfmt:latest
           platforms: all
-      - name: Get current date
-        id: date
-        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
       - name: Mount bazel cache
         uses: actions/cache@v2
         with:
           path: "~/.cache/bazel"
           key: ${{ runner.os }}-bazel-base-${{ matrix.arch }}-${{ matrix.copt }}-${{ matrix.ubuntu }}-${{ hashFiles('**/BUILD', '**/*.bzl', 'WORKSPACE') }}
-          restore-keys: |
-            ${{ runner.os }}-bazel-clean-${{ steps.date.outputs.date }}
       - name: bazel build
         run: |
           bazel build --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} --java=${{ matrix.java }} //image:push_nodejs_14
@@ -182,16 +193,11 @@ jobs:
         with:
           image: tonistiigi/binfmt:latest
           platforms: all
-      - name: Get current date
-        id: date
-        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
       - name: Mount bazel cache
         uses: actions/cache@v2
         with:
           path: "~/.cache/bazel"
           key: ${{ runner.os }}-bazel-base-${{ matrix.arch }}-${{ matrix.copt }}-${{ matrix.ubuntu }}-${{ hashFiles('**/BUILD', '**/*.bzl', 'WORKSPACE') }}
-          restore-keys: |
-            ${{ runner.os }}-bazel-clean-${{ steps.date.outputs.date }}
       - name: bazel build
         run: |
           bazel build --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} --java=${{ matrix.java }} //image:push_deno
