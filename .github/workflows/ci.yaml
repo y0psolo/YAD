@@ -320,7 +320,7 @@ jobs:
         with:
           name: testLogs
           path: /home/runner/.cache/bazel/_bazel_runner/**/execroot/yad/bazel-out/**/testlogs/test/**/test.log
-  build_trino:
+  build_hive:
     environment: Release
     runs-on: ubuntu-latest
     needs: build_java
