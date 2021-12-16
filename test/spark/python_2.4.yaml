@@ -1,0 +1,10 @@
+schemaVersion: "2.0.0"
+commandTests:
+  - name: pythonpi
+    command: "/usr/bin/tini"
+    args: ["--", "/opt/spark/bin/spark-submit", "/opt/spark/examples/src/main/python/pi.py",]
+    exitCode: 1
+  - name: pythonsql
+    command: "/usr/bin/tini"
+    args: ["--", "/opt/spark/bin/spark-submit", "/opt/spark/examples/src/main/python/sql/basic.py",]
+    exitCode: 1

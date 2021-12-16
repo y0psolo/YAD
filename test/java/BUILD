@@ -1,5 +1,5 @@
 load("@io_bazel_rules_docker//contrib:test.bzl", "container_test")
-load("@io_bazel_rules_docker//container:container.bzl", "container_image")
+load("@io_bazel_rules_docker//container:container.bzl")
 load("@io_bazel_rules_docker//java:image.bzl", "java_image")
 load("//util:constants.bzl", "JRE_VERSIONS")
 

@@ -1,0 +1,7 @@
+schemaVersion: "2.0.0"
+commandTests:
+  - name: trino_cli
+    command: "/usr/bin/tini"
+    args: ["--", "/usr/bin/java", "-server", "io.trino.server.TrinoServer"]
+    expectedOutput: ['io.trino.server.Server  ======== SERVER STARTED ========']
+    exitCode: 0

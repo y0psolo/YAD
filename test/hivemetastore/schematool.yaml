@@ -1,0 +1,7 @@
+schemaVersion: "2.0.0"
+commandTests:
+  - name: hive_metastore
+    command: "/usr/bin/tini"
+    args: ["--", "/usr/bin/java", "org.apache.hadoop.util.RunJar", "/opt/hive/lib/hive-standalone-metastore.jar", "org.apache.hadoop.hive.metastore.tools.MetastoreSchemaTool", "-help"]
+    expectedOutput: ['usage: schemaTool']
+    exitCode: 1
