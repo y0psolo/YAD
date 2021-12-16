@@ -84,6 +84,12 @@ jobs:
         with:
           path: "~/.cache/bazel"
           key: ${{ runner.os }}-bazel-java-${{ matrix.arch }}-${{ matrix.copt }}-${{ matrix.ubuntu }}-${{ matrix.java }}-${{ hashFiles('**/BUILD', '**/*.bzl', 'WORKSPACE') }}
+      - name: Docker Login
+        uses: docker/login-action@v1
+        with:
+          registry: docker.io
+          username: ${{ secrets.DOCKER_LOGIN }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
       - name: bazel test
         run: |
            bazel test --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} //test/java:java
@@ -125,6 +131,12 @@ jobs:
         with:
           path: "~/.cache/bazel"
           key: ${{ runner.os }}-bazel-base-${{ matrix.arch }}-${{ matrix.copt }}-${{ matrix.ubuntu }}-${{ hashFiles('**/BUILD', '**/*.bzl', 'WORKSPACE') }}
+      - name: Docker Login
+        uses: docker/login-action@v1
+        with:
+          registry: docker.io
+          username: ${{ secrets.DOCKER_LOGIN }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
       - name: bazel test
         run: |
            bazel test --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} //test/nodejs:nodejs
@@ -162,6 +174,12 @@ jobs:
         with:
           path: "~/.cache/bazel"
           key: ${{ runner.os }}-bazel-base-${{ matrix.arch }}-${{ matrix.copt }}-${{ matrix.ubuntu }}-${{ hashFiles('**/BUILD', '**/*.bzl', 'WORKSPACE') }}
+      - name: Docker Login
+        uses: docker/login-action@v1
+        with:
+          registry: docker.io
+          username: ${{ secrets.DOCKER_LOGIN }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
       - name: bazel test
         run: |
            bazel test --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} //test/deno:deno
@@ -177,7 +195,13 @@ jobs:
         ubuntu: [18.04, 20.04]
     steps:
       - name: Setup repository
-        uses: actions/checkout@v2  
+        uses: actions/checkout@v2
+      - name: Docker Login
+        uses: docker/login-action@v1
+        with:
+          registry: docker.io
+          username: ${{ secrets.DOCKER_LOGIN }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
       - name: merge tags
         run: hack/merge_tag_base.sh ${{ matrix.ubuntu }}
   java_tags:
@@ -189,7 +213,13 @@ jobs:
         ubuntu: [18.04, 20.04]
     steps:
       - name: Setup repository
-        uses: actions/checkout@v2  
+        uses: actions/checkout@v2
+      - name: Docker Login
+        uses: docker/login-action@v1
+        with:
+          registry: docker.io
+          username: ${{ secrets.DOCKER_LOGIN }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
       - name: merge tags
         run: hack/merge_tag_java.sh ${{ matrix.ubuntu }}
   nodejs_tags:
@@ -201,7 +231,13 @@ jobs:
         ubuntu: [18.04, 20.04]
     steps:
       - name: Setup repository
-        uses: actions/checkout@v2  
+        uses: actions/checkout@v2
+      - name: Docker Login
+        uses: docker/login-action@v1
+        with:
+          registry: docker.io
+          username: ${{ secrets.DOCKER_LOGIN }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
       - name: merge tags
         run: hack/merge_tag_nodejs.sh ${{ matrix.ubuntu }}
   deno_tags:
@@ -213,7 +249,13 @@ jobs:
         ubuntu: [18.04, 20.04]
     steps:
       - name: Setup repository
-        uses: actions/checkout@v2  
+        uses: actions/checkout@v2
+      - name: Docker Login
+        uses: docker/login-action@v1
+        with:
+          registry: docker.io
+          username: ${{ secrets.DOCKER_LOGIN }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
       - name: merge tags
         run: hack/merge_tag_deno.sh ${{ matrix.ubuntu }}
   # sign:
