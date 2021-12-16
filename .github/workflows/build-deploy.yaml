@@ -20,8 +20,9 @@ jobs:
     steps:
       - name: Free space
         run : |
-          sudo rm -rf /usr/local/lib/android
           sudo rm -rf /usr/share/dotnet
+          sudo rm -rf /opt/ghc
+          sudo rm -rf "$AGENT_TOOLSDIRECTORY"
       - name: Setup repository
         uses: actions/checkout@v2
       - name: Setup Bazelisk
@@ -65,8 +66,9 @@ jobs:
     steps:
       - name: Free space
         run : |
-          sudo rm -rf /usr/local/lib/android
           sudo rm -rf /usr/share/dotnet
+          sudo rm -rf /opt/ghc
+          sudo rm -rf "$AGENT_TOOLSDIRECTORY"
       - name: Setup repository
         uses: actions/checkout@v2
       - name: Setup Bazelisk
@@ -81,7 +83,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: "~/.cache/bazel"
-          key: ${{ runner.os }}-bazel-java-${{ matrix.arch }}-${{ matrix.copt }}-${{ matrix.ubuntu }}-${{ hashFiles('**/BUILD', '**/*.bzl', 'WORKSPACE') }}
+          key: ${{ runner.os }}-bazel-java-${{ matrix.arch }}-${{ matrix.copt }}-${{ matrix.ubuntu }}-${{ matrix.java }}-${{ hashFiles('**/BUILD', '**/*.bzl', 'WORKSPACE') }}
       - name: bazel test
         run: |
            bazel test --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} //test/java:java
@@ -105,8 +107,9 @@ jobs:
     steps:
       - name: Free space
         run : |
-          sudo rm -rf /usr/local/lib/android
           sudo rm -rf /usr/share/dotnet
+          sudo rm -rf /opt/ghc
+          sudo rm -rf "$AGENT_TOOLSDIRECTORY"
       - name: Setup repository
         uses: actions/checkout@v2
       - name: Setup Bazelisk
@@ -141,8 +144,9 @@ jobs:
     steps:
       - name: Free space
         run : |
-          sudo rm -rf /usr/local/lib/android
           sudo rm -rf /usr/share/dotnet
+          sudo rm -rf /opt/ghc
+          sudo rm -rf "$AGENT_TOOLSDIRECTORY"
       - name: Setup repository
         uses: actions/checkout@v2
       - name: Setup Bazelisk
