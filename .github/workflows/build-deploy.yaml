@@ -10,14 +10,10 @@ on:
 
 jobs:
   test_base:
-    runs-on: ubuntu-latest
     uses: y0psolo/YAD/.github/workflows/test.yaml@unirepo-with-yad-data
     with:
       target: //test:basic
   deploy_static:
-    environment: Release
-    runs-on: ubuntu-latest
-    needs: test_base
     uses: y0psolo/YAD/.github/workflows/deploy.yaml@unirepo-with-yad-data
     with:
       target: //image:push_static
@@ -25,10 +21,9 @@ jobs:
     secrets:
       login: ${{ secrets.DOCKER_LOGIN }}
       password: ${{ secrets.DOCKER_PASSWORD }}
-  deploy_base:
     environment: Release
-    runs-on: ubuntu-latest
     needs: test_base
+  deploy_base:
     uses: y0psolo/YAD/.github/workflows/deploy.yaml@unirepo-with-yad-data
     with:
       target: //image:push_base
@@ -36,10 +31,9 @@ jobs:
     secrets:
       login: ${{ secrets.DOCKER_LOGIN }}
       password: ${{ secrets.DOCKER_PASSWORD }}
-  deploy_cc:
     environment: Release
-    runs-on: ubuntu-latest
     needs: test_base
+  deploy_cc:
     uses: y0psolo/YAD/.github/workflows/deploy.yaml@unirepo-with-yad-data
     with:
       target: //image:push_cc
@@ -47,10 +41,9 @@ jobs:
     secrets:
       login: ${{ secrets.DOCKER_LOGIN }}
       password: ${{ secrets.DOCKER_PASSWORD }}
-  deploy_python:
     environment: Release
-    runs-on: ubuntu-latest
     needs: test_base
+  deploy_python:
     uses: y0psolo/YAD/.github/workflows/deploy.yaml@unirepo-with-yad-data
     with:
       target: //image:push_python
@@ -58,6 +51,8 @@ jobs:
     secrets:
       login: ${{ secrets.DOCKER_LOGIN }}
       password: ${{ secrets.DOCKER_PASSWORD }}
+    environment: Release
+    needs: test_base
   deploy_java:
     environment: Release
     runs-on: ubuntu-latest
