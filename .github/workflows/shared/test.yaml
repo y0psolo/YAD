@@ -1,0 +1,59 @@
+name: Reusable deploy workflow
+
+on:
+  workflow_call:
+    inputs:
+      ubuntu:
+        description: 'list of ubuntu version to run on'
+        default: '[18.04, 20.04]'
+        type: string
+      arch:
+        description: 'list of arch to run on'
+        default: '[x86_64, arm64]'
+        type: string
+      copt:
+        description: 'list of compile option to run on'
+        default: '[opt, dbg]'
+        type: string
+      target:
+        description: 'Test suite to run'
+        required: true
+        type: string
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        ubuntu: ${{ inputs.ubuntu }}
+        arch: ${{ inputs.arch }}
+        copt: ${{ inputs.copt }}
+    steps:
+      - name: Free space
+        run : |
+          sudo rm -rf /usr/share/dotnet
+          sudo rm -rf /opt/ghc
+          sudo rm -rf "$AGENT_TOOLSDIRECTORY"
+      - name: Setup repository
+        uses: actions/checkout@v2
+      - name: Setup Bazelisk
+        uses: bazelbuild/setup-bazelisk@v1
+      - name: Set up QEMU
+        id: qemu
+        uses: docker/setup-qemu-action@v1
+        with:
+          image: tonistiigi/binfmt:latest
+          platforms: all
+      - name: Mount bazel cache
+        uses: actions/cache@v2
+        with:
+          path: "~/.cache/bazel"
+          key: ${{ runner.os }}-bazel-base-${{ matrix.arch }}-${{ matrix.copt }}-${{ matrix.ubuntu }}-${{ hashFiles('**/BUILD', '**/*.bzl', 'WORKSPACE') }}
+      - name: bazel test
+        run: |
+          bazel test --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} ${{ inputs.target }}
+      - uses: actions/upload-artifact@v2
+        if: ${{ failure() }}
+        with:
+          name: testLogs
+          path: /home/runner/.cache/bazel/_bazel_runner/**/execroot/yad/bazel-out/**/testlogs/test/**/test.log

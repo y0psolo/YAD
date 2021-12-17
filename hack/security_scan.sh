@@ -5,6 +5,9 @@ REPO="yadist"
 JAVA_VERSIONS=$(grep 'JRE_VERSIONS =' util/constants.bzl | grep -o -E "[0-9]+")
 NODEJS_VERSIONS=$(grep 'NODEJS_VERSIONS =' util/constants.bzl | grep -o -E "[0-9]+")
 DENO_VERSION=$(grep 'DENO_VERSION =' util/constants.bzl | grep -o -m 1 -E "[0-9]+\.[0-9]+\.[0-9]+")
+TRINO_VERSION=$(grep TRINO_VERSION util/constants.bzl | grep -o -m 1 -E "[0-9]+")
+HIVE_VERSION=$(grep HIVE_VERSION util/constants.bzl | grep -o -m 1 -E "[0-9].[0-9].[0-9]")
+SPARK_VERSIONS=$(grep SPARK_VERSIONS util/constants.bzl | grep -o -E "[0-9].[0-9]")
 
 . $SCRIPTPATH/common.sh
 
@@ -36,3 +39,18 @@ do
 done
 
 scan_image deno $1
+
+for repo in spark pyspark sparkhistoryserver
+do
+    for version in ${SPARK_VERSIONS}
+    do
+        scan_image ${repo} ${version}
+    done
+done
+
+for repo in hivemetastore trino trinocli
+do
+    scan_image ${repo} latest
+    scan_image ${repo} latest
+    scan_image ${repo} latest
+done
