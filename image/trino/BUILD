@@ -36,7 +36,6 @@ container_image(
     }),
     user = "%d" % NONROOT,
     visibility = ["//:__subpackages__"],
-    workdir = "/home/nonroot",
     compression = "gzip",
     compression_options = ["",],
 )

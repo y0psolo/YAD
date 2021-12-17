@@ -81,5 +81,5 @@ test_suite(
 
 test_suite(
     name = "spark3",
-    tags = ["spark", -"2.4"],
+    tags = ["spark", "-2.4"],
 )
