@@ -199,6 +199,7 @@ jobs:
         ubuntu: [18.04, 20.04]
         arch: [x86_64, arm64]
         copt: [opt]
+        java: [azul]
     steps:
       - name: Free space
         run : |
