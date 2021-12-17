@@ -31,7 +31,7 @@ jobs:
     needs: test_base
     uses: y0psolo/YAD/.github/workflows/deploy.yml@unirepo-with-yad-data
     with:
-      target: //image:push_static
+      target: //image:push_base
       action: run
     secrets:
       login: ${{ secrets.DOCKER_LOGIN }}
@@ -42,7 +42,7 @@ jobs:
     needs: test_base
     uses: y0psolo/YAD/.github/workflows/deploy.yml@unirepo-with-yad-data
     with:
-      target: //image:push_static
+      target: //image:push_cc
       action: run
     secrets:
       login: ${{ secrets.DOCKER_LOGIN }}
