@@ -1,0 +1,75 @@
++----------------------+------------------+----------+-------------------------+---------------+---------------------------------------+
+|       LIBRARY        | VULNERABILITY ID | SEVERITY |    INSTALLED VERSION    | FIXED VERSION |                 TITLE                 |
++----------------------+------------------+----------+-------------------------+---------------+---------------------------------------+
+| libc6                | CVE-2021-35942   | MEDIUM   | 2.31-0ubuntu9.2         |               | glibc: Arbitrary read in wordexp()    |
+|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2021-35942 |
++                      +------------------+          +                         +---------------+---------------------------------------+
+|                      | CVE-2021-38604   |          |                         |               | glibc: NULL pointer dereference in    |
+|                      |                  |          |                         |               | helper_thread() in mq_notify.c while  |
+|                      |                  |          |                         |               | handling NOTIFY_REMOVED messages...   |
+|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2021-38604 |
++                      +------------------+----------+                         +---------------+---------------------------------------+
+|                      | CVE-2016-10228   | LOW      |                         |               | glibc: iconv program can hang         |
+|                      |                  |          |                         |               | when invoked with the -c option       |
+|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2016-10228 |
++                      +------------------+          +                         +---------------+---------------------------------------+
+|                      | CVE-2019-25013   |          |                         |               | glibc: buffer over-read in            |
+|                      |                  |          |                         |               | iconv when processing invalid         |
+|                      |                  |          |                         |               | multi-byte input sequences in...      |
+|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2019-25013 |
++                      +------------------+          +                         +---------------+---------------------------------------+
+|                      | CVE-2020-27618   |          |                         |               | glibc: iconv when processing          |
+|                      |                  |          |                         |               | invalid multi-byte input              |
+|                      |                  |          |                         |               | sequences fails to advance the...     |
+|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2020-27618 |
++                      +------------------+          +                         +---------------+---------------------------------------+
+|                      | CVE-2020-29562   |          |                         |               | glibc: assertion failure in iconv     |
+|                      |                  |          |                         |               | when converting invalid UCS4          |
+|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2020-29562 |
++                      +------------------+          +                         +---------------+---------------------------------------+
+|                      | CVE-2020-6096    |          |                         |               | glibc: signed comparison              |
+|                      |                  |          |                         |               | vulnerability in the                  |
+|                      |                  |          |                         |               | ARMv7 memcpy function                 |
+|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2020-6096  |
++                      +------------------+          +                         +---------------+---------------------------------------+
+|                      | CVE-2021-27645   |          |                         |               | glibc: Use-after-free in              |
+|                      |                  |          |                         |               | addgetnetgrentX function              |
+|                      |                  |          |                         |               | in netgroupcache.c                    |
+|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2021-27645 |
++                      +------------------+          +                         +---------------+---------------------------------------+
+|                      | CVE-2021-3326    |          |                         |               | glibc: Assertion failure in           |
+|                      |                  |          |                         |               | ISO-2022-JP-3 gconv module            |
+|                      |                  |          |                         |               | related to combining characters       |
+|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2021-3326  |
++                      +------------------+          +                         +---------------+---------------------------------------+
+|                      | CVE-2021-33574   |          |                         |               | glibc: mq_notify does                 |
+|                      |                  |          |                         |               | not handle separately                 |
+|                      |                  |          |                         |               | allocated thread attributes           |
+|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2021-33574 |
++----------------------+------------------+----------+-------------------------+---------------+---------------------------------------+
+| libpython3.8-minimal | CVE-2021-3737    | MEDIUM   | 3.8.10-0ubuntu1~20.04.2 |               | python: urllib: HTTP client           |
+|                      |                  |          |                         |               | possible infinite loop on             |
+|                      |                  |          |                         |               | a 100 Continue response...            |
+|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2021-3737  |
++                      +------------------+----------+                         +---------------+---------------------------------------+
+|                      | CVE-2021-23336   | LOW      |                         |               | python: Web cache poisoning           |
+|                      |                  |          |                         |               | via urllib.parse.parse_qsl            |
+|                      |                  |          |                         |               | and urllib.parse.parse_qs             |
+|                      |                  |          |                         |               | by using a semicolon...               |
+|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2021-23336 |
++----------------------+------------------+----------+-------------------------+---------------+---------------------------------------+
+| libsqlite3-0         | CVE-2020-9794    | MEDIUM   | 3.31.1-4ubuntu0.2       |               | An out-of-bounds read was             |
+|                      |                  |          |                         |               | addressed with improved bounds        |
+|                      |                  |          |                         |               | checking. This issue is...            |
+|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2020-9794  |
++                      +------------------+----------+                         +---------------+---------------------------------------+
+|                      | CVE-2020-9849    | LOW      |                         |               | An information disclosure issue       |
+|                      |                  |          |                         |               | was addressed with improved           |
+|                      |                  |          |                         |               | state management. This issue...       |
+|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2020-9849  |
++                      +------------------+          +                         +---------------+---------------------------------------+
+|                      | CVE-2020-9991    |          |                         |               | This issue was addressed              |
+|                      |                  |          |                         |               | with improved checks.                 |
+|                      |                  |          |                         |               | This issue is fixed in...             |
+|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2020-9991  |
++----------------------+------------------+----------+-------------------------+---------------+---------------------------------------+
