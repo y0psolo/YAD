@@ -1,5 +1,5 @@
 load("@io_bazel_rules_docker//container:container.bzl", "container_push")
-load("//util:constants.bzl", "JRE_VERSIONS", "NODEJS_VERSIONS")
+load("//util:constants.bzl", "JRE_VERSIONS", "NODEJS_VERSIONS", "SPARK_VERSIONS")
 load(":tag.bzl", "copt_tag", "arch_tag", "dist_tag")
 
 package(default_visibility = ["//visibility:public"])
@@ -14,7 +14,7 @@ package(default_visibility = ["//visibility:public"])
         tag = arch_tag() + "_" + dist_tag() + copt_tag(),
         skip_unchanged_digest = True,
     )
-    for name in ["static", "base", "cc", "python", "deno"]
+    for name in ["static", "base", "cc", "python", "deno", "hivemetastore"]
 ]
 
 [
@@ -61,3 +61,37 @@ package(default_visibility = ["//visibility:public"])
     )
     for version in NODEJS_VERSIONS
 ]
+
+[
+    container_push(
+        name = "push_" + repo + "_" + version,
+        image = "//image/spark:" + repo + "_" + version,
+        format = "Docker",
+        registry = "docker.io",
+        repository = "yadist/" + repo,
+        tag = arch_tag() + "_" + version + "_" + dist_tag() + copt_tag(),
+        skip_unchanged_digest = True,
+    )
+    for version in SPARK_VERSIONS
+    for repo in ["spark", "pyspark", "sparkhistoryserver"]
+]
+
+container_push(
+    name = "push_trino_server",
+    image = "//image/trino:server",
+    format = "Docker",
+    registry = "docker.io",
+    repository = "yadist/trino",
+    tag = arch_tag() + "_" + dist_tag() + copt_tag(),
+    skip_unchanged_digest = True,
+)
+
+container_push(
+    name = "push_trino_cli",
+    image = "//image/trino:cli",
+    format = "Docker",
+    registry = "docker.io",
+    repository = "yadist/trinocli",
+    tag = arch_tag() + "_" + dist_tag() + copt_tag(),
+    skip_unchanged_digest = True,
+)

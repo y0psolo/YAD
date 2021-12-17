@@ -188,6 +188,162 @@ jobs:
       - name: bazel deploy
         run: |
           bazel run --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} --java=${{ matrix.java }} //image:push_deno
+  deploy_spark:
+    environment: Release
+    runs-on: ubuntu-latest
+    needs: deploy_java
+    strategy:
+      matrix:
+        ubuntu: [18.04, 20.04]
+        arch: [x86_64, arm64]
+        copt: [opt]
+        java: [azul]
+    steps:
+      - name: Free space
+        run : |
+          sudo rm -rf /usr/share/dotnet
+          sudo rm -rf /opt/ghc
+          sudo rm -rf "$AGENT_TOOLSDIRECTORY"
+      - name: Setup repository
+        uses: actions/checkout@v2
+      - name: Setup Bazelisk
+        uses: bazelbuild/setup-bazelisk@v1
+      - name: Set up QEMU
+        id: qemu
+        uses: docker/setup-qemu-action@v1
+        with:
+          image: tonistiigi/binfmt:latest
+          platforms: all
+      - name: Mount bazel cache
+        uses: actions/cache@v2
+        with:
+          path: "~/.cache/bazel"
+          key: ${{ runner.os }}-bazel-java-${{ matrix.arch }}-${{ matrix.copt }}-${{ matrix.ubuntu }}-${{ matrix.java }}-${{ hashFiles('**/BUILD', '**/*.bzl', 'WORKSPACE') }}
+      - name: Docker Login
+        uses: docker/login-action@v1
+        with:
+          registry: docker.io
+          username: ${{ secrets.DOCKER_LOGIN }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+      - name: bazel test 2.x
+        if: ${{ matrix.ubuntu == '18.04' }}
+        run: |
+           bazel test --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} --java=${{ matrix.java }} //test/spark:spark2
+      - name: bazel test 3.x
+        if: ${{ matrix.ubuntu == '20.04' }}
+        run: |
+           bazel test --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} --java=${{ matrix.java }} //test/spark:spark3
+      - name: bazel deploy 2.4
+        if: ${{ matrix.ubuntu == '18.04' }}
+        run: |
+          bazel run --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} --java=${{ matrix.java }} //image:push_spark_2.4
+          bazel run --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} --java=${{ matrix.java }} //image:push_pyspark_2.4
+          bazel run --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} --java=${{ matrix.java }} //image:push_historyserver_2.4
+      - name: bazel deploy 3.0
+        if: ${{ matrix.ubuntu == '20.04' }}
+        run: |
+          bazel run --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} --java=${{ matrix.java }} //image:push_spark_3.0
+          bazel run --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} --java=${{ matrix.java }} //image:push_pyspark_3.0
+          bazel run --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} --java=${{ matrix.java }} //image:push_historyserver_3.0
+      - name: bazel deploy 3.1
+        if: ${{ matrix.ubuntu == '20.04' }}
+        run: |
+          bazel run --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} --java=${{ matrix.java }} //image:push_spark_3.1
+          bazel run --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} --java=${{ matrix.java }} //image:push_pyspark_3.1
+          bazel run --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} --java=${{ matrix.java }} //image:push_historyserver_3.1
+      - name: bazel deploy 3.2
+        if: ${{ matrix.ubuntu == '20.04' }}
+        run: |
+          bazel run --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} --java=${{ matrix.java }} //image:push_spark_3.2
+          bazel run --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} --java=${{ matrix.java }} //image:push_pyspark_3.2
+          bazel run --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} --java=${{ matrix.java }} //image:push_historyserver_3.2
+  deploy_trino:
+    environment: Release
+    runs-on: ubuntu-latest
+    needs: build_java
+    strategy:
+      matrix:
+        ubuntu: [20.04]
+        arch: [x86_64, arm64]
+        copt: [opt]
+        java: [azul]
+    steps:
+      - name: Free space
+        run : |
+          sudo rm -rf /usr/share/dotnet
+          sudo rm -rf /opt/ghc
+          sudo rm -rf "$AGENT_TOOLSDIRECTORY"
+      - name: Setup repository
+        uses: actions/checkout@v2
+      - name: Setup Bazelisk
+        uses: bazelbuild/setup-bazelisk@v1
+      - name: Set up QEMU
+        id: qemu
+        uses: docker/setup-qemu-action@v1
+        with:
+          image: tonistiigi/binfmt:latest
+          platforms: all
+      - name: Mount bazel cache
+        uses: actions/cache@v2
+        with:
+          path: "~/.cache/bazel"
+          key: ${{ runner.os }}-bazel-java-${{ matrix.arch }}-${{ matrix.copt }}-${{ matrix.ubuntu }}-${{ matrix.java }}-${{ hashFiles('**/BUILD', '**/*.bzl', 'WORKSPACE') }}
+      - name: Docker Login
+        uses: docker/login-action@v1
+        with:
+          registry: docker.io
+          username: ${{ secrets.DOCKER_LOGIN }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+      - name: bazel test
+        run: |
+           bazel test --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} --java=${{ matrix.java }} //test/trino:trino
+      - name: bazel deploy
+        run: |
+          bazel run --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} --java=${{ matrix.java }} //image:push_trino_server
+          bazel run --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} --java=${{ matrix.java }} //image:push_trino_cli
+  deploy_hive:
+    environment: Release
+    runs-on: ubuntu-latest
+    needs: deploy_java
+    strategy:
+      matrix:
+        ubuntu: [20.04]
+        arch: [x86_64, arm64]
+        copt: [opt, dbg]
+        java: [azul]
+    steps:
+      - name: Free space
+        run : |
+          sudo rm -rf /usr/share/dotnet
+          sudo rm -rf /opt/ghc
+          sudo rm -rf "$AGENT_TOOLSDIRECTORY"
+      - name: Setup repository
+        uses: actions/checkout@v2
+      - name: Setup Bazelisk
+        uses: bazelbuild/setup-bazelisk@v1
+      - name: Set up QEMU
+        id: qemu
+        uses: docker/setup-qemu-action@v1
+        with:
+          image: tonistiigi/binfmt:latest
+          platforms: all
+      - name: Mount bazel cache
+        uses: actions/cache@v2
+        with:
+          path: "~/.cache/bazel"
+          key: ${{ runner.os }}-bazel-java-${{ matrix.arch }}-${{ matrix.copt }}-${{ matrix.ubuntu }}-${{ matrix.java }}-${{ hashFiles('**/BUILD', '**/*.bzl', 'WORKSPACE') }}
+      - name: Docker Login
+        uses: docker/login-action@v1
+        with:
+          registry: docker.io
+          username: ${{ secrets.DOCKER_LOGIN }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+      - name: bazel test
+        run: |
+           bazel test --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} --java=${{ matrix.java }} //test/hivemetastore:hive
+      - name: bazel deploy
+        run: |
+          bazel run --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} --java=${{ matrix.java }} //image:push_hivemetastore
   base_tags:
     environment: Release
     runs-on: ubuntu-latest
@@ -260,6 +416,60 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: merge tags
         run: hack/merge_tag_deno.sh ${{ matrix.ubuntu }}
+  spark_tags:
+    environment: Release
+    runs-on: ubuntu-latest
+    needs: deploy_spark
+    strategy:
+      matrix:
+        ubuntu: [bionic, focal]
+    steps:
+      - name: Setup repository
+        uses: actions/checkout@v2
+      - name: Docker Login
+        uses: docker/login-action@v1
+        with:
+          registry: docker.io
+          username: ${{ secrets.DOCKER_LOGIN }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+      - name: merge tags
+        run: hack/merge_tag_spark.sh ${{ matrix.ubuntu }}
+  hive_tags:
+    environment: Release
+    runs-on: ubuntu-latest
+    needs: deploy_hive
+    strategy:
+      matrix:
+        ubuntu: [focal]
+    steps:
+      - name: Setup repository
+        uses: actions/checkout@v2
+      - name: Docker Login
+        uses: docker/login-action@v1
+        with:
+          registry: docker.io
+          username: ${{ secrets.DOCKER_LOGIN }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+      - name: merge tags
+        run: hack/merge_tag_hive.sh ${{ matrix.ubuntu }}
+  trino_tags:
+    environment: Release
+    runs-on: ubuntu-latest
+    needs: deploy_trino
+    strategy:
+      matrix:
+        ubuntu: [focal]
+    steps:
+      - name: Setup repository
+        uses: actions/checkout@v2
+      - name: Docker Login
+        uses: docker/login-action@v1
+        with:
+          registry: docker.io
+          username: ${{ secrets.DOCKER_LOGIN }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+      - name: merge tags
+        run: hack/merge_tag_trino.sh ${{ matrix.ubuntu }}
   # sign:
   #   environment: Release
   #   runs-on: ubuntu-latest

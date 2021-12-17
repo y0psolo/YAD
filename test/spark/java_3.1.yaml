@@ -1,0 +1,12 @@
+schemaVersion: "2.0.0"
+commandTests:
+  - name: javapi
+    command: "/usr/bin/tini"
+    args: ["--", "/opt/spark/bin/spark-submit", "--class", "org.apache.spark.examples.JavaSparkPi", "--jars", "/opt/spark/examples/jars/scopt_2.12-3.7.1.jar,/opt/spark/examples/jars/spark-examples_2.12-3.1.2.jar", "/opt/spark/examples/jars/spark-examples_2.12-3.1.2.jar",]
+    expectedOutput: ['Pi is roughly 3.[0-9]+']
+    exitCode: 0
+  - name: javasql
+    command: "/usr/bin/tini"
+    args: ["--", "/opt/spark/bin/spark-submit", "--class", "org.apache.spark.examples.sql.JavaSparkSQLExample", "--jars", "/opt/spark/examples/jars/scopt_2.12-3.7.1.jar,/opt/spark/examples/jars/spark-examples_2.12-3.1.2.jar", "/opt/spark/examples/jars/spark-examples_2.12-3.1.2.jar",]
+    expectedOutput: ['| Name: Justin|']
+    exitCode: 0

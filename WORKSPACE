@@ -106,10 +106,33 @@ load("@rules-update//:repositories.bzl", "update_dependencies")
 update_dependencies()
 
 load("//deps/core:repository.bzl", "core_repository")
+
 core_repository()
+
 load("//deps/nodejs:repository.bzl", "nodejs_repository")
+
 nodejs_repository()
+
 load("//deps/java:repository.bzl", "java_repository")
+
 java_repository()
+
 load("//deps/deno:repository.bzl", "deno_repository")
+
 deno_repository()
+
+load("//deps/hadoop:repository.bzl", "hadoop_repository")
+
+hadoop_repository()
+
+load("//deps/hive:repository.bzl", "hive_repository")
+
+hive_repository()
+
+load("//deps/spark:repository.bzl", "spark_repository")
+
+spark_repository()
+
+load("//deps/trino:repository.bzl", "trino_repository")
+
+trino_repository()

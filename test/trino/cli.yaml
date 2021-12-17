@@ -1,0 +1,7 @@
+schemaVersion: "2.0.0"
+commandTests:
+  - name: trino_cli
+    command: "/usr/bin/trino-cli.jar"
+    args: ["--version"]
+    expectedOutput: ['Trino CLI [0-9]+']
+    exitCode: 0

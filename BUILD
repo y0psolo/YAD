@@ -34,6 +34,30 @@ update_http(
     bazel_file = "//deps/deno:repository.bzl",
 )
 
+update_http(
+    name = "update_hadoop",
+    yaml_files = ["hadoop.yaml"],
+    bazel_file = "//deps/hadoop:repository.bzl",
+)
+
+update_http(
+    name = "update_hive",
+    yaml_files = ["hive.yaml"],
+    bazel_file = "//deps/hive:repository.bzl",
+)
+
+update_http(
+    name = "update_spark",
+    yaml_files = ["spark.yaml"],
+    bazel_file = "//deps/spark:repository.bzl",
+)
+
+update_http(
+    name = "update_trino",
+    yaml_files = ["trino.yaml"],
+    bazel_file = "//deps/trino:repository.bzl",
+)
+
 update_version(
     name = "update_versions",
     yaml_files = ["versions.yaml"],

@@ -1,0 +1,5 @@
+schemaVersion: "2.0.0"
+metadataTest:
+  exposedPorts: ["8080"]
+  volumes: ["/data/trino"]
+  workdir: "/data/trino"
