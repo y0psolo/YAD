@@ -260,7 +260,7 @@ jobs:
   deploy_trino:
     environment: Release
     runs-on: ubuntu-latest
-    needs: build_java
+    needs: deploy_java
     strategy:
       matrix:
         ubuntu: [20.04]
