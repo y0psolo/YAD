@@ -11,6 +11,22 @@ on:
   workflow_dispatch:
 
 jobs:
+  changes:
+    runs-on: ubuntu-latest
+    outputs:
+      core: ${{ steps.filter.outputs.core }}
+      java: ${{ steps.filter.outputs.java }}
+      deno: ${{ steps.filter.outputs.deno }}
+      nodejs: ${{ steps.filter.outputs.nodejs }}
+      trino: ${{ steps.filter.outputs.trino }}
+      spark: ${{ steps.filter.outputs.spark }}
+      hive: ${{ steps.filter.outputs.hive }}
+    steps:
+    - uses: actions/checkout@v2
+    - uses: dorny/paths-filter@v2
+      id: filter
+      with:
+        filters: .github/filters.yaml
   test_base:
     runs-on: ubuntu-latest
     strategy:
@@ -49,7 +65,8 @@ jobs:
           path: /home/runner/.cache/bazel/_bazel_runner/**/execroot/yad/bazel-out/**/testlogs/test/**/test.log
   build_java:
     runs-on: ubuntu-latest
-    needs: test_base
+    needs: [test_base, changes]
+    if: ${{ needs.changes.outputs.core == 'true' || needs.changes.outputs.java == 'true' || needs.changes.outputs.spark == 'true' || needs.changes.outputs.hive == 'true' || needs.changes.outputs.trino == 'true'}}
     strategy:
       matrix:
         ubuntu: [18.04, 20.04]
@@ -83,7 +100,8 @@ jobs:
           bazel build --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} --java=${{ matrix.java }} //image:push_javapy_17
   test_java:
     runs-on: ubuntu-latest
-    needs: build_java
+    needs: [build_java, changes]
+    if: ${{ needs.changes.outputs.core == 'true' || needs.changes.outputs.java == 'true'}}
     strategy:
       matrix:
         ubuntu: [18.04, 20.04]
@@ -119,9 +137,10 @@ jobs:
         with:
           name: testLogs
           path: /home/runner/.cache/bazel/_bazel_runner/**/execroot/yad/bazel-out/**/testlogs/test/**/test.log
-  build_nodejs:
+  test_nodejs:
     runs-on: ubuntu-latest
-    needs: test_base
+    needs: [test_base, changes]
+    if: ${{ needs.changes.outputs.core == 'true' || needs.changes.outputs.nodejs == 'true'}}
     strategy:
       matrix:
         ubuntu: [18.04, 20.04]
@@ -156,9 +175,10 @@ jobs:
         with:
           name: testLogs
           path: /home/runner/.cache/bazel/_bazel_runner/**/execroot/yad/bazel-out/**/testlogs/test/**/test.log
-  build_deno:
+  test_deno:
     runs-on: ubuntu-latest
-    needs: test_base
+    needs: [test_base, changes]
+    if: ${{ needs.changes.outputs.core == 'true' || needs.changes.outputs.deno == 'true'}}
     strategy:
       matrix:
         ubuntu: [18.04, 20.04]
@@ -193,9 +213,10 @@ jobs:
         with:
           name: testLogs
           path: /home/runner/.cache/bazel/_bazel_runner/**/execroot/yad/bazel-out/**/testlogs/test/**/test.log
-  build_spark:
+  test_spark:
     runs-on: ubuntu-latest
-    needs: build_java
+    needs: [build_java, changes]
+    if: ${{ needs.changes.outputs.core == 'true' || needs.changes.outputs.java == 'true' || needs.changes.outputs.spark == 'true'}}
     strategy:
       matrix:
         ubuntu: [18.04, 20.04]
@@ -236,9 +257,10 @@ jobs:
         with:
           name: testLogs
           path: /home/runner/.cache/bazel/_bazel_runner/**/execroot/yad/bazel-out/**/testlogs/test/**/test.log
-  build_trino:
+  test_trino:
     runs-on: ubuntu-latest
-    needs: build_java
+    needs: [build_java, changes]
+    if: ${{ needs.changes.outputs.core == 'true' || needs.changes.outputs.java == 'true' || needs.changes.outputs.trino == 'true'}}
     strategy:
       matrix:
         ubuntu: [20.04]
@@ -274,9 +296,10 @@ jobs:
         with:
           name: testLogs
           path: /home/runner/.cache/bazel/_bazel_runner/**/execroot/yad/bazel-out/**/testlogs/test/**/test.log
-  build_hive:
+  test_hive:
     runs-on: ubuntu-latest
-    needs: build_java
+    needs: [build_java, changes]
+    if: ${{ needs.changes.outputs.core == 'true' || needs.changes.outputs.java == 'true' || needs.changes.outputs.hive == 'hive'}}
     strategy:
       matrix:
         ubuntu: [20.04]
