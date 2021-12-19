@@ -85,3 +85,15 @@ docker run -it --rm --mount type=bind,source="<path to spark archives>/examples/
 ```Bash
 docker run --rm -it -v /tmp/spark-events -p 18080:18080 yadist/sparkhistoryserver:3.2
 ```
+
+## Security
+
+Security scan of the image updated daily.
+
+| Name     | 2.4      | 3.0      | 3.1      | 3.2      |
+| -------- | :------: |
+| spark    | [2.4](../../security/table/spark_2.4) | [3.0](../../security/table/spark_3.0) | [3.1](../../security/table/spark_3.1) | [3.2](../../security/table/spark_3.2) |
+| pyspark | [2.4](../../security/table/pyspark_2.4) | [3.0](../../security/table/pyspark_3.0) | [3.1](../../security/table/pyspark_3.1) | [3.2](../../security/table/pyspark_3.2) |
+| sparkhistoryserver |[2.4](../../security/table/sparkhistoryserver_2.4) | [3.0](../../security/table/sparkhistoryserver_3.0) | [3.1](../../security/table/sparkhistoryserver_3.1) | [3.2](../../security/table/sparkhistoryserver_3.2) |
+
+Security scan for Azul tar.gz archive installation is not supported by Trivy. To list CVE on Azul disctirbution see https://docs.azul.com/core/cve.

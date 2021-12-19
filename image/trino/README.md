@@ -69,3 +69,14 @@ docker run --rm -it -p 8080:8080 -v /data/trino  bazel/image/trino:server
 ```Bash
 docker run -it --rm --network host bazel/image/trino:cli
 ```
+
+## Security
+
+Security scan of the image updated daily.
+
+| Name     | latest   |
+| -------- | :------: |
+| trino    | [latest](../../security/table/trino_latest) |
+| trinocli | [latest](../../security/table/trinocli_latest) |
+
+Security scan for Azul tar.gz archive installation is not supported by Trivy. To list CVE on Azul disctirbution see https://docs.azul.com/core/cve.

@@ -6,6 +6,8 @@ on:
     paths-ignore:
       - 'security/**'
       - 'update/**'
+      - '**/README.md'
+      - '**/README.adoc'
   workflow_dispatch:
 
 jobs:

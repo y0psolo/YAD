@@ -41,7 +41,9 @@ For the same reasons, if the entrypoint is left to the default empty vector, the
 
 === Images List
 
-.Image List
+==== Base
+
+.Base Image List
 [cols=".^10%,15%,15%,60%",width="100%",options="header"]
 |===
 
@@ -65,13 +67,30 @@ For the same reasons, if the entrypoint is left to the default empty vector, the
 | image:https://img.shields.io/docker/image-size/yadist/cc/focal?label=focal&logo=docker[link="https://hub.docker.com/r/yadist/cc/"]
 | For running libc, libgcc and openssl linked application
 
+| link:image/python/README.md[python]
+| image:https://img.shields.io/docker/image-size/yadist/python/bionic?label=bionic&logo=docker[link="https://hub.docker.com/r/yadist/python/"]
+| image:https://img.shields.io/docker/image-size/yadist/python/focal?label=focal&logo=docker[link="https://hub.docker.com/r/yadist/python/"]
+| For running python application(python 3.x)
+|===
+
+==== Java
+
+.Java Image List
+[cols=".^10%,15%,15%,60%",width="100%",options="header"]
+|===
+
+| Image 
+^| Ubuntu Bionic
+^| Ubuntu Focal  
+| Usage
+
 | link:image/java/README.md[adoptium]
 | image:https://img.shields.io/docker/image-size/yadist/adoptium/8_bionic?label=8_bionic&logo=docker[link="https://hub.docker.com/r/yadist/adoptium/"]
 image:https://img.shields.io/docker/image-size/yadist/adoptium/11_bionic?label=11_bionic&logo=docker[link="https://hub.docker.com/r/yadist/adoptium/"]
 image:https://img.shields.io/docker/image-size/yadist/adoptium/17_bionic?label=17_bionic&logo=docker[link="https://hub.docker.com/r/yadist/adoptium/"]
 | image:https://img.shields.io/docker/image-size/yadist/adoptium/8_focal?label=8_focal&logo=docker[link="https://hub.docker.com/r/yadist/adoptium/"]
 image:https://img.shields.io/docker/image-size/yadist/adoptium/11_focal?label=11_focal&logo=docker[link="https://hub.docker.com/r/yadist/adoptium/"]
-image:https://img.shields.io/docker/image-size/yadist/adoptium/17_focal?label=17_focallogo=docker[link="https://hub.docker.com/r/yadist/adoptium/"]
+image:https://img.shields.io/docker/image-size/yadist/adoptium/17_focal?label=17_focal&logo=docker[link="https://hub.docker.com/r/yadist/adoptium/"]
 |  For running java application with https://adoptium.net/[adoptium] jre
 
 | link:image/javapy/README.md[adoptiumpy]
@@ -80,7 +99,7 @@ image:https://img.shields.io/docker/image-size/yadist/adoptiumpy/11_bionic?label
 image:https://img.shields.io/docker/image-size/yadist/adoptiumpy/17_bionic?label=17_bionic&logo=docker[link="https://hub.docker.com/r/yadist/adoptiumpy/"]
 | image:https://img.shields.io/docker/image-size/yadist/adoptiumpy/8_focal?label=8_focal&logo=docker[link="https://hub.docker.com/r/yadist/adoptiumpy/"]
 image:https://img.shields.io/docker/image-size/yadist/adoptiumpy/11_focal?label=11_focal&logo=docker[link="https://hub.docker.com/r/yadist/adoptiumpy/"]
-image:https://img.shields.io/docker/image-size/yadist/adoptiumpy/17_focal?label=17_focallogo=docker[link="https://hub.docker.com/r/yadist/adoptiumpy/"]
+image:https://img.shields.io/docker/image-size/yadist/adoptiumpy/17_focal?label=17_focal&logo=docker[link="https://hub.docker.com/r/yadist/adoptiumpy/"]
 |  For running java application with https://adoptium.net/[adoptium] jre and python dependencies
 
 | link:image/java/README.md[azul]
@@ -89,7 +108,7 @@ image:https://img.shields.io/docker/image-size/yadist/azul/11_bionic?label=11_bi
 image:https://img.shields.io/docker/image-size/yadist/azul/17_bionic?label=17_bionic&logo=docker[link="https://hub.docker.com/r/yadist/azul/"]
 | image:https://img.shields.io/docker/image-size/yadist/azul/8_focal?label=8_focal&logo=docker[link="https://hub.docker.com/r/yadist/azul/"]
 image:https://img.shields.io/docker/image-size/yadist/azul/11_focal?label=11_focal&logo=docker[link="https://hub.docker.com/r/yadist/azul/"]
-image:https://img.shields.io/docker/image-size/yadist/azul/17_focal?label=17_focallogo=docker[link="https://hub.docker.com/r/yadist/azul/"]
+image:https://img.shields.io/docker/image-size/yadist/azul/17_focal?label=17_focal&logo=docker[link="https://hub.docker.com/r/yadist/azul/"]
 |  For running java application with https://azul.com/[azul] jre
 
 | link:image/javapy/README.md[azulpy]
@@ -98,13 +117,20 @@ image:https://img.shields.io/docker/image-size/yadist/azulpy/11_bionic?label=11_
 image:https://img.shields.io/docker/image-size/yadist/azulpy/17_bionic?label=17_bionic&logo=docker[link="https://hub.docker.com/r/yadist/azulpy/"]
 | image:https://img.shields.io/docker/image-size/yadist/azulpy/8_focal?label=8_focal&logo=docker[link="https://hub.docker.com/r/yadist/azulpy/"]
 image:https://img.shields.io/docker/image-size/yadist/azulpy/11_focal?label=11_focal&logo=docker[link="https://hub.docker.com/r/yadist/azulpy/"]
-image:https://img.shields.io/docker/image-size/yadist/azulpy/17_focal?label=17_focallogo=docker[link="https://hub.docker.com/r/yadist/azulpy/"]
+image:https://img.shields.io/docker/image-size/yadist/azulpy/17_focal?label=17_focal&logo=docker[link="https://hub.docker.com/r/yadist/azulpy/"]
 |  For running java application with https://azul.com/[azul] jre and python dependencies
+|===
 
-| link:image/python/README.md[python]
-| image:https://img.shields.io/docker/image-size/yadist/python/bionic?label=bionic&logo=docker[link="https://hub.docker.com/r/yadist/python/"]
-| image:https://img.shields.io/docker/image-size/yadist/python/focal?label=focal&logo=docker[link="https://hub.docker.com/r/yadist/python/"]
-| For running python application(python 3.x)
+==== Typescript
+
+.Typescript Image List
+[cols=".^10%,15%,15%,60%",width="100%",options="header"]
+|===
+
+| Image 
+^| Ubuntu Bionic
+^| Ubuntu Focal  
+| Usage
 
 | link:image/nodejs/README.md[nodejs]
 | image:https://img.shields.io/docker/image-size/yadist/nodejs/14_bionic?label=14_bionic&logo=docker[link="https://hub.docker.com/r/yadist/nodejs/"]
@@ -116,7 +142,51 @@ image:https://img.shields.io/docker/image-size/yadist/nodejs/16_focal?label=16_f
 | link:image/deno/README.md[deno] | image:https://img.shields.io/docker/image-size/yadist/deno/bionic?label=bionic&logo=docker[link="https://hub.docker.com/r/yadist/deno/"] | image:https://img.shields.io/docker/image-size/yadist/deno/focal?label=focal&logo=docker[link="https://hub.docker.com/r/yadist/deno/"] | For running typescript application 
 |===
 
-The images are also created with a busybox with a "_debug" suffix for the tag.
+==== Big Data
+
+.Big Data Image List
+[cols=".^10%,15%,15%,60%",width="100%",options="header"]
+|===
+
+| Image 
+^| Ubuntu Bionic
+^| Ubuntu Focal  
+| Usage
+
+| link:image/spark/README.md[spark]
+| image:https://img.shields.io/docker/image-size/yadist/spark/2.4?label=2.4&logo=docker[link="https://hub.docker.com/r/yadist/spark/"]
+| image:https://img.shields.io/docker/image-size/yadist/spark/3.0?label=3.0&logo=docker[link="https://hub.docker.com/r/yadist/spark/"]
+image:https://img.shields.io/docker/image-size/yadist/spark/3.1?label=3.1&logo=docker[link="https://hub.docker.com/r/yadist/spark/"]
+image:https://img.shields.io/docker/image-size/yadist/spark/3.2?label=3.2&logo=docker[link="https://hub.docker.com/r/yadist/spark/"]
+| For running spark application
+
+| link:image/spark/README.md[pyspark]
+| image:https://img.shields.io/docker/image-size/yadist/pyspark/2.4?label=2.4&logo=docker[link="https://hub.docker.com/r/yadist/pyspark/"]
+| image:https://img.shields.io/docker/image-size/yadist/pyspark/3.0?label=3.0&logo=docker[link="https://hub.docker.com/r/yadist/pyspark/"]
+image:https://img.shields.io/docker/image-size/yadist/pyspark/3.1?label=3.1&logo=docker[link="https://hub.docker.com/r/yadist/pyspark/"]
+image:https://img.shields.io/docker/image-size/yadist/pyspark/3.2?label=3.2&logo=docker[link="https://hub.docker.com/r/yadist/pyspark/"]
+| For running pyspark application
+
+| link:image/spark/README.md[sparkhistoryserver]
+| image:https://img.shields.io/docker/image-size/yadist/sparkhistoryserver/2.4?label=2.4&logo=docker[link="https://hub.docker.com/r/yadist/sparkhistoryserver/"]
+| image:https://img.shields.io/docker/image-size/yadist/sparkhistoryserver/3.0?label=3.0&logo=docker[link="https://hub.docker.com/r/yadist/sparkhistoryserver/"]
+image:https://img.shields.io/docker/image-size/yadist/sparkhistoryserver/3.1?label=3.1&logo=docker[link="https://hub.docker.com/r/yadist/sparkhistoryserver/"]
+image:https://img.shields.io/docker/image-size/yadist/sparkhistoryserver/3.2?label=3.2&logo=docker[link="https://hub.docker.com/r/yadist/sparkhistoryserver/"]
+| For running the spark historyserver application
+
+| link:image/hive/README.md[hivemetastore]
+| 
+| image:https://img.shields.io/docker/image-size/yadist/hivemetastore/latest?label=latest&logo=docker[link="https://hub.docker.com/r/yadist/hivemetastore/"]
+| For running the hive metastore server
+
+| link:image/trino/README.md[trino]
+| 
+| image:https://img.shields.io/docker/image-size/yadist/trino/latest?label=latest&logo=docker[link="https://hub.docker.com/r/yadist/trino/"]
+| For running the trino server
+
+|===
+
+All the images have a variant with busybox bundled. Theese images are identified with a "_debug" suffix on the tag.
 
 === Security
 

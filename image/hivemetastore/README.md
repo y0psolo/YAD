@@ -149,3 +149,13 @@ To launch the Hive metastore server :
 ```bash
 docker run -it --rm --mount type=bind,source="$(pwd)/metastore-site.xml",target=/etc/hive/metastore-site.xml hivemetastore:latest org.apache.hadoop.hive.metastore.tools.MetastoreSchemaTool
 ```
+
+## Security
+
+Security scan of the image updated daily.
+
+| Name     | latest   |
+| -------- | :------: |
+| hivemetastore    | [latest](../../security/table/hivemetastore_latest) |
+
+Security scan for Azul tar.gz archive installation is not supported by Trivy. To list CVE on Azul disctirbution see https://docs.azul.com/core/cve.
