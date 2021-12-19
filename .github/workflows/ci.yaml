@@ -13,19 +13,19 @@ on:
 jobs:
   changes:
     runs-on: ubuntu-latest
-      outputs:
-        core: ${{ steps.filter.outputs.core }}
-        java: ${{ steps.filter.outputs.java }}
-        deno: ${{ steps.filter.outputs.deno }}
-        nodejs: ${{ steps.filter.outputs.nodejs }}
-        trino: ${{ steps.filter.outputs.trino }}
-        spark: ${{ steps.filter.outputs.spark }}
-        hive: ${{ steps.filter.outputs.hive }}
-      steps:
-      - uses: dorny/paths-filter@v2
-        id: filter
-        with:
-          filters: .github/filters.yaml
+    outputs:
+      core: ${{ steps.filter.outputs.core }}
+      java: ${{ steps.filter.outputs.java }}
+      deno: ${{ steps.filter.outputs.deno }}
+      nodejs: ${{ steps.filter.outputs.nodejs }}
+      trino: ${{ steps.filter.outputs.trino }}
+      spark: ${{ steps.filter.outputs.spark }}
+      hive: ${{ steps.filter.outputs.hive }}
+    steps:
+    - uses: dorny/paths-filter@v2
+      id: filter
+      with:
+        filters: .github/filters.yaml
   test_base:
     runs-on: ubuntu-latest
     strategy:
