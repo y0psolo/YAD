@@ -895,7 +895,7 @@
 |                                             |                  |          |                   |                                | an attacker-controlled...                                                       |
 |                                             |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2021-44228                                           |
 +                                             +------------------+----------+                   +--------------------------------+---------------------------------------------------------------------------------+
-|                                             | CVE-2021-45105   | HIGH     |                   | 2.17.0, 2.12.3                 | Improper Input Validation                                                       |
+|                                             | CVE-2021-45105   | MEDIUM   |                   | 2.17.0, 2.12.3                 | Improper Input Validation                                                       |
 |                                             |                  |          |                   |                                | and Uncontrolled                                                                |
 |                                             |                  |          |                   |                                | Recursion in Apache Log4j2                                                      |
 |                                             |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2021-45105                                           |
@@ -910,7 +910,7 @@
 |                                             |                  |          |                   |                                | an attacker-controlled...                                                       |
 |                                             |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2021-44228                                           |
 +                                             +------------------+----------+                   +--------------------------------+---------------------------------------------------------------------------------+
-|                                             | CVE-2021-45105   | HIGH     |                   | 2.17.0, 2.12.3                 | Improper Input Validation                                                       |
+|                                             | CVE-2021-45105   | MEDIUM   |                   | 2.17.0, 2.12.3                 | Improper Input Validation                                                       |
 |                                             |                  |          |                   |                                | and Uncontrolled                                                                |
 |                                             |                  |          |                   |                                | Recursion in Apache Log4j2                                                      |
 |                                             |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2021-45105                                           |
