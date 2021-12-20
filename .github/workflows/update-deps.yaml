@@ -33,6 +33,9 @@ jobs:
           update/update_hive.sh
           update/update_spark.sh
           update/update_trino.sh
+          update/update_redis.sh
+          update/update_consultemplate.sh
+          update/update_mariadb.sh
           bazel run :update_deno
           bazel run :update_java
           bazel run :update_nodejs
@@ -40,6 +43,9 @@ jobs:
           bazel run :update_hive
           bazel run :update_spark
           bazel run :update_trino
+          bazel run :update_redis
+          bazel run :update_consultemplate
+          bazel run :update_mariadb
           bazel run :update_versions
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3

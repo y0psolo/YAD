@@ -1,5 +1,5 @@
 load("@io_bazel_rules_docker//container:container.bzl", "container_push")
-load("//util:constants.bzl", "JRE_VERSIONS", "NODEJS_VERSIONS", "SPARK_VERSIONS")
+load("//util:constants.bzl", "JRE_VERSIONS", "NODEJS_VERSIONS", "SPARK_VERSIONS", "MARIADB_VERSIONS")
 load(":tag.bzl", "copt_tag", "arch_tag", "dist_tag")
 
 package(default_visibility = ["//visibility:public"])
@@ -14,7 +14,7 @@ package(default_visibility = ["//visibility:public"])
         tag = arch_tag() + "_" + dist_tag() + copt_tag(),
         skip_unchanged_digest = True,
     )
-    for name in ["static", "base", "cc", "python", "deno", "hivemetastore"]
+    for name in ["static", "base", "cc", "python", "deno", "hivemetastore", "consultemplate"]
 ]
 
 [
@@ -76,22 +76,30 @@ package(default_visibility = ["//visibility:public"])
     for repo in ["spark", "pyspark", "sparkhistoryserver"]
 ]
 
-container_push(
-    name = "push_trino_server",
-    image = "//image/trino:server",
-    format = "Docker",
-    registry = "docker.io",
-    repository = "yadist/trino",
-    tag = arch_tag() + "_" + dist_tag() + copt_tag(),
-    skip_unchanged_digest = True,
-)
+[
+    container_push(
+        name = "push_" + name + "_" + repo ,
+        image = "//image/" + name + ":" + repo,
+        format = "Docker",
+        registry = "docker.io",
+        repository = "yadist/" + name + "" if (repo == "server") else repo,
+        tag = arch_tag() + "_" + dist_tag() + copt_tag(),
+        skip_unchanged_digest = True,
+    )
+    for repo in ["server", "cli"]
+    for name in ["trino", "redis"]
+]
 
-container_push(
-    name = "push_trino_cli",
-    image = "//image/trino:cli",
-    format = "Docker",
-    registry = "docker.io",
-    repository = "yadist/trinocli",
-    tag = arch_tag() + "_" + dist_tag() + copt_tag(),
-    skip_unchanged_digest = True,
-)
+[
+    container_push(
+        name = "push_mariadb_" + repo + "_" + version,
+        image = "//image/mariadb:" + repo + "_" + version,
+        format = "Docker",
+        registry = "docker.io",
+        repository = "yadist/mariadb" + "" if (repo == "server") else repo,
+        tag = arch_tag() + "_" + version + "_" + dist_tag() + copt_tag(),
+        skip_unchanged_digest = True,
+    )
+    for version in MARIADB_VERSIONS
+    for repo in ["server", "init", "cli"]
+]

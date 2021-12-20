@@ -8,6 +8,7 @@ DENO_VERSION=$(grep 'DENO_VERSION =' util/constants.bzl | grep -o -m 1 -E "[0-9]
 TRINO_VERSION=$(grep TRINO_VERSION util/constants.bzl | grep -o -m 1 -E "[0-9]+")
 HIVE_VERSION=$(grep HIVE_VERSION util/constants.bzl | grep -o -m 1 -E "[0-9].[0-9].[0-9]")
 SPARK_VERSIONS=$(grep SPARK_VERSIONS util/constants.bzl | grep -o -E "[0-9].[0-9]")
+MARIADB_VERSIONS=$(grep 'MARIADB_VERSIONS =' util/constants.bzl | grep -o -E "[0-9]+.[0-9]+")
 
 . $SCRIPTPATH/common.sh
 
@@ -48,7 +49,15 @@ do
     done
 done
 
-for repo in hivemetastore trino trinocli
+for repo in mariadb mariadbcli mariadbinit
+do
+    for version in ${MARIADB_VERSIONS}
+    do
+        scan_image ${repo} ${version}_$1
+    done
+done
+
+for repo in hivemetastore trino trinocli redis rediscli consultemplate
 do
     scan_image ${repo} latest
     scan_image ${repo} latest

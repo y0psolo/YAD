@@ -1,6 +1,19 @@
 workspace(name = "yad")
 
-load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive", "http_file")
+load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+
+http_archive(
+    name = "bazel_skylib",
+    sha256 = "c6966ec828da198c5d9adbaa94c05e3a1c7f21bd012a0b29ba8ddbccb2c93b0d",
+    urls = [
+        "https://github.com/bazelbuild/bazel-skylib/releases/download/1.1.1/bazel-skylib-1.1.1.tar.gz",
+        "https://mirror.bazel.build/github.com/bazelbuild/bazel-skylib/releases/download/1.1.1/bazel-skylib-1.1.1.tar.gz",
+    ],
+)
+
+load("@bazel_skylib//:workspace.bzl", "bazel_skylib_workspace")
+
+bazel_skylib_workspace()
 
 # Download the Go rules.
 http_archive(
@@ -37,6 +50,17 @@ go_repository(
     sum = "h1:NfGBHio8IumqO1h9CcxJywa+z+YMDBG67pmL5KFMjBg=",
     version = "v0.0.0-20210906142420-5f69634d3489",
 )
+
+# Rule repository
+http_archive(
+    name = "rules_foreign_cc",
+    strip_prefix = "rules_foreign_cc-main",
+    url = "https://github.com/bazelbuild/rules_foreign_cc/archive/refs/heads/main.zip",
+)
+
+load("@rules_foreign_cc//foreign_cc:repositories.bzl", "rules_foreign_cc_dependencies")
+
+rules_foreign_cc_dependencies()
 
 # Docker rules
 http_archive(
@@ -136,3 +160,15 @@ spark_repository()
 load("//deps/trino:repository.bzl", "trino_repository")
 
 trino_repository()
+
+load("//deps/mariadb:repository.bzl", "mariadb_repository")
+
+mariadb_repository()
+
+load("//deps/redis:repository.bzl", "redis_repository")
+
+redis_repository()
+
+load("//deps/consultemplate:repository.bzl", "consultemplate_repository")
+
+consultemplate_repository()
