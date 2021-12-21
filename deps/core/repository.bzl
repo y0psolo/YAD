@@ -1,8 +1,8 @@
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_file")
-load("//deps/ubuntu:ubuntu_focal_amd64.bzl", "ubuntu_focal_amd64")
-load("//deps/ubuntu:ubuntu_focal_arm64.bzl", "ubuntu_focal_arm64")
-load("//deps/ubuntu:ubuntu_bionic_amd64.bzl", "ubuntu_bionic_amd64")
-load("//deps/ubuntu:ubuntu_bionic_arm64.bzl", "ubuntu_bionic_arm64")
+load(":ubuntu_focal_amd64.bzl", "ubuntu_focal_amd64")
+load(":ubuntu_focal_arm64.bzl", "ubuntu_focal_arm64")
+load(":ubuntu_bionic_amd64.bzl", "ubuntu_bionic_amd64")
+load(":ubuntu_bionic_arm64.bzl", "ubuntu_bionic_arm64")
 
 def core_repository():
     # Ubuntu key

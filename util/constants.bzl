@@ -20,11 +20,14 @@ HADOOP_VERSION = "3.3.1"
 
 SPARK_VERSIONS = ["2.4", "3.0", "3.1", "3.2"]
 
-SPARK_VERSIONS_MAPPING = {
-    "2.4": "2.4.8",
-    "3.0": "3.0.3",
-    "3.1": "3.1.2",
-    "3.2": "3.2.0",
-}
+SPARK_VERSIONS_MAPPING = {"2.4": "2.4.8", "3.0": "3.0.3", "3.1": "3.1.2", "3.2": "3.2.0",}
 
 TRINO_VERSION = "366"
+
+REDIS_VERSION = "6.2.6"
+
+CONSUL_TEMPLATE_VERSION = "0.27.1"
+
+MARIADB_VERSIONS = ["10.5", "10.6", "10.7"]
+
+MARIADB_VERSIONS_MAPPING = { "10.5": "10.5.13", "10.6": "10.6.5", "10.7": "10.7.1"}

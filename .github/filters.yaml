@@ -1,5 +1,6 @@
 core:
-  - 'deps/ubuntu/**'
+  - 'WORKSPACE'
+  - 'util/**'
   - 'deps/core/**'
   - 'layer/static/**'
   - 'layer/base/**'
@@ -46,3 +47,21 @@ hive:
   - 'layer/hivemetastore/**'
   - 'image/hivemetastore/**'
   - 'test/hivemetastore/**'
+consultemplate:
+  - 'ext/consultemplate/**'
+  - 'deps/consultemplate/**'
+  - 'layer/consultemplate/**'
+  - 'image/consultemplate/**'
+  - 'test/consultemplate/**'
+redis:
+  - 'ext/redis/**'
+  - 'ext/openssl/**'
+  - 'deps/redis/**'
+  - 'layer/redis/**'
+  - 'image/redis/**'
+  - 'test/redis/**'
+mariadb:
+  - 'deps/mariadb/**'
+  - 'layer/mariadb/**'
+  - 'image/mariadb/**'
+  - 'test/mariadb/**'

@@ -1,0 +1,4 @@
+schemaVersion: "2.0.0"
+metadataTest:
+  exposedPorts: ["3306"]
+  volumes: ["/var/lib"]

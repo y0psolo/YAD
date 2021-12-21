@@ -6,13 +6,25 @@ package(default_visibility = ["//:__subpackages__"])
 update_deb_packages(
     name = "update_deb_packages",
     bzl_files = [
-        "deps/ubuntu/ubuntu_focal_amd64.bzl",
-        "deps/ubuntu/ubuntu_focal_arm64.bzl",
-        "deps/ubuntu/ubuntu_bionic_amd64.bzl",
-        "deps/ubuntu/ubuntu_bionic_arm64.bzl",
+        "deps/core/ubuntu_focal_amd64.bzl",
+        "deps/core/ubuntu_focal_arm64.bzl",
+        "deps/core/ubuntu_bionic_amd64.bzl",
+        "deps/core/ubuntu_bionic_arm64.bzl",
     ],
     pgp_keys = [
         "@ubuntu_key//file",
+    ],
+)
+
+update_deb_packages(
+    name = "update_mariadb",
+    bzl_files = [
+        "deps/mariadb/mariadb_10_5.bzl",
+        "deps/mariadb/mariadb_10_6.bzl",
+        "deps/mariadb/mariadb_10_7.bzl",
+    ],
+    pgp_keys = [
+        "@mariadb_key//file",
     ],
 )
 
@@ -56,6 +68,18 @@ update_http(
     name = "update_trino",
     yaml_files = ["trino.yaml"],
     bazel_file = "//deps/trino:repository.bzl",
+)
+
+update_http(
+    name = "update_redis",
+    yaml_files = ["redis.yaml"],
+    bazel_file = "//deps/redis:repository.bzl",
+)
+
+update_http(
+    name = "update_consultemplate",
+    yaml_files = ["consultemplate.yaml"],
+    bazel_file = "//deps/consultemplate:repository.bzl",
 )
 
 update_version(
