@@ -50,6 +50,7 @@ jobs:
         uses: bazelbuild/setup-bazelisk@v1
       - name: Set up QEMU
         id: qemu
+        if: ${{ matrix.arch != 'x86_64' }}
         uses: docker/setup-qemu-action@v1
         with:
           image: tonistiigi/binfmt:latest
@@ -97,6 +98,7 @@ jobs:
         uses: bazelbuild/setup-bazelisk@v1
       - name: Set up QEMU
         id: qemu
+        if: ${{ matrix.arch != 'x86_64' }}
         uses: docker/setup-qemu-action@v1
         with:
           image: tonistiigi/binfmt:latest
@@ -147,6 +149,7 @@ jobs:
         uses: bazelbuild/setup-bazelisk@v1
       - name: Set up QEMU
         id: qemu
+        if: ${{ matrix.arch != 'x86_64' }}
         uses: docker/setup-qemu-action@v1
         with:
           image: tonistiigi/binfmt:latest
@@ -191,6 +194,7 @@ jobs:
         uses: bazelbuild/setup-bazelisk@v1
       - name: Set up QEMU
         id: qemu
+        if: ${{ matrix.arch != 'x86_64' }}
         uses: docker/setup-qemu-action@v1
         with:
           image: tonistiigi/binfmt:latest
@@ -235,6 +239,7 @@ jobs:
         uses: bazelbuild/setup-bazelisk@v1
       - name: Set up QEMU
         id: qemu
+        if: ${{ matrix.arch != 'x86_64' }}
         uses: docker/setup-qemu-action@v1
         with:
           image: tonistiigi/binfmt:latest
@@ -305,6 +310,7 @@ jobs:
         uses: bazelbuild/setup-bazelisk@v1
       - name: Set up QEMU
         id: qemu
+        if: ${{ matrix.arch != 'x86_64' }}
         uses: docker/setup-qemu-action@v1
         with:
           image: tonistiigi/binfmt:latest
@@ -350,6 +356,7 @@ jobs:
         uses: bazelbuild/setup-bazelisk@v1
       - name: Set up QEMU
         id: qemu
+        if: ${{ matrix.arch != 'x86_64' }}
         uses: docker/setup-qemu-action@v1
         with:
           image: tonistiigi/binfmt:latest
@@ -396,6 +403,7 @@ jobs:
           sudo apt install crossbuild-essential-arm64
       - name: Set up QEMU
         id: qemu
+        if: ${{ matrix.arch != 'x86_64' }}
         uses: docker/setup-qemu-action@v1
         with:
           image: tonistiigi/binfmt:latest
@@ -432,6 +440,7 @@ jobs:
         uses: bazelbuild/setup-bazelisk@v1
       - name: Set up QEMU
         id: qemu
+        if: ${{ matrix.arch != 'x86_64' }}
         uses: docker/setup-qemu-action@v1
         with:
           image: tonistiigi/binfmt:latest
@@ -468,6 +477,7 @@ jobs:
         uses: bazelbuild/setup-bazelisk@v1
       - name: Set up QEMU
         id: qemu
+        if: ${{ matrix.arch != 'x86_64' }}
         uses: docker/setup-qemu-action@v1
         with:
           image: tonistiigi/binfmt:latest
