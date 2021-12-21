@@ -84,7 +84,7 @@ jobs:
     environment: Release
     runs-on: ubuntu-latest
     needs: [deploy_base, changes]
-    if: ${{ needs.changes.outputs.core == 'true' || needs.changes.outputs.java == 'true' || needs.changes.outputs.spark == 'true' || needs.changes.outputs.hive == 'true' || needs.changes.outputs.trino == 'true' || contains(github.event.inputs.forceRebuild, 'java' }}
+    if: ${{ needs.changes.outputs.core == 'true' || needs.changes.outputs.java == 'true' || needs.changes.outputs.spark == 'true' || needs.changes.outputs.hive == 'true' || needs.changes.outputs.trino == 'true' || contains(github.event.inputs.forceRebuild, 'java') }}
     strategy:
       matrix:
         ubuntu: [18.04, 20.04]
