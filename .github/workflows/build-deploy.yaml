@@ -430,7 +430,8 @@ jobs:
            bazel test --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} //test/redis:redis
       - name: bazel deploy
         run: |
-          bazel run --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} //image:push_redis
+          bazel run --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} //image:push_redis_server
+          bazel run --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} //image:push_redis_cli
   deploy_consultemplate:
     environment: Release
     runs-on: ubuntu-latest
@@ -518,7 +519,15 @@ jobs:
            bazel test --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} //test/mariadb:mariadb
       - name: bazel deploy
         run: |
-          bazel run --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} //image:push_mariadb
+          bazel run --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} //image:push_mariadb_server_10.5
+          bazel run --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} //image:push_mariadb_server_10.6
+          bazel run --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} //image:push_mariadb_server_10.7
+          bazel run --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} //image:push_mariadb_cli_10.5
+          bazel run --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} //image:push_mariadb_cli_10.6
+          bazel run --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} //image:push_mariadb_cli_10.7
+          bazel run --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} //image:push_mariadb_init_10.5
+          bazel run --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} //image:push_mariadb_init_10.6
+          bazel run --config ${{ matrix.arch }} -c ${{ matrix.copt }} --distro=${{ matrix.ubuntu }} //image:push_mariadb_init_10.7
   base_tags:
     environment: Release
     runs-on: ubuntu-latest

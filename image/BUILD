@@ -82,7 +82,7 @@ package(default_visibility = ["//visibility:public"])
         image = "//image/" + name + ":" + repo,
         format = "Docker",
         registry = "docker.io",
-        repository = "yadist/" + name + "" if (repo == "server") else repo,
+        repository = "yadist/" + name + ("" if (repo == "server") else repo),
         tag = arch_tag() + "_" + dist_tag() + copt_tag(),
         skip_unchanged_digest = True,
     )
@@ -96,7 +96,7 @@ package(default_visibility = ["//visibility:public"])
         image = "//image/mariadb:" + repo + "_" + version,
         format = "Docker",
         registry = "docker.io",
-        repository = "yadist/mariadb" + "" if (repo == "server") else repo,
+        repository = "yadist/mariadb" + ("" if (repo == "server") else repo),
         tag = arch_tag() + "_" + version + "_" + dist_tag() + copt_tag(),
         skip_unchanged_digest = True,
     )
