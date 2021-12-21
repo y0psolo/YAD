@@ -225,7 +225,7 @@ jobs:
     environment: Release
     runs-on: ubuntu-latest
     needs: [deploy_java, changes]
-    if: ${{ needs.changes.outputs.core == 'true' || needs.changes.outputs.java == 'true' || needs.changes.outputs.spark == 'true' || contains(github.event.inputs.forceRebuild, 'spark' }}
+    if: ${{ needs.changes.outputs.core == 'true' || needs.changes.outputs.java == 'true' || needs.changes.outputs.spark == 'true' || contains(github.event.inputs.forceRebuild, 'spark') }}
     strategy:
       matrix:
         ubuntu: [18.04, 20.04]
