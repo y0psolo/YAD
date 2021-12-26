@@ -5,7 +5,7 @@ def deno_repository():
     http_archive(
         name = "deno-amd64",
         build_file = "//ext/deno:BUILD",
-        sha256 = "e53d3084ac61dd483911bea4d2a5b90e1f0e4d7c6891d232ba6e63c7fd30c767",
+        sha256 = "49358bfe50a98351fdb5f60e1740406e5a8a5dabe4e2198985b3c6f2956b26a1",
         type = "zip",
-        urls = ["https://github.com/denoland/deno/releases/download/v1.17.0/deno-x86_64-unknown-linux-gnu.zip"],
+        urls = ["https://github.com/denoland/deno/releases/download/v1.17.1/deno-x86_64-unknown-linux-gnu.zip"],
     )
