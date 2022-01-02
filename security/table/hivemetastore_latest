@@ -851,7 +851,7 @@
 |                                             |                  |          |                   |                                | is configured to...                                                             |
 |                                             |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2021-4104                                            |
 +                                             +------------------+----------+                   +--------------------------------+---------------------------------------------------------------------------------+
-|                                             | CVE-2020-9488    | MEDIUM   |                   | 2.13.2                         | log4j: improper validation                                                      |
+|                                             | CVE-2020-9488    | LOW      |                   | 2.13.2                         | log4j: improper validation                                                      |
 |                                             |                  |          |                   |                                | of certificate with host                                                        |
 |                                             |                  |          |                   |                                | mismatch in SMTP appender                                                       |
 |                                             |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2020-9488                                            |
@@ -920,7 +920,7 @@
 |                                             |                  |          |                   |                                | Map (MDC) input data...                                                         |
 |                                             |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2021-45105                                           |
 +                                             +------------------+----------+                   +--------------------------------+---------------------------------------------------------------------------------+
-|                                             | CVE-2020-9488    | MEDIUM   |                   | 2.13.2                         | log4j: improper validation                                                      |
+|                                             | CVE-2020-9488    | LOW      |                   | 2.13.2                         | log4j: improper validation                                                      |
 |                                             |                  |          |                   |                                | of certificate with host                                                        |
 |                                             |                  |          |                   |                                | mismatch in SMTP appender                                                       |
 |                                             |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2020-9488                                            |
