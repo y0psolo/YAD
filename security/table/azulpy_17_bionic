@@ -83,17 +83,8 @@
 |                      |                  |          |                         |               | png.c:png_free_data function          |
 |                      |                  |          |                         |               | causing denial of service             |
 |                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2018-14048 |
-+----------------------+------------------+----------+-------------------------+---------------+---------------------------------------+
-| libpython3.6-minimal | CVE-2021-3733    | MEDIUM   | 3.6.9-1~18.04ubuntu1.6  |               | python: urllib: Regular expression    |
-|                      |                  |          |                         |               | DoS in AbstractBasicAuthHandler       |
-|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2021-3733  |
-+                      +------------------+          +                         +---------------+---------------------------------------+
-|                      | CVE-2021-3737    |          |                         |               | python: urllib: HTTP client           |
-|                      |                  |          |                         |               | possible infinite loop on             |
-|                      |                  |          |                         |               | a 100 Continue response...            |
-|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2021-3737  |
-+                      +------------------+----------+                         +---------------+---------------------------------------+
-|                      | CVE-2021-23336   | LOW      |                         |               | python: Web cache poisoning           |
++----------------------+------------------+          +-------------------------+---------------+---------------------------------------+
+| libpython3.6-minimal | CVE-2021-23336   |          | 3.6.9-1~18.04ubuntu1.6  |               | python: Web cache poisoning           |
 |                      |                  |          |                         |               | via urllib.parse.parse_qsl            |
 |                      |                  |          |                         |               | and urllib.parse.parse_qs             |
 |                      |                  |          |                         |               | by using a semicolon...               |
