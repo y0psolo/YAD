@@ -4,7 +4,7 @@ load("@ubuntu_focal_amd64//debs:deb_packages.bzl", "ubuntu_focal_amd64")
 load("@ubuntu_focal_arm64//debs:deb_packages.bzl", "ubuntu_focal_arm64")
 load("@ubuntu_bionic_amd64//debs:deb_packages.bzl", "ubuntu_bionic_amd64")
 load("@ubuntu_bionic_arm64//debs:deb_packages.bzl", "ubuntu_bionic_arm64")
-load("//util:constants.bzl", "SPARK_VERSIONS", "SPARK_VERSIONS_MAPPING")
+load("//update:constant.bzl", "SPARK_VERSIONS", "SPARK_VERSIONS_MAPPING")
 
 pkg_tar(
     name = "aws_tar",

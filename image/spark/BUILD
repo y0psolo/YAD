@@ -1,5 +1,5 @@
 load("@io_bazel_rules_docker//container:container.bzl", "container_image")
-load("//util:constants.bzl", "SPARK_VERSIONS", "NONROOT")
+load("//update:constant.bzl", "SPARK_VERSIONS", "NONROOT")
 load("@ubuntu_focal_amd64//debs:deb_packages.bzl", "ubuntu_focal_amd64")
 load("@ubuntu_focal_arm64//debs:deb_packages.bzl", "ubuntu_focal_arm64")
 load("@ubuntu_bionic_amd64//debs:deb_packages.bzl", "ubuntu_bionic_amd64")

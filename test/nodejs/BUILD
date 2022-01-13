@@ -1,6 +1,6 @@
 load("@io_bazel_rules_docker//contrib:test.bzl", "container_test")
 load("@io_bazel_rules_docker//container:container.bzl", "container_image")
-load("//util:constants.bzl", "NODEJS_VERSIONS")
+load("//update:constant.bzl", "NODEJS_VERSIONS")
 
 [
     container_image(

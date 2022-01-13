@@ -7,7 +7,7 @@
 
 SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 
-MARIADB_VERSIONS=$(grep 'MARIADB_VERSIONS =' util/constants.bzl | grep -o -E "[0-9]+.[0-9]+")
+MARIADB_VERSIONS=$(grep 'MARIADB_VERSIONS =' update/constant.bzl | grep -o -E "[0-9]+.[0-9]+")
 
 . $SCRIPTPATH/common.sh
 

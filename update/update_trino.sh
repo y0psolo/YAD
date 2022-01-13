@@ -11,5 +11,5 @@ VERSION=$(git -c versionsort.suffix=- ls-remote -t --exit-code --refs --sort=-v:
 # Update WORKSPACE rule
 write_rule trino_server trino_server https://repo1.maven.org/maven2/io/trino/trino-server/$VERSION/trino-server-$VERSION.tar.gz trino-server-$VERSION/ trino
 write_rule trino_cli trino_cli https://repo1.maven.org/maven2/io/trino/trino-cli/$VERSION/trino-cli-$VERSION-executable.jar "" trino
-# Update util/constants.bzl file
+# Update update/constant.bzl file
 write_version trino TRINO_VERSION $VERSION

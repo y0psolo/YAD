@@ -8,7 +8,7 @@ load("@ubuntu_bionic_arm64//debs:deb_packages.bzl", "ubuntu_bionic_arm64")
 
 package(default_visibility = ["//:__subpackages__"])
 
-exports_files(["os-release.tpl", "constants.bzl"])
+exports_files(["os-release.tpl"])
 
 
 libc_extract(

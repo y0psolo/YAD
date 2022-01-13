@@ -7,7 +7,7 @@
 
 SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 
-NODEJS_VERSIONS=$(grep 'NODEJS_VERSIONS =' util/constants.bzl | grep -o -E "[0-9]+")
+NODEJS_VERSIONS=$(grep 'NODEJS_VERSIONS =' update/constant.bzl | grep -o -E "[0-9]+")
 
 . $SCRIPTPATH/common.sh
 

@@ -12,5 +12,5 @@ NUMERIC_VERSION="${VERSION:1}"
 
 # Update WORKSPACE rule
 write_rule deno_amd64 deno-amd64 https://github.com/denoland/deno/releases/download/${VERSION}/deno-x86_64-unknown-linux-gnu.zip "" deno
-# Update util/constants.bzl file
+# Update update/constant.bzl file
 write_version deno_amd64 DENO_VERSION $NUMERIC_VERSION

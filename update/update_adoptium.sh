@@ -23,7 +23,7 @@ update_adoptium() {
 
     # Update WORKSPACE rule
     write_rule adoptium_$1_$ARCH jre-$1-adoptium-$ARCH $URL $RELEASE/$3 java
-    # Update util/constants.bzl file
+    # Update update/constant.bzl file
     write_version adoptium_$1_$ARCH ADOPTIUM_VERSIONS_MAPPING $VERSION "[\"$ARCH\", $1]" 
 }
 

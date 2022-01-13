@@ -4,7 +4,7 @@ load("@ubuntu_focal_amd64//debs:deb_packages.bzl", "ubuntu_focal_amd64")
 load("@ubuntu_focal_arm64//debs:deb_packages.bzl", "ubuntu_focal_arm64")
 load("@ubuntu_bionic_amd64//debs:deb_packages.bzl", "ubuntu_bionic_amd64")
 load("@ubuntu_bionic_arm64//debs:deb_packages.bzl", "ubuntu_bionic_arm64")
-load("//util:constants.bzl", "TRINO_VERSION")
+load("//update:constant.bzl", "TRINO_VERSION")
 
 filegroup(
     name = "config",
