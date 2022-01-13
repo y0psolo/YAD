@@ -1,5 +1,5 @@
 load("@io_bazel_rules_docker//container:container.bzl", "container_layer")
-load("//update:constant.bzl", "REDIS_VERSION")
+load("//update:constants.bzl", "REDIS_VERSION")
 
 container_layer(
     name = "server",

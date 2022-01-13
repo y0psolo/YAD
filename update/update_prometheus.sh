@@ -15,6 +15,6 @@ write_rule prometheus_arm64 prometheus_arm64 https://github.com/prometheus/prome
 write_rule nodeexporter_amd64 node-exporter_amd64 https://github.com/prometheus/node_exporter/releases/download/v$VERSION_NODE/node_exporter-$VERSION_NODE.linux-amd64.tar.gz "" prometheus
 write_rule nodeexporter_arm64 node-exporter_arm64 https://github.com/prometheus/node_exporter/releases/download/v$VERSION_NODE/node_exporter-$VERSION_NODE.linux-arm64.tar.gz "" prometheus
 
-# Update update/constant.bzl file
+# Update update/constants.bzl file
 write_version prometheus PROMETHEUS_VERSION $VERSION_PROM
 write_version nodeexporter NODE_EXPORTER_VERSION $VERSION_NODE

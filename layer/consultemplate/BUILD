@@ -1,5 +1,5 @@
 load("@io_bazel_rules_docker//container:container.bzl", "container_layer")
-load("//update:constant.bzl", "CONSUL_TEMPLATE_VERSION")
+load("//update:constants.bzl", "CONSUL_TEMPLATE_VERSION")
 
 container_layer(
     name = "consultemplate",

@@ -1,5 +1,5 @@
 load("@io_bazel_rules_docker//container:container.bzl", "container_image")
-load("//update:constant.bzl", "NONROOT", "MARIADB_VERSIONS")
+load("//update:constants.bzl", "NONROOT", "MARIADB_VERSIONS")
 
 [
     container_image(

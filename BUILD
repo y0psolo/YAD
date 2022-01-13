@@ -85,5 +85,5 @@ update_http(
 update_version(
     name = "update_versions",
     yaml_files = ["versions.yaml"],
-    bazel_file = "//update:constant.bzl",
+    bazel_file = "//update:constants.bzl",
 )

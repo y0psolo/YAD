@@ -7,7 +7,7 @@
 
 SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 
-HIVE_VERSION=$(grep HIVE_VERSION update/constant.bzl | grep -o -m 1 -E "[0-9].[0-9].[0-9]")
+HIVE_VERSION=$(grep HIVE_VERSION update/constants.bzl | grep -o -m 1 -E "[0-9].[0-9].[0-9]")
 
 . $SCRIPTPATH/common.sh
 

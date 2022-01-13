@@ -1,6 +1,6 @@
 load("@io_bazel_rules_docker//contrib:test.bzl", "container_test")
 load("@io_bazel_rules_docker//container:container.bzl", "container_image")
-load("//update:constant.bzl", "SPARK_VERSIONS")
+load("//update:constants.bzl", "SPARK_VERSIONS")
 
 [
     container_image(

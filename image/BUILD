@@ -1,5 +1,5 @@
 load("@io_bazel_rules_docker//container:container.bzl", "container_push")
-load("//update:constant.bzl", "JRE_VERSIONS", "NODEJS_VERSIONS", "SPARK_VERSIONS", "MARIADB_VERSIONS")
+load("//update:constants.bzl", "JRE_VERSIONS", "NODEJS_VERSIONS", "SPARK_VERSIONS", "MARIADB_VERSIONS")
 load(":tag.bzl", "copt_tag", "arch_tag", "dist_tag")
 
 package(default_visibility = ["//visibility:public"])

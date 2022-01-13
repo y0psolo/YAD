@@ -7,7 +7,7 @@
 
 SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 
-TRINO_VERSION=$(grep TRINO_VERSION update/constant.bzl | grep -o -m 1 -E "[0-9]+")
+TRINO_VERSION=$(grep TRINO_VERSION update/constants.bzl | grep -o -m 1 -E "[0-9]+")
 
 . $SCRIPTPATH/common.sh
 

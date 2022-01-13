@@ -1,6 +1,6 @@
 load("@io_bazel_rules_docker//container:container.bzl", "container_layer")
 load("@bazel_tools//tools/build_defs/pkg:pkg.bzl", "pkg_tar")
-load("//update:constant.bzl", "HADOOP_VERSION", "HIVE_VERSION")
+load("//update:constants.bzl", "HADOOP_VERSION", "HIVE_VERSION")
 
 filegroup(
     name = "config",
