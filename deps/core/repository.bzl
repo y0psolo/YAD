@@ -8,8 +8,8 @@ def core_repository():
     # Ubuntu key
     http_file(
         name = "ubuntu_key",
-        sha256 = "2b091827ada1affb0670b497dd5613f4d0d054c045690f754f69fa34eb74de1b",
-        urls = ["https://keyserver.ubuntu.com/pks/lookup?op=hget&search=12120bd49c566eaf49d31f267ec0b900"],
+        sha256 = "10d6c8ab5ea4ef4f5fc7b9ff7aaf2d61d825cea57ac0124b76eb908ca6acd712",
+        urls = ["https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xf6ecb3762474eda9d21b7022871920d1991bc93c"],
     )
 
     ubuntu_focal_amd64()
