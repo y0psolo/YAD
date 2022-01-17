@@ -14,5 +14,5 @@ NUMERIC_VERSION="${VERSION:1}"
 # Update WORKSPACE rule
 write_rule redis redis http://download.redis.io/releases/redis-$VERSION.tar.gz redis-$VERSION/ redis
 write_rule openssl openssl https://github.com/openssl/openssl/archive/refs/tags/$OPENSSL_VERSION.tar.gz openssl-$OPENSSL_VERSION/ redis
-# Update util/constants.bzl file
+# Update update/constants.bzl file
 write_version redis REDIS_VERSION $VERSION

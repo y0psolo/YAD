@@ -1,5 +1,5 @@
 load("@io_bazel_rules_docker//container:container.bzl", "container_image")
-load("//util:constants.bzl", "JRE_VERSIONS", "NONROOT")
+load("//update:constants.bzl", "JRE_VERSIONS", "NONROOT")
 
 # Iteration over all java versions
 [

@@ -7,7 +7,7 @@
 
 SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 
-JAVA_VERSIONS=$(grep 'JRE_VERSIONS =' util/constants.bzl | grep -o -E "[0-9]+")
+JAVA_VERSIONS=$(grep 'JRE_VERSIONS =' update/constants.bzl | grep -o -E "[0-9]+")
 
 . $SCRIPTPATH/common.sh
 

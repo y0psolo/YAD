@@ -7,7 +7,7 @@
 
 SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 
-REDIS_VERSION=$(grep REDIS_VERSION util/constants.bzl | grep -o -m 1 -E "[0-9]+.[0-9]+.[0-9]+")
+REDIS_VERSION=$(grep REDIS_VERSION update/constants.bzl | grep -o -m 1 -E "[0-9]+.[0-9]+.[0-9]+")
 
 . $SCRIPTPATH/common.sh
 

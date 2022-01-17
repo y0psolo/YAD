@@ -1,0 +1,55 @@
+load("@bazel_tools//tools/build_defs/pkg:pkg.bzl", "pkg_tar")
+
+filegroup(
+    name = "bin",
+    srcs = ["promtool", "prometheus",],
+)
+
+filegroup(
+    name = "license",
+    srcs = ["NOTICE","LICENSE"],
+)
+
+filegroup(
+    name = "config",
+    srcs = ["prometheus.yml"],
+)
+
+filegroup(
+    name = "console",
+    srcs = glob(["consoles/**","console_libraries/**"]),
+)
+
+pkg_tar(
+    name = "bin_tar",
+    srcs = [
+        ":bin",
+    ],
+    strip_prefix = ".",
+    mode = "0755",
+    package_dir = "/usr/bin",
+    visibility = ["//visibility:public"],
+)
+
+pkg_tar(
+    name = "share_tar",
+    srcs = [
+        ":license",
+        ":console",
+    ],
+    strip_prefix = ".",
+    mode = "0644",
+    package_dir = "/usr/share/prometheus",
+    visibility = ["//visibility:public"],
+)
+
+pkg_tar(
+    name = "etc_tar",
+    srcs = [
+        ":config",
+    ],
+    strip_prefix = ".",
+    mode = "0644",
+    package_dir = "/etc/prometheus",
+    visibility = ["//visibility:public"],
+)

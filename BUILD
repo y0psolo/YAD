@@ -4,15 +4,24 @@ load("@rules-update//:update.bzl", "update_http", "update_version")
 package(default_visibility = ["//:__subpackages__"])
 
 update_deb_packages(
-    name = "update_deb_packages",
+    name = "update_focal_packages",
     bzl_files = [
         "deps/core/ubuntu_focal_amd64.bzl",
         "deps/core/ubuntu_focal_arm64.bzl",
+    ],
+    pgp_keys = [
+        "@ubuntu_focal_key//file",
+    ],
+)
+
+update_deb_packages(
+    name = "update_bionic_packages",
+    bzl_files = [
         "deps/core/ubuntu_bionic_amd64.bzl",
         "deps/core/ubuntu_bionic_arm64.bzl",
     ],
     pgp_keys = [
-        "@ubuntu_key//file",
+        "@ubuntu_bionic_key//file",
     ],
 )
 
@@ -82,8 +91,14 @@ update_http(
     bazel_file = "//deps/consultemplate:repository.bzl",
 )
 
+update_http(
+    name = "update_prometheus",
+    yaml_files = ["prometheus.yaml"],
+    bazel_file = "//deps/prometheus:repository.bzl",
+)
+
 update_version(
     name = "update_versions",
     yaml_files = ["versions.yaml"],
-    bazel_file = "//util:constants.bzl",
+    bazel_file = "//update:constants.bzl",
 )

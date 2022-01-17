@@ -2,18 +2,18 @@
 
 SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 REPO="yadist"
-JAVA_VERSIONS=$(grep 'JRE_VERSIONS =' util/constants.bzl | grep -o -E "[0-9]+")
-NODEJS_VERSIONS=$(grep 'NODEJS_VERSIONS =' util/constants.bzl | grep -o -E "[0-9]+")
-DENO_VERSION=$(grep 'DENO_VERSION =' util/constants.bzl | grep -o -m 1 -E "[0-9]+\.[0-9]+\.[0-9]+")
-TRINO_VERSION=$(grep TRINO_VERSION util/constants.bzl | grep -o -m 1 -E "[0-9]+")
-HIVE_VERSION=$(grep HIVE_VERSION util/constants.bzl | grep -o -m 1 -E "[0-9].[0-9].[0-9]")
-SPARK_VERSIONS=$(grep SPARK_VERSIONS util/constants.bzl | grep -o -E "[0-9].[0-9]")
-MARIADB_VERSIONS=$(grep 'MARIADB_VERSIONS =' util/constants.bzl | grep -o -E "[0-9]+.[0-9]+")
+JAVA_VERSIONS=$(grep 'JRE_VERSIONS =' update/constants.bzl | grep -o -E "[0-9]+")
+NODEJS_VERSIONS=$(grep 'NODEJS_VERSIONS =' update/constants.bzl | grep -o -E "[0-9]+")
+DENO_VERSION=$(grep 'DENO_VERSION =' update/constants.bzl | grep -o -m 1 -E "[0-9]+\.[0-9]+\.[0-9]+")
+TRINO_VERSION=$(grep TRINO_VERSION update/constants.bzl | grep -o -m 1 -E "[0-9]+")
+HIVE_VERSION=$(grep HIVE_VERSION update/constants.bzl | grep -o -m 1 -E "[0-9].[0-9].[0-9]")
+SPARK_VERSIONS=$(grep SPARK_VERSIONS update/constants.bzl | grep -o -E "[0-9].[0-9]")
+MARIADB_VERSIONS=$(grep 'MARIADB_VERSIONS =' update/constants.bzl | grep -o -E "[0-9]+.[0-9]+")
 
 . $SCRIPTPATH/common.sh
 
 scan_image() {
-    docker run --rm -v /tmp/.cache/:/root/.cache/ -v $SCRIPTPATH/../security/sarif:/mnt/out/ aquasec/trivy --format template --template "@/contrib/sarif.tpl" -o /mnt/out/$1_$2.sarif ${REPO}/$1:$2
+    # docker run --rm -v /tmp/.cache/:/root/.cache/ -v $SCRIPTPATH/../security/sarif:/mnt/out/ aquasec/trivy --format template --template "@/contrib/sarif.tpl" -o /mnt/out/$1_$2.sarif ${REPO}/$1:$2
     docker run --rm -v /tmp/.cache/:/root/.cache/ -v $SCRIPTPATH/../security/table:/mnt/out/ aquasec/trivy --format table -o /mnt/out/$1_$2 ${REPO}/$1:$2
 }
 

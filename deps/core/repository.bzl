@@ -7,9 +7,16 @@ load(":ubuntu_bionic_arm64.bzl", "ubuntu_bionic_arm64")
 def core_repository():
     # Ubuntu key
     http_file(
-        name = "ubuntu_key",
+        name = "ubuntu_focal_key",
         sha256 = "10d6c8ab5ea4ef4f5fc7b9ff7aaf2d61d825cea57ac0124b76eb908ca6acd712",
         urls = ["https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xf6ecb3762474eda9d21b7022871920d1991bc93c"],
+    )
+
+    # Ubuntu key
+    http_file(
+        name = "ubuntu_bionic_key",
+        sha256 = "0a81ec85f5abd4ff15a51565382e5ca3e0d7dca7fbf853eb2de9519429945e1b",
+        urls = ["https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x790bc7277767219c42c86f933b4fe6acc0b21f32"],
     )
 
     ubuntu_focal_amd64()

@@ -1,5 +1,4 @@
 load("@io_bazel_rules_docker//contrib:test.bzl", "container_test")
-load("//util:constants.bzl", "NODEJS_VERSIONS", "JRE_VERSIONS")
 
 exports_files(["core.yaml", "debug.yaml", "base.yaml"])
 

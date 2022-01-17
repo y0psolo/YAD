@@ -1,5 +1,5 @@
 load("@io_bazel_rules_docker//container:container.bzl", "container_push")
-load("//util:constants.bzl", "JRE_VERSIONS", "NODEJS_VERSIONS", "SPARK_VERSIONS", "MARIADB_VERSIONS")
+load("//update:constants.bzl", "JRE_VERSIONS", "NODEJS_VERSIONS", "SPARK_VERSIONS", "MARIADB_VERSIONS")
 load(":tag.bzl", "copt_tag", "arch_tag", "dist_tag")
 
 package(default_visibility = ["//visibility:public"])
@@ -102,4 +102,17 @@ package(default_visibility = ["//visibility:public"])
     )
     for version in MARIADB_VERSIONS
     for repo in ["server", "init", "cli"]
+]
+
+[
+    container_push(
+        name = "push_prometheus_" + name,
+        image = "//image/prometheus:" + name,
+        format = "Docker",
+        registry = "docker.io",
+        repository = "yadist/" + name,
+        tag = arch_tag() + "_" + dist_tag() + copt_tag(),
+        skip_unchanged_digest = True,
+    )
+    for name in ["prometheus", "nodeexporter"]
 ]

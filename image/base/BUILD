@@ -1,5 +1,5 @@
 load("@io_bazel_rules_docker//container:container.bzl", "container_image")
-load("//util:constants.bzl", "NONROOT")
+load("//update:constants.bzl", "NONROOT")
 
 container_image(
     name = "base",

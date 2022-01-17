@@ -65,3 +65,9 @@ mariadb:
   - 'layer/mariadb/**'
   - 'image/mariadb/**'
   - 'test/mariadb/**'
+prometheus:
+  - 'deps/prometheus/**'
+  - 'layer/prometheus/**'
+  - 'image/prometheus/**'
+  - 'test/prometheus/**'
+  - 'ext/prometheus/**'

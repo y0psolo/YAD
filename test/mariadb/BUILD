@@ -1,5 +1,5 @@
 load("@io_bazel_rules_docker//contrib:test.bzl", "container_test")
-load("//util:constants.bzl", "MARIADB_VERSIONS")
+load("//update:constants.bzl", "MARIADB_VERSIONS")
 
 [
     container_test(

@@ -7,7 +7,7 @@
 
 SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 
-SPARK_VERSIONS=$(grep 'SPARK_VERSIONS =' util/constants.bzl | grep -o -E "[0-9].[0-9]")
+SPARK_VERSIONS=$(grep 'SPARK_VERSIONS =' update/constants.bzl | grep -o -E "[0-9].[0-9]")
 
 . $SCRIPTPATH/common.sh
 

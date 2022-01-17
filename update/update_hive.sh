@@ -10,5 +10,5 @@ VERSION=$(git -c versionsort.suffix=- ls-remote -t --exit-code --refs --sort=-v:
 
 # Update WORKSPACE rule
 write_rule hive_metastore_3 hive_metastore_3 https://repo1.maven.org/maven2/org/apache/hive/hive-standalone-metastore/$VERSION/hive-standalone-metastore-$VERSION-bin.tar.gz apache-hive-metastore-$VERSION-bin/ hive
-# Update util/constants.bzl file
+# Update update/constants.bzl file
 write_version hive  HIVE_VERSION $VERSION

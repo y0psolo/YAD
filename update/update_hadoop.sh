@@ -10,5 +10,5 @@ VERSION=$(git -c versionsort.suffix=- ls-remote -t --exit-code --refs --sort=-v:
 
 # Update WORKSPACE rule
 write_rule hadoop_3 hadoop_3 https://dlcdn.apache.org/hadoop/common/hadoop-$VERSION/hadoop-$VERSION.tar.gz hadoop-$VERSION/ hadoop
-# Update util/constants.bzl file
+# Update update/constants.bzl file
 write_version hadoop HADOOP_VERSION $VERSION

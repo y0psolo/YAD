@@ -1,0 +1,7 @@
+schemaVersion: "2.0.0"
+commandTests:
+  - name: prometheus_version
+    command: "/usr/bin/prometheus"
+    args: ["--version"]
+    expectedOutput: ['prometheus, version [0-9]+.[0-9]+.[0-9]+ \(branch: HEAD, revision: [a-z0-9]+\)']
+    exitCode: 0
