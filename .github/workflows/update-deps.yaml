@@ -23,7 +23,8 @@ jobs:
             ${{ runner.os }}-bazel-
       - name: Run update scripts
         run: |
-          bazel run :update_deb_packages
+          bazel run :update_focal_packages
+          bazel run :update_bionic_packages
           update/ld_cache_gen.sh
           update/update_azul.sh
           update/update_adoptium.sh
@@ -36,6 +37,7 @@ jobs:
           update/update_redis.sh
           update/update_consultemplate.sh
           update/update_mariadb.sh
+          update/update_prometheus.sh
           bazel run :update_deno
           bazel run :update_java
           bazel run :update_nodejs
@@ -46,6 +48,7 @@ jobs:
           bazel run :update_redis
           bazel run :update_consultemplate
           bazel run :update_mariadb
+          bazel run :update_prometheus
           bazel run :update_versions
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3

@@ -13,7 +13,7 @@ MARIADB_VERSIONS=$(grep 'MARIADB_VERSIONS =' update/constants.bzl | grep -o -E "
 . $SCRIPTPATH/common.sh
 
 scan_image() {
-    docker run --rm -v /tmp/.cache/:/root/.cache/ -v $SCRIPTPATH/../security/sarif:/mnt/out/ aquasec/trivy --format template --template "@/contrib/sarif.tpl" -o /mnt/out/$1_$2.sarif ${REPO}/$1:$2
+    # docker run --rm -v /tmp/.cache/:/root/.cache/ -v $SCRIPTPATH/../security/sarif:/mnt/out/ aquasec/trivy --format template --template "@/contrib/sarif.tpl" -o /mnt/out/$1_$2.sarif ${REPO}/$1:$2
     docker run --rm -v /tmp/.cache/:/root/.cache/ -v $SCRIPTPATH/../security/table:/mnt/out/ aquasec/trivy --format table -o /mnt/out/$1_$2 ${REPO}/$1:$2
 }
 

@@ -103,3 +103,16 @@ package(default_visibility = ["//visibility:public"])
     for version in MARIADB_VERSIONS
     for repo in ["server", "init", "cli"]
 ]
+
+[
+    container_push(
+        name = "push_prometheus_" + name,
+        image = "//image/prometheus:" + name,
+        format = "Docker",
+        registry = "docker.io",
+        repository = "yadist/" + name,
+        tag = arch_tag() + "_" + dist_tag() + copt_tag(),
+        skip_unchanged_digest = True,
+    )
+    for name in ["prometheus", "nodeexporter"]
+]

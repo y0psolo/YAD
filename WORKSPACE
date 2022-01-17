@@ -172,3 +172,7 @@ redis_repository()
 load("//deps/consultemplate:repository.bzl", "consultemplate_repository")
 
 consultemplate_repository()
+
+load("//deps/prometheus:repository.bzl", "prometheus_repository")
+
+prometheus_repository()
