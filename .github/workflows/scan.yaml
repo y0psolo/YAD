@@ -6,6 +6,7 @@ on:
     
 jobs:
   build:
+    environment: Release
     runs-on: ubuntu-latest
     permissions:
       pull-requests: write
@@ -14,6 +15,12 @@ jobs:
     steps:
       - name: Setup repository
         uses: actions/checkout@v2
+      - name: Docker Login
+        uses: docker/login-action@v1
+        with:
+          registry: docker.io
+          username: ${{ secrets.DOCKER_LOGIN }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
       - name: Run trivy scan
         run : |
           hack/security_scan.sh bionic
