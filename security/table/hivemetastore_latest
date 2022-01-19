@@ -789,8 +789,8 @@
 |                                             |                  |          |                   |                                | created with unsafe permissions                                                 |
 |                                             |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2020-8908                                            |
 +---------------------------------------------+------------------+----------+-------------------+--------------------------------+---------------------------------------------------------------------------------+
-| com.google.protobuf:protobuf-java           | CVE-2021-22569   | HIGH     | 2.5.0             | 3.19.2, 3.18.2, 3.16.1         | A potential Denial of Service                                                   |
-|                                             |                  |          |                   |                                | issue in protobuf-java                                                          |
+| com.google.protobuf:protobuf-java           | CVE-2021-22569   | HIGH     | 2.5.0             | 3.19.2, 3.18.2, 3.16.1         | protobuf-java: potential DoS in the                                             |
+|                                             |                  |          |                   |                                | parsing procedure for binary data                                               |
 |                                             |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2021-22569                                           |
 +                                             +                  +          +-------------------+                                +                                                                                 +
 |                                             |                  |          | 3.7.1             |                                |                                                                                 |
