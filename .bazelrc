@@ -1,6 +1,6 @@
 build --workspace_status_command hack/workspace_env.sh --flag_alias=distro=//platforms:distro --flag_alias=java=//platforms:java
-test --workspace_status_command hack/workspace_env.sh --flag_alias=distro=//platforms:distro --flag_alias=java=//platforms:java
-run --workspace_status_command hack/workspace_env.sh --flag_alias=distro=//platforms:distro --flag_alias=java=//platforms:java
+test --workspace_status_command hack/workspace_env.sh
+run --workspace_status_command hack/workspace_env.sh
 
 build:x86_64 --host_crosstool_top=@bazel_tools//tools/cpp:toolchain
 build:x86_64 --crosstool_top=//toolchain:ubuntu_toolchain

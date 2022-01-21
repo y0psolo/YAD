@@ -19,12 +19,6 @@ This image is designed for running application depending only on libc and libssl
 
 The default Entrypoint for the latest tag is empty
 
-The default Entrypoint for the debug tag is :
-
-```dockerfile
-ENTRYPOINT ["/bin/sh"]
-```
-
 ## Security
 
 Security scan of the image updated daily : [bionic](../../security/table/base_bionic) [focal](../../security/table/base_focal)

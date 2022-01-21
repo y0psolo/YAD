@@ -30,12 +30,6 @@ The default Entrypoint for the latest tag is :
 ENTRYPOINT ["/usr/bin/tini", "--", "/usr/bin/node"]
 ```
 
-The default Entrypoint for the debug tag is :
-
-```dockerfile
-ENTRYPOINT ["/bin/sh"]
-```
-
 ## Security
 
 Security scan of the image updated daily : [14 on bionic](../../security/table/nodejs_14_bionic) [14 on focal](../../security/table/nodejs_14_focal) [16 on bionic](../../security/table/nodejs_16_bionic) [16 on focal](../../security/table/nodejs_16_focal)

@@ -46,12 +46,6 @@ The default Entrypoint for the latest tag is empty
 ENTRYPOINT ["/usr/bin/tini", "--", "/usr/bin/python3"]
 ```
 
-The default Entrypoint for the debug tag is :
-
-```dockerfile
-ENTRYPOINT ["/bin/sh"]
-```
-
 ## Security
 
 Security scan of the image updated daily : [bionic](../../security/table/python_bionic) [focal](../../security/table/python_focal)

@@ -60,6 +60,4 @@ done
 for repo in hivemetastore trino trinocli redis rediscli consultemplate prometheus nodeexporter
 do
     scan_image ${repo} latest
-    scan_image ${repo} latest
-    scan_image ${repo} latest
 done

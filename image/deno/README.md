@@ -29,12 +29,6 @@ The default Entrypoint for the latest tag is :
 ENTRYPOINT ["/usr/bin/tini", "--", "/usr/bin/deno"]
 ```
 
-The default Entrypoint for the debug tag is :
-
-```dockerfile
-ENTRYPOINT ["/bin/sh"]
-```
-
 ## Security
 
 Security scan of the image updated daily : [bionic](../../security/table/deno_bionic) [focal](../../security/table/deno_focal)
