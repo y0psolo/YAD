@@ -204,8 +204,25 @@ image:https://img.shields.io/docker/image-size/yadist/mariadb/10.7_bionic?label=
 | image:https://img.shields.io/docker/image-size/yadist/mariadb/10.5?label=10.5&logo=docker[link="https://hub.docker.com/r/yadist/mariadb/"]
 image:https://img.shields.io/docker/image-size/yadist/mariadb/10.6?label=10.6&logo=docker[link="https://hub.docker.com/r/yadist/mariadb/"]
 image:https://img.shields.io/docker/image-size/yadist/mariadb/10.7?label=10.7&logo=docker[link="https://hub.docker.com/r/yadist/mariadb/"]
-| For running consult template
+| For running mariadb server
 
+| link:image/mariadb/README.md[Mariadb cli]
+| image:https://img.shields.io/docker/image-size/yadist/mariadbcli/10.5_bionic?label=10.5&logo=docker[link="https://hub.docker.com/r/yadist/mariadbcli/"]
+image:https://img.shields.io/docker/image-size/yadist/mariadbcli/10.6_bionic?label=10.6&logo=docker[link="https://hub.docker.com/r/yadist/mariadbcli/"]
+image:https://img.shields.io/docker/image-size/yadist/mariadbcli/10.7_bionic?label=10.7&logo=docker[link="https://hub.docker.com/r/yadist/mariadbcli/"]
+| image:https://img.shields.io/docker/image-size/yadist/mariadbcli/10.5?label=10.5&logo=docker[link="https://hub.docker.com/r/yadist/mariadbcli/"]
+image:https://img.shields.io/docker/image-size/yadist/mariadbcli/10.6?label=10.6&logo=docker[link="https://hub.docker.com/r/yadist/mariadbcli/"]
+image:https://img.shields.io/docker/image-size/yadist/mariadbcli/10.7?label=10.7&logo=docker[link="https://hub.docker.com/r/yadist/mariadbcli/"]
+| For running mariadb client
+
+| link:image/mariadb/README.md[Mariadb init]
+| image:https://img.shields.io/docker/image-size/yadist/mariadbinit/10.5_bionic?label=10.5&logo=docker[link="https://hub.docker.com/r/yadist/mariadbinit/"]
+image:https://img.shields.io/docker/image-size/yadist/mariadbinit/10.6_bionic?label=10.6&logo=docker[link="https://hub.docker.com/r/yadist/mariadbinit/"]
+image:https://img.shields.io/docker/image-size/yadist/mariadbinit/10.7_bionic?label=10.7&logo=docker[link="https://hub.docker.com/r/yadist/mariadbinit/"]
+| image:https://img.shields.io/docker/image-size/yadist/mariadbinit/10.5?label=10.5&logo=docker[link="https://hub.docker.com/r/yadist/mariadbinit/"]
+image:https://img.shields.io/docker/image-size/yadist/mariadbinit/10.6?label=10.6&logo=docker[link="https://hub.docker.com/r/yadist/mariadbinit/"]
+image:https://img.shields.io/docker/image-size/yadist/mariadbinit/10.7?label=10.7&logo=docker[link="https://hub.docker.com/r/yadist/mariadbinit/"]
+| For running mariadb init container
 |===
 
 ==== Utils
