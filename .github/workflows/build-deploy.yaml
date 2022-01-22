@@ -536,7 +536,7 @@ jobs:
     if: ${{ needs.changes.outputs.core == 'true' || needs.changes.outputs.prometheus == 'true' || contains(github.event.inputs.forceRebuild, 'prometheus') }}
     strategy:
       matrix:
-        ubuntu: [18.04, 20.04]
+        ubuntu: [20.04]
         arch: [x86_64, arm64]
         copt: [opt]
     steps:
@@ -760,7 +760,7 @@ jobs:
     needs: deploy_prometheus
     strategy:
       matrix:
-        ubuntu: [focal, bionic]
+        ubuntu: [focal]
     steps:
       - name: Setup repository
         uses: actions/checkout@v2
