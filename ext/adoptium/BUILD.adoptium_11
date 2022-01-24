@@ -252,7 +252,7 @@ filegroup(
         "lib/modules",
         "lib/psfont.properties.ja",
         "lib/psfontj2d.properties",
-        "lib/security/blacklisted.certs",
+        "lib/security/blocked.certs",
         "lib/security/cacerts",
         "lib/security/default.policy",
         "lib/security/public_suffix_list.dat",
