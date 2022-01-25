@@ -1,13 +1,28 @@
 +---------+------------------+----------+-------------------+---------------+---------------------------------------+
 | LIBRARY | VULNERABILITY ID | SEVERITY | INSTALLED VERSION | FIXED VERSION |                 TITLE                 |
 +---------+------------------+----------+-------------------+---------------+---------------------------------------+
-| libc6   | CVE-2021-35942   | MEDIUM   | 2.27-3ubuntu1.4   |               | glibc: Arbitrary read in wordexp()    |
-|         |                  |          |                   |               | -->avd.aquasec.com/nvd/cve-2021-35942 |
-+         +------------------+          +                   +---------------+---------------------------------------+
-|         | CVE-2021-38604   |          |                   |               | glibc: NULL pointer dereference in    |
+| libc6   | CVE-2021-38604   | MEDIUM   | 2.27-3ubuntu1.4   |               | glibc: NULL pointer dereference in    |
 |         |                  |          |                   |               | helper_thread() in mq_notify.c while  |
 |         |                  |          |                   |               | handling NOTIFY_REMOVED messages...   |
 |         |                  |          |                   |               | -->avd.aquasec.com/nvd/cve-2021-38604 |
++         +------------------+          +                   +---------------+---------------------------------------+
+|         | CVE-2021-3998    |          |                   |               | glibc: Unexpected return              |
+|         |                  |          |                   |               | value from realpath() could           |
+|         |                  |          |                   |               | leak data based on the...             |
+|         |                  |          |                   |               | -->avd.aquasec.com/nvd/cve-2021-3998  |
++         +------------------+          +                   +---------------+---------------------------------------+
+|         | CVE-2021-3999    |          |                   |               | glibc: Off-by-one buffer              |
+|         |                  |          |                   |               | overflow/underflow in getcwd()        |
+|         |                  |          |                   |               | -->avd.aquasec.com/nvd/cve-2021-3999  |
++         +------------------+          +                   +---------------+---------------------------------------+
+|         | CVE-2022-23218   |          |                   |               | glibc: stack-based buffer overflow    |
+|         |                  |          |                   |               | in svcunix_create via long pathnames  |
+|         |                  |          |                   |               | -->avd.aquasec.com/nvd/cve-2022-23218 |
++         +------------------+          +                   +---------------+---------------------------------------+
+|         | CVE-2022-23219   |          |                   |               | glibc: stack-based buffer             |
+|         |                  |          |                   |               | overflow in sunrpc clnt_create        |
+|         |                  |          |                   |               | via a long pathname                   |
+|         |                  |          |                   |               | -->avd.aquasec.com/nvd/cve-2022-23219 |
 +         +------------------+----------+                   +---------------+---------------------------------------+
 |         | CVE-2009-5155    | LOW      |                   |               | glibc: parse_reg_exp in               |
 |         |                  |          |                   |               | posix/regcomp.c misparses             |
@@ -51,4 +66,7 @@
 |         |                  |          |                   |               | not handle separately                 |
 |         |                  |          |                   |               | allocated thread attributes           |
 |         |                  |          |                   |               | -->avd.aquasec.com/nvd/cve-2021-33574 |
++         +------------------+          +                   +---------------+---------------------------------------+
+|         | CVE-2021-35942   |          |                   |               | glibc: Arbitrary read in wordexp()    |
+|         |                  |          |                   |               | -->avd.aquasec.com/nvd/cve-2021-35942 |
 +---------+------------------+----------+-------------------+---------------+---------------------------------------+
