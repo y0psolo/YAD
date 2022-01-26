@@ -574,6 +574,7 @@ jobs:
         run: |
           bazel run --config ${{ matrix.arch }} -c ${{ matrix.copt }} --//platforms:distro=${{ matrix.ubuntu }} //image:push_prometheus_prometheus
           bazel run --config ${{ matrix.arch }} -c ${{ matrix.copt }} --//platforms:distro=${{ matrix.ubuntu }} //image:push_prometheus_nodeexporter
+          bazel run --config ${{ matrix.arch }} -c ${{ matrix.copt }} --//platforms:distro=${{ matrix.ubuntu }} //image:push_prometheus_alertmanager
   base_tags:
     environment: Release
     runs-on: ubuntu-latest
