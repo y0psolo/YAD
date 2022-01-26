@@ -1,12 +1,12 @@
 load("@bazel_tools//tools/build_defs/pkg:pkg.bzl", "pkg_tar")
 
 filegroup(
-    name = "alertmanager",
+    name = "alertmanager_bin",
     srcs = ["alertmanager",],
 )
 
 filegroup(
-    name = "amtool",
+    name = "amtool_bin",
     srcs = ["amtool",],
 )
 
@@ -23,7 +23,7 @@ filegroup(
 pkg_tar(
     name = "bin_tar",
     srcs = [
-        ":alertmanager",
+        ":alertmanager_bin",
     ],
     strip_prefix = ".",
     mode = "0755",
