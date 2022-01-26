@@ -1,13 +1,13 @@
 load("@bazel_tools//tools/build_defs/pkg:pkg.bzl", "pkg_tar")
 
 filegroup(
-    name = "prometheus",
-    srcs = ["prometheus",],
+    name = "alertmanager",
+    srcs = ["alertmanager",],
 )
 
 filegroup(
-    name = "promtool",
-    srcs = ["promtool",],
+    name = "amtool",
+    srcs = ["amtool",],
 )
 
 filegroup(
@@ -17,18 +17,13 @@ filegroup(
 
 filegroup(
     name = "config",
-    srcs = ["prometheus.yml"],
-)
-
-filegroup(
-    name = "console",
-    srcs = glob(["consoles/**","console_libraries/**"]),
+    srcs = ["alertmanager.yml"],
 )
 
 pkg_tar(
     name = "bin_tar",
     srcs = [
-        ":prometheus",
+        ":alertmanager",
     ],
     strip_prefix = ".",
     mode = "0755",
@@ -40,7 +35,6 @@ pkg_tar(
     name = "share_tar",
     srcs = [
         ":license",
-        ":console",
     ],
     strip_prefix = ".",
     mode = "0644",

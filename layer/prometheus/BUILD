@@ -1,5 +1,5 @@
 load("@io_bazel_rules_docker//container:container.bzl", "container_layer")
-load("//update:constants.bzl", "PROMETHEUS_VERSION", "NODE_EXPORTER_VERSION")
+load("//update:constants.bzl", "PROMETHEUS_VERSION", "NODE_EXPORTER_VERSION", "ALERTMANAGER_VERSION")
 
 
 container_layer(
@@ -14,6 +14,18 @@ container_layer(
     tars =  select({
         "//platforms:k8_cpu": ["@prometheus_amd64//:bin_tar", "@prometheus_amd64//:share_tar", "@prometheus_amd64//:etc_tar",],
         "//platforms:aarch64_cpu": ["@prometheus_arm64//:bin_tar", "@prometheus_arm64//:share_tar", "@prometheus_arm64//:etc_tar",],
+    }),
+    visibility = ["//:__subpackages__"],
+)
+
+container_layer(
+    name = "alertmanager",
+    env = {
+        "ALERTMANAGER_VERSION": ALERTMANAGER_VERSION,
+    },
+    tars =  select({
+        "//platforms:k8_cpu": ["@alertmanager_amd64//:bin_tar", "@alertmanager_amd64//:share_tar", "@alertmanager_amd64//:etc_tar",],
+        "//platforms:aarch64_cpu": ["@alertmanager_arm64//:bin_tar", "@alertmanager_arm64//:share_tar", "@alertmanager_arm64//:etc_tar",],
     }),
     visibility = ["//:__subpackages__"],
 )

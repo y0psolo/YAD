@@ -114,5 +114,5 @@ package(default_visibility = ["//visibility:public"])
         tag = arch_tag() + "_" + dist_tag() + copt_tag(),
         skip_unchanged_digest = True,
     )
-    for name in ["prometheus", "nodeexporter"]
+    for name in ["prometheus", "nodeexporter", "alertmanager",]
 ]

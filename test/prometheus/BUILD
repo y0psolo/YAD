@@ -16,6 +16,14 @@ container_test(
     tags = ["prometheus", "amd64", "arm64"],
 )
 
+container_test(
+    name = "alertmanager_test",
+    configs = [":alertmanager.yaml"] ,
+    image = "//image/prometheus:alertmanager",
+    visibility = ["//:__subpackages__"],
+    tags = ["prometheus", "amd64", "arm64"],
+)
+
 test_suite(
     name = "prometheus",
     tags = ["prometheus",],
