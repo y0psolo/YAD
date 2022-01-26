@@ -251,6 +251,11 @@ image:https://img.shields.io/docker/image-size/yadist/mariadbinit/10.7?label=10.
 | image:https://img.shields.io/docker/image-size/yadist/nodeexporter/latest?label=latest&logo=docker[link="https://hub.docker.com/r/yadist/nodeexporter/"]
 | For running node exporter
 
+| link:image/prometheus/README.md[alertmanager]
+| 
+| image:https://img.shields.io/docker/image-size/yadist/alertmanager/latest?label=latest&logo=docker[link="https://hub.docker.com/r/yadist/alertmanager/"]
+| For running alertmanager
+
 |===
 
 Most of the images have a variant with busybox bundled. Theese images are identified with a "_debug" suffix on the tag.

@@ -57,7 +57,7 @@ do
     done
 done
 
-for repo in hivemetastore trino trinocli redis rediscli consultemplate prometheus nodeexporter
+for repo in hivemetastore trino trinocli redis rediscli consultemplate prometheus nodeexporter alertmanager
 do
     scan_image ${repo} latest
 done
