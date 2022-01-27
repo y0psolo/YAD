@@ -1,6 +1,6 @@
 load("@io_bazel_rules_docker//contrib:test.bzl", "container_test")
 load("@io_bazel_rules_docker//container:container.bzl", "container_image")
-load("//update:constants.bzl", "SPARK_VERSIONS")
+load("//update:constants.bzl", "SPARK_VERSIONS", "SPARK_VERSIONS_MAPPING")
 
 [
     container_image(
@@ -10,6 +10,7 @@ load("//update:constants.bzl", "SPARK_VERSIONS")
             "//platforms:aarch64_cpu": "arm64",
         }),
         symlinks = {
+            "/opt/spark/examples/jars/spark-examples.jar" : "/opt/spark/examples/jars/spark-examples_2.12-" + SPARK_VERSIONS_MAPPING[version] + ".jar",
             "/home/nonroot/examples" : "/opt/spark/examples",
         },
         tars = ["@spark_hadoop_" + version + "//:examples_tar",],
