@@ -78,9 +78,9 @@ def java_repository():
     http_archive(
         name = "jre-8-adoptium-arm64",
         build_file = "//ext/adoptium:BUILD.adoptium_8_arm64",
-        sha256 = "87ff502eba3008cac71edeb9595398a73dc14883fe3072d152e731bf0877897e",
-        strip_prefix = "jdk8u312-b07/jre/",
-        urls = ["https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u312-b07/OpenJDK8U-jdk_aarch64_linux_hotspot_8u312b07.tar.gz"],
+        sha256 = "42ed3ff5a859f9015a1362fb7e650026b913d688eab471714f795651120be173",
+        strip_prefix = "jdk8u322-b06/jre/",
+        urls = ["https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jdk_aarch64_linux_hotspot_8u322b06.tar.gz"],
     )
 
     http_archive(
