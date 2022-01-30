@@ -70,9 +70,9 @@ def java_repository():
     http_archive(
         name = "jre-17-adoptium-amd64",
         build_file = "//ext/adoptium:BUILD.adoptium_17_amd64",
-        sha256 = "6ea18c276dcbb8522feeebcfc3a4b5cb7c7e7368ba8590d3326c6c3efc5448b6",
-        strip_prefix = "jdk-17.0.1+12/",
-        urls = ["https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.1%2B12/OpenJDK17U-jdk_x64_linux_hotspot_17.0.1_12.tar.gz"],
+        sha256 = "288f34e3ba8a4838605636485d0365ce23e57d5f2f68997ac4c2e4c01967cd48",
+        strip_prefix = "jdk-17.0.2+8/",
+        urls = ["https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.2%2B8/OpenJDK17U-jdk_x64_linux_hotspot_17.0.2_8.tar.gz"],
     )
 
     http_archive(
@@ -94,7 +94,7 @@ def java_repository():
     http_archive(
         name = "jre-17-adoptium-arm64",
         build_file = "//ext/adoptium:BUILD.adoptium_17_arm64",
-        sha256 = "f23d482b2b4ada08166201d1a0e299e3e371fdca5cd7288dcbd81ae82f3a75e3",
-        strip_prefix = "jdk-17.0.1+12/",
-        urls = ["https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.1%2B12/OpenJDK17U-jdk_aarch64_linux_hotspot_17.0.1_12.tar.gz"],
+        sha256 = "302caf29f73481b2b914ba2b89705036010c65eb9bc8d7712b27d6e9bedf6200",
+        strip_prefix = "jdk-17.0.2+8/",
+        urls = ["https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.2%2B8/OpenJDK17U-jdk_aarch64_linux_hotspot_17.0.2_8.tar.gz"],
     )
