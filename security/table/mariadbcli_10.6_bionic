@@ -6,11 +6,6 @@
 |             |                  |          |                      |               | handling NOTIFY_REMOVED messages...   |
 |             |                  |          |                      |               | -->avd.aquasec.com/nvd/cve-2021-38604 |
 +             +------------------+          +                      +---------------+---------------------------------------+
-|             | CVE-2021-3998    |          |                      |               | glibc: Unexpected return              |
-|             |                  |          |                      |               | value from realpath() could           |
-|             |                  |          |                      |               | leak data based on the...             |
-|             |                  |          |                      |               | -->avd.aquasec.com/nvd/cve-2021-3998  |
-+             +------------------+          +                      +---------------+---------------------------------------+
 |             | CVE-2021-3999    |          |                      |               | glibc: Off-by-one buffer              |
 |             |                  |          |                      |               | overflow/underflow in getcwd()        |
 |             |                  |          |                      |               | -->avd.aquasec.com/nvd/cve-2021-3999  |
@@ -51,6 +46,10 @@
 |             |                  |          |                      |               | invalid multi-byte input              |
 |             |                  |          |                      |               | sequences fails to advance the...     |
 |             |                  |          |                      |               | -->avd.aquasec.com/nvd/cve-2020-27618 |
++             +------------------+          +                      +---------------+---------------------------------------+
+|             | CVE-2020-29562   |          |                      |               | glibc: assertion failure in iconv     |
+|             |                  |          |                      |               | when converting invalid UCS4          |
+|             |                  |          |                      |               | -->avd.aquasec.com/nvd/cve-2020-29562 |
 +             +------------------+          +                      +---------------+---------------------------------------+
 |             | CVE-2020-6096    |          |                      |               | glibc: signed comparison              |
 |             |                  |          |                      |               | vulnerability in the                  |

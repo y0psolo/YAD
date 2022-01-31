@@ -6,11 +6,6 @@
 |                      |                  |          |                         |               | handling NOTIFY_REMOVED messages...   |
 |                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2021-38604 |
 +                      +------------------+          +                         +---------------+---------------------------------------+
-|                      | CVE-2021-3998    |          |                         |               | glibc: Unexpected return              |
-|                      |                  |          |                         |               | value from realpath() could           |
-|                      |                  |          |                         |               | leak data based on the...             |
-|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2021-3998  |
-+                      +------------------+          +                         +---------------+---------------------------------------+
 |                      | CVE-2021-3999    |          |                         |               | glibc: Off-by-one buffer              |
 |                      |                  |          |                         |               | overflow/underflow in getcwd()        |
 |                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2021-3999  |
@@ -65,10 +60,14 @@
 |                      | CVE-2021-35942   |          |                         |               | glibc: Arbitrary read in wordexp()    |
 |                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2021-35942 |
 +----------------------+------------------+----------+-------------------------+---------------+---------------------------------------+
-| libexpat1            | CVE-2022-23852   | MEDIUM   | 2.2.9-1build1           |               | Expat (aka libexpat) before           |
-|                      |                  |          |                         |               | 2.4.4 has a signed integer            |
-|                      |                  |          |                         |               | overflow in XML_GetBuffer,...         |
+| libexpat1            | CVE-2022-23852   | MEDIUM   | 2.2.9-1build1           |               | expat: integer overflow               |
+|                      |                  |          |                         |               | in function XML_GetBuffer             |
 |                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2022-23852 |
++                      +------------------+          +                         +---------------+---------------------------------------+
+|                      | CVE-2022-23990   |          |                         |               | Expat (aka libexpat)                  |
+|                      |                  |          |                         |               | before 2.4.4 has an integer           |
+|                      |                  |          |                         |               | overflow in the doProlog...           |
+|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2022-23990 |
 +----------------------+------------------+----------+-------------------------+---------------+---------------------------------------+
 | libpython3.8-minimal | CVE-2021-23336   | LOW      | 3.8.10-0ubuntu1~20.04.2 |               | python: Web cache poisoning           |
 |                      |                  |          |                         |               | via urllib.parse.parse_qsl            |
@@ -90,4 +89,24 @@
 |                      |                  |          |                         |               | with improved checks.                 |
 |                      |                  |          |                         |               | This issue is fixed in...             |
 |                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2020-9991  |
++                      +------------------+          +                         +---------------+---------------------------------------+
+|                      | CVE-2021-36690   |          |                         |               | ** DISPUTED ** A segmentation         |
+|                      |                  |          |                         |               | fault can occur in the                |
+|                      |                  |          |                         |               | sqlite3.exe command-line...           |
+|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2021-36690 |
++----------------------+------------------+----------+-------------------------+---------------+---------------------------------------+
+| libuuid1             | CVE-2021-3995    | MEDIUM   | 2.34-0.1ubuntu9.1       |               | util-linux: Unauthorized unmount      |
+|                      |                  |          |                         |               | of FUSE filesystems belonging         |
+|                      |                  |          |                         |               | to users with similar uid...          |
+|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2021-3995  |
++                      +------------------+          +                         +---------------+---------------------------------------+
+|                      | CVE-2021-3996    |          |                         |               | util-linux: Unauthorized unmount      |
+|                      |                  |          |                         |               | of filesystems in libmount            |
+|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2021-3996  |
++                      +------------------+----------+                         +---------------+---------------------------------------+
+|                      | CVE-2021-37600   | LOW      |                         |               | util-linux: integer overflow          |
+|                      |                  |          |                         |               | can lead to buffer overflow           |
+|                      |                  |          |                         |               | in get_sem_elements() in              |
+|                      |                  |          |                         |               | sys-utils/ipcutils.c...               |
+|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2021-37600 |
 +----------------------+------------------+----------+-------------------------+---------------+---------------------------------------+
