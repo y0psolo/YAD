@@ -15,11 +15,6 @@
 |                      |                  |          |                         |               | handling NOTIFY_REMOVED messages...   |
 |                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2021-38604 |
 +                      +------------------+          +                         +---------------+---------------------------------------+
-|                      | CVE-2021-3998    |          |                         |               | glibc: Unexpected return              |
-|                      |                  |          |                         |               | value from realpath() could           |
-|                      |                  |          |                         |               | leak data based on the...             |
-|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2021-3998  |
-+                      +------------------+          +                         +---------------+---------------------------------------+
 |                      | CVE-2021-3999    |          |                         |               | glibc: Off-by-one buffer              |
 |                      |                  |          |                         |               | overflow/underflow in getcwd()        |
 |                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2021-3999  |
@@ -61,6 +56,10 @@
 |                      |                  |          |                         |               | sequences fails to advance the...     |
 |                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2020-27618 |
 +                      +------------------+          +                         +---------------+---------------------------------------+
+|                      | CVE-2020-29562   |          |                         |               | glibc: assertion failure in iconv     |
+|                      |                  |          |                         |               | when converting invalid UCS4          |
+|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2020-29562 |
++                      +------------------+          +                         +---------------+---------------------------------------+
 |                      | CVE-2020-6096    |          |                         |               | glibc: signed comparison              |
 |                      |                  |          |                         |               | vulnerability in the                  |
 |                      |                  |          |                         |               | ARMv7 memcpy function                 |
@@ -79,10 +78,14 @@
 |                      | CVE-2021-35942   |          |                         |               | glibc: Arbitrary read in wordexp()    |
 |                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2021-35942 |
 +----------------------+------------------+----------+-------------------------+---------------+---------------------------------------+
-| libexpat1            | CVE-2022-23852   | MEDIUM   | 2.2.5-3ubuntu0.2        |               | Expat (aka libexpat) before           |
-|                      |                  |          |                         |               | 2.4.4 has a signed integer            |
-|                      |                  |          |                         |               | overflow in XML_GetBuffer,...         |
+| libexpat1            | CVE-2022-23852   | MEDIUM   | 2.2.5-3ubuntu0.2        |               | expat: integer overflow               |
+|                      |                  |          |                         |               | in function XML_GetBuffer             |
 |                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2022-23852 |
++                      +------------------+          +                         +---------------+---------------------------------------+
+|                      | CVE-2022-23990   |          |                         |               | Expat (aka libexpat)                  |
+|                      |                  |          |                         |               | before 2.4.4 has an integer           |
+|                      |                  |          |                         |               | overflow in the doProlog...           |
+|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2022-23990 |
 +----------------------+------------------+          +-------------------------+---------------+---------------------------------------+
 | libgcc1              | CVE-2020-13844   |          | 8.4.0-1ubuntu1~18.04    |               | kernel: ARM straight-line             |
 |                      |                  |          |                         |               | speculation vulnerability             |
@@ -144,6 +147,11 @@
 |                      |                  |          |                         |               | with improved checks.                 |
 |                      |                  |          |                         |               | This issue is fixed in...             |
 |                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2020-9991  |
++                      +------------------+          +                         +---------------+---------------------------------------+
+|                      | CVE-2021-36690   |          |                         |               | ** DISPUTED ** A segmentation         |
+|                      |                  |          |                         |               | fault can occur in the                |
+|                      |                  |          |                         |               | sqlite3.exe command-line...           |
+|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2021-36690 |
 +----------------------+------------------+----------+-------------------------+---------------+---------------------------------------+
 | libstdc++6           | CVE-2020-13844   | MEDIUM   | 8.4.0-1ubuntu1~18.04    |               | kernel: ARM straight-line             |
 |                      |                  |          |                         |               | speculation vulnerability             |
@@ -158,6 +166,12 @@
 |                      |                  |          |                         |               | overflow in the fmt_entry             |
 |                      |                  |          |                         |               | function in tinfo/comp_hash.c         |
 |                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2019-17595 |
++----------------------+------------------+          +-------------------------+---------------+---------------------------------------+
+| libuuid1             | CVE-2021-37600   |          | 2.31.1-0.4ubuntu3.7     |               | util-linux: integer overflow          |
+|                      |                  |          |                         |               | can lead to buffer overflow           |
+|                      |                  |          |                         |               | in get_sem_elements() in              |
+|                      |                  |          |                         |               | sys-utils/ipcutils.c...               |
+|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2021-37600 |
 +----------------------+------------------+----------+-------------------------+---------------+---------------------------------------+
 +---------------------------------------------+------------------+----------+-------------------+--------------------------------+---------------------------------------------------------------------------------+
 |                   LIBRARY                   | VULNERABILITY ID | SEVERITY | INSTALLED VERSION |         FIXED VERSION          |                                      TITLE                                      |
@@ -713,6 +727,10 @@
 | log4j:log4j                                 | CVE-2019-17571   | CRITICAL | 1.2.17            | 2.0-alpha1                     | log4j: deserialization of                                                       |
 |                                             |                  |          |                   |                                | untrusted data in SocketServer                                                  |
 |                                             |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2019-17571                                           |
++                                             +------------------+          +                   +--------------------------------+---------------------------------------------------------------------------------+
+|                                             | CVE-2022-23307   |          |                   |                                | log4j: Unsafe deserialization                                                   |
+|                                             |                  |          |                   |                                | flaw in Chainsaw log viewer                                                     |
+|                                             |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2022-23307                                           |
 +                                             +------------------+----------+                   +--------------------------------+---------------------------------------------------------------------------------+
 |                                             | CVE-2021-4104    | HIGH     |                   |                                | log4j: Remote code execution                                                    |
 |                                             |                  |          |                   |                                | in Log4j 1.x when application                                                   |
@@ -810,9 +828,9 @@
 |                                             |                  |          |                   |                                | in  JWT validation...                                                           |
 |                                             |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2018-8023                                            |
 +---------------------------------------------+------------------+----------+-------------------+--------------------------------+---------------------------------------------------------------------------------+
-| org.apache.spark:spark-core_2.11            | CVE-2018-17190   | CRITICAL | 2.4.8             |                                | Tensorflow-directml 1.15.3 updates                                              |
-|                                             |                  |          |                   |                                | Apache Spark to 2.4.5 to handle                                                 |
-|                                             |                  |          |                   |                                | CVE-2019-10099, CVE-2018-17190 and...                                           |
+| org.apache.spark:spark-core_2.11            | CVE-2018-17190   | CRITICAL | 2.4.8             |                                | Tensorflow versions 1.15.3,                                                     |
+|                                             |                  |          |                   |                                | 2.0.2 and 2.1.1 updates its                                                     |
+|                                             |                  |          |                   |                                | dependency "Apache Spark" to...                                                 |
 |                                             |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2018-17190                                           |
 +---------------------------------------------+------------------+----------+-------------------+--------------------------------+---------------------------------------------------------------------------------+
 | org.apache.thrift:libthrift                 | CVE-2018-1320    | HIGH     | 0.9.3             | 0.12.0                         | thrift: SASL negotiation                                                        |
@@ -876,4 +894,9 @@
 |                                             | CVE-2009-2625    | MEDIUM   |                   | 2.10.0                         | xerces-j2, JDK: XML parsing                                                     |
 |                                             |                  |          |                   |                                | Denial-Of-Service (6845701)                                                     |
 |                                             |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2009-2625                                            |
++                                             +------------------+          +                   +--------------------------------+---------------------------------------------------------------------------------+
+|                                             | CVE-2022-23437   |          |                   | 2.12.2                         | xerces-j2: infinite loop                                                        |
+|                                             |                  |          |                   |                                | when handling specially                                                         |
+|                                             |                  |          |                   |                                | crafted XML document payloads                                                   |
+|                                             |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2022-23437                                           |
 +---------------------------------------------+------------------+----------+-------------------+--------------------------------+---------------------------------------------------------------------------------+

@@ -15,11 +15,6 @@
 |                |                  |          |                        |               | handling NOTIFY_REMOVED messages...   |
 |                |                  |          |                        |               | -->avd.aquasec.com/nvd/cve-2021-38604 |
 +                +------------------+          +                        +---------------+---------------------------------------+
-|                | CVE-2021-3998    |          |                        |               | glibc: Unexpected return              |
-|                |                  |          |                        |               | value from realpath() could           |
-|                |                  |          |                        |               | leak data based on the...             |
-|                |                  |          |                        |               | -->avd.aquasec.com/nvd/cve-2021-3998  |
-+                +------------------+          +                        +---------------+---------------------------------------+
 |                | CVE-2021-3999    |          |                        |               | glibc: Off-by-one buffer              |
 |                |                  |          |                        |               | overflow/underflow in getcwd()        |
 |                |                  |          |                        |               | -->avd.aquasec.com/nvd/cve-2021-3999  |
@@ -74,14 +69,33 @@
 |                | CVE-2021-35942   |          |                        |               | glibc: Arbitrary read in wordexp()    |
 |                |                  |          |                        |               | -->avd.aquasec.com/nvd/cve-2021-35942 |
 +----------------+------------------+----------+------------------------+---------------+---------------------------------------+
-| libexpat1      | CVE-2022-23852   | MEDIUM   | 2.2.9-1build1          |               | Expat (aka libexpat) before           |
-|                |                  |          |                        |               | 2.4.4 has a signed integer            |
-|                |                  |          |                        |               | overflow in XML_GetBuffer,...         |
+| libexpat1      | CVE-2022-23852   | MEDIUM   | 2.2.9-1build1          |               | expat: integer overflow               |
+|                |                  |          |                        |               | in function XML_GetBuffer             |
 |                |                  |          |                        |               | -->avd.aquasec.com/nvd/cve-2022-23852 |
++                +------------------+          +                        +---------------+---------------------------------------+
+|                | CVE-2022-23990   |          |                        |               | Expat (aka libexpat)                  |
+|                |                  |          |                        |               | before 2.4.4 has an integer           |
+|                |                  |          |                        |               | overflow in the doProlog...           |
+|                |                  |          |                        |               | -->avd.aquasec.com/nvd/cve-2022-23990 |
 +----------------+------------------+----------+------------------------+---------------+---------------------------------------+
 | libjpeg-turbo8 | CVE-2020-17541   | LOW      | 2.0.3-0ubuntu1.20.04.1 |               | libjpeg-turbo: Stack-based buffer     |
 |                |                  |          |                        |               | overflow in the "transform" component |
 |                |                  |          |                        |               | -->avd.aquasec.com/nvd/cve-2020-17541 |
++----------------+------------------+----------+------------------------+---------------+---------------------------------------+
+| libuuid1       | CVE-2021-3995    | MEDIUM   | 2.34-0.1ubuntu9.1      |               | util-linux: Unauthorized unmount      |
+|                |                  |          |                        |               | of FUSE filesystems belonging         |
+|                |                  |          |                        |               | to users with similar uid...          |
+|                |                  |          |                        |               | -->avd.aquasec.com/nvd/cve-2021-3995  |
++                +------------------+          +                        +---------------+---------------------------------------+
+|                | CVE-2021-3996    |          |                        |               | util-linux: Unauthorized unmount      |
+|                |                  |          |                        |               | of filesystems in libmount            |
+|                |                  |          |                        |               | -->avd.aquasec.com/nvd/cve-2021-3996  |
++                +------------------+----------+                        +---------------+---------------------------------------+
+|                | CVE-2021-37600   | LOW      |                        |               | util-linux: integer overflow          |
+|                |                  |          |                        |               | can lead to buffer overflow           |
+|                |                  |          |                        |               | in get_sem_elements() in              |
+|                |                  |          |                        |               | sys-utils/ipcutils.c...               |
+|                |                  |          |                        |               | -->avd.aquasec.com/nvd/cve-2021-37600 |
 +----------------+------------------+----------+------------------------+---------------+---------------------------------------+
 +---------------------------------------------+------------------+----------+-------------------+--------------------------------+---------------------------------------------------------------------------------+
 |                   LIBRARY                   | VULNERABILITY ID | SEVERITY | INSTALLED VERSION |         FIXED VERSION          |                                      TITLE                                      |
@@ -575,6 +589,10 @@
 | log4j:log4j                                 | CVE-2019-17571   | CRITICAL | 1.2.17            | 2.0-alpha1                     | log4j: deserialization of                                                       |
 |                                             |                  |          |                   |                                | untrusted data in SocketServer                                                  |
 |                                             |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2019-17571                                           |
++                                             +------------------+          +                   +--------------------------------+---------------------------------------------------------------------------------+
+|                                             | CVE-2022-23307   |          |                   |                                | log4j: Unsafe deserialization                                                   |
+|                                             |                  |          |                   |                                | flaw in Chainsaw log viewer                                                     |
+|                                             |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2022-23307                                           |
 +                                             +------------------+----------+                   +--------------------------------+---------------------------------------------------------------------------------+
 |                                             | CVE-2021-4104    | HIGH     |                   |                                | log4j: Remote code execution                                                    |
 |                                             |                  |          |                   |                                | in Log4j 1.x when application                                                   |
