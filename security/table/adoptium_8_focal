@@ -64,9 +64,8 @@
 |                |                  |          |                        |               | in function XML_GetBuffer             |
 |                |                  |          |                        |               | -->avd.aquasec.com/nvd/cve-2022-23852 |
 +                +------------------+          +                        +---------------+---------------------------------------+
-|                | CVE-2022-23990   |          |                        |               | Expat (aka libexpat)                  |
-|                |                  |          |                        |               | before 2.4.4 has an integer           |
-|                |                  |          |                        |               | overflow in the doProlog...           |
+|                | CVE-2022-23990   |          |                        |               | expat: integer overflow               |
+|                |                  |          |                        |               | in the doProlog function              |
 |                |                  |          |                        |               | -->avd.aquasec.com/nvd/cve-2022-23990 |
 +----------------+------------------+----------+------------------------+---------------+---------------------------------------+
 | libjpeg-turbo8 | CVE-2020-17541   | LOW      | 2.0.3-0ubuntu1.20.04.1 |               | libjpeg-turbo: Stack-based buffer     |
