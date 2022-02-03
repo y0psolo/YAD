@@ -73,9 +73,8 @@
 |                |                  |          |                         |               | in function XML_GetBuffer             |
 |                |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2022-23852 |
 +                +------------------+          +                         +---------------+---------------------------------------+
-|                | CVE-2022-23990   |          |                         |               | Expat (aka libexpat)                  |
-|                |                  |          |                         |               | before 2.4.4 has an integer           |
-|                |                  |          |                         |               | overflow in the doProlog...           |
+|                | CVE-2022-23990   |          |                         |               | expat: integer overflow               |
+|                |                  |          |                         |               | in the doProlog function              |
 |                |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2022-23990 |
 +----------------+------------------+          +-------------------------+---------------+---------------------------------------+
 | libgcc1        | CVE-2020-13844   |          | 8.4.0-1ubuntu1~18.04    |               | kernel: ARM straight-line             |
