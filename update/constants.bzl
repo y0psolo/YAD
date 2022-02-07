@@ -8,7 +8,7 @@ NODEJS_VERSIONS_MAPPINGS = {"14": "14.19.0", "16": "16.13.2"}
 NOBODY = 65534
 NONROOT = 65532
 
-DENO_VERSION = "1.18.1"
+DENO_VERSION = "1.18.2"
 
 AZUL_VERSIONS_MAPPING = {"amd64": {"11": "11.0.14", "8": "8.0.322", "17": "17.0.2"}, "arm64": {"11": "11.0.14", "8": "8.0.322", "17": "17.0.2"}}
 
@@ -22,7 +22,7 @@ SPARK_VERSIONS = ["2.4", "3.0", "3.1", "3.2"]
 
 SPARK_VERSIONS_MAPPING = {"2.4": "2.4.8", "3.0": "3.0.3", "3.1": "3.1.2", "3.2": "3.2.1"}
 
-TRINO_VERSION = "369"
+TRINO_VERSION = "370"
 
 REDIS_VERSION = "6.2.6"
 
