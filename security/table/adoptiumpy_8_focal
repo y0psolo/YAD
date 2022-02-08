@@ -110,10 +110,4 @@
 |                      | CVE-2021-3996    |          |                         |               | util-linux: Unauthorized unmount      |
 |                      |                  |          |                         |               | of filesystems in libmount            |
 |                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2021-3996  |
-+                      +------------------+----------+                         +---------------+---------------------------------------+
-|                      | CVE-2021-37600   | LOW      |                         |               | util-linux: integer overflow          |
-|                      |                  |          |                         |               | can lead to buffer overflow           |
-|                      |                  |          |                         |               | in get_sem_elements() in              |
-|                      |                  |          |                         |               | sys-utils/ipcutils.c...               |
-|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2021-37600 |
 +----------------------+------------------+----------+-------------------------+---------------+---------------------------------------+
