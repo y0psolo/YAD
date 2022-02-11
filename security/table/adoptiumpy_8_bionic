@@ -138,9 +138,8 @@
 |                      |                  |          |                         |               | This issue is fixed in...             |
 |                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2020-9991  |
 +                      +------------------+          +                         +---------------+---------------------------------------+
-|                      | CVE-2021-36690   |          |                         |               | ** DISPUTED ** A segmentation         |
-|                      |                  |          |                         |               | fault can occur in the                |
-|                      |                  |          |                         |               | sqlite3.exe command-line...           |
+|                      | CVE-2021-36690   |          |                         |               | CVE-2021-36690 affecting              |
+|                      |                  |          |                         |               | package sqlite 3.36.0                 |
 |                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2021-36690 |
 +----------------------+------------------+----------+-------------------------+---------------+---------------------------------------+
 | libstdc++6           | CVE-2020-13844   | MEDIUM   | 8.4.0-1ubuntu1~18.04    |               | kernel: ARM straight-line             |
