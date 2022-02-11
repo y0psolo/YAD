@@ -62,9 +62,9 @@ def java_repository():
     http_archive(
         name = "jre-11-adoptium-amd64",
         build_file = "//ext/adoptium:BUILD.adoptium_11",
-        sha256 = "1189bee178d11402a690edf3fbba0c9f2ada1d3a36ff78929d81935842ef24a9",
-        strip_prefix = "jdk-11.0.14+9/",
-        urls = ["https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.14%2B9/OpenJDK11U-jdk_x64_linux_hotspot_11.0.14_9.tar.gz"],
+        sha256 = "43fb84f8063ad9bf6b6d694a67b8f64c8827552b920ec5ce794dfe5602edffe7",
+        strip_prefix = "jdk-11.0.14.1+1/",
+        urls = ["https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jdk_x64_linux_hotspot_11.0.14.1_1.tar.gz"],
     )
 
     http_archive(
@@ -86,9 +86,9 @@ def java_repository():
     http_archive(
         name = "jre-11-adoptium-arm64",
         build_file = "//ext/adoptium:BUILD.adoptium_11",
-        sha256 = "0ba188a2a739733163cd0049344429d2284867e04ca452879be24f3b54320c9a",
-        strip_prefix = "jdk-11.0.14+9/",
-        urls = ["https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.14%2B9/OpenJDK11U-jdk_aarch64_linux_hotspot_11.0.14_9.tar.gz"],
+        sha256 = "79572f5172c6a040591d34632f98a20ed148702bbce2f57649e8ac01c0d2e3db",
+        strip_prefix = "jdk-11.0.14.1+1/",
+        urls = ["https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jdk_aarch64_linux_hotspot_11.0.14.1_1.tar.gz"],
     )
 
     http_archive(
