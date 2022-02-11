@@ -93,9 +93,8 @@
 |                      |                  |          |                         |                   | This issue is fixed in...             |
 |                      |                  |          |                         |                   | -->avd.aquasec.com/nvd/cve-2020-9991  |
 +                      +------------------+          +                         +-------------------+---------------------------------------+
-|                      | CVE-2021-36690   |          |                         |                   | ** DISPUTED ** A segmentation         |
-|                      |                  |          |                         |                   | fault can occur in the                |
-|                      |                  |          |                         |                   | sqlite3.exe command-line...           |
+|                      | CVE-2021-36690   |          |                         |                   | CVE-2021-36690 affecting              |
+|                      |                  |          |                         |                   | package sqlite 3.36.0                 |
 |                      |                  |          |                         |                   | -->avd.aquasec.com/nvd/cve-2021-36690 |
 +----------------------+------------------+----------+-------------------------+-------------------+---------------------------------------+
 | libuuid1             | CVE-2021-3995    | MEDIUM   | 2.34-0.1ubuntu9.1       | 2.34-0.1ubuntu9.3 | util-linux: Unauthorized unmount      |
