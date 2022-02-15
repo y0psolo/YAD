@@ -37,9 +37,9 @@ def java_repository():
     http_archive(
         name = "jre-11-azul-arm64",
         build_file = "//ext/azul:BUILD.azul_11_arm64",
-        sha256 = "c810e10ebd761ad430746d01404ee4cb5119c104bbd14387b12db7f1b1590403",
-        strip_prefix = "zulu11.54.23-ca-jdk11.0.14-linux_aarch64/",
-        urls = ["https://cdn.azul.com/zulu-embedded/bin/zulu11.54.23-ca-jdk11.0.14-linux_aarch64.tar.gz"],
+        sha256 = "b0fb0bc303bb05b5042ef3d0939b9489f4a49a13a2d1c8f03c5d8ab23099454d",
+        strip_prefix = "zulu11.54.25-ca-jdk11.0.14.1-linux_aarch64/",
+        urls = ["https://cdn.azul.com/zulu-embedded/bin/zulu11.54.25-ca-jdk11.0.14.1-linux_aarch64.tar.gz"],
     )
 
     http_archive(
