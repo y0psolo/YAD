@@ -136,7 +136,7 @@
 |                                             |                  |          |                   |                                | org.apache.log4j.receivers.db.*                               |
 |                                             |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2019-17531                         |
 +                                             +------------------+          +                   +--------------------------------+---------------------------------------------------------------+
-|                                             | CVE-2019-20330   |          |                   | 2.9.10.2, 2.8.11.5             | jackson-databind: lacks                                       |
+|                                             | CVE-2019-20330   |          |                   | 2.8.11.5, 2.9.10.2             | jackson-databind: lacks                                       |
 |                                             |                  |          |                   |                                | certain net.sf.ehcache blocking                               |
 |                                             |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2019-20330                         |
 +                                             +------------------+----------+                   +--------------------------------+---------------------------------------------------------------+
@@ -314,15 +314,18 @@
 |                                             |                  |          |                   |                                |                                                               |
 |                                             |                  |          |                   |                                |                                                               |
 +---------------------------------------------+------------------+----------+-------------------+--------------------------------+---------------------------------------------------------------+
-| io.netty:netty                              | CVE-2019-20444   | CRITICAL | 3.10.5.Final      | 4.1.44.Final                   | netty: HTTP request smuggling                                 |
+| io.netty:netty                              | CVE-2019-20444   | CRITICAL | 3.10.5.Final      | 4.1.44                         | netty: HTTP request smuggling                                 |
 |                                             |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2019-20444                         |
-+                                             +------------------+          +                   +                                +---------------------------------------------------------------+
-|                                             | CVE-2019-20445   |          |                   |                                | netty: HttpObjectDecoder.java allows                          |
++                                             +------------------+          +                   +--------------------------------+---------------------------------------------------------------+
+|                                             | CVE-2019-20445   |          |                   | 4.1.45                         | netty: HttpObjectDecoder.java allows                          |
 |                                             |                  |          |                   |                                | Content-Length header to accompanied                          |
 |                                             |                  |          |                   |                                | by second Content-Length header                               |
 |                                             |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2019-20445                         |
 +                                             +------------------+----------+                   +--------------------------------+---------------------------------------------------------------+
-|                                             | CVE-2019-16869   | HIGH     |                   | 4.1.42.Final                   | netty: HTTP request smuggling                                 |
+|                                             | CVE-2015-2156    | HIGH     |                   | 4.0.2.8                        | netty: HttpOnly cookie bypass                                 |
+|                                             |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2015-2156                          |
++                                             +------------------+          +                   +--------------------------------+---------------------------------------------------------------+
+|                                             | CVE-2019-16869   |          |                   | 4.1.42.Final                   | netty: HTTP request smuggling                                 |
 |                                             |                  |          |                   |                                | by mishandled whitespace                                      |
 |                                             |                  |          |                   |                                | before the colon in HTTP...                                   |
 |                                             |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2019-16869                         |
@@ -353,15 +356,18 @@
 |                                             |                  |          |                   |                                | may lead to HTTP request smuggling...                         |
 |                                             |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2021-43797                         |
 +                                             +------------------+----------+-------------------+--------------------------------+---------------------------------------------------------------+
-|                                             | CVE-2019-20444   | CRITICAL | 3.10.6.Final      | 4.1.44.Final                   | netty: HTTP request smuggling                                 |
+|                                             | CVE-2019-20444   | CRITICAL | 3.10.6.Final      | 4.1.44                         | netty: HTTP request smuggling                                 |
 |                                             |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2019-20444                         |
-+                                             +------------------+          +                   +                                +---------------------------------------------------------------+
-|                                             | CVE-2019-20445   |          |                   |                                | netty: HttpObjectDecoder.java allows                          |
++                                             +------------------+          +                   +--------------------------------+---------------------------------------------------------------+
+|                                             | CVE-2019-20445   |          |                   | 4.1.45                         | netty: HttpObjectDecoder.java allows                          |
 |                                             |                  |          |                   |                                | Content-Length header to accompanied                          |
 |                                             |                  |          |                   |                                | by second Content-Length header                               |
 |                                             |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2019-20445                         |
 +                                             +------------------+----------+                   +--------------------------------+---------------------------------------------------------------+
-|                                             | CVE-2019-16869   | HIGH     |                   | 4.1.42.Final                   | netty: HTTP request smuggling                                 |
+|                                             | CVE-2015-2156    | HIGH     |                   | 4.0.2.8                        | netty: HttpOnly cookie bypass                                 |
+|                                             |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2015-2156                          |
++                                             +------------------+          +                   +--------------------------------+---------------------------------------------------------------+
+|                                             | CVE-2019-16869   |          |                   | 4.1.42.Final                   | netty: HTTP request smuggling                                 |
 |                                             |                  |          |                   |                                | by mishandled whitespace                                      |
 |                                             |                  |          |                   |                                | before the colon in HTTP...                                   |
 |                                             |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2019-16869                         |
@@ -392,15 +398,18 @@
 |                                             |                  |          |                   |                                | may lead to HTTP request smuggling...                         |
 |                                             |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2021-43797                         |
 +                                             +------------------+----------+-------------------+--------------------------------+---------------------------------------------------------------+
-|                                             | CVE-2019-20444   | CRITICAL | 3.6.2.Final       | 4.1.44.Final                   | netty: HTTP request smuggling                                 |
+|                                             | CVE-2019-20444   | CRITICAL | 3.6.2.Final       | 4.1.44                         | netty: HTTP request smuggling                                 |
 |                                             |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2019-20444                         |
-+                                             +------------------+          +                   +                                +---------------------------------------------------------------+
-|                                             | CVE-2019-20445   |          |                   |                                | netty: HttpObjectDecoder.java allows                          |
++                                             +------------------+          +                   +--------------------------------+---------------------------------------------------------------+
+|                                             | CVE-2019-20445   |          |                   | 4.1.45                         | netty: HttpObjectDecoder.java allows                          |
 |                                             |                  |          |                   |                                | Content-Length header to accompanied                          |
 |                                             |                  |          |                   |                                | by second Content-Length header                               |
 |                                             |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2019-20445                         |
 +                                             +------------------+----------+                   +--------------------------------+---------------------------------------------------------------+
-|                                             | CVE-2019-16869   | HIGH     |                   | 4.1.42.Final                   | netty: HTTP request smuggling                                 |
+|                                             | CVE-2015-2156    | HIGH     |                   | 4.0.2.8                        | netty: HttpOnly cookie bypass                                 |
+|                                             |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2015-2156                          |
++                                             +------------------+          +                   +--------------------------------+---------------------------------------------------------------+
+|                                             | CVE-2019-16869   |          |                   | 4.1.42.Final                   | netty: HTTP request smuggling                                 |
 |                                             |                  |          |                   |                                | by mishandled whitespace                                      |
 |                                             |                  |          |                   |                                | before the colon in HTTP...                                   |
 |                                             |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2019-16869                         |
@@ -415,7 +424,11 @@
 |                                             |                  |          |                   |                                | may buffer skippable chunks in...                             |
 |                                             |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2021-37137                         |
 +                                             +------------------+----------+                   +--------------------------------+---------------------------------------------------------------+
-|                                             | CVE-2021-21290   | MEDIUM   |                   | 4.1.59.Final                   | netty: Information disclosure via                             |
+|                                             | CVE-2014-3488    | MEDIUM   |                   | 3.9.2                          | Netty: DoS by CPU exhaustion                                  |
+|                                             |                  |          |                   |                                | when using malicious SSL packets                              |
+|                                             |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2014-3488                          |
++                                             +------------------+          +                   +--------------------------------+---------------------------------------------------------------+
+|                                             | CVE-2021-21290   |          |                   | 4.1.59.Final                   | netty: Information disclosure via                             |
 |                                             |                  |          |                   |                                | the local system temporary directory                          |
 |                                             |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2021-21290                         |
 +                                             +------------------+          +                   +--------------------------------+---------------------------------------------------------------+
@@ -624,14 +637,14 @@
 |                                             |                  |          | 3.1.3             |                                |                                                               |
 |                                             |                  |          |                   |                                |                                                               |
 |                                             |                  |          |                   |                                |                                                               |
-+---------------------------------------------+------------------+          +-------------------+--------------------------------+---------------------------------------------------------------+
-| org.apache.httpcomponents:httpclient        | CVE-2012-6153    |          | 4.0.1             | 4.2.3                          | Apache HttpComponents                                         |
++---------------------------------------------+------------------+----------+-------------------+--------------------------------+---------------------------------------------------------------+
+| org.apache.httpcomponents:httpclient        | CVE-2012-6153    | MEDIUM   | 4.0.1             | 4.2.3                          | Apache HttpComponents                                         |
 |                                             |                  |          |                   |                                | client / Apache CXF: SSL                                      |
 |                                             |                  |          |                   |                                | hostname verification bypass,                                 |
 |                                             |                  |          |                   |                                | incomplete CVE-2012-5783...                                   |
 |                                             |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2012-6153                          |
-+                                             +------------------+----------+                   +--------------------------------+---------------------------------------------------------------+
-|                                             | CVE-2014-3577    | MEDIUM   |                   | 4.3.5                          | Apache HttpComponents                                         |
++                                             +------------------+          +                   +--------------------------------+---------------------------------------------------------------+
+|                                             | CVE-2014-3577    |          |                   | 4.3.5                          | Apache HttpComponents                                         |
 |                                             |                  |          |                   |                                | client / Apache CXF: SSL                                      |
 |                                             |                  |          |                   |                                | hostname verification bypass,                                 |
 |                                             |                  |          |                   |                                | incomplete CVE-2012-6153...                                   |
@@ -762,15 +775,15 @@
 |                                             |                  |          |                   |                                | hijacking vulnerability                                       |
 |                                             |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2020-27216                         |
 +---------------------------------------------+------------------+----------+-------------------+--------------------------------+---------------------------------------------------------------+
-| org.elasticsearch:elasticsearch             | CVE-2021-22135   | MEDIUM   | 6.0.0             | 6.8.15, 7.11.2                 | elasticsearch: Document disclosure                            |
+| org.elasticsearch:elasticsearch             | CVE-2021-22135   | MEDIUM   | 6.0.0             | 6.8.15                         | elasticsearch: Document disclosure                            |
 |                                             |                  |          |                   |                                | flaw in the Elasticsearch suggester                           |
 |                                             |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2021-22135                         |
 +                                             +------------------+          +                   +--------------------------------+---------------------------------------------------------------+
-|                                             | CVE-2021-22144   |          |                   | 7.13.3, 6.8.17                 | elasticsearch: uncontrolled                                   |
+|                                             | CVE-2021-22144   |          |                   | 6.8.17, 7.13.3                 | elasticsearch: uncontrolled                                   |
 |                                             |                  |          |                   |                                | recursion in Grok parser                                      |
 |                                             |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2021-22144                         |
 +                                             +------------------+----------+                   +--------------------------------+---------------------------------------------------------------+
-|                                             | CVE-2020-7020    | LOW      |                   | 7.9.2, 6.8.13                  | elasticsearch: not properly                                   |
+|                                             | CVE-2020-7020    | LOW      |                   | 6.8.13, 7.9.2                  | elasticsearch: not properly                                   |
 |                                             |                  |          |                   |                                | preserving security                                           |
 |                                             |                  |          |                   |                                | permissions when executing                                    |
 |                                             |                  |          |                   |                                | complex queries may lead...                                   |
