@@ -7,24 +7,24 @@ def mariadb_10_6_focal_amd64():
         name = "mariadb_10_6_focal_amd64",
         arch = "amd64",
         packages = {
-            "galera-4": "pool/main/g/galera-4/galera-4_26.4.9-focal_amd64.deb",
-            "libmariadb3": "pool/main/m/mariadb-10.6/libmariadb3_10.6.5+maria~focal_amd64.deb",
-            "mariadb-client-10.6": "pool/main/m/mariadb-10.6/mariadb-client-10.6_10.6.5+maria~focal_amd64.deb",
-            "mariadb-client-core-10.6": "pool/main/m/mariadb-10.6/mariadb-client-core-10.6_10.6.5+maria~focal_amd64.deb",
-            "mariadb-server-core-10.6": "pool/main/m/mariadb-10.6/mariadb-server-core-10.6_10.6.5+maria~focal_amd64.deb",
+            "galera-4": "pool/main/g/galera-4/galera-4_26.4.11-focal_amd64.deb",
+            "libmariadb3": "pool/main/m/mariadb-10.6/libmariadb3_10.6.7+maria~focal_amd64.deb",
+            "mariadb-client-10.6": "pool/main/m/mariadb-10.6/mariadb-client-10.6_10.6.7+maria~focal_amd64.deb",
+            "mariadb-client-core-10.6": "pool/main/m/mariadb-10.6/mariadb-client-core-10.6_10.6.7+maria~focal_amd64.deb",
+            "mariadb-server-core-10.6": "pool/main/m/mariadb-10.6/mariadb-server-core-10.6_10.6.7+maria~focal_amd64.deb",
         },
         packages_sha256 = {
-            "galera-4": "4d593c131b246bd0ece14260119d26168ade107b187a1ddfb3678fb041ea7775",
-            "libmariadb3": "b1ba1cf6b18ec78db4c959e35d664105efa61ba993eec2295a84ca6f8c1ee01a",
-            "mariadb-client-10.6": "2140aea261a1ce4a0e925d0458723a40cba81247d10a0c4b2a26d4f4c32455b7",
-            "mariadb-client-core-10.6": "0cd3282b1f4d65979c4bee5abaebe88fb87526ce7a4cdc590bc5ede9707cef46",
-            "mariadb-server-core-10.6": "ea5dff0fcf3fb09cb1a9fe4849d676ff2cc03ef80a8868adbdfee29bc2b75eac",
+            "galera-4": "530c109bbcc66a92ed2e06beb42722df14652d6c8ee3ed8ee6195147aeb53cf8",
+            "libmariadb3": "6cdc5661d57b9758d5f5cb7d1791e9514be535b9f3daac169ec6f8ec93c5cd5f",
+            "mariadb-client-10.6": "1558bf99a6a4a74da38ae0741769ed42e99397349f97416e4727fb6552c8f49b",
+            "mariadb-client-core-10.6": "95803e4e6e00efca8279b6147052a22305f84536081e268e641361ff7e8dd9d7",
+            "mariadb-server-core-10.6": "23f2116a8a523177c06000d1a1b37e04ea804c9a1e5b5d181b3f09c834f2a707",
         },
         sources = [
-            "https://mirror.rackspace.com/mariadb/repo/10.6/ubuntu/ focal main",
+            "https://mirrors.xtom.nl/mariadb/repo/10.6/ubuntu/ focal main",
         ],
         urls = [
-            "https://mirror.rackspace.com/mariadb/repo/10.6/ubuntu/$(package_path)",
+            "https://mirrors.xtom.nl/mariadb/repo/10.6/ubuntu/$(package_path)",
         ],
     )
 
@@ -33,24 +33,24 @@ def mariadb_10_6_focal_arm64():
         name = "mariadb_10_6_focal_arm64",
         arch = "arm64",
         packages = {
-            "galera-4": "pool/main/g/galera-4/galera-4_26.4.9-focal_arm64.deb",
-            "libmariadb3": "pool/main/m/mariadb-10.6/libmariadb3_10.6.5+maria~focal_arm64.deb",
-            "mariadb-client-10.6": "pool/main/m/mariadb-10.6/mariadb-client-10.6_10.6.5+maria~focal_arm64.deb",
-            "mariadb-client-core-10.6": "pool/main/m/mariadb-10.6/mariadb-client-core-10.6_10.6.5+maria~focal_arm64.deb",
-            "mariadb-server-core-10.6": "pool/main/m/mariadb-10.6/mariadb-server-core-10.6_10.6.5+maria~focal_arm64.deb",
+            "galera-4": "pool/main/g/galera-4/galera-4_26.4.11-focal_arm64.deb",
+            "libmariadb3": "pool/main/m/mariadb-10.6/libmariadb3_10.6.7+maria~focal_arm64.deb",
+            "mariadb-client-10.6": "pool/main/m/mariadb-10.6/mariadb-client-10.6_10.6.7+maria~focal_arm64.deb",
+            "mariadb-client-core-10.6": "pool/main/m/mariadb-10.6/mariadb-client-core-10.6_10.6.7+maria~focal_arm64.deb",
+            "mariadb-server-core-10.6": "pool/main/m/mariadb-10.6/mariadb-server-core-10.6_10.6.7+maria~focal_arm64.deb",
         },
         packages_sha256 = {
-            "galera-4": "2692bd17e3a0cbcf59d1d66ff89e04cddbc71af81414757426329509639fd019",
-            "libmariadb3": "345a7706ad847f6b803485a3b15d66f1b7eb9aea610e6ba4906ef3da233dec35",
-            "mariadb-client-10.6": "bcfeaa7b5a363a24ad5c0b76f1f06fbf8189fa52714355408d0a2c54d37ebd45",
-            "mariadb-client-core-10.6": "640e5ab1894b4b518de6bad02540a6700592f3639960140ecff2268181fb7fd1",
-            "mariadb-server-core-10.6": "c35dac3e24be55f6dafbb374218db61860fce33137a3370083e14db2695ccbc3",
+            "galera-4": "d335c8d1b4bd46d83acef34a4d7b6d470c2267850c0e164a80e1a3e341cfd32a",
+            "libmariadb3": "23cf1ea07b5f84821aa5ab067072449516558b9eac98119f6906d673ce89a8a9",
+            "mariadb-client-10.6": "04e5ce70b7a82acab8d75c17b37f23fa4405e160252a73f2118a90bce1c056fc",
+            "mariadb-client-core-10.6": "2b9d6f4ca1c3253281190c84ef0a22fad15215be7e196129ed4c7701f05f3e3c",
+            "mariadb-server-core-10.6": "a291a01249e35cc8572f311cfdbbdd5870df4abf665f15208b8da5d23f9abd59",
         },
         sources = [
-            "https://mirror.rackspace.com/mariadb/repo/10.6/ubuntu/ focal main",
+            "https://mirrors.xtom.nl/mariadb/repo/10.6/ubuntu/ focal main",
         ],
         urls = [
-            "https://mirror.rackspace.com/mariadb/repo/10.6/ubuntu/$(package_path)",
+            "https://mirrors.xtom.nl/mariadb/repo/10.6/ubuntu/$(package_path)",
         ],
     )
 
@@ -59,24 +59,24 @@ def mariadb_10_6_bionic_amd64():
         name = "mariadb_10_6_bionic_amd64",
         arch = "amd64",
         packages = {
-            "galera-4": "pool/main/g/galera-4/galera-4_26.4.9-bionic_amd64.deb",
-            "libmariadb3": "pool/main/m/mariadb-10.6/libmariadb3_10.6.5+maria~bionic_amd64.deb",
-            "mariadb-client-10.6": "pool/main/m/mariadb-10.6/mariadb-client-10.6_10.6.5+maria~bionic_amd64.deb",
-            "mariadb-client-core-10.6": "pool/main/m/mariadb-10.6/mariadb-client-core-10.6_10.6.5+maria~bionic_amd64.deb",
-            "mariadb-server-core-10.6": "pool/main/m/mariadb-10.6/mariadb-server-core-10.6_10.6.5+maria~bionic_amd64.deb",
+            "galera-4": "pool/main/g/galera-4/galera-4_26.4.11-bionic_amd64.deb",
+            "libmariadb3": "pool/main/m/mariadb-10.6/libmariadb3_10.6.7+maria~bionic_amd64.deb",
+            "mariadb-client-10.6": "pool/main/m/mariadb-10.6/mariadb-client-10.6_10.6.7+maria~bionic_amd64.deb",
+            "mariadb-client-core-10.6": "pool/main/m/mariadb-10.6/mariadb-client-core-10.6_10.6.7+maria~bionic_amd64.deb",
+            "mariadb-server-core-10.6": "pool/main/m/mariadb-10.6/mariadb-server-core-10.6_10.6.7+maria~bionic_amd64.deb",
         },
         packages_sha256 = {
-            "galera-4": "3940d610a99a7a342ba6ac614f153d3f3c3d0066df3d2f2da540c25f8db227d3",
-            "libmariadb3": "d54f74b9d912a5a018d200ade6df735e30df334733e49280fb97f61447caed7d",
-            "mariadb-client-10.6": "e206b80f49f6425b3dcb71ea917ab06e00a96e47c7d7cf49dbf005fa85011978",
-            "mariadb-client-core-10.6": "5b1a0c60e45fdf60355d75044a17601490a6a31899818c88cdcb8b78fadccdc6",
-            "mariadb-server-core-10.6": "3a8440aba6fa321bf1abd6a2c6a63611de6a25b25a8f875502f7145f4f6bd0df",
+            "galera-4": "b5620cb7fe9286d28c525b3263d99ceccff58819f542769a198d9c3e4676fcc9",
+            "libmariadb3": "900fd634738fe05dcc5fa57f1114ea06d41958dd26c673e28806172d44c534a6",
+            "mariadb-client-10.6": "bc764df14edf463a28877246321da047e10470c2517e8e3cba0a337750204452",
+            "mariadb-client-core-10.6": "cb1d9eb23db0bee9a9dc0888d1b56659308a5dc3400b1b792f50bdac7900e6ea",
+            "mariadb-server-core-10.6": "6cb0fae861b97d50ee65e42e4f5cbdbd9d7228fe3d00aba063ba7c78995bd5d3",
         },
         sources = [
-            "https://mirror.rackspace.com/mariadb/repo/10.6/ubuntu/ bionic main",
+            "https://mirrors.xtom.nl/mariadb/repo/10.6/ubuntu/ bionic main",
         ],
         urls = [
-            "https://mirror.rackspace.com/mariadb/repo/10.6/ubuntu/$(package_path)",
+            "https://mirrors.xtom.nl/mariadb/repo/10.6/ubuntu/$(package_path)",
         ],
     )
 
@@ -85,23 +85,23 @@ def mariadb_10_6_bionic_arm64():
         name = "mariadb_10_6_bionic_arm64",
         arch = "arm64",
         packages = {
-            "galera-4": "pool/main/g/galera-4/galera-4_26.4.9-bionic_arm64.deb",
+            "galera-4": "pool/main/g/galera-4/galera-4_26.4.11-bionic_arm64.deb",
             "libmariadb3": "pool/main/m/mariadb-10.6/libmariadb3_10.6.5+maria~bionic_arm64.deb",
             "mariadb-client-10.6": "pool/main/m/mariadb-10.6/mariadb-client-10.6_10.6.5+maria~bionic_arm64.deb",
             "mariadb-client-core-10.6": "pool/main/m/mariadb-10.6/mariadb-client-core-10.6_10.6.5+maria~bionic_arm64.deb",
             "mariadb-server-core-10.6": "pool/main/m/mariadb-10.6/mariadb-server-core-10.6_10.6.5+maria~bionic_arm64.deb",
         },
         packages_sha256 = {
-            "galera-4": "29bf4a198a420d20e346665afe1a049c22d57a396f08f6907191d531b4c820eb",
+            "galera-4": "797cca276529507b9e578fc8250272eb7ebdff5c5f71aade2a1a09c3c11ea372",
             "libmariadb3": "12fd92f14de0d04c401b14e39bf5ed7daaf85c83721c2a49d80038f2d3aa535c",
             "mariadb-client-10.6": "ea1e3275cf612af1494cf0049e40cd69378da6dd456e6b4b2025bad51ab41b1f",
             "mariadb-client-core-10.6": "7a437318baa0618d6cb90b8f38609e0484723db9df2f66f817e98a1c7f27063e",
             "mariadb-server-core-10.6": "7fc03b93fb65634c121c9eea466550c955254606a63159dc04db9a2863a8d33b",
         },
         sources = [
-            "https://mirror.rackspace.com/mariadb/repo/10.6/ubuntu/ bionic main",
+            "https://mirrors.xtom.nl/mariadb/repo/10.6/ubuntu/ bionic main",
         ],
         urls = [
-            "https://mirror.rackspace.com/mariadb/repo/10.6/ubuntu/$(package_path)",
+            "https://mirrors.xtom.nl/mariadb/repo/10.6/ubuntu/$(package_path)",
         ],
     )

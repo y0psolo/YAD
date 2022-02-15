@@ -2,7 +2,6 @@ filegroup(
     name = "lib_dir",
     srcs = [
         "DISCLAIMER",
-        "LICENSE",
         "conf/logging.properties",
         "conf/management/jmxremote.access",
         "conf/management/jmxremote.password.template",
