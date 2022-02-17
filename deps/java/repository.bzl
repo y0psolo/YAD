@@ -13,9 +13,9 @@ def java_repository():
     http_archive(
         name = "jre-11-azul-amd64",
         build_file = "//ext/azul:BUILD.azul_11_amd64",
-        sha256 = "ae6a7edcc01f5377312d8eb75fd216b189f336cc1d25fdc53cb88b6615b4b432",
-        strip_prefix = "zulu11.54.23-ca-jre11.0.14-linux_x64/",
-        urls = ["https://cdn.azul.com/zulu/bin/zulu11.54.23-ca-jre11.0.14-linux_x64.tar.gz"],
+        sha256 = "ddc9c3aa34dc87d872ca2f4a909db20c6a388abdf5b87220cb21cf1434d4630b",
+        strip_prefix = "zulu11.54.25-ca-jre11.0.14.1-linux_x64/",
+        urls = ["https://cdn.azul.com/zulu/bin/zulu11.54.25-ca-jre11.0.14.1-linux_x64.tar.gz"],
     )
 
     http_archive(
