@@ -7,7 +7,7 @@ def ubuntu_focal_amd64():
         name = "ubuntu_focal_amd64",
         arch = "amd64",
         packages = {
-            "base-files": "pool/main/b/base-files/base-files_11ubuntu5.4_amd64.deb",
+            "base-files": "pool/main/b/base-files/base-files_11ubuntu5.5_amd64.deb",
             "bash": "pool/main/b/bash/bash_5.0-6ubuntu1.1_amd64.deb",
             "ca-certificates": "pool/main/c/ca-certificates/ca-certificates_20210119~20.04.2_all.deb",
             "coreutils": "pool/main/c/coreutils/coreutils_8.30-3ubuntu2_amd64.deb",
@@ -66,7 +66,7 @@ def ubuntu_focal_amd64():
             "zlib1g": "pool/main/z/zlib/zlib1g_1.2.11.dfsg-2ubuntu1.2_amd64.deb",
         },
         packages_sha256 = {
-            "base-files": "1b1f1e17b424063df231690d7a99949b8c4a119eb1d225b93905eee33ed4d29c",
+            "base-files": "15256c312ec50bf77dd901a93b2e155230f250ef2f47fb9ca97eeb0e59796603",
             "bash": "235fc2622fbc61f7f5548f2d80abda3e85610eb52560f29cba8e3442de7a69f3",
             "ca-certificates": "8179442c9c582fd71fd3817a579bf5fe9503412c1e879d3ba4f0ed9a761e54f4",
             "coreutils": "99aa50af84de1737735f2f51e570d60f5842aa1d4a3129527906e7ffda368853",
