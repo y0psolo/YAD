@@ -20,7 +20,7 @@ HADOOP_VERSION = "3.3.1"
 
 SPARK_VERSIONS = ["2.4", "3.0", "3.1", "3.2"]
 
-SPARK_VERSIONS_MAPPING = {"2.4": "2.4.8", "3.0": "3.0.3", "3.1": "3.1.2", "3.2": "3.2.1"}
+SPARK_VERSIONS_MAPPING = {"2.4": "2.4.8", "3.0": "3.0.3", "3.1": "3.1.3", "3.2": "3.2.1"}
 
 TRINO_VERSION = "371"
 
@@ -32,7 +32,7 @@ MARIADB_VERSIONS = ["10.5", "10.6", "10.7"]
 
 MARIADB_VERSIONS_MAPPING = {"10.5": "10.5.15", "10.6": "10.6.7", "10.7": "10.7.3"}
 
-PROMETHEUS_VERSION = "2.33.3"
+PROMETHEUS_VERSION = "2.33.4"
 
 NODE_EXPORTER_VERSION = "1.3.1"
 
