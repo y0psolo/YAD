@@ -1,206 +1,216 @@
-+----------------------+------------------+----------+-------------------------+---------------+---------------------------------------+
-|       LIBRARY        | VULNERABILITY ID | SEVERITY |    INSTALLED VERSION    | FIXED VERSION |                 TITLE                 |
-+----------------------+------------------+----------+-------------------------+---------------+---------------------------------------+
-| bash                 | CVE-2019-18276   | LOW      | 4.4.18-2ubuntu1.2       |               | bash: when effective UID is not       |
-|                      |                  |          |                         |               | equal to its real UID the...          |
-|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2019-18276 |
-+----------------------+------------------+          +-------------------------+---------------+---------------------------------------+
-| coreutils            | CVE-2016-2781    |          | 8.28-1ubuntu1           |               | coreutils: Non-privileged             |
-|                      |                  |          |                         |               | session can escape to the             |
-|                      |                  |          |                         |               | parent session in chroot              |
-|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2016-2781  |
-+----------------------+------------------+----------+-------------------------+---------------+---------------------------------------+
-| libc6                | CVE-2021-38604   | MEDIUM   | 2.27-3ubuntu1.4         |               | glibc: NULL pointer dereference in    |
-|                      |                  |          |                         |               | helper_thread() in mq_notify.c while  |
-|                      |                  |          |                         |               | handling NOTIFY_REMOVED messages...   |
-|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2021-38604 |
-+                      +------------------+          +                         +---------------+---------------------------------------+
-|                      | CVE-2021-3999    |          |                         |               | glibc: Off-by-one buffer              |
-|                      |                  |          |                         |               | overflow/underflow in getcwd()        |
-|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2021-3999  |
-+                      +------------------+----------+                         +---------------+---------------------------------------+
-|                      | CVE-2009-5155    | LOW      |                         |               | glibc: parse_reg_exp in               |
-|                      |                  |          |                         |               | posix/regcomp.c misparses             |
-|                      |                  |          |                         |               | alternatives leading to               |
-|                      |                  |          |                         |               | denial of service or...               |
-|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2009-5155  |
-+                      +------------------+          +                         +---------------+---------------------------------------+
-|                      | CVE-2015-8985    |          |                         |               | glibc: potential denial of            |
-|                      |                  |          |                         |               | service in pop_fail_stack()           |
-|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2015-8985  |
-+                      +------------------+          +                         +---------------+---------------------------------------+
-|                      | CVE-2016-10228   |          |                         |               | glibc: iconv program can hang         |
-|                      |                  |          |                         |               | when invoked with the -c option       |
-|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2016-10228 |
-+                      +------------------+          +                         +---------------+---------------------------------------+
-|                      | CVE-2016-10739   |          |                         |               | glibc: getaddrinfo should reject IP   |
-|                      |                  |          |                         |               | addresses with trailing characters    |
-|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2016-10739 |
-+                      +------------------+          +                         +---------------+---------------------------------------+
-|                      | CVE-2019-25013   |          |                         |               | glibc: buffer over-read in            |
-|                      |                  |          |                         |               | iconv when processing invalid         |
-|                      |                  |          |                         |               | multi-byte input sequences in...      |
-|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2019-25013 |
-+                      +------------------+          +                         +---------------+---------------------------------------+
-|                      | CVE-2020-27618   |          |                         |               | glibc: iconv when processing          |
-|                      |                  |          |                         |               | invalid multi-byte input              |
-|                      |                  |          |                         |               | sequences fails to advance the...     |
-|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2020-27618 |
-+                      +------------------+          +                         +---------------+---------------------------------------+
-|                      | CVE-2020-29562   |          |                         |               | glibc: assertion failure in iconv     |
-|                      |                  |          |                         |               | when converting invalid UCS4          |
-|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2020-29562 |
-+                      +------------------+          +                         +---------------+---------------------------------------+
-|                      | CVE-2020-6096    |          |                         |               | glibc: signed comparison              |
-|                      |                  |          |                         |               | vulnerability in the                  |
-|                      |                  |          |                         |               | ARMv7 memcpy function                 |
-|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2020-6096  |
-+                      +------------------+          +                         +---------------+---------------------------------------+
-|                      | CVE-2021-3326    |          |                         |               | glibc: Assertion failure in           |
-|                      |                  |          |                         |               | ISO-2022-JP-3 gconv module            |
-|                      |                  |          |                         |               | related to combining characters       |
-|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2021-3326  |
-+                      +------------------+          +                         +---------------+---------------------------------------+
-|                      | CVE-2021-33574   |          |                         |               | glibc: mq_notify does                 |
-|                      |                  |          |                         |               | not handle separately                 |
-|                      |                  |          |                         |               | allocated thread attributes           |
-|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2021-33574 |
-+                      +------------------+          +                         +---------------+---------------------------------------+
-|                      | CVE-2021-35942   |          |                         |               | glibc: Arbitrary read in wordexp()    |
-|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2021-35942 |
-+                      +------------------+          +                         +---------------+---------------------------------------+
-|                      | CVE-2022-23218   |          |                         |               | glibc: stack-based buffer overflow    |
-|                      |                  |          |                         |               | in svcunix_create via long pathnames  |
-|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2022-23218 |
-+                      +------------------+          +                         +---------------+---------------------------------------+
-|                      | CVE-2022-23219   |          |                         |               | glibc: stack-based buffer             |
-|                      |                  |          |                         |               | overflow in sunrpc clnt_create        |
-|                      |                  |          |                         |               | via a long pathname                   |
-|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2022-23219 |
-+----------------------+------------------+----------+-------------------------+---------------+---------------------------------------+
-| libexpat1            | CVE-2021-46143   | MEDIUM   | 2.2.5-3ubuntu0.2        |               | expat: Integer overflow               |
-|                      |                  |          |                         |               | in doProlog in xmlparse.c             |
-|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2021-46143 |
-+                      +------------------+          +                         +---------------+---------------------------------------+
-|                      | CVE-2022-22822   |          |                         |               | expat: Integer overflow in            |
-|                      |                  |          |                         |               | addBinding in xmlparse.c              |
-|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2022-22822 |
-+                      +------------------+          +                         +---------------+---------------------------------------+
-|                      | CVE-2022-22823   |          |                         |               | expat: Integer overflow in            |
-|                      |                  |          |                         |               | build_model in xmlparse.c             |
-|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2022-22823 |
-+                      +------------------+          +                         +---------------+---------------------------------------+
-|                      | CVE-2022-22824   |          |                         |               | expat: Integer overflow in            |
-|                      |                  |          |                         |               | defineAttribute in xmlparse.c         |
-|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2022-22824 |
-+                      +------------------+          +                         +---------------+---------------------------------------+
-|                      | CVE-2022-22825   |          |                         |               | expat: Integer overflow               |
-|                      |                  |          |                         |               | in lookup in xmlparse.c               |
-|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2022-22825 |
-+                      +------------------+          +                         +---------------+---------------------------------------+
-|                      | CVE-2022-22826   |          |                         |               | expat: Integer overflow in            |
-|                      |                  |          |                         |               | nextScaffoldPart in xmlparse.c        |
-|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2022-22826 |
-+                      +------------------+          +                         +---------------+---------------------------------------+
-|                      | CVE-2022-22827   |          |                         |               | expat: Integer overflow               |
-|                      |                  |          |                         |               | in storeAtts in xmlparse.c            |
-|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2022-22827 |
-+                      +------------------+          +                         +---------------+---------------------------------------+
-|                      | CVE-2022-23852   |          |                         |               | expat: integer overflow               |
-|                      |                  |          |                         |               | in function XML_GetBuffer             |
-|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2022-23852 |
-+                      +------------------+          +                         +---------------+---------------------------------------+
-|                      | CVE-2022-23990   |          |                         |               | expat: integer overflow               |
-|                      |                  |          |                         |               | in the doProlog function              |
-|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2022-23990 |
-+                      +------------------+----------+                         +---------------+---------------------------------------+
-|                      | CVE-2021-45960   | LOW      |                         |               | expat: Large number of prefixed XML   |
-|                      |                  |          |                         |               | attributes on a single tag can...     |
-|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2021-45960 |
-+----------------------+------------------+----------+-------------------------+---------------+---------------------------------------+
-| libgcc1              | CVE-2020-13844   | MEDIUM   | 8.4.0-1ubuntu1~18.04    |               | kernel: ARM straight-line             |
-|                      |                  |          |                         |               | speculation vulnerability             |
-|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2020-13844 |
-+----------------------+                  +          +                         +---------------+                                       +
-| libgomp1             |                  |          |                         |               |                                       |
-|                      |                  |          |                         |               |                                       |
-|                      |                  |          |                         |               |                                       |
-+----------------------+------------------+----------+-------------------------+---------------+---------------------------------------+
-| libjpeg-turbo8       | CVE-2018-11813   | LOW      | 1.5.2-0ubuntu5.18.04.4  |               | libjpeg: "cjpeg" utility              |
-|                      |                  |          |                         |               | large loop because read_pixel         |
-|                      |                  |          |                         |               | in rdtarga.c mishandles EOF           |
-|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2018-11813 |
-+                      +------------------+          +                         +---------------+---------------------------------------+
-|                      | CVE-2020-17541   |          |                         |               | libjpeg-turbo: Stack-based buffer     |
-|                      |                  |          |                         |               | overflow in the "transform" component |
-|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2020-17541 |
-+----------------------+------------------+          +-------------------------+---------------+---------------------------------------+
-| libncursesw5         | CVE-2019-17594   |          | 6.1-1ubuntu1.18.04      |               | ncurses: heap-based buffer            |
-|                      |                  |          |                         |               | overflow in the _nc_find_entry        |
-|                      |                  |          |                         |               | function in tinfo/comp_hash.c         |
-|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2019-17594 |
-+                      +------------------+          +                         +---------------+---------------------------------------+
-|                      | CVE-2019-17595   |          |                         |               | ncurses: heap-based buffer            |
-|                      |                  |          |                         |               | overflow in the fmt_entry             |
-|                      |                  |          |                         |               | function in tinfo/comp_hash.c         |
-|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2019-17595 |
-+----------------------+------------------+          +-------------------------+---------------+---------------------------------------+
-| libpcre2-8-0         | CVE-2019-20454   |          | 10.31-2                 |               | pcre: Out of bounds read in           |
-|                      |                  |          |                         |               | JIT mode when \X is used...           |
-|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2019-20454 |
-+----------------------+------------------+          +-------------------------+---------------+---------------------------------------+
-| libpng16-16          | CVE-2018-14048   |          | 1.6.34-1ubuntu0.18.04.2 |               | libpng: Segmentation fault in         |
-|                      |                  |          |                         |               | png.c:png_free_data function          |
-|                      |                  |          |                         |               | causing denial of service             |
-|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2018-14048 |
-+----------------------+------------------+----------+-------------------------+---------------+---------------------------------------+
-| libpython3.6-minimal | CVE-2021-4189    | MEDIUM   | 3.6.9-1~18.04ubuntu1.6  |               | python: ftplib should not use         |
-|                      |                  |          |                         |               | the host from the PASV response       |
-|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2021-4189  |
-+                      +------------------+----------+                         +---------------+---------------------------------------+
-|                      | CVE-2021-23336   | LOW      |                         |               | python: Web cache poisoning           |
-|                      |                  |          |                         |               | via urllib.parse.parse_qsl            |
-|                      |                  |          |                         |               | and urllib.parse.parse_qs             |
-|                      |                  |          |                         |               | by using a semicolon...               |
-|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2021-23336 |
-+                      +------------------+          +                         +---------------+---------------------------------------+
-|                      | CVE-2021-3426    |          |                         |               | python: Information                   |
-|                      |                  |          |                         |               | disclosure via pydoc                  |
-|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2021-3426  |
-+----------------------+------------------+----------+-------------------------+---------------+---------------------------------------+
-| libsqlite3-0         | CVE-2020-9794    | MEDIUM   | 3.22.0-1ubuntu0.4       |               | An out-of-bounds read was             |
-|                      |                  |          |                         |               | addressed with improved bounds        |
-|                      |                  |          |                         |               | checking. This issue is...            |
-|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2020-9794  |
-+                      +------------------+----------+                         +---------------+---------------------------------------+
-|                      | CVE-2020-9849    | LOW      |                         |               | An information disclosure issue       |
-|                      |                  |          |                         |               | was addressed with improved           |
-|                      |                  |          |                         |               | state management. This issue...       |
-|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2020-9849  |
-+                      +------------------+          +                         +---------------+---------------------------------------+
-|                      | CVE-2020-9991    |          |                         |               | This issue was addressed              |
-|                      |                  |          |                         |               | with improved checks.                 |
-|                      |                  |          |                         |               | This issue is fixed in...             |
-|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2020-9991  |
-+                      +------------------+          +                         +---------------+---------------------------------------+
-|                      | CVE-2021-36690   |          |                         |               | CVE-2021-36690 affecting              |
-|                      |                  |          |                         |               | package sqlite 3.36.0                 |
-|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2021-36690 |
-+----------------------+------------------+----------+-------------------------+---------------+---------------------------------------+
-| libstdc++6           | CVE-2020-13844   | MEDIUM   | 8.4.0-1ubuntu1~18.04    |               | kernel: ARM straight-line             |
-|                      |                  |          |                         |               | speculation vulnerability             |
-|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2020-13844 |
-+----------------------+------------------+----------+-------------------------+---------------+---------------------------------------+
-| libtinfo5            | CVE-2019-17594   | LOW      | 6.1-1ubuntu1.18.04      |               | ncurses: heap-based buffer            |
-|                      |                  |          |                         |               | overflow in the _nc_find_entry        |
-|                      |                  |          |                         |               | function in tinfo/comp_hash.c         |
-|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2019-17594 |
-+                      +------------------+          +                         +---------------+---------------------------------------+
-|                      | CVE-2019-17595   |          |                         |               | ncurses: heap-based buffer            |
-|                      |                  |          |                         |               | overflow in the fmt_entry             |
-|                      |                  |          |                         |               | function in tinfo/comp_hash.c         |
-|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2019-17595 |
-+----------------------+------------------+----------+-------------------------+---------------+---------------------------------------+
++----------------------+------------------+----------+-------------------------+------------------+---------------------------------------+
+|       LIBRARY        | VULNERABILITY ID | SEVERITY |    INSTALLED VERSION    |  FIXED VERSION   |                 TITLE                 |
++----------------------+------------------+----------+-------------------------+------------------+---------------------------------------+
+| bash                 | CVE-2019-18276   | LOW      | 4.4.18-2ubuntu1.2       |                  | bash: when effective UID is not       |
+|                      |                  |          |                         |                  | equal to its real UID the...          |
+|                      |                  |          |                         |                  | -->avd.aquasec.com/nvd/cve-2019-18276 |
++----------------------+------------------+          +-------------------------+------------------+---------------------------------------+
+| coreutils            | CVE-2016-2781    |          | 8.28-1ubuntu1           |                  | coreutils: Non-privileged             |
+|                      |                  |          |                         |                  | session can escape to the             |
+|                      |                  |          |                         |                  | parent session in chroot              |
+|                      |                  |          |                         |                  | -->avd.aquasec.com/nvd/cve-2016-2781  |
++----------------------+------------------+----------+-------------------------+------------------+---------------------------------------+
+| libc6                | CVE-2021-38604   | MEDIUM   | 2.27-3ubuntu1.4         |                  | glibc: NULL pointer dereference in    |
+|                      |                  |          |                         |                  | helper_thread() in mq_notify.c while  |
+|                      |                  |          |                         |                  | handling NOTIFY_REMOVED messages...   |
+|                      |                  |          |                         |                  | -->avd.aquasec.com/nvd/cve-2021-38604 |
++                      +------------------+          +                         +------------------+---------------------------------------+
+|                      | CVE-2021-3999    |          |                         |                  | glibc: Off-by-one buffer              |
+|                      |                  |          |                         |                  | overflow/underflow in getcwd()        |
+|                      |                  |          |                         |                  | -->avd.aquasec.com/nvd/cve-2021-3999  |
++                      +------------------+----------+                         +------------------+---------------------------------------+
+|                      | CVE-2009-5155    | LOW      |                         |                  | glibc: parse_reg_exp in               |
+|                      |                  |          |                         |                  | posix/regcomp.c misparses             |
+|                      |                  |          |                         |                  | alternatives leading to               |
+|                      |                  |          |                         |                  | denial of service or...               |
+|                      |                  |          |                         |                  | -->avd.aquasec.com/nvd/cve-2009-5155  |
++                      +------------------+          +                         +------------------+---------------------------------------+
+|                      | CVE-2015-8985    |          |                         |                  | glibc: potential denial of            |
+|                      |                  |          |                         |                  | service in pop_fail_stack()           |
+|                      |                  |          |                         |                  | -->avd.aquasec.com/nvd/cve-2015-8985  |
++                      +------------------+          +                         +------------------+---------------------------------------+
+|                      | CVE-2016-10228   |          |                         |                  | glibc: iconv program can hang         |
+|                      |                  |          |                         |                  | when invoked with the -c option       |
+|                      |                  |          |                         |                  | -->avd.aquasec.com/nvd/cve-2016-10228 |
++                      +------------------+          +                         +------------------+---------------------------------------+
+|                      | CVE-2016-10739   |          |                         |                  | glibc: getaddrinfo should reject IP   |
+|                      |                  |          |                         |                  | addresses with trailing characters    |
+|                      |                  |          |                         |                  | -->avd.aquasec.com/nvd/cve-2016-10739 |
++                      +------------------+          +                         +------------------+---------------------------------------+
+|                      | CVE-2019-25013   |          |                         |                  | glibc: buffer over-read in            |
+|                      |                  |          |                         |                  | iconv when processing invalid         |
+|                      |                  |          |                         |                  | multi-byte input sequences in...      |
+|                      |                  |          |                         |                  | -->avd.aquasec.com/nvd/cve-2019-25013 |
++                      +------------------+          +                         +------------------+---------------------------------------+
+|                      | CVE-2020-27618   |          |                         |                  | glibc: iconv when processing          |
+|                      |                  |          |                         |                  | invalid multi-byte input              |
+|                      |                  |          |                         |                  | sequences fails to advance the...     |
+|                      |                  |          |                         |                  | -->avd.aquasec.com/nvd/cve-2020-27618 |
++                      +------------------+          +                         +------------------+---------------------------------------+
+|                      | CVE-2020-29562   |          |                         |                  | glibc: assertion failure in iconv     |
+|                      |                  |          |                         |                  | when converting invalid UCS4          |
+|                      |                  |          |                         |                  | -->avd.aquasec.com/nvd/cve-2020-29562 |
++                      +------------------+          +                         +------------------+---------------------------------------+
+|                      | CVE-2020-6096    |          |                         |                  | glibc: signed comparison              |
+|                      |                  |          |                         |                  | vulnerability in the                  |
+|                      |                  |          |                         |                  | ARMv7 memcpy function                 |
+|                      |                  |          |                         |                  | -->avd.aquasec.com/nvd/cve-2020-6096  |
++                      +------------------+          +                         +------------------+---------------------------------------+
+|                      | CVE-2021-3326    |          |                         |                  | glibc: Assertion failure in           |
+|                      |                  |          |                         |                  | ISO-2022-JP-3 gconv module            |
+|                      |                  |          |                         |                  | related to combining characters       |
+|                      |                  |          |                         |                  | -->avd.aquasec.com/nvd/cve-2021-3326  |
++                      +------------------+          +                         +------------------+---------------------------------------+
+|                      | CVE-2021-33574   |          |                         |                  | glibc: mq_notify does                 |
+|                      |                  |          |                         |                  | not handle separately                 |
+|                      |                  |          |                         |                  | allocated thread attributes           |
+|                      |                  |          |                         |                  | -->avd.aquasec.com/nvd/cve-2021-33574 |
++                      +------------------+          +                         +------------------+---------------------------------------+
+|                      | CVE-2021-35942   |          |                         |                  | glibc: Arbitrary read in wordexp()    |
+|                      |                  |          |                         |                  | -->avd.aquasec.com/nvd/cve-2021-35942 |
++                      +------------------+          +                         +------------------+---------------------------------------+
+|                      | CVE-2022-23218   |          |                         |                  | glibc: stack-based buffer overflow    |
+|                      |                  |          |                         |                  | in svcunix_create via long pathnames  |
+|                      |                  |          |                         |                  | -->avd.aquasec.com/nvd/cve-2022-23218 |
++                      +------------------+          +                         +------------------+---------------------------------------+
+|                      | CVE-2022-23219   |          |                         |                  | glibc: stack-based buffer             |
+|                      |                  |          |                         |                  | overflow in sunrpc clnt_create        |
+|                      |                  |          |                         |                  | via a long pathname                   |
+|                      |                  |          |                         |                  | -->avd.aquasec.com/nvd/cve-2022-23219 |
++----------------------+------------------+----------+-------------------------+------------------+---------------------------------------+
+| libexpat1            | CVE-2022-25235   | HIGH     | 2.2.5-3ubuntu0.2        | 2.2.5-3ubuntu0.4 | expat: malformed 2- and               |
+|                      |                  |          |                         |                  | 3-byte UTF-8 sequences can            |
+|                      |                  |          |                         |                  | lead to arbitrary code...             |
+|                      |                  |          |                         |                  | -->avd.aquasec.com/nvd/cve-2022-25235 |
++                      +------------------+          +                         +                  +---------------------------------------+
+|                      | CVE-2022-25236   |          |                         |                  | expat: namespace-separator characters |
+|                      |                  |          |                         |                  | in "xmlns[:prefix]" attribute         |
+|                      |                  |          |                         |                  | values can lead to arbitrary code...  |
+|                      |                  |          |                         |                  | -->avd.aquasec.com/nvd/cve-2022-25236 |
++                      +------------------+----------+                         +                  +---------------------------------------+
+|                      | CVE-2021-46143   | MEDIUM   |                         |                  | expat: Integer overflow               |
+|                      |                  |          |                         |                  | in doProlog in xmlparse.c             |
+|                      |                  |          |                         |                  | -->avd.aquasec.com/nvd/cve-2021-46143 |
++                      +------------------+          +                         +                  +---------------------------------------+
+|                      | CVE-2022-22822   |          |                         |                  | expat: Integer overflow in            |
+|                      |                  |          |                         |                  | addBinding in xmlparse.c              |
+|                      |                  |          |                         |                  | -->avd.aquasec.com/nvd/cve-2022-22822 |
++                      +------------------+          +                         +                  +---------------------------------------+
+|                      | CVE-2022-22823   |          |                         |                  | expat: Integer overflow in            |
+|                      |                  |          |                         |                  | build_model in xmlparse.c             |
+|                      |                  |          |                         |                  | -->avd.aquasec.com/nvd/cve-2022-22823 |
++                      +------------------+          +                         +                  +---------------------------------------+
+|                      | CVE-2022-22824   |          |                         |                  | expat: Integer overflow in            |
+|                      |                  |          |                         |                  | defineAttribute in xmlparse.c         |
+|                      |                  |          |                         |                  | -->avd.aquasec.com/nvd/cve-2022-22824 |
++                      +------------------+          +                         +                  +---------------------------------------+
+|                      | CVE-2022-22825   |          |                         |                  | expat: Integer overflow               |
+|                      |                  |          |                         |                  | in lookup in xmlparse.c               |
+|                      |                  |          |                         |                  | -->avd.aquasec.com/nvd/cve-2022-22825 |
++                      +------------------+          +                         +                  +---------------------------------------+
+|                      | CVE-2022-22826   |          |                         |                  | expat: Integer overflow in            |
+|                      |                  |          |                         |                  | nextScaffoldPart in xmlparse.c        |
+|                      |                  |          |                         |                  | -->avd.aquasec.com/nvd/cve-2022-22826 |
++                      +------------------+          +                         +                  +---------------------------------------+
+|                      | CVE-2022-22827   |          |                         |                  | expat: Integer overflow               |
+|                      |                  |          |                         |                  | in storeAtts in xmlparse.c            |
+|                      |                  |          |                         |                  | -->avd.aquasec.com/nvd/cve-2022-22827 |
++                      +------------------+          +                         +                  +---------------------------------------+
+|                      | CVE-2022-23852   |          |                         |                  | expat: integer overflow               |
+|                      |                  |          |                         |                  | in function XML_GetBuffer             |
+|                      |                  |          |                         |                  | -->avd.aquasec.com/nvd/cve-2022-23852 |
++                      +------------------+          +                         +                  +---------------------------------------+
+|                      | CVE-2022-23990   |          |                         |                  | expat: integer overflow               |
+|                      |                  |          |                         |                  | in the doProlog function              |
+|                      |                  |          |                         |                  | -->avd.aquasec.com/nvd/cve-2022-23990 |
++                      +------------------+----------+                         +                  +---------------------------------------+
+|                      | CVE-2021-45960   | LOW      |                         |                  | expat: Large number of prefixed XML   |
+|                      |                  |          |                         |                  | attributes on a single tag can...     |
+|                      |                  |          |                         |                  | -->avd.aquasec.com/nvd/cve-2021-45960 |
++----------------------+------------------+----------+-------------------------+------------------+---------------------------------------+
+| libgcc1              | CVE-2020-13844   | MEDIUM   | 8.4.0-1ubuntu1~18.04    |                  | kernel: ARM straight-line             |
+|                      |                  |          |                         |                  | speculation vulnerability             |
+|                      |                  |          |                         |                  | -->avd.aquasec.com/nvd/cve-2020-13844 |
++----------------------+                  +          +                         +------------------+                                       +
+| libgomp1             |                  |          |                         |                  |                                       |
+|                      |                  |          |                         |                  |                                       |
+|                      |                  |          |                         |                  |                                       |
++----------------------+------------------+----------+-------------------------+------------------+---------------------------------------+
+| libjpeg-turbo8       | CVE-2018-11813   | LOW      | 1.5.2-0ubuntu5.18.04.4  |                  | libjpeg: "cjpeg" utility              |
+|                      |                  |          |                         |                  | large loop because read_pixel         |
+|                      |                  |          |                         |                  | in rdtarga.c mishandles EOF           |
+|                      |                  |          |                         |                  | -->avd.aquasec.com/nvd/cve-2018-11813 |
++                      +------------------+          +                         +------------------+---------------------------------------+
+|                      | CVE-2020-17541   |          |                         |                  | libjpeg-turbo: Stack-based buffer     |
+|                      |                  |          |                         |                  | overflow in the "transform" component |
+|                      |                  |          |                         |                  | -->avd.aquasec.com/nvd/cve-2020-17541 |
++----------------------+------------------+          +-------------------------+------------------+---------------------------------------+
+| libncursesw5         | CVE-2019-17594   |          | 6.1-1ubuntu1.18.04      |                  | ncurses: heap-based buffer            |
+|                      |                  |          |                         |                  | overflow in the _nc_find_entry        |
+|                      |                  |          |                         |                  | function in tinfo/comp_hash.c         |
+|                      |                  |          |                         |                  | -->avd.aquasec.com/nvd/cve-2019-17594 |
++                      +------------------+          +                         +------------------+---------------------------------------+
+|                      | CVE-2019-17595   |          |                         |                  | ncurses: heap-based buffer            |
+|                      |                  |          |                         |                  | overflow in the fmt_entry             |
+|                      |                  |          |                         |                  | function in tinfo/comp_hash.c         |
+|                      |                  |          |                         |                  | -->avd.aquasec.com/nvd/cve-2019-17595 |
++----------------------+------------------+          +-------------------------+------------------+---------------------------------------+
+| libpcre2-8-0         | CVE-2019-20454   |          | 10.31-2                 |                  | pcre: Out of bounds read in           |
+|                      |                  |          |                         |                  | JIT mode when \X is used...           |
+|                      |                  |          |                         |                  | -->avd.aquasec.com/nvd/cve-2019-20454 |
++----------------------+------------------+          +-------------------------+------------------+---------------------------------------+
+| libpng16-16          | CVE-2018-14048   |          | 1.6.34-1ubuntu0.18.04.2 |                  | libpng: Segmentation fault in         |
+|                      |                  |          |                         |                  | png.c:png_free_data function          |
+|                      |                  |          |                         |                  | causing denial of service             |
+|                      |                  |          |                         |                  | -->avd.aquasec.com/nvd/cve-2018-14048 |
++----------------------+------------------+----------+-------------------------+------------------+---------------------------------------+
+| libpython3.6-minimal | CVE-2021-4189    | MEDIUM   | 3.6.9-1~18.04ubuntu1.6  |                  | python: ftplib should not use         |
+|                      |                  |          |                         |                  | the host from the PASV response       |
+|                      |                  |          |                         |                  | -->avd.aquasec.com/nvd/cve-2021-4189  |
++                      +------------------+----------+                         +------------------+---------------------------------------+
+|                      | CVE-2021-23336   | LOW      |                         |                  | python: Web cache poisoning           |
+|                      |                  |          |                         |                  | via urllib.parse.parse_qsl            |
+|                      |                  |          |                         |                  | and urllib.parse.parse_qs             |
+|                      |                  |          |                         |                  | by using a semicolon...               |
+|                      |                  |          |                         |                  | -->avd.aquasec.com/nvd/cve-2021-23336 |
++                      +------------------+          +                         +------------------+---------------------------------------+
+|                      | CVE-2021-3426    |          |                         |                  | python: Information                   |
+|                      |                  |          |                         |                  | disclosure via pydoc                  |
+|                      |                  |          |                         |                  | -->avd.aquasec.com/nvd/cve-2021-3426  |
++----------------------+------------------+----------+-------------------------+------------------+---------------------------------------+
+| libsqlite3-0         | CVE-2020-9794    | MEDIUM   | 3.22.0-1ubuntu0.4       |                  | An out-of-bounds read was             |
+|                      |                  |          |                         |                  | addressed with improved bounds        |
+|                      |                  |          |                         |                  | checking. This issue is...            |
+|                      |                  |          |                         |                  | -->avd.aquasec.com/nvd/cve-2020-9794  |
++                      +------------------+----------+                         +------------------+---------------------------------------+
+|                      | CVE-2020-9849    | LOW      |                         |                  | An information disclosure issue       |
+|                      |                  |          |                         |                  | was addressed with improved           |
+|                      |                  |          |                         |                  | state management. This issue...       |
+|                      |                  |          |                         |                  | -->avd.aquasec.com/nvd/cve-2020-9849  |
++                      +------------------+          +                         +------------------+---------------------------------------+
+|                      | CVE-2020-9991    |          |                         |                  | This issue was addressed              |
+|                      |                  |          |                         |                  | with improved checks.                 |
+|                      |                  |          |                         |                  | This issue is fixed in...             |
+|                      |                  |          |                         |                  | -->avd.aquasec.com/nvd/cve-2020-9991  |
++                      +------------------+          +                         +------------------+---------------------------------------+
+|                      | CVE-2021-36690   |          |                         |                  | CVE-2021-36690 affecting              |
+|                      |                  |          |                         |                  | package sqlite 3.36.0                 |
+|                      |                  |          |                         |                  | -->avd.aquasec.com/nvd/cve-2021-36690 |
++----------------------+------------------+----------+-------------------------+------------------+---------------------------------------+
+| libstdc++6           | CVE-2020-13844   | MEDIUM   | 8.4.0-1ubuntu1~18.04    |                  | kernel: ARM straight-line             |
+|                      |                  |          |                         |                  | speculation vulnerability             |
+|                      |                  |          |                         |                  | -->avd.aquasec.com/nvd/cve-2020-13844 |
++----------------------+------------------+----------+-------------------------+------------------+---------------------------------------+
+| libtinfo5            | CVE-2019-17594   | LOW      | 6.1-1ubuntu1.18.04      |                  | ncurses: heap-based buffer            |
+|                      |                  |          |                         |                  | overflow in the _nc_find_entry        |
+|                      |                  |          |                         |                  | function in tinfo/comp_hash.c         |
+|                      |                  |          |                         |                  | -->avd.aquasec.com/nvd/cve-2019-17594 |
++                      +------------------+          +                         +------------------+---------------------------------------+
+|                      | CVE-2019-17595   |          |                         |                  | ncurses: heap-based buffer            |
+|                      |                  |          |                         |                  | overflow in the fmt_entry             |
+|                      |                  |          |                         |                  | function in tinfo/comp_hash.c         |
+|                      |                  |          |                         |                  | -->avd.aquasec.com/nvd/cve-2019-17595 |
++----------------------+------------------+----------+-------------------------+------------------+---------------------------------------+
 +---------------------------------------------+------------------+----------+-------------------+--------------------------------+---------------------------------------------------------------+
 |                   LIBRARY                   | VULNERABILITY ID | SEVERITY | INSTALLED VERSION |         FIXED VERSION          |                             TITLE                             |
 +---------------------------------------------+------------------+----------+-------------------+--------------------------------+---------------------------------------------------------------+
