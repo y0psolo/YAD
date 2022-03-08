@@ -413,6 +413,7 @@ jobs:
       - name: Install crossbuild package
         if: ${{ matrix.arch == 'arm64' }}
         run : |
+          sudo apt update
           sudo apt install crossbuild-essential-arm64
       - name: Set up QEMU
         id: qemu
