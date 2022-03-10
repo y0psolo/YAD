@@ -1,106 +1,51 @@
-+----------------------+------------------+----------+-------------------------+-----------------+---------------------------------------+
-|       LIBRARY        | VULNERABILITY ID | SEVERITY |    INSTALLED VERSION    |  FIXED VERSION  |                 TITLE                 |
-+----------------------+------------------+----------+-------------------------+-----------------+---------------------------------------+
-| bash                 | CVE-2019-18276   | LOW      | 5.0-6ubuntu1.1          |                 | bash: when effective UID is not       |
-|                      |                  |          |                         |                 | equal to its real UID the...          |
-|                      |                  |          |                         |                 | -->avd.aquasec.com/nvd/cve-2019-18276 |
-+----------------------+------------------+          +-------------------------+-----------------+---------------------------------------+
-| coreutils            | CVE-2016-2781    |          | 8.30-3ubuntu2           |                 | coreutils: Non-privileged             |
-|                      |                  |          |                         |                 | session can escape to the             |
-|                      |                  |          |                         |                 | parent session in chroot              |
-|                      |                  |          |                         |                 | -->avd.aquasec.com/nvd/cve-2016-2781  |
-+----------------------+------------------+----------+-------------------------+-----------------+---------------------------------------+
-| libc6                | CVE-2021-3999    | MEDIUM   | 2.31-0ubuntu9.2         | 2.31-0ubuntu9.7 | glibc: Off-by-one buffer              |
-|                      |                  |          |                         |                 | overflow/underflow in getcwd()        |
-|                      |                  |          |                         |                 | -->avd.aquasec.com/nvd/cve-2021-3999  |
-+                      +------------------+----------+                         +                 +---------------------------------------+
-|                      | CVE-2016-10228   | LOW      |                         |                 | glibc: iconv program can hang         |
-|                      |                  |          |                         |                 | when invoked with the -c option       |
-|                      |                  |          |                         |                 | -->avd.aquasec.com/nvd/cve-2016-10228 |
-+                      +------------------+          +                         +                 +---------------------------------------+
-|                      | CVE-2019-25013   |          |                         |                 | glibc: buffer over-read in            |
-|                      |                  |          |                         |                 | iconv when processing invalid         |
-|                      |                  |          |                         |                 | multi-byte input sequences in...      |
-|                      |                  |          |                         |                 | -->avd.aquasec.com/nvd/cve-2019-25013 |
-+                      +------------------+          +                         +                 +---------------------------------------+
-|                      | CVE-2020-27618   |          |                         |                 | glibc: iconv when processing          |
-|                      |                  |          |                         |                 | invalid multi-byte input              |
-|                      |                  |          |                         |                 | sequences fails to advance the...     |
-|                      |                  |          |                         |                 | -->avd.aquasec.com/nvd/cve-2020-27618 |
-+                      +------------------+          +                         +                 +---------------------------------------+
-|                      | CVE-2020-29562   |          |                         |                 | glibc: assertion failure in iconv     |
-|                      |                  |          |                         |                 | when converting invalid UCS4          |
-|                      |                  |          |                         |                 | -->avd.aquasec.com/nvd/cve-2020-29562 |
-+                      +------------------+          +                         +                 +---------------------------------------+
-|                      | CVE-2020-6096    |          |                         |                 | glibc: signed comparison              |
-|                      |                  |          |                         |                 | vulnerability in the                  |
-|                      |                  |          |                         |                 | ARMv7 memcpy function                 |
-|                      |                  |          |                         |                 | -->avd.aquasec.com/nvd/cve-2020-6096  |
-+                      +------------------+          +                         +                 +---------------------------------------+
-|                      | CVE-2021-27645   |          |                         |                 | glibc: Use-after-free in              |
-|                      |                  |          |                         |                 | addgetnetgrentX function              |
-|                      |                  |          |                         |                 | in netgroupcache.c                    |
-|                      |                  |          |                         |                 | -->avd.aquasec.com/nvd/cve-2021-27645 |
-+                      +------------------+          +                         +                 +---------------------------------------+
-|                      | CVE-2021-3326    |          |                         |                 | glibc: Assertion failure in           |
-|                      |                  |          |                         |                 | ISO-2022-JP-3 gconv module            |
-|                      |                  |          |                         |                 | related to combining characters       |
-|                      |                  |          |                         |                 | -->avd.aquasec.com/nvd/cve-2021-3326  |
-+                      +------------------+          +                         +                 +---------------------------------------+
-|                      | CVE-2021-35942   |          |                         |                 | glibc: Arbitrary read in wordexp()    |
-|                      |                  |          |                         |                 | -->avd.aquasec.com/nvd/cve-2021-35942 |
-+                      +------------------+          +                         +                 +---------------------------------------+
-|                      | CVE-2022-23218   |          |                         |                 | glibc: Stack-based buffer overflow    |
-|                      |                  |          |                         |                 | in svcunix_create via long pathnames  |
-|                      |                  |          |                         |                 | -->avd.aquasec.com/nvd/cve-2022-23218 |
-+                      +------------------+          +                         +                 +---------------------------------------+
-|                      | CVE-2022-23219   |          |                         |                 | glibc: Stack-based buffer             |
-|                      |                  |          |                         |                 | overflow in sunrpc clnt_create        |
-|                      |                  |          |                         |                 | via a long pathname                   |
-|                      |                  |          |                         |                 | -->avd.aquasec.com/nvd/cve-2022-23219 |
-+----------------------+------------------+----------+-------------------------+-----------------+---------------------------------------+
-| libexpat1            | CVE-2022-25314   | MEDIUM   | 2.2.9-1ubuntu0.2        |                 | expat: integer overflow               |
-|                      |                  |          |                         |                 | in copyString()                       |
-|                      |                  |          |                         |                 | -->avd.aquasec.com/nvd/cve-2022-25314 |
-+----------------------+------------------+----------+-------------------------+-----------------+---------------------------------------+
-| libjpeg-turbo8       | CVE-2020-17541   | LOW      | 2.0.3-0ubuntu1.20.04.1  |                 | libjpeg-turbo: Stack-based buffer     |
-|                      |                  |          |                         |                 | overflow in the "transform" component |
-|                      |                  |          |                         |                 | -->avd.aquasec.com/nvd/cve-2020-17541 |
-+----------------------+------------------+----------+-------------------------+-----------------+---------------------------------------+
-| libpython3.8-minimal | CVE-2021-4189    | MEDIUM   | 3.8.10-0ubuntu1~20.04.2 |                 | python: ftplib should not use         |
-|                      |                  |          |                         |                 | the host from the PASV response       |
-|                      |                  |          |                         |                 | -->avd.aquasec.com/nvd/cve-2021-4189  |
-+                      +------------------+          +                         +-----------------+---------------------------------------+
-|                      | CVE-2022-0391    |          |                         |                 | python: urllib.parse does             |
-|                      |                  |          |                         |                 | not sanitize URLs containing          |
-|                      |                  |          |                         |                 | ASCII newline and tabs                |
-|                      |                  |          |                         |                 | -->avd.aquasec.com/nvd/cve-2022-0391  |
-+                      +------------------+----------+                         +-----------------+---------------------------------------+
-|                      | CVE-2021-23336   | LOW      |                         |                 | python: Web cache poisoning           |
-|                      |                  |          |                         |                 | via urllib.parse.parse_qsl            |
-|                      |                  |          |                         |                 | and urllib.parse.parse_qs             |
-|                      |                  |          |                         |                 | by using a semicolon...               |
-|                      |                  |          |                         |                 | -->avd.aquasec.com/nvd/cve-2021-23336 |
-+----------------------+------------------+----------+-------------------------+-----------------+---------------------------------------+
-| libsqlite3-0         | CVE-2020-9794    | MEDIUM   | 3.31.1-4ubuntu0.2       |                 | An out-of-bounds read was             |
-|                      |                  |          |                         |                 | addressed with improved bounds        |
-|                      |                  |          |                         |                 | checking. This issue is...            |
-|                      |                  |          |                         |                 | -->avd.aquasec.com/nvd/cve-2020-9794  |
-+                      +------------------+----------+                         +-----------------+---------------------------------------+
-|                      | CVE-2020-9849    | LOW      |                         |                 | An information disclosure issue       |
-|                      |                  |          |                         |                 | was addressed with improved           |
-|                      |                  |          |                         |                 | state management. This issue...       |
-|                      |                  |          |                         |                 | -->avd.aquasec.com/nvd/cve-2020-9849  |
-+                      +------------------+          +                         +-----------------+---------------------------------------+
-|                      | CVE-2020-9991    |          |                         |                 | This issue was addressed              |
-|                      |                  |          |                         |                 | with improved checks.                 |
-|                      |                  |          |                         |                 | This issue is fixed in...             |
-|                      |                  |          |                         |                 | -->avd.aquasec.com/nvd/cve-2020-9991  |
-+                      +------------------+          +                         +-----------------+---------------------------------------+
-|                      | CVE-2021-36690   |          |                         |                 | ** DISPUTED ** A segmentation fault   |
-|                      |                  |          |                         |                 | can occur in the sqlite3.exe comma... |
-|                      |                  |          |                         |                 | -->avd.aquasec.com/nvd/cve-2021-36690 |
-+----------------------+------------------+----------+-------------------------+-----------------+---------------------------------------+
++----------------------+------------------+----------+-------------------------+---------------+---------------------------------------+
+|       LIBRARY        | VULNERABILITY ID | SEVERITY |    INSTALLED VERSION    | FIXED VERSION |                 TITLE                 |
++----------------------+------------------+----------+-------------------------+---------------+---------------------------------------+
+| bash                 | CVE-2019-18276   | LOW      | 5.0-6ubuntu1.1          |               | bash: when effective UID is not       |
+|                      |                  |          |                         |               | equal to its real UID the...          |
+|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2019-18276 |
++----------------------+------------------+          +-------------------------+---------------+---------------------------------------+
+| coreutils            | CVE-2016-2781    |          | 8.30-3ubuntu2           |               | coreutils: Non-privileged             |
+|                      |                  |          |                         |               | session can escape to the             |
+|                      |                  |          |                         |               | parent session in chroot              |
+|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2016-2781  |
++----------------------+------------------+----------+-------------------------+---------------+---------------------------------------+
+| libexpat1            | CVE-2022-25314   | MEDIUM   | 2.2.9-1ubuntu0.2        |               | expat: integer overflow               |
+|                      |                  |          |                         |               | in copyString()                       |
+|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2022-25314 |
++----------------------+------------------+----------+-------------------------+---------------+---------------------------------------+
+| libjpeg-turbo8       | CVE-2020-17541   | LOW      | 2.0.3-0ubuntu1.20.04.1  |               | libjpeg-turbo: Stack-based buffer     |
+|                      |                  |          |                         |               | overflow in the "transform" component |
+|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2020-17541 |
++----------------------+------------------+----------+-------------------------+---------------+---------------------------------------+
+| libpython3.8-minimal | CVE-2021-4189    | MEDIUM   | 3.8.10-0ubuntu1~20.04.2 |               | python: ftplib should not use         |
+|                      |                  |          |                         |               | the host from the PASV response       |
+|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2021-4189  |
++                      +------------------+          +                         +---------------+---------------------------------------+
+|                      | CVE-2022-0391    |          |                         |               | python: urllib.parse does             |
+|                      |                  |          |                         |               | not sanitize URLs containing          |
+|                      |                  |          |                         |               | ASCII newline and tabs                |
+|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2022-0391  |
++----------------------+------------------+          +-------------------------+---------------+---------------------------------------+
+| libsqlite3-0         | CVE-2020-9794    |          | 3.31.1-4ubuntu0.2       |               | An out-of-bounds read was             |
+|                      |                  |          |                         |               | addressed with improved bounds        |
+|                      |                  |          |                         |               | checking. This issue is...            |
+|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2020-9794  |
++                      +------------------+----------+                         +---------------+---------------------------------------+
+|                      | CVE-2020-9849    | LOW      |                         |               | An information disclosure issue       |
+|                      |                  |          |                         |               | was addressed with improved           |
+|                      |                  |          |                         |               | state management. This issue...       |
+|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2020-9849  |
++                      +------------------+          +                         +---------------+---------------------------------------+
+|                      | CVE-2020-9991    |          |                         |               | This issue was addressed              |
+|                      |                  |          |                         |               | with improved checks.                 |
+|                      |                  |          |                         |               | This issue is fixed in...             |
+|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2020-9991  |
++                      +------------------+          +                         +---------------+---------------------------------------+
+|                      | CVE-2021-36690   |          |                         |               | ** DISPUTED ** A segmentation fault   |
+|                      |                  |          |                         |               | can occur in the sqlite3.exe comma... |
+|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2021-36690 |
++----------------------+------------------+----------+-------------------------+---------------+---------------------------------------+
 +---------------------------------------------+------------------+----------+-------------------+--------------------------------+---------------------------------------------------------------+
 |                   LIBRARY                   | VULNERABILITY ID | SEVERITY | INSTALLED VERSION |         FIXED VERSION          |                             TITLE                             |
 +---------------------------------------------+------------------+----------+-------------------+--------------------------------+---------------------------------------------------------------+
@@ -184,7 +129,7 @@
 |                                             |                  |          |                   |                                | to an Improper Input Validation                               |
 |                                             |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2018-1000873                       |
 +                                             +------------------+----------+-------------------+--------------------------------+---------------------------------------------------------------+
-|                                             | CVE-2017-15095   | CRITICAL | 2.6.7.3           | 2.7.9.2, 2.8.10, 2.9.1         | jackson-databind: Unsafe                                      |
+|                                             | CVE-2017-15095   | CRITICAL | 2.6.7.4           | 2.7.9.2, 2.8.10, 2.9.1         | jackson-databind: Unsafe                                      |
 |                                             |                  |          |                   |                                | deserialization due to                                        |
 |                                             |                  |          |                   |                                | incomplete black list (incomplete                             |
 |                                             |                  |          |                   |                                | fix for CVE-2017-7525)...                                     |
@@ -246,18 +191,6 @@
 |                                             |                  |          |                   |                                | for CVE-2017-7525 and...                                      |
 |                                             |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2018-5968                          |
 +                                             +------------------+          +                   +--------------------------------+---------------------------------------------------------------+
-|                                             | CVE-2020-10673   |          |                   | 2.6.7.4, 2.9.10.4              | jackson-databind: mishandles                                  |
-|                                             |                  |          |                   |                                | the interaction between                                       |
-|                                             |                  |          |                   |                                | serialization gadgets and                                     |
-|                                             |                  |          |                   |                                | typing which could result...                                  |
-|                                             |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2020-10673                         |
-+                                             +------------------+          +                   +--------------------------------+---------------------------------------------------------------+
-|                                             | CVE-2020-25649   |          |                   | 2.6.7.4, 2.9.10.7, 2.10.5.1    | jackson-databind: FasterXML                                   |
-|                                             |                  |          |                   |                                | DOMDeserializer insecure                                      |
-|                                             |                  |          |                   |                                | entity expansion is vulnerable                                |
-|                                             |                  |          |                   |                                | to XML external entity...                                     |
-|                                             |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2020-25649                         |
-+                                             +------------------+          +                   +--------------------------------+---------------------------------------------------------------+
 |                                             | CVE-2020-35490   |          |                   | 2.9.10.8                       | jackson-databind: mishandles the interaction                  |
 |                                             |                  |          |                   |                                | between serialization gadgets and typing, related to          |
 |                                             |                  |          |                   |                                | org.apache.commons.dbcp2.datasources.PerUserPoolDataSource... |
@@ -307,7 +240,7 @@
 | com.squareup.okhttp:okhttp                  | CVE-2016-2402    | MEDIUM   | 2.7.5             | 3.1.2                          | Improper Certificate Validation                               |
 |                                             |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2016-2402                          |
 +---------------------------------------------+------------------+----------+-------------------+--------------------------------+---------------------------------------------------------------+
-| io.netty:netty-codec                        | CVE-2021-37136   | HIGH     | 4.1.48.Final      | 4.1.68.Final                   | netty-codec: Bzip2Decoder                                     |
+| io.netty:netty-codec                        | CVE-2021-37136   | HIGH     | 4.1.61.Final      | 4.1.68.Final                   | netty-codec: Bzip2Decoder                                     |
 |                                             |                  |          |                   |                                | doesn't allow setting size                                    |
 |                                             |                  |          |                   |                                | restrictions for decompressed data                            |
 |                                             |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2021-37136                         |
@@ -317,11 +250,7 @@
 |                                             |                  |          |                   |                                | may buffer skippable chunks in...                             |
 |                                             |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2021-37137                         |
 +---------------------------------------------+------------------+----------+                   +--------------------------------+---------------------------------------------------------------+
-| io.netty:netty-codec-http                   | CVE-2021-21290   | MEDIUM   |                   | 4.1.59.Final                   | netty: Information disclosure via                             |
-|                                             |                  |          |                   |                                | the local system temporary directory                          |
-|                                             |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2021-21290                         |
-+                                             +------------------+          +                   +--------------------------------+---------------------------------------------------------------+
-|                                             | CVE-2021-43797   |          |                   | 4.1.71.Final                   | netty: control chars in header names                          |
+| io.netty:netty-codec-http                   | CVE-2021-43797   | MEDIUM   |                   | 4.1.71.Final                   | netty: control chars in header names                          |
 |                                             |                  |          |                   |                                | may lead to HTTP request smuggling...                         |
 |                                             |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2021-43797                         |
 +---------------------------------------------+------------------+----------+-------------------+--------------------------------+---------------------------------------------------------------+
