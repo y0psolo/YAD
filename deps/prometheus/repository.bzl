@@ -4,17 +4,17 @@ def prometheus_repository():
     http_archive(
         name = "prometheus_amd64",
         build_file = "//ext/prometheus:BUILD.prom",
-        sha256 = "18aea1c8e6833fe01423000139a4778780542f3bbafe3d5b97437704aa15b130",
-        strip_prefix = "prometheus-2.33.4.linux-amd64",
-        urls = ["https://github.com/prometheus/prometheus/releases/download/v2.33.4/prometheus-2.33.4.linux-amd64.tar.gz"],
+        sha256 = "53876d18d4ed2d02a35797d91b09e9057621b495415703be77dd29956002514d",
+        strip_prefix = "prometheus-2.33.5.linux-amd64",
+        urls = ["https://github.com/prometheus/prometheus/releases/download/v2.33.5/prometheus-2.33.5.linux-amd64.tar.gz"],
     )
 
     http_archive(
         name = "prometheus_arm64",
         build_file = "//ext/prometheus:BUILD.prom",
-        sha256 = "113b877b32a7fba8a482c79d4108ae31973de4e7a3f85d21db15a6ae870bdef0",
-        strip_prefix = "prometheus-2.33.4.linux-arm64",
-        urls = ["https://github.com/prometheus/prometheus/releases/download/v2.33.4/prometheus-2.33.4.linux-arm64.tar.gz"],
+        sha256 = "538f558d37e7863db57b3e81ba7133e2ba397b9db0c3b3e481885296b5956073",
+        strip_prefix = "prometheus-2.33.5.linux-arm64",
+        urls = ["https://github.com/prometheus/prometheus/releases/download/v2.33.5/prometheus-2.33.5.linux-arm64.tar.gz"],
     )
 
     http_archive(
