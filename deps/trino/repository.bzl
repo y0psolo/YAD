@@ -4,15 +4,15 @@ def trino_repository():
     http_archive(
         name = "trino_server",
         build_file = "//ext/trino:BUILD",
-        sha256 = "3545c1ba5ab1cd5cb4f13c21a9c0ab29a4b59a164b8accbf8c8625fec36a0b8f",
-        strip_prefix = "trino-server-373/",
-        urls = ["https://repo1.maven.org/maven2/io/trino/trino-server/373/trino-server-373.tar.gz"],
+        sha256 = "e27d8c9a2f5125179530da6aa5ff3b067588e3880c958d8dc9a920f332cf4f06",
+        strip_prefix = "trino-server-374/",
+        urls = ["https://repo1.maven.org/maven2/io/trino/trino-server/374/trino-server-374.tar.gz"],
     )
 
     http_file(
         name = "trino_cli",
         # sha256 = "4ba0974884271a20447ddf15e247175c3c98621a5d57eeaa152150bbf8ca86d9",
         downloaded_file_path = "trino-cli.jar",
-        sha256 = "4a2ec84185253b7238bb92515aba28869fe0a71190168734f41bb5e5b0c4c6ee",
-        urls = ["https://repo1.maven.org/maven2/io/trino/trino-cli/373/trino-cli-373-executable.jar"],
+        sha256 = "a872c2f38371cafee88e64ae0797bb69df7b0c95ee8b5316895749fe4bb995c4",
+        urls = ["https://repo1.maven.org/maven2/io/trino/trino-cli/374/trino-cli-374-executable.jar"],
     )
