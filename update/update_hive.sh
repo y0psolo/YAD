@@ -14,7 +14,7 @@ write_rule hive_metastore_3 hive_metastore_3 https://repo1.maven.org/maven2/org/
 write_version hive  HIVE_VERSION $VERSION
 
 VERSION_PGSQL=$(git -c versionsort.suffix=- ls-remote -t --exit-code --refs --sort=-v:refname https://github.com/pgjdbc/pgjdbc 'REL[0-9]*.[0-9]*.[0-9]*' | grep -o -m 1 -E "[0-9]+\.[0-9]+\.[0-9]+$")
-write_rule hive_pgsql postgresql https://repo1.maven.org/maven2/org/postgresql/postgresql/$VERSION_PGSQL/postgresql-$VERSION_PGSQL.jar
+write_rule hive_pgsql postgresql https://repo1.maven.org/maven2/org/postgresql/postgresql/$VERSION_PGSQL/postgresql-$VERSION_PGSQL.jar "" hive
 
 VERSION_MYSQL=$(git -c versionsort.suffix=- ls-remote -t --exit-code --refs --sort=-v:refname https://github.com/mysql/mysql-connector-j '[0-9]*.[0-9]*.[0-9]*' | grep -o -m 1 -E "[0-9]+\.[0-9]+\.[0-9]+$")
-write_rule hive_mysql mysql https://repo1.maven.org/maven2/mysql/mysql-connector-java/$VERSION_MYSQL/mysql-connector-java-$VERSION_MYSQL.jar
+write_rule hive_mysql mysql https://repo1.maven.org/maven2/mysql/mysql-connector-java/$VERSION_MYSQL/mysql-connector-java-$VERSION_MYSQL.jar "" hive
