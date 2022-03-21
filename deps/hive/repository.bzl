@@ -12,13 +12,13 @@ def hive_repository():
     http_file(
         name = "mysql",
         downloaded_file_path = "mysql-connector-java.jar",
-        sha256 = "d670e85fa1075a80d91b8f17dbd620d76717bc20c74ab4aea8356e37a8545ffe",
-        urls = ["https://repo1.maven.org/maven2/mysql/mysql-connector-java/8.0.27/mysql-connector-java-8.0.27.jar"],
+        sha256 = "a00ccdf537ff50e50067b989108c2235197ffb65e197149bbb669db843cd1c3e",
+        urls = ["https://repo1.maven.org/maven2/mysql/mysql-connector-java/8.0.28/mysql-connector-java-8.0.28.jar"],
     )
 
     http_file(
         name = "postgresql",
         downloaded_file_path = "postgresql.jar",
-        sha256 = "8370570857da86eb4a76dd3d8505d34bac0c18186741fa83a6820a10fa441cb4",
-        urls = ["https://repo1.maven.org/maven2/org/postgresql/postgresql/42.3.1/postgresql-42.3.1.jar"],
+        sha256 = "eed0604f512ba44817954de99a07e2a5470aa4bfcb481d4e63a93e0ff0e0aede",
+        urls = ["https://repo1.maven.org/maven2/org/postgresql/postgresql/42.3.3/postgresql-42.3.3.jar"],
     )
