@@ -1,59 +1,49 @@
-+-------------+------------------+----------+---------------------------+---------------------------+---------------------------------------+
-|   LIBRARY   | VULNERABILITY ID | SEVERITY |     INSTALLED VERSION     |       FIXED VERSION       |                 TITLE                 |
-+-------------+------------------+----------+---------------------------+---------------------------+---------------------------------------+
-| libc6       | CVE-2009-5155    | LOW      | 2.27-3ubuntu1.5           |                           | glibc: parse_reg_exp in               |
-|             |                  |          |                           |                           | posix/regcomp.c misparses             |
-|             |                  |          |                           |                           | alternatives leading to               |
-|             |                  |          |                           |                           | denial of service or...               |
-|             |                  |          |                           |                           | -->avd.aquasec.com/nvd/cve-2009-5155  |
-+             +------------------+          +                           +---------------------------+---------------------------------------+
-|             | CVE-2015-8985    |          |                           |                           | glibc: potential denial of            |
-|             |                  |          |                           |                           | service in pop_fail_stack()           |
-|             |                  |          |                           |                           | -->avd.aquasec.com/nvd/cve-2015-8985  |
-+             +------------------+          +                           +---------------------------+---------------------------------------+
-|             | CVE-2016-10739   |          |                           |                           | glibc: getaddrinfo should reject IP   |
-|             |                  |          |                           |                           | addresses with trailing characters    |
-|             |                  |          |                           |                           | -->avd.aquasec.com/nvd/cve-2016-10739 |
-+-------------+------------------+----------+---------------------------+---------------------------+---------------------------------------+
-| libgcc1     | CVE-2020-13844   | MEDIUM   | 8.4.0-1ubuntu1~18.04      |                           | kernel: ARM straight-line             |
-|             |                  |          |                           |                           | speculation vulnerability             |
-|             |                  |          |                           |                           | -->avd.aquasec.com/nvd/cve-2020-13844 |
-+-------------+                  +          +                           +---------------------------+                                       +
-| libgomp1    |                  |          |                           |                           |                                       |
-|             |                  |          |                           |                           |                                       |
-|             |                  |          |                           |                           |                                       |
-+-------------+------------------+----------+---------------------------+---------------------------+---------------------------------------+
-| libncurses5 | CVE-2019-17594   | LOW      | 6.1-1ubuntu1.18.04        |                           | ncurses: heap-based buffer            |
-|             |                  |          |                           |                           | overflow in the _nc_find_entry        |
-|             |                  |          |                           |                           | function in tinfo/comp_hash.c         |
-|             |                  |          |                           |                           | -->avd.aquasec.com/nvd/cve-2019-17594 |
-+             +------------------+          +                           +---------------------------+---------------------------------------+
-|             | CVE-2019-17595   |          |                           |                           | ncurses: heap-based buffer            |
-|             |                  |          |                           |                           | overflow in the fmt_entry             |
-|             |                  |          |                           |                           | function in tinfo/comp_hash.c         |
-|             |                  |          |                           |                           | -->avd.aquasec.com/nvd/cve-2019-17595 |
-+-------------+------------------+----------+---------------------------+---------------------------+---------------------------------------+
-| libssl1.1   | CVE-2022-0778    | HIGH     | 1.1.1-1ubuntu2.1~18.04.14 | 1.1.1-1ubuntu2.1~18.04.15 | openssl: Infinite loop in             |
-|             |                  |          |                           |                           | BN_mod_sqrt() reachable               |
-|             |                  |          |                           |                           | when parsing certificates             |
-|             |                  |          |                           |                           | -->avd.aquasec.com/nvd/cve-2022-0778  |
-+-------------+------------------+----------+---------------------------+---------------------------+---------------------------------------+
-| libstdc++6  | CVE-2020-13844   | MEDIUM   | 8.4.0-1ubuntu1~18.04      |                           | kernel: ARM straight-line             |
-|             |                  |          |                           |                           | speculation vulnerability             |
-|             |                  |          |                           |                           | -->avd.aquasec.com/nvd/cve-2020-13844 |
-+-------------+------------------+----------+---------------------------+---------------------------+---------------------------------------+
-| libtinfo5   | CVE-2019-17594   | LOW      | 6.1-1ubuntu1.18.04        |                           | ncurses: heap-based buffer            |
-|             |                  |          |                           |                           | overflow in the _nc_find_entry        |
-|             |                  |          |                           |                           | function in tinfo/comp_hash.c         |
-|             |                  |          |                           |                           | -->avd.aquasec.com/nvd/cve-2019-17594 |
-+             +------------------+          +                           +---------------------------+---------------------------------------+
-|             | CVE-2019-17595   |          |                           |                           | ncurses: heap-based buffer            |
-|             |                  |          |                           |                           | overflow in the fmt_entry             |
-|             |                  |          |                           |                           | function in tinfo/comp_hash.c         |
-|             |                  |          |                           |                           | -->avd.aquasec.com/nvd/cve-2019-17595 |
-+-------------+------------------+----------+---------------------------+---------------------------+---------------------------------------+
-| openssl     | CVE-2022-0778    | HIGH     | 1.1.1-1ubuntu2.1~18.04.14 | 1.1.1-1ubuntu2.1~18.04.15 | openssl: Infinite loop in             |
-|             |                  |          |                           |                           | BN_mod_sqrt() reachable               |
-|             |                  |          |                           |                           | when parsing certificates             |
-|             |                  |          |                           |                           | -->avd.aquasec.com/nvd/cve-2022-0778  |
-+-------------+------------------+----------+---------------------------+---------------------------+---------------------------------------+
++-------------+------------------+----------+----------------------+---------------+---------------------------------------+
+|   LIBRARY   | VULNERABILITY ID | SEVERITY |  INSTALLED VERSION   | FIXED VERSION |                 TITLE                 |
++-------------+------------------+----------+----------------------+---------------+---------------------------------------+
+| libc6       | CVE-2009-5155    | LOW      | 2.27-3ubuntu1.5      |               | glibc: parse_reg_exp in               |
+|             |                  |          |                      |               | posix/regcomp.c misparses             |
+|             |                  |          |                      |               | alternatives leading to               |
+|             |                  |          |                      |               | denial of service or...               |
+|             |                  |          |                      |               | -->avd.aquasec.com/nvd/cve-2009-5155  |
++             +------------------+          +                      +---------------+---------------------------------------+
+|             | CVE-2015-8985    |          |                      |               | glibc: potential denial of            |
+|             |                  |          |                      |               | service in pop_fail_stack()           |
+|             |                  |          |                      |               | -->avd.aquasec.com/nvd/cve-2015-8985  |
++             +------------------+          +                      +---------------+---------------------------------------+
+|             | CVE-2016-10739   |          |                      |               | glibc: getaddrinfo should reject IP   |
+|             |                  |          |                      |               | addresses with trailing characters    |
+|             |                  |          |                      |               | -->avd.aquasec.com/nvd/cve-2016-10739 |
++-------------+------------------+----------+----------------------+---------------+---------------------------------------+
+| libgcc1     | CVE-2020-13844   | MEDIUM   | 8.4.0-1ubuntu1~18.04 |               | kernel: ARM straight-line             |
+|             |                  |          |                      |               | speculation vulnerability             |
+|             |                  |          |                      |               | -->avd.aquasec.com/nvd/cve-2020-13844 |
++-------------+                  +          +                      +---------------+                                       +
+| libgomp1    |                  |          |                      |               |                                       |
+|             |                  |          |                      |               |                                       |
+|             |                  |          |                      |               |                                       |
++-------------+------------------+----------+----------------------+---------------+---------------------------------------+
+| libncurses5 | CVE-2019-17594   | LOW      | 6.1-1ubuntu1.18.04   |               | ncurses: heap-based buffer            |
+|             |                  |          |                      |               | overflow in the _nc_find_entry        |
+|             |                  |          |                      |               | function in tinfo/comp_hash.c         |
+|             |                  |          |                      |               | -->avd.aquasec.com/nvd/cve-2019-17594 |
++             +------------------+          +                      +---------------+---------------------------------------+
+|             | CVE-2019-17595   |          |                      |               | ncurses: heap-based buffer            |
+|             |                  |          |                      |               | overflow in the fmt_entry             |
+|             |                  |          |                      |               | function in tinfo/comp_hash.c         |
+|             |                  |          |                      |               | -->avd.aquasec.com/nvd/cve-2019-17595 |
++-------------+------------------+----------+----------------------+---------------+---------------------------------------+
+| libstdc++6  | CVE-2020-13844   | MEDIUM   | 8.4.0-1ubuntu1~18.04 |               | kernel: ARM straight-line             |
+|             |                  |          |                      |               | speculation vulnerability             |
+|             |                  |          |                      |               | -->avd.aquasec.com/nvd/cve-2020-13844 |
++-------------+------------------+----------+----------------------+---------------+---------------------------------------+
+| libtinfo5   | CVE-2019-17594   | LOW      | 6.1-1ubuntu1.18.04   |               | ncurses: heap-based buffer            |
+|             |                  |          |                      |               | overflow in the _nc_find_entry        |
+|             |                  |          |                      |               | function in tinfo/comp_hash.c         |
+|             |                  |          |                      |               | -->avd.aquasec.com/nvd/cve-2019-17594 |
++             +------------------+          +                      +---------------+---------------------------------------+
+|             | CVE-2019-17595   |          |                      |               | ncurses: heap-based buffer            |
+|             |                  |          |                      |               | overflow in the fmt_entry             |
+|             |                  |          |                      |               | function in tinfo/comp_hash.c         |
+|             |                  |          |                      |               | -->avd.aquasec.com/nvd/cve-2019-17595 |
++-------------+------------------+----------+----------------------+---------------+---------------------------------------+
