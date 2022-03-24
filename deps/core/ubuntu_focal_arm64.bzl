@@ -62,7 +62,7 @@ def ubuntu_focal_arm64():
             "python3.8-minimal": "pool/main/p/python3.8/python3.8-minimal_3.8.10-0ubuntu1~20.04.2_arm64.deb",
             "readline-common": "pool/main/r/readline/readline-common_8.0-4_all.deb",
             "tar": "pool/main/t/tar/tar_1.30+dfsg-7ubuntu0.20.04.2_arm64.deb",
-            "tzdata": "pool/main/t/tzdata/tzdata_2021e-0ubuntu0.20.04_all.deb",
+            "tzdata": "pool/main/t/tzdata/tzdata_2022a-0ubuntu0.20.04_all.deb",
             "zlib1g": "pool/main/z/zlib/zlib1g_1.2.11.dfsg-2ubuntu1.2_arm64.deb",
         },
         packages_sha256 = {
@@ -121,7 +121,7 @@ def ubuntu_focal_arm64():
             "python3.8-minimal": "18e700ca3969ecf688f85df597b93511fc5f7c86d9955ef64418e2fb135568e0",
             "readline-common": "38c3ac67e2dab4122a2f948f433c4cb5d5653d82b323f3ff30599797b7adee9f",
             "tar": "1c527019a01126cd788d16b19e78ccb864ed83734150249901b07f0e4dfa910e",
-            "tzdata": "68056b19545c87987802e7f4e416a19bfece7257f274854c9790ae9dedcfeac6",
+            "tzdata": "572f3754bda8487bfe7c1a9372cce185b8609f0dcbbd44f4a4813acd8c3d06c6",
             "zlib1g": "abd976c6e1e28403bb02ef2122e420a46d48c5bf82d92a6bc595e247fca6d581",
         },
         sources = [

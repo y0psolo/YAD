@@ -60,7 +60,7 @@ def ubuntu_bionic_amd64():
             "python3.6-minimal": "pool/main/p/python3.6/python3.6-minimal_3.6.9-1~18.04ubuntu1.6_amd64.deb",
             "readline-common": "pool/main/r/readline/readline-common_7.0-3_all.deb",
             "tar": "pool/main/t/tar/tar_1.29b-2ubuntu0.3_amd64.deb",
-            "tzdata": "pool/main/t/tzdata/tzdata_2021e-0ubuntu0.18.04_all.deb",
+            "tzdata": "pool/main/t/tzdata/tzdata_2022a-0ubuntu0.18.04_all.deb",
             "zlib1g": "pool/main/z/zlib/zlib1g_1.2.11.dfsg-0ubuntu2_amd64.deb",
         },
         packages_sha256 = {
@@ -117,7 +117,7 @@ def ubuntu_bionic_amd64():
             "python3.6-minimal": "e30011c605816ab1d371c9f096caabaff8dabf87850207fd146aa05845b912c9",
             "readline-common": "84cb3642c82114496d2fc17011db13655bd661cf4641098c03c168ddde367908",
             "tar": "83b7ee71eb936c983b912267e0289ba3ae7458e29c3e5162696c25de65adb1c2",
-            "tzdata": "8ff68141a56b3fe97588a4e8ee02de7dfdacf2abbd4c23ed9ea793ba181ee479",
+            "tzdata": "ad6ea19c1e3c3318bb94aa65b387ae235e72f031bd8898a1f6fc7b4c1373d483",
             "zlib1g": "2e6dafb986ee8ebbc4e1c344fab090a41710cab878fc9cd89336cdd1740518c5",
         },
         sources = [
