@@ -8,7 +8,11 @@
 +---------------------------------------------+------------------+----------+-------------------+--------------------------------+---------------------------------------------------------------------------------+
 |                   LIBRARY                   | VULNERABILITY ID | SEVERITY | INSTALLED VERSION |         FIXED VERSION          |                                      TITLE                                      |
 +---------------------------------------------+------------------+----------+-------------------+--------------------------------+---------------------------------------------------------------------------------+
-| com.fasterxml.jackson.core:jackson-databind | CVE-2017-15095   | CRITICAL | 2.6.7.4           | 2.7.9.2, 2.8.10, 2.9.1         | jackson-databind: Unsafe                                                        |
+| com.fasterxml.jackson.core:jackson-databind | CVE-2020-36518   | HIGH     | 2.13.0            |                           2.14 | jackson-databind: denial of service                                             |
+|                                             |                  |          |                   |                                | via a large depth of nested objects                                             |
+|                                             |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2020-36518                                           |
++                                             +------------------+----------+-------------------+--------------------------------+---------------------------------------------------------------------------------+
+|                                             | CVE-2017-15095   | CRITICAL | 2.6.7.4           | 2.7.9.2, 2.8.10, 2.9.1         | jackson-databind: Unsafe                                                        |
 |                                             |                  |          |                   |                                | deserialization due to                                                          |
 |                                             |                  |          |                   |                                | incomplete black list (incomplete                                               |
 |                                             |                  |          |                   |                                | fix for CVE-2017-7525)...                                                       |
@@ -79,6 +83,10 @@
 |                                             |                  |          |                   |                                | between serialization gadgets and typing, related to                            |
 |                                             |                  |          |                   |                                | org.apache.commons.dbcp2.datasources.SharedPoolDataSource...                    |
 |                                             |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2020-35491                                           |
++                                             +------------------+          +                   +--------------------------------+---------------------------------------------------------------------------------+
+|                                             | CVE-2020-36518   |          |                   |                           2.14 | jackson-databind: denial of service                                             |
+|                                             |                  |          |                   |                                | via a large depth of nested objects                                             |
+|                                             |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2020-36518                                           |
 +                                             +------------------+----------+                   +--------------------------------+---------------------------------------------------------------------------------+
 |                                             | CVE-2018-1000873 | MEDIUM   |                   | 2.9.8                          | jackson-modules-java8: DoS due                                                  |
 |                                             |                  |          |                   |                                | to an Improper Input Validation                                                 |
@@ -350,6 +358,10 @@
 |                                             |                  |          |                   |                                | between serialization gadgets and typing, related to                            |
 |                                             |                  |          |                   |                                | com.newrelic.agent.deps.ch.qos.logback.core.db.DriverManagerConnectionSource... |
 |                                             |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2020-36189                                           |
++                                             +------------------+          +                   +--------------------------------+---------------------------------------------------------------------------------+
+|                                             | CVE-2020-36518   |          |                   |                           2.14 | jackson-databind: denial of service                                             |
+|                                             |                  |          |                   |                                | via a large depth of nested objects                                             |
+|                                             |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2020-36518                                           |
 +                                             +------------------+          +                   +--------------------------------+---------------------------------------------------------------------------------+
 |                                             | CVE-2021-20190   |          |                   | 2.9.10.7                       | jackson-databind: mishandles                                                    |
 |                                             |                  |          |                   |                                | the interaction between                                                         |
