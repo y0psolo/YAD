@@ -36,15 +36,15 @@ def prometheus_repository():
     http_archive(
         name = "alertmanager_amd64",
         build_file = "//ext/prometheus:BUILD.alert",
-        sha256 = "77793c4d9bb92be98f7525f8bc50cb8adb8c5de2e944d5500e90ab13918771fc",
-        strip_prefix = "alertmanager-0.23.0.linux-amd64",
-        urls = ["https://github.com/prometheus/alertmanager/releases/download/v0.23.0/alertmanager-0.23.0.linux-amd64.tar.gz"],
+        sha256 = "6fa982232ae7be5524f5b3cd4e90b7c6a75086368200c917644eaa3e806555dc",
+        strip_prefix = "alertmanager-0.24.0.linux-amd64",
+        urls = ["https://github.com/prometheus/alertmanager/releases/download/v0.24.0/alertmanager-0.24.0.linux-amd64.tar.gz"],
     )
 
     http_archive(
         name = "alertmanager_arm64",
         build_file = "//ext/prometheus:BUILD.alert",
-        sha256 = "afa44f350797032ceb714598900cfdddbf81d6ef03d2ecbfc0221cc2cb28a6b9",
-        strip_prefix = "alertmanager-0.23.0.linux-arm64",
-        urls = ["https://github.com/prometheus/alertmanager/releases/download/v0.23.0/alertmanager-0.23.0.linux-arm64.tar.gz"],
+        sha256 = "f54dd97f20b5d06517cbe83bae6333325fc26bc6595ede433f165aefb562d421",
+        strip_prefix = "alertmanager-0.24.0.linux-arm64",
+        urls = ["https://github.com/prometheus/alertmanager/releases/download/v0.24.0/alertmanager-0.24.0.linux-arm64.tar.gz"],
     )
