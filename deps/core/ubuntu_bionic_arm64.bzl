@@ -60,7 +60,7 @@ def ubuntu_bionic_arm64():
             "readline-common": "pool/main/r/readline/readline-common_7.0-3_all.deb",
             "tar": "pool/main/t/tar/tar_1.29b-2ubuntu0.3_arm64.deb",
             "tzdata": "pool/main/t/tzdata/tzdata_2022a-0ubuntu0.18.04_all.deb",
-            "zlib1g": "pool/main/z/zlib/zlib1g_1.2.11.dfsg-0ubuntu2_arm64.deb",
+            "zlib1g": "pool/main/z/zlib/zlib1g_1.2.11.dfsg-0ubuntu2.1_arm64.deb",
         },
         packages_sha256 = {
             "base-files": "bb22b743421fcd6f53510b21f005014994a55109b99224b90043b370c682e833",
@@ -116,7 +116,7 @@ def ubuntu_bionic_arm64():
             "readline-common": "84cb3642c82114496d2fc17011db13655bd661cf4641098c03c168ddde367908",
             "tar": "c3e609428d5539670b2063e7fa3fd2df1bff90504016b9fc4e3a9b27231669e1",
             "tzdata": "ad6ea19c1e3c3318bb94aa65b387ae235e72f031bd8898a1f6fc7b4c1373d483",
-            "zlib1g": "cb24429fb0dbd5198f2f358b02e021a7836d26cc697629fd5aad43a44655db91",
+            "zlib1g": "6dce4b588985efa9d295029c6706aea672df9d16fc60f8d8f862b95329b33a51",
         },
         sources = [
             "http://ports.ubuntu.com/ubuntu-ports bionic main universe",

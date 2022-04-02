@@ -63,7 +63,7 @@ def ubuntu_focal_arm64():
             "readline-common": "pool/main/r/readline/readline-common_8.0-4_all.deb",
             "tar": "pool/main/t/tar/tar_1.30+dfsg-7ubuntu0.20.04.2_arm64.deb",
             "tzdata": "pool/main/t/tzdata/tzdata_2022a-0ubuntu0.20.04_all.deb",
-            "zlib1g": "pool/main/z/zlib/zlib1g_1.2.11.dfsg-2ubuntu1.2_arm64.deb",
+            "zlib1g": "pool/main/z/zlib/zlib1g_1.2.11.dfsg-2ubuntu1.3_arm64.deb",
         },
         packages_sha256 = {
             "base-files": "1cb89161f0d00067e33364f03f89c57269ea9da46ab7ffe71473811f1fb6a652",
@@ -122,7 +122,7 @@ def ubuntu_focal_arm64():
             "readline-common": "38c3ac67e2dab4122a2f948f433c4cb5d5653d82b323f3ff30599797b7adee9f",
             "tar": "1c527019a01126cd788d16b19e78ccb864ed83734150249901b07f0e4dfa910e",
             "tzdata": "572f3754bda8487bfe7c1a9372cce185b8609f0dcbbd44f4a4813acd8c3d06c6",
-            "zlib1g": "abd976c6e1e28403bb02ef2122e420a46d48c5bf82d92a6bc595e247fca6d581",
+            "zlib1g": "78df924cdc53ce61ff02211be2a3cef1627984abf20744220066c76786bcc3a5",
         },
         sources = [
             "http://ports.ubuntu.com/ubuntu-ports focal main universe",

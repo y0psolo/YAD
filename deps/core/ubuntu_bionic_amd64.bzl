@@ -61,7 +61,7 @@ def ubuntu_bionic_amd64():
             "readline-common": "pool/main/r/readline/readline-common_7.0-3_all.deb",
             "tar": "pool/main/t/tar/tar_1.29b-2ubuntu0.3_amd64.deb",
             "tzdata": "pool/main/t/tzdata/tzdata_2022a-0ubuntu0.18.04_all.deb",
-            "zlib1g": "pool/main/z/zlib/zlib1g_1.2.11.dfsg-0ubuntu2_amd64.deb",
+            "zlib1g": "pool/main/z/zlib/zlib1g_1.2.11.dfsg-0ubuntu2.1_amd64.deb",
         },
         packages_sha256 = {
             "base-files": "b103b55f80cc703af636cb111d80b733c71ba4c39a138ebe8926356d88173142",
@@ -118,7 +118,7 @@ def ubuntu_bionic_amd64():
             "readline-common": "84cb3642c82114496d2fc17011db13655bd661cf4641098c03c168ddde367908",
             "tar": "83b7ee71eb936c983b912267e0289ba3ae7458e29c3e5162696c25de65adb1c2",
             "tzdata": "ad6ea19c1e3c3318bb94aa65b387ae235e72f031bd8898a1f6fc7b4c1373d483",
-            "zlib1g": "2e6dafb986ee8ebbc4e1c344fab090a41710cab878fc9cd89336cdd1740518c5",
+            "zlib1g": "72f0bec7692ee750102c7d952feb87b111d0b2b9430053cb7f266d6af094d07b",
         },
         sources = [
             "http://us.archive.ubuntu.com/ubuntu bionic main universe",
