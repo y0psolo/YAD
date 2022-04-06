@@ -1,48 +1,43 @@
-+----------------+------------------+----------+-------------------------+--------------------------+---------------------------------------+
-|    LIBRARY     | VULNERABILITY ID | SEVERITY |    INSTALLED VERSION    |      FIXED VERSION       |                 TITLE                 |
-+----------------+------------------+----------+-------------------------+--------------------------+---------------------------------------+
-| libc6          | CVE-2009-5155    | LOW      | 2.27-3ubuntu1.5         |                          | glibc: parse_reg_exp in               |
-|                |                  |          |                         |                          | posix/regcomp.c misparses             |
-|                |                  |          |                         |                          | alternatives leading to               |
-|                |                  |          |                         |                          | denial of service or...               |
-|                |                  |          |                         |                          | -->avd.aquasec.com/nvd/cve-2009-5155  |
-+                +------------------+          +                         +--------------------------+---------------------------------------+
-|                | CVE-2015-8985    |          |                         |                          | glibc: potential denial of            |
-|                |                  |          |                         |                          | service in pop_fail_stack()           |
-|                |                  |          |                         |                          | -->avd.aquasec.com/nvd/cve-2015-8985  |
-+                +------------------+          +                         +--------------------------+---------------------------------------+
-|                | CVE-2016-10739   |          |                         |                          | glibc: getaddrinfo should reject IP   |
-|                |                  |          |                         |                          | addresses with trailing characters    |
-|                |                  |          |                         |                          | -->avd.aquasec.com/nvd/cve-2016-10739 |
-+----------------+------------------+----------+-------------------------+--------------------------+---------------------------------------+
-| libgcc1        | CVE-2020-13844   | MEDIUM   | 8.4.0-1ubuntu1~18.04    |                          | kernel: ARM straight-line             |
-|                |                  |          |                         |                          | speculation vulnerability             |
-|                |                  |          |                         |                          | -->avd.aquasec.com/nvd/cve-2020-13844 |
-+----------------+                  +          +                         +--------------------------+                                       +
-| libgomp1       |                  |          |                         |                          |                                       |
-|                |                  |          |                         |                          |                                       |
-|                |                  |          |                         |                          |                                       |
-+----------------+------------------+----------+-------------------------+--------------------------+---------------------------------------+
-| libjpeg-turbo8 | CVE-2018-11813   | LOW      | 1.5.2-0ubuntu5.18.04.4  |                          | libjpeg: "cjpeg" utility              |
-|                |                  |          |                         |                          | large loop because read_pixel         |
-|                |                  |          |                         |                          | in rdtarga.c mishandles EOF           |
-|                |                  |          |                         |                          | -->avd.aquasec.com/nvd/cve-2018-11813 |
-+                +------------------+          +                         +--------------------------+---------------------------------------+
-|                | CVE-2020-17541   |          |                         |                          | libjpeg-turbo: Stack-based buffer     |
-|                |                  |          |                         |                          | overflow in the "transform" component |
-|                |                  |          |                         |                          | -->avd.aquasec.com/nvd/cve-2020-17541 |
-+----------------+------------------+          +-------------------------+--------------------------+---------------------------------------+
-| libpng16-16    | CVE-2018-14048   |          | 1.6.34-1ubuntu0.18.04.2 |                          | libpng: Segmentation fault in         |
-|                |                  |          |                         |                          | png.c:png_free_data function          |
-|                |                  |          |                         |                          | causing denial of service             |
-|                |                  |          |                         |                          | -->avd.aquasec.com/nvd/cve-2018-14048 |
-+----------------+------------------+----------+-------------------------+--------------------------+---------------------------------------+
-| libstdc++6     | CVE-2020-13844   | MEDIUM   | 8.4.0-1ubuntu1~18.04    |                          | kernel: ARM straight-line             |
-|                |                  |          |                         |                          | speculation vulnerability             |
-|                |                  |          |                         |                          | -->avd.aquasec.com/nvd/cve-2020-13844 |
-+----------------+------------------+          +-------------------------+--------------------------+---------------------------------------+
-| zlib1g         | CVE-2018-25032   |          | 1:1.2.11.dfsg-0ubuntu2  | 1:1.2.11.dfsg-0ubuntu2.1 | zlib: A flaw in zlib-1.2.11           |
-|                |                  |          |                         |                          | when compressing (not                 |
-|                |                  |          |                         |                          | decompressing!) certain inputs.       |
-|                |                  |          |                         |                          | -->avd.aquasec.com/nvd/cve-2018-25032 |
-+----------------+------------------+----------+-------------------------+--------------------------+---------------------------------------+
++----------------+------------------+----------+-------------------------+---------------+---------------------------------------+
+|    LIBRARY     | VULNERABILITY ID | SEVERITY |    INSTALLED VERSION    | FIXED VERSION |                 TITLE                 |
++----------------+------------------+----------+-------------------------+---------------+---------------------------------------+
+| libc6          | CVE-2009-5155    | LOW      | 2.27-3ubuntu1.5         |               | glibc: parse_reg_exp in               |
+|                |                  |          |                         |               | posix/regcomp.c misparses             |
+|                |                  |          |                         |               | alternatives leading to               |
+|                |                  |          |                         |               | denial of service or...               |
+|                |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2009-5155  |
++                +------------------+          +                         +---------------+---------------------------------------+
+|                | CVE-2015-8985    |          |                         |               | glibc: potential denial of            |
+|                |                  |          |                         |               | service in pop_fail_stack()           |
+|                |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2015-8985  |
++                +------------------+          +                         +---------------+---------------------------------------+
+|                | CVE-2016-10739   |          |                         |               | glibc: getaddrinfo should reject IP   |
+|                |                  |          |                         |               | addresses with trailing characters    |
+|                |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2016-10739 |
++----------------+------------------+----------+-------------------------+---------------+---------------------------------------+
+| libgcc1        | CVE-2020-13844   | MEDIUM   | 8.4.0-1ubuntu1~18.04    |               | kernel: ARM straight-line             |
+|                |                  |          |                         |               | speculation vulnerability             |
+|                |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2020-13844 |
++----------------+                  +          +                         +---------------+                                       +
+| libgomp1       |                  |          |                         |               |                                       |
+|                |                  |          |                         |               |                                       |
+|                |                  |          |                         |               |                                       |
++----------------+------------------+----------+-------------------------+---------------+---------------------------------------+
+| libjpeg-turbo8 | CVE-2018-11813   | LOW      | 1.5.2-0ubuntu5.18.04.4  |               | libjpeg: "cjpeg" utility              |
+|                |                  |          |                         |               | large loop because read_pixel         |
+|                |                  |          |                         |               | in rdtarga.c mishandles EOF           |
+|                |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2018-11813 |
++                +------------------+          +                         +---------------+---------------------------------------+
+|                | CVE-2020-17541   |          |                         |               | libjpeg-turbo: Stack-based buffer     |
+|                |                  |          |                         |               | overflow in the "transform" component |
+|                |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2020-17541 |
++----------------+------------------+          +-------------------------+---------------+---------------------------------------+
+| libpng16-16    | CVE-2018-14048   |          | 1.6.34-1ubuntu0.18.04.2 |               | libpng: Segmentation fault in         |
+|                |                  |          |                         |               | png.c:png_free_data function          |
+|                |                  |          |                         |               | causing denial of service             |
+|                |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2018-14048 |
++----------------+------------------+----------+-------------------------+---------------+---------------------------------------+
+| libstdc++6     | CVE-2020-13844   | MEDIUM   | 8.4.0-1ubuntu1~18.04    |               | kernel: ARM straight-line             |
+|                |                  |          |                         |               | speculation vulnerability             |
+|                |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2020-13844 |
++----------------+------------------+----------+-------------------------+---------------+---------------------------------------+
