@@ -29,17 +29,17 @@ def java_repository():
     http_archive(
         name = "jre-8-azul-arm64",
         build_file = "//ext/azul:BUILD.azul_8_arm64",
-        sha256 = "0d970a27ac8f33ce70672d193f5ae6af4e5e618f0d3958d99c6d848d20a2c088",
-        strip_prefix = "zulu8.60.0.21-ca-jdk8.0.322-linux_aarch64/jre/",
-        urls = ["https://cdn.azul.com/zulu-embedded/bin/zulu8.60.0.21-ca-jdk8.0.322-linux_aarch64.tar.gz"],
+        sha256 = "c4519172d6f5323192561108ee25c2cdef2b7ab0d7f9c807d95a7cf5d4209e84",
+        strip_prefix = "zulu8.62.0.19-ca-jdk8.0.332-linux_aarch64/jre/",
+        urls = ["https://cdn.azul.com/zulu-embedded/bin/zulu8.62.0.19-ca-jdk8.0.332-linux_aarch64.tar.gz"],
     )
 
     http_archive(
         name = "jre-11-azul-arm64",
         build_file = "//ext/azul:BUILD.azul_11_arm64",
-        sha256 = "b0fb0bc303bb05b5042ef3d0939b9489f4a49a13a2d1c8f03c5d8ab23099454d",
-        strip_prefix = "zulu11.54.25-ca-jdk11.0.14.1-linux_aarch64/",
-        urls = ["https://cdn.azul.com/zulu-embedded/bin/zulu11.54.25-ca-jdk11.0.14.1-linux_aarch64.tar.gz"],
+        sha256 = "fc7c41a0005180d4ca471c90d01e049469e0614cf774566d4cf383caa29d1a97",
+        strip_prefix = "zulu11.56.19-ca-jdk11.0.15-linux_aarch64/",
+        urls = ["https://cdn.azul.com/zulu-embedded/bin/zulu11.56.19-ca-jdk11.0.15-linux_aarch64.tar.gz"],
     )
 
     http_archive(
@@ -70,9 +70,9 @@ def java_repository():
     http_archive(
         name = "jre-17-adoptium-amd64",
         build_file = "//ext/adoptium:BUILD.adoptium_17_amd64",
-        sha256 = "288f34e3ba8a4838605636485d0365ce23e57d5f2f68997ac4c2e4c01967cd48",
-        strip_prefix = "jdk-17.0.2+8/",
-        urls = ["https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.2%2B8/OpenJDK17U-jdk_x64_linux_hotspot_17.0.2_8.tar.gz"],
+        sha256 = "81f5bed21077f9fbb04909b50391620c78b9a3c376593c0992934719c0de6b73",
+        strip_prefix = "jdk-17.0.3+7/",
+        urls = ["https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.3%2B7/OpenJDK17U-jdk_x64_linux_hotspot_17.0.3_7.tar.gz"],
     )
 
     http_archive(
