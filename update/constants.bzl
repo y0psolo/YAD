@@ -8,13 +8,13 @@ NODEJS_VERSIONS_MAPPINGS = {"14": "14.19.1", "16": "16.14.2"}
 NOBODY = 65534
 NONROOT = 65532
 
-DENO_VERSION = "1.20.4"
+DENO_VERSION = "1.21.0"
 
-AZUL_VERSIONS_MAPPING = {"amd64": {"11": "11.0.14", "8": "8.0.322", "17": "17.0.2"}, "arm64": {"11": "11.0.14", "8": "8.0.322", "17": "17.0.2"}}
+AZUL_VERSIONS_MAPPING = {"amd64": {"11": "11.0.14", "8": "8.0.322", "17": "17.0.2"}, "arm64": {"11": "11.0.15", "8": "8.0.332", "17": "17.0.2"}}
 
-ADOPTIUM_VERSIONS_MAPPING = {"amd64": {"11": "11.0.14", "8": "8.0.322", "17": "17.0.2"}, "arm64": {"11": "11.0.14", "8": "8.0.322", "17": "17.0.2"}}
+ADOPTIUM_VERSIONS_MAPPING = {"amd64": {"11": "11.0.14", "8": "8.0.322", "17": "17.0.3"}, "arm64": {"11": "11.0.14", "8": "8.0.322", "17": "17.0.2"}}
 
-HIVE_VERSION = "3.1.2"
+HIVE_VERSION = "3.1.3"
 
 HADOOP_VERSION = "3.3.2"
 
@@ -22,17 +22,17 @@ SPARK_VERSIONS = ["2.4", "3.0", "3.1", "3.2"]
 
 SPARK_VERSIONS_MAPPING = {"2.4": "2.4.8", "3.0": "3.0.3", "3.1": "3.1.3", "3.2": "3.2.1"}
 
-TRINO_VERSION = "375"
+TRINO_VERSION = "378"
 
 REDIS_VERSION = "6.2.6"
 
-CONSUL_TEMPLATE_VERSION = "0.28.0"
+CONSUL_TEMPLATE_VERSION = "0.29.0"
 
 MARIADB_VERSIONS = ["10.5", "10.6", "10.7"]
 
 MARIADB_VERSIONS_MAPPING = {"10.5": "10.5.15", "10.6": "10.6.7", "10.7": "10.7.3"}
 
-PROMETHEUS_VERSION = "2.34.0"
+PROMETHEUS_VERSION = "2.35.0"
 
 NODE_EXPORTER_VERSION = "1.3.1"
 
