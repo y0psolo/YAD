@@ -5,25 +5,25 @@ def java_repository():
     http_archive(
         name = "jre-8-azul-amd64",
         build_file = "//ext/azul:BUILD.azul_8_amd64",
-        sha256 = "81e2feef66b1886788da36309e7de5adcb4e0d53c6c31ed40cd3801495a0fe93",
-        strip_prefix = "zulu8.60.0.21-ca-jre8.0.322-linux_x64/",
-        urls = ["https://cdn.azul.com/zulu/bin/zulu8.60.0.21-ca-jre8.0.322-linux_x64.tar.gz"],
+        sha256 = "87b46ddc541d53ff402d123ad2ee8019f60ba83cd56bba26f4d247c415b4c6d8",
+        strip_prefix = "zulu8.62.0.19-ca-jre8.0.332-linux_x64/",
+        urls = ["https://cdn.azul.com/zulu/bin/zulu8.62.0.19-ca-jre8.0.332-linux_x64.tar.gz"],
     )
 
     http_archive(
         name = "jre-11-azul-amd64",
         build_file = "//ext/azul:BUILD.azul_11_amd64",
-        sha256 = "ddc9c3aa34dc87d872ca2f4a909db20c6a388abdf5b87220cb21cf1434d4630b",
-        strip_prefix = "zulu11.54.25-ca-jre11.0.14.1-linux_x64/",
-        urls = ["https://cdn.azul.com/zulu/bin/zulu11.54.25-ca-jre11.0.14.1-linux_x64.tar.gz"],
+        sha256 = "a98ab0d16a282e00f1417462414b14befd148e0e5af6d92e3273c54a99efd4ac",
+        strip_prefix = "zulu11.56.19-ca-jre11.0.15-linux_x64/",
+        urls = ["https://cdn.azul.com/zulu/bin/zulu11.56.19-ca-jre11.0.15-linux_x64.tar.gz"],
     )
 
     http_archive(
         name = "jre-17-azul-amd64",
         build_file = "//ext/azul:BUILD.azul_17_amd64",
-        sha256 = "5edd8b1f7f702a273d72219178b2803cab6a5d137299a729e2551feac2ae1e65",
-        strip_prefix = "zulu17.32.13-ca-jre17.0.2-linux_x64/",
-        urls = ["https://cdn.azul.com/zulu/bin/zulu17.32.13-ca-jre17.0.2-linux_x64.tar.gz"],
+        sha256 = "90ff9c5916c56f402da7ebbf9f8d8ef228f5b3a6b1ba02e69f52b11f2a5fe74c",
+        strip_prefix = "zulu17.34.19-ca-jre17.0.3-linux_x64/",
+        urls = ["https://cdn.azul.com/zulu/bin/zulu17.34.19-ca-jre17.0.3-linux_x64.tar.gz"],
     )
 
     http_archive(
@@ -45,9 +45,9 @@ def java_repository():
     http_archive(
         name = "jre-17-azul-arm64",
         build_file = "//ext/azul:BUILD.azul_17_arm64",
-        sha256 = "889ad19ac1e3a73186eeaaf0ac0dce4a7b6c2473ef23c6fdc6e3abde3ef8c150",
-        strip_prefix = "zulu17.32.13-ca-jre17.0.2-linux_aarch64/",
-        urls = ["https://cdn.azul.com/zulu/bin/zulu17.32.13-ca-jre17.0.2-linux_aarch64.tar.gz"],
+        sha256 = "22c3ee790a8fc12a231351c8e359d00add1a79d02acf4704b5d36ab8d1815f00",
+        strip_prefix = "zulu17.34.19-ca-jre17.0.3-linux_aarch64/",
+        urls = ["https://cdn.azul.com/zulu/bin/zulu17.34.19-ca-jre17.0.3-linux_aarch64.tar.gz"],
     )
 
     # Get Adoptium package
@@ -62,9 +62,9 @@ def java_repository():
     http_archive(
         name = "jre-11-adoptium-amd64",
         build_file = "//ext/adoptium:BUILD.adoptium_11",
-        sha256 = "43fb84f8063ad9bf6b6d694a67b8f64c8827552b920ec5ce794dfe5602edffe7",
-        strip_prefix = "jdk-11.0.14.1+1/",
-        urls = ["https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jdk_x64_linux_hotspot_11.0.14.1_1.tar.gz"],
+        sha256 = "5fdb4d5a1662f0cca73fec30f99e67662350b1fa61460fa72e91eb9f66b54d0b",
+        strip_prefix = "jdk-11.0.15+10/",
+        urls = ["https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.15%2B10/OpenJDK11U-jdk_x64_linux_hotspot_11.0.15_10.tar.gz"],
     )
 
     http_archive(
@@ -94,7 +94,7 @@ def java_repository():
     http_archive(
         name = "jre-17-adoptium-arm64",
         build_file = "//ext/adoptium:BUILD.adoptium_17_arm64",
-        sha256 = "302caf29f73481b2b914ba2b89705036010c65eb9bc8d7712b27d6e9bedf6200",
-        strip_prefix = "jdk-17.0.2+8/",
-        urls = ["https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.2%2B8/OpenJDK17U-jdk_aarch64_linux_hotspot_17.0.2_8.tar.gz"],
+        sha256 = "2e3c19c1707205c6b90cc04b416e8d83078ed98417d5a69dce3cf7dc0d7cfbca",
+        strip_prefix = "jdk-17.0.3+7/",
+        urls = ["https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.3%2B7/OpenJDK17U-jdk_aarch64_linux_hotspot_17.0.3_7.tar.gz"],
     )
