@@ -1,38 +1,55 @@
-+----------------------+------------------+----------+-------------------------+---------------+---------------------------------------+
-|       LIBRARY        | VULNERABILITY ID | SEVERITY |    INSTALLED VERSION    | FIXED VERSION |                 TITLE                 |
-+----------------------+------------------+----------+-------------------------+---------------+---------------------------------------+
-| coreutils            | CVE-2016-2781    | LOW      | 8.30-3ubuntu2           |               | coreutils: Non-privileged             |
-|                      |                  |          |                         |               | session can escape to the             |
-|                      |                  |          |                         |               | parent session in chroot              |
-|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2016-2781  |
-+----------------------+------------------+          +-------------------------+---------------+---------------------------------------+
-| libjpeg-turbo8       | CVE-2020-17541   |          | 2.0.3-0ubuntu1.20.04.1  |               | libjpeg-turbo: Stack-based buffer     |
-|                      |                  |          |                         |               | overflow in the "transform" component |
-|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2020-17541 |
-+----------------------+------------------+          +-------------------------+---------------+---------------------------------------+
-| libpython3.8-minimal | CVE-2015-20107   |          | 3.8.10-0ubuntu1~20.04.4 |               | python(mailcap): findmatch() function |
-|                      |                  |          |                         |               | does not sanitise the second argument |
-|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2015-20107 |
-+----------------------+------------------+----------+-------------------------+---------------+---------------------------------------+
-| libsqlite3-0         | CVE-2020-9794    | MEDIUM   | 3.31.1-4ubuntu0.2       |               | An out-of-bounds read was             |
-|                      |                  |          |                         |               | addressed with improved bounds        |
-|                      |                  |          |                         |               | checking. This issue is...            |
-|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2020-9794  |
-+                      +------------------+----------+                         +---------------+---------------------------------------+
-|                      | CVE-2020-9849    | LOW      |                         |               | An information disclosure issue       |
-|                      |                  |          |                         |               | was addressed with improved           |
-|                      |                  |          |                         |               | state management. This issue...       |
-|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2020-9849  |
-+                      +------------------+          +                         +---------------+---------------------------------------+
-|                      | CVE-2020-9991    |          |                         |               | This issue was addressed              |
-|                      |                  |          |                         |               | with improved checks.                 |
-|                      |                  |          |                         |               | This issue is fixed in...             |
-|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2020-9991  |
-+                      +------------------+          +                         +---------------+---------------------------------------+
-|                      | CVE-2021-36690   |          |                         |               | ** DISPUTED ** A segmentation fault   |
-|                      |                  |          |                         |               | can occur in the sqlite3.exe comma... |
-|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2021-36690 |
-+----------------------+------------------+----------+-------------------------+---------------+---------------------------------------+
++----------------------+------------------+----------+-------------------------+--------------------+---------------------------------------+
+|       LIBRARY        | VULNERABILITY ID | SEVERITY |    INSTALLED VERSION    |   FIXED VERSION    |                 TITLE                 |
++----------------------+------------------+----------+-------------------------+--------------------+---------------------------------------+
+| coreutils            | CVE-2016-2781    | LOW      | 8.30-3ubuntu2           |                    | coreutils: Non-privileged             |
+|                      |                  |          |                         |                    | session can escape to the             |
+|                      |                  |          |                         |                    | parent session in chroot              |
+|                      |                  |          |                         |                    | -->avd.aquasec.com/nvd/cve-2016-2781  |
++----------------------+------------------+----------+-------------------------+--------------------+---------------------------------------+
+| libfreetype6         | CVE-2022-27404   | MEDIUM   | 2.10.1-2ubuntu0.1       |                    | FreeType: Buffer Overflow             |
+|                      |                  |          |                         |                    | -->avd.aquasec.com/nvd/cve-2022-27404 |
++                      +------------------+----------+                         +--------------------+---------------------------------------+
+|                      | CVE-2022-27405   | LOW      |                         |                    | FreeType: Segementation Fault         |
+|                      |                  |          |                         |                    | -->avd.aquasec.com/nvd/cve-2022-27405 |
++                      +------------------+          +                         +--------------------+---------------------------------------+
+|                      | CVE-2022-27406   |          |                         |                    | Freetype: Segmentation violation      |
+|                      |                  |          |                         |                    | -->avd.aquasec.com/nvd/cve-2022-27406 |
++----------------------+------------------+          +-------------------------+--------------------+---------------------------------------+
+| libjpeg-turbo8       | CVE-2020-17541   |          | 2.0.3-0ubuntu1.20.04.1  |                    | libjpeg-turbo: Stack-based buffer     |
+|                      |                  |          |                         |                    | overflow in the "transform" component |
+|                      |                  |          |                         |                    | -->avd.aquasec.com/nvd/cve-2020-17541 |
++----------------------+------------------+          +-------------------------+--------------------+---------------------------------------+
+| libpython3.8-minimal | CVE-2015-20107   |          | 3.8.10-0ubuntu1~20.04.4 |                    | python(mailcap): findmatch() function |
+|                      |                  |          |                         |                    | does not sanitise the second argument |
+|                      |                  |          |                         |                    | -->avd.aquasec.com/nvd/cve-2015-20107 |
++----------------------+------------------+----------+-------------------------+--------------------+---------------------------------------+
+| libsqlite3-0         | CVE-2020-9794    | MEDIUM   | 3.31.1-4ubuntu0.2       |                    | An out-of-bounds read was             |
+|                      |                  |          |                         |                    | addressed with improved bounds        |
+|                      |                  |          |                         |                    | checking. This issue is...            |
+|                      |                  |          |                         |                    | -->avd.aquasec.com/nvd/cve-2020-9794  |
++                      +------------------+----------+                         +--------------------+---------------------------------------+
+|                      | CVE-2020-9849    | LOW      |                         |                    | An information disclosure issue       |
+|                      |                  |          |                         |                    | was addressed with improved           |
+|                      |                  |          |                         |                    | state management. This issue...       |
+|                      |                  |          |                         |                    | -->avd.aquasec.com/nvd/cve-2020-9849  |
++                      +------------------+          +                         +--------------------+---------------------------------------+
+|                      | CVE-2020-9991    |          |                         |                    | This issue was addressed              |
+|                      |                  |          |                         |                    | with improved checks.                 |
+|                      |                  |          |                         |                    | This issue is fixed in...             |
+|                      |                  |          |                         |                    | -->avd.aquasec.com/nvd/cve-2020-9991  |
++                      +------------------+          +                         +--------------------+---------------------------------------+
+|                      | CVE-2021-36690   |          |                         | 3.31.1-4ubuntu0.3  | ** DISPUTED ** A segmentation fault   |
+|                      |                  |          |                         |                    | can occur in the sqlite3.exe comma... |
+|                      |                  |          |                         |                    | -->avd.aquasec.com/nvd/cve-2021-36690 |
++----------------------+------------------+----------+-------------------------+--------------------+---------------------------------------+
+| libssl1.1            | CVE-2022-1292    | MEDIUM   | 1.1.1f-1ubuntu2.12      | 1.1.1f-1ubuntu2.13 | openssl: c_rehash script              |
+|                      |                  |          |                         |                    | allows command injection              |
+|                      |                  |          |                         |                    | -->avd.aquasec.com/nvd/cve-2022-1292  |
++----------------------+                  +          +                         +                    +                                       +
+| openssl              |                  |          |                         |                    |                                       |
+|                      |                  |          |                         |                    |                                       |
+|                      |                  |          |                         |                    |                                       |
++----------------------+------------------+----------+-------------------------+--------------------+---------------------------------------+
 +---------------------------------------------+------------------+----------+-------------------+--------------------------------+---------------------------------------------------------------+
 |                   LIBRARY                   | VULNERABILITY ID | SEVERITY | INSTALLED VERSION |         FIXED VERSION          |                             TITLE                             |
 +---------------------------------------------+------------------+----------+-------------------+--------------------------------+---------------------------------------------------------------+
@@ -222,7 +239,7 @@
 |                                             |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2020-8908                          |
 +---------------------------------------------+------------------+----------+-------------------+--------------------------------+---------------------------------------------------------------+
 | com.google.guava:guava                      | CVE-2018-10237   | MEDIUM   | 14.0.1            | 24.1.1-jre, 24.1.1-android     | guava: Unbounded memory                                       |
-| (guava-14.0.1.jar)                          |                  |          |                   |                                | allocation in AtomicDoubleArray                               |
+| (spark-network-common_2.12-3.1.3.jar)       |                  |          |                   |                                | allocation in AtomicDoubleArray                               |
 |                                             |                  |          |                   |                                | and CompoundOrdering classes                                  |
 |                                             |                  |          |                   |                                | allow remote attackers...                                     |
 |                                             |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2018-10237                         |
