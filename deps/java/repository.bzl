@@ -54,9 +54,9 @@ def java_repository():
     http_archive(
         name = "jre-8-adoptium-amd64",
         build_file = "//ext/adoptium:BUILD.adoptium_8_amd64",
-        sha256 = "3d62362a78c9412766471b05253507a4cfc212daea5cdf122860173ce902400e",
-        strip_prefix = "jdk8u322-b06/jre/",
-        urls = ["https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jdk_x64_linux_hotspot_8u322b06.tar.gz"],
+        sha256 = "adc13a0a0540d77f0a3481b48f10d61eb203e5ad4914507d489c2de3bd3d83da",
+        strip_prefix = "jdk8u332-b09/jre/",
+        urls = ["https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u332-b09/OpenJDK8U-jdk_x64_linux_hotspot_8u332b09.tar.gz"],
     )
 
     http_archive(
@@ -78,17 +78,17 @@ def java_repository():
     http_archive(
         name = "jre-8-adoptium-arm64",
         build_file = "//ext/adoptium:BUILD.adoptium_8_arm64",
-        sha256 = "42ed3ff5a859f9015a1362fb7e650026b913d688eab471714f795651120be173",
-        strip_prefix = "jdk8u322-b06/jre/",
-        urls = ["https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u322-b06/OpenJDK8U-jdk_aarch64_linux_hotspot_8u322b06.tar.gz"],
+        sha256 = "d10efb2afad3ed3d7bac9d3249cea77928aca6acb973cac0f90a2dd3606a3533",
+        strip_prefix = "jdk8u332-b09/jre/",
+        urls = ["https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u332-b09/OpenJDK8U-jdk_aarch64_linux_hotspot_8u332b09.tar.gz"],
     )
 
     http_archive(
         name = "jre-11-adoptium-arm64",
         build_file = "//ext/adoptium:BUILD.adoptium_11",
-        sha256 = "79572f5172c6a040591d34632f98a20ed148702bbce2f57649e8ac01c0d2e3db",
-        strip_prefix = "jdk-11.0.14.1+1/",
-        urls = ["https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.14.1%2B1/OpenJDK11U-jdk_aarch64_linux_hotspot_11.0.14.1_1.tar.gz"],
+        sha256 = "999fbd90b070f9896142f0eb28354abbeb367cbe49fd86885c626e2999189e0a",
+        strip_prefix = "jdk-11.0.15+10/",
+        urls = ["https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.15%2B10/OpenJDK11U-jdk_aarch64_linux_hotspot_11.0.15_10.tar.gz"],
     )
 
     http_archive(

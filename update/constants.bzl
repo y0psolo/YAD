@@ -2,17 +2,17 @@
 
 JRE_VERSIONS = ["8", "11", "17"]
 NODEJS_VERSIONS = ["14", "16"]
-NODEJS_VERSIONS_MAPPINGS = {"14": "14.19.1", "16": "16.14.2"}
+NODEJS_VERSIONS_MAPPINGS = {"14": "14.19.2", "16": "16.15.0"}
 
 # ID mapping
 NOBODY = 65534
 NONROOT = 65532
 
-DENO_VERSION = "1.21.0"
+DENO_VERSION = "1.21.2"
 
 AZUL_VERSIONS_MAPPING = {"amd64": {"11": "11.0.15", "8": "8.0.332", "17": "17.0.3"}, "arm64": {"11": "11.0.15", "8": "8.0.332", "17": "17.0.3"}}
 
-ADOPTIUM_VERSIONS_MAPPING = {"amd64": {"11": "11.0.15", "8": "8.0.322", "17": "17.0.3"}, "arm64": {"11": "11.0.14", "8": "8.0.322", "17": "17.0.3"}}
+ADOPTIUM_VERSIONS_MAPPING = {"amd64": {"11": "11.0.15", "8": "8.0.332", "17": "17.0.3"}, "arm64": {"11": "11.0.15", "8": "8.0.332", "17": "17.0.3"}}
 
 HIVE_VERSION = "3.1.3"
 
@@ -22,9 +22,9 @@ SPARK_VERSIONS = ["2.4", "3.0", "3.1", "3.2"]
 
 SPARK_VERSIONS_MAPPING = {"2.4": "2.4.8", "3.0": "3.0.3", "3.1": "3.1.3", "3.2": "3.2.1"}
 
-TRINO_VERSION = "378"
+TRINO_VERSION = "380"
 
-REDIS_VERSION = "6.2.6"
+REDIS_VERSION = "7.0.0"
 
 CONSUL_TEMPLATE_VERSION = "0.29.0"
 

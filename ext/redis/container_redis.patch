@@ -2,9 +2,9 @@ diff --git src/config.c src/config.c
 index e0eec2f..4df3ac9 100644
 --- src/config.c
 +++ src/config.c
-@@ -2402,7 +2402,7 @@ standardConfig configs[] = {
-     createBoolConfig("io-threads-do-reads", NULL, IMMUTABLE_CONFIG, server.io_threads_do_reads, 0,NULL, NULL), /* Read + parse from threads? */
-     createBoolConfig("lua-replicate-commands", NULL, MODIFIABLE_CONFIG, server.lua_always_replicate_commands, 1, NULL, NULL),
+@@ -2902,7 +2902,7 @@ standardConfig static_configs[] = {
+     createBoolConfig("daemonize", NULL, IMMUTABLE_CONFIG, server.daemonize, 0, NULL, NULL),
+     createBoolConfig("io-threads-do-reads", NULL, DEBUG_CONFIG | IMMUTABLE_CONFIG, server.io_threads_do_reads, 0,NULL, NULL), /* Read + parse from threads? */
      createBoolConfig("always-show-logo", NULL, IMMUTABLE_CONFIG, server.always_show_logo, 0, NULL, NULL),
 -    createBoolConfig("protected-mode", NULL, MODIFIABLE_CONFIG, server.protected_mode, 1, NULL, NULL),
 +    createBoolConfig("protected-mode", NULL, MODIFIABLE_CONFIG, server.protected_mode, 0, NULL, NULL),
