@@ -1,27 +1,19 @@
-+----------------+------------------+----------+------------------------+--------------------+---------------------------------------+
-|    LIBRARY     | VULNERABILITY ID | SEVERITY |   INSTALLED VERSION    |   FIXED VERSION    |                 TITLE                 |
-+----------------+------------------+----------+------------------------+--------------------+---------------------------------------+
-| libfreetype6   | CVE-2022-27404   | MEDIUM   | 2.10.1-2ubuntu0.1      |                    | FreeType: Buffer Overflow             |
-|                |                  |          |                        |                    | -->avd.aquasec.com/nvd/cve-2022-27404 |
-+                +------------------+----------+                        +--------------------+---------------------------------------+
-|                | CVE-2022-27405   | LOW      |                        |                    | FreeType: Segementation Fault         |
-|                |                  |          |                        |                    | -->avd.aquasec.com/nvd/cve-2022-27405 |
-+                +------------------+          +                        +--------------------+---------------------------------------+
-|                | CVE-2022-27406   |          |                        |                    | Freetype: Segmentation violation      |
-|                |                  |          |                        |                    | -->avd.aquasec.com/nvd/cve-2022-27406 |
-+----------------+------------------+          +------------------------+--------------------+---------------------------------------+
-| libjpeg-turbo8 | CVE-2020-17541   |          | 2.0.3-0ubuntu1.20.04.1 |                    | libjpeg-turbo: Stack-based buffer     |
-|                |                  |          |                        |                    | overflow in the "transform" component |
-|                |                  |          |                        |                    | -->avd.aquasec.com/nvd/cve-2020-17541 |
-+----------------+------------------+----------+------------------------+--------------------+---------------------------------------+
-| libssl1.1      | CVE-2022-1292    | MEDIUM   | 1.1.1f-1ubuntu2.12     | 1.1.1f-1ubuntu2.13 | openssl: c_rehash script              |
-|                |                  |          |                        |                    | allows command injection              |
-|                |                  |          |                        |                    | -->avd.aquasec.com/nvd/cve-2022-1292  |
-+----------------+                  +          +                        +                    +                                       +
-| openssl        |                  |          |                        |                    |                                       |
-|                |                  |          |                        |                    |                                       |
-|                |                  |          |                        |                    |                                       |
-+----------------+------------------+----------+------------------------+--------------------+---------------------------------------+
++----------------+------------------+----------+------------------------+---------------+---------------------------------------+
+|    LIBRARY     | VULNERABILITY ID | SEVERITY |   INSTALLED VERSION    | FIXED VERSION |                 TITLE                 |
++----------------+------------------+----------+------------------------+---------------+---------------------------------------+
+| libfreetype6   | CVE-2022-27404   | MEDIUM   | 2.10.1-2ubuntu0.1      |               | FreeType: Buffer Overflow             |
+|                |                  |          |                        |               | -->avd.aquasec.com/nvd/cve-2022-27404 |
++                +------------------+----------+                        +---------------+---------------------------------------+
+|                | CVE-2022-27405   | LOW      |                        |               | FreeType: Segementation Fault         |
+|                |                  |          |                        |               | -->avd.aquasec.com/nvd/cve-2022-27405 |
++                +------------------+          +                        +---------------+---------------------------------------+
+|                | CVE-2022-27406   |          |                        |               | Freetype: Segmentation violation      |
+|                |                  |          |                        |               | -->avd.aquasec.com/nvd/cve-2022-27406 |
++----------------+------------------+          +------------------------+---------------+---------------------------------------+
+| libjpeg-turbo8 | CVE-2020-17541   |          | 2.0.3-0ubuntu1.20.04.1 |               | libjpeg-turbo: Stack-based buffer     |
+|                |                  |          |                        |               | overflow in the "transform" component |
+|                |                  |          |                        |               | -->avd.aquasec.com/nvd/cve-2020-17541 |
++----------------+------------------+----------+------------------------+---------------+---------------------------------------+
 +------------------------------------------------+------------------+----------+-------------------+--------------------------------+---------------------------------------------------------------+
 |                    LIBRARY                     | VULNERABILITY ID | SEVERITY | INSTALLED VERSION |         FIXED VERSION          |                             TITLE                             |
 +------------------------------------------------+------------------+----------+-------------------+--------------------------------+---------------------------------------------------------------+
@@ -39,7 +31,7 @@
 |                                                |                  |          |                   |                                |                                                               |
 +------------------------------------------------+------------------+----------+-------------------+--------------------------------+---------------------------------------------------------------+
 | com.fasterxml.jackson.core:jackson-databind    | CVE-2017-15095   | CRITICAL | 2.4.0             | 2.7.9.2, 2.8.10, 2.9.1         | jackson-databind: Unsafe                                      |
-| (phoenix-client-4.14.1-HBase-1.4-embedded.jar) |                  |          |                   |                                | deserialization due to                                        |
+| (phoenix-client-embedded-hbase-2.2-5.1.2.jar)  |                  |          |                   |                                | deserialization due to                                        |
 |                                                |                  |          |                   |                                | incomplete black list (incomplete                             |
 |                                                |                  |          |                   |                                | fix for CVE-2017-7525)...                                     |
 |                                                |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2017-15095                         |
@@ -182,13 +174,6 @@
 |                                                | GMS-2022-5       | UNKNOWN  |                   |                                | A potential Denial of Service                                 |
 |                                                |                  |          |                   |                                | issue in protobuf-java                                        |
 +------------------------------------------------+------------------+----------+-------------------+                                +---------------------------------------------------------------+
-| com.google.protobuf:protobuf-java              | CVE-2021-22569   | MEDIUM   | 3.12.0            |                                | protobuf-java: potential DoS in the                           |
-| (protobuf-java-3.12.0.jar)                     |                  |          |                   |                                | parsing procedure for binary data                             |
-|                                                |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2021-22569                         |
-+                                                +------------------+----------+                   +                                +---------------------------------------------------------------+
-|                                                | GMS-2022-5       | UNKNOWN  |                   |                                | A potential Denial of Service                                 |
-|                                                |                  |          |                   |                                | issue in protobuf-java                                        |
-+------------------------------------------------+------------------+----------+-------------------+                                +---------------------------------------------------------------+
 | com.google.protobuf:protobuf-java              | CVE-2021-22569   | MEDIUM   | 3.15.6            |                                | protobuf-java: potential DoS in the                           |
 | (kudu-client-1.15.0.jar)                       |                  |          |                   |                                | parsing procedure for binary data                             |
 |                                                |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2021-22569                         |
@@ -246,22 +231,13 @@
 |                                                |                  |          |                   |                                |                                                               |
 |                                                |                  |          |                   |                                |                                                               |
 +------------------------------------------------+------------------+----------+-------------------+--------------------------------+---------------------------------------------------------------+
-| commons-collections:commons-collections        | CVE-2015-7501    | CRITICAL | 3.2.1             | 3.2.2                          | apache-commons-collections:                                   |
-| (commons-collections-3.2.1.jar)                |                  |          |                   |                                | InvokerTransformer code                                       |
-|                                                |                  |          |                   |                                | execution during deserialisation                              |
-|                                                |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2015-7501                          |
-+                                                +------------------+----------+                   +                                +---------------------------------------------------------------+
-|                                                | CVE-2015-6420    | HIGH     |                   |                                | Insecure Deserialization in                                   |
-|                                                |                  |          |                   |                                | Apache Commons Collection                                     |
-|                                                |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2015-6420                          |
-+------------------------------------------------+------------------+----------+-------------------+--------------------------------+---------------------------------------------------------------+
 | commons-httpclient:commons-httpclient          | CVE-2012-5783    | MEDIUM   |               3.1 |                                | jakarta-commons-httpclient:                                   |
 | (commons-httpclient-3.1.jar)                   |                  |          |                   |                                | missing connection hostname check                             |
 |                                                |                  |          |                   |                                | against X.509 certificate name                                |
 |                                                |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2012-5783                          |
 +------------------------------------------------+------------------+          +-------------------+--------------------------------+---------------------------------------------------------------+
 | commons-io:commons-io                          | CVE-2021-29425   |          |               2.4 |                            2.7 | apache-commons-io: Limited                                    |
-| (phoenix-client-4.14.1-HBase-1.4-embedded.jar) |                  |          |                   |                                | path traversal in Apache                                      |
+| (commons-io-2.4.jar)                           |                  |          |                   |                                | path traversal in Apache                                      |
 |                                                |                  |          |                   |                                | Commons IO 2.2 to 2.6                                         |
 |                                                |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2021-29425                         |
 +------------------------------------------------+                  +          +-------------------+                                +                                                               +
@@ -373,17 +349,7 @@
 |                                                |                  |          |                   |                                |                                                               |
 |                                                |                  |          |                   |                                |                                                               |
 +------------------------------------------------+------------------+          +-------------------+--------------------------------+---------------------------------------------------------------+
-| io.netty:netty-codec                           | CVE-2021-37136   |          | 4.0.37.Final      | 4.1.68.Final                   | netty-codec: Bzip2Decoder                                     |
-| (netty-codec-4.0.37.Final.jar)                 |                  |          |                   |                                | doesn't allow setting size                                    |
-|                                                |                  |          |                   |                                | restrictions for decompressed data                            |
-|                                                |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2021-37136                         |
-+                                                +------------------+          +                   +                                +---------------------------------------------------------------+
-|                                                | CVE-2021-37137   |          |                   |                                | netty-codec: SnappyFrameDecoder                               |
-|                                                |                  |          |                   |                                | doesn't restrict chunk length and                             |
-|                                                |                  |          |                   |                                | may buffer skippable chunks in...                             |
-|                                                |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2021-37137                         |
-+------------------------------------------------+------------------+          +-------------------+                                +---------------------------------------------------------------+
-| io.netty:netty-codec                           | CVE-2021-37136   |          | 4.1.48.Final      |                                | netty-codec: Bzip2Decoder                                     |
+| io.netty:netty-codec                           | CVE-2021-37136   |          | 4.1.48.Final      | 4.1.68.Final                   | netty-codec: Bzip2Decoder                                     |
 | (netty-codec-4.1.48.Final.jar)                 |                  |          |                   |                                | doesn't allow setting size                                    |
 |                                                |                  |          |                   |                                | restrictions for decompressed data                            |
 |                                                |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2021-37136                         |
@@ -392,32 +358,18 @@
 |                                                |                  |          |                   |                                | doesn't restrict chunk length and                             |
 |                                                |                  |          |                   |                                | may buffer skippable chunks in...                             |
 |                                                |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2021-37137                         |
-+------------------------------------------------+------------------+----------+                   +--------------------------------+---------------------------------------------------------------+
-| io.netty:netty-codec-http                      | CVE-2021-21290   | MEDIUM   |                   | 4.1.59.Final                   | netty: Information disclosure via                             |
-| (grpc-netty-shaded-1.30.0.jar)                 |                  |          |                   |                                | the local system temporary directory                          |
-|                                                |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2021-21290                         |
-+                                                +------------------+          +                   +--------------------------------+---------------------------------------------------------------+
-|                                                | CVE-2021-43797   |          |                   | 4.1.71.Final                   | netty: control chars in header names                          |
-|                                                |                  |          |                   |                                | may lead to HTTP request smuggling...                         |
-|                                                |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2021-43797                         |
-+------------------------------------------------+------------------+          +                   +--------------------------------+---------------------------------------------------------------+
-| io.netty:netty-codec-http2                     | CVE-2021-21295   |          |                   | 4.1.60.Final                   | netty: possible request smuggling                             |
-| (grpc-netty-shaded-1.30.0.jar)                 |                  |          |                   |                                | in HTTP/2 due missing validation                              |
-|                                                |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2021-21295                         |
-+                                                +------------------+          +                   +--------------------------------+---------------------------------------------------------------+
-|                                                | CVE-2021-21409   |          |                   | 4.1.61.Final                   | netty: Request smuggling                                      |
-|                                                |                  |          |                   |                                | via content-length header                                     |
-|                                                |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2021-21409                         |
++------------------------------------------------+------------------+          +-------------------+                                +---------------------------------------------------------------+
+| io.netty:netty-codec                           | CVE-2021-37136   |          | 4.1.60.Final      |                                | netty-codec: Bzip2Decoder                                     |
+| (netty-codec-4.1.60.Final.jar)                 |                  |          |                   |                                | doesn't allow setting size                                    |
+|                                                |                  |          |                   |                                | restrictions for decompressed data                            |
+|                                                |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2021-37136                         |
++                                                +------------------+          +                   +                                +---------------------------------------------------------------+
+|                                                | CVE-2021-37137   |          |                   |                                | netty-codec: SnappyFrameDecoder                               |
+|                                                |                  |          |                   |                                | doesn't restrict chunk length and                             |
+|                                                |                  |          |                   |                                | may buffer skippable chunks in...                             |
+|                                                |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2021-37137                         |
 +------------------------------------------------+------------------+----------+-------------------+--------------------------------+---------------------------------------------------------------+
-| io.netty:netty-handler                         | CVE-2019-20444   | CRITICAL | 4.0.37.Final      | 4.1.44                         | netty: HTTP request smuggling                                 |
-| (netty-handler-4.0.37.Final.jar)               |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2019-20444                         |
-+                                                +------------------+----------+                   +--------------------------------+---------------------------------------------------------------+
-|                                                | CVE-2019-20445   | MEDIUM   |                   | 4.1.45                         | netty: HttpObjectDecoder.java allows                          |
-|                                                |                  |          |                   |                                | Content-Length header to accompanied                          |
-|                                                |                  |          |                   |                                | by second Content-Length header                               |
-|                                                |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2019-20445                         |
-+------------------------------------------------+------------------+          +-------------------+--------------------------------+---------------------------------------------------------------+
-| jline:jline                                    | CVE-2010-1330    |          | 0.9.94            | 1.4.1                          | jruby: XSS in the regular                                     |
+| jline:jline                                    | CVE-2010-1330    | MEDIUM   | 0.9.94            | 1.4.1                          | jruby: XSS in the regular                                     |
 | (phoenix-client-embedded-hbase-2.2-5.1.2.jar)  |                  |          |                   |                                | expression engine when                                        |
 |                                                |                  |          |                   |                                | processing invalid UTF-8 byte...                              |
 |                                                |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2010-1330                          |
@@ -428,7 +380,7 @@
 |                                                |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2013-2035                          |
 +------------------------------------------------+------------------+----------+-------------------+--------------------------------+---------------------------------------------------------------+
 | log4j:log4j                                    | CVE-2019-17571   | CRITICAL | 1.2.17            | 2.0-alpha1                     | log4j: deserialization of                                     |
-| (phoenix-client-4.14.1-HBase-1.4-embedded.jar) |                  |          |                   |                                | untrusted data in SocketServer                                |
+| (phoenix-client-embedded-hbase-2.2-5.1.2.jar)  |                  |          |                   |                                | untrusted data in SocketServer                                |
 |                                                |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2019-17571                         |
 +                                                +------------------+          +                   +--------------------------------+---------------------------------------------------------------+
 |                                                | CVE-2022-23305   |          |                   |                                | log4j: SQL injection in                                       |
@@ -455,41 +407,11 @@
 |                                                |                  |          |                   |                                | Output Used by a Downstream                                   |
 |                                                |                  |          |                   |                                | Component...                                                  |
 +------------------------------------------------+------------------+----------+-------------------+--------------------------------+---------------------------------------------------------------+
-| mysql:mysql-connector-java                     | CVE-2018-3258    | HIGH     | 5.1.48            | 8.0.13                         | mysql-connector-java:                                         |
-| (mysql-connector-java-5.1.48.jar)              |                  |          |                   |                                | Connector/J unspecified                                       |
-|                                                |                  |          |                   |                                | vulnerability (CPU October 2018)                              |
-|                                                |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2018-3258                          |
-+                                                +------------------+----------+                   +--------------------------------+---------------------------------------------------------------+
-|                                                | CVE-2019-2692    | MEDIUM   |                   | 8.0.16                         | mysql-connector-java: privilege                               |
-|                                                |                  |          |                   |                                | escalation in MySQL connector                                 |
-|                                                |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2019-2692                          |
-+                                                +------------------+          +                   +--------------------------------+---------------------------------------------------------------+
-|                                                | CVE-2020-2875    |          |                   | 5.1.49, 8.0.15                 | mysql-connector-java: allows                                  |
-|                                                |                  |          |                   |                                | unauthenticated attacker with                                 |
-|                                                |                  |          |                   |                                | network access via multiple                                   |
-|                                                |                  |          |                   |                                | protocols to compromise...                                    |
-|                                                |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2020-2875                          |
-+                                                +------------------+          +                   +--------------------------------+---------------------------------------------------------------+
-|                                                | CVE-2020-2934    |          |                   | 5.1.49, 8.0.20                 | mysql-connector-java: allows                                  |
-|                                                |                  |          |                   |                                | unauthenticated attacker with                                 |
-|                                                |                  |          |                   |                                | network access via multiple                                   |
-|                                                |                  |          |                   |                                | protocols to compromise...                                    |
-|                                                |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2020-2934                          |
-+                                                +------------------+----------+                   +--------------------------------+---------------------------------------------------------------+
-|                                                | CVE-2020-2933    | LOW      |                   | 5.1.49                         | mysql-connector-java: allows high                             |
-|                                                |                  |          |                   |                                | privileged attacker with network                              |
-|                                                |                  |          |                   |                                | access via multiple protocols to...                           |
-|                                                |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2020-2933                          |
-+------------------------------------------------+------------------+----------+-------------------+--------------------------------+---------------------------------------------------------------+
 | org.apache.accumulo:accumulo-core              | CVE-2020-17533   | HIGH     | 1.7.4             | 2.0.1, 1.10.1                  | Improper privilege                                            |
 | (accumulo-core-1.7.4.jar)                      |                  |          |                   |                                | handling in Apache Accumulo                                   |
 |                                                |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2020-17533                         |
-+------------------------------------------------+------------------+----------+-------------------+--------------------------------+---------------------------------------------------------------+
-| org.apache.calcite:calcite-core                | CVE-2020-13955   | MEDIUM   | 1.19.0            | 1.26.0                         | Missing Authentication for                                    |
-| (calcite-core-1.19.0.jar)                      |                  |          |                   |                                | Critical Function in Apache Calcite                           |
-|                                                |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2020-13955                         |
-+------------------------------------------------+------------------+----------+-------------------+--------------------------------+---------------------------------------------------------------+
-| org.apache.commons:commons-compress            | CVE-2019-12402   | HIGH     |              1.18 |                           1.19 | apache-commons-compress: Infinite                             |
++------------------------------------------------+------------------+          +-------------------+--------------------------------+---------------------------------------------------------------+
+| org.apache.commons:commons-compress            | CVE-2019-12402   |          |              1.18 |                           1.19 | apache-commons-compress: Infinite                             |
 | (phoenix-client-embedded-hbase-2.2-5.1.2.jar)  |                  |          |                   |                                | loop in name encoding algorithm                               |
 |                                                |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2019-12402                         |
 +                                                +------------------+          +                   +--------------------------------+---------------------------------------------------------------+
@@ -588,7 +510,7 @@
 |                                                |                  |          |                   |                                |                                                               |
 +------------------------------------------------+                  +          +-------------------+                                +                                                               +
 | org.apache.httpcomponents:httpclient           |                  |          | 4.5.2             |                                |                                                               |
-| (httpclient-4.5.2.jar)                         |                  |          |                   |                                |                                                               |
+| (phoenix-client-embedded-hbase-2.2-5.1.2.jar)  |                  |          |                   |                                |                                                               |
 |                                                |                  |          |                   |                                |                                                               |
 |                                                |                  |          |                   |                                |                                                               |
 +------------------------------------------------+                  +          +-------------------+                                +                                                               +
