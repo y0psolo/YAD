@@ -31,7 +31,7 @@
 |                                                |                  |          |                   |                                |                                                               |
 +------------------------------------------------+------------------+----------+-------------------+--------------------------------+---------------------------------------------------------------+
 | com.fasterxml.jackson.core:jackson-databind    | CVE-2017-15095   | CRITICAL | 2.4.0             | 2.7.9.2, 2.8.10, 2.9.1         | jackson-databind: Unsafe                                      |
-| (phoenix-client-embedded-hbase-2.2-5.1.2.jar)  |                  |          |                   |                                | deserialization due to                                        |
+| (phoenix-client-4.14.1-HBase-1.4-embedded.jar) |                  |          |                   |                                | deserialization due to                                        |
 |                                                |                  |          |                   |                                | incomplete black list (incomplete                             |
 |                                                |                  |          |                   |                                | fix for CVE-2017-7525)...                                     |
 |                                                |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2017-15095                         |
@@ -369,7 +369,11 @@
 |                                                |                  |          |                   |                                | may buffer skippable chunks in...                             |
 |                                                |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2021-37137                         |
 +------------------------------------------------+------------------+----------+-------------------+--------------------------------+---------------------------------------------------------------+
-| jline:jline                                    | CVE-2010-1330    | MEDIUM   | 0.9.94            | 1.4.1                          | jruby: XSS in the regular                                     |
+| io.netty:netty-codec-http                      | CVE-2022-24823   | MEDIUM   | 4.1.72.Final      | 4.1.77.Final                   | Netty is an open-source, asynchronous                         |
+| (netty-codec-http-4.1.72.Final.jar)            |                  |          |                   |                                | event-driven network application ...                          |
+|                                                |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2022-24823                         |
++------------------------------------------------+------------------+          +-------------------+--------------------------------+---------------------------------------------------------------+
+| jline:jline                                    | CVE-2010-1330    |          | 0.9.94            | 1.4.1                          | jruby: XSS in the regular                                     |
 | (phoenix-client-embedded-hbase-2.2-5.1.2.jar)  |                  |          |                   |                                | expression engine when                                        |
 |                                                |                  |          |                   |                                | processing invalid UTF-8 byte...                              |
 |                                                |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2010-1330                          |
@@ -379,8 +383,8 @@
 |                                                |                  |          |                   |                                | arbitrary code execution                                      |
 |                                                |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2013-2035                          |
 +------------------------------------------------+------------------+----------+-------------------+--------------------------------+---------------------------------------------------------------+
-| log4j:log4j                                    | CVE-2019-17571   | CRITICAL | 1.2.17            | 2.0-alpha1                     | log4j: deserialization of                                     |
-| (phoenix-client-embedded-hbase-2.2-5.1.2.jar)  |                  |          |                   |                                | untrusted data in SocketServer                                |
+| log4j:log4j (log4j-1.2.17.jar)                 | CVE-2019-17571   | CRITICAL | 1.2.17            | 2.0-alpha1                     | log4j: deserialization of                                     |
+|                                                |                  |          |                   |                                | untrusted data in SocketServer                                |
 |                                                |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2019-17571                         |
 +                                                +------------------+          +                   +--------------------------------+---------------------------------------------------------------+
 |                                                | CVE-2022-23305   |          |                   |                                | log4j: SQL injection in                                       |
@@ -510,7 +514,7 @@
 |                                                |                  |          |                   |                                |                                                               |
 +------------------------------------------------+                  +          +-------------------+                                +                                                               +
 | org.apache.httpcomponents:httpclient           |                  |          | 4.5.2             |                                |                                                               |
-| (phoenix-client-embedded-hbase-2.2-5.1.2.jar)  |                  |          |                   |                                |                                                               |
+| (httpclient-4.5.2.jar)                         |                  |          |                   |                                |                                                               |
 |                                                |                  |          |                   |                                |                                                               |
 |                                                |                  |          |                   |                                |                                                               |
 +------------------------------------------------+                  +          +-------------------+                                +                                                               +
