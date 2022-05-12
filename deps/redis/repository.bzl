@@ -4,7 +4,7 @@ def redis_repository():
     http_archive(
         name = "redis",
         build_file = "//ext/redis:BUILD",
-       patches = ["//ext/redis:container_redis.patch"],
+        patches = ["//ext/redis:container_redis.patch"],
         sha256 = "284d8bd1fd85d6a55a05ee4e7c31c31977ad56cbf344ed83790beeb148baa720",
         strip_prefix = "redis-7.0.0/",
         urls = ["http://download.redis.io/releases/redis-7.0.0.tar.gz"],
