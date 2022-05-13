@@ -222,7 +222,7 @@
 |                                             |                  |          |                   |                          | -->avd.aquasec.com/nvd/cve-2018-1313                          |
 +---------------------------------------------+------------------+----------+-------------------+--------------------------+---------------------------------------------------------------+
 | org.apache.hadoop:hadoop-common             | CVE-2022-26612   | CRITICAL | 3.3.2             | 3.2.3                    | hadoop: Arbitrary file write in                               |
-| (hadoop-common-3.3.2-tests.jar)             |                  |          |                   |                          | FileUtil#unpackEntries on Windows                             |
+| (hadoop-common-3.3.2-sources.jar)           |                  |          |                   |                          | FileUtil#unpackEntries on Windows                             |
 |                                             |                  |          |                   |                          | -->avd.aquasec.com/nvd/cve-2022-26612                         |
 +---------------------------------------------+------------------+----------+-------------------+--------------------------+---------------------------------------------------------------+
 | org.apache.thrift:libthrift                 | CVE-2018-1320    | HIGH     | 0.9.3             | 0.12.0                   | thrift: SASL negotiation                                      |
