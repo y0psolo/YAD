@@ -26,6 +26,16 @@
 | libpcre2-8-0 | CVE-2019-20454   | LOW      | 10.31-2              |               | pcre: Out of bounds read in           |
 |              |                  |          |                      |               | JIT mode when \X is used...           |
 |              |                  |          |                      |               | -->avd.aquasec.com/nvd/cve-2019-20454 |
++              +------------------+          +                      +---------------+---------------------------------------+
+|              | CVE-2022-1586    |          |                      |               | pcre2: Out-of-bounds read in          |
+|              |                  |          |                      |               | compile_xclass_matchingpath           |
+|              |                  |          |                      |               | in pcre2_jit_compile.c                |
+|              |                  |          |                      |               | -->avd.aquasec.com/nvd/cve-2022-1586  |
++              +------------------+          +                      +---------------+---------------------------------------+
+|              | CVE-2022-1587    |          |                      |               | pcre2: Out-of-bounds read             |
+|              |                  |          |                      |               | in get_recurse_data_length            |
+|              |                  |          |                      |               | in pcre2_jit_compile.c                |
+|              |                  |          |                      |               | -->avd.aquasec.com/nvd/cve-2022-1587  |
 +--------------+------------------+----------+----------------------+---------------+---------------------------------------+
 | libstdc++6   | CVE-2020-13844   | MEDIUM   | 8.4.0-1ubuntu1~18.04 |               | kernel: ARM straight-line             |
 |              |                  |          |                      |               | speculation vulnerability             |

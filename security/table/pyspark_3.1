@@ -19,6 +19,16 @@
 |                      |                  |          |                         |               | overflow in the "transform" component |
 |                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2020-17541 |
 +----------------------+------------------+          +-------------------------+---------------+---------------------------------------+
+| libpcre2-8-0         | CVE-2022-1586    |          | 10.34-7                 |               | pcre2: Out-of-bounds read in          |
+|                      |                  |          |                         |               | compile_xclass_matchingpath           |
+|                      |                  |          |                         |               | in pcre2_jit_compile.c                |
+|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2022-1586  |
++                      +------------------+          +                         +---------------+---------------------------------------+
+|                      | CVE-2022-1587    |          |                         |               | pcre2: Out-of-bounds read             |
+|                      |                  |          |                         |               | in get_recurse_data_length            |
+|                      |                  |          |                         |               | in pcre2_jit_compile.c                |
+|                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2022-1587  |
++----------------------+------------------+          +-------------------------+---------------+---------------------------------------+
 | libpython3.8-minimal | CVE-2015-20107   |          | 3.8.10-0ubuntu1~20.04.4 |               | python(mailcap): findmatch() function |
 |                      |                  |          |                         |               | does not sanitise the second argument |
 |                      |                  |          |                         |               | -->avd.aquasec.com/nvd/cve-2015-20107 |
@@ -227,7 +237,7 @@
 |                                             |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2020-8908                          |
 +---------------------------------------------+------------------+----------+-------------------+--------------------------------+---------------------------------------------------------------+
 | com.google.guava:guava                      | CVE-2018-10237   | MEDIUM   | 14.0.1            | 24.1.1-jre, 24.1.1-android     | guava: Unbounded memory                                       |
-| (guava-14.0.1.jar)                          |                  |          |                   |                                | allocation in AtomicDoubleArray                               |
+| (spark-network-common_2.12-3.1.3.jar)       |                  |          |                   |                                | allocation in AtomicDoubleArray                               |
 |                                             |                  |          |                   |                                | and CompoundOrdering classes                                  |
 |                                             |                  |          |                   |                                | allow remote attackers...                                     |
 |                                             |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2018-10237                         |

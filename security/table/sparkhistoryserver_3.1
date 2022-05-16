@@ -18,6 +18,16 @@
 | libjpeg-turbo8 | CVE-2020-17541   |          | 2.0.3-0ubuntu1.20.04.1 |               | libjpeg-turbo: Stack-based buffer     |
 |                |                  |          |                        |               | overflow in the "transform" component |
 |                |                  |          |                        |               | -->avd.aquasec.com/nvd/cve-2020-17541 |
++----------------+------------------+          +------------------------+---------------+---------------------------------------+
+| libpcre2-8-0   | CVE-2022-1586    |          | 10.34-7                |               | pcre2: Out-of-bounds read in          |
+|                |                  |          |                        |               | compile_xclass_matchingpath           |
+|                |                  |          |                        |               | in pcre2_jit_compile.c                |
+|                |                  |          |                        |               | -->avd.aquasec.com/nvd/cve-2022-1586  |
++                +------------------+          +                        +---------------+---------------------------------------+
+|                | CVE-2022-1587    |          |                        |               | pcre2: Out-of-bounds read             |
+|                |                  |          |                        |               | in get_recurse_data_length            |
+|                |                  |          |                        |               | in pcre2_jit_compile.c                |
+|                |                  |          |                        |               | -->avd.aquasec.com/nvd/cve-2022-1587  |
 +----------------+------------------+----------+------------------------+---------------+---------------------------------------+
 +---------------------------------------------+------------------+----------+-------------------+--------------------------------+---------------------------------------------------------------+
 |                   LIBRARY                   | VULNERABILITY ID | SEVERITY | INSTALLED VERSION |         FIXED VERSION          |                             TITLE                             |
@@ -208,7 +218,7 @@
 |                                             |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2020-8908                          |
 +---------------------------------------------+------------------+----------+-------------------+--------------------------------+---------------------------------------------------------------+
 | com.google.guava:guava                      | CVE-2018-10237   | MEDIUM   | 14.0.1            | 24.1.1-jre, 24.1.1-android     | guava: Unbounded memory                                       |
-| (spark-network-common_2.12-3.1.3.jar)       |                  |          |                   |                                | allocation in AtomicDoubleArray                               |
+| (guava-14.0.1.jar)                          |                  |          |                   |                                | allocation in AtomicDoubleArray                               |
 |                                             |                  |          |                   |                                | and CompoundOrdering classes                                  |
 |                                             |                  |          |                   |                                | allow remote attackers...                                     |
 |                                             |                  |          |                   |                                | -->avd.aquasec.com/nvd/cve-2018-10237                         |
