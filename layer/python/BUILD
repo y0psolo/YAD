@@ -10,6 +10,8 @@ load("@ubuntu_bionic_arm64//debs:deb_packages.bzl", "ubuntu_bionic_arm64")
 pkg_tar(
     name = "ld_cache",
     srcs = select ({
+        "//platforms:k8_cpu_jammy": [":amd64/22.04/ld.so.cache"],
+        "//platforms:aarch64_cpu_jammy": [":arm64/22.04/ld.so.cache"],
         "//platforms:k8_cpu_focal": [":amd64/20.04/ld.so.cache"],
         "//platforms:aarch64_cpu_focal": [":arm64/20.04/ld.so.cache"],
         "//platforms:k8_cpu_bionic": [":amd64/18.04/ld.so.cache"],
@@ -29,7 +31,7 @@ container_layer(
             ubuntu_jammy_amd64["libdb5.3"],
             ubuntu_jammy_amd64["libffi7"],
             ubuntu_jammy_amd64["liblzma5"],
-            ubuntu_jammy_amd64["libmpdec2"],
+            ubuntu_jammy_amd64["libmpdec3"],
             ubuntu_jammy_amd64["libncursesw6"],
             ubuntu_jammy_amd64["libpython3.10-minimal"],
             ubuntu_jammy_amd64["libpython3.10-stdlib"],
@@ -48,7 +50,7 @@ container_layer(
             ubuntu_jammy_arm64["libdb5.3"],
             ubuntu_jammy_arm64["libffi7"],
             ubuntu_jammy_arm64["liblzma5"],
-            ubuntu_jammy_arm64["libmpdec2"],
+            ubuntu_jammy_arm64["libmpdec3"],
             ubuntu_jammy_arm64["libncursesw6"],
             ubuntu_jammy_arm64["libpython3.10-minimal"],
             ubuntu_jammy_arm64["libpython3.10-stdlib"],
@@ -137,7 +139,7 @@ container_layer(
         ],
     }),
     symlinks = select({
-        "//platforms:focal" : {
+        "//platforms:jammy" : {
             "/usr/bin/python": "/usr/bin/python3.10",
             "/usr/bin/python3": "/usr/bin/python3.10",
         },

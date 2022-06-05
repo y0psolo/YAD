@@ -23,6 +23,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: Run trivy scan
         run : |
+          hack/security_scan.sh jammy
           hack/security_scan.sh bionic
           hack/security_scan.sh focal
       # - name: Upload Trivy scan results to GitHub Security tab

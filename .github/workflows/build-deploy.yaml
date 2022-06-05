@@ -300,7 +300,7 @@ jobs:
     if: ${{ needs.changes.outputs.core == 'true' || needs.changes.outputs.java == 'true' || needs.changes.outputs.trino == 'true' || contains(github.event.inputs.forceRebuild, 'trino') }}
     strategy:
       matrix:
-        ubuntu: [20.04]
+        ubuntu: [22.04]
         arch: [x86_64, arm64]
         copt: [opt]
         java: [azul]
@@ -346,7 +346,7 @@ jobs:
     if: ${{ needs.changes.outputs.core == 'true' || needs.changes.outputs.java == 'true' || needs.changes.outputs.hive == 'true' || contains(github.event.inputs.forceRebuild, 'hive') }}
     strategy:
       matrix:
-        ubuntu: [20.04]
+        ubuntu: [22.04]
         arch: [x86_64, arm64]
         copt: [opt, dbg]
         java: [azul]
@@ -391,7 +391,7 @@ jobs:
     if: ${{ needs.changes.outputs.core == 'true' || needs.changes.outputs.redis == 'true' || contains(github.event.inputs.forceRebuild, 'redis') }}
     strategy:
       matrix:
-        ubuntu: [20.04]
+        ubuntu: [22.04]
         arch: [x86_64, arm64]
         copt: [opt]
     steps:
@@ -441,7 +441,7 @@ jobs:
     if: ${{ needs.changes.outputs.core == 'true' || needs.changes.outputs.consultemplate == 'true' || contains(github.event.inputs.forceRebuild, 'consultemplate') }}
     strategy:
       matrix:
-        ubuntu: [20.04]
+        ubuntu: [22.04]
         arch: [x86_64, arm64]
         copt: [opt]
     steps:
@@ -537,7 +537,7 @@ jobs:
     if: ${{ needs.changes.outputs.core == 'true' || needs.changes.outputs.prometheus == 'true' || contains(github.event.inputs.forceRebuild, 'prometheus') }}
     strategy:
       matrix:
-        ubuntu: [20.04]
+        ubuntu: [22.04]
         arch: [x86_64, arm64]
         copt: [opt]
     steps:
@@ -582,7 +582,7 @@ jobs:
     needs: deploy_base
     strategy:
       matrix:
-        ubuntu: [bionic, focal]
+        ubuntu: [bionic, focal, jammy]
     steps:
       - name: Setup repository
         uses: actions/checkout@v2
@@ -600,7 +600,7 @@ jobs:
     needs: deploy_java
     strategy:
       matrix:
-        ubuntu: [bionic, focal]
+        ubuntu: [bionic, focal, jammy]
     steps:
       - name: Setup repository
         uses: actions/checkout@v2
@@ -618,7 +618,7 @@ jobs:
     needs: deploy_nodejs
     strategy:
       matrix:
-        ubuntu: [bionic, focal]
+        ubuntu: [bionic, focal, jammy]
     steps:
       - name: Setup repository
         uses: actions/checkout@v2
@@ -636,7 +636,7 @@ jobs:
     needs: deploy_deno
     strategy:
       matrix:
-        ubuntu: [bionic, focal]
+        ubuntu: [bionic, focal, jammy]
     steps:
       - name: Setup repository
         uses: actions/checkout@v2
@@ -654,7 +654,7 @@ jobs:
     needs: deploy_spark
     strategy:
       matrix:
-        ubuntu: [bionic, focal]
+        ubuntu: [bionic, focal, jammy]
     steps:
       - name: Setup repository
         uses: actions/checkout@v2
@@ -672,7 +672,7 @@ jobs:
     needs: deploy_hive
     strategy:
       matrix:
-        ubuntu: [focal]
+        ubuntu: [jammy]
     steps:
       - name: Setup repository
         uses: actions/checkout@v2
@@ -690,7 +690,7 @@ jobs:
     needs: deploy_trino
     strategy:
       matrix:
-        ubuntu: [focal]
+        ubuntu: [jammy]
     steps:
       - name: Setup repository
         uses: actions/checkout@v2
@@ -708,7 +708,7 @@ jobs:
     needs: deploy_redis
     strategy:
       matrix:
-        ubuntu: [focal]
+        ubuntu: [jammy]
     steps:
       - name: Setup repository
         uses: actions/checkout@v2
@@ -726,7 +726,7 @@ jobs:
     needs: deploy_consultemplate
     strategy:
       matrix:
-        ubuntu: [focal]
+        ubuntu: [jammy]
     steps:
       - name: Setup repository
         uses: actions/checkout@v2
@@ -744,7 +744,7 @@ jobs:
     needs: deploy_mariadb
     strategy:
       matrix:
-        ubuntu: [focal, bionic]
+        ubuntu: [focal, bionic, jammy]
     steps:
       - name: Setup repository
         uses: actions/checkout@v2
@@ -762,7 +762,7 @@ jobs:
     needs: deploy_prometheus
     strategy:
       matrix:
-        ubuntu: [focal]
+        ubuntu: [jammy]
     steps:
       - name: Setup repository
         uses: actions/checkout@v2
