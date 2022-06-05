@@ -41,7 +41,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        ubuntu: [18.04, 20.04]
+        ubuntu: [18.04, 20.04, 22.04]
         arch: [x86_64, arm64]
         copt: [opt, dbg]
     steps:
@@ -88,7 +88,7 @@ jobs:
     if: ${{ needs.changes.outputs.core == 'true' || needs.changes.outputs.java == 'true' || needs.changes.outputs.spark == 'true' || needs.changes.outputs.hive == 'true' || needs.changes.outputs.trino == 'true' || contains(github.event.inputs.forceRebuild, 'java') }}
     strategy:
       matrix:
-        ubuntu: [18.04, 20.04]
+        ubuntu: [18.04, 20.04, 22.04]
         arch: [x86_64, arm64]
         copt: [opt, dbg]
         java: [adoptium, azul]
@@ -140,7 +140,7 @@ jobs:
     if: ${{ needs.changes.outputs.core == 'true' || needs.changes.outputs.nodejs == 'true' || contains(github.event.inputs.forceRebuild, 'nodejs') }}
     strategy:
       matrix:
-        ubuntu: [18.04, 20.04]
+        ubuntu: [18.04, 20.04, 22.04]
         arch: [x86_64, arm64]
         copt: [opt, dbg]
     steps:
@@ -185,7 +185,7 @@ jobs:
     if: ${{ needs.changes.outputs.core == 'true' || needs.changes.outputs.deno == 'true' || contains(github.event.inputs.forceRebuild, 'deno') }}
     strategy:
       matrix:
-        ubuntu: [18.04, 20.04]
+        ubuntu: [18.04, 20.04, 22.04]
         arch: [x86_64]
         copt: [opt, dbg]
     steps:
@@ -229,7 +229,7 @@ jobs:
     if: ${{ needs.changes.outputs.core == 'true' || needs.changes.outputs.java == 'true' || needs.changes.outputs.spark == 'true' || contains(github.event.inputs.forceRebuild, 'spark') }}
     strategy:
       matrix:
-        ubuntu: [18.04, 20.04]
+        ubuntu: [18.04, 20.04, 22.04]
         arch: [x86_64, arm64]
         copt: [opt]
         java: [azul]
@@ -485,7 +485,7 @@ jobs:
     if: ${{ needs.changes.outputs.core == 'true' || needs.changes.outputs.mariadb == 'true' || contains(github.event.inputs.forceRebuild, 'mariadb') }}
     strategy:
       matrix:
-        ubuntu: [18.04, 20.04]
+        ubuntu: [18.04, 20.04, 22.04]
         arch: [x86_64, arm64]
         copt: [opt]
     steps:

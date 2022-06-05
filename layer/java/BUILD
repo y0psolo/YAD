@@ -1,6 +1,8 @@
 load("@bazel_tools//tools/build_defs/pkg:pkg.bzl", "pkg_tar")
 load("@io_bazel_rules_docker//container:container.bzl", "container_layer")
 load("//update:constants.bzl", "JRE_VERSIONS", "AZUL_VERSIONS_MAPPING", "ADOPTIUM_VERSIONS_MAPPING")
+load("@ubuntu_jammy_amd64//debs:deb_packages.bzl", "ubuntu_jammy_amd64")
+load("@ubuntu_jammy_arm64//debs:deb_packages.bzl", "ubuntu_jammy_arm64")
 load("@ubuntu_focal_amd64//debs:deb_packages.bzl", "ubuntu_focal_amd64")
 load("@ubuntu_focal_arm64//debs:deb_packages.bzl", "ubuntu_focal_arm64")
 load("@ubuntu_bionic_amd64//debs:deb_packages.bzl", "ubuntu_bionic_amd64")
@@ -11,6 +13,24 @@ load("@ubuntu_bionic_arm64//debs:deb_packages.bzl", "ubuntu_bionic_arm64")
 container_layer(
     name = "common",
     debs = select({
+        "//platforms:k8_cpu_jammy": [
+            ubuntu_jammy_amd64["libjpeg-turbo8"],
+            ubuntu_jammy_amd64["libpng16-16"],
+            ubuntu_jammy_amd64["liblcms2-2"],
+            ubuntu_jammy_amd64["libfreetype6"],
+            ubuntu_jammy_amd64["fonts-dejavu-core"],
+            ubuntu_jammy_amd64["fontconfig-config"],
+            ubuntu_jammy_amd64["libfontconfig1"],
+        ],
+        "//platforms:aarch64_cpu_jammy": [
+            ubuntu_jammy_arm64["libjpeg-turbo8"],
+            ubuntu_jammy_arm64["libpng16-16"],
+            ubuntu_jammy_arm64["liblcms2-2"],
+            ubuntu_jammy_arm64["libfreetype6"],
+            ubuntu_jammy_arm64["fonts-dejavu-core"],
+            ubuntu_jammy_arm64["fontconfig-config"],
+            ubuntu_jammy_arm64["libfontconfig1"],
+        ],
         "//platforms:k8_cpu_focal": [
             ubuntu_focal_amd64["libjpeg-turbo8"],
             ubuntu_focal_amd64["libpng16-16"],

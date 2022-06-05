@@ -35,7 +35,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        ubuntu: [18.04, 20.04]
+        ubuntu: [18.04, 20.04, 22.04]
         arch: [x86_64, arm64]
         copt: [opt, dbg]
     steps:
@@ -74,7 +74,7 @@ jobs:
     if: ${{ needs.changes.outputs.core == 'true' || needs.changes.outputs.java == 'true' || needs.changes.outputs.spark == 'true' || needs.changes.outputs.hive == 'true' || needs.changes.outputs.trino == 'true'}}
     strategy:
       matrix:
-        ubuntu: [18.04, 20.04]
+        ubuntu: [18.04, 20.04, 22.04]
         arch: [x86_64, arm64]
         copt: [opt, dbg]
         java: [adoptium, azul]
@@ -109,7 +109,7 @@ jobs:
     if: ${{ needs.changes.outputs.core == 'true' || needs.changes.outputs.java == 'true'}}
     strategy:
       matrix:
-        ubuntu: [18.04, 20.04]
+        ubuntu: [18.04, 20.04, 22.04]
         arch: [x86_64, arm64]
         copt: [opt, dbg]
         java: [adoptium, azul]
@@ -137,7 +137,7 @@ jobs:
           key: ${{ runner.os }}-bazel-java-${{ matrix.arch }}-${{ matrix.copt }}-${{ matrix.ubuntu }}-${{ matrix.java }}-${{ hashFiles('**/BUILD', '**/*.bzl', 'WORKSPACE') }}
       - name: bazel test
         run: |
-           bazel test --config ${{ matrix.arch }} -c ${{ matrix.copt }} --//platforms:distro=${{ matrix.ubuntu }} //test/java:java
+           bazel test --config ${{ matrix.arch }} -c ${{ matrix.copt }} --//platforms:distro=${{ matrix.ubuntu }} --//platforms:java=${{ matrix.java }} //test/java:java
       - uses: actions/upload-artifact@v2
         if: ${{ failure() }}
         with:
@@ -149,7 +149,7 @@ jobs:
     if: ${{ needs.changes.outputs.core == 'true' || needs.changes.outputs.nodejs == 'true'}}
     strategy:
       matrix:
-        ubuntu: [18.04, 20.04]
+        ubuntu: [18.04, 20.04, 22.04]
         arch: [x86_64, arm64]
         copt: [opt, dbg]
     steps:
@@ -188,7 +188,7 @@ jobs:
     if: ${{ needs.changes.outputs.core == 'true' || needs.changes.outputs.deno == 'true'}}
     strategy:
       matrix:
-        ubuntu: [18.04, 20.04]
+        ubuntu: [18.04, 20.04, 22.04]
         arch: [x86_64]
         copt: [opt, dbg]
     steps:
@@ -227,7 +227,7 @@ jobs:
     if: ${{ needs.changes.outputs.core == 'true' || needs.changes.outputs.java == 'true' || needs.changes.outputs.spark == 'true'}}
     strategy:
       matrix:
-        ubuntu: [18.04, 20.04]
+        ubuntu: [18.04, 20.04, 22.04]
         arch: [x86_64]
         copt: [opt]
         java: [azul]
@@ -435,7 +435,7 @@ jobs:
     if: ${{ needs.changes.outputs.core == 'true' || needs.changes.outputs.mariadb == 'true'}}
     strategy:
       matrix:
-        ubuntu: [18.04, 20.04]
+        ubuntu: [18.04, 20.04, 22.04]
         arch: [x86_64, arm64]
         copt: [opt]
     steps:
@@ -474,7 +474,7 @@ jobs:
     if: ${{ needs.changes.outputs.core == 'true' || needs.changes.outputs.prometheus == 'true'}}
     strategy:
       matrix:
-        ubuntu: [18.04, 20.04]
+        ubuntu: [18.04, 20.04, 22.04]
         arch: [x86_64, arm64]
         copt: [opt]
     steps:

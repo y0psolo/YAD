@@ -50,7 +50,7 @@ config_setting(
 
 config_setting(
     name = "k8_cpu",
-    values = {"cpu": "k8"},
+    values = {"cpu": "x86_64"},
 )
 
 # Compile related config

@@ -1,5 +1,7 @@
 load("@bazel_tools//tools/build_defs/pkg:pkg.bzl", "pkg_tar")
 load("@io_bazel_rules_docker//container:container.bzl", "container_layer")
+load("@ubuntu_jammy_amd64//debs:deb_packages.bzl", "ubuntu_jammy_amd64")
+load("@ubuntu_jammy_arm64//debs:deb_packages.bzl", "ubuntu_jammy_arm64")
 load("@ubuntu_focal_amd64//debs:deb_packages.bzl", "ubuntu_focal_amd64")
 load("@ubuntu_focal_arm64//debs:deb_packages.bzl", "ubuntu_focal_arm64")
 load("@ubuntu_bionic_amd64//debs:deb_packages.bzl", "ubuntu_bionic_amd64")
@@ -21,6 +23,44 @@ pkg_tar(
 container_layer(
     name = "python",
     debs = select({
+        "//platforms:k8_cpu_jammy": [
+            ubuntu_jammy_amd64["dash"],
+            ubuntu_jammy_amd64["libbz2-1.0"],
+            ubuntu_jammy_amd64["libdb5.3"],
+            ubuntu_jammy_amd64["libffi7"],
+            ubuntu_jammy_amd64["liblzma5"],
+            ubuntu_jammy_amd64["libmpdec2"],
+            ubuntu_jammy_amd64["libncursesw6"],
+            ubuntu_jammy_amd64["libpython3.10-minimal"],
+            ubuntu_jammy_amd64["libpython3.10-stdlib"],
+            ubuntu_jammy_amd64["libreadline8"],
+            ubuntu_jammy_amd64["libsqlite3-0"],
+            ubuntu_jammy_amd64["libtinfo6"],
+            ubuntu_jammy_amd64["mime-support"],
+            ubuntu_jammy_amd64["python3-distutils"],
+            ubuntu_jammy_amd64["python3.10-minimal"],
+            ubuntu_jammy_amd64["readline-common"],
+            ubuntu_jammy_amd64["libcrypt1"],
+        ],
+        "//platforms:aarch64_cpu_jammy": [
+            ubuntu_jammy_arm64["dash"],
+            ubuntu_jammy_arm64["libbz2-1.0"],
+            ubuntu_jammy_arm64["libdb5.3"],
+            ubuntu_jammy_arm64["libffi7"],
+            ubuntu_jammy_arm64["liblzma5"],
+            ubuntu_jammy_arm64["libmpdec2"],
+            ubuntu_jammy_arm64["libncursesw6"],
+            ubuntu_jammy_arm64["libpython3.10-minimal"],
+            ubuntu_jammy_arm64["libpython3.10-stdlib"],
+            ubuntu_jammy_arm64["libreadline8"],
+            ubuntu_jammy_arm64["libsqlite3-0"],
+            ubuntu_jammy_arm64["libtinfo6"],
+            ubuntu_jammy_arm64["mime-support"],
+            ubuntu_jammy_arm64["python3-distutils"],
+            ubuntu_jammy_arm64["python3.10-minimal"],
+            ubuntu_jammy_arm64["readline-common"],
+            ubuntu_jammy_arm64["libcrypt1"],
+        ],
         "//platforms:k8_cpu_focal": [
             ubuntu_focal_amd64["dash"],
             ubuntu_focal_amd64["libbz2-1.0"],
@@ -29,14 +69,14 @@ container_layer(
             ubuntu_focal_amd64["liblzma5"],
             ubuntu_focal_amd64["libmpdec2"],
             ubuntu_focal_amd64["libncursesw6"],
-            ubuntu_focal_amd64["libpython3.8-minimal"],
-            ubuntu_focal_amd64["libpython3.8-stdlib"],
+            ubuntu_focal_amd64["libpython3.9-minimal"],
+            ubuntu_focal_amd64["libpython3.9-stdlib"],
             ubuntu_focal_amd64["libreadline8"],
             ubuntu_focal_amd64["libsqlite3-0"],
             ubuntu_focal_amd64["libtinfo6"],
             ubuntu_focal_amd64["mime-support"],
             ubuntu_focal_amd64["python3-distutils"],
-            ubuntu_focal_amd64["python3.8-minimal"],
+            ubuntu_focal_amd64["python3.9-minimal"],
             ubuntu_focal_amd64["readline-common"],
             ubuntu_focal_amd64["libcrypt1"],
         ],
@@ -48,14 +88,14 @@ container_layer(
             ubuntu_focal_arm64["liblzma5"],
             ubuntu_focal_arm64["libmpdec2"],
             ubuntu_focal_arm64["libncursesw6"],
-            ubuntu_focal_arm64["libpython3.8-minimal"],
-            ubuntu_focal_arm64["libpython3.8-stdlib"],
+            ubuntu_focal_arm64["libpython3.9-minimal"],
+            ubuntu_focal_arm64["libpython3.9-stdlib"],
             ubuntu_focal_arm64["libreadline8"],
             ubuntu_focal_arm64["libsqlite3-0"],
             ubuntu_focal_arm64["libtinfo6"],
             ubuntu_focal_arm64["mime-support"],
             ubuntu_focal_arm64["python3-distutils"],
-            ubuntu_focal_arm64["python3.8-minimal"],
+            ubuntu_focal_arm64["python3.9-minimal"],
             ubuntu_focal_arm64["readline-common"],
             ubuntu_focal_arm64["libcrypt1"],
         ],
@@ -98,8 +138,12 @@ container_layer(
     }),
     symlinks = select({
         "//platforms:focal" : {
-            "/usr/bin/python": "/usr/bin/python3.8",
-            "/usr/bin/python3": "/usr/bin/python3.8",
+            "/usr/bin/python": "/usr/bin/python3.10",
+            "/usr/bin/python3": "/usr/bin/python3.10",
+        },
+        "//platforms:focal" : {
+            "/usr/bin/python": "/usr/bin/python3.9",
+            "/usr/bin/python3": "/usr/bin/python3.9",
         },
         "//platforms:bionic" : {
             "/usr/bin/python": "/usr/bin/python3.6",

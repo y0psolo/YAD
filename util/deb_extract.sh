@@ -15,8 +15,9 @@ fi
 
 shift
 
-ar -x "$DEB" data.tar.xz
+DATA_FILE=$(ar -t "$DEB" | grep data.tar)
+ar -x "$DEB" $DATA_FILE
 
-tar -xf data.tar.xz "$@"
+tar -xf $DATA_FILE "$@"
 
-rm data.tar.xz
+rm $DATA_FILE

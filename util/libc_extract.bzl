@@ -24,12 +24,20 @@ def _libc_extract_impl(ctx):
             "EXTRACT_DEB": ctx.executable._deb_extract.path,
         },
         command = """
-            $EXTRACT_DEB "$1" ./usr/lib/locale/C.UTF-8 ./usr/share/doc/libc-bin/copyright
+            $EXTRACT_DEB "$1" ./usr/lib/locale/C.UTF-8 ./usr/lib/locale/C.utf8 ./usr/share/doc/libc-bin/copyright
 
-            $BUILD_TAR  --output "$2" \
+            if [ -d "./usr/lib/locale/C.UTF-8" ]
+            then
+               $BUILD_TAR  --output "$2" \
                         --mode 0644 \
                         --file ./usr/share/doc/libc-bin/copyright=./usr/share/doc/libc-bin/copyright \
                         --file ./usr/lib/locale/C.UTF-8=./usr/lib/locale/C.UTF-8
+            else
+               $BUILD_TAR  --output "$2" \
+                        --mode 0644 \
+                        --file ./usr/share/doc/libc-bin/copyright=./usr/share/doc/libc-bin/copyright \
+                        --file ./usr/lib/locale/C.utf8=./usr/lib/locale/C.utf8
+            fi
         """,
     )
 
