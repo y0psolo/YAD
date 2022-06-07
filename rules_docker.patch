@@ -1,5 +1,5 @@
 diff --git a/container/build_tar.py b/container/build_tar.py
-index d5ed962..0371ba1 100644
+index d5ed962..829cf98 100644
 --- a/container/build_tar.py
 +++ b/container/build_tar.py
 @@ -50,7 +50,7 @@ class TarFile(object):
@@ -73,9 +73,127 @@ index d5ed962..0371ba1 100644
      'lzma module is unavailable.')
 -  
 +
-+  parser.add_argument('--zstd_path', type=str, default='zstd',
++  parser.add_argument('--zstd_path', type=str,
 +    help='Specify the path to zstd.')
 +
    parser.add_argument('--force_posixpath', type=bool, default=False,
      help='Force the use of posixpath when normalizing file paths. This is useful' 
      'when building in a non-posix environment.')
+diff --git a/container/layer.bzl b/container/layer.bzl
+index 5193934..7975bfc 100644
+--- a/container/layer.bzl
++++ b/container/layer.bzl
+@@ -131,6 +131,17 @@ def build_layer(
+               "explicitly in the docker_toolchain_configure")
+     args.add(xz_path, format = "--xz_path=%s")
+ 
++    zstd_path = toolchain_info.zstd_path
++    zstd_tools = []
++    zstd_input_manifests = []
++    if toolchain_info.zstd_target:
++        zstd_path = toolchain_info.zstd_target.files_to_run.executable.path
++        zstd_tools, _, zstd_input_manifests = ctx.resolve_command(tools = [toolchain_info.zstd_target])
++    elif toolchain_info.zstd_path == "":
++        print("WARNING: zstd could not be found. Make sure it is in the path or set it " +
++              "explicitly in the docker_toolchain_configure")
++    args.add(zstd_path, format = "--zstd_path=%s")
++
+     # Windows layer.tar require two separate root directories instead of just 1
+     # 'Files' is the equivalent of '.' in Linux images.
+     # 'Hives' is unique to Windows Docker images.  It is where per layer registry
+diff --git a/toolchains/docker/BUILD.tpl b/toolchains/docker/BUILD.tpl
+index 5c597bb..f946275 100644
+--- a/toolchains/docker/BUILD.tpl
++++ b/toolchains/docker/BUILD.tpl
+@@ -26,4 +26,5 @@ docker_toolchain(
+     %{TOOL_ATTR}
+     docker_flags = ["%{DOCKER_FLAGS}"],
+     %{XZ_ATTR}
++    %{ZSTD_ATTR}
+ )
+diff --git a/toolchains/docker/toolchain.bzl b/toolchains/docker/toolchain.bzl
+index b7cd669..e8d7ede 100644
+--- a/toolchains/docker/toolchain.bzl
++++ b/toolchains/docker/toolchain.bzl
+@@ -36,6 +36,10 @@ DockerToolchainInfo = provider(
+                    "If not set found via which.",
+         "xz_target": "Optional Bazel target for the xz tool. " +
+                      "Should only be set if xz_path is unset.",
++        "zstd_path": "Optional path to the zstd binary." +
++                   "If not set found via which.",
++        "zstd_target": "Optional Bazel target for the zstd tool. " +
++                     "Should only be set if zstd_path is unset.",
+     },
+ )
+ 
+@@ -51,6 +55,8 @@ def _docker_toolchain_impl(ctx):
+             tool_target = ctx.attr.tool_target,
+             xz_path = ctx.attr.xz_path,
+             xz_target = ctx.attr.xz_target,
++            zstd_path = ctx.attr.zstd_path,
++            zstd_target = ctx.attr.zstd_target,
+         ),
+     )
+     return [toolchain_info]
+@@ -109,6 +115,17 @@ docker_toolchain = rule(
+             cfg = "host",
+             executable = True,
+         ),
++        "zstd_path": attr.string(
++            doc = "Optional path to the zstd binary. This is used by " +
++                  "build_tar.py.",
++        ),
++        "zstd_target": attr.label(
++            allow_files = True,
++            doc = "Bazel target for the zstd tool. " +
++                  "Should only be set if zstd_path is unset.",
++            cfg = "host",
++            executable = True,
++        ),
+     },
+ )
+ 
+@@ -136,6 +153,14 @@ def _toolchain_configure_impl(repository_ctx):
+     elif repository_ctx.which("xz"):
+         xz_attr = "xz_path = \"%s\"," % repository_ctx.which("xz")
+ 
++    zstd_attr = ""
++    if repository_ctx.attr.zstd_target:
++        zstd_attr = "zstd_target = \"%s\"," % repository_ctx.attr.zstd_target
++    elif repository_ctx.attr.zstd_path:
++        zstd_attr = "zstd_path = \"%s\"," % repository_ctx.attr.zstd_path
++    elif repository_ctx.which("zstd"):
++        zstd_attr = "zstd_path = \"%s\"," % repository_ctx.which("zstd")
++
+     gzip_attr = ""
+     if repository_ctx.attr.gzip_target:
+         gzip_attr = "gzip_target = \"%s\"," % repository_ctx.attr.gzip_target
+@@ -161,6 +186,7 @@ def _toolchain_configure_impl(repository_ctx):
+             "%{TOOL_ATTR}": "%s" % tool_attr,
+             "%{GZIP_ATTR}": "%s" % gzip_attr,
+             "%{XZ_ATTR}": "%s" % xz_attr,
++            "%{ZSTD_ATTR}": "%s" % zstd_attr,
+         },
+         False,
+     )
+@@ -238,6 +264,20 @@ toolchain_configure = repository_rule(
+             doc = "The bazel target for the xz tool. " +
+                   "Can only be set if xz_path is not set.",
+         ),
++        "zstd_path": attr.string(
++            mandatory = False,
++            doc = "The full path to the zstd binary. If not specified, it will " +
++                  "be searched for in the path. If not available, running commands " +
++                  "that use zstd will fail.",
++        ),
++        "zstd_target": attr.label(
++            executable = True,
++            cfg = "host",
++            allow_files = True,
++            mandatory = False,
++            doc = "The bazel target for the zstd tool. " +
++                  "Can only be set if zstd_path is not set.",
++        ),
+     },
+     environ = [
+         "PATH",
