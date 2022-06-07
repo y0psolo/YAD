@@ -13,7 +13,7 @@ def redis_repository():
     http_archive(
         name = "openssl",
         build_file = "//ext/openssl:BUILD",
-        sha256 = "0f745b85519aab2ce444a3dcada93311ba926aea2899596d01e7f948dbd99981",
-        strip_prefix = "openssl-OpenSSL_1_1_1o/",
-        urls = ["https://github.com/openssl/openssl/archive/refs/tags/OpenSSL_1_1_1o.tar.gz"],
+        # sha256 = "0f745b85519aab2ce444a3dcada93311ba926aea2899596d01e7f948dbd99981",
+        strip_prefix = "openssl-openssl-3.0.3/",
+        urls = ["https://github.com/openssl/openssl/archive/refs/tags/openssl-3.0.3.tar.gz"],
     )

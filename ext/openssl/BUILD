@@ -29,8 +29,8 @@ configure_make(
     lib_source = ":openssl_files",
     out_shared_libs = [
         "libcrypto.so",
-        "libcrypto.so.1.1",
+        "libcrypto.so.3",
         "libssl.so",
-        "libssl.so.1.1",
+        "libssl.so.3",
     ],
 )
