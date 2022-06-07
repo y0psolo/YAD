@@ -1,5 +1,6 @@
 load("@rules_foreign_cc//foreign_cc:defs.bzl", "configure_make")
 load("@bazel_tools//tools/build_defs/pkg:pkg.bzl", "pkg_tar")
+load("@bazel_skylib//rules:common_settings.bzl", "string_flag")
 
 # package(
 #     default_visibility = ["//visibility:public"],
@@ -8,6 +9,27 @@ load("@bazel_tools//tools/build_defs/pkg:pkg.bzl", "pkg_tar")
 #         "-opt",
 #     ],
 # )
+
+string_flag(
+    name = "distro",
+    values = ["18.04", "20.04", "22.04"],
+    build_setting_default = "20.04",
+)
+
+config_setting(
+    name = "focal",
+    flag_values  = {":distro" : "20.04"},
+)
+
+config_setting(
+    name = "bionic",
+    flag_values  = {":distro" : "18.04"},
+)
+
+config_setting(
+    name = "jammy",
+    flag_values  = {":distro" : "22.04"},
+)
 
 config_setting(
     name = "aarch64_cpu",
@@ -890,14 +912,22 @@ cc_library(
 )
 
 cc_binary(
-    name = "redis-server_ssl1",
-    deps = [
-        ":redis-server_ssl1_lib",
-        ":libjemalloc",
-        ":hiredis",
-        ":hiredis_ssl1",
-        ":hdr_histogram",
-        "@openssl1//:openssl"],
+    name = "redis-server",
+    deps = select({
+        "focal": [
+            ":redis-server_ssl1_lib",
+            "@openssl1//:openssl",
+            ],
+        "jammy": [
+            ":redis-server_ssl3_lib",
+            "@openssl3//:openssl",
+            ],
+        }) + [
+            ":libjemalloc",
+            ":hiredis",
+            ":hiredis_ssl1",
+            ":hdr_histogram",
+        ],
     linkopts = [
         "-ldl",
         "-pthread",
@@ -906,30 +936,11 @@ cc_binary(
         "-rdynamic",
     ],
 )
-
-cc_binary(
-    name = "redis-server_ssl3",
-    deps = [
-        ":redis-server_ssl3_lib",
-        ":libjemalloc",
-        ":hiredis",
-        ":hiredis_ssl3",
-        ":hdr_histogram",
-        "@openssl3//:openssl"],
-    linkopts = [
-        "-ldl",
-        "-pthread",
-        "-lssl",
-        "-lcrypto",
-        "-rdynamic",
-    ],
-)
-
 
 pkg_tar(
     name = "server_ssl1_tar",
     srcs = [
-        ":redis-server_ssl1",
+        ":redis-server",
     ],
     strip_prefix = ".",
     mode = "0755",
@@ -940,7 +951,7 @@ pkg_tar(
 pkg_tar(
     name = "server_ssl3_tar",
     srcs = [
-        ":redis-server_ssl3",
+        ":redis-server",
     ],
     strip_prefix = ".",
     mode = "0755",
