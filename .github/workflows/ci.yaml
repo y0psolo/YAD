@@ -50,10 +50,8 @@ jobs:
         uses: bazelbuild/setup-bazelisk@v1
       - name: Install zstd
         run : |
-          which zstd
           sudo apt-get update -y
           sudo apt-get install -y zstd
-          which zstd
       - name: Set up QEMU
         id: qemu
         if: ${{ matrix.arch != 'x86_64' }}
@@ -94,6 +92,10 @@ jobs:
         uses: actions/checkout@v2
       - name: Setup Bazelisk
         uses: bazelbuild/setup-bazelisk@v1
+      - name: Install zstd
+        run : |
+          sudo apt-get update -y
+          sudo apt-get install -y zstd
       - name: Mount bazel cache
         uses: actions/cache@v2
         with:
@@ -129,6 +131,10 @@ jobs:
         uses: actions/checkout@v2
       - name: Setup Bazelisk
         uses: bazelbuild/setup-bazelisk@v1
+      - name: Install zstd
+        run : |
+          sudo apt-get update -y
+          sudo apt-get install -y zstd
       - name: Set up QEMU
         id: qemu
         if: ${{ matrix.arch != 'x86_64' }}
@@ -168,6 +174,10 @@ jobs:
         uses: actions/checkout@v2
       - name: Setup Bazelisk
         uses: bazelbuild/setup-bazelisk@v1
+      - name: Install zstd
+        run : |
+          sudo apt-get update -y
+          sudo apt-get install -y zstd
       - name: Set up QEMU
         id: qemu
         if: ${{ matrix.arch != 'x86_64' }}
@@ -207,6 +217,10 @@ jobs:
         uses: actions/checkout@v2
       - name: Setup Bazelisk
         uses: bazelbuild/setup-bazelisk@v1
+      - name: Install zstd
+        run : |
+          sudo apt-get update -y
+          sudo apt-get install -y zstd
       - name: Set up QEMU
         id: qemu
         if: ${{ matrix.arch != 'x86_64' }}
@@ -247,6 +261,10 @@ jobs:
         uses: actions/checkout@v2
       - name: Setup Bazelisk
         uses: bazelbuild/setup-bazelisk@v1
+      - name: Install zstd
+        run : |
+          sudo apt-get update -y
+          sudo apt-get install -y zstd
       - name: Set up QEMU
         id: qemu
         if: ${{ matrix.arch != 'x86_64' }}
@@ -292,6 +310,10 @@ jobs:
         uses: actions/checkout@v2
       - name: Setup Bazelisk
         uses: bazelbuild/setup-bazelisk@v1
+      - name: Install zstd
+        run : |
+          sudo apt-get update -y
+          sudo apt-get install -y zstd
       - name: Set up QEMU
         id: qemu
         if: ${{ matrix.arch != 'x86_64' }}
@@ -332,6 +354,10 @@ jobs:
         uses: actions/checkout@v2
       - name: Setup Bazelisk
         uses: bazelbuild/setup-bazelisk@v1
+      - name: Install zstd
+        run : |
+          sudo apt-get update -y
+          sudo apt-get install -y zstd
       - name: Set up QEMU
         id: qemu
         if: ${{ matrix.arch != 'x86_64' }}
@@ -371,6 +397,10 @@ jobs:
         uses: actions/checkout@v2
       - name: Setup Bazelisk
         uses: bazelbuild/setup-bazelisk@v1
+      - name: Install zstd
+        run : |
+          sudo apt-get update -y
+          sudo apt-get install -y zstd
       - name: Install crossbuild package
         if: ${{ matrix.arch == 'arm64' }}
         run : |
@@ -415,6 +445,10 @@ jobs:
         uses: actions/checkout@v2
       - name: Setup Bazelisk
         uses: bazelbuild/setup-bazelisk@v1
+      - name: Install zstd
+        run : |
+          sudo apt-get update -y
+          sudo apt-get install -y zstd
       - name: Set up QEMU
         id: qemu
         if: ${{ matrix.arch != 'x86_64' }}
@@ -454,6 +488,10 @@ jobs:
         uses: actions/checkout@v2
       - name: Setup Bazelisk
         uses: bazelbuild/setup-bazelisk@v1
+      - name: Install zstd
+        run : |
+          sudo apt-get update -y
+          sudo apt-get install -y zstd
       - name: Set up QEMU
         id: qemu
         if: ${{ matrix.arch != 'x86_64' }}
@@ -493,6 +531,10 @@ jobs:
         uses: actions/checkout@v2
       - name: Setup Bazelisk
         uses: bazelbuild/setup-bazelisk@v1
+      - name: Install zstd
+        run : |
+          sudo apt-get update -y
+          sudo apt-get install -y zstd
       - name: Set up QEMU
         id: qemu
         if: ${{ matrix.arch != 'x86_64' }}
