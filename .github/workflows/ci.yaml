@@ -475,7 +475,7 @@ jobs:
     if: ${{ needs.changes.outputs.core == 'true' || needs.changes.outputs.mariadb == 'true'}}
     strategy:
       matrix:
-        ubuntu: [18.04, 20.04, 22.04]
+        ubuntu: [18.04, 20.04]
         arch: [x86_64, arm64]
         copt: [opt]
     steps:

@@ -124,12 +124,12 @@ load("//update:constants.bzl", "MARIADB_VERSIONS" , "MARIADB_VERSIONS_MAPPING")
             + mariadb_package(version, "mariadb-client-core-" + version)
             + mariadb_package(version, "mariadb-client-" + version)
             + select({
-                "//platforms:k8_cpu_focal": [
+                "//platforms:k8_cpu_jammy": [
                     ubuntu_focal_amd64["libreadline5"],
                     ubuntu_jammy_amd64["libncurses6"],
                     ubuntu_jammy_amd64["libtinfo6"],
                 ],
-                "//platforms:aarch64_cpu_focal": [
+                "//platforms:aarch64_cpu_jammy": [
                     ubuntu_focal_arm64["libreadline5"],
                     ubuntu_jammy_arm64["libncurses6"],
                     ubuntu_jammy_arm64["libtinfo6"],
