@@ -67,10 +67,10 @@ http_archive(
     # Get copy paste instructions for the http_archive attributes from the
     # release notes at https://github.com/bazelbuild/rules_docker/releases
     name = "io_bazel_rules_docker",
+    patch_args = ["-p1"],
+    patches = ["//:rules_docker.patch"],
     sha256 = "59536e6ae64359b716ba9c46c39183403b01eabfbd57578e84398b4829ca499a",
     strip_prefix = "rules_docker-0.22.0",
-    patches = ["//:rules_docker.patch"],
-    patch_args = ["-p1"],
     urls = ["https://github.com/bazelbuild/rules_docker/releases/download/v0.22.0/rules_docker-v0.22.0.tar.gz"],
 )
 
