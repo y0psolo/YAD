@@ -73,7 +73,7 @@ index d5ed962..0371ba1 100644
      'lzma module is unavailable.')
 -  
 +
-+  parser.add_argument('--zstd_path', type=str, default='/usr/bin/zstd',
++  parser.add_argument('--zstd_path', type=str, default='zstd',
 +    help='Specify the path to zstd.')
 +
    parser.add_argument('--force_posixpath', type=bool, default=False,
