@@ -96,7 +96,7 @@ cc_library(
         "-fPIC",
     ],
         deps = [
-        "@openssl//:openssl1",
+        "@openssl1//:openssl",
     ],
 )
 
@@ -126,7 +126,7 @@ cc_library(
         "-fPIC",
     ],
         deps = [
-        "@openssl//:openssl3",
+        "@openssl3//:openssl",
     ],
 )
 
