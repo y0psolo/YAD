@@ -14,5 +14,7 @@ REDIS_VERSION=$(grep REDIS_VERSION update/constants.bzl | grep -o -m 1 -E "[0-9]
 for repo in redis rediscli
 do
     simple_tag_multi_arch ${repo} $1 ${REDIS_VERSION}
-    simple_tag_multi_arch ${repo} $1 latest
+    if [ $1 = "jammy" ]; then
+        simple_tag_multi_arch ${repo} $1 latest
+    fi
 done
