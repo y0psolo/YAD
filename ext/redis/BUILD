@@ -897,7 +897,7 @@ cc_binary(
         ":hiredis",
         ":hiredis_ssl1",
         ":hdr_histogram",
-        "@openssl//:openssl"],
+        "@openssl1//:openssl"],
     linkopts = [
         "-ldl",
         "-pthread",
@@ -915,7 +915,7 @@ cc_binary(
         ":hiredis",
         ":hiredis_ssl3",
         ":hdr_histogram",
-        "@openssl//:openssl"],
+        "@openssl3//:openssl"],
     linkopts = [
         "-ldl",
         "-pthread",
