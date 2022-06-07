@@ -286,7 +286,7 @@ jobs:
         run: |
            bazel test --config ${{ matrix.arch }} -c ${{ matrix.copt }} --//platforms:distro=${{ matrix.ubuntu }} --//platforms:java=${{ matrix.java }} //test/spark:spark2
       - name: bazel test 3.x
-        if: ${{ matrix.ubuntu == '20.04' && matrix.arch  == 'x86_64' }}
+        if: ${{ matrix.ubuntu != '18.04' && matrix.arch  == 'x86_64' }}
         run: |
            bazel test --config ${{ matrix.arch }} -c ${{ matrix.copt }} --//platforms:distro=${{ matrix.ubuntu }} --//platforms:java=${{ matrix.java }} //test/spark:spark3
       - name: bazel deploy 2.4
@@ -296,19 +296,19 @@ jobs:
           bazel run --config ${{ matrix.arch }} -c ${{ matrix.copt }} --//platforms:distro=${{ matrix.ubuntu }} --//platforms:java=${{ matrix.java }} //image:push_pyspark_2.4
           bazel run --config ${{ matrix.arch }} -c ${{ matrix.copt }} --//platforms:distro=${{ matrix.ubuntu }} --//platforms:java=${{ matrix.java }} //image:push_sparkhistoryserver_2.4
       - name: bazel deploy 3.0
-        if: ${{ matrix.ubuntu == '20.04' }}
+        if: ${{ matrix.ubuntu != '18.04' }}
         run: |
           bazel run --config ${{ matrix.arch }} -c ${{ matrix.copt }} --//platforms:distro=${{ matrix.ubuntu }} --//platforms:java=${{ matrix.java }} //image:push_spark_3.0
           bazel run --config ${{ matrix.arch }} -c ${{ matrix.copt }} --//platforms:distro=${{ matrix.ubuntu }} --//platforms:java=${{ matrix.java }} //image:push_pyspark_3.0
           bazel run --config ${{ matrix.arch }} -c ${{ matrix.copt }} --//platforms:distro=${{ matrix.ubuntu }} --//platforms:java=${{ matrix.java }} //image:push_sparkhistoryserver_3.0
       - name: bazel deploy 3.1
-        if: ${{ matrix.ubuntu == '20.04' }}
+        if: ${{ matrix.ubuntu != '18.04' }}
         run: |
           bazel run --config ${{ matrix.arch }} -c ${{ matrix.copt }} --//platforms:distro=${{ matrix.ubuntu }} --//platforms:java=${{ matrix.java }} //image:push_spark_3.1
           bazel run --config ${{ matrix.arch }} -c ${{ matrix.copt }} --//platforms:distro=${{ matrix.ubuntu }} --//platforms:java=${{ matrix.java }} //image:push_pyspark_3.1
           bazel run --config ${{ matrix.arch }} -c ${{ matrix.copt }} --//platforms:distro=${{ matrix.ubuntu }} --//platforms:java=${{ matrix.java }} //image:push_sparkhistoryserver_3.1
       - name: bazel deploy 3.2
-        if: ${{ matrix.ubuntu == '20.04' }}
+        if: ${{ matrix.ubuntu != '18.04' }}
         run: |
           bazel run --config ${{ matrix.arch }} -c ${{ matrix.copt }} --//platforms:distro=${{ matrix.ubuntu }} --//platforms:java=${{ matrix.java }} //image:push_spark_3.2
           bazel run --config ${{ matrix.arch }} -c ${{ matrix.copt }} --//platforms:distro=${{ matrix.ubuntu }} --//platforms:java=${{ matrix.java }} //image:push_pyspark_3.2
