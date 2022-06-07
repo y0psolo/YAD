@@ -25,5 +25,5 @@ The default Entrypoint for the latest tag is empty
 
 ## Security
 
-Security scan of the image updated daily : [bionic](../../security/table/cc_bionic) [focal](../../security/table/cc_focal)
+Security scan of the image updated daily : [bionic](../../security/table/cc_bionic) [focal](../../security/table/cc_focal) [jammy](../../security/table/cc_jammy)
 

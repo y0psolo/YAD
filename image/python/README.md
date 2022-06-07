@@ -48,5 +48,5 @@ ENTRYPOINT ["/usr/bin/tini", "--", "/usr/bin/python3"]
 
 ## Security
 
-Security scan of the image updated daily : [bionic](../../security/table/python_bionic) [focal](../../security/table/python_focal)
+Security scan of the image updated daily : [bionic](../../security/table/python_bionic) [focal](../../security/table/python_focal) [jammy](../../security/table/python_jammy)
 

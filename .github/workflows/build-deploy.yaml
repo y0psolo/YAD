@@ -245,7 +245,7 @@ jobs:
     if: ${{ needs.changes.outputs.core == 'true' || needs.changes.outputs.java == 'true' || needs.changes.outputs.spark == 'true' || contains(github.event.inputs.forceRebuild, 'spark') }}
     strategy:
       matrix:
-        ubuntu: [18.04, 20.04, 22.04]
+        ubuntu: [18.04, 22.04]
         arch: [x86_64, arm64]
         copt: [opt]
         java: [azul]
@@ -419,7 +419,7 @@ jobs:
     if: ${{ needs.changes.outputs.core == 'true' || needs.changes.outputs.redis == 'true' || contains(github.event.inputs.forceRebuild, 'redis') }}
     strategy:
       matrix:
-        ubuntu: [22.04]
+        ubuntu: [20.04]
         arch: [x86_64, arm64]
         copt: [opt]
     steps:
@@ -698,7 +698,7 @@ jobs:
     needs: deploy_spark
     strategy:
       matrix:
-        ubuntu: [bionic, focal, jammy]
+        ubuntu: [bionic, jammy]
     steps:
       - name: Setup repository
         uses: actions/checkout@v2

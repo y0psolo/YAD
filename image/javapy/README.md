@@ -28,18 +28,17 @@ This image is designed for running java application with python dependencies.
 | dash                 | Ubuntu package                                               | python      | 
 | libbz2-1.0           | Ubuntu package                                               | python      | 
 | libdb5.3             | Ubuntu package                                               | python      | 
-| libffi7              | Ubuntu package                                               | python      | 
 | liblzma5             | Ubuntu package                                               | python      | 
 | libmpdec2            | Ubuntu package                                               | python      | 
 | libncursesw6         | Ubuntu package                                               | python      | 
-| libpython3.8-minimal | Ubuntu package                                               | python      | 
-| libpython3.8-stdlib  | Ubuntu package                                               | python      | 
+| libpython3.x-minimal | Ubuntu package                                               | python      | 
+| libpython3.x-stdlib  | Ubuntu package                                               | python      | 
 | libreadline8         | Ubuntu package                                               | python      | 
 | libsqlite3-0         | Ubuntu package                                               | python      | 
 | libtinfo6            | Ubuntu package                                               | python      | 
 | mime-support         | Ubuntu package                                               | python      | 
 | python3-distutils    | Ubuntu package                                               | python      | 
-| python3.8-minimal    | Ubuntu package                                               | python      | 
+| python3.x-minimal    | Ubuntu package                                               | python      | 
 | readline-common      | Ubuntu package                                               | python      | 
 | libcrypt1            | Ubuntu package                                               | python      | 
 | libc-bin             | Ubuntu package                                               | python      | 
@@ -65,7 +64,7 @@ Security scan of the image updated daily.
 
 | Name     | Java 8   | Java 11  |  Java 17   |
 | -------- | :------: | :------: | :--------: |
-| Adoptium | [bionic](../../security/table/adoptiumpy_8_bionic) / [focal](../../security/table/adoptiumpy_8_focal) | [bionic](../../security/table/adoptiumpy_11_bionic) / [focal](../../security/table/adoptiumpy_11_focal) | [bionic](../../security/table/adoptiumpy_17_bionic) / [focal](../../security/table/adoptiumpy_17_focal)
-| Azul     | [bionic](../../security/table/azulpy_8_bionic) / [focal](../../security/table/azulpy_8_focal) | [bionic](../../security/table/azulpy_11_bionic) / [focal](../../security/table/azulpy_11_focal) | [bionic](../../security/table/azulpy_17_bionic) / [focal](../../security/table/azulpy_17_focal)
+| Adoptium | [bionic](../../security/table/adoptiumpy_8_bionic) / [focal](../../security/table/adoptiumpy_8_focal) / [jammy](../../security/table/adoptiumpy_8_jammy) | [bionic](../../security/table/adoptiumpy_11_bionic) / [focal](../../security/table/adoptiumpy_11_focal) / [jammy](../../security/table/adoptiumpy_11_jammy) | [bionic](../../security/table/adoptiumpy_17_bionic) / [focal](../../security/table/adoptiumpy_17_focal) / [jammy](../../security/table/adoptiumpy_17_jammy)
+| Azul     | [bionic](../../security/table/azulpy_8_bionic) / [focal](../../security/table/azulpy_8_focal) / [jammy](../../security/table/azulpy_8_jammy) | [bionic](../../security/table/azulpy_11_bionic) / [focal](../../security/table/azulpy_11_focal) / [jammy](../../security/table/azulpy_11_jammy) | [bionic](../../security/table/azulpy_17_bionic) / [focal](../../security/table/azulpy_17_focal) / [jammy](../../security/table/azulpy_17_jammy)
 
 Security scan for Adoptium and Azul tar.gz archive installation is not supported by Trivy. To list CVE on Azul disctirbution see https://docs.azul.com/core/cve.

@@ -44,44 +44,50 @@ For the same reasons, if the entrypoint is left to the default empty vector, the
 ==== Base
 
 .Base Image List
-[cols=".^10%,15%,15%,60%",width="100%",options="header"]
+[cols=".^10%,15%,15%,15%,60%",width="100%",options="header"]
 |===
 
 | Image 
 ^| Ubuntu Bionic
-^| Ubuntu Focal  
+^| Ubuntu Focal
+^| Ubuntu Jammy
 | Usage
 
 | link:image/static/README.md[static]
 | image:https://img.shields.io/docker/image-size/yadist/static/bionic?label=bionic&logo=docker[link="https://hub.docker.com/r/yadist/static/"]
 | image:https://img.shields.io/docker/image-size/yadist/static/focal?label=focal&logo=docker[link="https://hub.docker.com/r/yadist/static/"]
+| image:https://img.shields.io/docker/image-size/yadist/static/jammy?label=jammy&logo=docker[link="https://hub.docker.com/r/yadist/static/"]
 | For running staticaly linked application
 
 | link:image/base/README.md[base]
 | image:https://img.shields.io/docker/image-size/yadist/base/bionic?label=bionic&logo=docker[link="https://hub.docker.com/r/yadist/base/"]
 | image:https://img.shields.io/docker/image-size/yadist/base/focal?label=focal&logo=docker[link="https://hub.docker.com/r/yadist/base/"]
+| image:https://img.shields.io/docker/image-size/yadist/base/jammy?label=jammy&logo=docker[link="https://hub.docker.com/r/yadist/base/"]
 | For running libc and openssl dynamically linked application
 
 | link:image/cc/README.md[cc]
 | image:https://img.shields.io/docker/image-size/yadist/cc/bionic?label=bionic&logo=docker[link="https://hub.docker.com/r/yadist/cc/"]
 | image:https://img.shields.io/docker/image-size/yadist/cc/focal?label=focal&logo=docker[link="https://hub.docker.com/r/yadist/cc/"]
+| image:https://img.shields.io/docker/image-size/yadist/cc/jammy?label=jammy&logo=docker[link="https://hub.docker.com/r/yadist/cc/"]
 | For running libc, libgcc and openssl linked application
 
 | link:image/python/README.md[python]
 | image:https://img.shields.io/docker/image-size/yadist/python/bionic?label=bionic&logo=docker[link="https://hub.docker.com/r/yadist/python/"]
 | image:https://img.shields.io/docker/image-size/yadist/python/focal?label=focal&logo=docker[link="https://hub.docker.com/r/yadist/python/"]
+| image:https://img.shields.io/docker/image-size/yadist/python/jammy?label=jammy&logo=docker[link="https://hub.docker.com/r/yadist/python/"]
 | For running python application(python 3.x)
 |===
 
 ==== Java
 
 .Java Image List
-[cols=".^10%,15%,15%,60%",width="100%",options="header"]
+[cols=".^10%,15%,15%,15%,60%",width="100%",options="header"]
 |===
 
 | Image 
 ^| Ubuntu Bionic
-^| Ubuntu Focal  
+^| Ubuntu Focal
+^| Ubuntu Jammy
 | Usage
 
 | link:image/java/README.md[adoptium]
@@ -91,6 +97,9 @@ image:https://img.shields.io/docker/image-size/yadist/adoptium/17_bionic?label=1
 | image:https://img.shields.io/docker/image-size/yadist/adoptium/8_focal?label=8_focal&logo=docker[link="https://hub.docker.com/r/yadist/adoptium/"]
 image:https://img.shields.io/docker/image-size/yadist/adoptium/11_focal?label=11_focal&logo=docker[link="https://hub.docker.com/r/yadist/adoptium/"]
 image:https://img.shields.io/docker/image-size/yadist/adoptium/17_focal?label=17_focal&logo=docker[link="https://hub.docker.com/r/yadist/adoptium/"]
+| image:https://img.shields.io/docker/image-size/yadist/adoptium/8_jammy?label=8_jammy&logo=docker[link="https://hub.docker.com/r/yadist/adoptium/"]
+image:https://img.shields.io/docker/image-size/yadist/adoptium/11_jammy?label=11_jammy&logo=docker[link="https://hub.docker.com/r/yadist/adoptium/"]
+image:https://img.shields.io/docker/image-size/yadist/adoptium/17_jammy?label=17_jammy&logo=docker[link="https://hub.docker.com/r/yadist/adoptium/"]
 |  For running java application with https://adoptium.net/[adoptium] jre
 
 | link:image/javapy/README.md[adoptiumpy]
@@ -100,6 +109,9 @@ image:https://img.shields.io/docker/image-size/yadist/adoptiumpy/17_bionic?label
 | image:https://img.shields.io/docker/image-size/yadist/adoptiumpy/8_focal?label=8_focal&logo=docker[link="https://hub.docker.com/r/yadist/adoptiumpy/"]
 image:https://img.shields.io/docker/image-size/yadist/adoptiumpy/11_focal?label=11_focal&logo=docker[link="https://hub.docker.com/r/yadist/adoptiumpy/"]
 image:https://img.shields.io/docker/image-size/yadist/adoptiumpy/17_focal?label=17_focal&logo=docker[link="https://hub.docker.com/r/yadist/adoptiumpy/"]
+| image:https://img.shields.io/docker/image-size/yadist/adoptiumpy/8_jammy?label=8_jammy&logo=docker[link="https://hub.docker.com/r/yadist/adoptiumpy/"]
+image:https://img.shields.io/docker/image-size/yadist/adoptiumpy/11_jammy?label=11_jammy&logo=docker[link="https://hub.docker.com/r/yadist/adoptiumpy/"]
+image:https://img.shields.io/docker/image-size/yadist/adoptiumpy/17_jammy?label=17_jammy&logo=docker[link="https://hub.docker.com/r/yadist/adoptiumpy/"]
 |  For running java application with https://adoptium.net/[adoptium] jre and python dependencies
 
 | link:image/java/README.md[azul]
@@ -109,6 +121,9 @@ image:https://img.shields.io/docker/image-size/yadist/azul/17_bionic?label=17_bi
 | image:https://img.shields.io/docker/image-size/yadist/azul/8_focal?label=8_focal&logo=docker[link="https://hub.docker.com/r/yadist/azul/"]
 image:https://img.shields.io/docker/image-size/yadist/azul/11_focal?label=11_focal&logo=docker[link="https://hub.docker.com/r/yadist/azul/"]
 image:https://img.shields.io/docker/image-size/yadist/azul/17_focal?label=17_focal&logo=docker[link="https://hub.docker.com/r/yadist/azul/"]
+| image:https://img.shields.io/docker/image-size/yadist/azul/8_jammy?label=8_jammy&logo=docker[link="https://hub.docker.com/r/yadist/azul/"]
+image:https://img.shields.io/docker/image-size/yadist/azul/11_jammy?label=11_jammy&logo=docker[link="https://hub.docker.com/r/yadist/azul/"]
+image:https://img.shields.io/docker/image-size/yadist/azul/17_jammy?label=17_jammy&logo=docker[link="https://hub.docker.com/r/yadist/azul/"]
 |  For running java application with https://azul.com/[azul] jre
 
 | link:image/javapy/README.md[azulpy]
@@ -118,18 +133,22 @@ image:https://img.shields.io/docker/image-size/yadist/azulpy/17_bionic?label=17_
 | image:https://img.shields.io/docker/image-size/yadist/azulpy/8_focal?label=8_focal&logo=docker[link="https://hub.docker.com/r/yadist/azulpy/"]
 image:https://img.shields.io/docker/image-size/yadist/azulpy/11_focal?label=11_focal&logo=docker[link="https://hub.docker.com/r/yadist/azulpy/"]
 image:https://img.shields.io/docker/image-size/yadist/azulpy/17_focal?label=17_focal&logo=docker[link="https://hub.docker.com/r/yadist/azulpy/"]
+| image:https://img.shields.io/docker/image-size/yadist/azulpy/8_jammy?label=8_jammy&logo=docker[link="https://hub.docker.com/r/yadist/azulpy/"]
+image:https://img.shields.io/docker/image-size/yadist/azulpy/11_jammy?label=11_jammy&logo=docker[link="https://hub.docker.com/r/yadist/azulpy/"]
+image:https://img.shields.io/docker/image-size/yadist/azulpy/17_jammy?label=17_jammy&logo=docker[link="https://hub.docker.com/r/yadist/azulpy/"]
 |  For running java application with https://azul.com/[azul] jre and python dependencies
 |===
 
 ==== Typescript
 
 .Typescript Image List
-[cols=".^10%,15%,15%,60%",width="100%",options="header"]
+[cols=".^10%,15%,15%,15%,60%",width="100%",options="header"]
 |===
 
 | Image 
 ^| Ubuntu Bionic
-^| Ubuntu Focal  
+^| Ubuntu Focal
+^| Ubuntu Jammy
 | Usage
 
 | link:image/nodejs/README.md[nodejs]
@@ -137,24 +156,32 @@ image:https://img.shields.io/docker/image-size/yadist/azulpy/17_focal?label=17_f
 image:https://img.shields.io/docker/image-size/yadist/nodejs/16_bionic?label=16_bionic&logo=docker[link="https://hub.docker.com/r/yadist/nodejs/"]
 | image:https://img.shields.io/docker/image-size/yadist/nodejs/14_focal?label=14_focal&logo=docker[link="https://hub.docker.com/r/yadist/nodejs/"]
 image:https://img.shields.io/docker/image-size/yadist/nodejs/16_focal?label=16_focal&logo=docker[link="https://hub.docker.com/r/yadist/nodejs/"]
+| image:https://img.shields.io/docker/image-size/yadist/nodejs/14_jammy?label=14_jammy&logo=docker[link="https://hub.docker.com/r/yadist/nodejs/"]
+image:https://img.shields.io/docker/image-size/yadist/nodejs/16_jammy?label=16_jammy&logo=docker[link="https://hub.docker.com/r/yadist/nodejs/"]
 | For running javascript application
 
-| link:image/deno/README.md[deno] | image:https://img.shields.io/docker/image-size/yadist/deno/bionic?label=bionic&logo=docker[link="https://hub.docker.com/r/yadist/deno/"] | image:https://img.shields.io/docker/image-size/yadist/deno/focal?label=focal&logo=docker[link="https://hub.docker.com/r/yadist/deno/"] | For running typescript application 
+| link:image/deno/README.md[deno]
+| image:https://img.shields.io/docker/image-size/yadist/deno/bionic?label=bionic&logo=docker[link="https://hub.docker.com/r/yadist/deno/"]
+| image:https://img.shields.io/docker/image-size/yadist/deno/focal?label=focal&logo=docker[link="https://hub.docker.com/r/yadist/deno/"]
+| image:https://img.shields.io/docker/image-size/yadist/deno/jammy?label=jammy&logo=docker[link="https://hub.docker.com/r/yadist/deno/"]
+| For running typescript application 
 |===
 
 ==== Big Data
 
 .Big Data Image List
-[cols=".^10%,15%,15%,60%",width="100%",options="header"]
+[cols=".^10%,15%,15%,15%,60%",width="100%",options="header"]
 |===
 
 | Image 
 ^| Ubuntu Bionic
-^| Ubuntu Focal  
+^| Ubuntu Focal
+^| Ubuntu Jammy
 | Usage
 
 | link:image/spark/README.md[spark]
 | image:https://img.shields.io/docker/image-size/yadist/spark/2.4?label=2.4&logo=docker[link="https://hub.docker.com/r/yadist/spark/"]
+|
 | image:https://img.shields.io/docker/image-size/yadist/spark/3.0?label=3.0&logo=docker[link="https://hub.docker.com/r/yadist/spark/"]
 image:https://img.shields.io/docker/image-size/yadist/spark/3.1?label=3.1&logo=docker[link="https://hub.docker.com/r/yadist/spark/"]
 image:https://img.shields.io/docker/image-size/yadist/spark/3.2?label=3.2&logo=docker[link="https://hub.docker.com/r/yadist/spark/"]
@@ -162,6 +189,7 @@ image:https://img.shields.io/docker/image-size/yadist/spark/3.2?label=3.2&logo=d
 
 | link:image/spark/README.md[pyspark]
 | image:https://img.shields.io/docker/image-size/yadist/pyspark/2.4?label=2.4&logo=docker[link="https://hub.docker.com/r/yadist/pyspark/"]
+|
 | image:https://img.shields.io/docker/image-size/yadist/pyspark/3.0?label=3.0&logo=docker[link="https://hub.docker.com/r/yadist/pyspark/"]
 image:https://img.shields.io/docker/image-size/yadist/pyspark/3.1?label=3.1&logo=docker[link="https://hub.docker.com/r/yadist/pyspark/"]
 image:https://img.shields.io/docker/image-size/yadist/pyspark/3.2?label=3.2&logo=docker[link="https://hub.docker.com/r/yadist/pyspark/"]
@@ -169,13 +197,15 @@ image:https://img.shields.io/docker/image-size/yadist/pyspark/3.2?label=3.2&logo
 
 | link:image/spark/README.md[sparkhistoryserver]
 | image:https://img.shields.io/docker/image-size/yadist/sparkhistoryserver/2.4?label=2.4&logo=docker[link="https://hub.docker.com/r/yadist/sparkhistoryserver/"]
+|
 | image:https://img.shields.io/docker/image-size/yadist/sparkhistoryserver/3.0?label=3.0&logo=docker[link="https://hub.docker.com/r/yadist/sparkhistoryserver/"]
 image:https://img.shields.io/docker/image-size/yadist/sparkhistoryserver/3.1?label=3.1&logo=docker[link="https://hub.docker.com/r/yadist/sparkhistoryserver/"]
 image:https://img.shields.io/docker/image-size/yadist/sparkhistoryserver/3.2?label=3.2&logo=docker[link="https://hub.docker.com/r/yadist/sparkhistoryserver/"]
 | For running the spark historyserver application
 
 | link:image/hive/README.md[hivemetastore]
-| 
+|
+|
 | image:https://img.shields.io/docker/image-size/yadist/hivemetastore/latest?label=latest&logo=docker[link="https://hub.docker.com/r/yadist/hivemetastore/"]
 | For running the hive metastore server
 
@@ -189,12 +219,13 @@ image:https://img.shields.io/docker/image-size/yadist/sparkhistoryserver/3.2?lab
 ==== Database
 
 .Database Image List
-[cols=".^10%,15%,15%,60%",width="100%",options="header"]
+[cols=".^10%,15%,15%,15%,60%",width="100%",options="header"]
 |===
 
 | Image 
 ^| Ubuntu Bionic
-^| Ubuntu Focal  
+^| Ubuntu Focal
+^| Ubuntu Jammy
 | Usage
 
 | link:image/mariadb/README.md[Mariadb]
@@ -204,6 +235,7 @@ image:https://img.shields.io/docker/image-size/yadist/mariadb/10.7_bionic?label=
 | image:https://img.shields.io/docker/image-size/yadist/mariadb/10.5?label=10.5&logo=docker[link="https://hub.docker.com/r/yadist/mariadb/"]
 image:https://img.shields.io/docker/image-size/yadist/mariadb/10.6?label=10.6&logo=docker[link="https://hub.docker.com/r/yadist/mariadb/"]
 image:https://img.shields.io/docker/image-size/yadist/mariadb/10.7?label=10.7&logo=docker[link="https://hub.docker.com/r/yadist/mariadb/"]
+|
 | For running mariadb server
 
 | link:image/mariadb/README.md[Mariadb cli]
@@ -213,6 +245,7 @@ image:https://img.shields.io/docker/image-size/yadist/mariadbcli/10.7_bionic?lab
 | image:https://img.shields.io/docker/image-size/yadist/mariadbcli/10.5?label=10.5&logo=docker[link="https://hub.docker.com/r/yadist/mariadbcli/"]
 image:https://img.shields.io/docker/image-size/yadist/mariadbcli/10.6?label=10.6&logo=docker[link="https://hub.docker.com/r/yadist/mariadbcli/"]
 image:https://img.shields.io/docker/image-size/yadist/mariadbcli/10.7?label=10.7&logo=docker[link="https://hub.docker.com/r/yadist/mariadbcli/"]
+|
 | For running mariadb client
 
 | link:image/mariadb/README.md[Mariadb init]
@@ -222,36 +255,42 @@ image:https://img.shields.io/docker/image-size/yadist/mariadbinit/10.7_bionic?la
 | image:https://img.shields.io/docker/image-size/yadist/mariadbinit/10.5?label=10.5&logo=docker[link="https://hub.docker.com/r/yadist/mariadbinit/"]
 image:https://img.shields.io/docker/image-size/yadist/mariadbinit/10.6?label=10.6&logo=docker[link="https://hub.docker.com/r/yadist/mariadbinit/"]
 image:https://img.shields.io/docker/image-size/yadist/mariadbinit/10.7?label=10.7&logo=docker[link="https://hub.docker.com/r/yadist/mariadbinit/"]
+|
 | For running mariadb init container
 |===
 
 ==== Utils
 
 .Utils Image List
-[cols=".^10%,15%,15%,60%",width="100%",options="header"]
+[cols=".^10%,15%,15%,15%,60%",width="100%",options="header"]
 |===
 
 | Image 
 ^| Ubuntu Bionic
-^| Ubuntu Focal  
+^| Ubuntu Focal
+^| Ubuntu Jammy
 | Usage
 
 | link:image/consultemplate/README.md[Consul Template]
+| 
 | 
 | image:https://img.shields.io/docker/image-size/yadist/consultemplate/latest?label=latest&logo=docker[link="https://hub.docker.com/r/yadist/consultemplate/"]
 | For running consult template
 
 | link:image/prometheus/README.md[prometheus]
 | 
+| 
 | image:https://img.shields.io/docker/image-size/yadist/prometheus/latest?label=latest&logo=docker[link="https://hub.docker.com/r/yadist/prometheus/"]
 | For running prometheus
 
 | link:image/prometheus/README.md[nodeexporter]
 | 
+| 
 | image:https://img.shields.io/docker/image-size/yadist/nodeexporter/latest?label=latest&logo=docker[link="https://hub.docker.com/r/yadist/nodeexporter/"]
 | For running node exporter
 
 | link:image/prometheus/README.md[alertmanager]
+| 
 | 
 | image:https://img.shields.io/docker/image-size/yadist/alertmanager/latest?label=latest&logo=docker[link="https://hub.docker.com/r/yadist/alertmanager/"]
 | For running alertmanager

@@ -31,7 +31,7 @@ ENTRYPOINT ["/usr/bin/tini", "--", "/usr/bin/deno"]
 
 ## Security
 
-Security scan of the image updated daily : [bionic](../../security/table/deno_bionic) [focal](../../security/table/deno_focal)
+Security scan of the image updated daily : [bionic](../../security/table/deno_bionic) [focal](../../security/table/deno_focal) [jammy](../../security/table/deno_jammy)
 
 Security scan for Deno application is not supported by Trivy. See https://github.com/denoland/deno/security/advisories for the full CVE list.
 
