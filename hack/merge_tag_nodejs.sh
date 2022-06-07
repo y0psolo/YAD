@@ -15,7 +15,7 @@ for version in ${NODEJS_VERSIONS}
 do
     simple_tag_multi_arch nodejs ${version}_$1 ${version}_$1
     simple_tag_multi_arch nodejs ${version}_$1_debug ${version}_$1_debug
-    if [ $1 = "focal" ]; then
+    if [ $1 = "jammy" ]; then
         simple_tag_multi_arch nodejs ${version}_$1 ${version}
     fi
 done

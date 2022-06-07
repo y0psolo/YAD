@@ -4,6 +4,17 @@ load("@rules-update//:update.bzl", "update_http", "update_version")
 package(default_visibility = ["//:__subpackages__"])
 
 update_deb_packages(
+    name = "update_jammy_packages",
+    bzl_files = [
+        "deps/core/ubuntu_jammy_amd64.bzl",
+        "deps/core/ubuntu_jammy_arm64.bzl",
+    ],
+    pgp_keys = [
+        "@ubuntu_jammy_key//file",
+    ],
+)
+
+update_deb_packages(
     name = "update_focal_packages",
     bzl_files = [
         "deps/core/ubuntu_focal_amd64.bzl",

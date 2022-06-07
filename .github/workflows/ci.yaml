@@ -35,7 +35,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        ubuntu: [18.04, 20.04]
+        ubuntu: [18.04, 20.04, 22.04]
         arch: [x86_64, arm64]
         copt: [opt, dbg]
     steps:
@@ -48,6 +48,10 @@ jobs:
         uses: actions/checkout@v2
       - name: Setup Bazelisk
         uses: bazelbuild/setup-bazelisk@v1
+      - name: Install zstd
+        run : |
+          sudo apt-get update -y
+          sudo apt-get install -y zstd
       - name: Set up QEMU
         id: qemu
         if: ${{ matrix.arch != 'x86_64' }}
@@ -74,7 +78,7 @@ jobs:
     if: ${{ needs.changes.outputs.core == 'true' || needs.changes.outputs.java == 'true' || needs.changes.outputs.spark == 'true' || needs.changes.outputs.hive == 'true' || needs.changes.outputs.trino == 'true'}}
     strategy:
       matrix:
-        ubuntu: [18.04, 20.04]
+        ubuntu: [18.04, 20.04, 22.04]
         arch: [x86_64, arm64]
         copt: [opt, dbg]
         java: [adoptium, azul]
@@ -88,6 +92,10 @@ jobs:
         uses: actions/checkout@v2
       - name: Setup Bazelisk
         uses: bazelbuild/setup-bazelisk@v1
+      - name: Install zstd
+        run : |
+          sudo apt-get update -y
+          sudo apt-get install -y zstd
       - name: Mount bazel cache
         uses: actions/cache@v2
         with:
@@ -109,7 +117,7 @@ jobs:
     if: ${{ needs.changes.outputs.core == 'true' || needs.changes.outputs.java == 'true'}}
     strategy:
       matrix:
-        ubuntu: [18.04, 20.04]
+        ubuntu: [18.04, 20.04, 22.04]
         arch: [x86_64, arm64]
         copt: [opt, dbg]
         java: [adoptium, azul]
@@ -123,6 +131,10 @@ jobs:
         uses: actions/checkout@v2
       - name: Setup Bazelisk
         uses: bazelbuild/setup-bazelisk@v1
+      - name: Install zstd
+        run : |
+          sudo apt-get update -y
+          sudo apt-get install -y zstd
       - name: Set up QEMU
         id: qemu
         if: ${{ matrix.arch != 'x86_64' }}
@@ -137,7 +149,7 @@ jobs:
           key: ${{ runner.os }}-bazel-java-${{ matrix.arch }}-${{ matrix.copt }}-${{ matrix.ubuntu }}-${{ matrix.java }}-${{ hashFiles('**/BUILD', '**/*.bzl', 'WORKSPACE') }}
       - name: bazel test
         run: |
-           bazel test --config ${{ matrix.arch }} -c ${{ matrix.copt }} --//platforms:distro=${{ matrix.ubuntu }} //test/java:java
+           bazel test --config ${{ matrix.arch }} -c ${{ matrix.copt }} --//platforms:distro=${{ matrix.ubuntu }} --//platforms:java=${{ matrix.java }} //test/java:java
       - uses: actions/upload-artifact@v2
         if: ${{ failure() }}
         with:
@@ -149,7 +161,7 @@ jobs:
     if: ${{ needs.changes.outputs.core == 'true' || needs.changes.outputs.nodejs == 'true'}}
     strategy:
       matrix:
-        ubuntu: [18.04, 20.04]
+        ubuntu: [18.04, 20.04, 22.04]
         arch: [x86_64, arm64]
         copt: [opt, dbg]
     steps:
@@ -162,6 +174,10 @@ jobs:
         uses: actions/checkout@v2
       - name: Setup Bazelisk
         uses: bazelbuild/setup-bazelisk@v1
+      - name: Install zstd
+        run : |
+          sudo apt-get update -y
+          sudo apt-get install -y zstd
       - name: Set up QEMU
         id: qemu
         if: ${{ matrix.arch != 'x86_64' }}
@@ -188,7 +204,7 @@ jobs:
     if: ${{ needs.changes.outputs.core == 'true' || needs.changes.outputs.deno == 'true'}}
     strategy:
       matrix:
-        ubuntu: [18.04, 20.04]
+        ubuntu: [18.04, 20.04, 22.04]
         arch: [x86_64]
         copt: [opt, dbg]
     steps:
@@ -201,6 +217,10 @@ jobs:
         uses: actions/checkout@v2
       - name: Setup Bazelisk
         uses: bazelbuild/setup-bazelisk@v1
+      - name: Install zstd
+        run : |
+          sudo apt-get update -y
+          sudo apt-get install -y zstd
       - name: Set up QEMU
         id: qemu
         if: ${{ matrix.arch != 'x86_64' }}
@@ -227,7 +247,7 @@ jobs:
     if: ${{ needs.changes.outputs.core == 'true' || needs.changes.outputs.java == 'true' || needs.changes.outputs.spark == 'true'}}
     strategy:
       matrix:
-        ubuntu: [18.04, 20.04]
+        ubuntu: [18.04, 22.04]
         arch: [x86_64]
         copt: [opt]
         java: [azul]
@@ -241,6 +261,10 @@ jobs:
         uses: actions/checkout@v2
       - name: Setup Bazelisk
         uses: bazelbuild/setup-bazelisk@v1
+      - name: Install zstd
+        run : |
+          sudo apt-get update -y
+          sudo apt-get install -y zstd
       - name: Set up QEMU
         id: qemu
         if: ${{ matrix.arch != 'x86_64' }}
@@ -272,7 +296,7 @@ jobs:
     if: ${{ needs.changes.outputs.core == 'true' || needs.changes.outputs.java == 'true' || needs.changes.outputs.trino == 'true'}}
     strategy:
       matrix:
-        ubuntu: [20.04]
+        ubuntu: [22.04]
         arch: [x86_64, arm64]
         copt: [opt]
         java: [azul]
@@ -286,6 +310,10 @@ jobs:
         uses: actions/checkout@v2
       - name: Setup Bazelisk
         uses: bazelbuild/setup-bazelisk@v1
+      - name: Install zstd
+        run : |
+          sudo apt-get update -y
+          sudo apt-get install -y zstd
       - name: Set up QEMU
         id: qemu
         if: ${{ matrix.arch != 'x86_64' }}
@@ -312,7 +340,7 @@ jobs:
     if: ${{ needs.changes.outputs.core == 'true' || needs.changes.outputs.java == 'true' || needs.changes.outputs.hive == 'hive'}}
     strategy:
       matrix:
-        ubuntu: [20.04]
+        ubuntu: [22.04]
         arch: [x86_64, arm64]
         copt: [opt, dbg]
         java: [azul]
@@ -326,6 +354,10 @@ jobs:
         uses: actions/checkout@v2
       - name: Setup Bazelisk
         uses: bazelbuild/setup-bazelisk@v1
+      - name: Install zstd
+        run : |
+          sudo apt-get update -y
+          sudo apt-get install -y zstd
       - name: Set up QEMU
         id: qemu
         if: ${{ matrix.arch != 'x86_64' }}
@@ -365,6 +397,10 @@ jobs:
         uses: actions/checkout@v2
       - name: Setup Bazelisk
         uses: bazelbuild/setup-bazelisk@v1
+      - name: Install zstd
+        run : |
+          sudo apt-get update -y
+          sudo apt-get install -y zstd
       - name: Install crossbuild package
         if: ${{ matrix.arch == 'arm64' }}
         run : |
@@ -396,7 +432,7 @@ jobs:
     if: ${{ needs.changes.outputs.core == 'true' || needs.changes.outputs.consultemplate == 'true'}}
     strategy:
       matrix:
-        ubuntu: [20.04]
+        ubuntu: [22.04]
         arch: [x86_64, arm64]
         copt: [opt]
     steps:
@@ -409,6 +445,10 @@ jobs:
         uses: actions/checkout@v2
       - name: Setup Bazelisk
         uses: bazelbuild/setup-bazelisk@v1
+      - name: Install zstd
+        run : |
+          sudo apt-get update -y
+          sudo apt-get install -y zstd
       - name: Set up QEMU
         id: qemu
         if: ${{ matrix.arch != 'x86_64' }}
@@ -448,6 +488,10 @@ jobs:
         uses: actions/checkout@v2
       - name: Setup Bazelisk
         uses: bazelbuild/setup-bazelisk@v1
+      - name: Install zstd
+        run : |
+          sudo apt-get update -y
+          sudo apt-get install -y zstd
       - name: Set up QEMU
         id: qemu
         if: ${{ matrix.arch != 'x86_64' }}
@@ -474,7 +518,7 @@ jobs:
     if: ${{ needs.changes.outputs.core == 'true' || needs.changes.outputs.prometheus == 'true'}}
     strategy:
       matrix:
-        ubuntu: [18.04, 20.04]
+        ubuntu: [18.04, 20.04, 22.04]
         arch: [x86_64, arm64]
         copt: [opt]
     steps:
@@ -487,6 +531,10 @@ jobs:
         uses: actions/checkout@v2
       - name: Setup Bazelisk
         uses: bazelbuild/setup-bazelisk@v1
+      - name: Install zstd
+        run : |
+          sudo apt-get update -y
+          sudo apt-get install -y zstd
       - name: Set up QEMU
         id: qemu
         if: ${{ matrix.arch != 'x86_64' }}

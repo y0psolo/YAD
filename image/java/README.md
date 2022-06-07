@@ -46,7 +46,7 @@ Security scan of the image updated daily.
 
 | Name     | Java 8   | Java 11  |  Java 17   |
 | -------- | :------: | :------: | :--------: |
-| Adoptium | [bionic](../../security/table/adoptium_8_bionic) / [focal](../../security/table/adoptium_8_focal) | [bionic](../../security/table/adoptium_11_bionic) / [focal](../../security/table/adoptium_11_focal) | [bionic](../../security/table/adoptium_17_bionic) / [focal](../../security/table/adoptium_17_focal)
-| Azul     | [bionic](../../security/table/azul_8_bionic) / [focal](../../security/table/azul_8_focal) | [bionic](../../security/table/azul_11_bionic) / [focal](../../security/table/azul_11_focal) | [bionic](../../security/table/azul_17_bionic) / [focal](../../security/table/azul_17_focal)
+| Adoptium | [bionic](../../security/table/adoptium_8_bionic) / [focal](../../security/table/adoptium_8_focal) / [jammy](../../security/table/adoptium_8_jammy) | [bionic](../../security/table/adoptium_11_bionic) / [focal](../../security/table/adoptium_11_focal) / [jammy](../../security/table/adoptium_11_jammy) | [bionic](../../security/table/adoptium_17_bionic) / [focal](../../security/table/adoptium_17_focal) / [jammy](../../security/table/adoptium_17_jammy)
+| Azul     | [bionic](../../security/table/azul_8_bionic) / [focal](../../security/table/azul_8_focal) / [jammy](../../security/table/azul_8_jammy) | [bionic](../../security/table/azul_11_bionic) / [focal](../../security/table/azul_11_focal) / [jammy](../../security/table/azul_11_jammy) | [bionic](../../security/table/azul_17_bionic) / [focal](../../security/table/azul_17_focal) / [jammy](../../security/table/azul_17_jammy)
 
 Security scan for Adoptium and Azul tar.gz archive installation is not supported by Trivy. To list CVE on Azul disctirbution see https://docs.azul.com/core/cve.

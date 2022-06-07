@@ -18,4 +18,4 @@ The default Entrypoint for the latest tag is empty
 
 ## Security
 
-Security scan of the image updated daily : [bionic](../../security/table/static_bionic) [focal](../../security/table/static_focal)
+Security scan of the image updated daily : [bionic](../../security/table/static_bionic) [focal](../../security/table/static_focal) [jammy](../../security/table/static_jammy)

@@ -1,5 +1,7 @@
 load("@io_bazel_rules_docker//container:container.bzl", "container_layer")
 load("@bazel_tools//tools/build_defs/pkg:pkg.bzl", "pkg_tar")
+load("@ubuntu_jammy_amd64//debs:deb_packages.bzl", "ubuntu_jammy_amd64")
+load("@ubuntu_jammy_arm64//debs:deb_packages.bzl", "ubuntu_jammy_arm64")
 load("@ubuntu_focal_amd64//debs:deb_packages.bzl", "ubuntu_focal_amd64")
 load("@ubuntu_focal_arm64//debs:deb_packages.bzl", "ubuntu_focal_arm64")
 load("@ubuntu_bionic_amd64//debs:deb_packages.bzl", "ubuntu_bionic_amd64")
@@ -60,6 +62,16 @@ pkg_tar(
 container_layer(
     name = "cli",
     debs = select({
+        "//platforms:k8_cpu_jammy": [
+            ubuntu_jammy_amd64["dash"],
+            ubuntu_jammy_amd64["less"],
+            ubuntu_jammy_amd64["libtinfo6"],
+        ],
+        "//platforms:aarch64_cpu_jammy": [
+            ubuntu_jammy_arm64["dash"],
+            ubuntu_jammy_arm64["less"],
+            ubuntu_jammy_arm64["libtinfo6"],
+        ],
         "//platforms:k8_cpu_focal": [
             ubuntu_focal_amd64["dash"],
             ubuntu_focal_amd64["less"],

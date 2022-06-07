@@ -11,16 +11,22 @@ def mariadb_repository():
         urls = ["https://mariadb.org/mariadb_release_signing_key.asc"],
     )
 
+    # mariadb_10_5_jammy_amd64()
+    # mariadb_10_5_jammy_arm64()
     mariadb_10_5_focal_amd64()
     mariadb_10_5_focal_arm64()
     mariadb_10_5_bionic_amd64()
     mariadb_10_5_bionic_arm64()
 
+    # mariadb_10_6_jammy_amd64()
+    # mariadb_10_6_jammy_arm64()
     mariadb_10_6_focal_amd64()
     mariadb_10_6_focal_arm64()
     mariadb_10_6_bionic_amd64()
     mariadb_10_6_bionic_arm64()
 
+    # mariadb_10_7_jammy_amd64()
+    # mariadb_10_7_jammy_arm64()
     mariadb_10_7_focal_amd64()
     mariadb_10_7_focal_arm64()
     mariadb_10_7_bionic_amd64()

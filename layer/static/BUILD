@@ -4,6 +4,8 @@ load("@io_bazel_rules_docker//contrib:group.bzl", "group_entry", "group_file")
 load("@io_bazel_rules_docker//contrib:passwd.bzl", "passwd_entry", "passwd_tar")
 load("//update:constants.bzl", "NOBODY", "NONROOT")
 load("//util:osrelease.bzl", "gen_osrelease")
+load("@ubuntu_jammy_amd64//debs:deb_packages.bzl", "ubuntu_jammy_amd64")
+load("@ubuntu_jammy_arm64//debs:deb_packages.bzl", "ubuntu_jammy_arm64")
 load("@ubuntu_focal_amd64//debs:deb_packages.bzl", "ubuntu_focal_amd64")
 load("@ubuntu_focal_arm64//debs:deb_packages.bzl", "ubuntu_focal_arm64")
 load("@ubuntu_bionic_amd64//debs:deb_packages.bzl", "ubuntu_bionic_amd64")
@@ -110,11 +112,13 @@ gen_osrelease(
     distribution = "Ubuntu",
     distribution_like = "debian",
     release = select({
+        "//platforms:jammy": "Jammy Jellyfish",
         "//platforms:focal": "Focal Fossa",
         "//platforms:bionic": "Bionic Beaver",
     }),
     version = select({
-        "//platforms:focal": "20.04.3 LTS",
+        "//platforms:jammy": "22.04 LTS",
+        "//platforms:focal": "20.04.4 LTS",
         "//platforms:bionic": "18.04.6 LTS",
     }),
 )
@@ -146,6 +150,16 @@ pkg_tar(
 container_layer(
     name = "static",
     debs = select({
+        "//platforms:k8_cpu_jammy": [
+            ubuntu_jammy_amd64["base-files"],
+            ubuntu_jammy_amd64["netbase"],
+            ubuntu_jammy_amd64["tzdata"],
+        ],
+        "//platforms:aarch64_cpu_jammy": [
+            ubuntu_jammy_arm64["base-files"],
+            ubuntu_jammy_arm64["netbase"],
+            ubuntu_jammy_arm64["tzdata"],
+        ],
         "//platforms:k8_cpu_focal": [
             ubuntu_focal_amd64["base-files"],
             ubuntu_focal_amd64["netbase"],

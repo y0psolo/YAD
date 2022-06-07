@@ -21,5 +21,8 @@ do
         if [ $1 = "focal" ] && [ "${version#3}" != "${version}" ]; then
             simple_tag_multi_arch ${repo} ${version}_$1 ${version}
         fi
+        if [ $1 = "jammy" ] && [ "${version#3}" != "${version}" ]; then
+            simple_tag_multi_arch ${repo} ${version}_$1 ${version}
+        fi
     done
 done

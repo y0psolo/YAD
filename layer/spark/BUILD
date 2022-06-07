@@ -1,5 +1,7 @@
 load("@io_bazel_rules_docker//container:container.bzl", "container_layer")
 load("@bazel_tools//tools/build_defs/pkg:pkg.bzl", "pkg_tar")
+load("@ubuntu_jammy_amd64//debs:deb_packages.bzl", "ubuntu_jammy_amd64")
+load("@ubuntu_jammy_arm64//debs:deb_packages.bzl", "ubuntu_jammy_arm64")
 load("@ubuntu_focal_amd64//debs:deb_packages.bzl", "ubuntu_focal_amd64")
 load("@ubuntu_focal_arm64//debs:deb_packages.bzl", "ubuntu_focal_arm64")
 load("@ubuntu_bionic_amd64//debs:deb_packages.bzl", "ubuntu_bionic_amd64")
@@ -23,6 +25,26 @@ pkg_tar(
     container_layer(
         name = "spark" + version,
         debs = select({
+            "//platforms:k8_cpu_jammy": [
+                ubuntu_jammy_amd64["coreutils"],
+                ubuntu_jammy_amd64["libacl1"],
+                ubuntu_jammy_amd64["libattr1"],
+                ubuntu_jammy_amd64["libselinux1"],
+                ubuntu_jammy_amd64["libpcre2-8-0"],
+                ubuntu_jammy_amd64["tar"],
+                ubuntu_jammy_amd64["gzip"],
+                ubuntu_jammy_amd64["bash"],
+            ],
+            "//platforms:aarch64_cpu_jammy": [
+                ubuntu_jammy_arm64["coreutils"],
+                ubuntu_jammy_arm64["libacl1"],
+                ubuntu_jammy_arm64["libattr1"],
+                ubuntu_jammy_arm64["libselinux1"],
+                ubuntu_jammy_arm64["libpcre2-8-0"],
+                ubuntu_jammy_arm64["tar"],
+                ubuntu_jammy_arm64["gzip"],
+                ubuntu_jammy_arm64["bash"],
+            ],
             "//platforms:k8_cpu_focal": [
                 ubuntu_focal_amd64["coreutils"],
                 ubuntu_focal_amd64["libacl1"],

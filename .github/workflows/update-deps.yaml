@@ -16,6 +16,7 @@ jobs:
         uses: bazelbuild/setup-bazelisk@v1
       - name: Run update scripts
         run: |
+          bazel run :update_jammy_packages
           bazel run :update_focal_packages
           bazel run :update_bionic_packages
           update/ld_cache_gen.sh

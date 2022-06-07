@@ -1,4 +1,6 @@
 load("@io_bazel_rules_docker//container:container.bzl", "container_layer")
+load("@ubuntu_jammy_amd64//debs:deb_packages.bzl", "ubuntu_jammy_amd64")
+load("@ubuntu_jammy_arm64//debs:deb_packages.bzl", "ubuntu_jammy_arm64")
 load("@ubuntu_focal_amd64//debs:deb_packages.bzl", "ubuntu_focal_amd64")
 load("@ubuntu_focal_arm64//debs:deb_packages.bzl", "ubuntu_focal_arm64")
 load("@ubuntu_bionic_amd64//debs:deb_packages.bzl", "ubuntu_bionic_amd64")
@@ -10,6 +12,12 @@ load("//update:constants.bzl", "MARIADB_VERSIONS" , "MARIADB_VERSIONS_MAPPING")
     container_layer(
         name = "common_" + version,
         debs = select({
+            "//platforms:k8_cpu_jammy": [
+                ubuntu_jammy_amd64["zlib1g"],
+            ],
+            "//platforms:aarch64_cpu_jammy": [
+                ubuntu_jammy_arm64["zlib1g"],
+            ],
             "//platforms:k8_cpu_focal": [
                 ubuntu_focal_amd64["zlib1g"],
             ],
@@ -41,6 +49,28 @@ load("//update:constants.bzl", "MARIADB_VERSIONS" , "MARIADB_VERSIONS_MAPPING")
         debs = mariadb_package(version, "galera-4")
             + mariadb_package(version, "mariadb-server-core-" + version)
             + select({
+                 "//platforms:k8_cpu_jammy": [
+                    ubuntu_jammy_amd64["libaio1"],
+                    ubuntu_jammy_amd64["libcrypt1"],
+                    ubuntu_jammy_amd64["liblz4-1"],
+                    ubuntu_jammy_amd64["libpcre2-8-0"],
+                    ubuntu_jammy_amd64["libpmem1"],
+                    ubuntu_jammy_amd64["libsystemd0"],
+                    ubuntu_jammy_amd64["liblzma5"],
+                    ubuntu_jammy_amd64["libgcrypt20"],
+                    ubuntu_jammy_amd64["libgpg-error0"],
+                ],
+                "//platforms:aarch64_cpu_jammy": [
+                    ubuntu_jammy_arm64["libaio1"],
+                    ubuntu_jammy_arm64["libcrypt1"],
+                    ubuntu_jammy_arm64["liblz4-1"],
+                    ubuntu_jammy_arm64["libpcre2-8-0"],
+                    ubuntu_jammy_arm64["libpmem1"],
+                    ubuntu_jammy_arm64["libsystemd0"],
+                    ubuntu_jammy_arm64["liblzma5"],
+                    ubuntu_jammy_arm64["libgcrypt20"],
+                    ubuntu_jammy_arm64["libgpg-error0"],
+                ],
                 "//platforms:k8_cpu_focal": [
                     ubuntu_focal_amd64["libaio1"],
                     ubuntu_focal_amd64["libcrypt1"],
@@ -94,6 +124,16 @@ load("//update:constants.bzl", "MARIADB_VERSIONS" , "MARIADB_VERSIONS_MAPPING")
             + mariadb_package(version, "mariadb-client-core-" + version)
             + mariadb_package(version, "mariadb-client-" + version)
             + select({
+                "//platforms:k8_cpu_jammy": [
+                    ubuntu_focal_amd64["libreadline5"],
+                    ubuntu_jammy_amd64["libncurses6"],
+                    ubuntu_jammy_amd64["libtinfo6"],
+                ],
+                "//platforms:aarch64_cpu_jammy": [
+                    ubuntu_focal_arm64["libreadline5"],
+                    ubuntu_jammy_arm64["libncurses6"],
+                    ubuntu_jammy_arm64["libtinfo6"],
+                ],
                 "//platforms:k8_cpu_focal": [
                     ubuntu_focal_amd64["libreadline5"],
                     ubuntu_focal_amd64["libncurses6"],

@@ -2,6 +2,58 @@
 
 load("@rules_deb_packages//:deb_packages.bzl", "deb_packages")
 
+# def mariadb_10_7_jammy_amd64():
+#     deb_packages(
+#         name = "mariadb_10_7_jammy_amd64",
+#         arch = "amd64",
+#         packages = {
+#             "galera-4": "pool/main/g/galera-4/galera-4_26.4.11-focal_amd64.deb",
+#             "libmariadb3": "pool/main/m/mariadb-10.7/libmariadb3_10.7.3+maria~focal_amd64.deb",
+#             "mariadb-client-10.7": "pool/main/m/mariadb-10.7/mariadb-client-10.7_10.7.3+maria~focal_amd64.deb",
+#             "mariadb-client-core-10.7": "pool/main/m/mariadb-10.7/mariadb-client-core-10.7_10.7.3+maria~focal_amd64.deb",
+#             "mariadb-server-core-10.7": "pool/main/m/mariadb-10.7/mariadb-server-core-10.7_10.7.3+maria~focal_amd64.deb",
+#         },
+#         packages_sha256 = {
+#             "galera-4": "530c109bbcc66a92ed2e06beb42722df14652d6c8ee3ed8ee6195147aeb53cf8",
+#             "libmariadb3": "b78aaa49aa2a485f78704aaf18d20495e30f7538b661bd621efa1b0451a521f2",
+#             "mariadb-client-10.7": "442b12c1762c93368eadee2cbe77939ee18e24d1b80464a156de55d78f93b6ee",
+#             "mariadb-client-core-10.7": "36f5d6930f9336ad2cd831c71607e4bba4010f38f0c00a85dca0e0550a5c6d3a",
+#             "mariadb-server-core-10.7": "e950a377c5ec44424a4a1515bbc1c7812a37566026435176df707a327acb08b3",
+#         },
+#         sources = [
+#             "https://mirrors.xtom.nl/mariadb/repo/10.7/ubuntu/ jammy main",
+#         ],
+#         urls = [
+#             "https://mirrors.xtom.nl/mariadb/repo/10.7/ubuntu/$(package_path)",
+#         ],
+#     )
+
+# def mariadb_10_7_jammy_arm64():
+#     deb_packages(
+#         name = "mariadb_10_7_jammy_arm64",
+#         arch = "arm64",
+#         packages = {
+#             "galera-4": "pool/main/g/galera-4/galera-4_26.4.11-focal_arm64.deb",
+#             "libmariadb3": "pool/main/m/mariadb-10.7/libmariadb3_10.7.3+maria~focal_arm64.deb",
+#             "mariadb-client-10.7": "pool/main/m/mariadb-10.7/mariadb-client-10.7_10.7.3+maria~focal_arm64.deb",
+#             "mariadb-client-core-10.7": "pool/main/m/mariadb-10.7/mariadb-client-core-10.7_10.7.3+maria~focal_arm64.deb",
+#             "mariadb-server-core-10.7": "pool/main/m/mariadb-10.7/mariadb-server-core-10.7_10.7.3+maria~focal_arm64.deb",
+#         },
+#         packages_sha256 = {
+#             "galera-4": "d335c8d1b4bd46d83acef34a4d7b6d470c2267850c0e164a80e1a3e341cfd32a",
+#             "libmariadb3": "a4fca3d684b708ee8830045d6cd15998c3b200d197490b176d9057b40ea638cb",
+#             "mariadb-client-10.7": "13b5842a807c89fb82397bc29373d9c2e9feb3e66b1d69be5a670a0f7e681800",
+#             "mariadb-client-core-10.7": "a9eb3e6b9ed9519901379f7922e76fe21f3c40da6a82edd54edbfaa3a020cd84",
+#             "mariadb-server-core-10.7": "9c440b805f1a1d383ff5c2c734ec358a5862be6a7302325c32f8b6e97236ff2c",
+#         },
+#         sources = [
+#             "https://mirrors.xtom.nl/mariadb/repo/10.7/ubuntu/ jammy main",
+#         ],
+#         urls = [
+#             "https://mirrors.xtom.nl/mariadb/repo/10.7/ubuntu/$(package_path)",
+#         ],
+#     )
+
 def mariadb_10_7_focal_amd64():
     deb_packages(
         name = "mariadb_10_7_focal_amd64",

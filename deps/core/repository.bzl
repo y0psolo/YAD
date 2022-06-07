@@ -1,4 +1,6 @@
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_file")
+load(":ubuntu_jammy_amd64.bzl", "ubuntu_jammy_amd64")
+load(":ubuntu_jammy_arm64.bzl", "ubuntu_jammy_arm64")
 load(":ubuntu_focal_amd64.bzl", "ubuntu_focal_amd64")
 load(":ubuntu_focal_arm64.bzl", "ubuntu_focal_arm64")
 load(":ubuntu_bionic_amd64.bzl", "ubuntu_bionic_amd64")
@@ -6,6 +8,12 @@ load(":ubuntu_bionic_arm64.bzl", "ubuntu_bionic_arm64")
 
 def core_repository():
     # Ubuntu key
+    http_file(
+        name = "ubuntu_jammy_key",
+        sha256 = "10d6c8ab5ea4ef4f5fc7b9ff7aaf2d61d825cea57ac0124b76eb908ca6acd712",
+        urls = ["https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xf6ecb3762474eda9d21b7022871920d1991bc93c"],
+    )
+
     http_file(
         name = "ubuntu_focal_key",
         sha256 = "10d6c8ab5ea4ef4f5fc7b9ff7aaf2d61d825cea57ac0124b76eb908ca6acd712",
@@ -19,6 +27,8 @@ def core_repository():
         urls = ["https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x790bc7277767219c42c86f933b4fe6acc0b21f32"],
     )
 
+    ubuntu_jammy_amd64()
+    ubuntu_jammy_arm64()
     ubuntu_focal_amd64()
     ubuntu_focal_arm64()
     ubuntu_bionic_amd64()

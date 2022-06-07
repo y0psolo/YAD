@@ -49,6 +49,8 @@ cc_toolchain_suite(
     toolchains = {
         "k8|compiler": ":cc-compiler-k8",
         "k8": ":cc-compiler-k8",
+        "x86_64|compiler": ":cc-compiler-k8",
+        "x86_64": ":cc-compiler-k8",
         "aarch64|compiler": ":cc-compiler-aarch64",
         "aarch64": ":cc-compiler-aarch64",
     },
