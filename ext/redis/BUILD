@@ -1,45 +1,5 @@
 load("@rules_foreign_cc//foreign_cc:defs.bzl", "configure_make")
 load("@bazel_tools//tools/build_defs/pkg:pkg.bzl", "pkg_tar")
-load("@bazel_skylib//rules:common_settings.bzl", "string_flag")
-
-# package(
-#     default_visibility = ["//visibility:public"],
-#     features = [
-#         "-static_link_cpp_runtimes",
-#         "-opt",
-#     ],
-# )
-
-string_flag(
-    name = "distro",
-    values = ["18.04", "20.04", "22.04"],
-    build_setting_default = "20.04",
-)
-
-config_setting(
-    name = "focal",
-    flag_values  = {":distro" : "20.04"},
-)
-
-config_setting(
-    name = "bionic",
-    flag_values  = {":distro" : "18.04"},
-)
-
-config_setting(
-    name = "jammy",
-    flag_values  = {":distro" : "22.04"},
-)
-
-config_setting(
-    name = "aarch64_cpu",
-    values = {"cpu": "aarch64"},
-)
-
-config_setting(
-    name = "k8_cpu",
-    values = {"cpu": "x86_64"},
-)
 
 filegroup(
     name = "all",
@@ -118,8 +78,8 @@ cc_library(
         "-fPIC",
     ],
     deps = select({
-        "focal": [ "@openssl1//:openssl", ],
-        "jammy": [ "@openssl3//:openssl", ],
+        "@yad//platforms:focal": [ "@openssl1//:openssl", ],
+        "@yad//platforms:jammy": [ "@openssl3//:openssl", ],
     }),
 )
 
@@ -238,7 +198,7 @@ cc_library(
 configure_make(
     name = "libjemalloc",
     configure_options = select({
-        "aarch64_cpu": [
+        "@yad//platforms:aarch64_cpu": [
             "--host=x86_64-linux-gnu",
             "--build=aarch64-linux-gnu",
             "--with-lg-page=16",
@@ -247,7 +207,7 @@ configure_make(
             "--with-lg-quantum=3",
             "--with-jemalloc-prefix=je_",
         ],
-        "k8_cpu": [
+        "@yad//platforms:k8_cpu": [
             "--host=x86_64-linux-gnu",
             "--build=x86_64-linux-gnu",
             "--with-lg-page=12",
@@ -595,8 +555,8 @@ cc_library(
 cc_binary(
     name = "redis-server",
     deps = select({
-            "focal": [ "@openssl1//:openssl", ],
-            "jammy": [ "@openssl3//:openssl", ],
+            "@yad//platforms:focal": [ "@openssl1//:openssl", ],
+            "@yad//platforms:jammy": [ "@openssl3//:openssl", ],
         }) + [
             ":redis-server_lib",
             ":libjemalloc",
