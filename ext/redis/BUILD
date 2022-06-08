@@ -1,24 +1,6 @@
 load("@rules_foreign_cc//foreign_cc:defs.bzl", "configure_make")
 load("@bazel_tools//tools/build_defs/pkg:pkg.bzl", "pkg_tar")
 
-# package(
-#     default_visibility = ["//visibility:public"],
-#     features = [
-#         "-static_link_cpp_runtimes",
-#         "-opt",
-#     ],
-# )
-
-config_setting(
-    name = "aarch64_cpu",
-    values = {"cpu": "aarch64"},
-)
-
-config_setting(
-    name = "k8_cpu",
-    values = {"cpu": "x86_64"},
-)
-
 filegroup(
     name = "all",
     srcs = glob(["**"]),
@@ -95,9 +77,10 @@ cc_library(
         "-DHIREDIS_TEST_SSL",
         "-fPIC",
     ],
-        deps = [
-        "@openssl//:openssl",
-    ],
+    deps = select({
+        "@yad//platforms:focal": [ "@openssl1//:openssl", ],
+        "@yad//platforms:jammy": [ "@openssl3//:openssl", ],
+    }),
 )
 
 cc_library(
@@ -215,7 +198,7 @@ cc_library(
 configure_make(
     name = "libjemalloc",
     configure_options = select({
-        "aarch64_cpu": [
+        "@yad//platforms:aarch64_cpu": [
             "--host=x86_64-linux-gnu",
             "--build=aarch64-linux-gnu",
             "--with-lg-page=16",
@@ -224,7 +207,7 @@ configure_make(
             "--with-lg-quantum=3",
             "--with-jemalloc-prefix=je_",
         ],
-        "k8_cpu": [
+        "@yad//platforms:k8_cpu": [
             "--host=x86_64-linux-gnu",
             "--build=x86_64-linux-gnu",
             "--with-lg-page=12",
@@ -571,13 +554,16 @@ cc_library(
 
 cc_binary(
     name = "redis-server",
-    deps = [
-        ":redis-server_lib",
-        ":libjemalloc",
-        ":hiredis",
-        ":hiredis_ssl",
-        ":hdr_histogram",
-        "@openssl//:openssl"],
+    deps = select({
+            "@yad//platforms:focal": [ "@openssl1//:openssl", ],
+            "@yad//platforms:jammy": [ "@openssl3//:openssl", ],
+        }) + [
+            ":redis-server_lib",
+            ":libjemalloc",
+            ":hiredis",
+            ":hiredis_ssl",
+            ":hdr_histogram",
+        ],
     linkopts = [
         "-ldl",
         "-pthread",
@@ -586,7 +572,6 @@ cc_binary(
         "-rdynamic",
     ],
 )
-
 
 pkg_tar(
     name = "server_tar",

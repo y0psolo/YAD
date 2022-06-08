@@ -384,7 +384,7 @@ jobs:
     if: ${{ needs.changes.outputs.core == 'true' || needs.changes.outputs.redis == 'true'}}
     strategy:
       matrix:
-        ubuntu: [20.04]
+        ubuntu: [20.04, 22.04]
         arch: [x86_64, arm64]
         copt: [opt]
     steps:

@@ -7,9 +7,7 @@ container_layer(
     env = {
         "REDIS_VERSION": REDIS_VERSION,
     },
-    tars = [
-        "@redis//:server_tar"
-    ],
+    tars = ["@redis//:server_tar"],
     visibility = ["//:__subpackages__"],
 )
 
@@ -19,8 +17,6 @@ container_layer(
     env = {
             "REDIS_VERSION": REDIS_VERSION,
     },
-    tars = [
-        "@redis//:cli_tar"
-    ],
+    tars = ["@redis//:cli_tar"],
     visibility = ["//:__subpackages__"],
 )
