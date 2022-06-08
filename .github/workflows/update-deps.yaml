@@ -14,6 +14,10 @@ jobs:
         uses: actions/checkout@v2
       - name: Setup Bazelisk
         uses: bazelbuild/setup-bazelisk@v1
+      - name: Install zstd
+        run : |
+          sudo apt-get update -y
+          sudo apt-get install -y zstd
       - name: Run update scripts
         run: |
           bazel run :update_jammy_packages
