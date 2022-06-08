@@ -752,7 +752,7 @@ jobs:
     needs: deploy_redis
     strategy:
       matrix:
-        ubuntu: [jammy]
+        ubuntu: [focal]
     steps:
       - name: Setup repository
         uses: actions/checkout@v2
