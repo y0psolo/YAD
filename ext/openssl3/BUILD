@@ -21,13 +21,12 @@ configure_make(
     configure_options = select({
         "aarch64_cpu": ["linux-aarch64",],
         "x86_64_cpu": ["linux-x86_64",],
-    }),
+    }) + ["--libdir=lib",],
     copts = [
         "-O3",
     ],
     configure_command = "Configure",
     lib_source = ":openssl_files",
-    out_lib_dir = "lib64",
     out_shared_libs = [
         "libcrypto.so",
         "libcrypto.so.3",
