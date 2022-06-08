@@ -7,7 +7,7 @@ config_setting(
 )
 
 config_setting(
-    name = "k8_cpu",
+    name = "x86_64_cpu",
     values = {"cpu": "x86_64"},
 )
 
@@ -20,13 +20,14 @@ configure_make(
     name = "openssl",
     configure_options = select({
         "aarch64_cpu": ["linux-aarch64",],
-        "k8_cpu": ["linux-x86_64",],
+        "x86_64_cpu": ["linux-x86_64",],
     }),
     copts = [
         "-O3",
     ],
     configure_command = "Configure",
     lib_source = ":openssl_files",
+    out_lib_dir = "lib64",
     out_shared_libs = [
         "libcrypto.so",
         "libcrypto.so.3",
