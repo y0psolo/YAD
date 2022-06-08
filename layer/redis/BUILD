@@ -7,10 +7,7 @@ container_layer(
     env = {
         "REDIS_VERSION": REDIS_VERSION,
     },
-    tars = select({
-        "//platforms:focal": ["@redis//:server_ssl1_tar"],
-        "//platforms:jammy": ["@redis//:server_ssl3_tar"],
-    }),
+    tars = ["@redis//:server_tar"],
     visibility = ["//:__subpackages__"],
 )
 
@@ -20,9 +17,6 @@ container_layer(
     env = {
             "REDIS_VERSION": REDIS_VERSION,
     },
-    tars = select({
-        "//platforms:focal": ["@redis//:cli_ssl1_tar"],
-        "//platforms:jammy": ["@redis//:cli_ssl3_tar"],
-    }),
+    tars = ["@redis//:cli_tar"],
     visibility = ["//:__subpackages__"],
 )
