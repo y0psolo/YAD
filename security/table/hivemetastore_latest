@@ -1,254 +1,220 @@
-+----------------+------------------+----------+------------------------+---------------+---------------------------------------+
-|    LIBRARY     | VULNERABILITY ID | SEVERITY |   INSTALLED VERSION    | FIXED VERSION |                 TITLE                 |
-+----------------+------------------+----------+------------------------+---------------+---------------------------------------+
-| libfreetype6   | CVE-2022-27404   | MEDIUM   | 2.10.1-2ubuntu0.1      |               | FreeType: Buffer Overflow             |
-|                |                  |          |                        |               | -->avd.aquasec.com/nvd/cve-2022-27404 |
-+                +------------------+----------+                        +---------------+---------------------------------------+
-|                | CVE-2022-27405   | LOW      |                        |               | FreeType: Segementation Fault         |
-|                |                  |          |                        |               | -->avd.aquasec.com/nvd/cve-2022-27405 |
-+                +------------------+          +                        +---------------+---------------------------------------+
-|                | CVE-2022-27406   |          |                        |               | Freetype: Segmentation violation      |
-|                |                  |          |                        |               | -->avd.aquasec.com/nvd/cve-2022-27406 |
-+----------------+------------------+          +------------------------+---------------+---------------------------------------+
-| libjpeg-turbo8 | CVE-2020-17541   |          | 2.0.3-0ubuntu1.20.04.1 |               | libjpeg-turbo: Stack-based buffer     |
-|                |                  |          |                        |               | overflow in the "transform" component |
-|                |                  |          |                        |               | -->avd.aquasec.com/nvd/cve-2020-17541 |
-+----------------+------------------+----------+------------------------+---------------+---------------------------------------+
-+---------------------------------------------+------------------+----------+-------------------+--------------------------+---------------------------------------------------------------+
-|                   LIBRARY                   | VULNERABILITY ID | SEVERITY | INSTALLED VERSION |      FIXED VERSION       |                             TITLE                             |
-+---------------------------------------------+------------------+----------+-------------------+--------------------------+---------------------------------------------------------------+
-| com.fasterxml.jackson.core:jackson-databind | CVE-2020-36518   | HIGH     | 2.12.0            | 2.12.6.1, 2.13.2.1       | jackson-databind: denial of service                           |
-| (jackson-databind-2.12.0.jar)               |                  |          |                   |                          | via a large depth of nested objects                           |
-|                                             |                  |          |                   |                          | -->avd.aquasec.com/nvd/cve-2020-36518                         |
-+---------------------------------------------+                  +          +-------------------+                          +                                                               +
-| com.fasterxml.jackson.core:jackson-databind |                  |          | 2.13.0            |                          |                                                               |
-| (jackson-databind-2.13.0.jar)               |                  |          |                   |                          |                                                               |
-|                                             |                  |          |                   |                          |                                                               |
-+---------------------------------------------+------------------+----------+-------------------+--------------------------+---------------------------------------------------------------+
-| com.fasterxml.jackson.core:jackson-databind | CVE-2017-15095   | CRITICAL | 2.6.7.4           | 2.7.9.2, 2.8.10, 2.9.1   | jackson-databind: Unsafe                                      |
-| (aws-java-sdk-bundle-1.11.1026.jar)         |                  |          |                   |                          | deserialization due to                                        |
-|                                             |                  |          |                   |                          | incomplete black list (incomplete                             |
-|                                             |                  |          |                   |                          | fix for CVE-2017-7525)...                                     |
-|                                             |                  |          |                   |                          | -->avd.aquasec.com/nvd/cve-2017-15095                         |
-+                                             +------------------+          +                   +--------------------------+---------------------------------------------------------------+
-|                                             | CVE-2018-11307   |          |                   | 2.7.9.4, 2.8.11.2, 2.9.6 | jackson-databind: Potential                                   |
-|                                             |                  |          |                   |                          | information exfiltration with                                 |
-|                                             |                  |          |                   |                          | default typing, serialization                                 |
-|                                             |                  |          |                   |                          | gadget from MyBatis                                           |
-|                                             |                  |          |                   |                          | -->avd.aquasec.com/nvd/cve-2018-11307                         |
-+                                             +------------------+          +                   +--------------------------+---------------------------------------------------------------+
-|                                             | CVE-2018-7489    |          |                   | 2.7.9.3, 2.8.11.1, 2.9.5 | jackson-databind: incomplete fix                              |
-|                                             |                  |          |                   |                          | for CVE-2017-7525 permits unsafe                              |
-|                                             |                  |          |                   |                          | serialization via c3p0 libraries                              |
-|                                             |                  |          |                   |                          | -->avd.aquasec.com/nvd/cve-2018-7489                          |
-+                                             +------------------+          +                   +--------------------------+---------------------------------------------------------------+
-|                                             | CVE-2019-14540   |          |                   | 2.9.10                   | jackson-databind:                                             |
-|                                             |                  |          |                   |                          | Serialization gadgets in                                      |
-|                                             |                  |          |                   |                          | com.zaxxer.hikari.HikariConfig                                |
-|                                             |                  |          |                   |                          | -->avd.aquasec.com/nvd/cve-2019-14540                         |
-+                                             +------------------+          +                   +--------------------------+---------------------------------------------------------------+
-|                                             | CVE-2019-14893   |          |                   | 2.8.11.5, 2.9.10         | jackson-databind:                                             |
-|                                             |                  |          |                   |                          | Serialization gadgets in                                      |
-|                                             |                  |          |                   |                          | classes of the xalan package                                  |
-|                                             |                  |          |                   |                          | -->avd.aquasec.com/nvd/cve-2019-14893                         |
-+                                             +------------------+          +                   +--------------------------+---------------------------------------------------------------+
-|                                             | CVE-2019-16335   |          |                   | 2.9.10                   | jackson-databind:                                             |
-|                                             |                  |          |                   |                          | Serialization gadgets in                                      |
-|                                             |                  |          |                   |                          | com.zaxxer.hikari.HikariDataSource                            |
-|                                             |                  |          |                   |                          | -->avd.aquasec.com/nvd/cve-2019-16335                         |
-+                                             +------------------+          +                   +--------------------------+---------------------------------------------------------------+
-|                                             | CVE-2019-16942   |          |                   | 2.9.10.1                 | jackson-databind:                                             |
-|                                             |                  |          |                   |                          | Serialization gadgets in                                      |
-|                                             |                  |          |                   |                          | org.apache.commons.dbcp.datasources.*                         |
-|                                             |                  |          |                   |                          | -->avd.aquasec.com/nvd/cve-2019-16942                         |
-+                                             +------------------+          +                   +                          +---------------------------------------------------------------+
-|                                             | CVE-2019-16943   |          |                   |                          | jackson-databind:                                             |
-|                                             |                  |          |                   |                          | Serialization gadgets in                                      |
-|                                             |                  |          |                   |                          | com.p6spy.engine.spy.P6DataSource                             |
-|                                             |                  |          |                   |                          | -->avd.aquasec.com/nvd/cve-2019-16943                         |
-+                                             +------------------+          +                   +--------------------------+---------------------------------------------------------------+
-|                                             | CVE-2019-17267   |          |                   | 2.9.10                   | jackson-databind: Serialization                               |
-|                                             |                  |          |                   |                          | gadgets in classes of                                         |
-|                                             |                  |          |                   |                          | the ehcache package                                           |
-|                                             |                  |          |                   |                          | -->avd.aquasec.com/nvd/cve-2019-17267                         |
-+                                             +------------------+          +                   +--------------------------+---------------------------------------------------------------+
-|                                             | CVE-2019-17531   |          |                   | 2.9.10.1                 | jackson-databind:                                             |
-|                                             |                  |          |                   |                          | Serialization gadgets in                                      |
-|                                             |                  |          |                   |                          | org.apache.log4j.receivers.db.*                               |
-|                                             |                  |          |                   |                          | -->avd.aquasec.com/nvd/cve-2019-17531                         |
-+                                             +------------------+          +                   +--------------------------+---------------------------------------------------------------+
-|                                             | CVE-2019-20330   |          |                   | 2.8.11.5, 2.9.10.2       | jackson-databind: lacks                                       |
-|                                             |                  |          |                   |                          | certain net.sf.ehcache blocking                               |
-|                                             |                  |          |                   |                          | -->avd.aquasec.com/nvd/cve-2019-20330                         |
-+                                             +------------------+----------+                   +--------------------------+---------------------------------------------------------------+
-|                                             | CVE-2018-5968    | HIGH     |                   | 2.7.9.5, 2.8.11.1, 2.9.4 | jackson-databind: unsafe                                      |
-|                                             |                  |          |                   |                          | deserialization due to incomplete                             |
-|                                             |                  |          |                   |                          | blacklist (incomplete fix                                     |
-|                                             |                  |          |                   |                          | for CVE-2017-7525 and...                                      |
-|                                             |                  |          |                   |                          | -->avd.aquasec.com/nvd/cve-2018-5968                          |
-+                                             +------------------+          +                   +--------------------------+---------------------------------------------------------------+
-|                                             | CVE-2020-35490   |          |                   | 2.9.10.8                 | jackson-databind: mishandles the interaction                  |
-|                                             |                  |          |                   |                          | between serialization gadgets and typing, related to          |
-|                                             |                  |          |                   |                          | org.apache.commons.dbcp2.datasources.PerUserPoolDataSource... |
-|                                             |                  |          |                   |                          | -->avd.aquasec.com/nvd/cve-2020-35490                         |
-+                                             +------------------+          +                   +                          +---------------------------------------------------------------+
-|                                             | CVE-2020-35491   |          |                   |                          | jackson-databind: mishandles the interaction                  |
-|                                             |                  |          |                   |                          | between serialization gadgets and typing, related to          |
-|                                             |                  |          |                   |                          | org.apache.commons.dbcp2.datasources.SharedPoolDataSource...  |
-|                                             |                  |          |                   |                          | -->avd.aquasec.com/nvd/cve-2020-35491                         |
-+                                             +------------------+          +                   +--------------------------+---------------------------------------------------------------+
-|                                             | CVE-2020-36518   |          |                   | 2.12.6.1, 2.13.2.1       | jackson-databind: denial of service                           |
-|                                             |                  |          |                   |                          | via a large depth of nested objects                           |
-|                                             |                  |          |                   |                          | -->avd.aquasec.com/nvd/cve-2020-36518                         |
-+                                             +------------------+----------+                   +--------------------------+---------------------------------------------------------------+
-|                                             | CVE-2018-1000873 | MEDIUM   |                   | 2.9.8                    | jackson-modules-java8: DoS due                                |
-|                                             |                  |          |                   |                          | to an Improper Input Validation                               |
-|                                             |                  |          |                   |                          | -->avd.aquasec.com/nvd/cve-2018-1000873                       |
-+---------------------------------------------+------------------+----------+-------------------+--------------------------+---------------------------------------------------------------+
-| com.google.guava:guava                      | CVE-2020-8908    | LOW      | 27.0-jre          |                     30.0 | guava: local information                                      |
-| (guava-27.0-jre.jar)                        |                  |          |                   |                          | disclosure via temporary directory                            |
-|                                             |                  |          |                   |                          | created with unsafe permissions                               |
-|                                             |                  |          |                   |                          | -->avd.aquasec.com/nvd/cve-2020-8908                          |
-+---------------------------------------------+------------------+----------+-------------------+--------------------------+---------------------------------------------------------------+
-| com.google.protobuf:protobuf-java           | CVE-2021-22569   | MEDIUM   | 2.5.0             | 3.16.1, 3.18.2, 3.19.2   | protobuf-java: potential DoS in the                           |
-| (protobuf-java-2.5.0.jar)                   |                  |          |                   |                          | parsing procedure for binary data                             |
-|                                             |                  |          |                   |                          | -->avd.aquasec.com/nvd/cve-2021-22569                         |
-+                                             +------------------+----------+                   +                          +---------------------------------------------------------------+
-|                                             | GMS-2022-5       | UNKNOWN  |                   |                          | A potential Denial of Service                                 |
-|                                             |                  |          |                   |                          | issue in protobuf-java                                        |
-+---------------------------------------------+------------------+----------+-------------------+                          +---------------------------------------------------------------+
-| com.google.protobuf:protobuf-java           | CVE-2021-22569   | MEDIUM   | 3.7.1             |                          | protobuf-java: potential DoS in the                           |
-| (hadoop-shaded-protobuf_3_7-1.1.1.jar)      |                  |          |                   |                          | parsing procedure for binary data                             |
-|                                             |                  |          |                   |                          | -->avd.aquasec.com/nvd/cve-2021-22569                         |
-+                                             +------------------+----------+                   +                          +---------------------------------------------------------------+
-|                                             | GMS-2022-5       | UNKNOWN  |                   |                          | A potential Denial of Service                                 |
-|                                             |                  |          |                   |                          | issue in protobuf-java                                        |
-+---------------------------------------------+------------------+----------+-------------------+--------------------------+---------------------------------------------------------------+
-| io.netty:netty                              | CVE-2019-20444   | CRITICAL | 3.10.6.Final      | 4.1.44                   | netty: HTTP request smuggling                                 |
-| (netty-3.10.6.Final.jar)                    |                  |          |                   |                          | -->avd.aquasec.com/nvd/cve-2019-20444                         |
-+                                             +------------------+          +                   +--------------------------+---------------------------------------------------------------+
-|                                             | CVE-2019-20445   |          |                   | 4.1.45                   | netty: HttpObjectDecoder.java allows                          |
-|                                             |                  |          |                   |                          | Content-Length header to accompanied                          |
-|                                             |                  |          |                   |                          | by second Content-Length header                               |
-|                                             |                  |          |                   |                          | -->avd.aquasec.com/nvd/cve-2019-20445                         |
-+                                             +------------------+----------+                   +--------------------------+---------------------------------------------------------------+
-|                                             | CVE-2015-2156    | HIGH     |                   | 4.0.2.8                  | netty: HttpOnly cookie bypass                                 |
-|                                             |                  |          |                   |                          | -->avd.aquasec.com/nvd/cve-2015-2156                          |
-+                                             +------------------+          +                   +--------------------------+---------------------------------------------------------------+
-|                                             | CVE-2019-16869   |          |                   | 4.1.42.Final             | netty: HTTP request smuggling                                 |
-|                                             |                  |          |                   |                          | by mishandled whitespace                                      |
-|                                             |                  |          |                   |                          | before the colon in HTTP...                                   |
-|                                             |                  |          |                   |                          | -->avd.aquasec.com/nvd/cve-2019-16869                         |
-+                                             +------------------+          +                   +--------------------------+---------------------------------------------------------------+
-|                                             | CVE-2021-37136   |          |                   | 4.1.68.Final             | netty-codec: Bzip2Decoder                                     |
-|                                             |                  |          |                   |                          | doesn't allow setting size                                    |
-|                                             |                  |          |                   |                          | restrictions for decompressed data                            |
-|                                             |                  |          |                   |                          | -->avd.aquasec.com/nvd/cve-2021-37136                         |
-+                                             +------------------+          +                   +                          +---------------------------------------------------------------+
-|                                             | CVE-2021-37137   |          |                   |                          | netty-codec: SnappyFrameDecoder                               |
-|                                             |                  |          |                   |                          | doesn't restrict chunk length and                             |
-|                                             |                  |          |                   |                          | may buffer skippable chunks in...                             |
-|                                             |                  |          |                   |                          | -->avd.aquasec.com/nvd/cve-2021-37137                         |
-+                                             +------------------+----------+                   +--------------------------+---------------------------------------------------------------+
-|                                             | CVE-2021-21290   | MEDIUM   |                   | 4.1.59.Final             | netty: Information disclosure via                             |
-|                                             |                  |          |                   |                          | the local system temporary directory                          |
-|                                             |                  |          |                   |                          | -->avd.aquasec.com/nvd/cve-2021-21290                         |
-+                                             +------------------+          +                   +--------------------------+---------------------------------------------------------------+
-|                                             | CVE-2021-21295   |          |                   | 4.1.60.Final             | netty: possible request smuggling                             |
-|                                             |                  |          |                   |                          | in HTTP/2 due missing validation                              |
-|                                             |                  |          |                   |                          | -->avd.aquasec.com/nvd/cve-2021-21295                         |
-+                                             +------------------+          +                   +--------------------------+---------------------------------------------------------------+
-|                                             | CVE-2021-21409   |          |                   | 4.1.61.Final             | netty: Request smuggling                                      |
-|                                             |                  |          |                   |                          | via content-length header                                     |
-|                                             |                  |          |                   |                          | -->avd.aquasec.com/nvd/cve-2021-21409                         |
-+                                             +------------------+          +                   +--------------------------+---------------------------------------------------------------+
-|                                             | CVE-2021-43797   |          |                   | 4.1.71.Final             | netty: control chars in header names                          |
-|                                             |                  |          |                   |                          | may lead to HTTP request smuggling...                         |
-|                                             |                  |          |                   |                          | -->avd.aquasec.com/nvd/cve-2021-43797                         |
-+---------------------------------------------+------------------+----------+-------------------+--------------------------+---------------------------------------------------------------+
-| io.netty:netty-codec                        | CVE-2021-37136   | HIGH     | 4.1.61.Final      | 4.1.68.Final             | netty-codec: Bzip2Decoder                                     |
-| (aws-java-sdk-bundle-1.11.1026.jar)         |                  |          |                   |                          | doesn't allow setting size                                    |
-|                                             |                  |          |                   |                          | restrictions for decompressed data                            |
-|                                             |                  |          |                   |                          | -->avd.aquasec.com/nvd/cve-2021-37136                         |
-+                                             +------------------+          +                   +                          +---------------------------------------------------------------+
-|                                             | CVE-2021-37137   |          |                   |                          | netty-codec: SnappyFrameDecoder                               |
-|                                             |                  |          |                   |                          | doesn't restrict chunk length and                             |
-|                                             |                  |          |                   |                          | may buffer skippable chunks in...                             |
-|                                             |                  |          |                   |                          | -->avd.aquasec.com/nvd/cve-2021-37137                         |
-+---------------------------------------------+------------------+----------+                   +--------------------------+---------------------------------------------------------------+
-| io.netty:netty-codec-http                   | CVE-2021-43797   | MEDIUM   |                   | 4.1.71.Final             | netty: control chars in header names                          |
-| (aws-java-sdk-bundle-1.11.1026.jar)         |                  |          |                   |                          | may lead to HTTP request smuggling...                         |
-|                                             |                  |          |                   |                          | -->avd.aquasec.com/nvd/cve-2021-43797                         |
-+                                             +------------------+          +                   +--------------------------+---------------------------------------------------------------+
-|                                             | CVE-2022-24823   |          |                   | 4.1.77.Final             | Netty is an open-source, asynchronous                         |
-|                                             |                  |          |                   |                          | event-driven network application ...                          |
-|                                             |                  |          |                   |                          | -->avd.aquasec.com/nvd/cve-2022-24823                         |
-+---------------------------------------------+------------------+----------+-------------------+--------------------------+---------------------------------------------------------------+
-| log4j:log4j (log4j-1.2.17.jar)              | CVE-2019-17571   | CRITICAL | 1.2.17            | 2.0-alpha1               | log4j: deserialization of                                     |
-|                                             |                  |          |                   |                          | untrusted data in SocketServer                                |
-|                                             |                  |          |                   |                          | -->avd.aquasec.com/nvd/cve-2019-17571                         |
-+                                             +------------------+          +                   +--------------------------+---------------------------------------------------------------+
-|                                             | CVE-2022-23305   |          |                   |                          | log4j: SQL injection in                                       |
-|                                             |                  |          |                   |                          | Log4j 1.x when application                                    |
-|                                             |                  |          |                   |                          | is configured to use...                                       |
-|                                             |                  |          |                   |                          | -->avd.aquasec.com/nvd/cve-2022-23305                         |
-+                                             +------------------+----------+                   +--------------------------+---------------------------------------------------------------+
-|                                             | CVE-2022-23302   | HIGH     |                   |                          | log4j: Remote code execution                                  |
-|                                             |                  |          |                   |                          | in Log4j 1.x when application                                 |
-|                                             |                  |          |                   |                          | is configured to...                                           |
-|                                             |                  |          |                   |                          | -->avd.aquasec.com/nvd/cve-2022-23302                         |
-+                                             +------------------+          +                   +--------------------------+---------------------------------------------------------------+
-|                                             | CVE-2022-23307   |          |                   |                          | log4j: Unsafe deserialization                                 |
-|                                             |                  |          |                   |                          | flaw in Chainsaw log viewer                                   |
-|                                             |                  |          |                   |                          | -->avd.aquasec.com/nvd/cve-2022-23307                         |
-+                                             +------------------+----------+                   +--------------------------+---------------------------------------------------------------+
-|                                             | CVE-2020-9488    | LOW      |                   | 2.13.2                   | log4j: improper validation                                    |
-|                                             |                  |          |                   |                          | of certificate with host                                      |
-|                                             |                  |          |                   |                          | mismatch in SMTP appender                                     |
-|                                             |                  |          |                   |                          | -->avd.aquasec.com/nvd/cve-2020-9488                          |
-+                                             +------------------+----------+                   +--------------------------+---------------------------------------------------------------+
-|                                             | GMS-2021-5       | UNKNOWN  |                   | 2.15.0-rc1               | Improper Neutralization                                       |
-|                                             |                  |          |                   |                          | of Special Elements in                                        |
-|                                             |                  |          |                   |                          | Output Used by a Downstream                                   |
-|                                             |                  |          |                   |                          | Component...                                                  |
-+---------------------------------------------+------------------+----------+-------------------+--------------------------+---------------------------------------------------------------+
-| org.apache.derby:derby                      | CVE-2015-1832    | CRITICAL | 10.10.2.0         | 10.12.1.1                | Apache Derby: XXE attack possible by                          |
-| (derby-10.10.2.0.jar)                       |                  |          |                   |                          | using XmlVTI and the XML datatype...                          |
-|                                             |                  |          |                   |                          | -->avd.aquasec.com/nvd/cve-2015-1832                          |
-+                                             +------------------+----------+                   +--------------------------+---------------------------------------------------------------+
-|                                             | CVE-2018-1313    | MEDIUM   |                   | 10.14.2.0                | derby: Externally-controlled                                  |
-|                                             |                  |          |                   |                          | input vulnerability allows remote                             |
-|                                             |                  |          |                   |                          | attacker to boot a database under...                          |
-|                                             |                  |          |                   |                          | -->avd.aquasec.com/nvd/cve-2018-1313                          |
-+---------------------------------------------+------------------+----------+-------------------+--------------------------+---------------------------------------------------------------+
-| org.apache.hadoop:hadoop-common             | CVE-2022-26612   | CRITICAL | 3.3.2             | 3.2.3                    | hadoop: Arbitrary file write in                               |
-| (hadoop-common-3.3.2-tests.jar)             |                  |          |                   |                          | FileUtil#unpackEntries on Windows                             |
-|                                             |                  |          |                   |                          | -->avd.aquasec.com/nvd/cve-2022-26612                         |
-+---------------------------------------------+------------------+----------+-------------------+--------------------------+---------------------------------------------------------------+
-| org.apache.thrift:libthrift                 | CVE-2018-1320    | HIGH     | 0.9.3             | 0.12.0                   | thrift: SASL negotiation                                      |
-| (libthrift-0.9.3.jar)                       |                  |          |                   |                          | isComplete validation bypass in the                           |
-|                                             |                  |          |                   |                          | org.apache.thrift.transport.TSaslTransport                    |
-|                                             |                  |          |                   |                          | class -->avd.aquasec.com/nvd/cve-2018-1320                    |
-+                                             +------------------+          +                   +--------------------------+---------------------------------------------------------------+
-|                                             | CVE-2019-0205    |          |                   | 0.13.0                   | thrift: Endless loop when                                     |
-|                                             |                  |          |                   |                          | feed with specific input data                                 |
-|                                             |                  |          |                   |                          | -->avd.aquasec.com/nvd/cve-2019-0205                          |
-+                                             +------------------+          +                   +                          +---------------------------------------------------------------+
-|                                             | CVE-2019-0210    |          |                   |                          | thrift: Out-of-bounds read                                    |
-|                                             |                  |          |                   |                          | related to TJSONProtocol                                      |
-|                                             |                  |          |                   |                          | or TSimpleJSONProtocol                                        |
-|                                             |                  |          |                   |                          | -->avd.aquasec.com/nvd/cve-2019-0210                          |
-+                                             +------------------+          +                   +--------------------------+---------------------------------------------------------------+
-|                                             | CVE-2020-13949   |          |                   | 0.14.0                   | libthrift: potential DoS when                                 |
-|                                             |                  |          |                   |                          | processing untrusted payloads                                 |
-|                                             |                  |          |                   |                          | -->avd.aquasec.com/nvd/cve-2020-13949                         |
-+                                             +------------------+----------+                   +--------------------------+---------------------------------------------------------------+
-|                                             | CVE-2018-11798   | MEDIUM   |                   | 0.12.0                   | thrift: Improper Access                                       |
-|                                             |                  |          |                   |                          | Control grants access to files                                |
-|                                             |                  |          |                   |                          | outside the  webservers...                                    |
-|                                             |                  |          |                   |                          | -->avd.aquasec.com/nvd/cve-2018-11798                         |
-+---------------------------------------------+------------------+----------+-------------------+--------------------------+---------------------------------------------------------------+
-| org.codehaus.jackson:jackson-mapper-asl     | CVE-2019-10172   | HIGH     | 1.9.13            |                          | jackson-mapper-asl: XML external                              |
-| (jackson-mapper-asl-1.9.13.jar)             |                  |          |                   |                          | entity similar to CVE-2016-3720                               |
-|                                             |                  |          |                   |                          | -->avd.aquasec.com/nvd/cve-2019-10172                         |
-+---------------------------------------------+------------------+----------+-------------------+--------------------------+---------------------------------------------------------------+
+┌──────────────┬────────────────┬──────────┬─────────────────────┬───────────────┬────────────────────────────────────────────────────────────┐
+│   Library    │ Vulnerability  │ Severity │  Installed Version  │ Fixed Version │                           Title                            │
+├──────────────┼────────────────┼──────────┼─────────────────────┼───────────────┼────────────────────────────────────────────────────────────┤
+│ libc6        │ CVE-2016-20013 │ LOW      │ 2.35-0ubuntu3       │               │ sha256crypt and sha512crypt through 0.6 allow attackers to │
+│              │                │          │                     │               │ cause a denial of...                                       │
+│              │                │          │                     │               │ https://avd.aquasec.com/nvd/cve-2016-20013                 │
+├──────────────┼────────────────┼──────────┼─────────────────────┼───────────────┼────────────────────────────────────────────────────────────┤
+│ libfreetype6 │ CVE-2022-27404 │ MEDIUM   │ 2.11.1+dfsg-1build1 │               │ FreeType: Buffer Overflow                                  │
+│              │                │          │                     │               │ https://avd.aquasec.com/nvd/cve-2022-27404                 │
+│              ├────────────────┼──────────┤                     ├───────────────┼────────────────────────────────────────────────────────────┤
+│              │ CVE-2022-27405 │ LOW      │                     │               │ FreeType: Segementation Fault                              │
+│              │                │          │                     │               │ https://avd.aquasec.com/nvd/cve-2022-27405                 │
+│              ├────────────────┤          │                     ├───────────────┼────────────────────────────────────────────────────────────┤
+│              │ CVE-2022-27406 │          │                     │               │ Freetype: Segmentation violation                           │
+│              │                │          │                     │               │ https://avd.aquasec.com/nvd/cve-2022-27406                 │
+└──────────────┴────────────────┴──────────┴─────────────────────┴───────────────┴────────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────┬─────────────────────┬──────────┬───────────────────┬──────────────────────────┬──────────────────────────────────────────────────────────────┐
+│                           Library                           │    Vulnerability    │ Severity │ Installed Version │      Fixed Version       │                            Title                             │
+├─────────────────────────────────────────────────────────────┼─────────────────────┼──────────┼───────────────────┼──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ com.fasterxml.jackson.core:jackson-databind                 │ CVE-2020-36518      │ HIGH     │ 2.12.0            │ 2.12.6.1, 2.13.2.1       │ jackson-databind: denial of service via a large depth of     │
+│ (jackson-databind-2.12.0.jar)                               │                     │          │                   │                          │ nested objects                                               │
+│                                                             │                     │          │                   │                          │ https://avd.aquasec.com/nvd/cve-2020-36518                   │
+├─────────────────────────────────────────────────────────────┤                     │          ├───────────────────┤                          │                                                              │
+│ com.fasterxml.jackson.core:jackson-databind                 │                     │          │ 2.13.0            │                          │                                                              │
+│ (jackson-databind-2.13.0.jar)                               │                     │          │                   │                          │                                                              │
+│                                                             │                     │          │                   │                          │                                                              │
+├─────────────────────────────────────────────────────────────┼─────────────────────┼──────────┼───────────────────┼──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ com.fasterxml.jackson.core:jackson-databind                 │ CVE-2017-15095      │ CRITICAL │ 2.6.7.4           │ 2.7.9.2, 2.8.10, 2.9.1   │ jackson-databind: Unsafe deserialization due to incomplete   │
+│ (aws-java-sdk-bundle-1.11.1026.jar)                         │                     │          │                   │                          │ black list (incomplete fix for CVE-2017-7525)...             │
+│                                                             │                     │          │                   │                          │ https://avd.aquasec.com/nvd/cve-2017-15095                   │
+│                                                             ├─────────────────────┤          │                   ├──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                                                             │ CVE-2018-11307      │          │                   │ 2.7.9.4, 2.8.11.2, 2.9.6 │ jackson-databind: Potential information exfiltration with    │
+│                                                             │                     │          │                   │                          │ default typing, serialization gadget from MyBatis            │
+│                                                             │                     │          │                   │                          │ https://avd.aquasec.com/nvd/cve-2018-11307                   │
+│                                                             ├─────────────────────┤          │                   ├──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                                                             │ CVE-2018-7489       │          │                   │ 2.7.9.3, 2.8.11.1, 2.9.5 │ jackson-databind: incomplete fix for CVE-2017-7525 permits   │
+│                                                             │                     │          │                   │                          │ unsafe serialization via c3p0 libraries                      │
+│                                                             │                     │          │                   │                          │ https://avd.aquasec.com/nvd/cve-2018-7489                    │
+│                                                             ├─────────────────────┤          │                   ├──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                                                             │ CVE-2019-14540      │          │                   │ 2.9.10                   │ jackson-databind: Serialization gadgets in                   │
+│                                                             │                     │          │                   │                          │ com.zaxxer.hikari.HikariConfig                               │
+│                                                             │                     │          │                   │                          │ https://avd.aquasec.com/nvd/cve-2019-14540                   │
+│                                                             ├─────────────────────┤          │                   ├──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                                                             │ CVE-2019-14893      │          │                   │ 2.8.11.5, 2.9.10         │ jackson-databind: Serialization gadgets in classes of the    │
+│                                                             │                     │          │                   │                          │ xalan package                                                │
+│                                                             │                     │          │                   │                          │ https://avd.aquasec.com/nvd/cve-2019-14893                   │
+│                                                             ├─────────────────────┤          │                   ├──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                                                             │ CVE-2019-16335      │          │                   │ 2.9.10                   │ jackson-databind: Serialization gadgets in                   │
+│                                                             │                     │          │                   │                          │ com.zaxxer.hikari.HikariDataSource                           │
+│                                                             │                     │          │                   │                          │ https://avd.aquasec.com/nvd/cve-2019-16335                   │
+│                                                             ├─────────────────────┤          │                   ├──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                                                             │ CVE-2019-16942      │          │                   │ 2.9.10.1                 │ jackson-databind: Serialization gadgets in                   │
+│                                                             │                     │          │                   │                          │ org.apache.commons.dbcp.datasources.*                        │
+│                                                             │                     │          │                   │                          │ https://avd.aquasec.com/nvd/cve-2019-16942                   │
+│                                                             ├─────────────────────┤          │                   │                          ├──────────────────────────────────────────────────────────────┤
+│                                                             │ CVE-2019-16943      │          │                   │                          │ jackson-databind: Serialization gadgets in                   │
+│                                                             │                     │          │                   │                          │ com.p6spy.engine.spy.P6DataSource                            │
+│                                                             │                     │          │                   │                          │ https://avd.aquasec.com/nvd/cve-2019-16943                   │
+│                                                             ├─────────────────────┤          │                   ├──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                                                             │ CVE-2019-17267      │          │                   │ 2.9.10                   │ jackson-databind: Serialization gadgets in classes of the    │
+│                                                             │                     │          │                   │                          │ ehcache package                                              │
+│                                                             │                     │          │                   │                          │ https://avd.aquasec.com/nvd/cve-2019-17267                   │
+│                                                             ├─────────────────────┤          │                   ├──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                                                             │ CVE-2019-17531      │          │                   │ 2.9.10.1                 │ jackson-databind: Serialization gadgets in                   │
+│                                                             │                     │          │                   │                          │ org.apache.log4j.receivers.db.*                              │
+│                                                             │                     │          │                   │                          │ https://avd.aquasec.com/nvd/cve-2019-17531                   │
+├─────────────────────────────────────────────────────────────┼─────────────────────┼──────────┼───────────────────┼──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ com.fasterxml.jackson.core:jackson-databind                 │ CVE-2019-20330      │ CRITICAL │ 2.6.7.4           │ 2.8.11.5, 2.9.10.2       │ jackson-databind: lacks certain net.sf.ehcache blocking      │
+│ (aws-java-sdk-bundle-1.11.1026.jar)                         │                     │          │                   │                          │ https://avd.aquasec.com/nvd/cve-2019-20330                   │
+├─────────────────────────────────────────────────────────────┼─────────────────────┼──────────┼───────────────────┼──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ com.fasterxml.jackson.core:jackson-databind                 │ CVE-2018-5968       │ HIGH     │ 2.6.7.4           │ 2.7.9.5, 2.8.11.1, 2.9.4 │ jackson-databind: unsafe deserialization due to incomplete   │
+│ (aws-java-sdk-bundle-1.11.1026.jar)                         │                     │          │                   │                          │ blacklist (incomplete fix for CVE-2017-7525 and...           │
+│                                                             │                     │          │                   │                          │ https://avd.aquasec.com/nvd/cve-2018-5968                    │
+├─────────────────────────────────────────────────────────────┼─────────────────────┼──────────┼───────────────────┼──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ com.fasterxml.jackson.core:jackson-databind                 │ CVE-2020-35490      │ HIGH     │ 2.6.7.4           │ 2.9.10.8                 │ jackson-databind: mishandles the interaction between         │
+│ (aws-java-sdk-bundle-1.11.1026.jar)                         │                     │          │                   │                          │ serialization gadgets and typing, related to                 │
+│                                                             │                     │          │                   │                          │ org.apache.commons.dbcp2.datasources.PerUserPoolDataSource.- │
+│                                                             │                     │          │                   │                          │ ..                                                           │
+│                                                             │                     │          │                   │                          │ https://avd.aquasec.com/nvd/cve-2020-35490                   │
+├─────────────────────────────────────────────────────────────┼─────────────────────┼──────────┼───────────────────┼──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ com.fasterxml.jackson.core:jackson-databind                 │ CVE-2020-35491      │ HIGH     │ 2.6.7.4           │ 2.9.10.8                 │ jackson-databind: mishandles the interaction between         │
+│ (aws-java-sdk-bundle-1.11.1026.jar)                         │                     │          │                   │                          │ serialization gadgets and typing, related to                 │
+│                                                             │                     │          │                   │                          │ org.apache.commons.dbcp2.datasources.SharedPoolDataSource... │
+│                                                             │                     │          │                   │                          │ https://avd.aquasec.com/nvd/cve-2020-35491                   │
+├─────────────────────────────────────────────────────────────┼─────────────────────┼──────────┼───────────────────┼──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ com.fasterxml.jackson.core:jackson-databind                 │ CVE-2020-36518      │ HIGH     │ 2.6.7.4           │ 2.12.6.1, 2.13.2.1       │ jackson-databind: denial of service via a large depth of     │
+│ (aws-java-sdk-bundle-1.11.1026.jar)                         │                     │          │                   │                          │ nested objects                                               │
+│                                                             │                     │          │                   │                          │ https://avd.aquasec.com/nvd/cve-2020-36518                   │
+│                                                             ├─────────────────────┼──────────┤                   ├──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                                                             │ CVE-2018-1000873    │ MEDIUM   │                   │ 2.9.8                    │ jackson-modules-java8: DoS due to an Improper Input          │
+│                                                             │                     │          │                   │                          │ Validation                                                   │
+│                                                             │                     │          │                   │                          │ https://avd.aquasec.com/nvd/cve-2018-1000873                 │
+├─────────────────────────────────────────────────────────────┼─────────────────────┼──────────┼───────────────────┼──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ com.google.guava:guava (guava-27.0-jre.jar)                 │ CVE-2020-8908       │ LOW      │ 27.0-jre          │ 30.0                     │ guava: local information disclosure via temporary directory  │
+│                                                             │                     │          │                   │                          │ created with unsafe permissions                              │
+│                                                             │                     │          │                   │                          │ https://avd.aquasec.com/nvd/cve-2020-8908                    │
+├─────────────────────────────────────────────────────────────┼─────────────────────┼──────────┼───────────────────┼──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ com.google.protobuf:protobuf-java (protobuf-java-2.5.0.jar) │ CVE-2021-22569      │ MEDIUM   │ 2.5.0             │ 3.16.1, 3.18.2, 3.19.2   │ protobuf-java: potential DoS in the parsing procedure for    │
+│                                                             │                     │          │                   │                          │ binary data                                                  │
+│                                                             │                     │          │                   │                          │ https://avd.aquasec.com/nvd/cve-2021-22569                   │
+├─────────────────────────────────────────────────────────────┼─────────────────────┼──────────┼───────────────────┼──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ com.google.protobuf:protobuf-java (protobuf-java-2.5.0.jar) │ GHSA-wrvw-hg22-4m67 │ UNKNOWN  │ 2.5.0             │ 3.16.1, 3.18.2, 3.19.2   │ A potential Denial of Service issue in protobuf-java         │
+│                                                             │                     │          │                   │                          │ https://github.com/advisories/GHSA-wrvw-hg22-4m67            │
+├─────────────────────────────────────────────────────────────┼─────────────────────┼──────────┼───────────────────┼──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ com.google.protobuf:protobuf-java                           │ CVE-2021-22569      │ MEDIUM   │ 3.7.1             │ 3.16.1, 3.18.2, 3.19.2   │ protobuf-java: potential DoS in the parsing procedure for    │
+│ (hadoop-shaded-protobuf_3_7-1.1.1.jar)                      │                     │          │                   │                          │ binary data                                                  │
+│                                                             │                     │          │                   │                          │ https://avd.aquasec.com/nvd/cve-2021-22569                   │
+├─────────────────────────────────────────────────────────────┼─────────────────────┼──────────┼───────────────────┼──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ com.google.protobuf:protobuf-java                           │ GHSA-wrvw-hg22-4m67 │ UNKNOWN  │ 3.7.1             │ 3.16.1, 3.18.2, 3.19.2   │ A potential Denial of Service issue in protobuf-java         │
+│ (hadoop-shaded-protobuf_3_7-1.1.1.jar)                      │                     │          │                   │                          │ https://github.com/advisories/GHSA-wrvw-hg22-4m67            │
+├─────────────────────────────────────────────────────────────┼─────────────────────┼──────────┼───────────────────┼──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ io.netty:netty (netty-3.10.6.Final.jar)                     │ CVE-2019-20444      │ CRITICAL │ 3.10.6.Final      │ 4.1.44                   │ netty: HTTP request smuggling                                │
+│                                                             │                     │          │                   │                          │ https://avd.aquasec.com/nvd/cve-2019-20444                   │
+├─────────────────────────────────────────────────────────────┼─────────────────────┼──────────┼───────────────────┼──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ io.netty:netty (netty-3.10.6.Final.jar)                     │ CVE-2019-20445      │ CRITICAL │ 3.10.6.Final      │ 4.1.45                   │ netty: HttpObjectDecoder.java allows Content-Length header   │
+│                                                             │                     │          │                   │                          │ to accompanied by second Content-Length header               │
+│                                                             │                     │          │                   │                          │ https://avd.aquasec.com/nvd/cve-2019-20445                   │
+├─────────────────────────────────────────────────────────────┼─────────────────────┼──────────┼───────────────────┼──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ io.netty:netty (netty-3.10.6.Final.jar)                     │ CVE-2015-2156       │ HIGH     │ 3.10.6.Final      │ 4.0.2.8                  │ netty: HttpOnly cookie bypass                                │
+│                                                             │                     │          │                   │                          │ https://avd.aquasec.com/nvd/cve-2015-2156                    │
+├─────────────────────────────────────────────────────────────┼─────────────────────┼──────────┼───────────────────┼──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ io.netty:netty (netty-3.10.6.Final.jar)                     │ CVE-2019-16869      │ HIGH     │ 3.10.6.Final      │ 4.1.42.Final             │ netty: HTTP request smuggling by mishandled whitespace       │
+│                                                             │                     │          │                   │                          │ before the colon in HTTP...                                  │
+│                                                             │                     │          │                   │                          │ https://avd.aquasec.com/nvd/cve-2019-16869                   │
+│                                                             ├─────────────────────┤          │                   ├──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                                                             │ CVE-2021-37136      │          │                   │ 4.1.68.Final             │ netty-codec: Bzip2Decoder doesn't allow setting size         │
+│                                                             │                     │          │                   │                          │ restrictions for decompressed data                           │
+│                                                             │                     │          │                   │                          │ https://avd.aquasec.com/nvd/cve-2021-37136                   │
+│                                                             ├─────────────────────┤          │                   │                          ├──────────────────────────────────────────────────────────────┤
+│                                                             │ CVE-2021-37137      │          │                   │                          │ netty-codec: SnappyFrameDecoder doesn't restrict chunk       │
+│                                                             │                     │          │                   │                          │ length and may buffer skippable chunks in...                 │
+│                                                             │                     │          │                   │                          │ https://avd.aquasec.com/nvd/cve-2021-37137                   │
+│                                                             ├─────────────────────┼──────────┤                   ├──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                                                             │ CVE-2021-21290      │ MEDIUM   │                   │ 4.1.59.Final             │ netty: Information disclosure via the local system temporary │
+│                                                             │                     │          │                   │                          │ directory                                                    │
+│                                                             │                     │          │                   │                          │ https://avd.aquasec.com/nvd/cve-2021-21290                   │
+│                                                             ├─────────────────────┤          │                   ├──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                                                             │ CVE-2021-21295      │          │                   │ 4.1.60.Final             │ netty: possible request smuggling in HTTP/2 due missing      │
+│                                                             │                     │          │                   │                          │ validation                                                   │
+│                                                             │                     │          │                   │                          │ https://avd.aquasec.com/nvd/cve-2021-21295                   │
+├─────────────────────────────────────────────────────────────┼─────────────────────┼──────────┼───────────────────┼──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ io.netty:netty (netty-3.10.6.Final.jar)                     │ CVE-2021-21409      │ MEDIUM   │ 3.10.6.Final      │ 4.1.61.Final             │ netty: Request smuggling via content-length header           │
+│                                                             │                     │          │                   │                          │ https://avd.aquasec.com/nvd/cve-2021-21409                   │
+├─────────────────────────────────────────────────────────────┼─────────────────────┼──────────┼───────────────────┼──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ io.netty:netty (netty-3.10.6.Final.jar)                     │ CVE-2021-43797      │ MEDIUM   │ 3.10.6.Final      │ 4.1.71.Final             │ netty: control chars in header names may lead to HTTP        │
+│                                                             │                     │          │                   │                          │ request smuggling...                                         │
+│                                                             │                     │          │                   │                          │ https://avd.aquasec.com/nvd/cve-2021-43797                   │
+│                                                             ├─────────────────────┤          │                   ├──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                                                             │ CVE-2022-24823      │          │                   │ 4.1.77.Final             │ netty: world readable temporary file containing sensitive    │
+│                                                             │                     │          │                   │                          │ data                                                         │
+│                                                             │                     │          │                   │                          │ https://avd.aquasec.com/nvd/cve-2022-24823                   │
+├─────────────────────────────────────────────────────────────┼─────────────────────┼──────────┼───────────────────┼──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ io.netty:netty-codec (aws-java-sdk-bundle-1.11.1026.jar)    │ CVE-2021-37136      │ HIGH     │ 4.1.61.Final      │ 4.1.68.Final             │ netty-codec: Bzip2Decoder doesn't allow setting size         │
+│                                                             │                     │          │                   │                          │ restrictions for decompressed data                           │
+│                                                             │                     │          │                   │                          │ https://avd.aquasec.com/nvd/cve-2021-37136                   │
+│                                                             ├─────────────────────┤          │                   │                          ├──────────────────────────────────────────────────────────────┤
+│                                                             │ CVE-2021-37137      │          │                   │                          │ netty-codec: SnappyFrameDecoder doesn't restrict chunk       │
+│                                                             │                     │          │                   │                          │ length and may buffer skippable chunks in...                 │
+│                                                             │                     │          │                   │                          │ https://avd.aquasec.com/nvd/cve-2021-37137                   │
+├─────────────────────────────────────────────────────────────┼─────────────────────┼──────────┤                   ├──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ io.netty:netty-codec-http                                   │ CVE-2021-43797      │ MEDIUM   │                   │ 4.1.71.Final             │ netty: control chars in header names may lead to HTTP        │
+│ (aws-java-sdk-bundle-1.11.1026.jar)                         │                     │          │                   │                          │ request smuggling...                                         │
+│                                                             │                     │          │                   │                          │ https://avd.aquasec.com/nvd/cve-2021-43797                   │
+│                                                             ├─────────────────────┤          │                   ├──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                                                             │ CVE-2022-24823      │          │                   │ 4.1.77.Final             │ netty: world readable temporary file containing sensitive    │
+│                                                             │                     │          │                   │                          │ data                                                         │
+│                                                             │                     │          │                   │                          │ https://avd.aquasec.com/nvd/cve-2022-24823                   │
+├─────────────────────────────────────────────────────────────┼─────────────────────┼──────────┼───────────────────┼──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ log4j:log4j (log4j-1.2.17.jar)                              │ CVE-2019-17571      │ CRITICAL │ 1.2.17            │ 2.0-alpha1               │ log4j: deserialization of untrusted data in SocketServer     │
+│                                                             │                     │          │                   │                          │ https://avd.aquasec.com/nvd/cve-2019-17571                   │
+├─────────────────────────────────────────────────────────────┼─────────────────────┼──────────┼───────────────────┼──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ log4j:log4j (log4j-1.2.17.jar)                              │ CVE-2022-23305      │ CRITICAL │ 1.2.17            │                          │ log4j: SQL injection in Log4j 1.x when application is        │
+│                                                             │                     │          │                   │                          │ configured to use...                                         │
+│                                                             │                     │          │                   │                          │ https://avd.aquasec.com/nvd/cve-2022-23305                   │
+│                                                             ├─────────────────────┼──────────┤                   ├──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                                                             │ CVE-2022-23302      │ HIGH     │                   │                          │ log4j: Remote code execution in Log4j 1.x when application   │
+│                                                             │                     │          │                   │                          │ is configured to...                                          │
+│                                                             │                     │          │                   │                          │ https://avd.aquasec.com/nvd/cve-2022-23302                   │
+├─────────────────────────────────────────────────────────────┼─────────────────────┼──────────┼───────────────────┼──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ log4j:log4j (log4j-1.2.17.jar)                              │ CVE-2022-23307      │ HIGH     │ 1.2.17            │                          │ log4j: Unsafe deserialization flaw in Chainsaw log viewer    │
+│                                                             │                     │          │                   │                          │ https://avd.aquasec.com/nvd/cve-2022-23307                   │
+├─────────────────────────────────────────────────────────────┼─────────────────────┼──────────┼───────────────────┼──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ log4j:log4j (log4j-1.2.17.jar)                              │ CVE-2020-9488       │ LOW      │ 1.2.17            │ 2.13.2                   │ log4j: improper validation of certificate with host mismatch │
+│                                                             │                     │          │                   │                          │ in SMTP appender                                             │
+│                                                             │                     │          │                   │                          │ https://avd.aquasec.com/nvd/cve-2020-9488                    │
+├─────────────────────────────────────────────────────────────┼─────────────────────┼──────────┼───────────────────┼──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ org.apache.derby:derby (derby-10.10.2.0.jar)                │ CVE-2015-1832       │ CRITICAL │ 10.10.2.0         │ 10.12.1.1                │ Apache Derby: XXE attack possible by using XmlVTI and the    │
+│                                                             │                     │          │                   │                          │ XML datatype...                                              │
+│                                                             │                     │          │                   │                          │ https://avd.aquasec.com/nvd/cve-2015-1832                    │
+│                                                             ├─────────────────────┼──────────┤                   ├──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                                                             │ CVE-2018-1313       │ MEDIUM   │                   │ 10.14.2.0                │ derby: Externally-controlled input vulnerability allows      │
+│                                                             │                     │          │                   │                          │ remote attacker to boot a database under...                  │
+│                                                             │                     │          │                   │                          │ https://avd.aquasec.com/nvd/cve-2018-1313                    │
+├─────────────────────────────────────────────────────────────┼─────────────────────┼──────────┼───────────────────┼──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ org.apache.hadoop:hadoop-common                             │ CVE-2022-26612      │ CRITICAL │ 3.3.2             │ 3.2.3                    │ hadoop: Arbitrary file write in FileUtil#unpackEntries on    │
+│ (hadoop-common-3.3.2-tests.jar)                             │                     │          │                   │                          │ Windows                                                      │
+│                                                             │                     │          │                   │                          │ https://avd.aquasec.com/nvd/cve-2022-26612                   │
+├─────────────────────────────────────────────────────────────┼─────────────────────┼──────────┼───────────────────┼──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ org.apache.thrift:libthrift (libthrift-0.9.3.jar)           │ CVE-2018-1320       │ HIGH     │ 0.9.3             │ 0.12.0                   │ thrift: SASL negotiation isComplete validation bypass in the │
+│                                                             │                     │          │                   │                          │ org.apache.thrift.transport.TSaslTransport class             │
+│                                                             │                     │          │                   │                          │ https://avd.aquasec.com/nvd/cve-2018-1320                    │
+├─────────────────────────────────────────────────────────────┼─────────────────────┼──────────┼───────────────────┼──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ org.apache.thrift:libthrift (libthrift-0.9.3.jar)           │ CVE-2019-0205       │ HIGH     │ 0.9.3             │ 0.13.0                   │ thrift: Endless loop when feed with specific input data      │
+│                                                             │                     │          │                   │                          │ https://avd.aquasec.com/nvd/cve-2019-0205                    │
+├─────────────────────────────────────────────────────────────┼─────────────────────┼──────────┼───────────────────┼──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ org.apache.thrift:libthrift (libthrift-0.9.3.jar)           │ CVE-2019-0210       │ HIGH     │ 0.9.3             │ 0.13.0                   │ thrift: Out-of-bounds read related to TJSONProtocol or       │
+│                                                             │                     │          │                   │                          │ TSimpleJSONProtocol                                          │
+│                                                             │                     │          │                   │                          │ https://avd.aquasec.com/nvd/cve-2019-0210                    │
+├─────────────────────────────────────────────────────────────┼─────────────────────┼──────────┼───────────────────┼──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ org.apache.thrift:libthrift (libthrift-0.9.3.jar)           │ CVE-2020-13949      │ HIGH     │ 0.9.3             │ 0.14.0                   │ libthrift: potential DoS when processing untrusted payloads  │
+│                                                             │                     │          │                   │                          │ https://avd.aquasec.com/nvd/cve-2020-13949                   │
+├─────────────────────────────────────────────────────────────┼─────────────────────┼──────────┼───────────────────┼──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ org.apache.thrift:libthrift (libthrift-0.9.3.jar)           │ CVE-2018-11798      │ MEDIUM   │ 0.9.3             │ 0.12.0                   │ thrift: Improper Access Control grants access to files       │
+│                                                             │                     │          │                   │                          │ outside the webservers...                                    │
+│                                                             │                     │          │                   │                          │ https://avd.aquasec.com/nvd/cve-2018-11798                   │
+├─────────────────────────────────────────────────────────────┼─────────────────────┼──────────┼───────────────────┼──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ org.codehaus.jackson:jackson-mapper-asl                     │ CVE-2019-10172      │ HIGH     │ 1.9.13            │                          │ jackson-mapper-asl: XML external entity similar to           │
+│ (jackson-mapper-asl-1.9.13.jar)                             │                     │          │                   │                          │ CVE-2016-3720                                                │
+│                                                             │                     │          │                   │                          │ https://avd.aquasec.com/nvd/cve-2019-10172                   │
+└─────────────────────────────────────────────────────────────┴─────────────────────┴──────────┴───────────────────┴──────────────────────────┴──────────────────────────────────────────────────────────────┘
