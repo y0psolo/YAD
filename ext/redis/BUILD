@@ -509,6 +509,8 @@ cc_library(
         "sparkline.h",
         "stream.h",
         "syncio.c",
+        "syscheck.h",
+        "syscheck.c",
         "t_hash.c",
         "t_list.c",
         "t_set.c",

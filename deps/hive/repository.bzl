@@ -19,6 +19,6 @@ def hive_repository():
     http_file(
         name = "postgresql",
         downloaded_file_path = "postgresql.jar",
-        sha256 = "424c9675000020e228ab13f70e99d5d63ff18d2bd0106f0ddb3e2607fcc33af4",
-        urls = ["https://repo1.maven.org/maven2/org/postgresql/postgresql/42.3.5/postgresql-42.3.5.jar"],
+        sha256 = "fe25b9c0a2c59458504ec88862853df522ee87f8a02564835d537c29ae4cb125",
+        urls = ["https://repo1.maven.org/maven2/org/postgresql/postgresql/42.4.0/postgresql-42.4.0.jar"],
     )

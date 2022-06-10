@@ -9,7 +9,7 @@ def ubuntu_bionic_amd64():
         packages = {
             "base-files": "pool/main/b/base-files/base-files_10.1ubuntu2.11_amd64.deb",
             "bash": "pool/main/b/bash/bash_4.4.18-2ubuntu1.3_amd64.deb",
-            "ca-certificates": "pool/main/c/ca-certificates/ca-certificates_20210119~18.04.2_all.deb",
+            "ca-certificates": "pool/main/c/ca-certificates/ca-certificates_20211016~18.04.1_all.deb",
             "coreutils": "pool/main/c/coreutils/coreutils_8.28-1ubuntu1_amd64.deb",
             "dash": "pool/main/d/dash/dash_0.5.8-2.10_amd64.deb",
             "fontconfig-config": "pool/main/f/fontconfig/fontconfig-config_2.12.6-0ubuntu2_all.deb",
@@ -66,7 +66,7 @@ def ubuntu_bionic_amd64():
         packages_sha256 = {
             "base-files": "b103b55f80cc703af636cb111d80b733c71ba4c39a138ebe8926356d88173142",
             "bash": "54e03bbeb6bf647f7bef19ac88b4209e435af1b339f0c779c66e9ec57c737f72",
-            "ca-certificates": "911c7e57ad1ef49958f28dcc27bb19e0103465486cc7766023a68e78344b8c10",
+            "ca-certificates": "9ff3370ad8f32436cbd664be33f63ff5b517f5e4e93d465d94ace8fa67370592",
             "coreutils": "24541a48e25dfb17c98ce77dda61800e6cd68d74c25725753613fbcc00f2418f",
             "dash": "51fe28b98b8e023325ae8868f29807cdb53f6f2eac943723b5e6bd47cde0cb2c",
             "fontconfig-config": "ba4dbb3b4c173c1d97b6112d736da25d2dc7fab0c7408eb3cb49207f43dd5630",
