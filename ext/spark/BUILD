@@ -17,9 +17,10 @@ filegroup(
 
 filegroup(
     name = "jars",
-    srcs = glob([
-        "jars/**",
-    ])
+    srcs = glob(
+        ["jars/**",],
+        exclude = ["jars/guava*.jar"],
+    )
 )
 
 filegroup(
