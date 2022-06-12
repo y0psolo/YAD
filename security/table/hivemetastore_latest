@@ -20,10 +20,6 @@
 │ com.fasterxml.jackson.core:jackson-databind                 │ CVE-2020-36518      │ HIGH     │ 2.12.0            │ 2.12.6.1, 2.13.2.1       │ jackson-databind: denial of service via a large depth of     │
 │ (jackson-databind-2.12.0.jar)                               │                     │          │                   │                          │ nested objects                                               │
 │                                                             │                     │          │                   │                          │ https://avd.aquasec.com/nvd/cve-2020-36518                   │
-├─────────────────────────────────────────────────────────────┤                     │          ├───────────────────┤                          │                                                              │
-│ com.fasterxml.jackson.core:jackson-databind                 │                     │          │ 2.13.0            │                          │                                                              │
-│ (jackson-databind-2.13.0.jar)                               │                     │          │                   │                          │                                                              │
-│                                                             │                     │          │                   │                          │                                                              │
 ├─────────────────────────────────────────────────────────────┼─────────────────────┼──────────┼───────────────────┼──────────────────────────┼──────────────────────────────────────────────────────────────┤
 │ com.fasterxml.jackson.core:jackson-databind                 │ CVE-2017-15095      │ CRITICAL │ 2.6.7.4           │ 2.7.9.2, 2.8.10, 2.9.1   │ jackson-databind: Unsafe deserialization due to incomplete   │
 │ (aws-java-sdk-bundle-1.11.1026.jar)                         │                     │          │                   │                          │ black list (incomplete fix for CVE-2017-7525)...             │
@@ -166,24 +162,6 @@
 │                                                             │                     │          │                   │                          │ data                                                         │
 │                                                             │                     │          │                   │                          │ https://avd.aquasec.com/nvd/cve-2022-24823                   │
 ├─────────────────────────────────────────────────────────────┼─────────────────────┼──────────┼───────────────────┼──────────────────────────┼──────────────────────────────────────────────────────────────┤
-│ log4j:log4j (log4j-1.2.17.jar)                              │ CVE-2019-17571      │ CRITICAL │ 1.2.17            │ 2.0-alpha1               │ log4j: deserialization of untrusted data in SocketServer     │
-│                                                             │                     │          │                   │                          │ https://avd.aquasec.com/nvd/cve-2019-17571                   │
-├─────────────────────────────────────────────────────────────┼─────────────────────┼──────────┼───────────────────┼──────────────────────────┼──────────────────────────────────────────────────────────────┤
-│ log4j:log4j (log4j-1.2.17.jar)                              │ CVE-2022-23305      │ CRITICAL │ 1.2.17            │                          │ log4j: SQL injection in Log4j 1.x when application is        │
-│                                                             │                     │          │                   │                          │ configured to use...                                         │
-│                                                             │                     │          │                   │                          │ https://avd.aquasec.com/nvd/cve-2022-23305                   │
-│                                                             ├─────────────────────┼──────────┤                   ├──────────────────────────┼──────────────────────────────────────────────────────────────┤
-│                                                             │ CVE-2022-23302      │ HIGH     │                   │                          │ log4j: Remote code execution in Log4j 1.x when application   │
-│                                                             │                     │          │                   │                          │ is configured to...                                          │
-│                                                             │                     │          │                   │                          │ https://avd.aquasec.com/nvd/cve-2022-23302                   │
-├─────────────────────────────────────────────────────────────┼─────────────────────┼──────────┼───────────────────┼──────────────────────────┼──────────────────────────────────────────────────────────────┤
-│ log4j:log4j (log4j-1.2.17.jar)                              │ CVE-2022-23307      │ HIGH     │ 1.2.17            │                          │ log4j: Unsafe deserialization flaw in Chainsaw log viewer    │
-│                                                             │                     │          │                   │                          │ https://avd.aquasec.com/nvd/cve-2022-23307                   │
-├─────────────────────────────────────────────────────────────┼─────────────────────┼──────────┼───────────────────┼──────────────────────────┼──────────────────────────────────────────────────────────────┤
-│ log4j:log4j (log4j-1.2.17.jar)                              │ CVE-2020-9488       │ LOW      │ 1.2.17            │ 2.13.2                   │ log4j: improper validation of certificate with host mismatch │
-│                                                             │                     │          │                   │                          │ in SMTP appender                                             │
-│                                                             │                     │          │                   │                          │ https://avd.aquasec.com/nvd/cve-2020-9488                    │
-├─────────────────────────────────────────────────────────────┼─────────────────────┼──────────┼───────────────────┼──────────────────────────┼──────────────────────────────────────────────────────────────┤
 │ org.apache.derby:derby (derby-10.10.2.0.jar)                │ CVE-2015-1832       │ CRITICAL │ 10.10.2.0         │ 10.12.1.1                │ Apache Derby: XXE attack possible by using XmlVTI and the    │
 │                                                             │                     │          │                   │                          │ XML datatype...                                              │
 │                                                             │                     │          │                   │                          │ https://avd.aquasec.com/nvd/cve-2015-1832                    │
@@ -191,10 +169,6 @@
 │                                                             │ CVE-2018-1313       │ MEDIUM   │                   │ 10.14.2.0                │ derby: Externally-controlled input vulnerability allows      │
 │                                                             │                     │          │                   │                          │ remote attacker to boot a database under...                  │
 │                                                             │                     │          │                   │                          │ https://avd.aquasec.com/nvd/cve-2018-1313                    │
-├─────────────────────────────────────────────────────────────┼─────────────────────┼──────────┼───────────────────┼──────────────────────────┼──────────────────────────────────────────────────────────────┤
-│ org.apache.hadoop:hadoop-common                             │ CVE-2022-26612      │ CRITICAL │ 3.3.2             │ 3.2.3                    │ hadoop: Arbitrary file write in FileUtil#unpackEntries on    │
-│ (hadoop-common-3.3.2-tests.jar)                             │                     │          │                   │                          │ Windows                                                      │
-│                                                             │                     │          │                   │                          │ https://avd.aquasec.com/nvd/cve-2022-26612                   │
 ├─────────────────────────────────────────────────────────────┼─────────────────────┼──────────┼───────────────────┼──────────────────────────┼──────────────────────────────────────────────────────────────┤
 │ org.apache.thrift:libthrift (libthrift-0.9.3.jar)           │ CVE-2018-1320       │ HIGH     │ 0.9.3             │ 0.12.0                   │ thrift: SASL negotiation isComplete validation bypass in the │
 │                                                             │                     │          │                   │                          │ org.apache.thrift.transport.TSaslTransport class             │
