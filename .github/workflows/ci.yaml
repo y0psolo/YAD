@@ -26,7 +26,7 @@ jobs:
       mariadb: ${{ steps.filter.outputs.mariadb }}
       prometheus: ${{ steps.filter.outputs.prometheus }}
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - uses: dorny/paths-filter@v2
       id: filter
       with:
@@ -45,9 +45,9 @@ jobs:
           sudo rm -rf /opt/ghc
           sudo rm -rf "$AGENT_TOOLSDIRECTORY"
       - name: Setup repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Setup Bazelisk
-        uses: bazelbuild/setup-bazelisk@v1
+        uses: bazelbuild/setup-bazelisk@v2
       - name: Install zstd
         run : |
           sudo apt-get update -y
@@ -55,12 +55,12 @@ jobs:
       - name: Set up QEMU
         id: qemu
         if: ${{ matrix.arch != 'x86_64' }}
-        uses: docker/setup-qemu-action@v1
+        uses: docker/setup-qemu-action@v2
         with:
           image: tonistiigi/binfmt:latest
           platforms: all
       - name: Mount bazel cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: "~/.cache/bazel"
           key: ${{ runner.os }}-bazel-base-${{ matrix.arch }}-${{ matrix.copt }}-${{ matrix.ubuntu }}-${{ hashFiles('**/BUILD', '**/*.bzl', 'WORKSPACE') }}
@@ -89,15 +89,15 @@ jobs:
           sudo rm -rf /opt/ghc
           sudo rm -rf "$AGENT_TOOLSDIRECTORY"
       - name: Setup repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Setup Bazelisk
-        uses: bazelbuild/setup-bazelisk@v1
+        uses: bazelbuild/setup-bazelisk@v2
       - name: Install zstd
         run : |
           sudo apt-get update -y
           sudo apt-get install -y zstd
       - name: Mount bazel cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: "~/.cache/bazel"
           key: ${{ runner.os }}-bazel-java-${{ matrix.arch }}-${{ matrix.copt }}-${{ matrix.ubuntu }}-${{ matrix.java }}-${{ hashFiles('**/BUILD', '**/*.bzl', 'WORKSPACE') }}
@@ -128,9 +128,9 @@ jobs:
           sudo rm -rf /opt/ghc
           sudo rm -rf "$AGENT_TOOLSDIRECTORY"
       - name: Setup repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Setup Bazelisk
-        uses: bazelbuild/setup-bazelisk@v1
+        uses: bazelbuild/setup-bazelisk@v2
       - name: Install zstd
         run : |
           sudo apt-get update -y
@@ -138,12 +138,12 @@ jobs:
       - name: Set up QEMU
         id: qemu
         if: ${{ matrix.arch != 'x86_64' }}
-        uses: docker/setup-qemu-action@v1
+        uses: docker/setup-qemu-action@v2
         with:
           image: tonistiigi/binfmt:latest
           platforms: all
       - name: Mount bazel cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: "~/.cache/bazel"
           key: ${{ runner.os }}-bazel-java-${{ matrix.arch }}-${{ matrix.copt }}-${{ matrix.ubuntu }}-${{ matrix.java }}-${{ hashFiles('**/BUILD', '**/*.bzl', 'WORKSPACE') }}
@@ -171,9 +171,9 @@ jobs:
           sudo rm -rf /opt/ghc
           sudo rm -rf "$AGENT_TOOLSDIRECTORY"
       - name: Setup repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Setup Bazelisk
-        uses: bazelbuild/setup-bazelisk@v1
+        uses: bazelbuild/setup-bazelisk@v2
       - name: Install zstd
         run : |
           sudo apt-get update -y
@@ -181,12 +181,12 @@ jobs:
       - name: Set up QEMU
         id: qemu
         if: ${{ matrix.arch != 'x86_64' }}
-        uses: docker/setup-qemu-action@v1
+        uses: docker/setup-qemu-action@v2
         with:
           image: tonistiigi/binfmt:latest
           platforms: all
       - name: Mount bazel cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: "~/.cache/bazel"
           key: ${{ runner.os }}-bazel-base-${{ matrix.arch }}-${{ matrix.copt }}-${{ matrix.ubuntu }}-${{ hashFiles('**/BUILD', '**/*.bzl', 'WORKSPACE') }}
@@ -214,9 +214,9 @@ jobs:
           sudo rm -rf /opt/ghc
           sudo rm -rf "$AGENT_TOOLSDIRECTORY"
       - name: Setup repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Setup Bazelisk
-        uses: bazelbuild/setup-bazelisk@v1
+        uses: bazelbuild/setup-bazelisk@v2
       - name: Install zstd
         run : |
           sudo apt-get update -y
@@ -224,12 +224,12 @@ jobs:
       - name: Set up QEMU
         id: qemu
         if: ${{ matrix.arch != 'x86_64' }}
-        uses: docker/setup-qemu-action@v1
+        uses: docker/setup-qemu-action@v2
         with:
           image: tonistiigi/binfmt:latest
           platforms: all
       - name: Mount bazel cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: "~/.cache/bazel"
           key: ${{ runner.os }}-bazel-base-${{ matrix.arch }}-${{ matrix.copt }}-${{ matrix.ubuntu }}-${{ hashFiles('**/BUILD', '**/*.bzl', 'WORKSPACE') }}
@@ -258,9 +258,9 @@ jobs:
           sudo rm -rf /opt/ghc
           sudo rm -rf "$AGENT_TOOLSDIRECTORY"
       - name: Setup repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Setup Bazelisk
-        uses: bazelbuild/setup-bazelisk@v1
+        uses: bazelbuild/setup-bazelisk@v2
       - name: Install zstd
         run : |
           sudo apt-get update -y
@@ -268,12 +268,12 @@ jobs:
       - name: Set up QEMU
         id: qemu
         if: ${{ matrix.arch != 'x86_64' }}
-        uses: docker/setup-qemu-action@v1
+        uses: docker/setup-qemu-action@v2
         with:
           image: tonistiigi/binfmt:latest
           platforms: all
       - name: Mount bazel cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: "~/.cache/bazel"
           key: ${{ runner.os }}-bazel-java-${{ matrix.arch }}-${{ matrix.copt }}-${{ matrix.ubuntu }}-${{ matrix.java }}-${{ hashFiles('**/BUILD', '**/*.bzl', 'WORKSPACE') }}
@@ -307,9 +307,9 @@ jobs:
           sudo rm -rf /opt/ghc
           sudo rm -rf "$AGENT_TOOLSDIRECTORY"
       - name: Setup repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Setup Bazelisk
-        uses: bazelbuild/setup-bazelisk@v1
+        uses: bazelbuild/setup-bazelisk@v2
       - name: Install zstd
         run : |
           sudo apt-get update -y
@@ -317,12 +317,12 @@ jobs:
       - name: Set up QEMU
         id: qemu
         if: ${{ matrix.arch != 'x86_64' }}
-        uses: docker/setup-qemu-action@v1
+        uses: docker/setup-qemu-action@v2
         with:
           image: tonistiigi/binfmt:latest
           platforms: all
       - name: Mount bazel cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: "~/.cache/bazel"
           key: ${{ runner.os }}-bazel-java-${{ matrix.arch }}-${{ matrix.copt }}-${{ matrix.ubuntu }}-${{ matrix.java }}-${{ hashFiles('**/BUILD', '**/*.bzl', 'WORKSPACE') }}
@@ -351,9 +351,9 @@ jobs:
           sudo rm -rf /opt/ghc
           sudo rm -rf "$AGENT_TOOLSDIRECTORY"
       - name: Setup repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Setup Bazelisk
-        uses: bazelbuild/setup-bazelisk@v1
+        uses: bazelbuild/setup-bazelisk@v2
       - name: Install zstd
         run : |
           sudo apt-get update -y
@@ -361,12 +361,12 @@ jobs:
       - name: Set up QEMU
         id: qemu
         if: ${{ matrix.arch != 'x86_64' }}
-        uses: docker/setup-qemu-action@v1
+        uses: docker/setup-qemu-action@v2
         with:
           image: tonistiigi/binfmt:latest
           platforms: all
       - name: Mount bazel cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: "~/.cache/bazel"
           key: ${{ runner.os }}-bazel-java-${{ matrix.arch }}-${{ matrix.copt }}-${{ matrix.ubuntu }}-${{ matrix.java }}-${{ hashFiles('**/BUILD', '**/*.bzl', 'WORKSPACE') }}
@@ -394,9 +394,9 @@ jobs:
           sudo rm -rf /opt/ghc
           sudo rm -rf "$AGENT_TOOLSDIRECTORY"
       - name: Setup repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Setup Bazelisk
-        uses: bazelbuild/setup-bazelisk@v1
+        uses: bazelbuild/setup-bazelisk@v2
       - name: Install zstd
         run : |
           sudo apt-get update -y
@@ -409,12 +409,12 @@ jobs:
       - name: Set up QEMU
         id: qemu
         if: ${{ matrix.arch != 'x86_64' }}
-        uses: docker/setup-qemu-action@v1
+        uses: docker/setup-qemu-action@v2
         with:
           image: tonistiigi/binfmt:latest
           platforms: all
       - name: Mount bazel cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: "~/.cache/bazel"
           key: ${{ runner.os }}-bazel-base-${{ matrix.arch }}-${{ matrix.copt }}-${{ matrix.ubuntu }}-${{ hashFiles('**/BUILD', '**/*.bzl', 'WORKSPACE') }}
@@ -442,9 +442,9 @@ jobs:
           sudo rm -rf /opt/ghc
           sudo rm -rf "$AGENT_TOOLSDIRECTORY"
       - name: Setup repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Setup Bazelisk
-        uses: bazelbuild/setup-bazelisk@v1
+        uses: bazelbuild/setup-bazelisk@v2
       - name: Install zstd
         run : |
           sudo apt-get update -y
@@ -452,12 +452,12 @@ jobs:
       - name: Set up QEMU
         id: qemu
         if: ${{ matrix.arch != 'x86_64' }}
-        uses: docker/setup-qemu-action@v1
+        uses: docker/setup-qemu-action@v2
         with:
           image: tonistiigi/binfmt:latest
           platforms: all
       - name: Mount bazel cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: "~/.cache/bazel"
           key: ${{ runner.os }}-bazel-base-${{ matrix.arch }}-${{ matrix.copt }}-${{ matrix.ubuntu }}-${{ hashFiles('**/BUILD', '**/*.bzl', 'WORKSPACE') }}
@@ -485,9 +485,9 @@ jobs:
           sudo rm -rf /opt/ghc
           sudo rm -rf "$AGENT_TOOLSDIRECTORY"
       - name: Setup repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Setup Bazelisk
-        uses: bazelbuild/setup-bazelisk@v1
+        uses: bazelbuild/setup-bazelisk@v2
       - name: Install zstd
         run : |
           sudo apt-get update -y
@@ -495,12 +495,12 @@ jobs:
       - name: Set up QEMU
         id: qemu
         if: ${{ matrix.arch != 'x86_64' }}
-        uses: docker/setup-qemu-action@v1
+        uses: docker/setup-qemu-action@v2
         with:
           image: tonistiigi/binfmt:latest
           platforms: all
       - name: Mount bazel cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: "~/.cache/bazel"
           key: ${{ runner.os }}-bazel-base-${{ matrix.arch }}-${{ matrix.copt }}-${{ matrix.ubuntu }}-${{ hashFiles('**/BUILD', '**/*.bzl', 'WORKSPACE') }}
@@ -528,9 +528,9 @@ jobs:
           sudo rm -rf /opt/ghc
           sudo rm -rf "$AGENT_TOOLSDIRECTORY"
       - name: Setup repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Setup Bazelisk
-        uses: bazelbuild/setup-bazelisk@v1
+        uses: bazelbuild/setup-bazelisk@v2
       - name: Install zstd
         run : |
           sudo apt-get update -y
@@ -538,12 +538,12 @@ jobs:
       - name: Set up QEMU
         id: qemu
         if: ${{ matrix.arch != 'x86_64' }}
-        uses: docker/setup-qemu-action@v1
+        uses: docker/setup-qemu-action@v2
         with:
           image: tonistiigi/binfmt:latest
           platforms: all
       - name: Mount bazel cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: "~/.cache/bazel"
           key: ${{ runner.os }}-bazel-base-${{ matrix.arch }}-${{ matrix.copt }}-${{ matrix.ubuntu }}-${{ hashFiles('**/BUILD', '**/*.bzl', 'WORKSPACE') }}
