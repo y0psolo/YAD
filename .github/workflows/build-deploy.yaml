@@ -31,7 +31,7 @@ jobs:
       mariadb: ${{ steps.filter.outputs.mariadb }}
       prometheus: ${{ steps.filter.outputs.prometheus }}
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - uses: dorny/paths-filter@v2
       id: filter
       with:
@@ -51,7 +51,7 @@ jobs:
           sudo rm -rf /opt/ghc
           sudo rm -rf "$AGENT_TOOLSDIRECTORY"
       - name: Setup repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Setup Bazelisk
         uses: bazelbuild/setup-bazelisk@v1
       - name: Install zstd
@@ -103,7 +103,7 @@ jobs:
           sudo rm -rf /opt/ghc
           sudo rm -rf "$AGENT_TOOLSDIRECTORY"
       - name: Setup repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Setup Bazelisk
         uses: bazelbuild/setup-bazelisk@v1
       - name: Install zstd
@@ -158,7 +158,7 @@ jobs:
           sudo rm -rf /opt/ghc
           sudo rm -rf "$AGENT_TOOLSDIRECTORY"
       - name: Setup repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Setup Bazelisk
         uses: bazelbuild/setup-bazelisk@v1
       - name: Install zstd
@@ -207,7 +207,7 @@ jobs:
           sudo rm -rf /opt/ghc
           sudo rm -rf "$AGENT_TOOLSDIRECTORY"
       - name: Setup repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Setup Bazelisk
         uses: bazelbuild/setup-bazelisk@v1
       - name: Install zstd
@@ -256,7 +256,7 @@ jobs:
           sudo rm -rf /opt/ghc
           sudo rm -rf "$AGENT_TOOLSDIRECTORY"
       - name: Setup repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Setup Bazelisk
         uses: bazelbuild/setup-bazelisk@v1
       - name: Install zstd
@@ -331,7 +331,7 @@ jobs:
           sudo rm -rf /opt/ghc
           sudo rm -rf "$AGENT_TOOLSDIRECTORY"
       - name: Setup repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Docker Login
         uses: docker/login-action@v1
         with:
@@ -381,7 +381,7 @@ jobs:
           sudo rm -rf /opt/ghc
           sudo rm -rf "$AGENT_TOOLSDIRECTORY"
       - name: Setup repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Setup Bazelisk
         uses: bazelbuild/setup-bazelisk@v1
       - name: Install zstd
@@ -429,7 +429,7 @@ jobs:
           sudo rm -rf /opt/ghc
           sudo rm -rf "$AGENT_TOOLSDIRECTORY"
       - name: Setup repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Docker Login
         uses: docker/login-action@v1
         with:
@@ -483,7 +483,7 @@ jobs:
           sudo rm -rf /opt/ghc
           sudo rm -rf "$AGENT_TOOLSDIRECTORY"
       - name: Setup repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Setup Bazelisk
         uses: bazelbuild/setup-bazelisk@v1
       - name: Install zstd
@@ -531,7 +531,7 @@ jobs:
           sudo rm -rf /opt/ghc
           sudo rm -rf "$AGENT_TOOLSDIRECTORY"
       - name: Setup repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Setup Bazelisk
         uses: bazelbuild/setup-bazelisk@v1
       - name: Install zstd
@@ -587,7 +587,7 @@ jobs:
           sudo rm -rf /opt/ghc
           sudo rm -rf "$AGENT_TOOLSDIRECTORY"
       - name: Setup repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Setup Bazelisk
         uses: bazelbuild/setup-bazelisk@v1
       - name: Install zstd
@@ -629,7 +629,7 @@ jobs:
         ubuntu: [bionic, focal, jammy]
     steps:
       - name: Setup repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Docker Login
         uses: docker/login-action@v1
         with:
@@ -647,7 +647,7 @@ jobs:
         ubuntu: [bionic, focal, jammy]
     steps:
       - name: Setup repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Docker Login
         uses: docker/login-action@v1
         with:
@@ -665,7 +665,7 @@ jobs:
         ubuntu: [bionic, focal, jammy]
     steps:
       - name: Setup repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Docker Login
         uses: docker/login-action@v1
         with:
@@ -683,7 +683,7 @@ jobs:
         ubuntu: [bionic, focal, jammy]
     steps:
       - name: Setup repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Docker Login
         uses: docker/login-action@v1
         with:
@@ -701,7 +701,7 @@ jobs:
         ubuntu: [bionic, jammy]
     steps:
       - name: Setup repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Docker Login
         uses: docker/login-action@v1
         with:
@@ -719,7 +719,7 @@ jobs:
         ubuntu: [jammy]
     steps:
       - name: Setup repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Docker Login
         uses: docker/login-action@v1
         with:
@@ -737,7 +737,7 @@ jobs:
         ubuntu: [jammy]
     steps:
       - name: Setup repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Docker Login
         uses: docker/login-action@v1
         with:
@@ -755,7 +755,7 @@ jobs:
         ubuntu: [focal, jammy]
     steps:
       - name: Setup repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Docker Login
         uses: docker/login-action@v1
         with:
@@ -773,7 +773,7 @@ jobs:
         ubuntu: [jammy]
     steps:
       - name: Setup repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Docker Login
         uses: docker/login-action@v1
         with:
@@ -791,7 +791,7 @@ jobs:
         ubuntu: [focal, bionic]
     steps:
       - name: Setup repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Docker Login
         uses: docker/login-action@v1
         with:
@@ -809,7 +809,7 @@ jobs:
         ubuntu: [jammy]
     steps:
       - name: Setup repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Docker Login
         uses: docker/login-action@v1
         with:
@@ -824,7 +824,7 @@ jobs:
   #   needs: deploy
   #   steps:
   #     - name: Setup repository
-  #       uses: actions/checkout@v2
+  #       uses: actions/checkout@v3
   #     - name: Docker Login
   #       uses: docker/login-action@v1
   #       with:
