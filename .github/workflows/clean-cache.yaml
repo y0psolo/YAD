@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Setup repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Setup Bazelisk
         uses: bazelbuild/setup-bazelisk@v1
       - name: Get current date
