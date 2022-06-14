@@ -211,7 +211,7 @@
 │                                                              │                     │          │                   │                                   │ created with unsafe permissions                              │
 │                                                              │                     │          │                   │                                   │ https://avd.aquasec.com/nvd/cve-2020-8908                    │
 ├──────────────────────────────────────────────────────────────┼─────────────────────┼──────────┼───────────────────┼───────────────────────────────────┼──────────────────────────────────────────────────────────────┤
-│ com.google.guava:guava (guava-14.0.1.jar)                    │ CVE-2018-10237      │ MEDIUM   │ 14.0.1            │ 24.1.1-jre, 24.1.1-android        │ guava: Unbounded memory allocation in AtomicDoubleArray and  │
+│ com.google.guava:guava (spark-network-common_2.12-3.0.3.jar) │ CVE-2018-10237      │ MEDIUM   │ 14.0.1            │ 24.1.1-jre, 24.1.1-android        │ guava: Unbounded memory allocation in AtomicDoubleArray and  │
 │                                                              │                     │          │                   │                                   │ CompoundOrdering classes allow remote attackers...           │
 │                                                              │                     │          │                   │                                   │ https://avd.aquasec.com/nvd/cve-2018-10237                   │
 │                                                              ├─────────────────────┼──────────┤                   ├───────────────────────────────────┼──────────────────────────────────────────────────────────────┤
