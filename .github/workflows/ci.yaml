@@ -67,7 +67,7 @@ jobs:
       - name: bazel test
         run: |
            bazel test --config ${{ matrix.arch }} -c ${{ matrix.copt }} --//platforms:distro=${{ matrix.ubuntu }} //test:basic
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         if: ${{ failure() }}
         with:
           name: testLogs
@@ -150,7 +150,7 @@ jobs:
       - name: bazel test
         run: |
            bazel test --config ${{ matrix.arch }} -c ${{ matrix.copt }} --//platforms:distro=${{ matrix.ubuntu }} --//platforms:java=${{ matrix.java }} //test/java:java
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         if: ${{ failure() }}
         with:
           name: testLogs
@@ -193,7 +193,7 @@ jobs:
       - name: bazel test
         run: |
            bazel test --config ${{ matrix.arch }} -c ${{ matrix.copt }} --//platforms:distro=${{ matrix.ubuntu }} //test/nodejs:nodejs
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         if: ${{ failure() }}
         with:
           name: testLogs
@@ -236,7 +236,7 @@ jobs:
       - name: bazel test
         run: |
            bazel test --config ${{ matrix.arch }} -c ${{ matrix.copt }} --//platforms:distro=${{ matrix.ubuntu }} //test/deno:deno
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         if: ${{ failure() }}
         with:
           name: testLogs
@@ -285,7 +285,7 @@ jobs:
         if: ${{ matrix.ubuntu == '20.04' }}
         run: |
            bazel test --config ${{ matrix.arch }} -c ${{ matrix.copt }} --//platforms:distro=${{ matrix.ubuntu }} --//platforms:java=${{ matrix.java }} //test/spark:spark3
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         if: ${{ failure() }}
         with:
           name: testLogs
@@ -329,7 +329,7 @@ jobs:
       - name: bazel test
         run: |
            bazel test --config ${{ matrix.arch }} -c ${{ matrix.copt }} --//platforms:distro=${{ matrix.ubuntu }} --//platforms:java=${{ matrix.java }} //test/trino:trino
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         if: ${{ failure() }}
         with:
           name: testLogs
@@ -373,7 +373,7 @@ jobs:
       - name: bazel test
         run: |
            bazel test --config ${{ matrix.arch }} -c ${{ matrix.copt }} --//platforms:distro=${{ matrix.ubuntu }} --//platforms:java=${{ matrix.java }} //test/hivemetastore:hive
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         if: ${{ failure() }}
         with:
           name: testLogs
@@ -421,7 +421,7 @@ jobs:
       - name: bazel test
         run: |
            bazel test --config ${{ matrix.arch }} -c ${{ matrix.copt }} --//platforms:distro=${{ matrix.ubuntu }} //test/redis:redis
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         if: ${{ failure() }}
         with:
           name: testLogs
@@ -464,7 +464,7 @@ jobs:
       - name: bazel test
         run: |
            bazel test --config ${{ matrix.arch }} -c ${{ matrix.copt }} --//platforms:distro=${{ matrix.ubuntu }} //test/consultemplate:consultemplate
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         if: ${{ failure() }}
         with:
           name: testLogs
@@ -507,7 +507,7 @@ jobs:
       - name: bazel test
         run: |
            bazel test --config ${{ matrix.arch }} -c ${{ matrix.copt }} --//platforms:distro=${{ matrix.ubuntu }} //test/mariadb:mariadb
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         if: ${{ failure() }}
         with:
           name: testLogs
@@ -550,7 +550,7 @@ jobs:
       - name: bazel test
         run: |
            bazel test --config ${{ matrix.arch }} -c ${{ matrix.copt }} --//platforms:distro=${{ matrix.ubuntu }} //test/prometheus:prometheus
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         if: ${{ failure() }}
         with:
           name: testLogs
