@@ -53,7 +53,7 @@ jobs:
       - name: Setup repository
         uses: actions/checkout@v3
       - name: Setup Bazelisk
-        uses: bazelbuild/setup-bazelisk@v1
+        uses: bazelbuild/setup-bazelisk@v2
       - name: Install zstd
         run : |
           sudo apt-get update -y
@@ -105,7 +105,7 @@ jobs:
       - name: Setup repository
         uses: actions/checkout@v3
       - name: Setup Bazelisk
-        uses: bazelbuild/setup-bazelisk@v1
+        uses: bazelbuild/setup-bazelisk@v2
       - name: Install zstd
         run : |
           sudo apt-get update -y
@@ -160,7 +160,7 @@ jobs:
       - name: Setup repository
         uses: actions/checkout@v3
       - name: Setup Bazelisk
-        uses: bazelbuild/setup-bazelisk@v1
+        uses: bazelbuild/setup-bazelisk@v2
       - name: Install zstd
         run : |
           sudo apt-get update -y
@@ -209,7 +209,7 @@ jobs:
       - name: Setup repository
         uses: actions/checkout@v3
       - name: Setup Bazelisk
-        uses: bazelbuild/setup-bazelisk@v1
+        uses: bazelbuild/setup-bazelisk@v2
       - name: Install zstd
         run : |
           sudo apt-get update -y
@@ -258,7 +258,7 @@ jobs:
       - name: Setup repository
         uses: actions/checkout@v3
       - name: Setup Bazelisk
-        uses: bazelbuild/setup-bazelisk@v1
+        uses: bazelbuild/setup-bazelisk@v2
       - name: Install zstd
         run : |
           sudo apt-get update -y
@@ -339,7 +339,7 @@ jobs:
           username: ${{ secrets.DOCKER_LOGIN }}
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: Setup Bazelisk
-        uses: bazelbuild/setup-bazelisk@v1
+        uses: bazelbuild/setup-bazelisk@v2
       - name: Install zstd
         run : |
           sudo apt-get update -y
@@ -383,7 +383,7 @@ jobs:
       - name: Setup repository
         uses: actions/checkout@v3
       - name: Setup Bazelisk
-        uses: bazelbuild/setup-bazelisk@v1
+        uses: bazelbuild/setup-bazelisk@v2
       - name: Install zstd
         run : |
           sudo apt-get update -y
@@ -437,7 +437,7 @@ jobs:
           username: ${{ secrets.DOCKER_LOGIN }}
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: Setup Bazelisk
-        uses: bazelbuild/setup-bazelisk@v1
+        uses: bazelbuild/setup-bazelisk@v2
       - name: Install zstd
         run : |
           sudo apt-get update -y
@@ -485,7 +485,7 @@ jobs:
       - name: Setup repository
         uses: actions/checkout@v3
       - name: Setup Bazelisk
-        uses: bazelbuild/setup-bazelisk@v1
+        uses: bazelbuild/setup-bazelisk@v2
       - name: Install zstd
         run : |
           sudo apt-get update -y
@@ -533,7 +533,7 @@ jobs:
       - name: Setup repository
         uses: actions/checkout@v3
       - name: Setup Bazelisk
-        uses: bazelbuild/setup-bazelisk@v1
+        uses: bazelbuild/setup-bazelisk@v2
       - name: Install zstd
         run : |
           sudo apt-get update -y
@@ -589,7 +589,7 @@ jobs:
       - name: Setup repository
         uses: actions/checkout@v3
       - name: Setup Bazelisk
-        uses: bazelbuild/setup-bazelisk@v1
+        uses: bazelbuild/setup-bazelisk@v2
       - name: Install zstd
         run : |
           sudo apt-get update -y
