@@ -1,4 +1,4 @@
-load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive", "http_file")
 
 def prometheus_repository():
     http_archive(
@@ -47,4 +47,11 @@ def prometheus_repository():
         sha256 = "f54dd97f20b5d06517cbe83bae6333325fc26bc6595ede433f165aefb562d421",
         strip_prefix = "alertmanager-0.24.0.linux-arm64",
         urls = ["https://github.com/prometheus/alertmanager/releases/download/v0.24.0/alertmanager-0.24.0.linux-arm64.tar.gz"],
+    )
+
+    http_file(
+        name = "prometheus_java_agent",
+        downloaded_file_path = "jmx_prometheus_javaagent.jar",
+        # sha256 = "00adb387f4c12e8982cfc28165d225695621494354cd58108c6845063bfb74b5",
+        urls = ["https://repo1.maven.org/maven2/io/prometheus/jmx/jmx_prometheus_javaagent/0.17.0/jmx_prometheus_javaagent-0.17.0.jar"],
     )

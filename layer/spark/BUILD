@@ -21,6 +21,43 @@ pkg_tar(
     mode = "0644",
 )
 
+pkg_tar(
+    name = "guava_tar",
+    srcs = [
+        "@hadoop_3//:guava",
+    ],
+    strip_prefix = ".",
+    remap_paths = {
+        "../hadoop_3/share/hadoop/common/lib" : ".",
+    },
+    package_dir = "/opt/spark/jars",
+    mode = "0644",
+)
+
+pkg_tar(
+    name = "prometheus_tar",
+    srcs = [
+        "@prometheus_java_agent//file",
+    ],
+    strip_prefix = ".",
+    remap_paths = {
+        "../prometheus_java_agent/file" : ".",
+    },
+    package_dir = "/prometheus",
+    mode = "0644",
+)
+
+pkg_tar(
+    name = "conf_tar",
+    srcs = [
+        "conf/prometheus.yaml",
+        "conf/metrics.properties",
+    ],
+    strip_prefix = ".",
+    package_dir = "/etc/metrics",
+    mode = "0644",
+)
+
 [
     container_layer(
         name = "spark" + version,
@@ -98,6 +135,9 @@ pkg_tar(
             "@spark_hadoop_" + version + "//:jars_tar",
             "@spark_hadoop_" + version + "//:licences_tar",
             "@spark_hadoop_" + version + "//:bin_tar",
+            ":guava_tar",
+            ":prometheus_tar",
+            ":conf_tar",
             ":aws_tar",
         ],
         visibility = ["//:__subpackages__"],

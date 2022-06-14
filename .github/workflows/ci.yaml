@@ -282,7 +282,7 @@ jobs:
         run: |
            bazel test --config ${{ matrix.arch }} -c ${{ matrix.copt }} --//platforms:distro=${{ matrix.ubuntu }} --//platforms:java=${{ matrix.java }} //test/spark:spark2
       - name: bazel test 3.x
-        if: ${{ matrix.ubuntu == '20.04' }}
+        if: ${{ matrix.ubuntu != '18.04' }}
         run: |
            bazel test --config ${{ matrix.arch }} -c ${{ matrix.copt }} --//platforms:distro=${{ matrix.ubuntu }} --//platforms:java=${{ matrix.java }} //test/spark:spark3
       - uses: actions/upload-artifact@v3
