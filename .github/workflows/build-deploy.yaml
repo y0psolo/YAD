@@ -72,7 +72,7 @@ jobs:
           image: tonistiigi/binfmt:latest
           platforms: all
       - name: Mount bazel cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: "~/.cache/bazel"
           key: ${{ runner.os }}-bazel-base-${{ matrix.arch }}-${{ matrix.copt }}-${{ matrix.ubuntu }}-${{ hashFiles('**/BUILD', '**/*.bzl', 'WORKSPACE') }}
@@ -124,7 +124,7 @@ jobs:
           image: tonistiigi/binfmt:latest
           platforms: all
       - name: Mount bazel cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: "~/.cache/bazel"
           key: ${{ runner.os }}-bazel-java-${{ matrix.arch }}-${{ matrix.copt }}-${{ matrix.ubuntu }}-${{ matrix.java }}-${{ hashFiles('**/BUILD', '**/*.bzl', 'WORKSPACE') }}
@@ -179,7 +179,7 @@ jobs:
           image: tonistiigi/binfmt:latest
           platforms: all
       - name: Mount bazel cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: "~/.cache/bazel"
           key: ${{ runner.os }}-bazel-base-${{ matrix.arch }}-${{ matrix.copt }}-${{ matrix.ubuntu }}-${{ hashFiles('**/BUILD', '**/*.bzl', 'WORKSPACE') }}
@@ -228,7 +228,7 @@ jobs:
           image: tonistiigi/binfmt:latest
           platforms: all
       - name: Mount bazel cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: "~/.cache/bazel"
           key: ${{ runner.os }}-bazel-base-${{ matrix.arch }}-${{ matrix.copt }}-${{ matrix.ubuntu }}-${{ hashFiles('**/BUILD', '**/*.bzl', 'WORKSPACE') }}
@@ -277,7 +277,7 @@ jobs:
           image: tonistiigi/binfmt:latest
           platforms: all
       - name: Mount bazel cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: "~/.cache/bazel"
           key: ${{ runner.os }}-bazel-java-${{ matrix.arch }}-${{ matrix.copt }}-${{ matrix.ubuntu }}-${{ matrix.java }}-${{ hashFiles('**/BUILD', '**/*.bzl', 'WORKSPACE') }}
@@ -352,7 +352,7 @@ jobs:
           image: tonistiigi/binfmt:latest
           platforms: all
       - name: Mount bazel cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: "~/.cache/bazel"
           key: ${{ runner.os }}-bazel-java-${{ matrix.arch }}-${{ matrix.copt }}-${{ matrix.ubuntu }}-${{ matrix.java }}-${{ hashFiles('**/BUILD', '**/*.bzl', 'WORKSPACE') }}
@@ -402,7 +402,7 @@ jobs:
           image: tonistiigi/binfmt:latest
           platforms: all
       - name: Mount bazel cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: "~/.cache/bazel"
           key: ${{ runner.os }}-bazel-java-${{ matrix.arch }}-${{ matrix.copt }}-${{ matrix.ubuntu }}-${{ matrix.java }}-${{ hashFiles('**/BUILD', '**/*.bzl', 'WORKSPACE') }}
@@ -455,7 +455,7 @@ jobs:
           image: tonistiigi/binfmt:latest
           platforms: all
       - name: Mount bazel cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: "~/.cache/bazel"
           key: ${{ runner.os }}-bazel-base-${{ matrix.arch }}-${{ matrix.copt }}-${{ matrix.ubuntu }}-${{ hashFiles('**/BUILD', '**/*.bzl', 'WORKSPACE') }}
@@ -504,7 +504,7 @@ jobs:
           image: tonistiigi/binfmt:latest
           platforms: all
       - name: Mount bazel cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: "~/.cache/bazel"
           key: ${{ runner.os }}-bazel-base-${{ matrix.arch }}-${{ matrix.copt }}-${{ matrix.ubuntu }}-${{ hashFiles('**/BUILD', '**/*.bzl', 'WORKSPACE') }}
@@ -552,7 +552,7 @@ jobs:
           image: tonistiigi/binfmt:latest
           platforms: all
       - name: Mount bazel cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: "~/.cache/bazel"
           key: ${{ runner.os }}-bazel-base-${{ matrix.arch }}-${{ matrix.copt }}-${{ matrix.ubuntu }}-${{ hashFiles('**/BUILD', '**/*.bzl', 'WORKSPACE') }}
@@ -608,7 +608,7 @@ jobs:
           image: tonistiigi/binfmt:latest
           platforms: all
       - name: Mount bazel cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: "~/.cache/bazel"
           key: ${{ runner.os }}-bazel-base-${{ matrix.arch }}-${{ matrix.copt }}-${{ matrix.ubuntu }}-${{ hashFiles('**/BUILD', '**/*.bzl', 'WORKSPACE') }}
