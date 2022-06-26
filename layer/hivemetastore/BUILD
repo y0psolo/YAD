@@ -34,15 +34,14 @@ pkg_tar(
     package_dir = "/opt/hive/lib",
     mode = "0644",
 )
-
 pkg_tar(
     name = "guava_tar",
     srcs = [
-        "@hadoop_3//:guava",
+        "@guava//file",
     ],
     strip_prefix = ".",
     remap_paths = {
-        "../hadoop_3/share/hadoop/common/lib" : ".",
+        "../guava/file" : ".",
     },
     package_dir = "/opt/hive/lib",
     mode = "0644",
@@ -51,11 +50,11 @@ pkg_tar(
 pkg_tar(
     name = "aws_tar",
     srcs = [
-        "@hadoop_3//:aws",
+        "@aws-java-sdk-bundle//file",
     ],
     strip_prefix = ".",
     remap_paths = {
-        "../hadoop_3/share/hadoop/tools/lib" : ".",
+        "../aws-java-sdk-bundle/file" : ".",
     },
     package_dir = "/opt/hive/lib",
     mode = "0644",
