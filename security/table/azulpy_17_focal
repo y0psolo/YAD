@@ -14,7 +14,11 @@
 │                      │ CVE-2022-27406 │          │                        │               │ Freetype: Segmentation violation                             │
 │                      │                │          │                        │               │ https://avd.aquasec.com/nvd/cve-2022-27406                   │
 ├──────────────────────┼────────────────┼──────────┼────────────────────────┼───────────────┼──────────────────────────────────────────────────────────────┤
-│ libjpeg-turbo8       │ CVE-2020-17541 │ LOW      │ 2.0.3-0ubuntu1.20.04.1 │               │ libjpeg-turbo: Stack-based buffer overflow in the            │
+│ libjpeg-turbo8       │ CVE-2021-46822 │ MEDIUM   │ 2.0.3-0ubuntu1.20.04.1 │               │ libjpeg-turbo: heap buffer overflow in get_word_rgb_row() in │
+│                      │                │          │                        │               │ rdppm.c                                                      │
+│                      │                │          │                        │               │ https://avd.aquasec.com/nvd/cve-2021-46822                   │
+│                      ├────────────────┼──────────┤                        ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2020-17541 │ LOW      │                        │               │ libjpeg-turbo: Stack-based buffer overflow in the            │
 │                      │                │          │                        │               │ "transform" component                                        │
 │                      │                │          │                        │               │ https://avd.aquasec.com/nvd/cve-2020-17541                   │
 ├──────────────────────┼────────────────┤          ├────────────────────────┼───────────────┼──────────────────────────────────────────────────────────────┤

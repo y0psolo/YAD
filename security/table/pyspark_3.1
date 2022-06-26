@@ -11,8 +11,12 @@
 ├───────────────────────┼────────────────┼──────────┼─────────────────────┼───────────────┼──────────────────────────────────────────────────────────────┤
 │ libfreetype6          │ CVE-2022-27404 │ MEDIUM   │ 2.11.1+dfsg-1build1 │               │ FreeType: Buffer Overflow                                    │
 │                       │                │          │                     │               │ https://avd.aquasec.com/nvd/cve-2022-27404                   │
-│                       ├────────────────┼──────────┤                     ├───────────────┼──────────────────────────────────────────────────────────────┤
-│                       │ CVE-2022-27405 │ LOW      │                     │               │ FreeType: Segementation Fault                                │
+├───────────────────────┼────────────────┼──────────┼─────────────────────┼───────────────┼──────────────────────────────────────────────────────────────┤
+│ libfreetype6          │ CVE-2022-31782 │ MEDIUM   │ 2.11.1+dfsg-1build1 │               │ ftbench.c in FreeType Demo Programs through 2.12.1 has a     │
+│                       │                │          │                     │               │ heap-based bu ......                                         │
+│                       │                │          │                     │               │ https://avd.aquasec.com/nvd/cve-2022-31782                   │
+├───────────────────────┼────────────────┼──────────┼─────────────────────┼───────────────┼──────────────────────────────────────────────────────────────┤
+│ libfreetype6          │ CVE-2022-27405 │ LOW      │ 2.11.1+dfsg-1build1 │               │ FreeType: Segementation Fault                                │
 │                       │                │          │                     │               │ https://avd.aquasec.com/nvd/cve-2022-27405                   │
 │                       ├────────────────┤          │                     ├───────────────┼──────────────────────────────────────────────────────────────┤
 │                       │ CVE-2022-27406 │          │                     │               │ Freetype: Segmentation violation                             │
@@ -293,6 +297,9 @@
 │                                                              │                     │          │                   │                                   │ remote attacker to boot a database under...                  │
 │                                                              │                     │          │                   │                                   │ https://avd.aquasec.com/nvd/cve-2018-1313                    │
 ├──────────────────────────────────────────────────────────────┼─────────────────────┼──────────┼───────────────────┼───────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ org.apache.hadoop:hadoop-common (hadoop-common-3.2.0.jar)    │ CVE-2021-37404      │ CRITICAL │ 3.2.0             │ 2.10.2, 3.2.3, 3.3.2              │ hadoop-hdfs: Heap buffer overflow in Apache Hadoop libhdfs   │
+│                                                              │                     │          │                   │                                   │ https://avd.aquasec.com/nvd/cve-2021-37404                   │
+├──────────────────────────────────────────────────────────────┼─────────────────────┼──────────┼───────────────────┼───────────────────────────────────┼──────────────────────────────────────────────────────────────┤
 │ org.apache.hadoop:hadoop-common (hadoop-common-3.2.0.jar)    │ CVE-2022-26612      │ CRITICAL │ 3.2.0             │ 3.2.3                             │ hadoop: Arbitrary file write in FileUtil#unpackEntries on    │
 │                                                              │                     │          │                   │                                   │ Windows                                                      │
 │                                                              │                     │          │                   │                                   │ https://avd.aquasec.com/nvd/cve-2022-26612                   │
@@ -301,10 +308,7 @@
 │                                                              │                     │          │                   │                                   │ header                                                       │
 │                                                              │                     │          │                   │                                   │ https://avd.aquasec.com/nvd/cve-2020-9492                    │
 ├──────────────────────────────────────────────────────────────┼─────────────────────┼──────────┼───────────────────┼───────────────────────────────────┼──────────────────────────────────────────────────────────────┤
-│ org.apache.hadoop:hadoop-common (hadoop-common-3.2.0.jar)    │ CVE-2021-37404      │ HIGH     │ 3.2.0             │ 2.10.2, 3.2.3, 3.3.2              │ hadoop-hdfs: Heap buffer overflow in Apache Hadoop libhdfs   │
-│                                                              │                     │          │                   │                                   │ https://avd.aquasec.com/nvd/cve-2021-37404                   │
-├──────────────────────────────────────────────────────────────┼─────────────────────┼──────────┤                   ├───────────────────────────────────┼──────────────────────────────────────────────────────────────┤
-│ org.apache.hadoop:hadoop-yarn-server-common                  │ CVE-2021-33036      │ CRITICAL │                   │ 3.3.2, 3.2.3, 2.10.2              │ User account escalation in Apache Hadoop                     │
+│ org.apache.hadoop:hadoop-yarn-server-common                  │ CVE-2021-33036      │ HIGH     │ 3.2.0             │ 3.3.2, 3.2.3, 2.10.2              │ User account escalation in Apache Hadoop                     │
 │ (hadoop-yarn-server-common-3.2.0.jar)                        │                     │          │                   │                                   │ https://avd.aquasec.com/nvd/cve-2021-33036                   │
 ├──────────────────────────────────────────────────────────────┼─────────────────────┼──────────┼───────────────────┼───────────────────────────────────┼──────────────────────────────────────────────────────────────┤
 │ org.apache.httpcomponents:httpclient (httpclient-4.5.6.jar)  │ CVE-2020-13956      │ MEDIUM   │ 4.5.6             │ 4.5.13                            │ apache-httpclient: incorrect handling of malformed authority │
