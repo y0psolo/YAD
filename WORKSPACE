@@ -1,6 +1,6 @@
 workspace(name = "yad")
 
-load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive", "http_file")
 
 http_archive(
     name = "bazel_skylib",
@@ -124,6 +124,27 @@ http_archive(
     name = "rules-update",
     sha256 = "4ba0974884271a20447ddf15e247175c3c98621a5d57eeaa152150bbf8ca86d9",
     urls = ["https://github.com/y0psolo/rules_update/releases/download/v0.2.0/rules_update.tar.gz"],
+)
+
+http_file(
+    name = "guava",
+    downloaded_file_path = "guava-31.1-jre.jar",
+    sha256 = "a42edc9cab792e39fe39bb94f3fca655ed157ff87a8af78e1d6ba5b07c4a00ab",
+    urls = ["https://repo1.maven.org/maven2/com/google/guava/guava/31.1-jre/guava-31.1-jre.jar"],
+)
+
+http_file(
+    name = "aws-java-sdk-bundle",
+    downloaded_file_path = "aws-java-sdk-bundle-1.12.247.jar",
+    sha256 = "6dce33ddc6d5faf05984111537e0f91da7759e1825c57f819a8056c4e99dd462",
+    urls = ["https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-bundle/1.12.247/aws-java-sdk-bundle-1.12.247.jar"],
+)
+
+http_file(
+    name = "reload4j",
+    downloaded_file_path = "reload4j-1.2.21.jar",
+    sha256 = "e629c04940f054e65f2b8034ef95ba82ecc961779b8090122d973109944c0254",
+    urls = ["https://repo1.maven.org/maven2/ch/qos/reload4j/reload4j/1.2.21/reload4j-1.2.21.jar"],
 )
 
 # Load update tools

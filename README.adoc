@@ -185,6 +185,7 @@ image:https://img.shields.io/docker/image-size/yadist/nodejs/16_jammy?label=16_j
 | image:https://img.shields.io/docker/image-size/yadist/spark/3.0?label=3.0&logo=docker[link="https://hub.docker.com/r/yadist/spark/"]
 image:https://img.shields.io/docker/image-size/yadist/spark/3.1?label=3.1&logo=docker[link="https://hub.docker.com/r/yadist/spark/"]
 image:https://img.shields.io/docker/image-size/yadist/spark/3.2?label=3.2&logo=docker[link="https://hub.docker.com/r/yadist/spark/"]
+image:https://img.shields.io/docker/image-size/yadist/spark/3.3?label=3.3&logo=docker[link="https://hub.docker.com/r/yadist/spark/"]
 | For running spark application
 
 | link:image/spark/README.md[pyspark]
@@ -193,6 +194,7 @@ image:https://img.shields.io/docker/image-size/yadist/spark/3.2?label=3.2&logo=d
 | image:https://img.shields.io/docker/image-size/yadist/pyspark/3.0?label=3.0&logo=docker[link="https://hub.docker.com/r/yadist/pyspark/"]
 image:https://img.shields.io/docker/image-size/yadist/pyspark/3.1?label=3.1&logo=docker[link="https://hub.docker.com/r/yadist/pyspark/"]
 image:https://img.shields.io/docker/image-size/yadist/pyspark/3.2?label=3.2&logo=docker[link="https://hub.docker.com/r/yadist/pyspark/"]
+image:https://img.shields.io/docker/image-size/yadist/pyspark/3.3?label=3.3&logo=docker[link="https://hub.docker.com/r/yadist/pyspark/"]
 | For running pyspark application
 
 | link:image/spark/README.md[sparkhistoryserver]
@@ -201,6 +203,7 @@ image:https://img.shields.io/docker/image-size/yadist/pyspark/3.2?label=3.2&logo
 | image:https://img.shields.io/docker/image-size/yadist/sparkhistoryserver/3.0?label=3.0&logo=docker[link="https://hub.docker.com/r/yadist/sparkhistoryserver/"]
 image:https://img.shields.io/docker/image-size/yadist/sparkhistoryserver/3.1?label=3.1&logo=docker[link="https://hub.docker.com/r/yadist/sparkhistoryserver/"]
 image:https://img.shields.io/docker/image-size/yadist/sparkhistoryserver/3.2?label=3.2&logo=docker[link="https://hub.docker.com/r/yadist/sparkhistoryserver/"]
+image:https://img.shields.io/docker/image-size/yadist/sparkhistoryserver/3.3?label=3.3&logo=docker[link="https://hub.docker.com/r/yadist/sparkhistoryserver/"]
 | For running the spark historyserver application
 
 | link:image/hive/README.md[hivemetastore]

@@ -4,31 +4,39 @@ def spark_repository():
     http_archive(
         name = "spark_hadoop_3.0",
         build_file = "//ext/spark:BUILD",
-        sha256 = "65dbff958be6ac5f22e850d0652544d75f8d8a81ce77b5517060a3606eb848a2",
-        strip_prefix = "spark-3.0.3-bin-hadoop3.2/",
-        urls = ["https://archive.apache.org/dist/spark/spark-3.0.3/spark-3.0.3-bin-hadoop3.2.tgz"],
+        sha256 = "839c44a6fe5d962f919c834a90b0432a21a92756f92217a3033701746c0a18b0",
+        strip_prefix = "spark-3.0.3-bin-hadoop3/",
+        urls = ["https://github.com/y0psolo/spark-build/releases/download/3.0.3/spark-3.0.3-bin-hadoop3.tgz"],
     )
 
     http_archive(
         name = "spark_hadoop_3.1",
         build_file = "//ext/spark:BUILD",
-        sha256 = "2411de04bec186b8651b27a5f16e4b511103c3c1e3f20fbb98b1f8804e61b77f",
-        strip_prefix = "spark-3.1.3-bin-hadoop3.2/",
-        urls = ["https://archive.apache.org/dist/spark/spark-3.1.3/spark-3.1.3-bin-hadoop3.2.tgz"],
+        sha256 = "1e728f28e18db9015f782f41c3a98ae238dd262f76b06c47f4f89f929add0d8e",
+        strip_prefix = "spark-3.1.3-bin-hadoop3/",
+        urls = ["https://github.com/y0psolo/spark-build/releases/download/3.1.3/spark-3.1.3-bin-hadoop3.tgz"],
     )
 
     http_archive(
         name = "spark_hadoop_3.2",
         build_file = "//ext/spark:BUILD",
-        sha256 = "224e058cb0c6fb68b39896427a3ccd11ae2246e9bf465b5e29e4fb192d39a59c",
-        strip_prefix = "spark-3.2.1-bin-hadoop3.2/",
-        urls = ["https://archive.apache.org/dist/spark/spark-3.2.1/spark-3.2.1-bin-hadoop3.2.tgz"],
+        sha256 = "11828c31ac97888a4dc9daa339b7af125ef839b3fbd63da4280d101ae604d921",
+        strip_prefix = "spark-3.2.1-bin-hadoop3/",
+        urls = ["https://github.com/y0psolo/spark-build/releases/download/3.2.1/spark-3.2.1-bin-hadoop3.tgz"],
+    )
+
+    http_archive(
+        name = "spark_hadoop_3.3",
+        build_file = "//ext/spark:BUILD",
+        sha256 = "8b874e5831aa550f2605f93155d56e34c4bf7eb6d351468b99acfb1cfa1433c2",
+        strip_prefix = "spark-3.3.0-bin-hadoop3/",
+        urls = ["https://github.com/y0psolo/spark-build/releases/download/3.3.0/spark-3.3.0-bin-hadoop3.tgz"],
     )
 
     http_archive(
         name = "spark_hadoop_2.4",
         build_file = "//ext/spark:BUILD",
-        sha256 = "feedb945ab4906d098d9d71050a4dab1972de489423008489708ecf496ce91cd",
-        strip_prefix = "spark-2.4.8-bin-hadoop2.7/",
-        urls = ["https://archive.apache.org/dist/spark/spark-2.4.8/spark-2.4.8-bin-hadoop2.7.tgz"],
+        sha256 = "",
+        strip_prefix = "spark-2.4.8-bin-hadoop2/",
+        urls = ["https://github.com/y0psolo/spark-build/releases/download/2.4.8/spark-2.4.8-bin-hadoop2.tgz"],
     )
