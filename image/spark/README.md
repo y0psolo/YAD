@@ -32,8 +32,9 @@
 | gzip                 | Ubuntu package                                               | spark       | spark/pyspark/historyserver  |
 | bash                 | Ubuntu package                                               | spark       | spark/pyspark/historyserver  |
 | libtinfo6            | Ubuntu package                                               | python/spark| spark/pyspark/historyserver  |
-| azul-8-jre           | Java 8 Azul package                                          | azul 8      | spark/pyspark/historyserver  |
-| spark 3.x            | Spark java package, licences and scripts                     | spark       | spark/pyspark/historyserver  |
+| azul-8-jre           | Java 8 Azul package for spark 2.x                            | azul 8      | spark/pyspark/historyserver  |
+| azul-11-jre          | Java 11 Azul package for spark 3.x                           | azul 11     | spark/pyspark/historyserver  |
+| spark 2.x or 3.x     | Spark java package, licences and scripts                     | spark       | spark/pyspark/historyserver  |
 | dash                 | Ubuntu package                                               | python      | pyspark                      |
 | libbz2-1.0           | Ubuntu package                                               | python      | pyspark                      |
 | libdb5.3             | Ubuntu package                                               | python      | pyspark                      |
@@ -51,7 +52,7 @@
 | readline-common      | Ubuntu package                                               | python      | pyspark                      |
 | libcrypt1            | Ubuntu package                                               | python      | pyspark                      |
 | libc-bin             | Ubuntu package                                               | python      | pyspark                      |
-| spark 3.x            | Spark python package                                         | pyspark     | pyspark                      |
+| spark 2.x or 3.x     | Spark python package                                         | pyspark     | pyspark                      |
 
 ## Spark and pySpark image
 ### Entrypoint
@@ -72,6 +73,8 @@ Run the PI example calculation for python :
 ```Bash
 docker run -it --rm --mount type=bind,source="<path to spark archives>/examples/src/main/python/",target=/home/nonroot/python yadist/pyspark:3.2 /home/nonroot/python/pi.py
 ```
+
+To expose Prometheus metrics add `--conf "spark.driver.extraJavaOptions=-javaagent:/prometheus/jmx_prometheus_javaagent.jar=<PORT>:/etc/metrics/conf/prometheus.yml"` to spark-submit command line.
 
 ## Spark History server
 ### Entrypoint

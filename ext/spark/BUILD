@@ -19,7 +19,9 @@ filegroup(
     name = "jars",
     srcs = glob(
         ["jars/**",],
-        exclude = ["jars/guava*.jar"],
+        # remove slf-log4j12 and log4j-1.2.17 : https://www.slf4j.org/codes.html#no_tlm
+        # remove reload4j to upgrade it later to last version
+        exclude = ["jars/guava-*.jar", "jars/aws-java-sdk-bundle-*.jar", "jars/slf-log4j12-*.jar", "jars/log4j-1.*.jar", "jars/reload4j-*.jar"],
     )
 )
 

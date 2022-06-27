@@ -21,18 +21,3 @@ pkg_tar(
     package_dir = "/opt/hadoop",
     visibility = ["//visibility:public"],
 )
-
-filegroup(
-    name = "guava",
-    srcs = glob(["share/hadoop/common/lib/guava-*-jre.jar"]),
-    visibility = ["//visibility:public"],
-)
-
-filegroup(
-    name = "aws",
-    srcs = glob([
-        "share/hadoop/tools/lib/hadoop-aws-*.jar",
-        "share/hadoop/tools/lib/aws-java-sdk-bundle-*.jar",
-    ]),
-    visibility = ["//visibility:public"],
-)

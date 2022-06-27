@@ -9,26 +9,39 @@ load("@ubuntu_bionic_arm64//debs:deb_packages.bzl", "ubuntu_bionic_arm64")
 load("//update:constants.bzl", "SPARK_VERSIONS", "SPARK_VERSIONS_MAPPING")
 
 pkg_tar(
-    name = "aws_tar",
+    name = "guava_tar",
     srcs = [
-        "@hadoop_3//:aws",
+        "@guava//file",
     ],
     strip_prefix = ".",
     remap_paths = {
-        "../hadoop_3/share/hadoop/tools/lib" : ".",
+        "../guava/file" : ".",
     },
     package_dir = "/opt/spark/jars",
     mode = "0644",
 )
 
 pkg_tar(
-    name = "guava_tar",
+    name = "reload4j_tar",
     srcs = [
-        "@hadoop_3//:guava",
+        "@reload4j//file",
     ],
     strip_prefix = ".",
     remap_paths = {
-        "../hadoop_3/share/hadoop/common/lib" : ".",
+        "../reload4j/file" : ".",
+    },
+    package_dir = "/opt/spark/jars",
+    mode = "0644",
+)
+
+pkg_tar(
+    name = "aws_tar",
+    srcs = [
+        "@aws-java-sdk-bundle//file",
+    ],
+    strip_prefix = ".",
+    remap_paths = {
+        "../aws-java-sdk-bundle/file" : ".",
     },
     package_dir = "/opt/spark/jars",
     mode = "0644",
@@ -50,7 +63,7 @@ pkg_tar(
 pkg_tar(
     name = "conf_tar",
     srcs = [
-        "conf/prometheus.yaml",
+        "conf/prometheus.yml",
         "conf/metrics.properties",
     ],
     strip_prefix = ".",
@@ -135,10 +148,14 @@ pkg_tar(
             "@spark_hadoop_" + version + "//:jars_tar",
             "@spark_hadoop_" + version + "//:licences_tar",
             "@spark_hadoop_" + version + "//:bin_tar",
+            # Add last guava version
             ":guava_tar",
+            # Add last reload4j version
+            ":reload4j_tar",
+            # Add last aws-sdk-bundle version
+            ":aws_tar",
             ":prometheus_tar",
             ":conf_tar",
-            ":aws_tar",
         ],
         visibility = ["//:__subpackages__"],
     )
