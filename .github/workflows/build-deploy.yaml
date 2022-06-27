@@ -313,6 +313,12 @@ jobs:
           bazel run --config ${{ matrix.arch }} -c ${{ matrix.copt }} --//platforms:distro=${{ matrix.ubuntu }} --//platforms:java=${{ matrix.java }} //image:push_spark_3.2
           bazel run --config ${{ matrix.arch }} -c ${{ matrix.copt }} --//platforms:distro=${{ matrix.ubuntu }} --//platforms:java=${{ matrix.java }} //image:push_pyspark_3.2
           bazel run --config ${{ matrix.arch }} -c ${{ matrix.copt }} --//platforms:distro=${{ matrix.ubuntu }} --//platforms:java=${{ matrix.java }} //image:push_sparkhistoryserver_3.2
+      - name: bazel deploy 3.3
+        if: ${{ matrix.ubuntu != '18.04' }}
+        run: |
+          bazel run --config ${{ matrix.arch }} -c ${{ matrix.copt }} --//platforms:distro=${{ matrix.ubuntu }} --//platforms:java=${{ matrix.java }} //image:push_spark_3.3
+          bazel run --config ${{ matrix.arch }} -c ${{ matrix.copt }} --//platforms:distro=${{ matrix.ubuntu }} --//platforms:java=${{ matrix.java }} //image:push_pyspark_3.3
+          bazel run --config ${{ matrix.arch }} -c ${{ matrix.copt }} --//platforms:distro=${{ matrix.ubuntu }} --//platforms:java=${{ matrix.java }} //image:push_sparkhistoryserver_3.3
   deploy_trino:
     environment: Release
     runs-on: ubuntu-latest
