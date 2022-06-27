@@ -4,13 +4,13 @@ def consultemplate_repository():
     http_archive(
         name = "consul-template-amd64",
         build_file = "//ext/consultemplate:BUILD",
-        sha256 = "9178437bde1f0f220010f17806c01b36ccb3814f065d4ebdfba53ade9832012d",
-        urls = ["https://releases.hashicorp.com/consul-template/0.29.0/consul-template_0.29.0_linux_amd64.zip"],
+        sha256 = "bd051cba75fc86bb1e27a741c69e3f39ea877e15f04e220f8e7e4f2f83127bc3",
+        urls = ["https://releases.hashicorp.com/consul-template/0.29.1/consul-template_0.29.1_linux_amd64.zip"],
     )
 
     http_archive(
         name = "consul-template-arm64",
         build_file = "//ext/consultemplate:BUILD",
-        sha256 = "6bbb36d9a47be9f739452147dc4b042bbebdb8fbbaf9a432f1e2a5454478150b",
-        urls = ["https://releases.hashicorp.com/consul-template/0.29.0/consul-template_0.29.0_linux_arm64.zip"],
+        sha256 = "ea567e47f019d58b4aed8b1a02eb66c9034fb68d140aa2cfa1f63617e90a819a",
+        urls = ["https://releases.hashicorp.com/consul-template/0.29.1/consul-template_0.29.1_linux_arm64.zip"],
     )
