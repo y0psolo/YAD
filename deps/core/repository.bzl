@@ -10,13 +10,13 @@ def core_repository():
     # Ubuntu key
     http_file(
         name = "ubuntu_jammy_key",
-        sha256 = "10d6c8ab5ea4ef4f5fc7b9ff7aaf2d61d825cea57ac0124b76eb908ca6acd712",
+        sha256 = "fa6889d252b948269de3674fe9fa9dd50fe04a2804c9ca068b75a89ab8a5273b",
         urls = ["https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xf6ecb3762474eda9d21b7022871920d1991bc93c"],
     )
 
     http_file(
         name = "ubuntu_focal_key",
-        sha256 = "10d6c8ab5ea4ef4f5fc7b9ff7aaf2d61d825cea57ac0124b76eb908ca6acd712",
+        sha256 = "fa6889d252b948269de3674fe9fa9dd50fe04a2804c9ca068b75a89ab8a5273b",
         urls = ["https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xf6ecb3762474eda9d21b7022871920d1991bc93c"],
     )
 
