@@ -23,7 +23,7 @@ def core_repository():
     # Ubuntu key
     http_file(
         name = "ubuntu_bionic_key",
-        sha256 = "0a81ec85f5abd4ff15a51565382e5ca3e0d7dca7fbf853eb2de9519429945e1b",
+        sha256 = "a820efa6184ee293575cf86054fce0cac66dc9053e9964053fe62162c47606f6",
         urls = ["https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x790bc7277767219c42c86f933b4fe6acc0b21f32"],
     )
 
