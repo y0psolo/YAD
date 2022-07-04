@@ -1,8 +1,8 @@
 """ Constants """
 
 JRE_VERSIONS = ["8", "11", "17"]
-NODEJS_VERSIONS = ["14", "16"]
-NODEJS_VERSIONS_MAPPINGS = {"14": "14.19.3", "16": "16.15.1"}
+NODEJS_VERSIONS = ["16", "18"]
+NODEJS_VERSIONS_MAPPINGS = {"16": "16.15.1", "18": "18.4.0"}
 
 # ID mapping
 NOBODY = 65534
