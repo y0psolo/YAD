@@ -22,13 +22,21 @@ pkg_tar(
 )
 
 pkg_tar(
-    name = "reload4j_tar",
+    name = "log_tar",
     srcs = [
-        "@reload4j//file",
+        "@log4j-core//file",
+        "@log4j-api//file",
+        "@log4j-1.2-api//file",
+        "@log4j-slf4j-impl//file",
+        "@log4j-layout-template-json//file",
     ],
     strip_prefix = ".",
     remap_paths = {
-        "../reload4j/file" : ".",
+        "../log4j-core/file" : ".",
+        "../log4j-api/file" : ".",
+        "../log4j-1.2-api/file" : ".",
+        "../log4j-slf4j-impl/file" : ".",
+        "../log4j-layout-template-json/file" : ".",
     },
     package_dir = "/opt/spark/jars",
     mode = "0644",
@@ -150,8 +158,8 @@ pkg_tar(
             "@spark_hadoop_" + version + "//:bin_tar",
             # Add last guava version
             ":guava_tar",
-            # Add last reload4j version
-            ":reload4j_tar",
+            # Add log4j jar
+            ":log_tar",
             # Add last aws-sdk-bundle version
             ":aws_tar",
             ":prometheus_tar",

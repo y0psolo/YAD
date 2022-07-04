@@ -140,11 +140,41 @@ http_file(
     urls = ["https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-bundle/1.12.247/aws-java-sdk-bundle-1.12.247.jar"],
 )
 
+# Log4j library for spark
+
 http_file(
-    name = "reload4j",
-    downloaded_file_path = "reload4j-1.2.21.jar",
-    sha256 = "e629c04940f054e65f2b8034ef95ba82ecc961779b8090122d973109944c0254",
-    urls = ["https://repo1.maven.org/maven2/ch/qos/reload4j/reload4j/1.2.21/reload4j-1.2.21.jar"],
+    name = "log4j-core",
+    downloaded_file_path = "log4j-core-2.17.2.jar",
+    sha256 = "5adb34ff4197cd16a8d24f63035856a933cb59562a6888dde86e9450fcfef646",
+    urls = ["https://repo1.maven.org/maven2/org/apache/logging/log4j/log4j-core/2.17.2/log4j-core-2.17.2.jar"],
+)
+
+http_file(
+    name = "log4j-api",
+    downloaded_file_path = "log4j-api-2.17.2.jar",
+    sha256 = "09351b5a03828f369cdcff76f4ed39e6a6fc20f24f046935d0b28ef5152f8ce4",
+    urls = ["https://repo1.maven.org/maven2/org/apache/logging/log4j/log4j-api/2.17.2/log4j-api-2.17.2.jar"],
+)
+
+http_file(
+    name = "log4j-1.2-api",
+    downloaded_file_path = "log4j-1.2-api-2.17.2.jar",
+    sha256 = "dd8c649a46c5d80ad11394d68c133ba8e9a91acf99b7b9920dd5b6ad3f5adfa8",
+    urls = ["https://repo1.maven.org/maven2/org/apache/logging/log4j/log4j-1.2-api/2.17.2/log4j-1.2-api-2.17.2.jar"],
+)
+
+http_file(
+    name = "log4j-slf4j-impl",
+    downloaded_file_path = "log4j-slf4j-impl-2.17.2.jar",
+    sha256 = "77912d47190a5d25d583728e048496a92a2cb32308b71d3439931d7719996637",
+    urls = ["https://repo1.maven.org/maven2/org/apache/logging/log4j/log4j-slf4j-impl/2.17.2/log4j-slf4j-impl-2.17.2.jar"],
+)
+
+http_file(
+    name = "log4j-layout-template-json",
+    downloaded_file_path = "log4j-layout-template-json-2.17.2.jar",
+    sha256 = "32c22efd1c3f468d5b0e2867e9f562d3db64386916d8bb0a57779a33e58d51e7",
+    urls = ["https://repo1.maven.org/maven2/org/apache/logging/log4j/log4j-layout-template-json/2.17.2/log4j-layout-template-json-2.17.2.jar"],
 )
 
 # Load update tools

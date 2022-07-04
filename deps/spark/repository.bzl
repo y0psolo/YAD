@@ -36,7 +36,7 @@ def spark_repository():
     http_archive(
         name = "spark_hadoop_2.4",
         build_file = "//ext/spark:BUILD",
-        sha256 = "",
+        sha256 = "1ea40737b9873452dc4232f45486176aced0f0900a6f0dda5e580cfbdf4ff584",
         strip_prefix = "spark-2.4.8-bin-hadoop2/",
         urls = ["https://github.com/y0psolo/spark-build/releases/download/2.4.8/spark-2.4.8-bin-hadoop2.tgz"],
     )
