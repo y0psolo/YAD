@@ -152,12 +152,12 @@ image:https://img.shields.io/docker/image-size/yadist/azulpy/17_jammy?label=17_j
 | Usage
 
 | link:image/nodejs/README.md[nodejs]
-| image:https://img.shields.io/docker/image-size/yadist/nodejs/14_bionic?label=14_bionic&logo=docker[link="https://hub.docker.com/r/yadist/nodejs/"]
-image:https://img.shields.io/docker/image-size/yadist/nodejs/16_bionic?label=16_bionic&logo=docker[link="https://hub.docker.com/r/yadist/nodejs/"]
-| image:https://img.shields.io/docker/image-size/yadist/nodejs/14_focal?label=14_focal&logo=docker[link="https://hub.docker.com/r/yadist/nodejs/"]
-image:https://img.shields.io/docker/image-size/yadist/nodejs/16_focal?label=16_focal&logo=docker[link="https://hub.docker.com/r/yadist/nodejs/"]
-| image:https://img.shields.io/docker/image-size/yadist/nodejs/14_jammy?label=14_jammy&logo=docker[link="https://hub.docker.com/r/yadist/nodejs/"]
-image:https://img.shields.io/docker/image-size/yadist/nodejs/16_jammy?label=16_jammy&logo=docker[link="https://hub.docker.com/r/yadist/nodejs/"]
+| image:https://img.shields.io/docker/image-size/yadist/nodejs/16_bionic?label=16_bionic&logo=docker[link="https://hub.docker.com/r/yadist/nodejs/"]
+image:https://img.shields.io/docker/image-size/yadist/nodejs/18_bionic?label=18_bionic&logo=docker[link="https://hub.docker.com/r/yadist/nodejs/"]
+| image:https://img.shields.io/docker/image-size/yadist/nodejs/16_focal?label=16_focal&logo=docker[link="https://hub.docker.com/r/yadist/nodejs/"]
+image:https://img.shields.io/docker/image-size/yadist/nodejs/18_focal?label=18_focal&logo=docker[link="https://hub.docker.com/r/yadist/nodejs/"]
+| image:https://img.shields.io/docker/image-size/yadist/nodejs/16_jammy?label=16_jammy&logo=docker[link="https://hub.docker.com/r/yadist/nodejs/"]
+image:https://img.shields.io/docker/image-size/yadist/nodejs/18_jammy?label=18_jammy&logo=docker[link="https://hub.docker.com/r/yadist/nodejs/"]
 | For running javascript application
 
 | link:image/deno/README.md[deno]
