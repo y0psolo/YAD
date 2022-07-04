@@ -32,7 +32,7 @@ ENTRYPOINT ["/usr/bin/tini", "--", "/usr/bin/node"]
 
 ## Security
 
-Security scan of the image updated daily : [16 on bionic](../../security/table/nodejs_16_bionic), [16 on focal](../../security/table/nodejs_16_focal), [16 on jammy](../../security/table/nodejs_16_jammy), [18 on bionic](../../security/table/nodejs_18_bionic), [18 on focal](../../security/table/nodejs_18_focal), [18 on jammy](../../security/table/nodejs_18_jammy)
+Security scan of the image updated daily : [16 on focal](../../security/table/nodejs_16_focal), [16 on jammy](../../security/table/nodejs_16_jammy), [18 on focal](../../security/table/nodejs_18_focal), [18 on jammy](../../security/table/nodejs_18_jammy)
 
 Security scan for Nodejs tar.gz archive installation is not supported by Trivy. See https://github.com/nodejs/node/blob/master/SECURITY.md for more information on security issue related to Nodejs.
 
