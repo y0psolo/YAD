@@ -2,7 +2,7 @@
 
 JRE_VERSIONS = ["8", "11", "17"]
 NODEJS_VERSIONS = ["16", "18"]
-NODEJS_VERSIONS_MAPPINGS = {"16": "16.15.1", "18": "18.4.0"}
+NODEJS_VERSIONS_MAPPINGS = {"16": "16.16.0", "18": "18.4.0"}
 
 # ID mapping
 NOBODY = 65534
@@ -22,7 +22,7 @@ SPARK_VERSIONS = ["2.4", "3.0", "3.1", "3.2", "3.3"]
 
 SPARK_VERSIONS_MAPPING = {"2.4": "2.4.8", "3.0": "3.0.3", "3.1": "3.1.3", "3.2": "3.2.1", "3.3": "3.3.0"}
 
-TRINO_VERSION = "388"
+TRINO_VERSION = "389"
 
 REDIS_VERSION = "7.0.2"
 
