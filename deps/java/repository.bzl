@@ -5,25 +5,25 @@ def java_repository():
     http_archive(
         name = "jre-8-azul-amd64",
         build_file = "//ext/azul:BUILD.azul_8_amd64",
-        sha256 = "87b46ddc541d53ff402d123ad2ee8019f60ba83cd56bba26f4d247c415b4c6d8",
-        strip_prefix = "zulu8.62.0.19-ca-jre8.0.332-linux_x64/",
-        urls = ["https://cdn.azul.com/zulu/bin/zulu8.62.0.19-ca-jre8.0.332-linux_x64.tar.gz"],
+        sha256 = "661024a0bc3aa43d51886ae48a6866e7f81239f7e9ff205d57caf3d005b75633",
+        strip_prefix = "zulu8.64.0.15-ca-jre8.0.342-linux_x64/",
+        urls = ["https://cdn.azul.com/zulu/bin/zulu8.64.0.15-ca-jre8.0.342-linux_x64.tar.gz"],
     )
 
     http_archive(
         name = "jre-11-azul-amd64",
         build_file = "//ext/azul:BUILD.azul_11_amd64",
-        sha256 = "a98ab0d16a282e00f1417462414b14befd148e0e5af6d92e3273c54a99efd4ac",
-        strip_prefix = "zulu11.56.19-ca-jre11.0.15-linux_x64/",
-        urls = ["https://cdn.azul.com/zulu/bin/zulu11.56.19-ca-jre11.0.15-linux_x64.tar.gz"],
+        sha256 = "42c5533cb579e96de456ce7fcabbc64c08bc15f029cf122bc1c436cb8bc35eab",
+        strip_prefix = "zulu11.58.15-ca-jre11.0.16-linux_x64/",
+        urls = ["https://cdn.azul.com/zulu/bin/zulu11.58.15-ca-jre11.0.16-linux_x64.tar.gz"],
     )
 
     http_archive(
         name = "jre-17-azul-amd64",
         build_file = "//ext/azul:BUILD.azul_17_amd64",
-        sha256 = "90ff9c5916c56f402da7ebbf9f8d8ef228f5b3a6b1ba02e69f52b11f2a5fe74c",
-        strip_prefix = "zulu17.34.19-ca-jre17.0.3-linux_x64/",
-        urls = ["https://cdn.azul.com/zulu/bin/zulu17.34.19-ca-jre17.0.3-linux_x64.tar.gz"],
+        sha256 = "7e7b989f23d318dd5665ee35e2f70d4dd5b8d723f1e823bcef1e0c65112923f3",
+        strip_prefix = "zulu17.36.13-ca-jre17.0.4-linux_x64/",
+        urls = ["https://cdn.azul.com/zulu/bin/zulu17.36.13-ca-jre17.0.4-linux_x64.tar.gz"],
     )
 
     http_archive(
@@ -45,9 +45,9 @@ def java_repository():
     http_archive(
         name = "jre-17-azul-arm64",
         build_file = "//ext/azul:BUILD.azul_17_arm64",
-        sha256 = "22c3ee790a8fc12a231351c8e359d00add1a79d02acf4704b5d36ab8d1815f00",
-        strip_prefix = "zulu17.34.19-ca-jre17.0.3-linux_aarch64/",
-        urls = ["https://cdn.azul.com/zulu/bin/zulu17.34.19-ca-jre17.0.3-linux_aarch64.tar.gz"],
+        sha256 = "270ebd0eab67f705782f66ab6a8e4b7e4cc00a8c62416242d11fc5199e704469",
+        strip_prefix = "zulu17.36.13-ca-jre17.0.4-linux_aarch64/",
+        urls = ["https://cdn.azul.com/zulu/bin/zulu17.36.13-ca-jre17.0.4-linux_aarch64.tar.gz"],
     )
 
     # Get Adoptium package
