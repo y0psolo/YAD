@@ -20,9 +20,9 @@ def spark_repository():
     http_archive(
         name = "spark_hadoop_3.2",
         build_file = "//ext/spark:BUILD",
-        sha256 = "11828c31ac97888a4dc9daa339b7af125ef839b3fbd63da4280d101ae604d921",
-        strip_prefix = "spark-3.2.1-bin-hadoop3/",
-        urls = ["https://github.com/y0psolo/spark-build/releases/download/3.2.1/spark-3.2.1-bin-hadoop3.tgz"],
+        sha256 = "2332cfe72359ec782b5794711237e43f122b66d2bb0606f1a2521272ddb14b0a",
+        strip_prefix = "spark-3.2.2-bin-hadoop3/",
+        urls = ["https://github.com/y0psolo/spark-build/releases/download/3.2.2/spark-3.2.2-bin-hadoop3.tgz"],
     )
 
     http_archive(
