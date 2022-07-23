@@ -1,79 +1,100 @@
-┌────────────────┬────────────────┬──────────┬─────────────────────────┬───────────────┬─────────────────────────────────────────────────────────────┐
-│    Library     │ Vulnerability  │ Severity │    Installed Version    │ Fixed Version │                            Title                            │
-├────────────────┼────────────────┼──────────┼─────────────────────────┼───────────────┼─────────────────────────────────────────────────────────────┤
-│ coreutils      │ CVE-2016-2781  │ LOW      │ 8.28-1ubuntu1           │               │ coreutils: Non-privileged session can escape to the parent  │
-│                │                │          │                         │               │ session in chroot                                           │
-│                │                │          │                         │               │ https://avd.aquasec.com/nvd/cve-2016-2781                   │
-├────────────────┼────────────────┤          ├─────────────────────────┼───────────────┼─────────────────────────────────────────────────────────────┤
-│ libc6          │ CVE-2009-5155  │          │ 2.27-3ubuntu1.6         │               │ glibc: parse_reg_exp in posix/regcomp.c misparses           │
-│                │                │          │                         │               │ alternatives leading to denial of service or...             │
-│                │                │          │                         │               │ https://avd.aquasec.com/nvd/cve-2009-5155                   │
-├────────────────┼────────────────┼──────────┼─────────────────────────┼───────────────┼─────────────────────────────────────────────────────────────┤
-│ libc6          │ CVE-2015-8985  │ LOW      │ 2.27-3ubuntu1.6         │               │ glibc: potential denial of service in pop_fail_stack()      │
-│                │                │          │                         │               │ https://avd.aquasec.com/nvd/cve-2015-8985                   │
-├────────────────┼────────────────┼──────────┼─────────────────────────┼───────────────┼─────────────────────────────────────────────────────────────┤
-│ libc6          │ CVE-2016-20013 │ LOW      │ 2.27-3ubuntu1.6         │               │ sha256crypt and sha512crypt through 0.6 allow attackers to  │
-│                │                │          │                         │               │ cause a denial of...                                        │
-│                │                │          │                         │               │ https://avd.aquasec.com/nvd/cve-2016-20013                  │
-├────────────────┼────────────────┼──────────┼─────────────────────────┼───────────────┼─────────────────────────────────────────────────────────────┤
-│ libfreetype6   │ CVE-2022-27404 │ MEDIUM   │ 2.8.1-2ubuntu2.1        │               │ FreeType: Buffer Overflow                                   │
-│                │                │          │                         │               │ https://avd.aquasec.com/nvd/cve-2022-27404                  │
-│                ├────────────────┼──────────┤                         ├───────────────┼─────────────────────────────────────────────────────────────┤
-│                │ CVE-2022-27405 │ LOW      │                         │               │ FreeType: Segementation Fault                               │
-│                │                │          │                         │               │ https://avd.aquasec.com/nvd/cve-2022-27405                  │
-│                ├────────────────┤          │                         ├───────────────┼─────────────────────────────────────────────────────────────┤
-│                │ CVE-2022-27406 │          │                         │               │ Freetype: Segmentation violation                            │
-│                │                │          │                         │               │ https://avd.aquasec.com/nvd/cve-2022-27406                  │
-├────────────────┼────────────────┼──────────┼─────────────────────────┼───────────────┼─────────────────────────────────────────────────────────────┤
-│ libgcc1        │ CVE-2020-13844 │ MEDIUM   │ 8.4.0-1ubuntu1~18.04    │               │ kernel: ARM straight-line speculation vulnerability         │
-│                │                │          │                         │               │ https://avd.aquasec.com/nvd/cve-2020-13844                  │
-├────────────────┤                │          │                         ├───────────────┤                                                             │
-│ libgomp1       │                │          │                         │               │                                                             │
-│                │                │          │                         │               │                                                             │
-├────────────────┼────────────────┼──────────┼─────────────────────────┼───────────────┼─────────────────────────────────────────────────────────────┤
-│ libjpeg-turbo8 │ CVE-2018-11813 │ LOW      │ 1.5.2-0ubuntu5.18.04.4  │               │ libjpeg: "cjpeg" utility large loop because read_pixel in   │
-│                │                │          │                         │               │ rdtarga.c mishandles EOF                                    │
-│                │                │          │                         │               │ https://avd.aquasec.com/nvd/cve-2018-11813                  │
-│                ├────────────────┤          │                         ├───────────────┼─────────────────────────────────────────────────────────────┤
-│                │ CVE-2020-17541 │          │                         │               │ libjpeg-turbo: Stack-based buffer overflow in the           │
-│                │                │          │                         │               │ "transform" component                                       │
-│                │                │          │                         │               │ https://avd.aquasec.com/nvd/cve-2020-17541                  │
-├────────────────┼────────────────┼──────────┼─────────────────────────┼───────────────┼─────────────────────────────────────────────────────────────┤
-│ libpcre2-8-0   │ CVE-2019-20454 │ LOW      │ 10.31-2                 │               │ pcre: Out of bounds read in JIT mode when \X is used...     │
-│                │                │          │                         │               │ https://avd.aquasec.com/nvd/cve-2019-20454                  │
-├────────────────┼────────────────┼──────────┼─────────────────────────┼───────────────┼─────────────────────────────────────────────────────────────┤
-│ libpcre2-8-0   │ CVE-2022-1586  │ LOW      │ 10.31-2                 │               │ pcre2: Out-of-bounds read in compile_xclass_matchingpath in │
-│                │                │          │                         │               │ pcre2_jit_compile.c                                         │
-│                │                │          │                         │               │ https://avd.aquasec.com/nvd/cve-2022-1586                   │
-│                ├────────────────┤          │                         ├───────────────┼─────────────────────────────────────────────────────────────┤
-│                │ CVE-2022-1587  │          │                         │               │ pcre2: Out-of-bounds read in get_recurse_data_length in     │
-│                │                │          │                         │               │ pcre2_jit_compile.c                                         │
-│                │                │          │                         │               │ https://avd.aquasec.com/nvd/cve-2022-1587                   │
-├────────────────┼────────────────┤          ├─────────────────────────┼───────────────┼─────────────────────────────────────────────────────────────┤
-│ libpng16-16    │ CVE-2018-14048 │          │ 1.6.34-1ubuntu0.18.04.2 │               │ libpng: Segmentation fault in png.c:png_free_data function  │
-│                │                │          │                         │               │ causing denial of service                                   │
-│                │                │          │                         │               │ https://avd.aquasec.com/nvd/cve-2018-14048                  │
-├────────────────┼────────────────┼──────────┼─────────────────────────┼───────────────┼─────────────────────────────────────────────────────────────┤
-│ libstdc++6     │ CVE-2020-13844 │ MEDIUM   │ 8.4.0-1ubuntu1~18.04    │               │ kernel: ARM straight-line speculation vulnerability         │
-│                │                │          │                         │               │ https://avd.aquasec.com/nvd/cve-2020-13844                  │
-├────────────────┼────────────────┼──────────┼─────────────────────────┼───────────────┼─────────────────────────────────────────────────────────────┤
-│ libtinfo5      │ CVE-2019-17594 │ LOW      │ 6.1-1ubuntu1.18.04      │               │ ncurses: heap-based buffer overflow in the _nc_find_entry   │
-│                │                │          │                         │               │ function in tinfo/comp_hash.c                               │
-│                │                │          │                         │               │ https://avd.aquasec.com/nvd/cve-2019-17594                  │
-│                ├────────────────┤          │                         ├───────────────┼─────────────────────────────────────────────────────────────┤
-│                │ CVE-2019-17595 │          │                         │               │ ncurses: heap-based buffer overflow in the fmt_entry        │
-│                │                │          │                         │               │ function in tinfo/comp_hash.c                               │
-│                │                │          │                         │               │ https://avd.aquasec.com/nvd/cve-2019-17595                  │
-│                ├────────────────┤          │                         ├───────────────┼─────────────────────────────────────────────────────────────┤
-│                │ CVE-2021-39537 │          │                         │               │ ncurses: heap-based buffer overflow in _nc_captoinfo() in   │
-│                │                │          │                         │               │ captoinfo.c                                                 │
-│                │                │          │                         │               │ https://avd.aquasec.com/nvd/cve-2021-39537                  │
-├────────────────┼────────────────┼──────────┼─────────────────────────┼───────────────┼─────────────────────────────────────────────────────────────┤
-│ libtinfo5      │ CVE-2022-29458 │ LOW      │ 6.1-1ubuntu1.18.04      │               │ ncurses: segfaulting OOB read                               │
-│                │                │          │                         │               │ https://avd.aquasec.com/nvd/cve-2022-29458                  │
-└────────────────┴────────────────┴──────────┴─────────────────────────┴───────────────┴─────────────────────────────────────────────────────────────┘
+
+yadist/spark:2.4 (ubuntu 18.04)
+===============================
+Total: 22 (UNKNOWN: 0, LOW: 16, MEDIUM: 6, HIGH: 0, CRITICAL: 0)
+
+┌────────────────┬────────────────┬──────────┬─────────────────────────┬──────────────────┬──────────────────────────────────────────────────────────────┐
+│    Library     │ Vulnerability  │ Severity │    Installed Version    │  Fixed Version   │                            Title                             │
+├────────────────┼────────────────┼──────────┼─────────────────────────┼──────────────────┼──────────────────────────────────────────────────────────────┤
+│ coreutils      │ CVE-2016-2781  │ LOW      │ 8.28-1ubuntu1           │                  │ coreutils: Non-privileged session can escape to the parent   │
+│                │                │          │                         │                  │ session in chroot                                            │
+│                │                │          │                         │                  │ https://avd.aquasec.com/nvd/cve-2016-2781                    │
+├────────────────┼────────────────┤          ├─────────────────────────┼──────────────────┼──────────────────────────────────────────────────────────────┤
+│ libc6          │ CVE-2009-5155  │          │ 2.27-3ubuntu1.6         │                  │ glibc: parse_reg_exp in posix/regcomp.c misparses            │
+│                │                │          │                         │                  │ alternatives leading to denial of service or...              │
+│                │                │          │                         │                  │ https://avd.aquasec.com/nvd/cve-2009-5155                    │
+├────────────────┼────────────────┼──────────┼─────────────────────────┼──────────────────┼──────────────────────────────────────────────────────────────┤
+│ libc6          │ CVE-2015-8985  │ LOW      │ 2.27-3ubuntu1.6         │                  │ glibc: potential denial of service in pop_fail_stack()       │
+│                │                │          │                         │                  │ https://avd.aquasec.com/nvd/cve-2015-8985                    │
+├────────────────┼────────────────┼──────────┼─────────────────────────┼──────────────────┼──────────────────────────────────────────────────────────────┤
+│ libc6          │ CVE-2016-20013 │ LOW      │ 2.27-3ubuntu1.6         │                  │ sha256crypt and sha512crypt through 0.6 allow attackers to   │
+│                │                │          │                         │                  │ cause a denial of...                                         │
+│                │                │          │                         │                  │ https://avd.aquasec.com/nvd/cve-2016-20013                   │
+├────────────────┼────────────────┼──────────┼─────────────────────────┼──────────────────┼──────────────────────────────────────────────────────────────┤
+│ libfreetype6   │ CVE-2022-27404 │ MEDIUM   │ 2.8.1-2ubuntu2.1        │ 2.8.1-2ubuntu2.2 │ FreeType: Buffer Overflow                                    │
+│                │                │          │                         │                  │ https://avd.aquasec.com/nvd/cve-2022-27404                   │
+├────────────────┼────────────────┼──────────┼─────────────────────────┼──────────────────┼──────────────────────────────────────────────────────────────┤
+│ libfreetype6   │ CVE-2022-31782 │ MEDIUM   │ 2.8.1-2ubuntu2.1        │ 2.8.1-2ubuntu2.2 │ ftbench.c in FreeType Demo Programs through 2.12.1 has a     │
+│                │                │          │                         │                  │ heap-based bu ......                                         │
+│                │                │          │                         │                  │ https://avd.aquasec.com/nvd/cve-2022-31782                   │
+├────────────────┼────────────────┼──────────┼─────────────────────────┼──────────────────┼──────────────────────────────────────────────────────────────┤
+│ libfreetype6   │ CVE-2022-27405 │ LOW      │ 2.8.1-2ubuntu2.1        │ 2.8.1-2ubuntu2.2 │ FreeType: Segementation Fault                                │
+│                │                │          │                         │                  │ https://avd.aquasec.com/nvd/cve-2022-27405                   │
+│                ├────────────────┤          │                         │                  ├──────────────────────────────────────────────────────────────┤
+│                │ CVE-2022-27406 │          │                         │                  │ Freetype: Segmentation violation                             │
+│                │                │          │                         │                  │ https://avd.aquasec.com/nvd/cve-2022-27406                   │
+├────────────────┼────────────────┼──────────┼─────────────────────────┼──────────────────┼──────────────────────────────────────────────────────────────┤
+│ libgcc1        │ CVE-2020-13844 │ MEDIUM   │ 8.4.0-1ubuntu1~18.04    │                  │ kernel: ARM straight-line speculation vulnerability          │
+│                │                │          │                         │                  │ https://avd.aquasec.com/nvd/cve-2020-13844                   │
+├────────────────┤                │          │                         ├──────────────────┤                                                              │
+│ libgomp1       │                │          │                         │                  │                                                              │
+│                │                │          │                         │                  │                                                              │
+├────────────────┼────────────────┼──────────┼─────────────────────────┼──────────────────┼──────────────────────────────────────────────────────────────┤
+│ libjpeg-turbo8 │ CVE-2021-46822 │ MEDIUM   │ 1.5.2-0ubuntu5.18.04.4  │                  │ libjpeg-turbo: heap buffer overflow in get_word_rgb_row() in │
+│                │                │          │                         │                  │ rdppm.c                                                      │
+│                │                │          │                         │                  │ https://avd.aquasec.com/nvd/cve-2021-46822                   │
+│                ├────────────────┼──────────┤                         ├──────────────────┼──────────────────────────────────────────────────────────────┤
+│                │ CVE-2018-11813 │ LOW      │                         │                  │ libjpeg: "cjpeg" utility large loop because read_pixel in    │
+│                │                │          │                         │                  │ rdtarga.c mishandles EOF                                     │
+│                │                │          │                         │                  │ https://avd.aquasec.com/nvd/cve-2018-11813                   │
+│                ├────────────────┤          │                         ├──────────────────┼──────────────────────────────────────────────────────────────┤
+│                │ CVE-2020-17541 │          │                         │                  │ libjpeg-turbo: Stack-based buffer overflow in the            │
+│                │                │          │                         │                  │ "transform" component                                        │
+│                │                │          │                         │                  │ https://avd.aquasec.com/nvd/cve-2020-17541                   │
+├────────────────┼────────────────┼──────────┼─────────────────────────┼──────────────────┼──────────────────────────────────────────────────────────────┤
+│ libpcre2-8-0   │ CVE-2019-20454 │ LOW      │ 10.31-2                 │                  │ pcre: Out of bounds read in JIT mode when \X is used...      │
+│                │                │          │                         │                  │ https://avd.aquasec.com/nvd/cve-2019-20454                   │
+├────────────────┼────────────────┼──────────┼─────────────────────────┼──────────────────┼──────────────────────────────────────────────────────────────┤
+│ libpcre2-8-0   │ CVE-2022-1586  │ LOW      │ 10.31-2                 │                  │ pcre2: Out-of-bounds read in compile_xclass_matchingpath in  │
+│                │                │          │                         │                  │ pcre2_jit_compile.c                                          │
+│                │                │          │                         │                  │ https://avd.aquasec.com/nvd/cve-2022-1586                    │
+│                ├────────────────┤          │                         ├──────────────────┼──────────────────────────────────────────────────────────────┤
+│                │ CVE-2022-1587  │          │                         │                  │ pcre2: Out-of-bounds read in get_recurse_data_length in      │
+│                │                │          │                         │                  │ pcre2_jit_compile.c                                          │
+│                │                │          │                         │                  │ https://avd.aquasec.com/nvd/cve-2022-1587                    │
+├────────────────┼────────────────┤          ├─────────────────────────┼──────────────────┼──────────────────────────────────────────────────────────────┤
+│ libpng16-16    │ CVE-2018-14048 │          │ 1.6.34-1ubuntu0.18.04.2 │                  │ libpng: Segmentation fault in png.c:png_free_data function   │
+│                │                │          │                         │                  │ causing denial of service                                    │
+│                │                │          │                         │                  │ https://avd.aquasec.com/nvd/cve-2018-14048                   │
+├────────────────┼────────────────┼──────────┼─────────────────────────┼──────────────────┼──────────────────────────────────────────────────────────────┤
+│ libstdc++6     │ CVE-2020-13844 │ MEDIUM   │ 8.4.0-1ubuntu1~18.04    │                  │ kernel: ARM straight-line speculation vulnerability          │
+│                │                │          │                         │                  │ https://avd.aquasec.com/nvd/cve-2020-13844                   │
+├────────────────┼────────────────┼──────────┼─────────────────────────┼──────────────────┼──────────────────────────────────────────────────────────────┤
+│ libtinfo5      │ CVE-2019-17594 │ LOW      │ 6.1-1ubuntu1.18.04      │                  │ ncurses: heap-based buffer overflow in the _nc_find_entry    │
+│                │                │          │                         │                  │ function in tinfo/comp_hash.c                                │
+│                │                │          │                         │                  │ https://avd.aquasec.com/nvd/cve-2019-17594                   │
+│                ├────────────────┤          │                         ├──────────────────┼──────────────────────────────────────────────────────────────┤
+│                │ CVE-2019-17595 │          │                         │                  │ ncurses: heap-based buffer overflow in the fmt_entry         │
+│                │                │          │                         │                  │ function in tinfo/comp_hash.c                                │
+│                │                │          │                         │                  │ https://avd.aquasec.com/nvd/cve-2019-17595                   │
+│                ├────────────────┤          │                         ├──────────────────┼──────────────────────────────────────────────────────────────┤
+│                │ CVE-2021-39537 │          │                         │                  │ ncurses: heap-based buffer overflow in _nc_captoinfo() in    │
+│                │                │          │                         │                  │ captoinfo.c                                                  │
+│                │                │          │                         │                  │ https://avd.aquasec.com/nvd/cve-2021-39537                   │
+├────────────────┼────────────────┼──────────┼─────────────────────────┼──────────────────┼──────────────────────────────────────────────────────────────┤
+│ libtinfo5      │ CVE-2022-29458 │ LOW      │ 6.1-1ubuntu1.18.04      │                  │ ncurses: segfaulting OOB read                                │
+│                │                │          │                         │                  │ https://avd.aquasec.com/nvd/cve-2022-29458                   │
+└────────────────┴────────────────┴──────────┴─────────────────────────┴──────────────────┴──────────────────────────────────────────────────────────────┘
+
+Java (jar)
+==========
+Total: 81 (UNKNOWN: 1, LOW: 3, MEDIUM: 19, HIGH: 31, CRITICAL: 27)
+
 ┌──────────────────────────────────────────────────────────────┬─────────────────────┬──────────┬───────────────────┬──────────────────────────────────┬──────────────────────────────────────────────────────────────┐
 │                           Library                            │    Vulnerability    │ Severity │ Installed Version │          Fixed Version           │                            Title                             │
+├──────────────────────────────────────────────────────────────┼─────────────────────┼──────────┼───────────────────┼──────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ com.amazonaws:aws-java-sdk-s3                                │ CVE-2022-31159      │ HIGH     │ 1.12.247          │ 1.12.261                         │ Partial Path Traversal in com.amazonaws:aws-java-sdk-s3      │
+│ (aws-java-sdk-bundle-1.12.247.jar)                           │                     │          │                   │                                  │ https://avd.aquasec.com/nvd/cve-2022-31159                   │
 ├──────────────────────────────────────────────────────────────┼─────────────────────┼──────────┼───────────────────┼──────────────────────────────────┼──────────────────────────────────────────────────────────────┤
 │ com.fasterxml.jackson.core:jackson-databind                  │ CVE-2017-15095      │ CRITICAL │ 2.4.0             │ 2.7.9.2, 2.8.10, 2.9.1           │ jackson-databind: Unsafe deserialization due to incomplete   │
 │ (htrace-core4-4.1.0-incubating.jar)                          │                     │          │                   │                                  │ black list (incomplete fix for CVE-2017-7525)...             │
@@ -125,6 +146,10 @@
 │ com.fasterxml.jackson.core:jackson-databind                  │ CVE-2018-5968       │ HIGH     │ 2.4.0             │ 2.7.9.5, 2.8.11.1, 2.9.4         │ jackson-databind: unsafe deserialization due to incomplete   │
 │ (htrace-core4-4.1.0-incubating.jar)                          │                     │          │                   │                                  │ blacklist (incomplete fix for CVE-2017-7525 and...           │
 │                                                              │                     │          │                   │                                  │ https://avd.aquasec.com/nvd/cve-2018-5968                    │
+│                                                              ├─────────────────────┤          │                   ├──────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                                                              │ CVE-2020-10650      │          │                   │ 2.9.10.4                         │ jackson-databind before 2.9.10.4 vulnerable to unsafe        │
+│                                                              │                     │          │                   │                                  │ deserialization                                              │
+│                                                              │                     │          │                   │                                  │ https://avd.aquasec.com/nvd/cve-2020-10650                   │
 ├──────────────────────────────────────────────────────────────┼─────────────────────┼──────────┼───────────────────┼──────────────────────────────────┼──────────────────────────────────────────────────────────────┤
 │ com.fasterxml.jackson.core:jackson-databind                  │ CVE-2020-35490      │ HIGH     │ 2.4.0             │ 2.9.10.8                         │ jackson-databind: mishandles the interaction between         │
 │ (htrace-core4-4.1.0-incubating.jar)                          │                     │          │                   │                                  │ serialization gadgets and typing, related to                 │
@@ -192,6 +217,10 @@
 │ (jackson-databind-2.6.7.3.jar)                               │                     │          │                   │                                  │ blacklist (incomplete fix for CVE-2017-7525 and...           │
 │                                                              │                     │          │                   │                                  │ https://avd.aquasec.com/nvd/cve-2018-5968                    │
 │                                                              ├─────────────────────┤          │                   ├──────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                                                              │ CVE-2020-10650      │          │                   │ 2.9.10.4                         │ jackson-databind before 2.9.10.4 vulnerable to unsafe        │
+│                                                              │                     │          │                   │                                  │ deserialization                                              │
+│                                                              │                     │          │                   │                                  │ https://avd.aquasec.com/nvd/cve-2020-10650                   │
+│                                                              ├─────────────────────┤          │                   ├──────────────────────────────────┼──────────────────────────────────────────────────────────────┤
 │                                                              │ CVE-2020-10673      │          │                   │ 2.6.7.4, 2.9.10.4                │ jackson-databind: mishandles the interaction between         │
 │                                                              │                     │          │                   │                                  │ serialization gadgets and typing which could result...       │
 │                                                              │                     │          │                   │                                  │ https://avd.aquasec.com/nvd/cve-2020-10673                   │
@@ -240,17 +269,14 @@
 │                                                              │                     │          │                   │                                  │ https://avd.aquasec.com/nvd/cve-2020-8908                    │
 ├──────────────────────────────────────────────────────────────┼─────────────────────┼──────────┼───────────────────┼──────────────────────────────────┼──────────────────────────────────────────────────────────────┤
 │ com.google.protobuf:protobuf-java                            │ CVE-2021-22569      │ MEDIUM   │ 2.5.0             │ 3.16.1, 3.18.2, 3.19.2           │ protobuf-java: potential DoS in the parsing procedure for    │
-│ (hive-exec-1.2.1.spark2.jar)                                 │                     │          │                   │                                  │ binary data                                                  │
+│ (orc-core-1.5.5-nohive.jar)                                  │                     │          │                   │                                  │ binary data                                                  │
 │                                                              │                     │          │                   │                                  │ https://avd.aquasec.com/nvd/cve-2021-22569                   │
 ├──────────────────────────────────────────────────────────────┼─────────────────────┼──────────┼───────────────────┼──────────────────────────────────┼──────────────────────────────────────────────────────────────┤
 │ com.google.protobuf:protobuf-java                            │ GHSA-wrvw-hg22-4m67 │ UNKNOWN  │ 2.5.0             │ 3.16.1, 3.18.2, 3.19.2           │ A potential Denial of Service issue in protobuf-java         │
-│ (hive-exec-1.2.1.spark2.jar)                                 │                     │          │                   │                                  │ https://github.com/advisories/GHSA-wrvw-hg22-4m67            │
+│ (orc-core-1.5.5-nohive.jar)                                  │                     │          │                   │                                  │ https://github.com/advisories/GHSA-wrvw-hg22-4m67            │
 ├──────────────────────────────────────────────────────────────┼─────────────────────┼──────────┼───────────────────┼──────────────────────────────────┼──────────────────────────────────────────────────────────────┤
 │ com.squareup.okhttp3:okhttp (okhttp-3.12.0.jar)              │ CVE-2018-20200      │ MEDIUM   │ 3.12.0            │ 3.12.1                           │ okhttp: certificate pinning bypass                           │
 │                                                              │                     │          │                   │                                  │ https://avd.aquasec.com/nvd/cve-2018-20200                   │
-├──────────────────────────────────────────────────────────────┼─────────────────────┤          ├───────────────────┼──────────────────────────────────┼──────────────────────────────────────────────────────────────┤
-│ com.squareup.okhttp:okhttp (okhttp-2.7.5.jar)                │ CVE-2016-2402       │          │ 2.7.5             │ 3.1.2                            │ Improper Certificate Validation in OkHttp                    │
-│                                                              │                     │          │                   │                                  │ https://avd.aquasec.com/nvd/cve-2016-2402                    │
 ├──────────────────────────────────────────────────────────────┼─────────────────────┼──────────┼───────────────────┼──────────────────────────────────┼──────────────────────────────────────────────────────────────┤
 │ commons-httpclient:commons-httpclient                        │ CVE-2012-5783       │ MEDIUM   │ 3.1               │                                  │ jakarta-commons-httpclient: missing connection hostname      │
 │ (commons-httpclient-3.1.jar)                                 │                     │          │                   │                                  │ check against X.509 certificate name                         │
@@ -375,7 +401,11 @@
 │ (jackson-mapper-asl-1.9.13.jar)                              │                     │          │                   │                                  │ CVE-2016-3720                                                │
 │                                                              │                     │          │                   │                                  │ https://avd.aquasec.com/nvd/cve-2019-10172                   │
 ├──────────────────────────────────────────────────────────────┼─────────────────────┼──────────┼───────────────────┼──────────────────────────────────┼──────────────────────────────────────────────────────────────┤
-│ org.eclipse.jetty:jetty-servlets (spark-core_2.11-2.4.8.jar) │ CVE-2021-28169      │ MEDIUM   │ 9.4.40.v20210413  │ 9.4.41.v20210516, 10.0.3, 11.0.3 │ jetty: requests to the ConcatServlet and WelcomeFilter are   │
+│ org.eclipse.jetty:jetty-http (spark-core_2.11-2.4.8.jar)     │ CVE-2022-2047       │ LOW      │ 9.4.40.v20210413  │ 11.0.10, 10.0.10, 9.4.47         │ In Eclipse Jetty versions 9.4.0 thru 9.4.46, and 10.0.0 thru │
+│                                                              │                     │          │                   │                                  │ 10.0.9, a...                                                 │
+│                                                              │                     │          │                   │                                  │ https://avd.aquasec.com/nvd/cve-2022-2047                    │
+├──────────────────────────────────────────────────────────────┼─────────────────────┼──────────┤                   ├──────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ org.eclipse.jetty:jetty-servlets (spark-core_2.11-2.4.8.jar) │ CVE-2021-28169      │ MEDIUM   │                   │ 9.4.41.v20210516, 10.0.3, 11.0.3 │ jetty: requests to the ConcatServlet and WelcomeFilter are   │
 │                                                              │                     │          │                   │                                  │ able to access protected...                                  │
 │                                                              │                     │          │                   │                                  │ https://avd.aquasec.com/nvd/cve-2021-28169                   │
 ├──────────────────────────────────────────────────────────────┼─────────────────────┼──────────┼───────────────────┼──────────────────────────────────┼──────────────────────────────────────────────────────────────┤
