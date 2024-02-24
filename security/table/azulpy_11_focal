@@ -1,58 +1,213 @@
-┌──────────────────────┬────────────────┬──────────┬────────────────────────┬───────────────┬──────────────────────────────────────────────────────────────┐
-│       Library        │ Vulnerability  │ Severity │   Installed Version    │ Fixed Version │                            Title                             │
-├──────────────────────┼────────────────┼──────────┼────────────────────────┼───────────────┼──────────────────────────────────────────────────────────────┤
-│ libc6                │ CVE-2016-20013 │ LOW      │ 2.31-0ubuntu9.9        │               │ sha256crypt and sha512crypt through 0.6 allow attackers to   │
-│                      │                │          │                        │               │ cause a denial of...                                         │
-│                      │                │          │                        │               │ https://avd.aquasec.com/nvd/cve-2016-20013                   │
-├──────────────────────┼────────────────┼──────────┼────────────────────────┼───────────────┼──────────────────────────────────────────────────────────────┤
-│ libfreetype6         │ CVE-2022-27404 │ MEDIUM   │ 2.10.1-2ubuntu0.1      │               │ FreeType: Buffer Overflow                                    │
-│                      │                │          │                        │               │ https://avd.aquasec.com/nvd/cve-2022-27404                   │
-│                      ├────────────────┼──────────┤                        ├───────────────┼──────────────────────────────────────────────────────────────┤
-│                      │ CVE-2022-27405 │ LOW      │                        │               │ FreeType: Segementation Fault                                │
-│                      │                │          │                        │               │ https://avd.aquasec.com/nvd/cve-2022-27405                   │
-│                      ├────────────────┤          │                        ├───────────────┼──────────────────────────────────────────────────────────────┤
-│                      │ CVE-2022-27406 │          │                        │               │ Freetype: Segmentation violation                             │
-│                      │                │          │                        │               │ https://avd.aquasec.com/nvd/cve-2022-27406                   │
-├──────────────────────┼────────────────┼──────────┼────────────────────────┼───────────────┼──────────────────────────────────────────────────────────────┤
-│ libjpeg-turbo8       │ CVE-2021-46822 │ MEDIUM   │ 2.0.3-0ubuntu1.20.04.1 │               │ libjpeg-turbo: heap buffer overflow in get_word_rgb_row() in │
-│                      │                │          │                        │               │ rdppm.c                                                      │
-│                      │                │          │                        │               │ https://avd.aquasec.com/nvd/cve-2021-46822                   │
-│                      ├────────────────┼──────────┤                        ├───────────────┼──────────────────────────────────────────────────────────────┤
-│                      │ CVE-2020-17541 │ LOW      │                        │               │ libjpeg-turbo: Stack-based buffer overflow in the            │
-│                      │                │          │                        │               │ "transform" component                                        │
-│                      │                │          │                        │               │ https://avd.aquasec.com/nvd/cve-2020-17541                   │
-├──────────────────────┼────────────────┤          ├────────────────────────┼───────────────┼──────────────────────────────────────────────────────────────┤
-│ libncursesw6         │ CVE-2021-39537 │          │ 6.2-0ubuntu2           │               │ ncurses: heap-based buffer overflow in _nc_captoinfo() in    │
-│                      │                │          │                        │               │ captoinfo.c                                                  │
-│                      │                │          │                        │               │ https://avd.aquasec.com/nvd/cve-2021-39537                   │
-├──────────────────────┼────────────────┼──────────┼────────────────────────┼───────────────┼──────────────────────────────────────────────────────────────┤
-│ libncursesw6         │ CVE-2022-29458 │ LOW      │ 6.2-0ubuntu2           │               │ ncurses: segfaulting OOB read                                │
-│                      │                │          │                        │               │ https://avd.aquasec.com/nvd/cve-2022-29458                   │
-├──────────────────────┼────────────────┼──────────┼────────────────────────┼───────────────┼──────────────────────────────────────────────────────────────┤
-│ libpython3.9-minimal │ CVE-2021-4189  │ MEDIUM   │ 3.9.5-3ubuntu0~20.04.1 │               │ python: ftplib should not use the host from the PASV         │
-│                      │                │          │                        │               │ response                                                     │
-│                      │                │          │                        │               │ https://avd.aquasec.com/nvd/cve-2021-4189                    │
-│                      ├────────────────┼──────────┤                        ├───────────────┼──────────────────────────────────────────────────────────────┤
-│                      │ CVE-2015-20107 │ LOW      │                        │               │ python(mailcap): findmatch() function does not sanitise the  │
-│                      │                │          │                        │               │ second argument                                              │
-│                      │                │          │                        │               │ https://avd.aquasec.com/nvd/cve-2015-20107                   │
-├──────────────────────┼────────────────┼──────────┼────────────────────────┼───────────────┼──────────────────────────────────────────────────────────────┤
-│ libsqlite3-0         │ CVE-2020-9794  │ MEDIUM   │ 3.31.1-4ubuntu0.3      │               │ An out-of-bounds read was addressed with improved bounds     │
-│                      │                │          │                        │               │ checking. This issue is...                                   │
-│                      │                │          │                        │               │ https://avd.aquasec.com/nvd/cve-2020-9794                    │
-│                      ├────────────────┼──────────┤                        ├───────────────┼──────────────────────────────────────────────────────────────┤
-│                      │ CVE-2020-9849  │ LOW      │                        │               │ An information disclosure issue was addressed with improved  │
-│                      │                │          │                        │               │ state management. This issue...                              │
-│                      │                │          │                        │               │ https://avd.aquasec.com/nvd/cve-2020-9849                    │
-│                      ├────────────────┤          │                        ├───────────────┼──────────────────────────────────────────────────────────────┤
-│                      │ CVE-2020-9991  │          │                        │               │ This issue was addressed with improved checks. This issue is │
-│                      │                │          │                        │               │ fixed in...                                                  │
-│                      │                │          │                        │               │ https://avd.aquasec.com/nvd/cve-2020-9991                    │
-├──────────────────────┼────────────────┤          ├────────────────────────┼───────────────┼──────────────────────────────────────────────────────────────┤
-│ libtinfo6            │ CVE-2021-39537 │          │ 6.2-0ubuntu2           │               │ ncurses: heap-based buffer overflow in _nc_captoinfo() in    │
-│                      │                │          │                        │               │ captoinfo.c                                                  │
-│                      │                │          │                        │               │ https://avd.aquasec.com/nvd/cve-2021-39537                   │
-├──────────────────────┼────────────────┼──────────┼────────────────────────┼───────────────┼──────────────────────────────────────────────────────────────┤
-│ libtinfo6            │ CVE-2022-29458 │ LOW      │ 6.2-0ubuntu2           │               │ ncurses: segfaulting OOB read                                │
-│                      │                │          │                        │               │ https://avd.aquasec.com/nvd/cve-2022-29458                   │
-└──────────────────────┴────────────────┴──────────┴────────────────────────┴───────────────┴──────────────────────────────────────────────────────────────┘
+
+yadist/azulpy:11_focal (ubuntu 20.04)
+=====================================
+Total: 60 (UNKNOWN: 0, LOW: 31, MEDIUM: 26, HIGH: 3, CRITICAL: 0)
+
+┌──────────────────────┬────────────────┬──────────┬──────────┬──────────────────────────┬──────────────────────────┬──────────────────────────────────────────────────────────────┐
+│       Library        │ Vulnerability  │ Severity │  Status  │    Installed Version     │      Fixed Version       │                            Title                             │
+├──────────────────────┼────────────────┼──────────┼──────────┼──────────────────────────┼──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ libc6                │ CVE-2016-20013 │ LOW      │ affected │ 2.31-0ubuntu9.9          │                          │ sha256crypt and sha512crypt through 0.6 allow attackers to   │
+│                      │                │          │          │                          │                          │ cause a denial of...                                         │
+│                      │                │          │          │                          │                          │ https://avd.aquasec.com/nvd/cve-2016-20013                   │
+│                      ├────────────────┤          ├──────────┤                          ├──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-4806  │          │ fixed    │                          │ 2.31-0ubuntu9.14         │ glibc: potential use-after-free in getaddrinfo()             │
+│                      │                │          │          │                          │                          │ https://avd.aquasec.com/nvd/cve-2023-4806                    │
+│                      ├────────────────┤          │          │                          │                          ├──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-4813  │          │          │                          │                          │ glibc: potential use-after-free in gaih_inet()               │
+│                      │                │          │          │                          │                          │ https://avd.aquasec.com/nvd/cve-2023-4813                    │
+├──────────────────────┼────────────────┼──────────┤          ├──────────────────────────┼──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ libexpat1            │ CVE-2022-40674 │ MEDIUM   │          │ 2.2.9-1ubuntu0.4         │ 2.2.9-1ubuntu0.5         │ expat: a use-after-free in the doContent function in         │
+│                      │                │          │          │                          │                          │ xmlparse.c                                                   │
+│                      │                │          │          │                          │                          │ https://avd.aquasec.com/nvd/cve-2022-40674                   │
+│                      ├────────────────┤          │          │                          ├──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2022-43680 │          │          │                          │ 2.2.9-1ubuntu0.6         │ expat: use-after free caused by overeager destruction of a   │
+│                      │                │          │          │                          │                          │ shared DTD in...                                             │
+│                      │                │          │          │                          │                          │ https://avd.aquasec.com/nvd/cve-2022-43680                   │
+│                      ├────────────────┤          ├──────────┤                          ├──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-52426 │          │ affected │                          │                          │ expat: recursive XML entity expansion vulnerability          │
+│                      │                │          │          │                          │                          │ https://avd.aquasec.com/nvd/cve-2023-52426                   │
+├──────────────────────┼────────────────┤          ├──────────┼──────────────────────────┼──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ libfreetype6         │ CVE-2022-27404 │          │ fixed    │ 2.10.1-2ubuntu0.1        │ 2.10.1-2ubuntu0.2        │ FreeType: Buffer overflow in sfnt_init_face                  │
+│                      │                │          │          │                          │                          │ https://avd.aquasec.com/nvd/cve-2022-27404                   │
+│                      ├────────────────┤          │          │                          │                          ├──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2022-31782 │          │          │                          │                          │ ftbench.c in FreeType Demo Programs through 2.12.1 has a     │
+│                      │                │          │          │                          │                          │ heap-based bu ......                                         │
+│                      │                │          │          │                          │                          │ https://avd.aquasec.com/nvd/cve-2022-31782                   │
+│                      ├────────────────┼──────────┤          │                          │                          ├──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2022-27405 │ LOW      │          │                          │                          │ FreeType: Segmentation violation via FNT_Size_Request        │
+│                      │                │          │          │                          │                          │ https://avd.aquasec.com/nvd/cve-2022-27405                   │
+│                      ├────────────────┤          │          │                          │                          ├──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2022-27406 │          │          │                          │                          │ Freetype: Segmentation violation via FT_Request_Size         │
+│                      │                │          │          │                          │                          │ https://avd.aquasec.com/nvd/cve-2022-27406                   │
+├──────────────────────┼────────────────┼──────────┤          ├──────────────────────────┼──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ libjpeg-turbo8       │ CVE-2020-35538 │ MEDIUM   │          │ 2.0.3-0ubuntu1.20.04.1   │ 2.0.3-0ubuntu1.20.04.3   │ libjpeg-turbo: Null pointer dereference in                   │
+│                      │                │          │          │                          │                          │ jcopy_sample_rows() function                                 │
+│                      │                │          │          │                          │                          │ https://avd.aquasec.com/nvd/cve-2020-35538                   │
+│                      ├────────────────┼──────────┤          │                          │                          ├──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2020-17541 │ LOW      │          │                          │                          │ Stack-based buffer overflow in the "transform" component     │
+│                      │                │          │          │                          │                          │ https://avd.aquasec.com/nvd/cve-2020-17541                   │
+│                      ├────────────────┤          │          │                          │                          ├──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2021-46822 │          │          │                          │                          │ libjpeg-turbo: heap buffer overflow in get_word_rgb_row() in │
+│                      │                │          │          │                          │                          │ rdppm.c                                                      │
+│                      │                │          │          │                          │                          │ https://avd.aquasec.com/nvd/cve-2021-46822                   │
+├──────────────────────┼────────────────┼──────────┼──────────┼──────────────────────────┼──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ liblzma5             │ CVE-2020-22916 │ MEDIUM   │ affected │ 5.2.4-1ubuntu1.1         │                          │ Denial of service via decompression of crafted file          │
+│                      │                │          │          │                          │                          │ https://avd.aquasec.com/nvd/cve-2020-22916                   │
+├──────────────────────┼────────────────┤          ├──────────┼──────────────────────────┼──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ libncursesw6         │ CVE-2023-29491 │          │ fixed    │ 6.2-0ubuntu2             │ 6.2-0ubuntu2.1           │ ncurses: Local users can trigger security-relevant memory    │
+│                      │                │          │          │                          │                          │ corruption via malformed data                                │
+│                      │                │          │          │                          │                          │ https://avd.aquasec.com/nvd/cve-2023-29491                   │
+│                      ├────────────────┼──────────┤          │                          │                          ├──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2021-39537 │ LOW      │          │                          │                          │ ncurses: heap-based buffer overflow in _nc_captoinfo() in    │
+│                      │                │          │          │                          │                          │ captoinfo.c                                                  │
+│                      │                │          │          │                          │                          │ https://avd.aquasec.com/nvd/cve-2021-39537                   │
+│                      ├────────────────┤          │          │                          │                          ├──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2022-29458 │          │          │                          │                          │ segfaulting OOB read                                         │
+│                      │                │          │          │                          │                          │ https://avd.aquasec.com/nvd/cve-2022-29458                   │
+│                      ├────────────────┤          ├──────────┤                          ├──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-45918 │          │ affected │                          │                          │ ncurses 6.4-20230610 has a NULL pointer dereference in       │
+│                      │                │          │          │                          │                          │ tgetstr in tinf ......                                       │
+│                      │                │          │          │                          │                          │ https://avd.aquasec.com/nvd/cve-2023-45918                   │
+│                      ├────────────────┤          │          │                          ├──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-50495 │          │          │                          │                          │ ncurses: segmentation fault via _nc_wrap_entry()             │
+│                      │                │          │          │                          │                          │ https://avd.aquasec.com/nvd/cve-2023-50495                   │
+├──────────────────────┼────────────────┤          │          ├──────────────────────────┼──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ libpng16-16          │ CVE-2022-3857  │          │          │ 1.6.37-2                 │                          │ Null pointer dereference leads to segmentation fault         │
+│                      │                │          │          │                          │                          │ https://avd.aquasec.com/nvd/cve-2022-3857                    │
+├──────────────────────┼────────────────┼──────────┤          ├──────────────────────────┼──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ libpython3.9-minimal │ CVE-2022-42919 │ HIGH     │          │ 3.9.5-3ubuntu0~20.04.1   │                          │ local privilege escalation via the multiprocessing           │
+│                      │                │          │          │                          │                          │ forkserver start method                                      │
+│                      │                │          │          │                          │                          │ https://avd.aquasec.com/nvd/cve-2022-42919                   │
+│                      ├────────────────┼──────────┤          │                          ├──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2022-37454 │ MEDIUM   │          │                          │                          │ XKCP: buffer overflow in the SHA-3 reference implementation  │
+│                      │                │          │          │                          │                          │ https://avd.aquasec.com/nvd/cve-2022-37454                   │
+│                      ├────────────────┤          │          │                          ├──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2022-45061 │          │          │                          │                          │ python: CPU denial of service via inefficient IDNA decoder   │
+│                      │                │          │          │                          │                          │ https://avd.aquasec.com/nvd/cve-2022-45061                   │
+│                      ├────────────────┤          │          │                          ├──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-24329 │          │          │                          │                          │ python: urllib.parse url blocklisting bypass                 │
+│                      │                │          │          │                          │                          │ https://avd.aquasec.com/nvd/cve-2023-24329                   │
+│                      ├────────────────┤          │          │                          ├──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-27043 │          │          │                          │                          │ python: Parsing errors in email/_parseaddr.py lead to        │
+│                      │                │          │          │                          │                          │ incorrect value in email address...                          │
+│                      │                │          │          │                          │                          │ https://avd.aquasec.com/nvd/cve-2023-27043                   │
+│                      ├────────────────┼──────────┤          │                          ├──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2015-20107 │ LOW      │          │                          │                          │ python: mailcap: findmatch() function does not sanitize the  │
+│                      │                │          │          │                          │                          │ second argument                                              │
+│                      │                │          │          │                          │                          │ https://avd.aquasec.com/nvd/cve-2015-20107                   │
+├──────────────────────┼────────────────┼──────────┼──────────┼──────────────────────────┼──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ libsqlite3-0         │ CVE-2020-35525 │ MEDIUM   │ fixed    │ 3.31.1-4ubuntu0.3        │ 3.31.1-4ubuntu0.4        │ sqlite: Null pointer derreference in src/select.c            │
+│                      │                │          │          │                          │                          │ https://avd.aquasec.com/nvd/cve-2020-35525                   │
+│                      ├────────────────┤          │          │                          │                          ├──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2020-35527 │          │          │                          │                          │ sqlite: Out of bounds access during table rename             │
+│                      │                │          │          │                          │                          │ https://avd.aquasec.com/nvd/cve-2020-35527                   │
+│                      ├────────────────┤          │          │                          ├──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2022-35737 │          │          │                          │ 3.31.1-4ubuntu0.5        │ sqlite: an array-bounds overflow if billions of bytes are    │
+│                      │                │          │          │                          │                          │ used in a...                                                 │
+│                      │                │          │          │                          │                          │ https://avd.aquasec.com/nvd/cve-2022-35737                   │
+│                      ├────────────────┤          │          │                          ├──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-7104  │          │          │                          │ 3.31.1-4ubuntu0.6        │ sqlite: heap-buffer-overflow at sessionfuzz                  │
+│                      │                │          │          │                          │                          │ https://avd.aquasec.com/nvd/cve-2023-7104                    │
+├──────────────────────┼────────────────┼──────────┤          ├──────────────────────────┼──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ libssl1.1            │ CVE-2023-0286  │ HIGH     │          │ 1.1.1f-1ubuntu2.16       │ 1.1.1f-1ubuntu2.17       │ openssl: X.400 address type confusion in X.509 GeneralName   │
+│                      │                │          │          │                          │                          │ https://avd.aquasec.com/nvd/cve-2023-0286                    │
+│                      ├────────────────┼──────────┤          │                          │                          ├──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2022-4304  │ MEDIUM   │          │                          │                          │ openssl: timing attack in RSA Decryption implementation      │
+│                      │                │          │          │                          │                          │ https://avd.aquasec.com/nvd/cve-2022-4304                    │
+│                      ├────────────────┤          │          │                          │                          ├──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2022-4450  │          │          │                          │                          │ openssl: double free after calling PEM_read_bio_ex           │
+│                      │                │          │          │                          │                          │ https://avd.aquasec.com/nvd/cve-2022-4450                    │
+│                      ├────────────────┤          │          │                          │                          ├──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-0215  │          │          │                          │                          │ openssl: use-after-free following BIO_new_NDEF               │
+│                      │                │          │          │                          │                          │ https://avd.aquasec.com/nvd/cve-2023-0215                    │
+│                      ├────────────────┤          │          │                          ├──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-2650  │          │          │                          │ 1.1.1f-1ubuntu2.19       │ openssl: Possible DoS translating ASN.1 object identifiers   │
+│                      │                │          │          │                          │                          │ https://avd.aquasec.com/nvd/cve-2023-2650                    │
+│                      ├────────────────┼──────────┤          │                          ├──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-0464  │ LOW      │          │                          │ 1.1.1f-1ubuntu2.18       │ openssl: Denial of service by excessive resource usage in    │
+│                      │                │          │          │                          │                          │ verifying X509 policy...                                     │
+│                      │                │          │          │                          │                          │ https://avd.aquasec.com/nvd/cve-2023-0464                    │
+│                      ├────────────────┤          │          │                          │                          ├──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-0465  │          │          │                          │                          │ openssl: Invalid certificate policies in leaf certificates   │
+│                      │                │          │          │                          │                          │ are silently ignored                                         │
+│                      │                │          │          │                          │                          │ https://avd.aquasec.com/nvd/cve-2023-0465                    │
+│                      ├────────────────┤          │          │                          │                          ├──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-0466  │          │          │                          │                          │ openssl: Certificate policy check not enabled                │
+│                      │                │          │          │                          │                          │ https://avd.aquasec.com/nvd/cve-2023-0466                    │
+│                      ├────────────────┤          │          │                          ├──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-3446  │          │          │                          │ 1.1.1f-1ubuntu2.20       │ openssl: Excessive time spent checking DH keys and           │
+│                      │                │          │          │                          │                          │ parameters                                                   │
+│                      │                │          │          │                          │                          │ https://avd.aquasec.com/nvd/cve-2023-3446                    │
+│                      ├────────────────┤          │          │                          │                          ├──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-3817  │          │          │                          │                          │ OpenSSL: Excessive time spent checking DH q parameter value  │
+│                      │                │          │          │                          │                          │ https://avd.aquasec.com/nvd/cve-2023-3817                    │
+│                      ├────────────────┤          │          │                          ├──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-5678  │          │          │                          │ 1.1.1f-1ubuntu2.21       │ openssl: Generating excessively long X9.42 DH keys or        │
+│                      │                │          │          │                          │                          │ checking excessively long X9.42...                           │
+│                      │                │          │          │                          │                          │ https://avd.aquasec.com/nvd/cve-2023-5678                    │
+│                      ├────────────────┤          │          │                          │                          ├──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2024-0727  │          │          │                          │                          │ openssl: denial of service via null dereference              │
+│                      │                │          │          │                          │                          │ https://avd.aquasec.com/nvd/cve-2024-0727                    │
+├──────────────────────┼────────────────┼──────────┤          ├──────────────────────────┼──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ libtinfo6            │ CVE-2023-29491 │ MEDIUM   │          │ 6.2-0ubuntu2             │ 6.2-0ubuntu2.1           │ ncurses: Local users can trigger security-relevant memory    │
+│                      │                │          │          │                          │                          │ corruption via malformed data                                │
+│                      │                │          │          │                          │                          │ https://avd.aquasec.com/nvd/cve-2023-29491                   │
+│                      ├────────────────┼──────────┤          │                          │                          ├──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2021-39537 │ LOW      │          │                          │                          │ ncurses: heap-based buffer overflow in _nc_captoinfo() in    │
+│                      │                │          │          │                          │                          │ captoinfo.c                                                  │
+│                      │                │          │          │                          │                          │ https://avd.aquasec.com/nvd/cve-2021-39537                   │
+│                      ├────────────────┤          │          │                          │                          ├──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2022-29458 │          │          │                          │                          │ segfaulting OOB read                                         │
+│                      │                │          │          │                          │                          │ https://avd.aquasec.com/nvd/cve-2022-29458                   │
+│                      ├────────────────┤          ├──────────┤                          ├──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-45918 │          │ affected │                          │                          │ ncurses 6.4-20230610 has a NULL pointer dereference in       │
+│                      │                │          │          │                          │                          │ tgetstr in tinf ......                                       │
+│                      │                │          │          │                          │                          │ https://avd.aquasec.com/nvd/cve-2023-45918                   │
+│                      ├────────────────┤          │          │                          ├──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-50495 │          │          │                          │                          │ ncurses: segmentation fault via _nc_wrap_entry()             │
+│                      │                │          │          │                          │                          │ https://avd.aquasec.com/nvd/cve-2023-50495                   │
+├──────────────────────┼────────────────┼──────────┼──────────┼──────────────────────────┼──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ openssl              │ CVE-2023-0286  │ HIGH     │ fixed    │ 1.1.1f-1ubuntu2.16       │ 1.1.1f-1ubuntu2.17       │ openssl: X.400 address type confusion in X.509 GeneralName   │
+│                      │                │          │          │                          │                          │ https://avd.aquasec.com/nvd/cve-2023-0286                    │
+│                      ├────────────────┼──────────┤          │                          │                          ├──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2022-4304  │ MEDIUM   │          │                          │                          │ openssl: timing attack in RSA Decryption implementation      │
+│                      │                │          │          │                          │                          │ https://avd.aquasec.com/nvd/cve-2022-4304                    │
+│                      ├────────────────┤          │          │                          │                          ├──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2022-4450  │          │          │                          │                          │ openssl: double free after calling PEM_read_bio_ex           │
+│                      │                │          │          │                          │                          │ https://avd.aquasec.com/nvd/cve-2022-4450                    │
+│                      ├────────────────┤          │          │                          │                          ├──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-0215  │          │          │                          │                          │ openssl: use-after-free following BIO_new_NDEF               │
+│                      │                │          │          │                          │                          │ https://avd.aquasec.com/nvd/cve-2023-0215                    │
+│                      ├────────────────┤          │          │                          ├──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-2650  │          │          │                          │ 1.1.1f-1ubuntu2.19       │ openssl: Possible DoS translating ASN.1 object identifiers   │
+│                      │                │          │          │                          │                          │ https://avd.aquasec.com/nvd/cve-2023-2650                    │
+│                      ├────────────────┼──────────┤          │                          ├──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-0464  │ LOW      │          │                          │ 1.1.1f-1ubuntu2.18       │ openssl: Denial of service by excessive resource usage in    │
+│                      │                │          │          │                          │                          │ verifying X509 policy...                                     │
+│                      │                │          │          │                          │                          │ https://avd.aquasec.com/nvd/cve-2023-0464                    │
+│                      ├────────────────┤          │          │                          │                          ├──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-0465  │          │          │                          │                          │ openssl: Invalid certificate policies in leaf certificates   │
+│                      │                │          │          │                          │                          │ are silently ignored                                         │
+│                      │                │          │          │                          │                          │ https://avd.aquasec.com/nvd/cve-2023-0465                    │
+│                      ├────────────────┤          │          │                          │                          ├──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-0466  │          │          │                          │                          │ openssl: Certificate policy check not enabled                │
+│                      │                │          │          │                          │                          │ https://avd.aquasec.com/nvd/cve-2023-0466                    │
+│                      ├────────────────┤          │          │                          ├──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-3446  │          │          │                          │ 1.1.1f-1ubuntu2.20       │ openssl: Excessive time spent checking DH keys and           │
+│                      │                │          │          │                          │                          │ parameters                                                   │
+│                      │                │          │          │                          │                          │ https://avd.aquasec.com/nvd/cve-2023-3446                    │
+│                      ├────────────────┤          │          │                          │                          ├──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-3817  │          │          │                          │                          │ OpenSSL: Excessive time spent checking DH q parameter value  │
+│                      │                │          │          │                          │                          │ https://avd.aquasec.com/nvd/cve-2023-3817                    │
+│                      ├────────────────┤          │          │                          ├──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2023-5678  │          │          │                          │ 1.1.1f-1ubuntu2.21       │ openssl: Generating excessively long X9.42 DH keys or        │
+│                      │                │          │          │                          │                          │ checking excessively long X9.42...                           │
+│                      │                │          │          │                          │                          │ https://avd.aquasec.com/nvd/cve-2023-5678                    │
+│                      ├────────────────┤          │          │                          │                          ├──────────────────────────────────────────────────────────────┤
+│                      │ CVE-2024-0727  │          │          │                          │                          │ openssl: denial of service via null dereference              │
+│                      │                │          │          │                          │                          │ https://avd.aquasec.com/nvd/cve-2024-0727                    │
+├──────────────────────┼────────────────┼──────────┤          ├──────────────────────────┼──────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ zlib1g               │ CVE-2022-37434 │ MEDIUM   │          │ 1:1.2.11.dfsg-2ubuntu1.3 │ 1:1.2.11.dfsg-2ubuntu1.5 │ zlib: heap-based buffer over-read and overflow in inflate()  │
+│                      │                │          │          │                          │                          │ in inflate.c via a...                                        │
+│                      │                │          │          │                          │                          │ https://avd.aquasec.com/nvd/cve-2022-37434                   │
+└──────────────────────┴────────────────┴──────────┴──────────┴──────────────────────────┴──────────────────────────┴──────────────────────────────────────────────────────────────┘
