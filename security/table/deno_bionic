@@ -1,23 +1,60 @@
-┌────────────┬────────────────┬──────────┬──────────────────────┬───────────────┬────────────────────────────────────────────────────────────┐
-│  Library   │ Vulnerability  │ Severity │  Installed Version   │ Fixed Version │                           Title                            │
-├────────────┼────────────────┼──────────┼──────────────────────┼───────────────┼────────────────────────────────────────────────────────────┤
-│ libc6      │ CVE-2009-5155  │ LOW      │ 2.27-3ubuntu1.6      │               │ glibc: parse_reg_exp in posix/regcomp.c misparses          │
-│            │                │          │                      │               │ alternatives leading to denial of service or...            │
-│            │                │          │                      │               │ https://avd.aquasec.com/nvd/cve-2009-5155                  │
-├────────────┼────────────────┼──────────┼──────────────────────┼───────────────┼────────────────────────────────────────────────────────────┤
-│ libc6      │ CVE-2015-8985  │ LOW      │ 2.27-3ubuntu1.6      │               │ glibc: potential denial of service in pop_fail_stack()     │
-│            │                │          │                      │               │ https://avd.aquasec.com/nvd/cve-2015-8985                  │
-├────────────┼────────────────┼──────────┼──────────────────────┼───────────────┼────────────────────────────────────────────────────────────┤
-│ libc6      │ CVE-2016-20013 │ LOW      │ 2.27-3ubuntu1.6      │               │ sha256crypt and sha512crypt through 0.6 allow attackers to │
-│            │                │          │                      │               │ cause a denial of...                                       │
-│            │                │          │                      │               │ https://avd.aquasec.com/nvd/cve-2016-20013                 │
-├────────────┼────────────────┼──────────┼──────────────────────┼───────────────┼────────────────────────────────────────────────────────────┤
-│ libgcc1    │ CVE-2020-13844 │ MEDIUM   │ 8.4.0-1ubuntu1~18.04 │               │ kernel: ARM straight-line speculation vulnerability        │
-│            │                │          │                      │               │ https://avd.aquasec.com/nvd/cve-2020-13844                 │
-├────────────┤                │          │                      ├───────────────┤                                                            │
-│ libgomp1   │                │          │                      │               │                                                            │
-│            │                │          │                      │               │                                                            │
-├────────────┤                │          │                      ├───────────────┤                                                            │
-│ libstdc++6 │                │          │                      │               │                                                            │
-│            │                │          │                      │               │                                                            │
-└────────────┴────────────────┴──────────┴──────────────────────┴───────────────┴────────────────────────────────────────────────────────────┘
+
+yadist/deno:bionic (ubuntu 18.04)
+=================================
+Total: 16 (UNKNOWN: 0, LOW: 6, MEDIUM: 8, HIGH: 2, CRITICAL: 0)
+
+┌───────────┬───────────────┬──────────┬────────┬───────────────────────────┬───────────────────────────┬────────────────────────────────────────────────────────────┐
+│  Library  │ Vulnerability │ Severity │ Status │     Installed Version     │       Fixed Version       │                           Title                            │
+├───────────┼───────────────┼──────────┼────────┼───────────────────────────┼───────────────────────────┼────────────────────────────────────────────────────────────┤
+│ libssl1.1 │ CVE-2023-0286 │ HIGH     │ fixed  │ 1.1.1-1ubuntu2.1~18.04.20 │ 1.1.1-1ubuntu2.1~18.04.21 │ openssl: X.400 address type confusion in X.509 GeneralName │
+│           │               │          │        │                           │                           │ https://avd.aquasec.com/nvd/cve-2023-0286                  │
+│           ├───────────────┼──────────┤        │                           │                           ├────────────────────────────────────────────────────────────┤
+│           │ CVE-2022-4304 │ MEDIUM   │        │                           │                           │ openssl: timing attack in RSA Decryption implementation    │
+│           │               │          │        │                           │                           │ https://avd.aquasec.com/nvd/cve-2022-4304                  │
+│           ├───────────────┤          │        │                           │                           ├────────────────────────────────────────────────────────────┤
+│           │ CVE-2022-4450 │          │        │                           │                           │ openssl: double free after calling PEM_read_bio_ex         │
+│           │               │          │        │                           │                           │ https://avd.aquasec.com/nvd/cve-2022-4450                  │
+│           ├───────────────┤          │        │                           │                           ├────────────────────────────────────────────────────────────┤
+│           │ CVE-2023-0215 │          │        │                           │                           │ openssl: use-after-free following BIO_new_NDEF             │
+│           │               │          │        │                           │                           │ https://avd.aquasec.com/nvd/cve-2023-0215                  │
+│           ├───────────────┤          │        │                           ├───────────────────────────┼────────────────────────────────────────────────────────────┤
+│           │ CVE-2023-2650 │          │        │                           │ 1.1.1-1ubuntu2.1~18.04.23 │ openssl: Possible DoS translating ASN.1 object identifiers │
+│           │               │          │        │                           │                           │ https://avd.aquasec.com/nvd/cve-2023-2650                  │
+│           ├───────────────┼──────────┤        │                           ├───────────────────────────┼────────────────────────────────────────────────────────────┤
+│           │ CVE-2023-0464 │ LOW      │        │                           │ 1.1.1-1ubuntu2.1~18.04.22 │ openssl: Denial of service by excessive resource usage in  │
+│           │               │          │        │                           │                           │ verifying X509 policy...                                   │
+│           │               │          │        │                           │                           │ https://avd.aquasec.com/nvd/cve-2023-0464                  │
+│           ├───────────────┤          │        │                           │                           ├────────────────────────────────────────────────────────────┤
+│           │ CVE-2023-0465 │          │        │                           │                           │ openssl: Invalid certificate policies in leaf certificates │
+│           │               │          │        │                           │                           │ are silently ignored                                       │
+│           │               │          │        │                           │                           │ https://avd.aquasec.com/nvd/cve-2023-0465                  │
+│           ├───────────────┤          │        │                           │                           ├────────────────────────────────────────────────────────────┤
+│           │ CVE-2023-0466 │          │        │                           │                           │ openssl: Certificate policy check not enabled              │
+│           │               │          │        │                           │                           │ https://avd.aquasec.com/nvd/cve-2023-0466                  │
+├───────────┼───────────────┼──────────┤        │                           ├───────────────────────────┼────────────────────────────────────────────────────────────┤
+│ openssl   │ CVE-2023-0286 │ HIGH     │        │                           │ 1.1.1-1ubuntu2.1~18.04.21 │ openssl: X.400 address type confusion in X.509 GeneralName │
+│           │               │          │        │                           │                           │ https://avd.aquasec.com/nvd/cve-2023-0286                  │
+│           ├───────────────┼──────────┤        │                           │                           ├────────────────────────────────────────────────────────────┤
+│           │ CVE-2022-4304 │ MEDIUM   │        │                           │                           │ openssl: timing attack in RSA Decryption implementation    │
+│           │               │          │        │                           │                           │ https://avd.aquasec.com/nvd/cve-2022-4304                  │
+│           ├───────────────┤          │        │                           │                           ├────────────────────────────────────────────────────────────┤
+│           │ CVE-2022-4450 │          │        │                           │                           │ openssl: double free after calling PEM_read_bio_ex         │
+│           │               │          │        │                           │                           │ https://avd.aquasec.com/nvd/cve-2022-4450                  │
+│           ├───────────────┤          │        │                           │                           ├────────────────────────────────────────────────────────────┤
+│           │ CVE-2023-0215 │          │        │                           │                           │ openssl: use-after-free following BIO_new_NDEF             │
+│           │               │          │        │                           │                           │ https://avd.aquasec.com/nvd/cve-2023-0215                  │
+│           ├───────────────┤          │        │                           ├───────────────────────────┼────────────────────────────────────────────────────────────┤
+│           │ CVE-2023-2650 │          │        │                           │ 1.1.1-1ubuntu2.1~18.04.23 │ openssl: Possible DoS translating ASN.1 object identifiers │
+│           │               │          │        │                           │                           │ https://avd.aquasec.com/nvd/cve-2023-2650                  │
+│           ├───────────────┼──────────┤        │                           ├───────────────────────────┼────────────────────────────────────────────────────────────┤
+│           │ CVE-2023-0464 │ LOW      │        │                           │ 1.1.1-1ubuntu2.1~18.04.22 │ openssl: Denial of service by excessive resource usage in  │
+│           │               │          │        │                           │                           │ verifying X509 policy...                                   │
+│           │               │          │        │                           │                           │ https://avd.aquasec.com/nvd/cve-2023-0464                  │
+│           ├───────────────┤          │        │                           │                           ├────────────────────────────────────────────────────────────┤
+│           │ CVE-2023-0465 │          │        │                           │                           │ openssl: Invalid certificate policies in leaf certificates │
+│           │               │          │        │                           │                           │ are silently ignored                                       │
+│           │               │          │        │                           │                           │ https://avd.aquasec.com/nvd/cve-2023-0465                  │
+│           ├───────────────┤          │        │                           │                           ├────────────────────────────────────────────────────────────┤
+│           │ CVE-2023-0466 │          │        │                           │                           │ openssl: Certificate policy check not enabled              │
+│           │               │          │        │                           │                           │ https://avd.aquasec.com/nvd/cve-2023-0466                  │
+└───────────┴───────────────┴──────────┴────────┴───────────────────────────┴───────────────────────────┴────────────────────────────────────────────────────────────┘
